@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewBag.Title = "ManagementOfChange";
+}
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>@ViewBag.Title - My ASP.NET Application</title>
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+<link href="~/css/bootstrap.css" rel="stylesheet">
+<link href="~/css/style.css" rel="stylesheet">
+<link href="~/css/stellarnav.css" rel="stylesheet">
+<link href="~/css/responsive.css" rel="stylesheet">
+<link href="~/css/owl.carousel.css" rel="stylesheet">
+<link href="~/css/owl.theme.default.css" rel="stylesheet">
+<link href="~/css/animate.css" rel="stylesheet">
+
+
+<style>
+    .accordion {
+        background-color: #eee;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+    }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+    .panel {
+        padding: 0 18px;
+        display: none;
+        background-color: white;
+        overflow: hidden;
+    }
+</style>
+
+
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+
+
+
+        <header>
+            <table style="width:455pt;border-collapse:collapse;">
+                <colgroup>
+                    <col style="width:415px" />
+                    <col style="width:85px" />
+                    <col style="width:105px" />
+                </colgroup>
+                <tr>
+                    <td style="width:311.85pt;vertical-align:top;">
+                        <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">TAI CHONG CHEANG STEAMSHIP CO (SINGAPORE) PTE LTD</span></p>
+                    </td>
+                    <td style="width:63.8pt;vertical-align:top;">
+                        <p style="text-align:right;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">Issue No:</span></p>
+                    </td>
+                    <td style="width:79.35pt;vertical-align:top;">
+                        <p style="text-align:right;margin-left:0pt;margin-right:1.2pt;margin-top:0pt;margin-bottom:0pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">000 Revised</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:311.85pt;vertical-align:top;">
+                        <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">Safety Management System - Volume I</span></p>
+                    </td>
+                    <td style="width:63.8pt;vertical-align:top;">
+                        <p style="text-align:right;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">Issue Date:</span></p>
+                    </td>
+                    <td style="width:79.35pt;vertical-align:top;">
+                        <p style="text-align:right;margin-left:0pt;margin-right:1.2pt;margin-top:0pt;margin-bottom:0pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">15-Oct-20</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width:311.85pt;vertical-align:top;">
+                        <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;"><span>&nbsp;</span></p>
+                    </td>
+                    <td style="width:63.8pt;vertical-align:top;">
+                        <p style="text-align:right;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">Issued By:</span></p>
+                    </td>
+                    <td style="width:79.35pt;vertical-align:top;">
+                        <p style="text-align:right;margin-left:0pt;margin-right:1.2pt;margin-top:0pt;margin-bottom:0pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">GM (MSD)</span></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="border-bottom:0.75pt solid #000000;width:311.85pt;vertical-align:top;">
+                        <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">Company Policy Manual</span></p>
+                    </td>
+                    <td style="border-bottom:0.75pt solid #000000;width:63.8pt;vertical-align:top;">
+                        <p style="text-align:right;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">Page:</span></p>
+                    </td>
+                    <td style="border-bottom:0.75pt solid #000000;width:79.35pt;vertical-align:top;">
+                        <p style="text-align:right;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;">
+                            <span style="mso-field-code:'PAGE';"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">2</span></span><span style="font-family:Arial;font-size:10pt;font-weight: bold;"> of </span><span style="mso-field-code:'NUMPAGES';"><span style="font-family:Arial;font-size:10pt;font-weight: bold;">2</span></span>
+                        </p>
+                    </td>
+                </tr>
+            </table>
+            <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+        </header>
+        <section>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;color:#FF6600;text-decoration: underline;">PS 1.1 - DEFINITIONS</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p class="accordion" style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><a name="Companypolicymanual"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">Company Policy Manual</span></a>
+            <p class="panel" style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;" /><span style="font-family:Arial;font-size:10pt;">This is an authorised document setting out the Safety and Environmental Protection Policies of the Company. For further instructions on details of &nbsp;Safety and Environmental Protection Policies and Systems of Enforcement, please refer to the Company Procedures Manual (SMS Volume II) and then to the actual instructional documents and operating instructions contained in the Safety Management System, (SMS) Volumes III; &nbsp;IV; V; VI; VII; VIII.</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><a name="DesignatedPerson" />
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p class="accordion" style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">General Manager</span></p>
+            <p class="panel" style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span style="font-family:Arial;font-size:10pt;">The position of the General Manager mentioned in all the SMS manuals including but not limited to the manuals outlined in Volume I PS 1.2 explicitly refers to the Joint General Managers Marine and Technical as appropriate in their respective areas of responsibility. DGM, MSD as stated in all the SMS documents should be referred as General Manager, Marine for the sake of order.</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p class="accordion" style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">Designated Person</span></p>
+            <p class="panel" style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;" /><span style="font-family:Arial;font-size:10pt;">The Company has designated </span><span style="font-family:Arial;font-size:10pt;font-weight: bold;">General Manager, Marine, (MSD) </span><span style="font-family:Arial;font-size:10pt;">as the Designated Person Ashore (DPA). The DPA is responsible to ensure that the requirements of the Safety &amp; Environmental Protection System are clearly understood, implemented and maintained by appropriate persons on board and ashore. &nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span style="font-family:Arial;font-size:10pt;">In the absence of the Designated Person Ashore (DPA), the General Manager, Technical (SMD) as the Alternate Designated Person will assume the role and responsibility of the DPA.</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p class="accordion" style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><a name="Nonconformity"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">Non-Conformity</span></a>
+            <p class="panel" style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;" /><span style="font-family:Arial;font-size:10pt;">A deficiency in characteristic, documentation or procedure which renders the Safety &amp; Environmental Protection systems of a service or activity unacceptable, indeterminate and potentially hazardous.</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><a name="Verification"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">Verification</span></a>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;" /><span style="font-family:Arial;font-size:10pt;">Investigation is to confirm that an activity or service is in accordance with the specified requirements. Verification differs from inspection in the sense that verification is an investigation confirming that a specified inspection has been performed.</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><a name="Thecompany"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">The Company</span></a>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;" /><span style="font-family:Arial;font-size:10pt;">TAI CHONG CHEANG STEAMSHIP CO (SINGAPORE) PTE LTD who manage vessels on behalf of various Ship Owners.</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><a name="TheOwner"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">The Owner</span></a>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;" /><span style="font-family:Arial;font-size:10pt;">The Registered Owner of a vessel under the management of the Company.</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><a name="Disbursement" />
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">Disbursement</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;" /><span style="font-family:Arial;font-size:10pt;">A careful and accurate reconciliation of account of all moneys disbursed on behalf of the ship, supported by receipts or vouchers kept by the Master.</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><a name="Anagent"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">An Agent</span></a>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;" /><span style="font-family:Arial;font-size:10pt;">Is a person having the expertise or designated authority to represent or act on behalf of another person. Agent is appointed to protect the Owners/ Managers interests in Port.</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">The Master</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span style="font-family:Arial;font-size:10pt;">He is the Officer in command of the ship, responsible to the Owner/ Manager for the Safety of the Ship, Crew, Cargo and the Environment.</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:6pt;padding: 1pt 4pt;"><span style="font-family:Arial;font-size:10pt;font-weight: bold;text-decoration: underline;">Administration</span></p>
+            <p style="text-align:justify;margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span style="font-family:Arial;font-size:10pt;">‘Administration’ means the Government of the Port of Registry of the vessel in a State whose flag the ship is entitled to fly. </span></p>
+            <p style="margin-left:0pt;margin-right:-0.2pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+            <p style="margin-left:0pt;margin-right:0pt;margin-top:0pt;margin-bottom:0pt;padding: 1pt 4pt;"><span>&nbsp;</span></p>
+        </section>
+
+
+    </div>
+</div>
+
+
+
+
+<script>
+    //   class="accordion"
+    //   class="panel"
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>
