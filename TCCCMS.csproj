@@ -307,13 +307,13 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\DocToHtml\TCCCMS.Models\TCCCMS.Models.csproj">
-      <Project>{2c9808a1-e8e9-4ecb-8bf9-b31e070bf009}</Project>
-      <Name>TCCCMS.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="TCCCMS.Business\TCCCMS.Business.csproj">
       <Project>{5cf372a0-8349-4f49-8543-1ffb361d6586}</Project>
       <Name>TCCCMS.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="TCCCMS.Models\TCCCMS.Models.csproj">
+      <Project>{845b4b80-787d-4951-8c1f-e4179426b4ab}</Project>
+      <Name>TCCCMS.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
