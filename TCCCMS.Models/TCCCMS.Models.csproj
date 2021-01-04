@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleMasterPOCO.cs" />
     <Compile Include="UserGroupPOCO.cs" />
+    <Compile Include="UserMasterPOCO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

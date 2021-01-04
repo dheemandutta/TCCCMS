@@ -1,0 +1,444 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using TCCCMS.Models;
+
+namespace TCCCMS.Data
+{
+    public class UserMasterDAL
+    {
+        public int SaveUpdateUser(UserMasterPOCO pOCO)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("stpSaveUpdateUser", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@RankId", pOCO.RankId);
+
+            cmd.Parameters.AddWithValue("@UserName", pOCO.UserName.ToString());
+
+            cmd.Parameters.AddWithValue("@Password", pOCO.Password.ToString());
+
+            //if (!String.IsNullOrEmpty(pOCO.CreatedOn))
+            //{
+            //    cmd.Parameters.AddWithValue("@CreatedOn", pOCO.CreatedOn.ToString());
+            //}
+            //else
+            //{
+            //    cmd.Parameters.AddWithValue("@CreatedOn", DBNull.Value);
+            //}
+
+            //cmd.Parameters.AddWithValue("@IsActive", pOCO.IsActive);
+
+            if (!String.IsNullOrEmpty(pOCO.Email))
+            {
+                cmd.Parameters.AddWithValue("@Email", pOCO.Email.ToString());
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Email", DBNull.Value);
+            }
+
+            if (!String.IsNullOrEmpty(pOCO.CreatedBy))
+            {
+                cmd.Parameters.AddWithValue("@CreatedBy", pOCO.CreatedBy.ToString());
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@CreatedBy", DBNull.Value);
+            }
+
+            if (!String.IsNullOrEmpty(pOCO.ModifiedBy))
+            {
+                cmd.Parameters.AddWithValue("@ModifiedBy", pOCO.ModifiedBy.ToString());
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@ModifiedBy", DBNull.Value);
+            }
+
+            if (!String.IsNullOrEmpty(pOCO.Gender))
+            {
+                cmd.Parameters.AddWithValue("@Gender", pOCO.Gender.ToString());
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@Gender", DBNull.Value);
+            }
+
+            if (!String.IsNullOrEmpty(pOCO.VesselIMO))
+            {
+                cmd.Parameters.AddWithValue("@VesselIMO", pOCO.VesselIMO.ToString());
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@VesselIMO", DBNull.Value);
+            }
+
+
+            if (pOCO.UserId > 0)
+            {
+                cmd.Parameters.AddWithValue("@UserId ", pOCO.UserId);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@UserId ", DBNull.Value);
+            }
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return recordsAffected;
+        }
+
+
+        public List<UserMasterPOCO> GetAllUser()
+        {
+            List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
+            List<UserMasterPOCO> prodPO = new List<UserMasterPOCO>();
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetAllUser", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    con.Close();
+                }
+            }
+            return ConvertDataTableToGetAllUserList(ds);
+        }
+
+        private List<UserMasterPOCO> ConvertDataTableToGetAllUserList(DataSet ds)
+        {
+            List<UserMasterPOCO> pcList = new List<UserMasterPOCO>();
+            //check if there is at all any data
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow item in ds.Tables[0].Rows)
+                {
+                    UserMasterPOCO pPOCOPC = new UserMasterPOCO();
+
+                    //if (item["ID"] != null)
+                    //    pPOCOPC.ID = Convert.ToInt32(item["ID"].ToString());
+
+                    if (item["UserName"] != System.DBNull.Value)
+                        pPOCOPC.UserName = item["UserName"].ToString();
+
+                    if (item["CreatedOn"] != System.DBNull.Value)
+                        pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
+
+                    if (item["Email"] != System.DBNull.Value)
+                        pPOCOPC.Email = item["Email"].ToString();
+
+                    if (item["CreatedBy"] != System.DBNull.Value)
+                        pPOCOPC.CreatedBy = item["CreatedBy"].ToString();
+
+                    if (item["ModifiedBy"] != System.DBNull.Value)
+                        pPOCOPC.ModifiedBy = item["ModifiedBy"].ToString();
+
+                    if (item["Gender"] != System.DBNull.Value)
+                        pPOCOPC.Gender = item["Gender"].ToString();
+
+                    if (item["VesselIMO"] != System.DBNull.Value)
+                        pPOCOPC.VesselIMO = item["VesselIMO"].ToString();
+
+                    if (item["RankName"] != System.DBNull.Value)
+                        pPOCOPC.RankName = item["RankName"].ToString();
+
+                    pcList.Add(pPOCOPC);
+                }
+            }
+            return pcList;
+        }
+
+
+        public List<UserMasterPOCO> GetUserByUserId(int UserId)
+        {
+            List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
+            List<UserMasterPOCO> prodPO = new List<UserMasterPOCO>();
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetUserByUserId", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserId", UserId);
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    con.Close();
+                }
+            }
+            return ConvertDataTableToUserByUserIdList(ds);
+        }
+
+        private List<UserMasterPOCO> ConvertDataTableToUserByUserIdList(DataSet ds)
+        {
+            List<UserMasterPOCO> pcList = new List<UserMasterPOCO>();
+            //check if there is at all any data
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow item in ds.Tables[0].Rows)
+                {
+                    UserMasterPOCO pPOCOPC = new UserMasterPOCO();
+
+                    //if (item["ID"] != null)
+                    //    pPOCOPC.ID = Convert.ToInt32(item["ID"].ToString());
+
+                    if (item["UserName"] != System.DBNull.Value)
+                        pPOCOPC.UserName = item["UserName"].ToString();
+
+                    if (item["CreatedOn"] != System.DBNull.Value)
+                        pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
+
+                    if (item["Email"] != System.DBNull.Value)
+                        pPOCOPC.Email = item["Email"].ToString();
+
+                    if (item["CreatedBy"] != System.DBNull.Value)
+                        pPOCOPC.CreatedBy = item["CreatedBy"].ToString();
+
+                    if (item["ModifiedBy"] != System.DBNull.Value)
+                        pPOCOPC.ModifiedBy = item["ModifiedBy"].ToString();
+
+                    if (item["Gender"] != System.DBNull.Value)
+                        pPOCOPC.Gender = item["Gender"].ToString();
+
+                    if (item["VesselIMO"] != System.DBNull.Value)
+                        pPOCOPC.VesselIMO = item["VesselIMO"].ToString();
+
+                    if (item["RankName"] != System.DBNull.Value)
+                        pPOCOPC.RankName = item["RankName"].ToString();
+
+                    pcList.Add(pPOCOPC);
+                }
+            }
+            return pcList;
+        }
+
+
+        public List<UserMasterPOCO> GetUserByIMO(string VesselIMO)
+        {
+            List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
+            List<UserMasterPOCO> prodPO = new List<UserMasterPOCO>();
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetUserByIMO", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@VesselIMO", VesselIMO);
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    con.Close();
+                }
+            }
+            return ConvertDataTableToUserByIMOList(ds);
+        }
+
+        private List<UserMasterPOCO> ConvertDataTableToUserByIMOList(DataSet ds)
+        {
+            List<UserMasterPOCO> pcList = new List<UserMasterPOCO>();
+            //check if there is at all any data
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow item in ds.Tables[0].Rows)
+                {
+                    UserMasterPOCO pPOCOPC = new UserMasterPOCO();
+
+                    //if (item["ID"] != null)
+                    //    pPOCOPC.ID = Convert.ToInt32(item["ID"].ToString());
+
+                    if (item["UserName"] != System.DBNull.Value)
+                        pPOCOPC.UserName = item["UserName"].ToString();
+
+                    if (item["CreatedOn"] != System.DBNull.Value)
+                        pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
+
+                    if (item["Email"] != System.DBNull.Value)
+                        pPOCOPC.Email = item["Email"].ToString();
+
+                    if (item["CreatedBy"] != System.DBNull.Value)
+                        pPOCOPC.CreatedBy = item["CreatedBy"].ToString();
+
+                    if (item["ModifiedBy"] != System.DBNull.Value)
+                        pPOCOPC.ModifiedBy = item["ModifiedBy"].ToString();
+
+                    if (item["Gender"] != System.DBNull.Value)
+                        pPOCOPC.Gender = item["Gender"].ToString();
+
+                    if (item["VesselIMO"] != System.DBNull.Value)
+                        pPOCOPC.VesselIMO = item["VesselIMO"].ToString();
+
+                    if (item["RankName"] != System.DBNull.Value)
+                        pPOCOPC.RankName = item["RankName"].ToString();
+
+                    pcList.Add(pPOCOPC);
+                }
+            }
+            return pcList;
+        }
+
+
+        public List<UserMasterPOCO> GetUserByEmailId(string Email)
+        {
+            List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
+            List<UserMasterPOCO> prodPO = new List<UserMasterPOCO>();
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetUserByEmailId", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@Email", Email);
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    con.Close();
+                }
+            }
+            return ConvertDataTableToUserByEmailList(ds);
+        }
+
+        private List<UserMasterPOCO> ConvertDataTableToUserByEmailList(DataSet ds)
+        {
+            List<UserMasterPOCO> pcList = new List<UserMasterPOCO>();
+            //check if there is at all any data
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow item in ds.Tables[0].Rows)
+                {
+                    UserMasterPOCO pPOCOPC = new UserMasterPOCO();
+
+                    //if (item["ID"] != null)
+                    //    pPOCOPC.ID = Convert.ToInt32(item["ID"].ToString());
+
+                    if (item["UserName"] != System.DBNull.Value)
+                        pPOCOPC.UserName = item["UserName"].ToString();
+
+                    if (item["CreatedOn"] != System.DBNull.Value)
+                        pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
+
+                    if (item["Email"] != System.DBNull.Value)
+                        pPOCOPC.Email = item["Email"].ToString();
+
+                    if (item["CreatedBy"] != System.DBNull.Value)
+                        pPOCOPC.CreatedBy = item["CreatedBy"].ToString();
+
+                    if (item["ModifiedBy"] != System.DBNull.Value)
+                        pPOCOPC.ModifiedBy = item["ModifiedBy"].ToString();
+
+                    if (item["Gender"] != System.DBNull.Value)
+                        pPOCOPC.Gender = item["Gender"].ToString();
+
+                    if (item["VesselIMO"] != System.DBNull.Value)
+                        pPOCOPC.VesselIMO = item["VesselIMO"].ToString();
+
+                    if (item["RankName"] != System.DBNull.Value)
+                        pPOCOPC.RankName = item["RankName"].ToString();
+
+                    pcList.Add(pPOCOPC);
+                }
+            }
+            return pcList;
+        }
+
+
+        public List<UserMasterPOCO> GetUserByRank(int RankId)
+        {
+            List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
+            List<UserMasterPOCO> prodPO = new List<UserMasterPOCO>();
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetUserByRank", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@RankId", RankId);
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    con.Close();
+                }
+            }
+            return ConvertDataTableToUserByRankIdList(ds);
+        }
+
+        private List<UserMasterPOCO> ConvertDataTableToUserByRankIdList(DataSet ds)
+        {
+            List<UserMasterPOCO> pcList = new List<UserMasterPOCO>();
+            //check if there is at all any data
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow item in ds.Tables[0].Rows)
+                {
+                    UserMasterPOCO pPOCOPC = new UserMasterPOCO();
+
+                    //if (item["ID"] != null)
+                    //    pPOCOPC.ID = Convert.ToInt32(item["ID"].ToString());
+
+                    if (item["UserName"] != System.DBNull.Value)
+                        pPOCOPC.UserName = item["UserName"].ToString();
+
+                    if (item["CreatedOn"] != System.DBNull.Value)
+                        pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
+
+                    if (item["Email"] != System.DBNull.Value)
+                        pPOCOPC.Email = item["Email"].ToString();
+
+                    if (item["CreatedBy"] != System.DBNull.Value)
+                        pPOCOPC.CreatedBy = item["CreatedBy"].ToString();
+
+                    if (item["ModifiedBy"] != System.DBNull.Value)
+                        pPOCOPC.ModifiedBy = item["ModifiedBy"].ToString();
+
+                    if (item["Gender"] != System.DBNull.Value)
+                        pPOCOPC.Gender = item["Gender"].ToString();
+
+                    if (item["VesselIMO"] != System.DBNull.Value)
+                        pPOCOPC.VesselIMO = item["VesselIMO"].ToString();
+
+                    if (item["RankName"] != System.DBNull.Value)
+                        pPOCOPC.RankName = item["RankName"].ToString();
+
+                    pcList.Add(pPOCOPC);
+                }
+            }
+            return pcList;
+        }
+
+
+        public int DeleteUserMaster(int UserId)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("stpDeleteUserMaster", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@UserId", UserId);
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+
+            con.Close();
+            return recordsAffected;
+        }
+
+    }
+}
