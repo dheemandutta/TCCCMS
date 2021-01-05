@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Manual Index</h2>
+
+<div class="container">
+    <div class="text-center">
+        <h1 class="display-4">Welcome</h1>
+        <p>Search about TCC @*<a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.*@</p>
+        <!-- Search form -->
+
+
+    </div>
+    <div class="row">
+        <div class="text-center col-md-12">
+            @*<p>Bing</p>*@
+            <div class="col-md-12 form-group">
+                <form class="form-inline col-sm-12">
+                    <select id="drpVolume" class="form-control form-control-sm mr-3 w-25">
+                        <option value="0" selected>Select</option>
+                        <option value="1">Volume 1</option>
+                        <option value="2">Volume 2</option>
+                        <option value="3">Volume 3</option>
+                        <option value="5">Volume 5</option>
+                        <option value="6">Volume 6</option>
+                        <option value="7">Volume 7</option>
+                        <option value="8">Volume 8</option>
+                    </select>
+                    <input id="txtSearchText" class="form-control form-control-sm mr-3 w-50" type="text" placeholder="Search" aria-label="Search" />
+                    <a id="lnkSearch" class="btn btn-primary" href="@Url.Action("SearchList","Manual")"> Search</a>
+                </form>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+@section Scripts{
+    <script src="~/js/SearchHtml/Search.js"></script>
+    <script type="text/javascript">
+        //function getSelected() {
+        //    var selected = '';
+
+        //    if (window.getSelection) {
+        //        selected = window.getSelection().toString();
+        //    } else if (document.getSelection) {
+        //        selected = document.getSelection();
+        //    } else if (document.selection) {
+        //        selected = document.selection.createRange().text;
+        //    }
+        //}
+        $(function () {
+            $('#txtSearchText').change(function () {
+
+                $("#lnkSearch").attr("href", $("#lnkSearch").attr("href") + "?currentPage=1&volNo=" + $("#drpVolume option:selected").val() + "&text=" + $(this).val());
+            })
+        });
+        $(document).ready(function () {
+            //alert("Hi");
+            //$('p').live('mouseup', function () {
+            //    var selected = getSelected();
+
+            //    $(this).html($(this).html().replace(selected, '<span class="highlight">' + selected + '</span>'));
+            //});
+
+            //replaceText();
+            //$(function () {
+            //    var foundin = $('*:contains("Learn")');
+            //    console.log(foundin);
+            //});
+        });
+
+       
+        function replaceText() {
+
+            //$('body').highlight('welcome Learn');
+
+            $("body").find(".highlight").removeClass("highlight");
+
+            var searchword = "Learn";
+
+            var custfilter = new RegExp(searchword, "ig");
+            var repstr = "" + searchword + "";
+
+            if (searchword != "") {
+                $('body').each(function () {
+                    $(this).html($(this).html().replace(custfilter, '<span class="highlight">' + repstr + '</span>'));
+                })
+            }
+
+            //alert(custfilter);
+        }
+        //--------------------------------------------------
+
+    </script>
+}

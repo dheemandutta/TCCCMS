@@ -1,0 +1,104 @@
+﻿@model TCCCMS.Models.ManualViewModel
+
+@{
+    ViewBag.Title = "SearchList";
+}
+@section Styles{
+    <link href="~/Scripts/highlight/css/default.css" rel="stylesheet" />
+    <style type="text/css">
+        /*span.highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }*/
+
+        .highlight {
+            background: #b6ff00;
+            padding: 1px;
+            border: #00CC00 dotted 1px;
+        }
+    </style>
+}
+@*<h2>SearchList</h2>*@
+<div class="searchdContent">
+
+    <h2>Your search for "@(Model.SearchText)" returned @Model.Pagination.Count result(s).</h2>
+
+    
+
+
+    <div class="container">
+        @foreach (var item in Model.ManualList)
+        {
+            <div class="card">
+                <div class="card-header">
+                    @Html.HiddenFor(modelItem => item.ManualId)
+                    @*<a href='@(item.FilePath + "/"+ item.Name )'  >
+                            <h5>@Html.DisplayFor(modelItem => item.Name)</h5>
+                        </a>*@
+                    <a href="@Url.Action(item.ActionName,item.ControllerName)">
+                        <h5>@Html.DisplayFor(modelItem => item.ManualFileName)</h5>
+                    </a>
+                </div>
+                <div class="card-body">
+                    @Html.DisplayFor(modelItem => item.ManualBodyText)
+                </div>
+            </div>
+            
+
+        }
+    </div>
+
+    <div>
+        <nav aria-label="Page navigation">
+            <ul class="pagination flex-wrap">
+                <li class="page-item @(Model.Pagination.EnablePrevious ? " " : " disabled" )">
+                    <a asp-route-currentPage="1" asp-route-text="@Model.SearchText"
+                       class="page-link" aria-label="Frist">
+                        <span aria-hidden="true">|<</span>
+                        <span class="sr-only">First</span>
+                    </a>
+                </li>
+                <li class="page-item @(Model.Pagination.EnablePrevious ? " " : " disabled" )">
+                    <a asp-route-currentPage="@(Model.Pagination.CurrentPage -1)" asp-route-text="@Model.SearchText"
+                       class="page-link" aria-label="Next">
+                        <span aria-hidden="true"><</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                @for (var i = 1; i <= Model.Pagination.TotalPages; i++)
+                {
+                    <li class="page-item @(i == Model.Pagination.CurrentPage ? " active" : "" )">
+                        <a asp-route-currentPage="@i" asp-route-text="@Model.SearchText" class="page-link">@i</a>
+                    </li>
+                }
+                <li class="page-item @(Model.Pagination.EnableNext ? " " : " disabled" )">
+                    <a asp-route-currentpage="@(Model.Pagination.CurrentPage + 1)" asp-route-text="@Model.SearchText"
+                       class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+                <li class="page-item @(Model.Pagination.EnableNext ? " " : " disabled" )">
+                    <a asp-route-currentPage="@Model.Pagination.TotalPages" asp-route-text="@Model.SearchText"
+                       class="page-link" aria-label="Last">
+                        <span aria-hidden="true">>|</span>
+                        <span class="sr-only">Last</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+</div>
+
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    
+    <script src="~/Scripts/highlight/js/jquery.highlight.js"></script>
+    <script src="~/js/Manual/ManualSearch.js"></script>
+
+    <script type="text/javascript">
+
+        
+    </script>
+}

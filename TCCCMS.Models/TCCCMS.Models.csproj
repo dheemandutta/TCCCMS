@@ -43,7 +43,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="GroupMasterPOCO.cs" />
-    <Compile Include="ManualPOCO.cs" />
+    <Compile Include="Manual.cs" />
+    <Compile Include="ManualViewModel.cs" />
+    <Compile Include="Pagination.cs" />
     <Compile Include="PermissionRolePOCO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleMasterPOCO.cs" />

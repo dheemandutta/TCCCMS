@@ -8,6 +8,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("Styles", required: false)
     <link href="~/css/bootstrap.css" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet">
     <link href="~/css/stellarnav.css" rel="stylesheet">
@@ -15,7 +16,6 @@
     <link href="~/css/owl.carousel.css" rel="stylesheet">
     <link href="~/css/owl.theme.default.css" rel="stylesheet">
     <link href="~/css/animate.css" rel="stylesheet">
-
 </head>
 
 <body>
