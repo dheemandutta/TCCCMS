@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TCCCMS.Models
 {
-    public class ManualPOCO
+    public class Manual
     {
         public int ManualId { get; set; }
         public int VolumeId { get; set; }
