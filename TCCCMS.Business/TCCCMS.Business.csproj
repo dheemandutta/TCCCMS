@@ -43,7 +43,12 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ManualBL.cs" />
+    <Compile Include="GroupMasterBL.cs" />
+    <Compile Include="PermissionRoleBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoleMasterBL.cs" />
+    <Compile Include="UserGroupBL.cs" />
+    <Compile Include="UserMasterBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TCCCMS.Data\TCCCMS.Data.csproj">
