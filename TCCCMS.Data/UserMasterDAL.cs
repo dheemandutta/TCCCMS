@@ -99,6 +99,7 @@ namespace TCCCMS.Data
         }
 
 
+
         public List<UserMasterPOCO> GetAllUser()
         {
             List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
@@ -161,6 +162,7 @@ namespace TCCCMS.Data
             }
             return pcList;
         }
+
 
 
         public List<UserMasterPOCO> GetUserByUserId(int UserId)
@@ -228,6 +230,7 @@ namespace TCCCMS.Data
         }
 
 
+
         public List<UserMasterPOCO> GetUserByIMO(string VesselIMO)
         {
             List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
@@ -291,6 +294,7 @@ namespace TCCCMS.Data
             }
             return pcList;
         }
+
 
 
         public List<UserMasterPOCO> GetUserByEmailId(string Email)
@@ -358,6 +362,7 @@ namespace TCCCMS.Data
         }
 
 
+
         public List<UserMasterPOCO> GetUserByRank(int RankId)
         {
             List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
@@ -421,6 +426,7 @@ namespace TCCCMS.Data
             }
             return pcList;
         }
+
 
 
         public int DeleteUserMaster(int UserId)
