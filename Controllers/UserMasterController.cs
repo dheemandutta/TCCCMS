@@ -18,7 +18,6 @@ namespace TCCCMS.Controllers
             return View();
         }
 
-
         public JsonResult LoadData()
         {
             int draw, start, length;
