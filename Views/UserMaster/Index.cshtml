@@ -1,0 +1,137 @@
+﻿@model TCCCMS.Models.UserMasterPOCO
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@*<link href="~/Content/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/select.dataTables.min.css" rel="stylesheet" />
+<link href="~/Content/DataTables/css/rowReorder.dataTables.min.css" rel="stylesheet" />*@
+@*<link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+<link href="dist/dual-listbox.css" rel="stylesheet">*@
+@*<link href="~/link/css/rank.css" rel="stylesheet" />
+
+<link href="~/Content/themes/base/datepicker.css" rel="stylesheet" />
+
+<link href="~/Content/plugin/datepicker/datepicker.css" rel="stylesheet" />
+<link href="~/Content/plugin/datepicker/css/pickmeup.css" rel="stylesheet" />
+
+<script src="~/Scripts/notify.min.js"></script>
+<script src="~/Scripts/toastr.min.js"></script>
+<link href="~/Content/toastr.min.css" rel="stylesheet" />*@
+<script src="~/Scripts/UserMaster.js"></script>
+
+@Html.Hidden("loaddata", @Url.Action("LoadData", "UserMaster"))
+
+<body>
+    background-size: cover;">
+    <div class="row">
+        <h1 class="display-4">UserMaster</h1>
+        <div class="col-md-8">
+            <div class="row" style="margin-left: -150px;">
+                <div class="col-md-8 bac1" style="height: 515px;">
+                    <div class="card">
+                        <div style="margin:0 auto" class="tablecontainer">
+                            <button type="button" class="button1" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add User</button><br /><br />
+                            <input type="hidden" id="hdnrole" />
+                            <table id="UserMasterTable" class="display" cellspacing="0" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Equipment Name</th>
+                                        <th>Equipment Name</th>
+                                        <th>Equipment Name</th>
+                                        <th>Equipment Name</th>
+                                        <th>Equipment Name</th>
+                                        <th>Equipment Name</th>
+                                        <th>Equipment Name</th>
+                                        <th>Equipment Name</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
+                    </div>
+
+
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" style="width: 500px;">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title" id="myModalLabel">Add User Master</h4>
+                                </div>
+                                <div class="modal-dialog" id="dvuserdetailsn" style="width: 400px;">
+                                    <fieldset class="for-panel">
+                                        <input type="hidden" id="hdnrole" />
+                                        <div>
+                                            <form>
+                                                <div class="form-group">
+                                                    <input type="hidden" id="UserId" />
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <div class="card">
+
+                                                        <div class="form-group">
+                                                            <label for="EquipmentsName">Equipments Name</label>
+                                                            <input type="text" class="form-control" id="EquipmentsName" placeholder="Equipments Name" />
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="Comment">Comment</label>
+                                                            <textarea class="form-control" id="Comment" cols="7" rows="2"></textarea>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label for="Expiry Date">Expiry Date</label>
+                                                            <input type="text" class="form-control" id="ExpiryDate" placeholder="Expiry Date" />
+                                                        </div>
+
+                                                        <button type="button" class="button1" id="btnAdd" onclick="return SaveEquipments();" style="width:138px;">Add</button>
+                                                        <button type="button" class="buttonpop" id="btnUpdate" style="display:none; width:86px;" onclick="SaveEquipments();">Update</button>
+                                                        @*<button type="button" class="btn btn-default" data-dismiss="modal" style="width:86px;">Close</button>*@
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+              
+                
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+@section Scripts
+{
+    @*@Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Styles.Render("~/Content/themes/base/css")*@
+
+    @*<script src="~/Scripts/toastr.min.js"></script>
+    <link href="~/Content/toastr.min.css" rel="stylesheet" />*@
+
+    <script type="text/javascript">
+        //alert('hi');
+
+        $(document).ready(function () {
+
+            SetUpGrid();
+        });
+
+        //$("#ExpiryDate").datepicker({
+
+        //    changeMonth: true,
+        //    changeYear: true,
+        //    dateFormat: 'd-M-yy',
+
+        //});
+
+    </script>
+}

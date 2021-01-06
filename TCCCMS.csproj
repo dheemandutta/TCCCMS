@@ -125,6 +125,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
+    <Compile Include="Controllers\UserMasterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -368,8 +369,10 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\UserMaster.js" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB.sql" />
+    <Content Include="SQL Script\06.01.2021_Full_Script_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\Full_ScriptOf_TCCCMSDB.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -399,6 +402,7 @@
     <Content Include="Views\Shared\New_Layout.cshtml" />
     <Content Include="Views\Manual\Index.cshtml" />
     <Content Include="Views\Manual\SearchList.cshtml" />
+    <Content Include="Views\UserMaster\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

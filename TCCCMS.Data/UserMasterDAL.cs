@@ -100,6 +100,54 @@ namespace TCCCMS.Data
 
 
 
+        public List<UserMasterPOCO> GetAllUserPageWise(int pageIndex, ref int recordCount, int length/*, int VesselID*/)
+        {
+            List<UserMasterPOCO> pOList = new List<UserMasterPOCO>();
+            List<UserMasterPOCO> equipmentsPO = new List<UserMasterPOCO>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetAllUserPageWise", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PageIndex", pageIndex);
+                    cmd.Parameters.AddWithValue("@PageSize", length);
+                    cmd.Parameters.Add("@RecordCount", SqlDbType.Int, 4);
+                    cmd.Parameters["@RecordCount"].Direction = ParameterDirection.Output;
+                    //cmd.Parameters.AddWithValue("@VesselID", VesselID);
+                    con.Open();
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    //prodPOList = Common.CommonDAL.ConvertDataTable<ProductPOCO>(ds.Tables[0]);
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        pOList.Add(new UserMasterPOCO
+                        {
+                            //UserId = Convert.ToInt32(dr["UserId"]),
+                            UserName = Convert.ToString(dr["UserName"]),
+                            CreatedOn = Convert.ToDateTime(dr["CreatedOn"]),
+                            Email = Convert.ToString(dr["Email"]),
+                            CreatedBy = Convert.ToString(dr["CreatedBy"]),
+                            ModifiedBy = Convert.ToString(dr["ModifiedBy"]),
+                            Gender = Convert.ToString(dr["Gender"]),
+                            VesselIMO = Convert.ToString(dr["VesselIMO"]),
+                            RankName = Convert.ToString(dr["RankName"]),
+                        });
+                    }
+                    recordCount = Convert.ToInt32(cmd.Parameters["@RecordCount"].Value);
+                    con.Close();
+                }
+            }
+            return pOList;
+        }
+
+
+
+
+
         public List<UserMasterPOCO> GetAllUser()
         {
             List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
