@@ -126,7 +126,7 @@ namespace TCCCMS.Data
                     {
                         pOList.Add(new UserMasterPOCO
                         {
-                            //UserId = Convert.ToInt32(dr["UserId"]),
+                            UserId = Convert.ToInt32(dr["UserId"]),
                             UserName = Convert.ToString(dr["UserName"]),
                             CreatedOn = Convert.ToDateTime(dr["CreatedOn"]),
                             Email = Convert.ToString(dr["Email"]),
@@ -213,10 +213,10 @@ namespace TCCCMS.Data
 
 
 
-        public List<UserMasterPOCO> GetUserByUserId(int UserId)
+        public UserMasterPOCO GetUserByUserId(int UserId)
         {
-            List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
-            List<UserMasterPOCO> prodPO = new List<UserMasterPOCO>();
+            UserMasterPOCO prodPOList = new UserMasterPOCO();
+            UserMasterPOCO prodPO = new UserMasterPOCO();
             DataSet ds = new DataSet();
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
             {
@@ -234,21 +234,24 @@ namespace TCCCMS.Data
             return ConvertDataTableToUserByUserIdList(ds);
         }
 
-        private List<UserMasterPOCO> ConvertDataTableToUserByUserIdList(DataSet ds)
+        private UserMasterPOCO ConvertDataTableToUserByUserIdList(DataSet ds)
         {
-            List<UserMasterPOCO> pcList = new List<UserMasterPOCO>();
+            UserMasterPOCO pPOCOPC = new UserMasterPOCO();
             //check if there is at all any data
             if (ds.Tables.Count > 0)
             {
                 foreach (DataRow item in ds.Tables[0].Rows)
                 {
-                    UserMasterPOCO pPOCOPC = new UserMasterPOCO();
+                    //UserMasterPOCO pPOCOPC = new UserMasterPOCO();
 
-                    //if (item["ID"] != null)
-                    //    pPOCOPC.ID = Convert.ToInt32(item["ID"].ToString());
+                    if (item["UserId"] != null)
+                        pPOCOPC.UserId = Convert.ToInt32(item["UserId"].ToString());
 
                     if (item["UserName"] != System.DBNull.Value)
                         pPOCOPC.UserName = item["UserName"].ToString();
+
+                    if (item["Password"] != System.DBNull.Value)
+                        pPOCOPC.Password = item["Password"].ToString();
 
                     if (item["CreatedOn"] != System.DBNull.Value)
                         pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
@@ -268,13 +271,13 @@ namespace TCCCMS.Data
                     if (item["VesselIMO"] != System.DBNull.Value)
                         pPOCOPC.VesselIMO = item["VesselIMO"].ToString();
 
-                    if (item["RankName"] != System.DBNull.Value)
-                        pPOCOPC.RankName = item["RankName"].ToString();
+                    if (item["RankId"] != null)
+                        pPOCOPC.RankId = Convert.ToInt32(item["RankId"].ToString());
 
-                    pcList.Add(pPOCOPC);
+                    //pcList.Add(pPOCOPC);
                 }
             }
-            return pcList;
+            return pPOCOPC;
         }
 
 

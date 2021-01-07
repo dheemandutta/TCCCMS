@@ -168,22 +168,97 @@ function SetUpGrid() {
                 "data": "RankName", "name": "RankName", "autoWidth": true
             },
      
-            //,{
-            //    "data": "EquipmentsID", "width": "50px", "render": function (data) {
-            //        return '<a href="#" class="btn btn-info btn-sm" onclick="GetMedicalEquipmentByID(' + data + ')"><i class="glyphicon glyphicon-edit"></i></a>';
-            //    }
-            //},
-            //{
-            //    "data": "EquipmentsID", "width": "50px", "render": function (d) {
-            //        //debugger;
-            //        return '<a href="#" class="btn btn-info btn-sm" onclick="DeleteEquipments(' + d + ')"><i class="glyphicon glyphicon-trash"></i></a>';
+            {
+                "data": "UserId", "width": "50px", "render": function (data) {
+                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
+                }
+            },
+            {
+                "data": "UserId", "width": "50px", "render": function (d) {
+                    //debugger;
+                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
 
 
-            //    }
-            //}
+                }
+            }
 
         ],
-       // "rowId": "UserId",
-        //"dom": "Bfrtip"
+        "rowId": "UserId",
+        "dom": "Bfrtip"
     });
 }
+
+
+function DeleteUserMaster(UserId) {
+    var e = $('#DeleteUserMaster').val();
+    var ans = confirm("Are you sure you want to delete this Record?");
+    if (ans) {
+        // debugger;
+        $.ajax({
+            url: e,
+            data: JSON.stringify({ UserId: UserId }),
+            type: "POST",
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (result) {
+                // debugger;
+
+                if (result == -1) {
+                    alert("Department cannot be deleted as this is already used.");
+                }
+                else if (result == 0) {
+                    alert("Department cannot be deleted as this is already used.");
+                }
+                else {
+                    loadData();
+                }
+            },
+            error: function () {
+                alert("Department cannot be deleted as this is already used in Crew");
+            }
+        });
+    }
+}
+
+
+
+function GetUserByUserId(UserId) {
+    $('#UserName').css('border-color', 'lightgrey');
+    var x = $("#GetUserByUserId").val();
+    //alert(x);
+    //debugger;
+    $.ajax({
+        url: x,
+        data:
+        {
+            UserId: UserId
+        },
+        type: "GET",
+        contentType: "application/json;charset=UTF-8",
+        dataType: "json",
+        success: function (result) {
+            //debugger;
+            $('#UserId').val(result.UserId);
+            $('#UserName').val(result.UserName);
+            $('#Password').val(result.Password);
+            $('#CreatedOn').val(result.CreatedOn);
+            $('#Email').val(result.Email);
+            $('#CreatedBy').val(result.CreatedBy);
+            $('#ModifiedBy').val(result.ModifiedBy);
+            $('#Gender').val(result.Gender);
+            $('#VesselIMO').val(result.VesselIMO);
+            $('#RankId').val(result.RankId);
+
+            $('#myModal').modal('show');
+            $('#btnUpdate').show();
+            $('#btnAdd').hide();
+
+        },
+        error: function (errormessage) {
+            //debugger;
+            console.log(errormessage.responseText);
+        }
+    });
+    return false;
+}
+

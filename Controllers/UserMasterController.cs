@@ -55,6 +55,7 @@ namespace TCCCMS.Controllers
             foreach (UserMasterPOCO pC in pocoList)
             {
                 UserMasterPOCO pOCO = new UserMasterPOCO();
+                pOCO.UserId = pC.UserId;
                 pOCO.UserName = pC.UserName;
                 pOCO.CreatedOn = pC.CreatedOn;
                 pOCO.Email = pC.Email;
@@ -123,5 +124,41 @@ namespace TCCCMS.Controllers
 
         }
 
+
+
+        public JsonResult GetUserByUserId(int UserId)
+        {
+            UserMasterBL bL = new UserMasterBL();
+            UserMasterPOCO pOCOList = new UserMasterPOCO();
+
+            pOCOList = bL.GetUserByUserId(UserId);
+
+            UserMasterPOCO dept = new UserMasterPOCO();
+
+            dept.UserId = pOCOList.UserId;
+            dept.UserName = pOCOList.UserName;
+            dept.Password = pOCOList.Password;
+            dept.CreatedOn = pOCOList.CreatedOn;
+            dept.Email = pOCOList.Email;
+            dept.CreatedBy = pOCOList.CreatedBy;
+            dept.ModifiedBy = pOCOList.ModifiedBy;
+            dept.Gender = pOCOList.Gender;
+            dept.VesselIMO = pOCOList.VesselIMO;
+            dept.RankId = pOCOList.RankId;
+
+            var data = dept;
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        public ActionResult DeleteUserMaster(int UserId/*, ref string recordCount*/)
+        {
+            UserMasterBL bL = new UserMasterBL();
+            int recordaffected = bL.DeleteUserMaster(UserId/*, ref recordCount*/);
+            return Json(recordaffected, JsonRequestBehavior.AllowGet);
+
+        }
     }
 }
