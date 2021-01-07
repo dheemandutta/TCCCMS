@@ -71,7 +71,7 @@ namespace TCCCMS.Controllers
                 TempData.Keep("SearchText");
                 MatchCollection matches = Regex.Matches(text, @"\b[\w']*\b");
 
-                string[] st;
+                //string[] st;
                 var words = from m in matches.Cast<Match>()
                             where !string.IsNullOrEmpty(m.Value)
                             select m.Value;
