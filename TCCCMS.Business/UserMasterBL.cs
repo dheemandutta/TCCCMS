@@ -60,5 +60,18 @@ namespace TCCCMS.Business
             UserMasterDAL dAL = new UserMasterDAL();
             return dAL.DeleteUserMaster(UserId/*, ref oUTPUT*/);
         }
+
+
+
+
+
+
+
+        //for Ranks drp
+        public List<UserMasterPOCO> GetAllRanksForDrp(/*int VesselID*/)
+        {
+            UserMasterDAL dAL = new UserMasterDAL();
+            return dAL.GetAllRanksForDrp(/*VesselID*/);
+        }
     }
 }

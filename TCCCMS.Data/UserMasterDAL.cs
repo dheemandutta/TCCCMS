@@ -494,5 +494,32 @@ namespace TCCCMS.Data
             return recordsAffected;
         }
 
+
+
+
+
+        //for Ranks drp
+        public List<UserMasterPOCO> GetAllRanksForDrp(/*int VesselID*/)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("usp_GetAllRanksForDrp", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@VesselID", VesselID);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            DataTable myTable = ds.Tables[0];
+            List<UserMasterPOCO> ranksList = myTable.AsEnumerable().Select(m => new UserMasterPOCO()
+            {
+                RankId = m.Field<int>("RankId"),
+                RankName = m.Field<string>("RankName"),
+
+            }).ToList();
+            con.Close();
+            return ranksList;
+
+        }
+
     }
 }

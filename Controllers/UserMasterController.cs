@@ -15,6 +15,7 @@ namespace TCCCMS.Controllers
         // GET: UserMaster
         public ActionResult Index()
         {
+            GetAllRanksForDrp();
             return View();
         }
 
@@ -69,7 +70,58 @@ namespace TCCCMS.Controllers
             var data = pList;
             return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult SaveUpdateUser(UserMasterPOCO pOCO)
+        {
+            UserMasterBL bL = new UserMasterBL();
+            UserMasterPOCO pC = new UserMasterPOCO();
+
+            pC.UserId = pOCO.UserId;
+
+            pC.RankId = pOCO.RankId;
+            pC.UserName = pOCO.UserName;
+            pC.Password = pOCO.Password;
+            pC.Email = pOCO.Email;
+            pC.CreatedBy = pOCO.CreatedBy;
+            pC.ModifiedBy = pOCO.ModifiedBy;
+            pC.Gender = pOCO.Gender;
+            pC.VesselIMO = pOCO.VesselIMO;
+
+            return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
+        }
+
+
+
+
+
+        //for Ranks drp
+        public void GetAllRanksForDrp()
+        {
+            UserMasterBL bL = new UserMasterBL();
+            List<UserMasterPOCO> pocoList = new List<UserMasterPOCO>();
+
+            pocoList = bL.GetAllRanksForDrp(/*int.Parse(Session["VesselID"].ToString())*/);
+
+
+            List<UserMasterPOCO> itmasterList = new List<UserMasterPOCO>();
+
+            foreach (UserMasterPOCO up in pocoList)
+            {
+                UserMasterPOCO unt = new UserMasterPOCO();
+                unt.RankId = up.RankId;
+                unt.RankName = up.RankName;
+
+                itmasterList.Add(unt);
+            }
+
+            ViewBag.Ranks = itmasterList.Select(x =>
+                                            new SelectListItem()
+                                            {
+                                                Text = x.RankName,
+                                                Value = x.RankId.ToString()
+                                            });
+
+        }
+
     }
-
-
 }
