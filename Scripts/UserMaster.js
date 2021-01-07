@@ -1,4 +1,104 @@
-﻿
+﻿function validate() {
+    var isValid = true;
+
+    if ($('#UserName').val().length === 0) {
+        $('#UserName').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#UserName').css('border-color', 'lightgrey');
+    }
+
+
+    return isValid;
+}
+
+function clearTextBox() {
+    $('#UserId').val("");
+    $('#RankId').val("");
+    $('#UserName').val("");
+    $('#Password').val("");
+    $('#Email').val("");
+    $('#CreatedBy').val("");
+    $('#ModifiedBy').val("");
+    $('#Gender').val("");
+    $('#VesselIMO').val("");
+}
+
+function SaveUpdateUser() {
+
+    //alert($('textarea#Comments').val());
+    //debugger;
+    var posturl = $('#SaveUpdateUser').val();
+    var res = validate();
+    if (res == false) {
+        return false;
+    }
+    //alert(res);
+    if (res) {
+        var UserMaster = {
+            UserId: $('#UserId').val(),
+            RankId: $('#RankId').val(),
+            UserName: $('#UserName').val(),
+            Password: $('#Password').val(),
+            Email: $('#Email').val(),
+            CreatedBy: $('#CreatedBy').val(),
+            ModifiedBy: $('#ModifiedBy').val(),
+            Gender: $('#Gender').val(),
+            VesselIMO: $('#VesselIMO').val()
+        };
+
+        $.ajax({
+            url: posturl,
+            data: JSON.stringify(UserMaster),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+
+            //success: function (result) {
+
+            //    alert('Added Successfully');
+
+            //    clearTextBox();
+            //    }         
+            //,
+
+
+
+            success: function (result) {
+                loadData();
+                $('#myModal').modal('hide');
+                // alert('Added Successfully');
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-bottom-full-width",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+
+                toastr.success("Added Successfully");
+
+                clearTextBox();
+            },
+            error: function (errormessage) {
+                console.log(errormessage.responseText);
+            }
+        });
+    }
+}
+
 function loadData() {
     var loadposturl = $('#loaddata').val();
     $.ajax({
@@ -83,7 +183,7 @@ function SetUpGrid() {
             //}
 
         ],
-        "rowId": "UserId",
-        "dom": "Bfrtip"
+       // "rowId": "UserId",
+        //"dom": "Bfrtip"
     });
 }
