@@ -14,6 +14,7 @@ namespace TCCCMS.Models
         public string ManualHtml { get; set; }
         public string ManualHeader { get; set; }
         public string ManualBodyText { get; set; }
+        public string ManualBodyHtml { get; set; }
         public string ActionName { get; set; }
         public string ControllerName { get; set; }
 

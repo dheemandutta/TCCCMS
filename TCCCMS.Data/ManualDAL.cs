@@ -64,6 +64,39 @@ namespace TCCCMS.Data
 
         }
 
-        
+        public Manual GetManual(string controllerName,string actionName)
+        {
+            Manual file = new Manual();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetManualByControllerAction", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ControllerName", controllerName);
+                    cmd.Parameters.AddWithValue("@ActionName", actionName);
+                    con.Open();
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+
+                    file.ManualId = Convert.ToInt32(ds.Tables[0].Rows[0]["ManualId"]);
+                    //VolumeId = Convert.ToInt32(dr["VolumeId"]),
+                    file.ManualFileName = Convert.ToString(ds.Tables[0].Rows[0]["ManualFileName"]);
+                    file.ManualHtml = Convert.ToString(ds.Tables[0].Rows[0]["ManualHtml"]);
+                    file.ManualHeader = Convert.ToString(ds.Tables[0].Rows[0]["ManualHeader"]);
+                    file.ManualBodyText = Convert.ToString(ds.Tables[0].Rows[0]["ManualBodyText"]);
+                    file.ActionName = Convert.ToString(ds.Tables[0].Rows[0]["ActionName"]);
+                    file.ControllerName = Convert.ToString(ds.Tables[0].Rows[0]["ControllerName"]);
+                    
+
+                    con.Close();
+                }
+            }
+
+            return file;
+        }
     }
 }
