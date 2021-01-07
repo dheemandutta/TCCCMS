@@ -12,6 +12,7 @@ namespace TCCCMS.Controllers
 {
     public class ManualController : Controller
     {
+
         // GET: Manual
         public ActionResult Index()
         {

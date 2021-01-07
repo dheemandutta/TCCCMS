@@ -69,20 +69,20 @@
         </div>
 
         <div class="menu_panel">
-           
+
         </div>
 
     </section>
 
-    <script src="~/js/jquery.js"></script>
-    <script src="~/js/bootstrap.js"></script>
+    
+    <script src="~/Scripts/bootstrap.min.js"></script>
     <script src="~/js/stellarnav.js"></script>
     <script src="~/js/owl.carousel.js"></script>
     <script src="~/js/theme.js"></script>
     <script src="~/js/wow.min.js"></script>
 
 
-    @Scripts.Render("~/bundles/jquery")
+
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
@@ -94,12 +94,14 @@
         wow.init();
 
 
-        jQuery(document).ready(function ($) {
-            jQuery('.stellarnav').stellarNav({
-                theme: 'light'
+            $(document).ready(function ($) {
+                jQuery('.stellarnav').stellarNav({
+                    theme: 'light'
+                });
+                jQuery('.stellarnav li').addClass('drop-left');
             });
-            jQuery('.stellarnav li').addClass('drop-left');
-        });
+
+       
     </script>
 
 
