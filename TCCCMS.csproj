@@ -122,9 +122,11 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CompanyPolicyManualController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
+    <Compile Include="Controllers\UploadDocumentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -368,6 +370,8 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\Upload\filedrop.js" />
+    <Content Include="Scripts\Upload\jquery.filedrop.js" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\Full_ScriptOf_TCCCMSDB.sql" />
     <Content Include="Web.config" />
@@ -398,6 +402,22 @@
     <Content Include="Views\Shared\New_Layout.cshtml" />
     <Content Include="Views\Manual\Index.cshtml" />
     <Content Include="Views\Manual\SearchList.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\Introduction.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\CNCCA.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\DDC.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\Definition.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\DesignatedPerson.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\EmergencyPreparednes.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\Manual.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\MastersRA.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\MRA.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\MSE.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\PSO.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\ResourcesAndPersonnel.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\SEPP.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\SFA.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\SMS.cshtml" />
+    <Content Include="Views\UploadDocument\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
