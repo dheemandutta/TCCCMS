@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Upload";
+}
+@section Styles{
+    <link href="~/Scripts/highlight/css/default.css" rel="stylesheet" />
+    <style type="text/css">
+
+        .highlight {
+            background: #b6ff00;
+            padding: 1px;
+            border: #00CC00 dotted 1px;
+        }
+
+        .enable {
+            d
+        }
+
+        .disable {
+            background-color: yellow !important;
+        }
+    </style>
+}
+<h2>Upload</h2>
+
+<div class="row">
+    <div class="text-center col-md-12">
+        @*<p>Bing</p>*@
+
+        <form class="form-inline col-sm-12">
+            <div class="form-group col-md-12">
+                <label>Category</label>
+                @Html.DropDownList("formsCategoryList",(IEnumerable<SelectListItem>)ViewBag.FormsCategory,"Select",  new { @id="ddlCategory",@class= "form-control", onchange = "EnableFileControl(this)" })
+                @*<select id="drpCategory" class="form-control form-control-sm mr-3 w-25" onchange="EnableFileControl(this)">
+                    <option value="0" selected>Select</option>
+                    <option value="1">Volume 1</option>
+                    <option value="2">Volume 2</option>
+                    <option value="3">Volume 3</option>
+                    <option value="5">Volume 5</option>
+                    <option value="6">Volume 6</option>
+                    <option value="7">Volume 7</option>
+                    <option value="8">Volume 8</option>
+                </select>*@
+            </div>
+            <div class="form-group col-md-12">
+                <input type="file" id="fileUpload" multiple size="2" />
+            </div>
+
+            <div class="form-group col-md-12">
+                <input type="button" id="btnUpload" value="Upload" class="form-control btn btn-primary" onclick="UploadFiles()" />
+            </div>
+        </form>
+
+
+
+
+    </div>
+
+</div>
+@section Scripts{
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+
+    <script src="~/js/Upload/UploadDocument.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(':input[type="file"]').prop('disabled', true);
+
+            //$("#drpCategory").change(function () {
+            //    if ($(this).val > 0 ) {
+            //        $("#fileUpload").prop('disabled',false);
+            //    }
+            //});
+        });
+
+    </script>
+}

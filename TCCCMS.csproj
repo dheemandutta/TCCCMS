@@ -579,6 +579,7 @@
     <Content Include="js\owl.carousel.js" />
     <Content Include="js\stellarnav.js" />
     <Content Include="js\theme.js" />
+    <Content Include="js\Upload\UploadDocument.js" />
     <Content Include="js\wow.min.js" />
     <Content Include="packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll" />
     <Content Include="packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.pdb" />
@@ -1287,6 +1288,7 @@
     <Content Include="Views\CompanyPolicyManual\SMS.cshtml" />
     <Content Include="Views\UploadDocument\Index.cshtml" />
     <Content Include="Views\UserMaster\Index.cshtml" />
+    <Content Include="Views\UploadDocument\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
