@@ -83,7 +83,7 @@ function SetUpGrid() {
             //}
 
         ],
-        "rowId": "UserId",
-        "dom": "Bfrtip"
+       // "rowId": "UserId",
+        //"dom": "Bfrtip"
     });
 }

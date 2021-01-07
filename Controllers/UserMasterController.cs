@@ -50,7 +50,7 @@ namespace TCCCMS.Controllers
 
             List<UserMasterPOCO> pocoList = new List<UserMasterPOCO>();
             pocoList = bL.GetAllUserPageWise(pageIndex, ref totalrecords, length/*, int.Parse(Session["VesselID"].ToString())*/);
-            //List<UserMasterPOCO> pList = new List<UserMasterPOCO>();
+            List<UserMasterPOCO> pList = new List<UserMasterPOCO>();
             foreach (UserMasterPOCO pC in pocoList)
             {
                 UserMasterPOCO pOCO = new UserMasterPOCO();
@@ -63,10 +63,10 @@ namespace TCCCMS.Controllers
                 pOCO.VesselIMO = pC.VesselIMO;
                 pOCO.RankName = pC.RankName;
 
-                pocoList.Add(pOCO);
+                pList.Add(pOCO);
             }
 
-            var data = pocoList;
+            var data = pList;
             return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
     }
