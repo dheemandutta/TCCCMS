@@ -123,6 +123,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CompanyPolicyManualController.cs" />
+    <Compile Include="Controllers\GroupMasterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
@@ -904,6 +905,7 @@
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\GroupMaster.js" />
     <Content Include="Scripts\highlight\css\a11y-dark.css" />
     <Content Include="Scripts\highlight\css\a11y-light.css" />
     <Content Include="Scripts\highlight\css\agate.css" />
@@ -1290,6 +1292,7 @@
     <Content Include="Views\UploadDocument\Index.cshtml" />
     <Content Include="Views\UserMaster\Index.cshtml" />
     <Content Include="Views\UploadDocument\Upload.cshtml" />
+    <Content Include="Views\GroupMaster\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

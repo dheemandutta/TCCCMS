@@ -13,6 +13,12 @@ namespace TCCCMS.Business
 {
     public class GroupMasterBL
     {
+        public List<GroupMasterPOCO> GetAllGroupMasterPageWise(int pageIndex, ref int recordCount, int length/*, int VesselID*/)
+        {
+            GroupMasterDAL dAL = new GroupMasterDAL();
+            return dAL.GetAllGroupMasterPageWise(pageIndex, ref recordCount, length/*, VesselID*/);
+        }
+
         public int SaveUpdateGroupMaster(GroupMasterPOCO groupMaster /*,int VesselID*/)
         {
             GroupMasterDAL dAL = new GroupMasterDAL();
@@ -23,6 +29,12 @@ namespace TCCCMS.Business
         {
             GroupMasterDAL dAL = new GroupMasterDAL();
             return dAL.GetAllGroupMaster(/*, VesselID*/);
+        }
+
+        public GroupMasterPOCO GetGroupMasterByGroupId(int GroupId/*, int VesselID*/)
+        {
+            GroupMasterDAL dAL = new GroupMasterDAL();
+            return dAL.GetGroupMasterByGroupId(GroupId/*, VesselID*/);
         }
 
         public int DeleteGroupMaster(int GroupId/*, ref string oUTPUT*/)
