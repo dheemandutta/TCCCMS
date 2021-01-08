@@ -1,12 +1,52 @@
 ﻿function validate() {
     var isValid = true;
 
+    if ($('#RankId').val().length === 0) {
+        $('#RankId').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#RankId').css('border-color', 'lightgrey');
+    }
+
     if ($('#UserName').val().length === 0) {
         $('#UserName').css('border-color', 'Red');
         isValid = false;
     }
     else {
         $('#UserName').css('border-color', 'lightgrey');
+    }
+
+    if ($('#Password').val().length === 0) {
+        $('#Password').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#Password').css('border-color', 'lightgrey');
+    }
+
+    //if ($('#Email').val().length === 0) {
+    //    $('#Email').css('border-color', 'Red');
+    //    isValid = false;
+    //}
+    //else {
+    //    $('#Email').css('border-color', 'lightgrey');
+    //}
+
+    if ($('#Gender').val().length === 0) {
+        $('#Gender').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#Gender').css('border-color', 'lightgrey');
+    }
+
+    if ($('#VesselIMO').val().length === 0) {
+        $('#VesselIMO').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#VesselIMO').css('border-color', 'lightgrey');
     }
 
 
@@ -19,8 +59,8 @@ function clearTextBox() {
     $('#UserName').val("");
     $('#Password').val("");
     $('#Email').val("");
-    $('#CreatedBy').val("");
-    $('#ModifiedBy').val("");
+   // $('#CreatedBy').val("");
+   // $('#ModifiedBy').val("");
     $('#Gender').val("");
     $('#VesselIMO').val("");
 }

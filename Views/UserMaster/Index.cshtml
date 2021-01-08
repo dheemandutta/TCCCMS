@@ -26,7 +26,7 @@
                 <div class="col-md-8 bac1">
 
                     <div style="margin:0 auto" class="tablecontainer">
-                        <button type="button" class="button1" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add User</button><br /><br />
+                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add User</button><br /><br />
                         <input type="hidden" id="hdnrole" />
                         <table id="UserMasterTable" class="display" cellspacing="0">
                             <thead>
@@ -64,7 +64,7 @@
 
                                 <div class="modal-body">
 
-                                    <div class="col-sm-6">
+                                  
                                         <div class="form-group">
                                             <label for="Rank">Rank</label>
                                             @Html.DropDownListFor(model => model.RankId, (IEnumerable<SelectListItem>)ViewBag.Ranks, "Select", new { @class = "form-control" })
@@ -81,9 +81,6 @@
                                             <label for="Email">Email</label>
                                             <input type="text" class="form-control" id="Email" placeholder="Email" />
                                         </div>
-                                    </div>
-
-                                    <div class="col-sm-6">
                                         @*<div class="form-group">
                                             <label for="CreatedBy">Created By</label>
                                             <input type="text" class="form-control" id="CreatedBy" placeholder="Created By" />
@@ -100,14 +97,14 @@
                                             <label for="VesselIMO">Vessel IMO</label>
                                             <input type="text" class="form-control" id="VesselIMO" placeholder="Vessel IMO" />
                                         </div>
-                                    </div>
+                                    
                                 </div>
 
 
                                     <div class="modal-footer" style="background-color:lightgray;">
-                                        <button type="button" class="button1" id="btnAdd" onclick="return SaveUpdateUser();" style="width:138px;">Add</button>
-                                        <button type="button" class="buttonpop" id="btnUpdate" style="display:none; width:86px;" onclick="SaveUpdateUser();">Update</button>
-                                        @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return SaveUpdateUser();">Add</button>
+                                        <button type="button" class="btn btn-info btn-sm" id="btnUpdate" style="background-color: #e90000; display: none; width: 86px;" onclick="SaveUpdateUser();">Update</button>
+                                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal">Close</button>
                                     </div>
                                 </div>
 
