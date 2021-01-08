@@ -21,17 +21,20 @@
         }
     </style>
 }
-<h2>Upload</h2>
+@*<h2>Upload</h2>*@
 
 <div class="row">
-    <div class="text-center col-md-12">
-        @*<p>Bing</p>*@
-
-        <form class="form-inline col-sm-12">
-            <div class="form-group col-md-12">
-                <label>Category</label>
-                @Html.DropDownList("formsCategoryList",(IEnumerable<SelectListItem>)ViewBag.FormsCategory,  new { @id="ddlCategory",@class= "form-control", onchange = "EnableFileControl(this)" })
-                @*<select id="drpCategory" class="form-control form-control-sm mr-3 w-25" onchange="EnableFileControl(this)">
+    <div class="col-md-3">
+        <h2 class="ta">Upload Document </h2>
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="col-md-8">
+                <form class="form-horizontal">
+                    <div class="form-group col-md-12">
+                        <label>Category</label>
+                        @Html.DropDownList("formsCategoryList", (IEnumerable<SelectListItem>)ViewBag.FormsCategory, new { @id = "ddlCategory", @class = "form-control", onchange = "EnableFileControl(this)" })
+                        @*<select id="drpCategory" class="form-control form-control-sm mr-3 w-25" onchange="EnableFileControl(this)">
                     <option value="0" selected>Select</option>
                     <option value="1">Volume 1</option>
                     <option value="2">Volume 2</option>
@@ -41,15 +44,18 @@
                     <option value="7">Volume 7</option>
                     <option value="8">Volume 8</option>
                 </select>*@
-            </div>
-            <div class="form-group col-md-12">
-                <input type="file" id="fileUpload" multiple size="2" />
-            </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <input type="file" id="fileUpload" multiple size="2" />
+                    </div>
 
-            <div class="form-group col-md-12">
-                <input type="button" id="btnUpload" value="Upload" class="form-control btn btn-primary" onclick="UploadFiles()" />
+                    <div class="form-group col-md-12">
+                        <input type="button" id="btnUpload" value="Upload" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="UploadFiles()" />
+                    </div>
+                </form>
             </div>
-        </form>
+        </div>
+        
 
 
 
