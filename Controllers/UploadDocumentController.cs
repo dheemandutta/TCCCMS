@@ -44,16 +44,26 @@ namespace TCCCMS.Controllers
         [HttpPost]
         public ActionResult UploadFiles(FormsCategory category, string categoryId, string categoryName, List<HttpPostedFileBase> fileData)
         {
+            List<Forms> formList = new List<Forms>();
+            UploadDocumentBL uploadBL = new UploadDocumentBL();
             
             if (Request.Files.Count > 0)
             {
                 try
                 {
+                    string path = Server.MapPath("~/Uploads/");
+                    string fileFath = Path.Combine(path, categoryName);
+                    if (!Directory.Exists(fileFath))
+                    {
+                        Directory.CreateDirectory(fileFath);
+                    }
                     //  Get all files from Request object  
                     HttpFileCollectionBase files = Request.Files;
-                    var s = Request.Params.Keys;
                     for (int i = 0; i < files.Count; i++)
                     {
+                        Forms form = new Forms();
+
+                        
                         //string path = AppDomain.CurrentDomain.BaseDirectory + "Uploads/";  
                         //string filename = Path.GetFileName(Request.Files[i].FileName);  
 
@@ -72,9 +82,19 @@ namespace TCCCMS.Controllers
                         }
 
                         // Get the complete folder path and store the file inside it.  
-                        fname = Path.Combine(Server.MapPath("~/Uploads/"), fname);
-                        file.SaveAs(fname);
+                        string fnameWithPath = Path.Combine(fileFath, fname);
+                        file.SaveAs(fnameWithPath);
+
+                        form.FormName   = fname;
+                        form.FilePath   = fileFath;
+                        form.CategoryId = Convert.ToInt32(categoryId);
+                        form.CreateedBy = 1;
+
+                        formList.Add(form);
+
                     }
+
+                   int count = uploadBL.SaveUploadedForms(formList);
                     // Returns message that successfully uploaded  
                     return Json("File Uploaded Successfully!");
                 }

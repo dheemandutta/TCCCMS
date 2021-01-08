@@ -30,7 +30,7 @@
         <form class="form-inline col-sm-12">
             <div class="form-group col-md-12">
                 <label>Category</label>
-                @Html.DropDownList("formsCategoryList",(IEnumerable<SelectListItem>)ViewBag.FormsCategory,"Select",  new { @id="ddlCategory",@class= "form-control", onchange = "EnableFileControl(this)" })
+                @Html.DropDownList("formsCategoryList",(IEnumerable<SelectListItem>)ViewBag.FormsCategory,  new { @id="ddlCategory",@class= "form-control", onchange = "EnableFileControl(this)" })
                 @*<select id="drpCategory" class="form-control form-control-sm mr-3 w-25" onchange="EnableFileControl(this)">
                     <option value="0" selected>Select</option>
                     <option value="1">Volume 1</option>
