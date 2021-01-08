@@ -1,6 +1,6 @@
 ﻿function EnableFileControl(x) {
     var catId = x.value;
-    if (catId !== "" | catId != "undefined" | catId != null) {
+    if (catId > 0) {
         $("#fileUpload").prop('disabled', false);
     }
     else {
@@ -35,13 +35,13 @@ function UploadFiles() {
     //********--------------------------------------------------------------------------
      //Checking whether FormData is available in browser  
     if (window.FormData !== undefined) {
-        var catId = $("#drpCategory").val();
-        var catName = $("#drpCategory option:selected").text();
+        var catId = $("#ddlCategory").val();
+        var catName = $("#ddlCategory option:selected").text();
         var fileUpload = $("#fileUpload").get(0);
         var files = fileUpload.files;
         // Create FormData object  
         var fileData = new FormData();
-        var cate = {
+        var cate = {//--Not required
             ID: '2',
             CatecoryName:'Admin'
 
@@ -53,7 +53,7 @@ function UploadFiles() {
         }
 
         // Adding one more key to FormData object  
-        fileData.append('category', cate);
+        fileData.append('category', cate);//--Not required
         fileData.append('categoryId', catId);
         fileData.append('categoryName', catName);
 

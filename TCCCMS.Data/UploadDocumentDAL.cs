@@ -55,12 +55,14 @@ namespace TCCCMS.Data
             {
                 SqlConnection con = new SqlConnection(connectionString);
                 con.Open();
-                SqlCommand cmd = new SqlCommand("SaveFormsDetails", con);
+                SqlCommand cmd  = new SqlCommand("SaveFormsDetails", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@Name", form.FormName);
-                cmd.Parameters.AddWithValue("@Path", form.FilePath);
-                cmd.Parameters.AddWithValue("@CategoryId", form.CategoryId);
+                cmd.Parameters.AddWithValue("@Name",        form.FormName);
+                cmd.Parameters.AddWithValue("@Path",        form.FilePath);
+                cmd.Parameters.AddWithValue("@CategoryId",  form.CategoryId);
+                cmd.Parameters.AddWithValue("@Description", form.FormName);
+                cmd.Parameters.AddWithValue("@User",        form.CreateedBy);
                 int x = cmd.ExecuteNonQuery();
                 con.Close();
                 recorSaved = recorSaved + x;
