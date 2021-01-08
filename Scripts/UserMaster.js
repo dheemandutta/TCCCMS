@@ -42,8 +42,8 @@ function SaveUpdateUser() {
             UserName: $('#UserName').val(),
             Password: $('#Password').val(),
             Email: $('#Email').val(),
-            CreatedBy: $('#CreatedBy').val(),
-            ModifiedBy: $('#ModifiedBy').val(),
+            //CreatedBy: $('#CreatedBy').val(),
+            //ModifiedBy: $('#ModifiedBy').val(),
             Gender: $('#Gender').val(),
             VesselIMO: $('#VesselIMO').val()
         };
@@ -152,12 +152,12 @@ function SetUpGrid() {
             {
                 "data": "Email", "name": "Email", "autoWidth": true
             },
-            {
-                "data": "CreatedBy", "name": "CreatedBy", "autoWidth": true
-            },
-            {
-                "data": "ModifiedBy", "name": "ModifiedBy", "autoWidth": true
-            },
+            //{
+            //    "data": "CreatedBy", "name": "CreatedBy", "autoWidth": true
+            //},
+            //{
+            //    "data": "ModifiedBy", "name": "ModifiedBy", "autoWidth": true
+            //},
             {
                 "data": "Gender", "name": "Gender", "autoWidth": true
             },
@@ -243,8 +243,8 @@ function GetUserByUserId(UserId) {
             $('#Password').val(result.Password);
             $('#CreatedOn').val(result.CreatedOn);
             $('#Email').val(result.Email);
-            $('#CreatedBy').val(result.CreatedBy);
-            $('#ModifiedBy').val(result.ModifiedBy);
+            //$('#CreatedBy').val(result.CreatedBy);
+            //$('#ModifiedBy').val(result.ModifiedBy);
             $('#Gender').val(result.Gender);
             $('#VesselIMO').val(result.VesselIMO);
             $('#RankId').val(result.RankId);

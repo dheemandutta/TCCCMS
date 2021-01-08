@@ -259,11 +259,11 @@ namespace TCCCMS.Data
                     if (item["Email"] != System.DBNull.Value)
                         pPOCOPC.Email = item["Email"].ToString();
 
-                    if (item["CreatedBy"] != System.DBNull.Value)
-                        pPOCOPC.CreatedBy = item["CreatedBy"].ToString();
+                    //if (item["CreatedBy"] != System.DBNull.Value)
+                    //    pPOCOPC.CreatedBy = item["CreatedBy"].ToString();
 
-                    if (item["ModifiedBy"] != System.DBNull.Value)
-                        pPOCOPC.ModifiedBy = item["ModifiedBy"].ToString();
+                    //if (item["ModifiedBy"] != System.DBNull.Value)
+                    //    pPOCOPC.ModifiedBy = item["ModifiedBy"].ToString();
 
                     if (item["Gender"] != System.DBNull.Value)
                         pPOCOPC.Gender = item["Gender"].ToString();

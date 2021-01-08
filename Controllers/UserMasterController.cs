@@ -59,8 +59,8 @@ namespace TCCCMS.Controllers
                 pOCO.UserName = pC.UserName;
                 pOCO.CreatedOn = pC.CreatedOn;
                 pOCO.Email = pC.Email;
-                pOCO.CreatedBy = pC.CreatedBy;
-                pOCO.ModifiedBy = pC.ModifiedBy;
+                //pOCO.CreatedBy = pC.CreatedBy;
+                //pOCO.ModifiedBy = pC.ModifiedBy;
                 pOCO.Gender = pC.Gender;
                 pOCO.VesselIMO = pC.VesselIMO;
                 pOCO.RankName = pC.RankName;
@@ -140,8 +140,8 @@ namespace TCCCMS.Controllers
             dept.Password = pOCOList.Password;
             dept.CreatedOn = pOCOList.CreatedOn;
             dept.Email = pOCOList.Email;
-            dept.CreatedBy = pOCOList.CreatedBy;
-            dept.ModifiedBy = pOCOList.ModifiedBy;
+            //dept.CreatedBy = pOCOList.CreatedBy;
+            //dept.ModifiedBy = pOCOList.ModifiedBy;
             dept.Gender = pOCOList.Gender;
             dept.VesselIMO = pOCOList.VesselIMO;
             dept.RankId = pOCOList.RankId;
