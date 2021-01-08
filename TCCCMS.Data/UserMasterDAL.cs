@@ -128,7 +128,7 @@ namespace TCCCMS.Data
                         {
                             UserId = Convert.ToInt32(dr["UserId"]),
                             UserName = Convert.ToString(dr["UserName"]),
-                            CreatedOn = Convert.ToDateTime(dr["CreatedOn"]),
+                            CreatedOn1 = Convert.ToString(dr["CreatedOn"]),
                             Email = Convert.ToString(dr["Email"]),
                             CreatedBy = Convert.ToString(dr["CreatedBy"]),
                             ModifiedBy = Convert.ToString(dr["ModifiedBy"]),

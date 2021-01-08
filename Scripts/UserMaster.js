@@ -187,7 +187,7 @@ function SetUpGrid() {
                 "data": "UserName", "name": "UserName", "autoWidth": true
             },
             {
-                "data": "CreatedOn", "name": "CreatedOn", "autoWidth": true
+                "data": "CreatedOn1", "name": "CreatedOn1", "autoWidth": true
             },
             {
                 "data": "Email", "name": "Email", "autoWidth": true

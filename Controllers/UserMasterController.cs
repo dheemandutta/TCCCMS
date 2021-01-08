@@ -57,7 +57,7 @@ namespace TCCCMS.Controllers
                 UserMasterPOCO pOCO = new UserMasterPOCO();
                 pOCO.UserId = pC.UserId;
                 pOCO.UserName = pC.UserName;
-                pOCO.CreatedOn = pC.CreatedOn;
+                pOCO.CreatedOn1 = pC.CreatedOn1;
                 pOCO.Email = pC.Email;
                 //pOCO.CreatedBy = pC.CreatedBy;
                 //pOCO.ModifiedBy = pC.ModifiedBy;
