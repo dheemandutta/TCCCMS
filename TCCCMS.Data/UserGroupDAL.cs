@@ -132,5 +132,53 @@ namespace TCCCMS.Data
             return recordsAffected;
         }
 
+
+
+        //for User drp
+        public List<UserGroupPOCO> GetAllUserForDrp(/*int VesselID*/)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("usp_GetAllUserForDrp", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@VesselID", VesselID);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            DataTable myTable = ds.Tables[0];
+            List<UserGroupPOCO> ranksList = myTable.AsEnumerable().Select(m => new UserGroupPOCO()
+            {
+                UserId = m.Field<int>("UserId"),
+                UserName = m.Field<string>("UserName"),
+
+            }).ToList();
+            con.Close();
+            return ranksList;
+
+        }
+
+
+        //for Group drp
+        public List<UserGroupPOCO> GetAllGroupsForDrp(/*int VesselID*/)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("usp_GetAllGroupsForDrp", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@VesselID", VesselID);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            DataTable myTable = ds.Tables[0];
+            List<UserGroupPOCO> ranksList = myTable.AsEnumerable().Select(m => new UserGroupPOCO()
+            {
+                GroupId = m.Field<int>("GroupId"),
+                GroupName = m.Field<string>("GroupName"),
+
+            }).ToList();
+            con.Close();
+            return ranksList;
+
+        }
     }
 }

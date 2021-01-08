@@ -25,10 +25,19 @@ namespace TCCCMS.Business
             return dAL.GetAllUserGroupByUserID(UserId/*, VesselID*/);
         }
 
-        public int DeleteUserGroup(int GroupId/*, ref string oUTPUT*/)
+
+        //for user drp
+        public List<UserGroupPOCO> GetAllUserForDrp(/*int VesselID*/)
         {
             UserGroupDAL dAL = new UserGroupDAL();
-            return dAL.DeleteUserGroup(GroupId/*, ref oUTPUT*/);
+            return dAL.GetAllUserForDrp(/*VesselID*/);
+        }
+
+        //for group drp
+        public List<UserGroupPOCO> GetAllGroupsForDrp(/*int VesselID*/)
+        {
+            UserGroupDAL dAL = new UserGroupDAL();
+            return dAL.GetAllGroupsForDrp(/*VesselID*/);
         }
     }
 }

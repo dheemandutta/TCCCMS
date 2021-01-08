@@ -20,5 +20,8 @@ namespace TCCCMS.Models
         public int IsActive { get; set; }
         public string CreatedBy { get; set; }
         public string ModifiedBy { get; set; }
+
+
+        public IList<KeyValuePair<string,string>> Groups { get; set; }
     }
 }

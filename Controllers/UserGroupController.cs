@@ -1,0 +1,102 @@
+﻿using TCCCMS.Models;
+using TCCCMS.Business;
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.Mvc;
+using System.Text.RegularExpressions;
+
+namespace TCCCMS.Controllers
+{
+    public class UserGroupController : Controller
+    {
+        // GET: UserGroup
+        public ActionResult Index()
+        {
+            UserGroupPOCO poco = new UserGroupPOCO();
+            poco = GetAllGroupsForDrp();
+
+            GetAllUserForDrp();
+            //GetAllGroupsForDrp();
+            return View(poco);
+        }
+
+
+
+        //for User drp
+        public void GetAllUserForDrp()
+        {
+            UserGroupBL bL = new UserGroupBL();
+            List<UserGroupPOCO> pocoList = new List<UserGroupPOCO>();
+
+            pocoList = bL.GetAllUserForDrp(/*int.Parse(Session["VesselID"].ToString())*/);
+
+
+            List<UserGroupPOCO> itmasterList = new List<UserGroupPOCO>();
+
+            foreach (UserGroupPOCO up in pocoList)
+            {
+                UserGroupPOCO unt = new UserGroupPOCO();
+                unt.UserId = up.UserId;
+                unt.UserName = up.UserName;
+
+                itmasterList.Add(unt);
+            }
+
+            ViewBag.Users = itmasterList.Select(x =>
+                                            new SelectListItem()
+                                            {
+                                                Text = x.UserName,
+                                                Value = x.UserId.ToString()
+                                            });
+
+        }
+
+
+        //for Group drp
+        public UserGroupPOCO GetAllGroupsForDrp()
+        {
+            UserGroupBL bL = new UserGroupBL();
+            List<UserGroupPOCO> pocoList = new List<UserGroupPOCO>();
+
+            pocoList = bL.GetAllGroupsForDrp();
+            UserGroupPOCO pOCO = new UserGroupPOCO();
+
+            var list = new List<KeyValuePair<string, string>>();
+
+            foreach (UserGroupPOCO up in pocoList)
+            {
+                UserGroupPOCO unt = new UserGroupPOCO();
+                //unt.GroupId = up.GroupId;
+                //unt.GroupName = up.GroupName;
+
+
+
+                list.Add(new KeyValuePair<string, string>(up.GroupId.ToString(), up.GroupName));
+
+                //itmasterList.Add(unt);
+            }
+
+            pOCO.Groups = list;
+
+            //ViewBag.Groups = itmasterList.Select(x =>
+            //                                new SelectListItem()
+            //                                {
+            //                                    Text = x.GroupName,
+            //                                    Value = x.GroupId.ToString()
+            //                                });
+
+            return pOCO;
+        }
+
+
+
+
+
+
+
+
+    }
+}
