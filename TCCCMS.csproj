@@ -1242,6 +1242,7 @@
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\06.01.2021_Full_Script_Of_TCCCMSDB.sql" />
+    <Content Include="SQL Script\08.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\Full_ScriptOf_TCCCMSDB.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

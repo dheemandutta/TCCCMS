@@ -31,7 +31,7 @@ namespace TCCCMS.Business
             return dAL.GetAllUser(/*, VesselID*/);
         }
 
-        public List<UserMasterPOCO> GetUserByUserId(int UserId/*, int VesselID*/)
+        public UserMasterPOCO GetUserByUserId(int UserId/*, int VesselID*/)
         {
             UserMasterDAL dAL = new UserMasterDAL();
             return dAL.GetUserByUserId(UserId/*, VesselID*/);
