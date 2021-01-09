@@ -19,6 +19,12 @@ namespace TCCCMS.Business
             return dAL.SaveUpdateUserGroup(groupMaster/*, VesselID*/);
         }
 
+        public List<UserGroupPOCO> GetAllUserGroupPageWise(int pageIndex, ref int recordCount, int length/*, int VesselID*/)
+        {
+            UserGroupDAL dAL = new UserGroupDAL();
+            return dAL.GetAllUserGroupPageWise(pageIndex, ref recordCount, length/*, VesselID*/);
+        }
+
         public List<UserGroupPOCO> GetAllUserGroupByUserID(int UserId/*, int VesselID*/)
         {
             UserGroupDAL dAL = new UserGroupDAL();

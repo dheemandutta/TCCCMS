@@ -25,7 +25,7 @@
             <div class="row">
                 <div class="col-md-8 bac1">
 
-                    <div style="margin:0 auto" class="tablecontainer">
+                    @*<div style="margin:0 auto" class="tablecontainer">
                         <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add User Group</button><br /><br />
                         <input type="hidden" id="hdnrole" />
                         <table id="UserGroupTable" class="display" cellspacing="0">
@@ -33,26 +33,23 @@
                                 <tr>
                                     <th>User Name</th>
                                     <th>Selected Group</th>
-                                    @*<th>Created By</th>
-                                      <th>Modified By</th>*@
-
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                             </thead>
                         </table>
-                    </div>
+                    </div>*@
 
                     <!-- Modal -->
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
+                    @*<div class="modal fade" id="myModal" role="dialog">*@
+                        @*<div class="modal-dialog">*@
 
                             <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header" style="background-color: #e90000;">
+                            @*<div class="modal-content">*@
+                                @*<div class="modal-header" style="background-color: #e90000;">
                                     <h4 class="modal-title">Add User</h4>
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
+                                </div>*@
 
                                 <div class="form-group">
                                     <input type="hidden" id="UserGroupId" />
@@ -91,29 +88,16 @@
                                         }
                                     </div>
 
-
-                                    @*<div class="form-group">
-            <label for="CreatedBy">Created By</label>
-            <input type="text" class="form-control" id="CreatedBy" placeholder="Created By" />
-        </div>
-        <div class="form-group">
-            <label for="ModifiedBy">Modified By</label>
-            <input type="text" class="form-control" id="Modified By" placeholder="ModifiedBy" />
-        </div>*@
-
-
                                 </div>
 
 
-                                <div class="modal-footer" style="background-color:lightgray;">
+                                <div class="modal-footer" @*style="background-color:lightgray;"*@>
                                     <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return SaveUpdateUserGroup();">Add</button>
-                                    <button type="button" class="btn btn-info btn-sm" id="btnUpdate" style="background-color: #e90000; display: none; width: 86px;" onclick="SaveUpdateUserGroup();">Update</button>
-                                    <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal">Close</button>
                                 </div>
-                            </div>
+                            @*</div>*@
 
-                        </div>
-                    </div>
+                        @*</div>*@
+                    @*</div>*@
                 </div>
             </div>
         </div>
