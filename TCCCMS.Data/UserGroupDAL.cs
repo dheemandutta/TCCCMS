@@ -103,7 +103,24 @@ namespace TCCCMS.Data
         }
 
 
+        public int SaveUserGroupMapping(int userId,string userGroupMapping)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("stpSaveUserGroupMapping", con);
+            cmd.CommandType = CommandType.StoredProcedure;
 
+            cmd.Parameters.AddWithValue("@UserId", userId);
+            if(! String.IsNullOrEmpty(userGroupMapping))
+                cmd.Parameters.AddWithValue("@MappingGroups", userGroupMapping);
+            else
+                cmd.Parameters.AddWithValue("@MappingGroups", DBNull.Value);
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return recordsAffected;
+        }
 
 
         public List<UserGroupPOCO> GetAllUserGroupByUserID(int UserId)
@@ -126,6 +143,31 @@ namespace TCCCMS.Data
             }
             return ConvertDataTableToUserGroupList(ds);
         }
+
+        public string GetAllCommaSeperatedUserGroupByUserId(int userId)
+        {
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetAllUserGroupByUserID", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    con.Close();
+                }
+            }
+
+            var groupIds = ds.Tables[0].AsEnumerable().Select(s => s.Field<int>("GroupId")).ToArray();
+            string commaSeperatedGroups = String.Join(",", groupIds);
+
+            return commaSeperatedGroups;
+
+        }
+
 
         private List<UserGroupPOCO> ConvertDataTableToUserGroupList(DataSet ds)
         {
