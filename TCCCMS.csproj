@@ -127,6 +127,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
+    <Compile Include="Controllers\RoleMasterController.cs" />
     <Compile Include="Controllers\UploadDocumentController.cs" />
     <Compile Include="Controllers\UserGroupController.cs" />
     <Compile Include="Controllers\UserMasterController.cs" />
@@ -1208,6 +1209,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\RoleMaster.js" />
     <Content Include="Scripts\src\index.js" />
     <Content Include="Scripts\src\methods\defaults.js" />
     <Content Include="Scripts\src\methods\destroy.js" />
@@ -1284,6 +1286,7 @@
     <Content Include="SQL Script\06.01.2021_Full_Script_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\08.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\09.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
+    <Content Include="SQL Script\09.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29_II.sql" />
     <Content Include="SQL Script\Full_ScriptOf_TCCCMSDB.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1333,6 +1336,7 @@
     <Content Include="Views\UploadDocument\Upload.cshtml" />
     <Content Include="Views\GroupMaster\Index.cshtml" />
     <Content Include="Views\UserGroup\Index.cshtml" />
+    <Content Include="Views\RoleMaster\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
