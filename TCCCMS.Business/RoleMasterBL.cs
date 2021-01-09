@@ -19,6 +19,18 @@ namespace TCCCMS.Business
             return dAL.SaveUpdateRoleMaster(pOCO/*, VesselID*/);
         }
 
+        public List<RoleMasterPOCO> GetAllRoleMasterPageWise(int pageIndex, ref int recordCount, int length/*, int VesselID*/)
+        {
+            RoleMasterDAL dAL = new RoleMasterDAL();
+            return dAL.GetAllRoleMasterPageWise(pageIndex, ref recordCount, length/*, VesselID*/);
+        }
+
+        public RoleMasterPOCO GetRoleMasterByRoleId(int RoleId/*, int VesselID*/)
+        {
+            RoleMasterDAL dAL = new RoleMasterDAL();
+            return dAL.GetRoleMasterByRoleId(RoleId/*, VesselID*/);
+        }
+
         public int DeleteRoleMaster(int RoleId/*, ref string oUTPUT*/)
         {
             RoleMasterDAL dAL = new RoleMasterDAL();
