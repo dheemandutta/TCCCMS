@@ -13,16 +13,34 @@ namespace TCCCMS.Business
 {
     public class PermissionRoleBL
     {
-        public int SavePermissionRole(PermissionRolePOCO pOCO /*,int VesselID*/)
+
+        public string GetAllCommaSeperatedPermissionRoleByPermissionId(int permissionId)
         {
             PermissionRoleDAL dAL = new PermissionRoleDAL();
-            return dAL.SavePermissionRole(pOCO/*, VesselID*/);
+            return dAL.GetAllCommaSeperatedPermissionRoleByPermissionId(permissionId);
+
         }
 
-        public int DeletePermissionRole(int PermissionRoleId/*, ref string oUTPUT*/)
+        public int SavePermissionRole(int permissionId, string permissionRole)
         {
             PermissionRoleDAL dAL = new PermissionRoleDAL();
-            return dAL.DeletePermissionRole(PermissionRoleId/*, ref oUTPUT*/);
+            return dAL.SavePermissionRole(permissionId, permissionRole);
         }
+
+
+        //for permission drp
+        public List<PermissionRolePOCO> GetAllPermissionForDrp(/*int VesselID*/)
+        {
+            PermissionRoleDAL dAL = new PermissionRoleDAL();
+            return dAL.GetAllPermissionForDrp(/*VesselID*/);
+        }
+
+        //for Role drp
+        public List<PermissionRolePOCO> GetAllRolesForDrp(/*int VesselID*/)
+        {
+            PermissionRoleDAL dAL = new PermissionRoleDAL();
+            return dAL.GetAllRoleForDrp(/*VesselID*/);
+        }
+
     }
 }
