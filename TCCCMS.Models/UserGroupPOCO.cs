@@ -15,10 +15,14 @@ namespace TCCCMS.Models
 
         public int GroupId { get; set; }
         public string GroupName { get; set; }
-        public string SelectedGroup { get; set; }
+        public string SelectedGroups { get; set; }
 
         public int IsActive { get; set; }
         public string CreatedBy { get; set; }
         public string ModifiedBy { get; set; }
+
+
+
+        public IList<KeyValuePair<string,string>> Groups { get; set; }
     }
 }

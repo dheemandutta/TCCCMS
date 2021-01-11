@@ -128,6 +128,9 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
+    <Compile Include="Controllers\RoleMasterController.cs" />
+    <Compile Include="Controllers\UploadDocumentController.cs" />
+    <Compile Include="Controllers\UserGroupController.cs" />
     <Compile Include="Controllers\UserMasterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -141,6 +144,9 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\notify.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -226,6 +232,8 @@
     <Content Include="DataTables\Buttons-1.6.5\css\buttons.jqueryui.min.css" />
     <Content Include="DataTables\Buttons-1.6.5\css\buttons.semanticui.css" />
     <Content Include="DataTables\Buttons-1.6.5\css\buttons.semanticui.min.css" />
+    <Content Include="DataTables\Buttons-1.6.5\css\common.scss" />
+    <Content Include="DataTables\Buttons-1.6.5\css\mixins.scss" />
     <Content Include="DataTables\Buttons-1.6.5\js\buttons.bootstrap.js" />
     <Content Include="DataTables\Buttons-1.6.5\js\buttons.bootstrap.min.js" />
     <Content Include="DataTables\Buttons-1.6.5\js\buttons.bootstrap4.js" />
@@ -606,8 +614,7 @@
     <Content Include="packages\bootstrap.4.5.3\content\Scripts\bootstrap.js" />
     <Content Include="packages\bootstrap.4.5.3\content\Scripts\bootstrap.min.js" />
     <Content Include="packages\bootstrap.4.5.3\LICENSE.txt" />
-    <Content Include="DataTables\Buttons-1.6.5\css\common.scss" />
-    <Content Include="DataTables\Buttons-1.6.5\css\mixins.scss" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
@@ -905,6 +912,36 @@
     <Content Include="Scripts\esm\popper-utils.min.js" />
     <Content Include="Scripts\esm\popper.js" />
     <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\gijgo\combined\gijgo.js" />
+    <Content Include="Scripts\gijgo\combined\gijgo.min.js" />
+    <Content Include="Scripts\gijgo\combined\messages\messages.bg-bg.js" />
+    <Content Include="Scripts\gijgo\combined\messages\messages.bg-bg.min.js" />
+    <Content Include="Scripts\gijgo\combined\messages\messages.de-de.js" />
+    <Content Include="Scripts\gijgo\combined\messages\messages.de-de.min.js" />
+    <Content Include="Scripts\gijgo\combined\messages\messages.fr-fr.js" />
+    <Content Include="Scripts\gijgo\combined\messages\messages.fr-fr.min.js" />
+    <Content Include="Scripts\gijgo\combined\messages\messages.pt-br.js" />
+    <Content Include="Scripts\gijgo\combined\messages\messages.pt-br.min.js" />
+    <Content Include="Scripts\gijgo\modular\checkbox.js" />
+    <Content Include="Scripts\gijgo\modular\checkbox.min.js" />
+    <Content Include="Scripts\gijgo\modular\core.js" />
+    <Content Include="Scripts\gijgo\modular\core.min.js" />
+    <Content Include="Scripts\gijgo\modular\datepicker.js" />
+    <Content Include="Scripts\gijgo\modular\datepicker.min.js" />
+    <Content Include="Scripts\gijgo\modular\dialog.js" />
+    <Content Include="Scripts\gijgo\modular\dialog.min.js" />
+    <Content Include="Scripts\gijgo\modular\draggable.js" />
+    <Content Include="Scripts\gijgo\modular\draggable.min.js" />
+    <Content Include="Scripts\gijgo\modular\dropdown.js" />
+    <Content Include="Scripts\gijgo\modular\dropdown.min.js" />
+    <Content Include="Scripts\gijgo\modular\droppable.js" />
+    <Content Include="Scripts\gijgo\modular\droppable.min.js" />
+    <Content Include="Scripts\gijgo\modular\editor.js" />
+    <Content Include="Scripts\gijgo\modular\editor.min.js" />
+    <Content Include="Scripts\gijgo\modular\grid.js" />
+    <Content Include="Scripts\gijgo\modular\grid.min.js" />
+    <Content Include="Scripts\gijgo\modular\tree.js" />
+    <Content Include="Scripts\gijgo\modular\tree.min.js" />
     <Content Include="Scripts\GroupMaster.js" />
     <Content Include="Scripts\highlight\css\a11y-dark.css" />
     <Content Include="Scripts\highlight\css\a11y-light.css" />
@@ -1161,6 +1198,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.min.js" />
+    <Content Include="Scripts\jquery.bootstrap-duallistbox.min.js" />
+    <Content Include="Scripts\jquery.typeahead.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -1171,6 +1210,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\RoleMaster.js" />
     <Content Include="Scripts\src\index.js" />
     <Content Include="Scripts\src\methods\defaults.js" />
     <Content Include="Scripts\src\methods\destroy.js" />
@@ -1240,11 +1280,15 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Scripts\Upload\filedrop.js" />
     <Content Include="Scripts\Upload\jquery.filedrop.js" />
+    <Content Include="Scripts\UserGroup.js" />
     <Content Include="Scripts\UserMaster.js" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\06.01.2021_Full_Script_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\08.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
+    <Content Include="SQL Script\09.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
+    <Content Include="SQL Script\09.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29_II.sql" />
+    <Content Include="SQL Script\11.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\Full_ScriptOf_TCCCMSDB.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1294,10 +1338,12 @@
     <Content Include="Views\Document\Index.cshtml" />
     <Content Include="Views\Document\Upload.cshtml" />
     <Content Include="Views\Document\List.cshtml" />
+    <Content Include="Views\UserGroup\Index.cshtml" />
+    <Content Include="Views\RoleMaster\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Model\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
