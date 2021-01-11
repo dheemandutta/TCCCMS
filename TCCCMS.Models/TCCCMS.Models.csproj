@@ -44,6 +44,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="Forms.cs" />
     <Compile Include="FormsCategory.cs" />
+    <Compile Include="FormsViewModel.cs" />
     <Compile Include="GroupMasterPOCO.cs" />
     <Compile Include="Manual.cs" />
     <Compile Include="ManualViewModel.cs" />

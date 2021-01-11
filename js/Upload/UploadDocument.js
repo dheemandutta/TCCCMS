@@ -137,3 +137,66 @@ function ClearFields() {
     $("#fileUpload").prop('disabled', true);
     $("#ddlCategory").prop('selectedIndex', 0);
 }
+
+function LoadFormsList(x) {
+    var catId = x.value;
+    var catName = $("#ddlCategory option:selected").text();;
+    if (catId > 0) {
+        SetUpGrid(catId, catName);
+    }
+
+}
+
+function SetUpGrid(catId,catName) {
+    var loadposturl = $('#loaddata').val();
+
+    //do not throw error
+    $.fn.dataTable.ext.errMode = 'none';
+
+    //check if datatable is already created then destroy iy and then create it
+    if ($.fn.dataTable.isDataTable('#formsTable')) {
+        table = $('#formsTable').DataTable();
+        table.destroy();
+    }
+
+    // alert('hh');
+    var table = $("#formsTable").DataTable({
+        "dom": 'Bfrtip',
+        "rowReorder": false,
+        "ordering": false,
+        "filter": false, // this is for disable filter (search box)
+        "bPaginate": false, //this is for hide pagination
+        "bInfo": false, // hide showing entries
+        "buttons": [
+            //{ extend: "excel", className: "buttonsToHide" },
+            //{ extend: "pdf", className: "buttonsToHide" },
+            //{ extend: "print", className: "buttonsToHide" }
+        ],
+
+        "ajax": {
+            "url": loadposturl,
+            "type": "POST",
+            "datatype": "json",
+            "data": { catId : catId }
+        },
+        "columns": [
+            {
+                "data": "RowNumber", "name": "RowNumber", "autoWidth": true
+            },
+            {
+                "data": "FormName", "name": "FormsName", "autoWidth": true
+            },
+            
+
+            {
+                "data": "FormName", "width": "50px", "render": function (data) {
+                    return '<a href="/Document/Download?catName=' + catName + '&formName=' + data +'" class="btn btn-info btn-sm" style="background-color: #e90000;" >Download</a>';
+                }
+            }
+
+        ],
+        "rowId": "ID",
+        "dom": "Bfrtip"
+    });
+    //table.buttons('.buttonsToHide').nodes().addClass('hidden');
+}
