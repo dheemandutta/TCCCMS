@@ -32,8 +32,22 @@ namespace TCCCMS.Business
         }
 
 
-        //for user drp
-        public List<UserGroupPOCO> GetAllUserForDrp(/*int VesselID*/)
+        public string GetAllCommaSeperatedUserGroupByUserId(int userId)
+        {
+            UserGroupDAL dAL = new UserGroupDAL();
+            return dAL.GetAllCommaSeperatedUserGroupByUserId(userId);
+            
+        }
+
+        public int SaveUserGroupMapping(int userId, string userGroupMapping)
+        {
+            UserGroupDAL dAL = new UserGroupDAL();
+            return dAL.SaveUserGroupMapping(userId, userGroupMapping);
+        }
+
+
+            //for user drp
+            public List<UserGroupPOCO> GetAllUserForDrp(/*int VesselID*/)
         {
             UserGroupDAL dAL = new UserGroupDAL();
             return dAL.GetAllUserForDrp(/*VesselID*/);

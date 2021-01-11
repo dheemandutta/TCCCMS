@@ -143,6 +143,9 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\notify.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -228,6 +231,8 @@
     <Content Include="DataTables\Buttons-1.6.5\css\buttons.jqueryui.min.css" />
     <Content Include="DataTables\Buttons-1.6.5\css\buttons.semanticui.css" />
     <Content Include="DataTables\Buttons-1.6.5\css\buttons.semanticui.min.css" />
+    <Content Include="DataTables\Buttons-1.6.5\css\common.scss" />
+    <Content Include="DataTables\Buttons-1.6.5\css\mixins.scss" />
     <Content Include="DataTables\Buttons-1.6.5\js\buttons.bootstrap.js" />
     <Content Include="DataTables\Buttons-1.6.5\js\buttons.bootstrap.min.js" />
     <Content Include="DataTables\Buttons-1.6.5\js\buttons.bootstrap4.js" />
@@ -608,8 +613,7 @@
     <Content Include="packages\bootstrap.4.5.3\content\Scripts\bootstrap.js" />
     <Content Include="packages\bootstrap.4.5.3\content\Scripts\bootstrap.min.js" />
     <Content Include="packages\bootstrap.4.5.3\LICENSE.txt" />
-    <Content Include="DataTables\Buttons-1.6.5\css\common.scss" />
-    <Content Include="DataTables\Buttons-1.6.5\css\mixins.scss" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
