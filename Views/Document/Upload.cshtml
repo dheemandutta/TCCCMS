@@ -12,10 +12,6 @@
             border: #00CC00 dotted 1px;
         }
 
-        .enable {
-            d
-        }
-
         .disable {
             background-color: yellow !important;
         }
@@ -35,15 +31,15 @@
                         <label>Category</label>
                         @Html.DropDownList("formsCategoryList", (IEnumerable<SelectListItem>)ViewBag.FormsCategory, new { @id = "ddlCategory", @class = "form-control", onchange = "EnableFileControl(this)" })
                         @*<select id="drpCategory" class="form-control form-control-sm mr-3 w-25" onchange="EnableFileControl(this)">
-                    <option value="0" selected>Select</option>
-                    <option value="1">Volume 1</option>
-                    <option value="2">Volume 2</option>
-                    <option value="3">Volume 3</option>
-                    <option value="5">Volume 5</option>
-                    <option value="6">Volume 6</option>
-                    <option value="7">Volume 7</option>
-                    <option value="8">Volume 8</option>
-                </select>*@
+                                <option value="0" selected>Select</option>
+                                <option value="1">Volume 1</option>
+                                <option value="2">Volume 2</option>
+                                <option value="3">Volume 3</option>
+                                <option value="5">Volume 5</option>
+                                <option value="6">Volume 6</option>
+                                <option value="7">Volume 7</option>
+                                <option value="8">Volume 8</option>
+                            </select>*@
                     </div>
                     <div class="form-group col-md-12">
                         <input type="file" id="fileUpload" multiple size="2" />
@@ -55,7 +51,7 @@
                 </form>
             </div>
         </div>
-        
+
 
 
 
@@ -64,8 +60,8 @@
 
 </div>
 @section Scripts{
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-
+    @*<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>*@
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
     <script src="~/js/Upload/UploadDocument.js"></script>
     <script type="text/javascript">
         $(document).ready(function () {

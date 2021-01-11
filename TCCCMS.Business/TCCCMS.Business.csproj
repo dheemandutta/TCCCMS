@@ -42,12 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="DocumentBL.cs" />
     <Compile Include="ManualBL.cs" />
     <Compile Include="GroupMasterBL.cs" />
     <Compile Include="PermissionRoleBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoleMasterBL.cs" />
-    <Compile Include="UploadDocumentBL.cs" />
     <Compile Include="UserGroupBL.cs" />
     <Compile Include="UserMasterBL.cs" />
   </ItemGroup>

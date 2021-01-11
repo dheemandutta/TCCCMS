@@ -21,7 +21,9 @@ namespace TCCCMS.Models
         public int CreateedBy { get; set; }
         public DateTime ModifiedOn { get; set; }
         public int ModifiedBy { get; set; }
-        
+
+        public int RowNumber { get; set; }
+
 
     }
 }

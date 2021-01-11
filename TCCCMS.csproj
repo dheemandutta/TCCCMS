@@ -123,11 +123,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CompanyPolicyManualController.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\GroupMasterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
-    <Compile Include="Controllers\UploadDocumentController.cs" />
     <Compile Include="Controllers\UserMasterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -1289,10 +1289,11 @@
     <Content Include="Views\CompanyPolicyManual\SEPP.cshtml" />
     <Content Include="Views\CompanyPolicyManual\SFA.cshtml" />
     <Content Include="Views\CompanyPolicyManual\SMS.cshtml" />
-    <Content Include="Views\UploadDocument\Index.cshtml" />
     <Content Include="Views\UserMaster\Index.cshtml" />
-    <Content Include="Views\UploadDocument\Upload.cshtml" />
     <Content Include="Views\GroupMaster\Index.cshtml" />
+    <Content Include="Views\Document\Index.cshtml" />
+    <Content Include="Views\Document\Upload.cshtml" />
+    <Content Include="Views\Document\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -9,18 +9,32 @@ using System.IO;
 
 namespace TCCCMS.Controllers
 {
-    public class UploadDocumentController : Controller
+    public class DocumentController : Controller
     {
-        // GET: UploadDocument
+        // GET: Document
         public ActionResult Index()
         {
+            return View();
+        }
+        public ActionResult List()
+        {
+            DocumentBL uploadBl = new DocumentBL();
+            List<FormsCategory> catrgoryList = new List<FormsCategory>();
+            catrgoryList = uploadBl.GetCategoryList();
+            ViewBag.FormsCategory = catrgoryList.Select(c =>
+                                                        new SelectListItem()
+                                                        {
+                                                            Text  = c.CatecoryName,
+                                                            Value = c.ID.ToString()
+                                                        }).ToList();
+
             return View();
         }
 
         [HttpGet]
         public ActionResult Upload()
         {
-            UploadDocumentBL uploadBl = new UploadDocumentBL();
+            DocumentBL uploadBl = new DocumentBL();
             List<FormsCategory> catrgoryList = new List<FormsCategory>();
             catrgoryList = uploadBl.GetCategoryList();
             //List<SelectListItem> catList = new List<SelectListItem>();
@@ -45,8 +59,8 @@ namespace TCCCMS.Controllers
         public ActionResult UploadFiles(FormsCategory category, string categoryId, string categoryName, List<HttpPostedFileBase> fileData)
         {
             List<Forms> formList = new List<Forms>();
-            UploadDocumentBL uploadBL = new UploadDocumentBL();
-            
+            DocumentBL uploadBL = new DocumentBL();
+
             if (Request.Files.Count > 0)
             {
                 try
@@ -63,7 +77,7 @@ namespace TCCCMS.Controllers
                     {
                         Forms form = new Forms();
 
-                        
+
                         //string path = AppDomain.CurrentDomain.BaseDirectory + "Uploads/";  
                         //string filename = Path.GetFileName(Request.Files[i].FileName);  
 
@@ -85,8 +99,8 @@ namespace TCCCMS.Controllers
                         string fnameWithPath = Path.Combine(fileFath, fname);
                         file.SaveAs(fnameWithPath);
 
-                        form.FormName   = fname;
-                        form.FilePath   = fileFath;
+                        form.FormName = fname;
+                        form.FilePath = fileFath;
                         form.CategoryId = Convert.ToInt32(categoryId);
                         form.CreateedBy = 1;
 
@@ -94,7 +108,7 @@ namespace TCCCMS.Controllers
 
                     }
 
-                   int count = uploadBL.SaveUploadedForms(formList);
+                    int count = uploadBL.SaveUploadedForms(formList);
                     // Returns message that successfully uploaded  
                     return Json("File Uploaded Successfully!");
                 }
@@ -128,6 +142,86 @@ namespace TCCCMS.Controllers
         public JsonResult SaveFiles()
         {
             return Json("Success", JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult LoadData(string catId)
+        {
+            int categoryId = Convert.ToInt32(catId);
+            int draw, start, length;
+            //int pageIndex = 0;
+
+            if (null != Request.Form.GetValues("draw"))
+            {
+                draw = int.Parse(Request.Form.GetValues("draw").FirstOrDefault().ToString());
+                start = int.Parse(Request.Form.GetValues("start").FirstOrDefault().ToString());
+                length = int.Parse(Request.Form.GetValues("length").FirstOrDefault().ToString());
+            }
+            else
+            {
+                draw = 1;
+                start = 0;
+                length = 500;
+            }
+
+            //if (start == 0)
+            //{
+            //    pageIndex = 1;
+            //}
+            //else
+            //{
+            //    pageIndex = (start / length) + 1;
+            //}
+
+            DocumentBL bL = new DocumentBL(); ///////////////////////////////////////////////////////////////////////////
+            //int totalrecords = 0;
+
+            List<Forms> formsList = new List<Forms>();
+            formsList = bL.GetFormsListCategoryWise(categoryId);
+            List<Forms> formList = new List<Forms>();
+            foreach (Forms frm in formsList)
+            {
+                Forms form = new Forms();
+                form.ID         = frm.ID;
+                form.RowNumber = frm.RowNumber;
+                form.FormName   = frm.FormName;
+
+                formList.Add(form);
+            }
+
+            var data = formList;
+            return Json(new { draw = draw,data = data }, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpGet]
+        public  FileResult Download(string catName, string formName)
+        {
+            string path = Server.MapPath("~/Uploads/");
+            var folderPath = Path.Combine(path, catName);
+            var filePath = Path.Combine(folderPath, formName);
+            var memory = new MemoryStream();
+            using (var stream = new FileStream(filePath, FileMode.Open))
+            {
+                 stream.CopyToAsync(memory);
+            }
+            memory.Position = 0;
+            var ext = Path.GetExtension(filePath).ToLowerInvariant();
+            return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
+        }
+        private Dictionary<string, string> GetMimeTypes()
+        {
+            return new Dictionary<string, string>
+            {
+                {".txt", "text/plain"},
+                {".pdf", "application/pdf"},
+                {".doc", "application/vnd.ms-word"},
+                {".docx", "application/vnd.ms-word"},
+                {".png", "image/png"},
+                {".jpg", "image/jpeg"},
+                //{".xlsx", "application/vnd.openxmlformats officedocument.spreadsheetml.sheet"},
+                {".jpeg", "image/jpeg"},
+                {".gif", "image/gif"},
+                {".csv", "text/csv"}
+            };
         }
     }
 }
