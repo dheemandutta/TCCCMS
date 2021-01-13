@@ -1,0 +1,200 @@
+﻿@model TCCCMS.Models.ShipViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section Styles{
+    <link href="~/Scripts/highlight/css/default.css" rel="stylesheet" />
+    @*<link href="~/DataTables/datatables.min.css" rel="stylesheet" />*@
+
+}
+@Html.Hidden("loaddata", @Url.Action("LoadData", "Ship"))
+@Html.Hidden("urlSaveDetails", @Url.Action("SaveShip", "Ship"))
+@Html.Hidden("urlGetShipById", @Url.Action("GetShipById", "Ship"))
+@Html.Hidden("urlLoadVesselSubType", @Url.Action("GetVesselSubTypeByVesselTypeForDopDown", "Ship"))
+@Html.Hidden("urlLoadVesselSubSubType", @Url.Action("GetVesselSubSubTypeByVesselSubTypeForDropdown", "Ship"))
+<link href="~/DataTables/datatables.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script src="~/DataTables/datatables.min.js"></script>
+@*<script src="~/Scripts/bootstrap.js"></script>*@
+<div class="row">
+    <div class="col-md-3">
+        <h2 class="ta">Ship List</h2>
+    </div>
+    <div class="col-md-9">
+        <div class="row">
+            <div class="card">
+                <div class="card-header">
+                    <label>Ships List</label>
+                </div>
+                <div class="card-body">
+                    <div style="margin:0 auto" class="tablecontainer">
+                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal">Register New Ship</button><br /><br />
+                        <input type="hidden" id="hdnrole" />
+                        <table id="shipsTable" class="display" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>SL</th>
+                                    <th>Ship Name</th>
+                                    <th>Flag</th>
+                                    <th>IMO Number</th>
+
+                                    <th>Edit</th>
+                                    @*<th>Delete</th>*@
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-xl">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header" style="background-color: #e90000;">
+                            <h4 class="modal-title">Rgister Ship</h4>
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+
+
+                        <div class="modal-body">
+                            @*<form>*@
+                                <div class="form-group">
+                                    <input type="hidden" id="ID" />
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="card">
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="VesselType">Vessel Type</label>
+                                                @Html.DropDownList("vesselTypeList", (IEnumerable<SelectListItem>)ViewBag.VesselType, new { @id = "ddlVesselType", @class = "form-control", onchange = "GetVesselSubTypeByTypeForDropdown(this.value)" })
+                                                @*<select id="VesselTypeID" name="VesselTypeID" class="form-control"></select>*@
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="VesselSubType">Vessel Sub Type</label>
+                                                <select id="ddlVesselSubType" name="VesselSubType" class="form-control" disabled></select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="VesselSubSubType">Vessel Sub Sub Type</label>
+                                                <select id="ddlVesselSubSubType" name="VesselSubSubType" class="form-control" disabled></select>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="ShipName">Ship Name</label>
+                                                <input type="text" class="form-control" id="ShipName" placeholder="Ship Name" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for=" Flag">Flag</label>
+                                                <input type="text" class="form-control" id="Flag" placeholder="Flag" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="IMO Number">IMO Number</label>
+                                                <input type="text" class="form-control" id="IMONumber" placeholder="IMO Number" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="col-md-12">
+                                    <div class="card">
+                                        <h4>Communications Resources</h4>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="Email">Email</label>
+                                                <input type="text" class="form-control" id="Email1" placeholder="Email 1" />
+                                                <input type="text" class="form-control" id="Email2" placeholder="Email 2" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="Voice">Voice</label>
+                                                <input type="text" class="form-control" id="Voice1" placeholder="Voice 1" />
+                                                <input type="text" class="form-control" id="Voice2" placeholder="Voice 2" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="Fax">Fax</label>
+                                                <input type="text" class="form-control" id="Fax1" placeholder="Fax 1" />
+                                                <input type="text" class="form-control" id="Fax2" placeholder="Fax 2" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="Video Call">Video Call(VOIP)</label>
+                                                <input type="text" class="form-control" id="VideoCall1" placeholder="Video Call 1" />
+                                                <input type="text" class="form-control" id="VideoCall2" placeholder="Video Call 2" />
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label for="Mobile">Mobile</label>
+                                                <input type="text" class="form-control" id="Mobile1" placeholder="Mobile 1" />
+                                                <input type="text" class="form-control" id="Mobile2" placeholder="Mobile 2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @*</form>*@
+
+                        </div>
+
+
+                        <div class="modal-footer" style="background-color:lightgray;">
+                            <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return SaveShipDetails();">Add</button>
+                            <button type="button" class="btn btn-info btn-sm" id="btnUpdate" style="background-color: #e90000; display: none; width: 86px;" onclick="SaveShipDetails();">Update</button>
+                            <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts{
+    @*<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/DataTables/datatables.min.js"></script>*@
+    <script src="~/js/Ship/Ship.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            SetUpGrid();
+        });
+        $('#ddlVesselType').on('change', function () {
+            $('#ddlVesselSubType').prop('disabled', false);
+        });
+        $('#ddlVesselSubType').on('change', function () {
+            //alert($('option:selected', this).text());
+
+            var VesselSubTypeID = $('#ddlVesselSubType').val();
+
+            GetVesselSubSubTypeByVesselSubTypeForDropdown(VesselSubTypeID);
+            $('#ddlVesselSubSubType').prop('disabled', false);
+
+        });
+    </script>
+
+}

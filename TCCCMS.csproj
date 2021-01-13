@@ -130,7 +130,7 @@
     <Compile Include="Controllers\ManualController.cs" />
     <Compile Include="Controllers\PermissionRoleController.cs" />
     <Compile Include="Controllers\RoleMasterController.cs" />
-    <Compile Include="Controllers\UploadDocumentController.cs" />
+    <Compile Include="Controllers\ShipController.cs" />
     <Compile Include="Controllers\UserGroupController.cs" />
     <Compile Include="Controllers\UserMasterController.cs" />
     <Compile Include="Global.asax.cs">
@@ -587,6 +587,7 @@
     <Content Include="js\jquery.js" />
     <Content Include="js\Manual\ManualSearch.js" />
     <Content Include="js\owl.carousel.js" />
+    <Content Include="js\Ship\Ship.js" />
     <Content Include="js\stellarnav.js" />
     <Content Include="js\theme.js" />
     <Content Include="js\Upload\UploadDocument.js" />
@@ -1344,6 +1345,7 @@
     <Content Include="Views\Document\List.cshtml" />
     <Content Include="Views\UserGroup\Index.cshtml" />
     <Content Include="Views\RoleMaster\Index.cshtml" />
+    <Content Include="Views\Ship\Index.cshtml" />
     <Content Include="Views\PermissionRole\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
