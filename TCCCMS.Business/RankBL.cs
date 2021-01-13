@@ -37,5 +37,6 @@ namespace TCCCMS.Business
             return dAL.DeleteUserMaster(UserId/*, ref oUTPUT*/);
         }
 
+
     }
 }
