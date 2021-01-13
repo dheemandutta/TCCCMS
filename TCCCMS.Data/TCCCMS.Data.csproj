@@ -67,6 +67,7 @@
     <Compile Include="ManualDAL.cs" />
     <Compile Include="PermissionRoleDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RankDAL.cs" />
     <Compile Include="RoleMasterDAL.cs" />
     <Compile Include="UserGroupDAL.cs" />
     <Compile Include="UserMasterDAL.cs" />
