@@ -129,6 +129,7 @@
     <Compile Include="Controllers\InputFormController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
     <Compile Include="Controllers\PermissionRoleController.cs" />
+    <Compile Include="Controllers\RankController.cs" />
     <Compile Include="Controllers\RoleMasterController.cs" />
     <Compile Include="Controllers\ShipController.cs" />
     <Compile Include="Controllers\UserGroupController.cs" />
@@ -1213,6 +1214,7 @@
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\Rank.js" />
     <Content Include="Scripts\RoleMaster.js" />
     <Content Include="Scripts\src\index.js" />
     <Content Include="Scripts\src\methods\defaults.js" />
@@ -1294,6 +1296,7 @@
     <Content Include="SQL Script\11.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\12.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\13.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
+    <Content Include="SQL Script\13.01.2021_Full_Script_Of_TCCCMSDB_II.sql" />
     <Content Include="SQL Script\Full_ScriptOf_TCCCMSDB.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1347,6 +1350,7 @@
     <Content Include="Views\RoleMaster\Index.cshtml" />
     <Content Include="Views\Ship\Index.cshtml" />
     <Content Include="Views\PermissionRole\Index.cshtml" />
+    <Content Include="Views\Rank\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

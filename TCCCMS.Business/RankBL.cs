@@ -13,28 +13,28 @@ namespace TCCCMS.Business
 {
     public class RankBL
     {
-        public int SaveUpdateUser(UserMasterPOCO pOCO /*,int VesselID*/)
+        public int SaveUpdateRank(RankPOCO pOCO /*,int VesselID*/)
         {
-            UserMasterDAL dAL = new UserMasterDAL();
-            return dAL.SaveUpdateUser(pOCO/*, VesselID*/);
+            RankDAL dAL = new RankDAL();
+            return dAL.SaveUpdateRank(pOCO/*, VesselID*/);
         }
 
-        public List<UserMasterPOCO> GetAllUserPageWise(int pageIndex, ref int recordCount, int length/*, int VesselID*/)
+        public List<RankPOCO> GetAllRankPageWise(int pageIndex, ref int recordCount, int length/*, int VesselID*/)
         {
-            UserMasterDAL dAL = new UserMasterDAL();
-            return dAL.GetAllUserPageWise(pageIndex, ref recordCount, length/*, VesselID*/);
+            RankDAL dAL = new RankDAL();
+            return dAL.GetAllRankPageWise(pageIndex, ref recordCount, length/*, VesselID*/);
         }
 
-        public UserMasterPOCO GetUserByUserId(int UserId/*, int VesselID*/)
+        public RankPOCO GetRankByRankId(int RankId/*, int VesselID*/)
         {
-            UserMasterDAL dAL = new UserMasterDAL();
-            return dAL.GetUserByUserId(UserId/*, VesselID*/);
+            RankDAL dAL = new RankDAL();
+            return dAL.GetRankByRankId(RankId/*, VesselID*/);
         }
 
-        public int DeleteUserMaster(int UserId/*, ref string oUTPUT*/)
+        public int DeleteRank(int RankId/*, ref string oUTPUT*/)
         {
-            UserMasterDAL dAL = new UserMasterDAL();
-            return dAL.DeleteUserMaster(UserId/*, ref oUTPUT*/);
+            RankDAL dAL = new RankDAL();
+            return dAL.DeleteRank(RankId/*, ref oUTPUT*/);
         }
 
 
