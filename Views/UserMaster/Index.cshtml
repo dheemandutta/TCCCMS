@@ -80,11 +80,11 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="Password">Password</label>
-                                        <input type="text" class="form-control" id="Password" placeholder="Password" />
+                                        <input type="password" class="form-control" id="Password" placeholder="Password" />
                                     </div>
                                     <div class="form-group">
                                         <label for="Email">Email</label>
-                                        <input type="text" class="form-control" id="Email" placeholder="Email" />
+                                        <input type="email" class="form-control" id="Email" placeholder="Email" />
                                     </div>
                                     @*<div class="form-group">
                                         <label for="CreatedBy">Created By</label>
@@ -96,11 +96,16 @@
                                     </div>*@
                                     <div class="form-group">
                                         <label for="Gender">Gender</label>
-                                        <input type="text" class="form-control" id="Gender" placeholder="Gender" />
+                                        @*<input type="text" class="form-control" id="Gender" placeholder="Gender" />*@
+                                        <select name="Gender" id="Gender">
+                                            <option value="">Select</option>
+                                            <option value="M">M</option>
+                                            <option value="F">F</option>
+                                        </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="VesselIMO">Vessel IMO</label>
-                                        <input type="text" class="form-control" id="VesselIMO" placeholder="Vessel IMO" />
+                                        <input type="number" class="form-control" id="VesselIMO" placeholder="Vessel IMO" />
                                     </div>
 
                                 </div>
