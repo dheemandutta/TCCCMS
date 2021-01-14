@@ -9,6 +9,14 @@
         $('#RankId').css('border-color', 'lightgrey');
     }
 
+    if ($('#ShipId').val().length === 0) {
+        $('#ShipId').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#ShipId').css('border-color', 'lightgrey');
+    }
+
     if ($('#UserName').val().length === 0) {
         $('#UserName').css('border-color', 'Red');
         isValid = false;
@@ -56,6 +64,7 @@
 function clearTextBox() {
     $('#UserId').val("");
     $('#RankId').val("");
+    $('#ShipId').val("");
     $('#UserName').val("");
     $('#Password').val("");
     $('#Email').val("");
@@ -79,6 +88,7 @@ function SaveUpdateUser() {
         var UserMaster = {
             UserId: $('#UserId').val(),
             RankId: $('#RankId').val(),
+            ShipId: $('#ShipId').val(),
             UserName: $('#UserName').val(),
             Password: $('#Password').val(),
             Email: $('#Email').val(),
@@ -207,6 +217,9 @@ function SetUpGrid() {
             {
                 "data": "RankName", "name": "RankName", "autoWidth": true
             },
+            {
+                "data": "ShipName", "name": "ShipName", "autoWidth": true
+            },
      
             {
                 "data": "UserId", "width": "50px", "render": function (data) {
@@ -244,17 +257,17 @@ function DeleteUserMaster(UserId) {
                 // debugger;
 
                 if (result == -1) {
-                    alert("Department cannot be deleted as this is already used.");
+                    alert(" cannot be deleted as this is already used.");
                 }
                 else if (result == 0) {
-                    alert("Department cannot be deleted as this is already used.");
+                    alert(" cannot be deleted as this is already used.");
                 }
                 else {
                     loadData();
                 }
             },
             error: function () {
-                alert("Department cannot be deleted as this is already used in Crew");
+                alert(" cannot be deleted as this is already used");
             }
         });
     }
@@ -288,6 +301,7 @@ function GetUserByUserId(UserId) {
             $('#Gender').val(result.Gender);
             $('#VesselIMO').val(result.VesselIMO);
             $('#RankId').val(result.RankId);
+            $('#ShipId').val(result.ShipId);
 
             $('#myModal').modal('show');
             $('#btnUpdate').show();

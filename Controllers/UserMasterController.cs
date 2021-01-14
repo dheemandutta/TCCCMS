@@ -16,6 +16,7 @@ namespace TCCCMS.Controllers
         public ActionResult Index()
         {
             GetAllRanksForDrp();
+            GetAllShipForDrp();
             return View();
         }
 

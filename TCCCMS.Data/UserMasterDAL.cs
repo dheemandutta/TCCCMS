@@ -545,7 +545,7 @@ namespace TCCCMS.Data
             DataTable myTable = ds.Tables[0];
             List<UserMasterPOCO> ranksList = myTable.AsEnumerable().Select(m => new UserMasterPOCO()
             {
-                ShipId = m.Field<int>("ShipId"),
+                ShipId = m.Field<int>("ID"),
                 ShipName = m.Field<string>("ShipName"),
 
             }).ToList();
