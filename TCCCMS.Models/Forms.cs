@@ -14,6 +14,7 @@ namespace TCCCMS.Models
         public int ID { get; set; }
         public int CategoryId { get; set; }
         public string FormName { get; set; }
+        public string Version { get; set; }//Added 14th Jan2021 @bk
         public string Description { get; set; }
         public string FilePath { get; set; }
         public int IsActive { get; set; }

@@ -27,10 +27,28 @@ namespace TCCCMS.Business
         }
         public int SaveUploadedForms(List<Forms> formsList)
         {
-            DocumentDAL uploadDal = new DocumentDAL();
+            DocumentDAL documentDal = new DocumentDAL();
 
-            return uploadDal.SaveUploadedForms(formsList);
+            return documentDal.SaveUploadedForms(formsList);
 
         }
+
+        public int DeleteForm(string formName)
+        {
+            DocumentDAL documentDal = new DocumentDAL();
+
+            return documentDal.DeleteForm(formName);
+        }
+
+        #region DropDown
+
+        public List<Forms> GetFormsByCategoryForDropdown(int categoryId)
+        {
+
+            DocumentDAL documentDal = new DocumentDAL();
+            return documentDal.GetFormsByCategoryForDropdown(categoryId);
+        }
+
+        #endregion
     }
 }

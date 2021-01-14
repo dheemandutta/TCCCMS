@@ -27,25 +27,29 @@
         <div class="row">
             <div class="col-md-8">
                 <form class="form-horizontal">
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-sm-12 col-xs-12">
                         <label>Category</label>
-                        @Html.DropDownList("formsCategoryList", (IEnumerable<SelectListItem>)ViewBag.FormsCategory, new { @id = "ddlCategory", @class = "form-control", onchange = "EnableFileControl(this)" })
+                        @Html.DropDownList("formsCategoryList", (IEnumerable<SelectListItem>)ViewBag.FormsCategory, new { @id = "ddlCategory", @class = "form-control", onchange = "EnableFileControl(this.value)" })
                         @*<select id="drpCategory" class="form-control form-control-sm mr-3 w-25" onchange="EnableFileControl(this)">
-                                <option value="0" selected>Select</option>
-                                <option value="1">Volume 1</option>
-                                <option value="2">Volume 2</option>
-                                <option value="3">Volume 3</option>
-                                <option value="5">Volume 5</option>
-                                <option value="6">Volume 6</option>
-                                <option value="7">Volume 7</option>
-                                <option value="8">Volume 8</option>
-                            </select>*@
+                <option value="0" selected>Select</option>
+                <option value="1">Volume 1</option>
+                <option value="2">Volume 2</option>
+                <option value="3">Volume 3</option>
+                <option value="5">Volume 5</option>
+                <option value="6">Volume 6</option>
+                <option value="7">Volume 7</option>
+                <option value="8">Volume 8</option>
+            </select>*@
                     </div>
-                    <div class="form-group col-md-12">
+                    @*<div class="form-group col-md-12 col-sm-12 col-xs-12">
+                        <label>Version</label>
+                        <input type="text" id="txtVersion" placeholder="Version" />
+                    </div>*@
+                    <div class="form-group col-sm-12 col-xs-12">
                         <input type="file" id="fileUpload" multiple size="2" />
                     </div>
 
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-sm-12 col-xs-12">
                         <input type="button" id="btnUpload" value="Upload" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="UploadFiles()" />
                     </div>
                 </form>

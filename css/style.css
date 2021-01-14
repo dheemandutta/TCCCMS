@@ -151,3 +151,11 @@ header{
 .menu_icon{}
 .menu_icon a{color: #fff;font-size: 25px;margin: 5px 0 0 0;display: inline-block;text-align: right;}
 .menu_icon a img{}
+
+.colorWhite{color:white;}
+.marginTP10{margin-top:10px;}
+
+.marginLFT5 {
+    margin-left: 50px;
+}
+.marginBTM10 {margin-bottom: 10px;}

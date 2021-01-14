@@ -1346,6 +1346,7 @@
     <Content Include="Views\RoleMaster\Index.cshtml" />
     <Content Include="Views\Ship\Index.cshtml" />
     <Content Include="Views\PermissionRole\Index.cshtml" />
+    <Content Include="Views\Document\UpdateForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
