@@ -16,6 +16,7 @@ namespace TCCCMS.Controllers
         public ActionResult Index()
         {
             GetAllRanksForDrp();
+            GetAllShipForDrp();
             return View();
         }
 
@@ -64,6 +65,7 @@ namespace TCCCMS.Controllers
                 pOCO.Gender = pC.Gender;
                 pOCO.VesselIMO = pC.VesselIMO;
                 pOCO.RankName = pC.RankName;
+                pOCO.ShipName = pC.ShipName;
 
                 pList.Add(pOCO);
             }
@@ -80,6 +82,7 @@ namespace TCCCMS.Controllers
             pC.UserId = pOCO.UserId;
 
             pC.RankId = pOCO.RankId;
+            pC.ShipId = pOCO.ShipId;
             pC.UserName = pOCO.UserName;
             pC.Password = pOCO.Password;
             pC.Email = pOCO.Email;
@@ -145,6 +148,7 @@ namespace TCCCMS.Controllers
             dept.Gender = pOCOList.Gender;
             dept.VesselIMO = pOCOList.VesselIMO;
             dept.RankId = pOCOList.RankId;
+            dept.ShipId = pOCOList.ShipId;
 
             var data = dept;
 
@@ -160,5 +164,40 @@ namespace TCCCMS.Controllers
             return Json(recordaffected, JsonRequestBehavior.AllowGet);
 
         }
+
+
+
+
+
+        //for Ship drp
+        public void GetAllShipForDrp()
+        {
+            UserMasterBL bL = new UserMasterBL();
+            List<UserMasterPOCO> pocoList = new List<UserMasterPOCO>();
+
+            pocoList = bL.GetAllShipForDrp(/*int.Parse(Session["VesselID"].ToString())*/);
+
+
+            List<UserMasterPOCO> itmasterList = new List<UserMasterPOCO>();
+
+            foreach (UserMasterPOCO up in pocoList)
+            {
+                UserMasterPOCO unt = new UserMasterPOCO();
+                unt.ShipId = up.ShipId;
+                unt.ShipName = up.ShipName;
+
+                itmasterList.Add(unt);
+            }
+
+            ViewBag.Ships = itmasterList.Select(x =>
+                                            new SelectListItem()
+                                            {
+                                                Text = x.ShipName,
+                                                Value = x.ShipId.ToString()
+                                            });
+
+        }
+
+
     }
 }

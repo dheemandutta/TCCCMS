@@ -21,5 +21,9 @@ namespace TCCCMS.Models
         public string VesselIMO { get; set; }
         public int RankId { get; set; }
         public string RankName { get; set; }
+
+
+        public int ShipId { get; set; }
+        public string ShipName { get; set; }
     }
 }
