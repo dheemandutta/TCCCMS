@@ -6,9 +6,11 @@
     $('#btnUpdate').hide();
     $('#btnAdd').show();
 
-    $('#VesselTypeID').val("");
+    $('#ddlVesselType').val("-1");
     $('#ddlVesselSubType').val("");
+    $('#ddlVesselSubType').prop('disabled', true);
     $('#ddlVesselSubSubType').val("");
+    $('#ddlVesselSubSubType').prop('disabled', true);
 
     $('#Email1').val("");
     $('#Email2').val("");
@@ -21,8 +23,56 @@
     $('#Mobile1').val("");
     $('#Mobile2').val("");
 
-}
+    $('#ShipName').css('border-color', 'lightgrey');
+    $('#ddlVesselType').css('border-color', 'lightgrey');
+    $('#ddlVesselSubType').css('border-color', 'lightgrey');
+    $('#ddlVesselSubSubType').css('border-color', 'lightgrey');
+    $('#IMONumber').css('border-color', 'lightgrey');
 
+}
+function validate() {
+    var isValid = true;
+
+    if ($("#ddlVesselType").val() === 0 || $("#ddlVesselType").val() < 0) {
+        $('#ddlVesselType').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#ddlVesselType').css('border-color', 'lightgrey');
+        if ($("#ddlVesselSubType").val() === 0 || $("#ddlVesselSubType").val() < 0) {
+            $('#ddlVesselSubType').css('border-color', 'Red');
+            isValid = false;
+        }
+        else {
+            $('#ddlVesselSubType').css('border-color', 'lightgrey');
+            if ($("#ddlVesselSubSubType").val() === 0 || $("#ddlVesselSubSubType").val() < 0) {
+                $('#ddlVesselSubSubType').css('border-color', 'Red');
+                isValid = false;
+            }
+            else {
+                $('#ddlVesselSubSubType').css('border-color', 'lightgrey');
+
+            }
+        }
+
+    }
+    if ($('#ShipName').val().length === 0) {
+        $('#ShipName').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#ShipName').css('border-color', 'lightgrey');
+    }
+    if ($('#IMONumber').val().length === 0) {
+        $('#IMONumber').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#IMONumber').css('border-color', 'lightgrey');
+    }
+
+    return isValid;
+}
 function loadData() {
     var loadposturl = $('#loaddata').val();
     $.ajax({
@@ -138,7 +188,7 @@ function GetShipByID(ID) {
 
             $('#myModal').modal('show');
             $('#btnUpdate').show();
-            //  $('#btnAdd').hide();
+            $('#btnAdd').hide();
         },
         error: function (errormessage) {
             //debugger;
@@ -152,10 +202,10 @@ function SaveShipDetails() {
     // alert();
     var i = $('#urlSaveDetails').val();
     // debugger;
-    //var res = validateVessel();
-    //if (res === false) {
-    //    return false;
-    //}
+    var res = validate();
+    if (res === false) {
+        return false;
+    }
     var shipObj = {
 
         ID: $('#ID').val(),
@@ -354,4 +404,58 @@ function GetVesselSubSubTypeByVesselSubTypeForDropdown(VesselSubTypeID) {
             alert(errormessage.responseText);
         }
     });
+}
+
+function numbersonly(e, decimal) {
+
+
+    var key;
+    var keychar;
+
+    if (window.event)
+        key = window.event.keyCode;
+    else if (e)
+        key = e.which;
+    else
+        return true;
+
+    keychar = String.fromCharCode(key);
+
+    if ((key === null) || (key === 0) || (key === 8) || (key === 9) || (key === 13) || (key === 27) || (key === 17) || (key === 18) || (key === 19) || (key === 20))
+        return true;
+    else if ((("0123456789").indexOf(keychar) > -1))
+        return true;
+    else if (decimal && (keychar === "."))
+        return true;
+    else
+        return false;
+}
+function CharCheck(e,chk) {
+    
+    var charChk
+    var x = e.which || e.keycode;
+    if (chk ===1)
+    {
+       //usee onkeypress=" return CharCheck(event,1)" 
+        if ((x >= 48 && x <= 57) /*|| (x >= 96 && x <= 105)*/) {
+            // 0-9 only
+            return true;
+        }
+        else
+            return false;
+
+    }
+    else if (chk === 2) {
+        //usee onkeypress=" return CharCheck(event,2)" 
+
+        //this fnc validate 09 and +,-,() only
+        if (x >= 45 && x <= 57)
+            return true;
+        else if (x >= 40 && x <= 43) {
+            return true;
+        }
+    }
+    else
+        return false;
+
 }

@@ -55,89 +55,21 @@ namespace TCCCMS.Controllers
 
             return View();
         }
-        [HttpPost]
-        public ActionResult UploadFiles(FormsCategory category, string categoryId, string categoryName, List<HttpPostedFileBase> fileData)
+        public ActionResult UpdateForm()
         {
-            List<Forms> formList = new List<Forms>();
-            DocumentBL uploadBL = new DocumentBL();
-
-            if (Request.Files.Count > 0)
-            {
-                try
-                {
-                    string path = Server.MapPath("~/Uploads/");
-                    string fileFath = Path.Combine(path, categoryName);
-                    if (!Directory.Exists(fileFath))
-                    {
-                        Directory.CreateDirectory(fileFath);
-                    }
-                    //  Get all files from Request object  
-                    HttpFileCollectionBase files = Request.Files;
-                    for (int i = 0; i < files.Count; i++)
-                    {
-                        Forms form = new Forms();
-
-
-                        //string path = AppDomain.CurrentDomain.BaseDirectory + "Uploads/";  
-                        //string filename = Path.GetFileName(Request.Files[i].FileName);  
-
-                        HttpPostedFileBase file = files[i];
-                        string fname;
-
-                        // Checking for Internet Explorer  
-                        if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
-                        {
-                            string[] testfiles = file.FileName.Split(new char[] { '\\' });
-                            fname = testfiles[testfiles.Length - 1];
-                        }
-                        else
-                        {
-                            fname = file.FileName;
-                        }
-
-                        // Get the complete folder path and store the file inside it.  
-                        string fnameWithPath = Path.Combine(fileFath, fname);
-                        file.SaveAs(fnameWithPath);
-
-                        form.FormName = fname;
-                        form.FilePath = fileFath;
-                        form.CategoryId = Convert.ToInt32(categoryId);
-                        form.CreateedBy = 1;
-
-                        formList.Add(form);
-
-                    }
-
-                    int count = uploadBL.SaveUploadedForms(formList);
-                    // Returns message that successfully uploaded  
-                    return Json("File Uploaded Successfully!");
-                }
-                catch (Exception ex)
-                {
-                    return Json("Error occurred. Error details: " + ex.Message);
-                }
-            }
-            else
-            {
-                return Json("No files selected.");
-            }
-        }
-        [HttpPost]
-        public ActionResult UploadDropFile(List<HttpPostedFileBase> fileData)
-        {
-            string path = Server.MapPath("~/Uploads/");
-            foreach (HttpPostedFileBase postedFile in fileData)
-            {
-                if (postedFile != null)
-                {
-                    string fileName = Path.GetFileName(postedFile.FileName);
-                    postedFile.SaveAs(path + fileName);
-                }
-            }
-
-            return Content("Success");
+            DocumentBL uploadBl = new DocumentBL();
+            List<FormsCategory> catrgoryList = new List<FormsCategory>();
+            catrgoryList = uploadBl.GetCategoryList();
+            ViewBag.FormsCategory = catrgoryList.Select(c =>
+                                                        new SelectListItem()
+                                                        {
+                                                            Text = c.CatecoryName,
+                                                            Value = c.ID.ToString()
+                                                        }).ToList();
+            return View();
         }
 
+        #region Save/Load/Delete Methods
         [HttpPost]
         public JsonResult SaveFiles()
         {
@@ -192,6 +124,120 @@ namespace TCCCMS.Controllers
             return Json(new { draw = draw,data = data }, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult Delete(string formName,string catName)
+        {
+            DocumentBL documentBl = new DocumentBL();
+            int recordaffected = documentBl.DeleteForm(formName);
+            #region for Form Archive
+            if (recordaffected == 1)
+            {
+                string archivedFolder = "~/ArchivedForms/" + catName + "/";
+                string uploadedFolder = "~/Uploads/" + catName +"/";
+                string sourcePath = Server.MapPath(uploadedFolder);
+                string destinationPath = Server.MapPath(archivedFolder);
+                string uploadedFile = Path.Combine(sourcePath , formName);
+                string archiveFile = Path.Combine(destinationPath, formName);
+                if (System.IO.File.Exists(uploadedFile))
+                {
+                    if (!Directory.Exists(destinationPath))
+                    {
+                        Directory.CreateDirectory(destinationPath);
+                    }
+                    System.IO.File.Move(uploadedFile, archiveFile);
+                }
+
+            }
+            #endregion
+            return Json(recordaffected, JsonRequestBehavior.AllowGet);
+        }
+
+        #endregion
+
+        #region Download/Upload
+        [HttpPost]
+        public ActionResult UploadFiles(FormsCategory category, string categoryId, string categoryName, List<HttpPostedFileBase> fileData)
+        {
+            List<Forms> formList = new List<Forms>();
+            DocumentBL uploadBL = new DocumentBL();
+
+            if (Request.Files.Count > 0)
+            {
+                try
+                {
+                    string relativePath = "~/Uploads/" + categoryName;
+                    string path = Server.MapPath("~/Uploads/");
+                    string fileFath = Path.Combine(path, categoryName);
+                    if (!Directory.Exists(fileFath))
+                    {
+                        Directory.CreateDirectory(fileFath);
+                    }
+                    //  Get all files from Request object  
+                    HttpFileCollectionBase files = Request.Files;
+                    for (int i = 0; i < files.Count; i++)
+                    {
+                        Forms form = new Forms();
+
+
+                        //string path = AppDomain.CurrentDomain.BaseDirectory + "Uploads/";  
+                        //string filename = Path.GetFileName(Request.Files[i].FileName);  
+
+                        HttpPostedFileBase file = files[i];
+                        string fname;
+
+                        // Checking for Internet Explorer  
+                        if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                        {
+                            string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                            fname = testfiles[testfiles.Length - 1];
+                        }
+                        else
+                        {
+                            fname = file.FileName;
+                        }
+                        
+                        // Get the complete folder path and store the file inside it.  
+                        string fnameWithPath = Path.Combine(fileFath, fname);
+                        file.SaveAs(fnameWithPath);
+
+                        form.FormName = fname;
+                        form.FilePath = fileFath;
+                        form.CategoryId = Convert.ToInt32(categoryId);
+                        form.CreateedBy = 1;
+
+                        formList.Add(form);
+
+                    }
+
+                    int count = uploadBL.SaveUploadedForms(formList);
+                    // Returns message that successfully uploaded  
+                    return Json("File Uploaded Successfully!");
+                }
+                catch (Exception ex)
+                {
+                    return Json("Error occurred. Error details: " + ex.Message);
+                }
+            }
+            else
+            {
+                return Json("No files selected.");
+            }
+        }
+        [HttpPost]
+        public ActionResult UploadDropFile(List<HttpPostedFileBase> fileData)
+        {
+            string path = Server.MapPath("~/Uploads/");
+            foreach (HttpPostedFileBase postedFile in fileData)
+            {
+                if (postedFile != null)
+                {
+                    string fileName = Path.GetFileName(postedFile.FileName);
+                    postedFile.SaveAs(path + fileName);
+                }
+            }
+
+            return Content("Success");
+        }
+
         [HttpGet]
         public  FileResult Download(string catName, string formName)
         {
@@ -206,6 +252,94 @@ namespace TCCCMS.Controllers
             memory.Position = 0;
             var ext = Path.GetExtension(filePath).ToLowerInvariant();
             return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
+        }
+
+        public JsonResult UploadAndUpdateForm(string categoryId, string categoryName,string formName, string formVersion)
+        {
+            List<Forms> formList = new List<Forms>();
+            DocumentBL uploadBL = new DocumentBL();
+
+            if (Request.Files.Count == 1)
+            {
+                try
+                {
+                    string tempFolder = "~/UploadForUpdate/";
+                    string relativePath = "~/Uploads/" + categoryName;
+                    string path = Server.MapPath("~/Uploads/");
+                    //string tempath = Server.MapPath(tempFolder);
+                    string fileFath = Path.Combine(path, categoryName);
+                    //if (!Directory.Exists(tempath))
+                    //{
+                    //    Directory.CreateDirectory(fileFath);
+                    //}
+                    //  Get all files from Request object  
+
+                    #region form to Archive
+                    string archivedFolder       = "~/ArchivedForms/" + categoryName + "/";
+                    string uploadedFolder       = "~/Uploads/" + categoryName + "/";
+                    string sourcePath           = Server.MapPath(uploadedFolder);
+                    string destinationPath      = Server.MapPath(archivedFolder);
+                    string uploadedFile         = Path.Combine(sourcePath, formName);
+                    string archiveFile          = Path.Combine(destinationPath, formName);
+                    if (System.IO.File.Exists(uploadedFile))
+                    {
+                        if (!Directory.Exists(destinationPath))
+                        {
+                            Directory.CreateDirectory(destinationPath);
+                        }
+                        //System.IO.File.Move(uploadedFile, archiveFile);
+                        System.IO.File.Copy(uploadedFile, archiveFile,true);
+                    }
+                    #endregion
+
+                    HttpFileCollectionBase files = Request.Files;
+                    for (int i = 0; i < files.Count; i++)
+                    {
+                        Forms form = new Forms();
+
+
+                        HttpPostedFileBase file = files[i];
+                        string fname;
+
+                        // Checking for Internet Explorer  
+                        if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                        {
+                            string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                            fname = testfiles[testfiles.Length - 1];
+                        }
+                        else
+                        {
+                            fname = file.FileName;
+                        }
+
+                        // Get the complete folder path and store the file inside it.  
+                        string fnameWithPath = Path.Combine(fileFath, fname);
+                        file.SaveAs(fnameWithPath);
+
+                        //form.FormName   = fname;
+                        form.FormName   = formName;
+                        form.FilePath   = fileFath;
+                        form.CategoryId = Convert.ToInt32(categoryId);
+                        form.Version    = formVersion;
+                        form.CreateedBy = 1;
+
+                        formList.Add(form);
+
+                    }
+
+                    int count = uploadBL.SaveUploadedForms(formList);
+                    // Returns message that successfully uploaded  
+                    return Json("File Updated Successfully!");
+                }
+                catch (Exception ex)
+                {
+                    return Json("Error occurred. Error details: " + ex.Message);
+                }
+            }
+            else
+            {
+                return Json("No files selected.");
+            }
         }
         private Dictionary<string, string> GetMimeTypes()
         {
@@ -223,5 +357,24 @@ namespace TCCCMS.Controllers
                 {".csv", "text/csv"}
             };
         }
+
+        #endregion
+
+        #region Dropdown
+        [HttpPost]
+        public JsonResult GetFormsByCategoryForDropdown(string categoryId)
+        {
+            int catId = Convert.ToInt32(categoryId);
+            DocumentBL documentBl = new DocumentBL();
+            List<Forms> formsList = new List<Forms>();
+
+            formsList = documentBl.GetFormsByCategoryForDropdown(catId);
+
+
+            var data = formsList;
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+        #endregion
     }
 }
