@@ -73,5 +73,15 @@ namespace TCCCMS.Business
             UserMasterDAL dAL = new UserMasterDAL();
             return dAL.GetAllRanksForDrp(/*VesselID*/);
         }
+
+
+
+
+        //for Ship drp
+        public List<UserMasterPOCO> GetAllShipForDrp(/*int VesselID*/)
+        {
+            UserMasterDAL dAL = new UserMasterDAL();
+            return dAL.GetAllShipForDrp(/*VesselID*/);
+        }
     }
 }

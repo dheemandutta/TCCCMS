@@ -22,6 +22,8 @@ namespace TCCCMS.Data
 
             cmd.Parameters.AddWithValue("@RankId", pOCO.RankId);
 
+            cmd.Parameters.AddWithValue("@ShipId", pOCO.ShipId);
+
             cmd.Parameters.AddWithValue("@UserName", pOCO.UserName.ToString());
 
             cmd.Parameters.AddWithValue("@Password", pOCO.Password.ToString());
@@ -135,6 +137,7 @@ namespace TCCCMS.Data
                             Gender = Convert.ToString(dr["Gender"]),
                             VesselIMO = Convert.ToString(dr["VesselIMO"]),
                             RankName = Convert.ToString(dr["RankName"]),
+                            ShipName = Convert.ToString(dr["ShipName"]),
                         });
                     }
                     recordCount = Convert.ToInt32(cmd.Parameters["@RecordCount"].Value);
@@ -273,6 +276,9 @@ namespace TCCCMS.Data
 
                     if (item["RankId"] != null)
                         pPOCOPC.RankId = Convert.ToInt32(item["RankId"].ToString());
+
+                    if (item["ShipId"] != null)
+                        pPOCOPC.ShipId = Convert.ToInt32(item["ShipId"].ToString());
 
                     //pcList.Add(pPOCOPC);
                 }
@@ -524,5 +530,28 @@ namespace TCCCMS.Data
 
         }
 
+
+        //for Ship drp
+        public List<UserMasterPOCO> GetAllShipForDrp(/*int VesselID*/)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("usp_GetAllShipForDrp", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@VesselID", VesselID);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            DataTable myTable = ds.Tables[0];
+            List<UserMasterPOCO> ranksList = myTable.AsEnumerable().Select(m => new UserMasterPOCO()
+            {
+                ShipId = m.Field<int>("ShipId"),
+                ShipName = m.Field<string>("ShipName"),
+
+            }).ToList();
+            con.Close();
+            return ranksList;
+
+        }
     }
 }
