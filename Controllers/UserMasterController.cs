@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
 
+using System.IO;
+
 namespace TCCCMS.Controllers
 {
     public class UserMasterController : Controller
@@ -197,6 +199,108 @@ namespace TCCCMS.Controllers
                                             });
 
         }
+
+        [HttpGet]
+        public ActionResult UploadForm()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult UploadFilledUpForm()
+        {
+            List<Forms> formList = new List<Forms>();
+            DocumentBL uploadBL = new DocumentBL();
+
+            if (Request.Files.Count == 1)
+            {
+                try
+                {
+                    string relativePath = "~/UploadFormForApproval/";
+                    string path = Server.MapPath(relativePath);
+                    //string fileFath = Path.Combine(path, categoryName);
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    //  Get all files from Request object  
+                    HttpFileCollectionBase files = Request.Files;
+                    for (int i = 0; i < files.Count; i++)
+                    {
+                        Forms form = new Forms();
+
+
+                        //string path = AppDomain.CurrentDomain.BaseDirectory + "Uploads/";  
+                        //string filename = Path.GetFileName(Request.Files[i].FileName);  
+
+                        HttpPostedFileBase file = files[i];
+                        string fname;
+
+                        // Checking for Internet Explorer  
+                        if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                        {
+                            string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                            fname = testfiles[testfiles.Length - 1];
+                        }
+                        else
+                        {
+                            fname = file.FileName;
+                        }
+                        string uniqueForName = GetUniqueFileNameWithUserId(fname);
+                        // Get the complete folder path and store the file inside it.  
+                        string fnameWithPath = Path.Combine(path, uniqueForName);
+                        file.SaveAs(fnameWithPath);
+
+                        form.FormName = fname;
+                        form.FilePath = relativePath;
+                        //form.CategoryId = Convert.ToInt32(categoryId);
+                        form.CreateedBy = 1;
+
+                        formList.Add(form);
+
+                    }
+
+                    //int count = uploadBL.SaveUploadedForms(formList);
+                    // Returns message that successfully uploaded  
+                    return Json("File Uploaded Successfully!");
+                }
+                catch (Exception ex)
+                {
+                    return Json("Error occurred. Error details: " + ex.Message);
+                }
+            }
+            else
+            {
+                return Json("No files selected.");
+            }
+        }
+
+        #region Utility Methods
+        private string GetUniqueFileName(string fileName)
+        {
+            fileName = Path.GetFileName(fileName);
+            return Path.GetFileNameWithoutExtension(fileName)
+                      + "_"
+                      + Guid.NewGuid().ToString().Substring(0, 4)
+                      + Path.GetExtension(fileName);
+        }
+        private string GetUniqueFileNameWithUserId(string fileName)
+        {
+            string userId = "1";
+            var n = DateTime.Now;
+            fileName = Path.GetFileName(fileName);
+           
+            return Path.GetFileNameWithoutExtension(fileName)
+                      + "_"
+                      + userId
+                      + "_"
+                      + string.Format("{0:00}{1:00}{2:00}{3:00}{4:00}{5:00}", n.Year - 2000, n.Month, n.Day, n.Hour, n.Minute, n.Second)
+                      + Path.GetExtension(fileName);
+            //----test
+            //fileName = Path.GetFileNameWithoutExtension(fileName);
+            //string s = string.Format(fileName + "_" + userId + "_{0:00}{1:00}{2:00}{3:00}{4:00}{5:00}", n.Year - 2000, n.Month, n.Day, n.Hour, n.Minute, n.Second);
+            //return s+ Path.GetExtension(fileName);
+        }
+        #endregion
 
 
     }

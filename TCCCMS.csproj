@@ -1355,6 +1355,7 @@
     <Content Include="Views\PermissionRole\Index.cshtml" />
     <Content Include="Views\Document\UpdateForm.cshtml" />
     <Content Include="Views\Rank\Index.cshtml" />
+    <Content Include="Views\UserMaster\UploadForm.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
   </ItemGroup>
   <ItemGroup>
