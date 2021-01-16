@@ -36,6 +36,28 @@
     tr:nth-child(even) {
         background-color: #dddddd;
     }
+
+
+
+
+
+
+
+    #sideCut {
+        height: 90px;
+        background: red;
+        position: relative;
+    }
+
+        #sideCut:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-top: 80px solid white;
+            border-left: 80px solid red;
+            width: 0;
+        }
 </style>
 
 
@@ -60,7 +82,7 @@
 
                     <!-- Modal content-->
                     <div class="modal-content">
-                        <div class="modal-header" style="background-color: #e90000;">
+                        <div id="sideCut" class="modal-header" style="background-color: #e90000;">
                             <h4 class="modal-title colorWhite">Table Name</h4>
                         </div>
 
