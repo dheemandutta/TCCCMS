@@ -36,6 +36,28 @@
     tr:nth-child(even) {
         background-color: #dddddd;
     }
+
+
+
+
+
+
+
+    #sideCut {
+        height: 90px;
+        background: red;
+        position: relative;
+    }
+
+        #sideCut:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-top: 80px solid white;
+            border-left: 80px solid red;
+            width: 0;
+        }
 </style>
 
 
@@ -58,74 +80,84 @@
 
 
 
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header" style="background-color: #e90000;">
-                            <h4 class="modal-title colorWhite">Table Name</h4>
-                        </div>
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div id="sideCut" class="modal-header" style="background-color: #e90000;">
+                    <h4 class="modal-title colorWhite">Table Name</h4>
+                </div>
 
 
-                        <div class="modal-body">
-                 
-                                <div class="row">
-                                    <div class="col-sm-12 col-xs-12">
-                                        <div class="card">
-                                            <div class="">
-                                                <div class="col-sm-12 col-xs-12 marginTP10">
-                                                    <div class="row">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="">
+                                    <div class="col-sm-12 col-xs-12 marginTP10">
+                                        <div class="row">
 
-                                                        <div class="col-sm-4 col-xs-12">
-                                                            <div class="form-group">
-                                                                <label class="form-control"><b> Ship Name </b></label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4 col-xs-12">
-                                                            <div class="form-group">
-                                                                <label class="form-control"><b> Flag Name </b></label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4 col-xs-12">
-                                                            <div class="form-group">
-                                                                <label class="form-control"><b> IMO Number </b></label>
-                                                            </div>
-                                                        </div>
-
-
-                                                        <div class="col-sm-4 col-xs-12">
-                                                            <div class="form-group">
-                                                                <label class="form-control" id="">Ship Name</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4 col-xs-12">
-                                                            <div class="form-group">
-                                                                <label class="form-control" id="">Flag Name</label>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-sm-4 col-xs-12">
-                                                            <div class="form-group">
-                                                                <label class="form-control" id="">IMO Number</label>
-                                                            </div>
-                                                        </div>
-
-
-
-                                                    </div>
+                                            <div class="col-sm-3 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class=""><b>  Form Name</b></label>
                                                 </div>
                                             </div>
+                                            <div class="col-sm-2 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class=""><b>  To Download</b></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class=""><b> Approve</b></label>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-2 col-xs-12">
+                                                <div class="form-group">
+                                                    <label class=""><b> Reject</b></label>
+                                                </div>
+                                            </div>
+
+
+
+                                            <p id="demo">
+                                                @*<div class="col-sm-4 col-xs-12">
+                                                        <div class="form-group">
+                                                            <label class="form-control" id="">Form xyz1</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 col-xs-12">
+                                                        <div class="form-group">
+                                                            <a href="~/Forms/FormXyz1.docx" type="button" class="btn btn-outline-warning">Download Form</a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2 col-xs-12">
+                                                        <div class="form-group">
+                                                            <button type="button" class="btn btn-outline-success">Approve</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-2 col-xs-12">
+                                                        <div class="form-group">
+                                                            <button type="button" class="btn btn-outline-secondary">Reject</button>
+                                                        </div>
+                                                    </div>*@
+                                            </p>
+
                                         </div>
                                     </div>
                                 </div>
-                         
-
+                            </div>
                         </div>
-
                     </div>
+                </div>
+
+            </div>
 
 
         </div>
 
     </div>
 </div>
+
+
 
 
 @section Scripts{
@@ -136,6 +168,22 @@
         $(document).ready(function () {
             //SetUpGrid();
         });
+
+
+
+
+
+
+
+        var x = "", i;
+        for (i = 1; i <= 10; i++) {
+            x = x + "<p id=\"demo\">\n <div style=\"float: left;\" class=\"col-sm-4 col-xs-12\">\n <div class=\"form-group\">\n <label style=\"width: 100%;\" class=\"form-control\" id=\"\">Form xyz1</label>\n </div>\n </div>\n <div style=\"float: left;\" class=\"col-sm-4 col-xs-12\">\n <div class=\"form-group\">\n <a href=\"~/Forms/FormXyz1.docx\" type=\"button\" class=\"btn btn-outline-warning\">Download Form</a>\n </div>\n </div>\n <div style=\"float: left;\" class=\"col-sm-3 col-xs-12\">\n <div class=\"form-group\">\n <button type=\"button\" class=\"btn btn-outline-success\">Approve</button>\n </div>\n </div>\n <div style=\"float: left;\" class=\"col-sm-1 col-xs-12\">\n <div class=\"form-group\">\n <button type=\"button\" class=\"btn btn-outline-secondary\">Reject</button>\n </div>\n </div>\n </p>";
+        }
+        document.getElementById("demo").innerHTML = x;
+
+
+
+
 
     </script>
 
