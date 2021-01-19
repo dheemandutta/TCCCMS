@@ -505,8 +505,51 @@ namespace TCCCMS.Data
 
 
 
+        #region DropDown
+        public List<UserMasterPOCO> GetAllUserListForDropDown()
+        {/*--Added on 16th Jan 2021 @BK--*/
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("GetAllUserForDropDown", con);
+            cmd.Parameters.AddWithValue("@ShipId", DBNull.Value);
+            cmd.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            DataTable myTable = ds.Tables[0];
+            List<UserMasterPOCO> userList = myTable.AsEnumerable().Select(m => new UserMasterPOCO()
+            {
+                UserId = m.Field<int>("ID"),
+                UserName = m.Field<string>("Name"),
 
+            }).ToList();
+            con.Close();
+            userList.Add(new UserMasterPOCO { UserId = -1, UserName = "Please Select One" });
+            return userList;
 
+        }
+        public List<UserMasterPOCO> GetAllUserListByShipForDropDown(int shipId)
+        {/*--Added on 18th Jan 2021 @BK--*/
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("GetAllUserForDropDown", con);
+            cmd.Parameters.AddWithValue("@ShipId", shipId);
+            cmd.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            DataTable myTable = ds.Tables[0];
+            List<UserMasterPOCO> userList = myTable.AsEnumerable().Select(m => new UserMasterPOCO()
+            {
+                UserId = m.Field<int>("ID"),
+                UserName = m.Field<string>("Name"),
+
+            }).ToList();
+            con.Close();
+            userList.Add(new UserMasterPOCO { UserId = -1, UserName = "Please Select One" });
+            return userList;
+
+        }
         //for Ranks drp
         public List<UserMasterPOCO> GetAllRanksForDrp(/*int VesselID*/)
         {
@@ -553,5 +596,8 @@ namespace TCCCMS.Data
             return ranksList;
 
         }
+        #endregion
+
+
     }
 }

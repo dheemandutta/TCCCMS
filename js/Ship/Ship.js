@@ -103,8 +103,11 @@ function SetUpGrid() {
     }
 
     $("#shipsTable").DataTable({
-        "processing": true, // for show progress bar
-        "serverSide": true, // for process server side
+        //"dom": 'Bfrtip',
+        //"processing": false, // for show progress bar
+        //"serverSide": true, // for process server side
+        "rowReorder": false,
+        "ordering": false,
         "filter": false, // this is for disable filter (search box)
         "orderMulti": false, // for disable multiple column at once
         "bLengthChange": false, //disable entries dropdown
@@ -126,9 +129,6 @@ function SetUpGrid() {
             {
                 "data": "IMONumber", "name": "IMONumber", "autoWidth": true
             },
-
-
-
 
             {
                 "data": "ID", "width": "50px", "render": function (data) {

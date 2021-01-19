@@ -193,6 +193,28 @@ namespace TCCCMS.Data
         }
 
         #region DropDown
+        public List<Ship> GetAllShipForDropDown()
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("usp_GetAllShipForDrp", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@VesselID", VesselID);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            DataTable myTable = ds.Tables[0];
+            List<Ship> shipList = myTable.AsEnumerable().Select(m => new Ship()
+            {
+                ID = m.Field<int>("ID"),
+                ShipName = m.Field<string>("ShipName"),
+
+            }).ToList();
+            con.Close();
+            shipList.Add(new Ship { ID = -1, ShipName = "Please Select One"});
+            return shipList;
+
+        }
         public List<VesselType> GetVesselTypeListForDopDown()
         {
             List<VesselType> vslTypList = new List<VesselType>();

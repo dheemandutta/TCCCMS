@@ -276,7 +276,7 @@ namespace TCCCMS.Controllers
 
         #region Utility Methods
         private string GetUniqueFileName(string fileName)
-        {
+        {//Added on 8th jan 2021 @bk
             fileName = Path.GetFileName(fileName);
             return Path.GetFileNameWithoutExtension(fileName)
                       + "_"

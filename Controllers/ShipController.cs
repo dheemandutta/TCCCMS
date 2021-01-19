@@ -76,30 +76,30 @@ namespace TCCCMS.Controllers
         public JsonResult SaveShip(Ship ship)
         {
             ShipBL shipBL = new ShipBL();
-            Ship shipPC = new Ship();
-            shipPC.ID = ship.ID;
+            //Ship shipPC = new Ship();
+            //shipPC.ID = ship.ID;
 
-            shipPC.ShipName = ship.ShipName;
-            shipPC.FlagOfShip = ship.FlagOfShip;
-            shipPC.IMONumber = ship.IMONumber;
+            //shipPC.ShipName = ship.ShipName;
+            //shipPC.FlagOfShip = ship.FlagOfShip;
+            //shipPC.IMONumber = ship.IMONumber;
 
-            shipPC.ID = ship.ID;
-            shipPC.VesselTypeId = ship.VesselTypeId;
-            shipPC.VesselSubTypeId = ship.VesselSubTypeId;
-            shipPC.VesselSubSubTypeId = ship.VesselSubSubTypeId;
+            //shipPC.ID = ship.ID;
+            //shipPC.VesselTypeId = ship.VesselTypeId;
+            //shipPC.VesselSubTypeId = ship.VesselSubTypeId;
+            //shipPC.VesselSubSubTypeId = ship.VesselSubSubTypeId;
 
-            shipPC.ShipEmail1 = ship.ShipEmail1;
-            shipPC.ShipEmail2 = ship.ShipEmail2;
-            shipPC.Voices1 = ship.Voices1;
-            shipPC.Voices2 = ship.Voices2;
-            shipPC.Fax1 = ship.Fax1;
-            shipPC.Fax2 = ship.Fax2;
-            shipPC.VOIP1 = ship.VOIP1;
-            shipPC.VOIP2 = ship.VOIP2;
-            shipPC.Mobile1 = ship.Mobile1;
-            shipPC.Mobile2 = ship.Mobile2;
+            //shipPC.ShipEmail1 = ship.ShipEmail1;
+            //shipPC.ShipEmail2 = ship.ShipEmail2;
+            //shipPC.Voices1 = ship.Voices1;
+            //shipPC.Voices2 = ship.Voices2;
+            //shipPC.Fax1 = ship.Fax1;
+            //shipPC.Fax2 = ship.Fax2;
+            //shipPC.VOIP1 = ship.VOIP1;
+            //shipPC.VOIP2 = ship.VOIP2;
+            //shipPC.Mobile1 = ship.Mobile1;
+            //shipPC.Mobile2 = ship.Mobile2;
 
-            int rowaffected = shipBL.SaveShipDetails(shipPC);
+            int rowaffected = shipBL.SaveShipDetails(ship);
 
             //if (rowaffected > 0)
             //{
