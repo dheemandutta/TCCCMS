@@ -36,7 +36,7 @@ namespace TCCCMS.Controllers
             return View();
         }
 
-        public JsonResult LoadData()
+        public JsonResult LoadData(int UserType)
         {
             int draw, start, length;
             int pageIndex = 0;
@@ -67,7 +67,7 @@ namespace TCCCMS.Controllers
             int totalrecords = 0;
 
             List<UserMasterPOCO> pocoList = new List<UserMasterPOCO>();
-            pocoList = bL.GetAllUserPageWise(pageIndex, ref totalrecords, length/*, int.Parse(Session["VesselID"].ToString())*/);
+            pocoList = bL.GetAllUserPageWise(pageIndex, ref totalrecords, length, UserType);
             List<UserMasterPOCO> pList = new List<UserMasterPOCO>();
             foreach (UserMasterPOCO pC in pocoList)
             {
@@ -89,6 +89,9 @@ namespace TCCCMS.Controllers
             var data = pList;
             return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
+
+
+
 
         public JsonResult SaveUpdateUser(UserMasterPOCO pOCO)
         {
@@ -161,6 +164,7 @@ namespace TCCCMS.Controllers
 
             return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }
+
 
 
 

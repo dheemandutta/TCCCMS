@@ -107,7 +107,7 @@ namespace TCCCMS.Data
 
 
 
-        public List<UserMasterPOCO> GetAllUserPageWise(int pageIndex, ref int recordCount, int length/*, int VesselID*/)
+        public List<UserMasterPOCO> GetAllUserPageWise(int pageIndex, ref int recordCount, int length, int UserType)
         {
             List<UserMasterPOCO> pOList = new List<UserMasterPOCO>();
             List<UserMasterPOCO> equipmentsPO = new List<UserMasterPOCO>();
@@ -121,7 +121,7 @@ namespace TCCCMS.Data
                     cmd.Parameters.AddWithValue("@PageSize", length);
                     cmd.Parameters.Add("@RecordCount", SqlDbType.Int, 4);
                     cmd.Parameters["@RecordCount"].Direction = ParameterDirection.Output;   
-                    //cmd.Parameters.AddWithValue("@VesselID", VesselID);
+                    cmd.Parameters.AddWithValue("@UserType", UserType);
                     con.Open();
 
                     DataSet ds = new DataSet();
