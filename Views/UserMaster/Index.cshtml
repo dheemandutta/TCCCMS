@@ -26,7 +26,7 @@
                 <div class="col-md-8 bac1">
 
                     <div style="margin:0 auto" class="tablecontainer">
-                         <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add User</button><br /><br />
+                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add User</button><br /><br />
                         <input type="hidden" id="hdnrole" />
                         <table id="UserMasterTable" class="display" cellspacing="0">
                             <thead>
@@ -35,7 +35,7 @@
                                     <th>Created On</th>
                                     <th>Email</th>
                                     @*<th>Created By</th>
-                                      <th>Modified By</th>*@
+                                        <th>Modified By</th>*@
                                     <th>Gender</th>
                                     <th>Vessel IMO</th>
                                     <th>Rank Name</th>
@@ -80,20 +80,24 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="Password">Password</label>
-                                        <input type="password" class="form-control" id="Password" placeholder="Password" />
+                                        <input type="password" class="form-control" id="Password" placeholder="Password" name="your_pass" value="" />
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="ConfirmPassword">Confirm Password</label>
+                                        <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" name="your_c_pass" value="" onblur="confirmPass()" />
                                     </div>
                                     <div class="form-group">
                                         <label for="Email">Email</label>
                                         <input type="email" class="form-control" id="Email" placeholder="Email" />
                                     </div>
                                     @*<div class="form-group">
-                                        <label for="CreatedBy">Created By</label>
-                                        <input type="text" class="form-control" id="CreatedBy" placeholder="Created By" />
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="ModifiedBy">Modified By</label>
-                                        <input type="text" class="form-control" id="Modified By" placeholder="ModifiedBy" />
-                                    </div>*@
+                                            <label for="CreatedBy">Created By</label>
+                                            <input type="text" class="form-control" id="CreatedBy" placeholder="Created By" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ModifiedBy">Modified By</label>
+                                            <input type="text" class="form-control" id="Modified By" placeholder="ModifiedBy" />
+                                        </div>*@
                                     <div class="form-group">
                                         <label for="Gender">Gender</label>
                                         @*<input type="text" class="form-control" id="Gender" placeholder="Gender" />*@
@@ -111,12 +115,12 @@
                                 </div>
 
 
-                                    <div class="modal-footer" style="background-color:lightgray;">
-                                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return SaveUpdateUser();">Add</button>
-                                        <button type="button" class="btn btn-info btn-sm" id="btnUpdate" style="background-color: #e90000; display: none; width: 86px;" onclick="SaveUpdateUser();">Update</button>
-                                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal">Close</button>
-                                    </div>
+                                <div class="modal-footer" style="background-color:lightgray;">
+                                    <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return SaveUpdateUser();">Add</button>
+                                    <button type="button" class="btn btn-info btn-sm" id="btnUpdate" style="background-color: #e90000; display: none; width: 86px;" onclick="SaveUpdateUser();">Update</button>
+                                    <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal">Close</button>
                                 </div>
+                            </div>
 
                         </div>
                     </div>
@@ -125,6 +129,18 @@
         </div>
     </div>
 </body>
+
+
+<script type="text/javascript">
+    function confirmPass() {
+        var pass = document.getElementById("Password").value
+        var confPass = document.getElementById("ConfirmPassword").value
+        if (pass != confPass) {
+            alert('Wrong confirm password !');
+        }
+    }
+</script>
+
 
 <script>
     $(document).ready(function () {

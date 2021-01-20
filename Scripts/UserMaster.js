@@ -33,13 +33,13 @@
         $('#Password').css('border-color', 'lightgrey');
     }
 
-    //if ($('#Email').val().length === 0) {
-    //    $('#Email').css('border-color', 'Red');
-    //    isValid = false;
-    //}
-    //else {
-    //    $('#Email').css('border-color', 'lightgrey');
-    //}
+    if ($('#Email').val().length === 0) {
+        $('#Email').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#Email').css('border-color', 'lightgrey');
+    }
 
     if ($('#Gender').val().length === 0) {
         $('#Gender').css('border-color', 'Red');
