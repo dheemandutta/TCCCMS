@@ -255,8 +255,8 @@ namespace TCCCMS.Data
                     if (item["UserName"] != System.DBNull.Value)
                         pPOCOPC.UserName = item["UserName"].ToString();
 
-                    //if (item["UserCode"] != System.DBNull.Value)
-                    //    pPOCOPC.UserName = item["UserCode"].ToString();
+                    if (item["UserCode"] != System.DBNull.Value)//Added on 20th JAN 2021 @BK
+                        pPOCOPC.UserCode = item["UserCode"].ToString();
 
                     if (item["Password"] != System.DBNull.Value)
                         pPOCOPC.Password = item["Password"].ToString();
