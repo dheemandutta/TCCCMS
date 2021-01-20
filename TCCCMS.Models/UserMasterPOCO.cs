@@ -26,5 +26,11 @@ namespace TCCCMS.Models
 
         public int ShipId { get; set; }
         public string ShipName { get; set; }
+
+
+
+        public string UserCode { get; set; }
+        public int UserType { get; set; }
+        public int IsAdmin { get; set; }
     }
 }
