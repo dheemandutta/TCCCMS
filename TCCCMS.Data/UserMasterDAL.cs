@@ -85,6 +85,11 @@ namespace TCCCMS.Data
             }
 
 
+            //cmd.Parameters.AddWithValue("@UserCode", pOCO.UserCode.ToString());
+            cmd.Parameters.AddWithValue("@UserType", pOCO.UserType);
+            cmd.Parameters.AddWithValue("@IsAdmin", pOCO.IsAdmin);
+
+
             if (pOCO.UserId > 0)
             {
                 cmd.Parameters.AddWithValue("@UserId ", pOCO.UserId);
@@ -290,7 +295,18 @@ namespace TCCCMS.Data
                     {
                         pPOCOPC.ShipId = Convert.ToInt32(item["ShipId"].ToString());
                     }
-                       
+
+
+
+
+                    //if (item["UserCode"] != System.DBNull.Value)
+                    //    pPOCOPC.UserCode = item["UserCode"].ToString();
+
+                    if (item["UserType"] != null)
+                        pPOCOPC.UserType = Convert.ToInt32(item["UserType"].ToString());
+
+                    if (item["IsAdmin"] != null)
+                        pPOCOPC.IsAdmin = Convert.ToInt32(item["IsAdmin"].ToString());
 
                     //pcList.Add(pPOCOPC);
                 }

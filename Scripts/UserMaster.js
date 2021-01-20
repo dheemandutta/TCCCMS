@@ -72,6 +72,8 @@ function clearTextBox() {
    // $('#ModifiedBy').val("");
     $('#Gender').val("");
     $('#VesselIMO').val("");
+
+    $('#IsAdmin').val("");
 }
 
 function SaveUpdateUser() {
@@ -95,7 +97,9 @@ function SaveUpdateUser() {
             //CreatedBy: $('#CreatedBy').val(),
             //ModifiedBy: $('#ModifiedBy').val(),
             Gender: $('#Gender').val(),
-            VesselIMO: $('#VesselIMO').val()
+            VesselIMO: $('#VesselIMO').val(),
+
+            IsAdmin: document.getElementById("IsAdmin").checked,
         };
 
         $.ajax({
@@ -302,6 +306,8 @@ function GetUserByUserId(UserId) {
             $('#VesselIMO').val(result.VesselIMO);
             $('#RankId').val(result.RankId);
             $('#ShipId').val(result.ShipId);
+
+            $('#IsAdmin').val(result.IsAdmin);
 
             $('#myModal').modal('show');
             $('#btnUpdate').show();
