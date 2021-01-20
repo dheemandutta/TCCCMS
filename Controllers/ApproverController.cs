@@ -65,9 +65,18 @@ namespace TCCCMS.Controllers
         {
             ApproverMasterBL approverBL = new ApproverMasterBL();
            
-            int rowaffected = approverBL.SaveApprever(approver);
+            int rowaffected = approverBL.SaveApprover(approver);
 
             return Json(rowaffected, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult DeleteApprover(string approverMasterId)
+        {
+            int recordaffected = 0;
+            ApproverMasterBL approverBl = new ApproverMasterBL();
+            recordaffected = approverBl.DeleteApprover(Convert.ToInt32(approverMasterId));
+
+            return Json(recordaffected, JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetIMONumberByShip(string shipId)

@@ -25,6 +25,13 @@ namespace TCCCMS.Models
 
         public int RowNumber { get; set; }
 
+        #region Properties for Filled up Form
+        public int ShipId { get; set; }
+        public string FilledUpFormName { get; set; }
+        public string Approvers { get; set; }
+
+        #endregion
+
 
     }
 }

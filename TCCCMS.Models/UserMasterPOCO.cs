@@ -20,17 +20,20 @@ namespace TCCCMS.Models
         public string Gender { get; set; }
         public string VesselIMO { get; set; }
         public int RankId { get; set; }
-        public string RankName { get; set; }
+        public string RankName { get; set; }//May not reqiured @BK
 
 
 
         public int ShipId { get; set; }
-        public string ShipName { get; set; }
+        public string ShipName { get; set; }//May not reqiured @BK
 
 
 
         public string UserCode { get; set; }
         public int UserType { get; set; }
         public int IsAdmin { get; set; }
+
+        public RankPOCO Rank { get; set; } //--Added on 20th JAN 2021 @BK
+        public Ship Ship { get; set; }//--Added on 20th JAN 2021 @BK
     }
 }

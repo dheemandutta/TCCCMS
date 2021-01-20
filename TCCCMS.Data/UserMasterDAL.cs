@@ -246,12 +246,17 @@ namespace TCCCMS.Data
                 foreach (DataRow item in ds.Tables[0].Rows)
                 {
                     //UserMasterPOCO pPOCOPC = new UserMasterPOCO();
+                    RankPOCO rank   = new RankPOCO();
+                    //Ship ship       = new Ship();
 
                     if (item["UserId"] != null)
                         pPOCOPC.UserId = Convert.ToInt32(item["UserId"].ToString());
 
                     if (item["UserName"] != System.DBNull.Value)
                         pPOCOPC.UserName = item["UserName"].ToString();
+
+                    if (item["UserCode"] != System.DBNull.Value)//Added on 20th JAN 2021 @BK
+                        pPOCOPC.UserCode = item["UserCode"].ToString();
 
                     if (item["Password"] != System.DBNull.Value)
                         pPOCOPC.Password = item["Password"].ToString();
@@ -275,10 +280,17 @@ namespace TCCCMS.Data
                         pPOCOPC.VesselIMO = item["VesselIMO"].ToString();
 
                     if (item["RankId"] != null)
-                        pPOCOPC.RankId = Convert.ToInt32(item["RankId"].ToString());
-
+                    {
+                        pPOCOPC.RankId  = Convert.ToInt32(item["RankId"].ToString());
+                        rank.RankId     = Convert.ToInt32(item["RankId"].ToString());
+                        rank.RankName   = item["RankName"].ToString();
+                        pPOCOPC.Rank    = rank;
+                    }
                     if (item["ShipId"] != null)
+                    {
                         pPOCOPC.ShipId = Convert.ToInt32(item["ShipId"].ToString());
+                    }
+                       
 
                     //pcList.Add(pPOCOPC);
                 }

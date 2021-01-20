@@ -20,13 +20,22 @@ namespace TCCCMS.Business
 
             return approverList;
         }
-        public int SaveApprever(ApproverMaster approver)
+        public int SaveApprover(ApproverMaster approver)
         {
             ApproverMasterDAL approverDal = new ApproverMasterDAL();
 
             return approverDal.SaveApprover(approver);
 
         }
+
+        public int DeleteApprover(int approverMasterId)
+        {
+            ApproverMasterDAL approverDal = new ApproverMasterDAL();
+
+            return approverDal.DeleteApprover(approverMasterId);
+        }
+
+
 
         #region --DropDown--
         public List<Ship> GetAllShipForDropDown()

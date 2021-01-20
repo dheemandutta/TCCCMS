@@ -32,6 +32,13 @@ namespace TCCCMS.Business
             return documentDal.SaveUploadedForms(formsList);
 
         }
+        public int SaveFilledUpForm(Forms formsList)
+        {
+            DocumentDAL documentDal = new DocumentDAL();
+
+            return documentDal.SaveFilledUpForm(formsList);
+
+        }
 
         public int DeleteForm(string formName)
         {

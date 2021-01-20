@@ -206,60 +206,53 @@ namespace TCCCMS.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult UploadFilledUpForm()
+        public ActionResult UploadFilledUpForm(string shipId,string approvers)
         {
             List<Forms> formList = new List<Forms>();
-            DocumentBL uploadBL = new DocumentBL();
+            DocumentBL documentBL = new DocumentBL();
 
             if (Request.Files.Count == 1)
             {
                 try
                 {
-                    string relativePath = "~/UploadFormForApproval/";
+                    string relativePath = "~/UploadFilledUpFormForApproval/";
                     string path = Server.MapPath(relativePath);
-                    //string fileFath = Path.Combine(path, categoryName);
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
                     }
                     //  Get all files from Request object  
                     HttpFileCollectionBase files = Request.Files;
-                    for (int i = 0; i < files.Count; i++)
+
+                    //---For Single form
+                    Forms form = new Forms();
+
+                    HttpPostedFileBase file = files[0];
+                    string fname;
+
+                    // Checking for Internet Explorer  
+                    if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
                     {
-                        Forms form = new Forms();
-
-
-                        //string path = AppDomain.CurrentDomain.BaseDirectory + "Uploads/";  
-                        //string filename = Path.GetFileName(Request.Files[i].FileName);  
-
-                        HttpPostedFileBase file = files[i];
-                        string fname;
-
-                        // Checking for Internet Explorer  
-                        if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
-                        {
-                            string[] testfiles = file.FileName.Split(new char[] { '\\' });
-                            fname = testfiles[testfiles.Length - 1];
-                        }
-                        else
-                        {
-                            fname = file.FileName;
-                        }
-                        string uniqueForName = GetUniqueFileNameWithUserId(fname);
-                        // Get the complete folder path and store the file inside it.  
-                        string fnameWithPath = Path.Combine(path, uniqueForName);
-                        file.SaveAs(fnameWithPath);
-
-                        form.FormName = fname;
-                        form.FilePath = relativePath;
-                        //form.CategoryId = Convert.ToInt32(categoryId);
-                        form.CreateedBy = 1;
-
-                        formList.Add(form);
-
+                        string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                        fname = testfiles[testfiles.Length - 1];
                     }
+                    else
+                    {
+                        fname = file.FileName;
+                    }
+                    string uniqueFormName   = GetUniqueFileNameWithUserId(fname);
+                    // Get the complete folder path and store the file inside it.  
+                    string fnameWithPath    = Path.Combine(path, uniqueFormName);
+                    file.SaveAs(fnameWithPath);
 
-                    //int count = uploadBL.SaveUploadedForms(formList);
+                    form.FormName           = fname;
+                    form.FilledUpFormName   = uniqueFormName;
+                    form.FilePath           = relativePath;
+                    form.ShipId             = Convert.ToInt32(shipId);
+                    form.Approvers          = approvers;
+                    form.CreateedBy         = 1;//--- userId
+                    //---End---For Single form
+                    int count               = documentBL.SaveUploadedForms(formList);
                     // Returns message that successfully uploaded  
                     return Json("File Uploaded Successfully!");
                 }
