@@ -107,6 +107,33 @@ namespace TCCCMS.Data
 
             return recorSaved;
         }
+        public int SaveFilledUpForm(Forms form)
+        {
+            int recorSaved = 0;
+            //foreach (Forms form in formsList)
+            //{
+            SqlConnection con   = new SqlConnection(connectionString);
+            con.Open();
+            SqlCommand cmd      = new SqlCommand("SaveFilledUpFormsForApproval", con);
+            cmd.CommandType     = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Name",            form.FilledUpFormName);
+            cmd.Parameters.AddWithValue("@Path",            form.FilePath);
+            cmd.Parameters.AddWithValue("@ShipId",          form.CategoryId);
+            cmd.Parameters.AddWithValue("@xmlApprovers",       form.Approvers);
+            cmd.Parameters.AddWithValue("@OriginalForm",    form.FormName);
+            cmd.Parameters.AddWithValue("@User",            form.CreateedBy);
+            int x = cmd.ExecuteNonQuery();
+            con.Close();
+            //recorSaved = recorSaved + x;
+            recorSaved =  x;
+            //}
+
+
+
+            return recorSaved;
+        }
+
 
         public int DeleteForm(string formName)
         {

@@ -97,5 +97,22 @@ namespace TCCCMS.Data
 
             return recorSaved;
         }
+
+        public int DeleteApprover(int approverMasterId)
+        {
+            SqlConnection con = new SqlConnection(connectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("DeleteApprover", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ApproverMasterId", approverMasterId);
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+
+            con.Close();
+            return recordsAffected;
+        }
     }
 }

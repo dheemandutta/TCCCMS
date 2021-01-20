@@ -1,4 +1,5 @@
-﻿function clearTextBox() {
+﻿var tmpApproverList = [];
+function clearTextBox() {
     $('#ID').val("");
     $('#IMONumber').val("");
     $('#btnAdd').val("Add");
@@ -103,12 +104,17 @@ function SetUpGrid() {
             },
             {
                 "data": "ApproverDescription", "name": "ApproverDescription", "autoWidth": true
-            }
+            },
             //{
             //    "data": "ID", "width": "50px", "render": function (data) {
             //        return '<a href="#" onclick="GetShipByID(' + data + ')">Edit</a>';
             //    }
-            //}
+            //},
+            {
+                "data": "ID", "width": "50px", "render": function (data) {
+                    return '<a href="#" onclick="DeleteApprover(' + data + ')">Delete</a>';
+                }
+            }
 
         ],
         "rowId": "ID",
@@ -228,6 +234,70 @@ function GetRankByUser(id) {
             }
         });
     }
+}
+
+function DeleteApprover(id) {
+    var URL = $('#urlDeleteApprover').val();
+    var ans = confirm("Are you sure you want to delete this Record?");
+    if (ans) {
+        // debugger;
+        $.ajax({
+            url: URL,
+            data: JSON.stringify({ approverMasterId: id }),
+            type: "POST",
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (result) {
+                // debugger;
+
+                if (result == -1) {
+                    alert("Approver cannot be deleted as this is already used.");
+                }
+                else if (result == 0) {
+
+                    alert("Approver cannot be deleted as this is already used.");
+                }
+                else {
+
+                    SetUpGrid();
+                }
+            },
+            error: function () {
+                //to do something
+            }
+        });
+    }
+}
+
+function AddTempApprover() {
+    var idx = 0
+    //if (tmpApproverList.length === 0) {
+    //    tmpApproverList.push({
+    //        SL: idx,
+    //        ID: 100,
+    //        Code: COD1234,
+    //        Rank: Master,
+    //        Name: Name1
+
+    //    });
+    //}
+    if (tmpApproverList.length <= 6) {
+
+        idx = tmpApproverList.length + 1;
+        tmpApproverList.push({
+            SL: idx,
+            ID: 100,
+            Code: COD1234,
+            Rank: Master,
+            Name: Name1
+
+        });
+
+    }
+    else {
+        alert("You are not allowed add more Approver");
+    }
+    
 }
 
     
