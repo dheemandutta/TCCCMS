@@ -148,5 +148,30 @@ namespace TCCCMS.Data
             return recordsAffected;
         }
 
+        #region DropDown
+        public List<RankPOCO> GetAllRanksForDropDown()
+        {/*--Added on 16th Jan 2021 @BK */
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("usp_GetAllRanksForDrp", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            DataTable myTable = ds.Tables[0];
+            List<RankPOCO> ranksList = myTable.AsEnumerable().Select(m => new RankPOCO()
+            {
+                RankId = m.Field<int>("RankId"),
+                RankName = m.Field<string>("RankName"),
+
+            }).ToList();
+            con.Close();
+            ranksList.Add(new RankPOCO { RankId = -1,RankName = "Please Select One" });
+            return ranksList;
+
+        }
+
+        #endregion
+
     }
 }

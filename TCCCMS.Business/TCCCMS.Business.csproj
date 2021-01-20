@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApproverMasterBL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DocumentBL.cs" />
     <Compile Include="ManualBL.cs" />
