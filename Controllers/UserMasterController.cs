@@ -22,6 +22,20 @@ namespace TCCCMS.Controllers
             return View();
         }
 
+        public ActionResult CompanyUser()
+        {
+            GetAllRanksForDrp();
+            GetAllShipForDrp();
+            return View();
+        }
+
+        public ActionResult SupportUser()
+        {
+            GetAllRanksForDrp();
+            GetAllShipForDrp();
+            return View();
+        }
+
         public JsonResult LoadData()
         {
             int draw, start, length;
@@ -100,7 +114,53 @@ namespace TCCCMS.Controllers
             return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult SaveUpdateCompanyUser(UserMasterPOCO pOCO)
+        {
+            UserMasterBL bL = new UserMasterBL();
+            UserMasterPOCO pC = new UserMasterPOCO();
 
+            pC.UserId = pOCO.UserId;
+
+            pC.RankId = pOCO.RankId;
+            pC.ShipId = pOCO.ShipId;
+            pC.UserName = pOCO.UserName;
+            pC.Password = pOCO.Password;
+            pC.Email = pOCO.Email;
+            pC.CreatedBy = pOCO.CreatedBy;
+            pC.ModifiedBy = pOCO.ModifiedBy;
+            pC.Gender = pOCO.Gender;
+            pC.VesselIMO = pOCO.VesselIMO;
+
+            //pC.UserCode = pOCO.UserCode;
+            pC.UserType = 2;
+            pC.IsAdmin = pOCO.IsAdmin;
+
+            return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult SaveUpdateSupportUser(UserMasterPOCO pOCO)
+        {
+            UserMasterBL bL = new UserMasterBL();
+            UserMasterPOCO pC = new UserMasterPOCO();
+
+            pC.UserId = pOCO.UserId;
+
+            pC.RankId = pOCO.RankId;
+            pC.ShipId = pOCO.ShipId;
+            pC.UserName = pOCO.UserName;
+            pC.Password = pOCO.Password;
+            pC.Email = pOCO.Email;
+            pC.CreatedBy = pOCO.CreatedBy;
+            pC.ModifiedBy = pOCO.ModifiedBy;
+            pC.Gender = pOCO.Gender;
+            pC.VesselIMO = pOCO.VesselIMO;
+
+            //pC.UserCode = pOCO.UserCode;
+            pC.UserType = 0;
+            pC.IsAdmin = pOCO.IsAdmin;
+
+            return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
+        }
 
 
 

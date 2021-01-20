@@ -67,6 +67,7 @@ function clearTextBox() {
     $('#ShipId').val("");
     $('#UserName').val("");
     $('#Password').val("");
+    $('#ConfirmPassword').val("");
     $('#Email').val("");
    // $('#CreatedBy').val("");
    // $('#ModifiedBy').val("");

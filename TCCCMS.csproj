@@ -1364,6 +1364,8 @@
     <Content Include="Views\UserMaster\UploadForm.cshtml" />
     <Content Include="Views\Home\Test.cshtml" />
     <Content Include="Views\Approver\Index.cshtml" />
+    <Content Include="Views\UserMaster\CompanyUser.cshtml" />
+    <Content Include="Views\UserMaster\SupportUser.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
