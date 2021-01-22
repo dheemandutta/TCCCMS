@@ -22,13 +22,66 @@
                 <div class="card marginTP10">
                     <div class="col-sm-12 col-xs-12">
                         <div class="marginTP10">
-                           
+
                             <div class="col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <input type="file" id="fileUpload" />
                                 </div>
                             </div>
-                            
+
+                            <div class="col-sm-12 col-xs-12">
+                                <div class="row">
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="User">Approver</label>
+                                            @Html.DropDownList("UserList", (IEnumerable<SelectListItem>)ViewBag.Approver, new { @id = "ddlUser", @class = "form-control", })
+                                            @*<select id="ddlUser" name="UserList" class="form-control"></select>*@
+                                        </div>
+                                    </div>
+
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="Approver">Approver Level</label>
+                                            @Html.DropDownList("ApproverLevel", (IEnumerable<SelectListItem>)ViewBag.ApproverLevel, new { @id = "ddlApproverLevel", @class = "form-control", onchange = "LoadApprover()" })
+                                           
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+
+                            <div class="col-sm-12 col-xs-12">
+                                <div id="divTempApprover" class="col-sm-12 col-xs-12 marginTP10 displayNone">
+                                    <div class="row">
+                                        <div class="card marginTP10 marginBTM10">
+                                            <div class="card-header">
+                                                <label>Temp Approver List</label>
+                                            </div>
+                                            <div class="card-body">
+                                                <div style="margin:0 auto" class="tablecontainer">
+                                                    <table id="tempApproverTable" class="display" cellspacing="0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>SL</th>
+                                                                <th>User Code</th>
+                                                                <th>Approver Level</th>
+                                                                @*<th>Edit</th>*@
+                                                                <th>Delete</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
                             <div class="col-sm-12 col-xs-12">
                                 <div class="form-group">
                                     <input type="button" id="btnUpdate" value="Upload" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="UploadFilledUpForm()" />
@@ -47,12 +100,13 @@
 
 @section Scripts{
     <script src="~/Scripts/UserMaster.js"></script>
+    <script src="~/js/UserMaster/UserUploadForm.js"></script>
     <script type="text/javascript">
 
         $(document).ready(function () {
             //$(':input[type="file"]').prop('disabled', true);
         });
-       
+
 
     </script>
 

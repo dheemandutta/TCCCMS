@@ -27,6 +27,21 @@ namespace TCCCMS.Business
             return approverDal.SaveApprover(approver);
 
         }
+        public int SaveApprover(List<ApproverMaster> approverList)
+        {
+            int totalRowAffected = 0;
+            ApproverMasterDAL approverDal = new ApproverMasterDAL();
+            foreach (ApproverMaster approver in approverList)
+            {
+                int rowAffected = 0;
+                rowAffected = approverDal.SaveApprover(approver);
+
+                totalRowAffected = totalRowAffected + rowAffected;
+            }
+
+            return totalRowAffected;
+
+        }
 
         public int DeleteApprover(int approverMasterId)
         {
@@ -57,6 +72,17 @@ namespace TCCCMS.Business
         {
             UserMasterDAL shipDal = new UserMasterDAL();
             return shipDal.GetAllUserListByShipForDropDown(shipId);
+        }
+
+        public List<ApproverLevel> GetApproverLevelForDopDown()
+        {
+            ApproverMasterDAL approverDal = new ApproverMasterDAL();
+            return approverDal.GetApproverLevelForDopDown();
+        }
+        public List<UserMasterPOCO> GetApproverListByShipForDopDown(int shipId)
+        {
+            ApproverMasterDAL approverDal = new ApproverMasterDAL();
+            return approverDal.GetApproverListByShipForDopDown(shipId);
         }
 
         #endregion

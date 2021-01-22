@@ -89,8 +89,16 @@ namespace TCCCMS.Data
             cmd.Parameters.AddWithValue("@IMONumber", approver.VesselIMONumber);
             cmd.Parameters.AddWithValue("@RankId", approver.RankId);
             cmd.Parameters.AddWithValue("@UserId", approver.UserId);
-            cmd.Parameters.AddWithValue("@ApproverId", approver.ApproverId);
+            //cmd.Parameters.AddWithValue("@ApproverId", approver.ApproverId);
             cmd.Parameters.AddWithValue("@CreatedBy", 1);
+            if (approver.ApproverId != 0)
+            {
+                cmd.Parameters.AddWithValue("@ApproverId", approver.ApproverId);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@ApproverId", 0);
+            }
             recorSaved = cmd.ExecuteNonQuery();
             con.Close();
 
@@ -114,5 +122,73 @@ namespace TCCCMS.Data
             con.Close();
             return recordsAffected;
         }
+
+        #region --DropDown
+        public List<UserMasterPOCO> GetApproverListByShipForDopDown(int shipId)
+        {
+            List<UserMasterPOCO> userByShipList = new List<UserMasterPOCO>();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetApproverListByShipForDopDown", con))
+                {
+                    con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ShipId", shipId);
+
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        userByShipList.Add(new UserMasterPOCO
+                        {
+                            UserId = Convert.ToInt32(dr["UserId"]),
+                            UserName = Convert.ToString(dr["UserName"]),
+                            UserCode = Convert.ToString(dr["UserCode"]),
+
+                        });
+                    }
+                    con.Close();
+                }
+            }
+            userByShipList.Add(new UserMasterPOCO { UserId = -1, UserName = "Please Select One" });
+            return userByShipList;
+
+        }
+
+        public List<ApproverLevel> GetApproverLevelForDopDown()
+        {
+            List<ApproverLevel> approverLevelList = new List<ApproverLevel>();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetApproverLevelForDopDown", con))
+                {
+                    con.Open();
+                    cmd.CommandType     = CommandType.StoredProcedure;
+                    DataSet ds          = new DataSet();
+                    SqlDataAdapter da   = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        approverLevelList.Add(new ApproverLevel
+                        {
+                            ID          = Convert.ToInt32(dr["ID"]),
+                            Description = Convert.ToString(dr["Descripton"]),
+
+                        });
+                    }
+                    con.Close();
+                }
+            }
+            approverLevelList.Add(new ApproverLevel { ID = -1, Description = "Please Select One" });
+            return approverLevelList;
+        }
+
+        #endregion
     }
 }

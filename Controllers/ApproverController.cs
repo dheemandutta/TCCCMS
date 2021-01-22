@@ -6,7 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
-
+using Newtonsoft.Json;
 
 namespace TCCCMS.Controllers
 {
@@ -60,16 +60,36 @@ namespace TCCCMS.Controllers
 
             return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
-
+        /// <summary>
+        /// Old / for single approver
+        /// </summary>
+        /// <param name="approver"></param>
+        /// <returns></returns>
         public JsonResult SaveApprover(ApproverMaster approver)
         {
             ApproverMasterBL approverBL = new ApproverMasterBL();
-           
+            
             int rowaffected = approverBL.SaveApprover(approver);
 
             return Json(rowaffected, JsonRequestBehavior.AllowGet);
         }
+        /// <summary>
+        /// New/ for Multiple approver 
+        /// </summary>
+        /// <param name="approverList"></param>
+        /// <returns></returns>
+        public JsonResult SaveApproverList(List<ApproverMaster> approverList = null)
+        {
+            ApproverMasterBL approverBL = new ApproverMasterBL();
+            List<UserMasterPOCO> lst = new List<UserMasterPOCO>();
+            //lst = userList;
+            //var s = JsonConvert.DeserializeObject(userList);
 
+
+            int rowaffected = approverBL.SaveApprover(approverList);
+
+            return Json(1, JsonRequestBehavior.AllowGet);
+        }
         public JsonResult DeleteApprover(string approverMasterId)
         {
             int recordaffected = 0;
@@ -96,13 +116,14 @@ namespace TCCCMS.Controllers
         /// </summary>
         /// <param name="userId"></param>
         /// <returns></returns>
-        public JsonResult GetRankByUser(string userId)
+        public JsonResult GetUserDetailsByUser(string userId)
         {
             ApproverMaster approver = new ApproverMaster();
             UserMasterBL userBl = new UserMasterBL();
             UserMasterPOCO user = new UserMasterPOCO();
             user = userBl.GetUserByUserId(Convert.ToInt32(userId));
             approver.RankId = user.RankId;
+            approver.User = user;
             return Json(approver, JsonRequestBehavior.AllowGet);
         }
 

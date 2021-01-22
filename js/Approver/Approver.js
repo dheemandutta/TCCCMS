@@ -19,6 +19,9 @@ function clearTextBox() {
     $('#ddlUser').css('border-color', 'lightgrey');
     $('#ddlApproverGrade').css('border-color', 'lightgrey');
 
+    tmpApproverList = [];
+    $('#divTempApprover').addClass('displayNone');
+
 }
 function validate() {
     var isValid = true;
@@ -32,14 +35,6 @@ function validate() {
        
 
     }
-    if ($("#ddlRank").val() === 0 || $("#ddlRank").val() < 0) {
-        $('#ddlRank').css('border-color', 'Red');
-        isValid = false;
-    }
-    else {
-        $('#ddlRank').css('border-color', 'lightgrey');
-       
-    }
     if ($("#ddlUser").val() === 0 || $("#ddlUser").val() < 0) {
         $('#ddlUser').css('border-color', 'Red');
         isValid = false;
@@ -48,13 +43,26 @@ function validate() {
         $('#ddlUser').css('border-color', 'lightgrey');
 
     }
-    if ($("#ddlApproverGrade").val() === 0 || $("#ddlApproverGrade").val() < 0) {
-        $('#ddlApproverGrade').css('border-color', 'Red');
+    if ($("#ddlRank").val() === 0 || $("#ddlRank").val() < 0) {
+        $('#ddlRank').css('border-color', 'Red');
         isValid = false;
     }
     else {
-        $('#ddlApproverGrade').css('border-color', 'lightgrey');
+        $('#ddlRank').css('border-color', 'lightgrey');
+       
+    }
+    //if ($("#ddlApproverGrade").val() === 0 || $("#ddlApproverGrade").val() < 0) {
+    //    $('#ddlApproverGrade').css('border-color', 'Red');
+    //    isValid = false;
+    //}
+    //else {
+    //    $('#ddlApproverGrade').css('border-color', 'lightgrey');
 
+    //}
+    if (tmpApproverList.length === 0) {
+
+        $('#ddlUser').css('border-color', 'Red');
+        isValid = false;
     }
 
     return isValid;
@@ -121,31 +129,111 @@ function SetUpGrid() {
     });
 }
 
+function SetUpTempApproverGrid() {
+    //var loadposturl = $('#loaddata').val();
+
+    //do not throw error
+    $.fn.dataTable.ext.errMode = 'none';
+
+    //check if datatable is already created then destroy iy and then create it
+    if ($.fn.dataTable.isDataTable('#tempApproverTable')) {
+        table = $('#tempApproverTable').DataTable();
+        table.destroy();
+    }
+
+    var table = $("#tempApproverTable").DataTable({
+        "processing": false, // for show progress bar
+        "rowReorder": false,
+        "ordering": false,
+        "filter": false, // this is for disable filter (search box)
+        "orderMulti": false, // for disable multiple column at once
+        "bLengthChange": false, //disable entries dropdown
+        "bPaginate": false, //this is for hide pagination
+        "bInfo": false, // hide showing entries
+        //"ajax": {
+        //    "url": loadposturl,
+        //    "type": "POST",
+        //    "datatype": "json"
+        //},
+        //"ajax": { "data": tmpApproverList },
+        "data": tmpApproverList,
+        "columns": [
+            {
+                "data": "SL", "name": "SL", "autoWidth": true
+            },
+            //{
+            //    "data": "ID", "name": "ID", "autoWidth": true
+            //},
+            {
+                "data": "Code", "name": "Code", "autoWidth": true
+            },
+            //{
+            //    "data": "RankId", "name": "RankId", "autoWidth": true
+            //},
+            {
+                "data": "Rank", "name": "Rank", "autoWidth": true
+            },
+            {
+                "data": "Name", "name": "Name", "autoWidth": true
+            },
+            //{
+            //    "data": "ID", "width": "50px", "render": function (data) {
+            //        return '<a href="#" onclick="GetShipByID(' + data + ')">Edit</a>';
+            //    }
+            //},
+            {
+                "data": "ID", "width": "50px", "render": function (data) {
+                    return '<a href="#" onclick="RemoveTempApprover(' + data + ')">Remove</a>';
+                }
+            }
+
+        ],
+        "rowId": "ID",
+    });
+}
+
 
 function SaveApprover() {
     // alert();
-    var i = $('#urlSaveDetails').val();
+    var URL = $('#urlSaveDetails2').val();
     // debugger;
     var res = validate();
     if (res === false) {
         return false;
     }
-    var approverObj = {
+    var approverList = [];
+    //var approverObj = {
 
-        ID: $('#ID').val(),
-        ShipId: $('#ddlShip').val(),
-        VesselIMONumber: $('#IMONumber').val(),
+    //    ID: $('#ID').val(),
+    //    ShipId: $('#ddlShip').val(),
+    //    VesselIMONumber: $('#IMONumber').val(),
 
-        RankId: $('#ddlRank').val(),
-        UserId: $('#ddlUser').val(),
-        ApproverId: $('#ddlApproverGrade').val(),
+    //    RankId: $('#ddlRank').val(),
+    //    UserId: $('#ddlUser').val(),
+    //    //ApproverId: $('#ddlApproverGrade').val(),
 
-    };
+    //};
+    for (var i = 0; i < tmpApproverList.length; i++) {
+        //var cur = tmpApproverList[i];
+        //if (cur.ID === user.UserId) {
+        //    exist = true;
+        //    break;
+        //}
+        approverList.push({
+            ID: $('#ID').val(),
+            ShipId: $('#ddlShip').val(),
+            VesselIMONumber: $('#IMONumber').val(),
+
+            RankId: tmpApproverList[i].RankId,
+            UserId: tmpApproverList[i].ID
+        });
+    }
     //debugger;
     $.ajax({
 
-        url: i,
-        data: JSON.stringify(approverObj),
+        url: URL,
+        //data: { approver: JSON.stringify(approverObj), userList: JSON.stringify(tmpApproverList)},
+        data: JSON.stringify(approverList) ,
         type: "POST",
         contentType: "application/json;charset=utf-8",
         dataType: "json",
@@ -218,22 +306,31 @@ function GetUserListByShipForDropdown(id) {
 function GetRankByUser(id) {
     var userId = id;
     var x = $("#urlGeRankByUser").val();
-    if (userId > 0) {
-        $.ajax({
-            url: x,
-            type: "POST",
-            data: JSON.stringify({ 'userId': userId }),
-            contentType: "application/json;charset=utf-8",
-            dataType: "json",
-            success: function (result) {
-                //debugger;
-                $('#ddlRank').val(result.RankId);
-            },
-            error: function (errormessage) {
-                alert(errormessage.responseText);
-            }
-        });
+    if (tmpApproverList.length <= 6) {
+        if (userId > 0) {
+            $.ajax({
+                url: x,
+                type: "POST",
+                data: JSON.stringify({ 'userId': userId }),
+                contentType: "application/json;charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    //debugger;
+                    $('#ddlRank').val(result.RankId);
+                    AddTempApprover(result.User);
+                    SetUpTempApproverGrid();
+                    $('#divTempApprover').removeClass('displayNone');
+                },
+                error: function (errormessage) {
+                    alert(errormessage.responseText);
+                }
+            });
+        }
     }
+    else {
+        alert("You are not allowed add more Approver");
+    }
+    
 }
 
 function DeleteApprover(id) {
@@ -269,8 +366,10 @@ function DeleteApprover(id) {
     }
 }
 
-function AddTempApprover() {
+function AddTempApprover(user) {
     var idx = 0
+    var rank = user.Rank;
+    var exist = false;
     //if (tmpApproverList.length === 0) {
     //    tmpApproverList.push({
     //        SL: idx,
@@ -282,16 +381,32 @@ function AddTempApprover() {
     //    });
     //}
     if (tmpApproverList.length <= 6) {
-
+        //tmpApproverList.r
         idx = tmpApproverList.length + 1;
-        tmpApproverList.push({
-            SL: idx,
-            ID: 100,
-            Code: COD1234,
-            Rank: Master,
-            Name: Name1
 
-        });
+        for (var i = 0; i < tmpApproverList.length; i++) {
+            var cur = tmpApproverList[i];
+            if (cur.ID === user.UserId) {
+                exist = true;
+                break;
+            }
+        }
+
+        if (!exist) {
+            tmpApproverList.push({
+                SL: idx,
+                ID: user.UserId,
+                Code: user.UserCode,
+                RankId: rank.RankId,
+                Rank: rank.RankName,
+                Name: user.UserName
+
+            });
+        }
+        else {
+            alert("This user Already added..!")
+        }
+        
 
     }
     else {
@@ -299,5 +414,30 @@ function AddTempApprover() {
     }
     
 }
+
+function RemoveTempApprover(id) {
+    var idx = 1
+    var objList = []; 
+    for (var i = 0; i < tmpApproverList.length; i++) {
+        var cur = tmpApproverList[i];
+        if (cur.ID != id) {
+            objList.push({
+                SL: idx,
+                ID: cur.ID,
+                Code: cur.Code,
+                RankId: cur.RankId,
+                Rank: cur.Rank,
+                Name: cur.Name
+            });
+            idx = idx + 1;
+        }
+    }
+    
+    tmpApproverList = objList;
+
+    SetUpTempApproverGrid();
+}
+
+
 
     
