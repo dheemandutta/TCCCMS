@@ -1,7 +1,7 @@
 ﻿@model TCCCMS.Models.UserMasterPOCO
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "CompanyUser";
 }
 
 <link href="~/DataTables/datatables.min.css" rel="stylesheet" />
@@ -11,7 +11,7 @@
 <script src="~/Scripts/UserMaster.js"></script>
 
 @Html.Hidden("loaddata", @Url.Action("LoadData", "UserMaster"))
-@Html.Hidden("SaveUpdateUser", @Url.Action("SaveUpdateUser", "UserMaster"))
+@Html.Hidden("SaveUpdateUser", @Url.Action("SaveUpdateCompanyUser", "UserMaster"))
 
 @Html.Hidden("DeleteUserMaster", @Url.Action("DeleteUserMaster", "UserMaster"))
 @Html.Hidden("GetUserByUserId", @Url.Action("GetUserByUserId", "UserMaster"))
@@ -19,14 +19,14 @@
 <body>
     <div class="row">
         <div class="col-md-3">
-            <h2 class="ta">User Master </h2>
+            <h2 class="ta">Company User </h2>
         </div>
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-8 bac1">
 
                     <div style="margin:0 auto" class="tablecontainer">
-                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add User</button><br /><br />
+                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add Company User</button><br /><br />
                         <input type="hidden" id="hdnrole" />
                         <table id="UserMasterTable" class="display" cellspacing="0">
                             <thead>
@@ -55,7 +55,7 @@
                             <!-- Modal content-->
                             <div class="modal-content">
                                 <div class="modal-header" style="background-color: #e90000;">
-                                    <h4 class="modal-title">Add User</h4>
+                                    <h4 class="modal-title">Add Company User</h4>
                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                 </div>
 
@@ -97,13 +97,13 @@
                                         <input type="email" class="form-control" id="Email" placeholder="Email" />
                                     </div>
                                     @*<div class="form-group">
-            <label for="CreatedBy">Created By</label>
-            <input type="text" class="form-control" id="CreatedBy" placeholder="Created By" />
-        </div>
-        <div class="form-group">
-            <label for="ModifiedBy">Modified By</label>
-            <input type="text" class="form-control" id="Modified By" placeholder="ModifiedBy" />
-        </div>*@
+                                            <label for="CreatedBy">Created By</label>
+                                            <input type="text" class="form-control" id="CreatedBy" placeholder="Created By" />
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="ModifiedBy">Modified By</label>
+                                            <input type="text" class="form-control" id="Modified By" placeholder="ModifiedBy" />
+                                        </div>*@
                                     <div class="form-group">
                                         <label for="Gender">Gender</label>
                                         @*<input type="text" class="form-control" id="Gender" placeholder="Gender" />*@
@@ -157,6 +157,6 @@
 <script>
     $(document).ready(function () {
         //$('#example').DataTable();
-        SetUpGridShipUser();
+        SetUpGridCompanyUser();
     });
 </script>
