@@ -107,6 +107,7 @@ namespace TCCCMS.Controllers
 
             ship = shipBL.GetShipDetailsById(Convert.ToInt32(shipId));
             approver.VesselIMONumber = ship.IMONumber;
+            approver.Ship = ship;
 
             return Json(approver, JsonRequestBehavior.AllowGet);
         }

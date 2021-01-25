@@ -1,0 +1,62 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/Login.css" rel="stylesheet" />
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="container">
+            <center>
+                <div class="middle">
+                    <div class="logo">
+                        LOGO
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div id="login">
+
+                        <form action="javascript:void(0);" method="get">
+
+                            <fieldset class="">
+
+                                <p><span class="fclearfixa fa-user"></span><input type="text" Placeholder="Username" required></p> <!-- JS because of IE support; better: placeholder="Username" -->
+                                <p><span class="fa fa-lock"></span><input type="password" Placeholder="Password" required></p> <!-- JS because of IE support; better: placeholder="Password" -->
+
+                                <div>
+                                    <span style="width:48%; text-align:left;  display: inline-block;">
+                                        <a class="small-text" href="#">
+                                            Forgot
+                                            password?
+                                        </a>
+                                    </span>
+                                    <span style="width:50%; text-align:right;  display: inline-block;"><input type="submit" value="Sign In"></span>
+                                </div>
+
+                            </fieldset>
+                            <div class="clearfix"></div>
+                        </form>
+
+                        <div class="clearfix"></div>
+
+                    </div> <!-- end login -->
+
+
+                </div>
+            </center>
+        </div>
+    </div>
+</body>
+</html>

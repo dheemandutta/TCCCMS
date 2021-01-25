@@ -184,6 +184,8 @@ namespace TCCCMS.Data
                     //ship.VesselSubTypeName      = Convert.ToString(ds.Tables[0].Rows[0]["VesselSubTypeName"]);
                     ship.VesselSubSubTypeId     = Convert.ToInt32(ds.Tables[0].Rows[0]["VesselSubSubTypeID"]);
                     //ship.VesselSubSubTypeName   = Convert.ToString(ds.Tables[0].Rows[0]["VesselSubSubTypeName"]);
+                    
+                    ship.ApproversCount = Convert.ToInt32(ds.Tables[1].Rows[0]["ApproversCount"]);//Added on 22nd JAN 2021 (for Approvers count checking on approver master)
 
                     con.Close();
                 }

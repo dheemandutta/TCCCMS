@@ -193,6 +193,7 @@
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\Login.css" />
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\owl.theme.css" />
     <Content Include="css\owl.theme.default.css" />
@@ -1369,6 +1370,7 @@
     <Content Include="Views\Approver\Index.cshtml" />
     <Content Include="Views\UserMaster\CompanyUser.cshtml" />
     <Content Include="Views\UserMaster\SupportUser.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

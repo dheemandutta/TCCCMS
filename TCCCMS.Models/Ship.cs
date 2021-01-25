@@ -43,6 +43,7 @@ namespace TCCCMS.Models
         public int ModifiedBy { get; set; }
 
         public int RowNumber { get; set; }
+        public int ApproversCount { get; set; }
 
     }
 
