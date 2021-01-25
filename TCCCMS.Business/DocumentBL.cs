@@ -32,11 +32,11 @@ namespace TCCCMS.Business
             return documentDal.SaveUploadedForms(formsList);
 
         }
-        public int SaveFilledUpForm(Forms formsList)
+        public int SaveFilledUpForm(Forms form, List<ApproverMaster> approvers, ref string catchMessage)
         {
             DocumentDAL documentDal = new DocumentDAL();
 
-            return documentDal.SaveFilledUpForm(formsList);
+            return documentDal.SaveFilledUpForm(form, approvers,ref catchMessage);
 
         }
 

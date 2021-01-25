@@ -9,11 +9,13 @@ using System.Web.Mvc;
 using System.Text.RegularExpressions;
 
 using System.IO;
+using Newtonsoft.Json;
 
 namespace TCCCMS.Controllers
 {
     public class UserMasterController : Controller
     {
+        private int _shipId = 0;
         // GET: UserMaster
         public ActionResult Index()
         {
@@ -168,36 +170,7 @@ namespace TCCCMS.Controllers
 
 
 
-        //for Ranks drp
-        public void GetAllRanksForDrp()
-        {
-            UserMasterBL bL = new UserMasterBL();
-            List<UserMasterPOCO> pocoList = new List<UserMasterPOCO>();
-
-            pocoList = bL.GetAllRanksForDrp(/*int.Parse(Session["VesselID"].ToString())*/);
-
-
-            List<UserMasterPOCO> itmasterList = new List<UserMasterPOCO>();
-
-            foreach (UserMasterPOCO up in pocoList)
-            {
-                UserMasterPOCO unt = new UserMasterPOCO();
-                unt.RankId = up.RankId;
-                unt.RankName = up.RankName;
-
-                itmasterList.Add(unt);
-            }
-
-            ViewBag.Ranks = itmasterList.Select(x =>
-                                            new SelectListItem()
-                                            {
-                                                Text = x.RankName,
-                                                Value = x.RankId.ToString()
-                                            });
-
-        }
-
-
+       
 
         public JsonResult GetUserByUserId(int UserId)
         {
@@ -242,45 +215,26 @@ namespace TCCCMS.Controllers
 
 
 
-        //for Ship drp
-        public void GetAllShipForDrp()
-        {
-            UserMasterBL bL = new UserMasterBL();
-            List<UserMasterPOCO> pocoList = new List<UserMasterPOCO>();
-
-            pocoList = bL.GetAllShipForDrp(/*int.Parse(Session["VesselID"].ToString())*/);
-
-
-            List<UserMasterPOCO> itmasterList = new List<UserMasterPOCO>();
-
-            foreach (UserMasterPOCO up in pocoList)
-            {
-                UserMasterPOCO unt = new UserMasterPOCO();
-                unt.ShipId = up.ShipId;
-                unt.ShipName = up.ShipName;
-
-                itmasterList.Add(unt);
-            }
-
-            ViewBag.Ships = itmasterList.Select(x =>
-                                            new SelectListItem()
-                                            {
-                                                Text = x.ShipName,
-                                                Value = x.ShipId.ToString()
-                                            });
-
-        }
-
+       
         [HttpGet]
         public ActionResult UploadForm()
         {
+            _shipId = 6;
+            GetApproverListByShipDropDown(_shipId);
+            GetApproverLevel();
             return View();
         }
         [HttpPost]
-        public ActionResult UploadFilledUpForm(string shipId,string approvers)
+        public ActionResult UploadFilledUpForm(string approvers = null)
         {
+            string catchMessage = "";
             List<Forms> formList = new List<Forms>();
             DocumentBL documentBL = new DocumentBL();
+            List<ApproverMaster> approvers1 = new List<ApproverMaster>();
+            //approvers1 = (List<ApproverMaster>)JsonConvert.DeserializeObject(approvers);
+            string s1 = JsonConvert.SerializeObject(approvers);
+            approvers1 = JsonConvert.DeserializeObject<List<ApproverMaster>>(approvers);
+            //string s = (string)JsonConvert.DeserializeObject(approvers);
 
             if (Request.Files.Count == 1)
             {
@@ -319,11 +273,11 @@ namespace TCCCMS.Controllers
                     form.FormName           = fname;
                     form.FilledUpFormName   = uniqueFormName;
                     form.FilePath           = relativePath;
-                    form.ShipId             = Convert.ToInt32(shipId);
-                    form.Approvers          = approvers;
+                    //form.ShipId             = Convert.ToInt32(shipId);
+                    //form.Approvers          = approvers;
                     form.CreateedBy         = 1;//--- userId
                     //---End---For Single form
-                    int count               = documentBL.SaveUploadedForms(formList);
+                    int count               = documentBL.SaveFilledUpForm(form, approvers1,ref catchMessage);
                     // Returns message that successfully uploaded  
                     return Json("File Uploaded Successfully!");
                 }
@@ -337,6 +291,97 @@ namespace TCCCMS.Controllers
                 return Json("No files selected.");
             }
         }
+
+        #region DropDown
+        //for Ranks drp
+        public void GetAllRanksForDrp()
+        {
+            UserMasterBL bL = new UserMasterBL();
+            List<UserMasterPOCO> pocoList = new List<UserMasterPOCO>();
+
+            pocoList = bL.GetAllRanksForDrp(/*int.Parse(Session["VesselID"].ToString())*/);
+
+
+            List<UserMasterPOCO> itmasterList = new List<UserMasterPOCO>();
+
+            foreach (UserMasterPOCO up in pocoList)
+            {
+                UserMasterPOCO unt = new UserMasterPOCO();
+                unt.RankId = up.RankId;
+                unt.RankName = up.RankName;
+
+                itmasterList.Add(unt);
+            }
+
+            ViewBag.Ranks = itmasterList.Select(x =>
+                                            new SelectListItem()
+                                            {
+                                                Text = x.RankName,
+                                                Value = x.RankId.ToString()
+                                            });
+
+        }
+        //for Ship drp
+        public void GetAllShipForDrp()
+        {
+            UserMasterBL bL = new UserMasterBL();
+            List<UserMasterPOCO> pocoList = new List<UserMasterPOCO>();
+
+            pocoList = bL.GetAllShipForDrp(/*int.Parse(Session["VesselID"].ToString())*/);
+
+
+            List<UserMasterPOCO> itmasterList = new List<UserMasterPOCO>();
+
+            foreach (UserMasterPOCO up in pocoList)
+            {
+                UserMasterPOCO unt = new UserMasterPOCO();
+                unt.ShipId = up.ShipId;
+                unt.ShipName = up.ShipName;
+
+                itmasterList.Add(unt);
+            }
+
+            ViewBag.Ships = itmasterList.Select(x =>
+                                            new SelectListItem()
+                                            {
+                                                Text = x.ShipName,
+                                                Value = x.ShipId.ToString()
+                                            });
+
+        }
+
+        public void GetApproverLevel()
+        {
+            ApproverMasterBL approverBl = new ApproverMasterBL();
+            List<ApproverLevel> approverLevelList = new List<ApproverLevel>();
+
+            approverLevelList = approverBl.GetApproverLevelForDopDown();
+
+
+            ViewBag.ApproverLevel = approverLevelList.OrderBy(a => a.ID).Select(x =>
+                                            new SelectListItem()
+                                            {
+                                                Text = x.Description,
+                                                Value = x.ID.ToString()
+                                            });
+
+        }
+
+        public void GetApproverListByShipDropDown(int shipId)
+        {
+            ApproverMasterBL approverBl = new ApproverMasterBL();
+            List<UserMasterPOCO> userList = new List<UserMasterPOCO>();
+            userList = approverBl.GetApproverListByShipForDopDown(shipId);
+            ViewBag.Approver = userList.OrderBy(u => u.UserId).Select(r =>
+                                              new SelectListItem()
+                                              {
+                                                  Text = r.UserName,
+                                                  Value = r.UserId.ToString()
+                                              }).ToList();
+        }
+
+
+        #endregion
 
         #region Utility Methods
         private string GetUniqueFileName(string fileName)
