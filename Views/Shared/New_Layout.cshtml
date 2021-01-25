@@ -16,6 +16,7 @@
     <link href="~/css/owl.carousel.css" rel="stylesheet">
     <link href="~/css/owl.theme.default.css" rel="stylesheet">
     <link href="~/css/animate.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,7 +37,7 @@
                     </div>
                 </div>
                 <div class="col-lg-1 col-md-1 col-12">
-                    <div class="menu_icon">
+                    <div class="menu_icon" class="openbtn" onclick="openNav()">
                         <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     </div>
                 </div>
@@ -57,53 +58,101 @@
             </div>
         </div>
     </div>
-    <section>
-        <div class="content_body">
-            <div class="container body-content">
-                @RenderBody()
-                <hr />
-                <footer>
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-                </footer>
-            </div>
+
+    <section class="full_body">
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <!--<footer>
+        <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+    </footer>-->
         </div>
 
-        <div class="menu_panel">
 
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <div class="menu_panel">
+                <div class="menu">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="vul">Volume <b>I</b> </span><span class="pgnam">Political Manual</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="vul">Volume <b>II</b> </span><span class="pgnam">Procedures Manual</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="vul">Volume <b>III</b> </span><span class="pgnam">Company Responsibilities &amp; Authority</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="vul">Volume <b>IV</b> </span><span class="pgnam">Shipboard Operation</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="vul">Volume <b>V</b> </span><span class="pgnam">Maintenace of Ship Equipment</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="vul">Volume <b>VI</b> </span><span class="pgnam">Major Casualty &amp; Ennironmental Protection Plan</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="vul">Volume <b>VII</b> </span><span class="pgnam">Training Manual</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="vul">Volume <b>VIII</b> </span><span class="pgnam">Checklist &amp; Forms</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
     </section>
 
-    
+    @*<script src="~/Scripts/jquery-3.5.1.min.js"></script>*@
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/js/stellarnav.js"></script>
-    <script src="~/js/owl.carousel.js"></script>
-    <script src="~/js/theme.js"></script>
-    <script src="~/js/wow.min.js"></script>
 
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "500px";
+            document.getElementById("main").style.marginLeft = "500px";
+        }
 
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
+
     <script>
-        wow = new WOW({
-            animateClass: 'animated',
-            offset: 100
-        });
-        wow.init();
+        $(document).ready(function () {
 
+            $('#menuicon').click(function () {
+                $('#menu_sec').toggleClass('hidden');
+                $('.content_body').toggleClass('wdth_chn');
+                $('#menuicon').toggleClass('show');
 
-            $(document).ready(function ($) {
-                jQuery('.stellarnav').stellarNav({
-                    theme: 'light'
-                });
-                jQuery('.stellarnav li').addClass('drop-left');
             });
-
-       
+        });
     </script>
-
 
 </body>
 
