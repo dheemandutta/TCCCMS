@@ -162,7 +162,7 @@ function loadData() {
         contentType: "application/json;charset=utf-8",
         dataType: "json",
         success: function (result) {
-            SetUpGrid();
+            SetUpGridCompanyUser();
         },
         error: function (errormessage) {
             console.log(errormessage.responseText);
