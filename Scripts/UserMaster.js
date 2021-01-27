@@ -101,7 +101,7 @@ function SaveUpdateUser() {
             Gender: $('#Gender').val(),
             VesselIMO: $('#VesselIMO').val(),
 
-            IsAdmin: document.getElementById("IsAdmin").checked,
+            IsAdmin: document.getElementById("IsAdmin").checked
         };
 
         $.ajax({
@@ -111,40 +111,13 @@ function SaveUpdateUser() {
             contentType: "application/json;charset=utf-8",
             dataType: "json",
 
-            //success: function (result) {
-
-            //    alert('Added Successfully');
-
-            //    clearTextBox();
-            //    }         
-            //,
-
-
-
             success: function (result) {
                 loadData();
                 $('#myModal').modal('hide');
-                // alert('Added Successfully');
 
-                toastr.options = {
-                    "closeButton": false,
-                    "debug": false,
-                    "newestOnTop": false,
-                    "progressBar": false,
-                    "positionClass": "toast-bottom-full-width",
-                    "preventDuplicates": false,
-                    "onclick": null,
-                    "showDuration": "300",
-                    "hideDuration": "1000",
-                    "timeOut": "5000",
-                    "extendedTimeOut": "1000",
-                    "showEasing": "swing",
-                    "hideEasing": "linear",
-                    "showMethod": "fadeIn",
-                    "hideMethod": "fadeOut"
-                };
+               
 
-                toastr.success("Added Successfully");
+                
 
                 clearTextBox();
             },
@@ -155,6 +128,8 @@ function SaveUpdateUser() {
     }
 }
 
+
+
 function loadData() {
     var loadposturl = $('#loaddata').val();
     $.ajax({
@@ -163,7 +138,9 @@ function loadData() {
         contentType: "application/json;charset=utf-8",
         dataType: "json",
         success: function (result) {
-            SetUpGridCompanyUser();
+            SetUpGridShipUser('1');
+            //SetUpGridSupportUser();
+            //SetUpGridCompanyUser();
         },
         error: function (errormessage) {
             console.log(errormessage.responseText);
@@ -174,92 +151,13 @@ function loadData() {
 
 
 
-function SetUpGridSupportUser(UserType) {
-    var loadposturl = $('#loaddata').val();
-
-    //do not throw error
-    $.fn.dataTable.ext.errMode = 'none';
-
-    var UserType = 0; //////////////////////////////////////////////////////////////////////// SupportUser = 0, ShipUser(Index) = 1, CompanyUser = 2.
-
-    //check if datatable is already created then destroy iy and then create it
-    if ($.fn.dataTable.isDataTable('#UserMasterTable')) {
-        table = $('#UserMasterTable').DataTable();
-        table.destroy();
-    }
-
-    // alert('hh');
-    var table = $("#UserMasterTable").DataTable({
-        "dom": 'Bfrtip',
-        "rowReorder": false,
-        "ordering": false,
-        "filter": false, // this is for disable filter (search box)
-
-        "ajax": {
-            "url": loadposturl,
-            "type": "POST",
-            "datatype": "json",
-            "data": { UserType: UserType },
-        },
-        "columns": [
-            //{
-            //    "data": "Order", "name": "Order", "autoWidth": true, "className": 'reorder'
-            //},
-            {
-                "data": "UserName", "name": "UserName", "autoWidth": true
-            },
-            {
-                "data": "CreatedOn1", "name": "CreatedOn1", "autoWidth": true
-            },
-            {
-                "data": "Email", "name": "Email", "autoWidth": true
-            },
-            //{
-            //    "data": "CreatedBy", "name": "CreatedBy", "autoWidth": true
-            //},
-            //{
-            //    "data": "ModifiedBy", "name": "ModifiedBy", "autoWidth": true
-            //},
-            {
-                "data": "Gender", "name": "Gender", "autoWidth": true
-            },
-            {
-                "data": "VesselIMO", "name": "VesselIMO", "autoWidth": true
-            },
-            {
-                "data": "RankName", "name": "RankName", "autoWidth": true
-            },
-            {
-                "data": "ShipName", "name": "ShipName", "autoWidth": true
-            },
-     
-            {
-                "data": "UserId", "width": "50px", "render": function (data) {
-                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
-                }
-            },
-            {
-                "data": "UserId", "width": "50px", "render": function (d) {
-                    //debugger;
-                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
-
-
-                }
-            }
-
-        ],
-        "rowId": "UserId",
-        "dom": "Bfrtip"
-    });
-}
-
 function SetUpGridShipUser(UserType) {
     var loadposturl = $('#loaddata').val();
 
     //do not throw error
     $.fn.dataTable.ext.errMode = 'none';
 
-    var UserType = 1; //////////////////////////////////////////////////////////////////////// SupportUser = 0, ShipUser(Index) = 1, CompanyUser = 2.
+   // var UserType = 1; //////////////////////////////////////////////////////////////////////// SupportUser = 0, ShipUser(Index) = 1, CompanyUser = 2.
 
     //check if datatable is already created then destroy iy and then create it
     if ($.fn.dataTable.isDataTable('#UserMasterTable')) {
@@ -278,7 +176,7 @@ function SetUpGridShipUser(UserType) {
             "url": loadposturl,
             "type": "POST",
             "datatype": "json",
-            "data": { UserType: UserType },
+            "data": { UserType: UserType }
         },
         "columns": [
             //{
@@ -332,84 +230,163 @@ function SetUpGridShipUser(UserType) {
     });
 }
 
-function SetUpGridCompanyUser(UserType) {
-    var loadposturl = $('#loaddata').val();
+//function SetUpGridSupportUser(UserType) {
+//    var loadposturl = $('#loaddata').val();
 
-    //do not throw error
-    $.fn.dataTable.ext.errMode = 'none';
+//    //do not throw error
+//    $.fn.dataTable.ext.errMode = 'none';
 
-    var UserType = 2; //////////////////////////////////////////////////////////////////////// SupportUser = 0, ShipUser(Index) = 1, CompanyUser = 2.
+//    var UserType = 0; //////////////////////////////////////////////////////////////////////// SupportUser = 0, ShipUser(Index) = 1, CompanyUser = 2.
 
-    //check if datatable is already created then destroy iy and then create it
-    if ($.fn.dataTable.isDataTable('#UserMasterTable')) {
-        table = $('#UserMasterTable').DataTable();
-        table.destroy();
-    }
+//    //check if datatable is already created then destroy iy and then create it
+//    if ($.fn.dataTable.isDataTable('#UserMasterTable')) {
+//        table = $('#UserMasterTable').DataTable();
+//        table.destroy();
+//    }
 
-    // alert('hh');
-    var table = $("#UserMasterTable").DataTable({
-        "dom": 'Bfrtip',
-        "rowReorder": false,
-        "ordering": false,
-        "filter": false, // this is for disable filter (search box)
+//    // alert('hh');
+//    var table = $("#UserMasterTable").DataTable({
+//        "dom": 'Bfrtip',
+//        "rowReorder": false,
+//        "ordering": false,
+//        "filter": false, // this is for disable filter (search box)
 
-        "ajax": {
-            "url": loadposturl,
-            "type": "POST",
-            "datatype": "json",
-            "data": { UserType: UserType },
-        },
-        "columns": [
-            //{
-            //    "data": "Order", "name": "Order", "autoWidth": true, "className": 'reorder'
-            //},
-            {
-                "data": "UserName", "name": "UserName", "autoWidth": true
-            },
-            {
-                "data": "CreatedOn1", "name": "CreatedOn1", "autoWidth": true
-            },
-            {
-                "data": "Email", "name": "Email", "autoWidth": true
-            },
-            //{
-            //    "data": "CreatedBy", "name": "CreatedBy", "autoWidth": true
-            //},
-            //{
-            //    "data": "ModifiedBy", "name": "ModifiedBy", "autoWidth": true
-            //},
-            {
-                "data": "Gender", "name": "Gender", "autoWidth": true
-            },
-            {
-                "data": "VesselIMO", "name": "VesselIMO", "autoWidth": true
-            },
-            {
-                "data": "RankName", "name": "RankName", "autoWidth": true
-            },
-            {
-                "data": "ShipName", "name": "ShipName", "autoWidth": true
-            },
+//        "ajax": {
+//            "url": loadposturl,
+//            "type": "POST",
+//            "datatype": "json",
+//            "data": { UserType: UserType },
+//        },
+//        "columns": [
+//            //{
+//            //    "data": "Order", "name": "Order", "autoWidth": true, "className": 'reorder'
+//            //},
+//            {
+//                "data": "UserName", "name": "UserName", "autoWidth": true
+//            },
+//            {
+//                "data": "CreatedOn1", "name": "CreatedOn1", "autoWidth": true
+//            },
+//            {
+//                "data": "Email", "name": "Email", "autoWidth": true
+//            },
+//            //{
+//            //    "data": "CreatedBy", "name": "CreatedBy", "autoWidth": true
+//            //},
+//            //{
+//            //    "data": "ModifiedBy", "name": "ModifiedBy", "autoWidth": true
+//            //},
+//            {
+//                "data": "Gender", "name": "Gender", "autoWidth": true
+//            },
+//            {
+//                "data": "VesselIMO", "name": "VesselIMO", "autoWidth": true
+//            },
+//            {
+//                "data": "RankName", "name": "RankName", "autoWidth": true
+//            },
+//            {
+//                "data": "ShipName", "name": "ShipName", "autoWidth": true
+//            },
+     
+//            {
+//                "data": "UserId", "width": "50px", "render": function (data) {
+//                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
+//                }
+//            },
+//            {
+//                "data": "UserId", "width": "50px", "render": function (d) {
+//                    //debugger;
+//                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
 
-            {
-                "data": "UserId", "width": "50px", "render": function (data) {
-                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
-                }
-            },
-            {
-                "data": "UserId", "width": "50px", "render": function (d) {
-                    //debugger;
-                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
+
+//                }
+//            }
+
+//        ],
+//        "rowId": "UserId",
+//        "dom": "Bfrtip"
+//    });
+//}
+
+//function SetUpGridCompanyUser(UserType) {
+//    var loadposturl = $('#loaddata').val();
+
+//    //do not throw error
+//    $.fn.dataTable.ext.errMode = 'none';
+
+//    var UserType = 2; //////////////////////////////////////////////////////////////////////// SupportUser = 0, ShipUser(Index) = 1, CompanyUser = 2.
+
+//    //check if datatable is already created then destroy iy and then create it
+//    if ($.fn.dataTable.isDataTable('#UserMasterTable')) {
+//        table = $('#UserMasterTable').DataTable();
+//        table.destroy();
+//    }
+
+//    // alert('hh');
+//    var table = $("#UserMasterTable").DataTable({
+//        "dom": 'Bfrtip',
+//        "rowReorder": false,
+//        "ordering": false,
+//        "filter": false, // this is for disable filter (search box)
+
+//        "ajax": {
+//            "url": loadposturl,
+//            "type": "POST",
+//            "datatype": "json",
+//            "data": { UserType: UserType },
+//        },
+//        "columns": [
+//            //{
+//            //    "data": "Order", "name": "Order", "autoWidth": true, "className": 'reorder'
+//            //},
+//            {
+//                "data": "UserName", "name": "UserName", "autoWidth": true
+//            },
+//            {
+//                "data": "CreatedOn1", "name": "CreatedOn1", "autoWidth": true
+//            },
+//            {
+//                "data": "Email", "name": "Email", "autoWidth": true
+//            },
+//            //{
+//            //    "data": "CreatedBy", "name": "CreatedBy", "autoWidth": true
+//            //},
+//            //{
+//            //    "data": "ModifiedBy", "name": "ModifiedBy", "autoWidth": true
+//            //},
+//            {
+//                "data": "Gender", "name": "Gender", "autoWidth": true
+//            },
+//            {
+//                "data": "VesselIMO", "name": "VesselIMO", "autoWidth": true
+//            },
+//            {
+//                "data": "RankName", "name": "RankName", "autoWidth": true
+//            },
+//            {
+//                "data": "ShipName", "name": "ShipName", "autoWidth": true
+//            },
+
+//            {
+//                "data": "UserId", "width": "50px", "render": function (data) {
+//                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
+//                }
+//            },
+//            {
+//                "data": "UserId", "width": "50px", "render": function (d) {
+//                    //debugger;
+//                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
 
 
-                }
-            }
+//                }
+//            }
 
-        ],
-        "rowId": "UserId",
-        "dom": "Bfrtip"
-    });
-}
+//        ],
+//        "rowId": "UserId",
+//        "dom": "Bfrtip"
+//    });
+//}
 
 
 
