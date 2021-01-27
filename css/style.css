@@ -206,6 +206,9 @@ header {
 .menu_icon {
 }
 
+/*---Ship-----*/
+.colorWhite{color:white;}
+.marginTP10{margin-top:10px;}
     .menu_icon a {
         color: #fff;
         font-size: 25px;
@@ -217,9 +220,6 @@ header {
         .menu_icon a img {
         }
 
-.colorWhite {
-    color: white;
-}
 
 .marginTP10 {
     margin-top: 10px;
@@ -232,7 +232,7 @@ header {
 .marginBTM10 {
     margin-bottom: 10px;
 }
-
+/*--End--Ship-----*/
 
 .full_body {
     display: flex;

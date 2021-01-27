@@ -1,4 +1,5 @@
 ﻿var tmpApproverList = [];
+var approversCount = 0;
 function clearTextBox() {
     $('#ID').val("");
     $('#IMONumber').val("");
@@ -265,6 +266,8 @@ function GetIMONumberByShip(id) {
             success: function (result) {
                 //debugger;
                 $('#IMONumber').val(result.VesselIMONumber);
+                $('#hdnApproversCount').val(result.Ship.ApproversCount);
+                approversCount = result.Ship.ApproversCount;
             },
             error: function (errormessage) {
                 alert(errormessage.responseText);
@@ -367,6 +370,12 @@ function DeleteApprover(id) {
 }
 
 function AddTempApprover(user) {
+    var a = tmpApproverList.length;
+    var b = $('#hdnApproversCount').val();
+    var c = approversCount;
+    var totalCount = eval( a + c);
+    b = b.replace(/"/g, '\\"')
+    //var totalCount = a + b;
     var idx = 0
     var rank = user.Rank;
     var exist = false;
@@ -380,7 +389,7 @@ function AddTempApprover(user) {
 
     //    });
     //}
-    if (tmpApproverList.length <= 6) {
+    if (totalCount < 6) {
         //tmpApproverList.r
         idx = tmpApproverList.length + 1;
 
