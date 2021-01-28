@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<body style="background-image: url(../background/crewimport.jpg);
+    background-size: cover;">
+
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="ta">Crew Import</h2>
+        </div>
+        <div class="col-md-6">
+            <div class="import">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            @using (Html.BeginForm("Index", "CrewImport", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                            {
+                                <span style="font-size:20px;">Select File:</span>
+                                <br />
+                                <input type="file" name="postedFile" />
+                                @*<hr />*@
+                                <br />
+                                <input type="submit" value="Upload" class="button1" />
+                                <br /><br />
+                                <span style="color:green">@ViewBag.Message</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="box">
+                            <img src="~/background/excel.png" class="img-responsive" style="height:100%; width:100%;" />
+                        </div>
+                        <div class="export-template-label" style="display:inline-block;margin:4px 5px -8px 0px;">
+                            <a href="../../Import/IMOcrewlistForm5.xlsx" target="_self" download>
+                                <img src="#" alt="Download Excel" style="float:left;" class="button1">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <p style="color:blue; font-size:15px;">Important Instructions</p>
+                <p style="color:blue; font-size:12px;">* Data will not be inserted if there is no name</p>
+                <p style="color:blue; font-size:12px;">* If Rank,Country data does not match with any existing data in the system An new Rank and Country will be inserted</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+

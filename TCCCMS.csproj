@@ -127,6 +127,7 @@
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\GroupMasterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
     <Compile Include="Controllers\PermissionRoleController.cs" />
@@ -1312,6 +1313,7 @@
     <Content Include="SQL Script\22.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\25.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\27.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
+    <Content Include="SQL Script\28.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 19%29.sql" />
     <Content Include="SQL Script\Full_ScriptOf_TCCCMSDB.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1373,6 +1375,7 @@
     <Content Include="Views\UserMaster\CompanyUser.cshtml" />
     <Content Include="Views\UserMaster\SupportUser.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Import\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
