@@ -15,8 +15,8 @@ namespace TCCCMS.Business
     {
         public void ImportCrew(object dataTable, int vesselId)
         {
-            ImportDAL crewImportDAL = new ImportDAL();
-            crewImportDAL.ImportCrew(dataTable, vesselId);
+            //ImportDAL crewImportDAL = new ImportDAL();
+            //crewImportDAL.ImportCrew(dataTable, vesselId);
         }
     }
 }
