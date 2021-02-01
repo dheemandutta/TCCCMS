@@ -142,6 +142,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="background\excel.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -624,6 +625,7 @@
     <Content Include="packages\bootstrap.4.5.3\LICENSE.txt" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="Forms\FormXyz1.docx" />
+    <Content Include="Import\IMOcrewlistForm5.xlsx" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
@@ -1293,6 +1295,7 @@
     <Content Include="Scripts\Upload\jquery.filedrop.js" />
     <Content Include="Scripts\UserGroup.js" />
     <Content Include="Scripts\UserMaster.js" />
+    <Content Include="SQL Script\01.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\06.01.2021_Full_Script_Of_TCCCMSDB.sql" />
