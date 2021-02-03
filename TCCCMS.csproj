@@ -124,6 +124,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ApproverController.cs" />
     <Compile Include="Controllers\CompanyPolicyManualController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\GroupMasterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -592,7 +593,9 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\adminf.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\vissel.png" />
     <Content Include="js\Approver\Approver.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\jquery.js" />
@@ -1389,6 +1392,7 @@
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\CompanyPolicyManual\ISEPA.cshtml" />
     <Content Include="Views\Import\Index.cshtml" />
+    <Content Include="Views\Dashboard\AdminDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
