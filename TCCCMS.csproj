@@ -127,6 +127,7 @@
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\GroupMasterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
     <Compile Include="Controllers\PermissionRoleController.cs" />
@@ -141,6 +142,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="background\excel.png" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
@@ -631,6 +633,7 @@
     <Content Include="Forms\FormXyz1.docx" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Import\IMOcrewlistForm5.xlsx" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
@@ -1300,6 +1303,7 @@
     <Content Include="Scripts\Upload\jquery.filedrop.js" />
     <Content Include="Scripts\UserGroup.js" />
     <Content Include="Scripts\UserMaster.js" />
+    <Content Include="SQL Script\01.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\06.01.2021_Full_Script_Of_TCCCMSDB.sql" />
@@ -1319,6 +1323,8 @@
     <Content Include="SQL Script\21.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\22.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\25.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
+    <Content Include="SQL Script\27.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
+    <Content Include="SQL Script\28.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 19%29.sql" />
     <Content Include="SQL Script\Full_ScriptOf_TCCCMSDB.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -1381,6 +1387,7 @@
     <Content Include="Views\UserMaster\SupportUser.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\CompanyPolicyManual\ISEPA.cshtml" />
+    <Content Include="Views\Import\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
