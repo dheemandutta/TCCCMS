@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace TCCCMS.Models
 {
+
     public class UserMasterPOCO
     {
         public int UserId { get; set; }
