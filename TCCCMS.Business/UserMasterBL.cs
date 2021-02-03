@@ -62,7 +62,14 @@ namespace TCCCMS.Business
         }
 
 
+        public string GenerateUserCode(string asUserType, string asShipId, string asRankId, string asUserName)
+        {
+            UserMasterDAL userDal = new UserMasterDAL();
 
+            return userDal.GenerateUserCode(asUserType, asShipId, asRankId, asUserName);
+        }
+
+        #region Dropdown
         //for Ranks drp
         public List<UserMasterPOCO> GetAllRanksForDrp(/*int VesselID*/)
         {
@@ -75,5 +82,7 @@ namespace TCCCMS.Business
             UserMasterDAL dAL = new UserMasterDAL();
             return dAL.GetAllShipForDrp(/*VesselID*/);
         }
+
+        #endregion
     }
 }

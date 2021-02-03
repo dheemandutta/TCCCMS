@@ -20,25 +20,30 @@ namespace TCCCMS.Data
             SqlCommand cmd = new SqlCommand("stpSaveUpdateUser", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@RankId", pOCO.RankId);
+            if (pOCO.RankId == -1 || pOCO.RankId == 0)
+            {
+                cmd.Parameters.AddWithValue("@RankId", pOCO.RankId);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@RankId", 0);
+            }
 
-            cmd.Parameters.AddWithValue("@ShipId", pOCO.ShipId);
+            if (pOCO.ShipId == -1 || pOCO.ShipId == 0)
+            {
+                cmd.Parameters.AddWithValue("@ShipId", pOCO.ShipId);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@ShipId", 0);
+            }
 
             cmd.Parameters.AddWithValue("@UserName", pOCO.UserName.ToString());
+            cmd.Parameters.AddWithValue("@UserCode", pOCO.UserCode.ToString());
 
             cmd.Parameters.AddWithValue("@Password", pOCO.Password.ToString());
 
-            //if (!String.IsNullOrEmpty(pOCO.CreatedOn))
-            //{
-            //    cmd.Parameters.AddWithValue("@CreatedOn", pOCO.CreatedOn.ToString());
-            //}
-            //else
-            //{
-            //    cmd.Parameters.AddWithValue("@CreatedOn", DBNull.Value);
-            //}
-
-            //cmd.Parameters.AddWithValue("@IsActive", pOCO.IsActive);
-
+            
             if (!String.IsNullOrEmpty(pOCO.Email))
             {
                 cmd.Parameters.AddWithValue("@Email", pOCO.Email.ToString());
@@ -135,6 +140,7 @@ namespace TCCCMS.Data
                         {
                             UserId = Convert.ToInt32(dr["UserId"]),
                             UserName = Convert.ToString(dr["UserName"]),
+                            UserCode = Convert.ToString(dr["UserCode"]),
                             CreatedOn1 = Convert.ToString(dr["CreatedOn"]),
                             Email = Convert.ToString(dr["Email"]),
                             CreatedBy = Convert.ToString(dr["CreatedBy"]),
@@ -531,6 +537,58 @@ namespace TCCCMS.Data
             return recordsAffected;
         }
 
+        /// <summary>
+        /// Added on 29th Jan 2021 @BK
+        /// </summary>
+        /// <param name="asUserType"></param>
+        /// <param name="asShipId"></param>
+        /// <param name="asRankId"></param>
+        /// <param name="asUserName"></param>
+        /// <returns></returns>
+        public string GenerateUserCode(string asUserType,string asShipId,string asRankId, string asUserName)
+        {
+            string code = "";
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT dbo.udf_GenerateUserCode(@UserType,@ShipId,@RankId,@UserName)", con))
+                {
+
+                    con.Open();
+                    cmd.Parameters.AddWithValue("@UserType", Convert.ToInt32(asUserType));
+                    
+                    if (!String.IsNullOrEmpty(asShipId))
+                    {
+                        cmd.Parameters.AddWithValue("@ShipId", Convert.ToInt32(asShipId));
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@ShipId", DBNull.Value);
+                    }
+                    if (!String.IsNullOrEmpty(asRankId))
+                    {
+                        cmd.Parameters.AddWithValue("@RankId", Convert.ToInt32(asRankId));
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@RankId", DBNull.Value);
+                    }
+                    if (!String.IsNullOrEmpty(asUserName))
+                    {
+                        cmd.Parameters.AddWithValue("@UserName", asUserName.ToString());
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@UserName", DBNull.Value);
+                    }
+
+                    code = cmd.ExecuteScalar().ToString();
+
+                }
+            }
+
+
+            return code;
+        }
 
 
         #region DropDown

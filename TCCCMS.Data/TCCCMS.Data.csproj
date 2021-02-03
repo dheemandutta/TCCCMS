@@ -65,6 +65,7 @@
     <Compile Include="Class1.cs" />
     <Compile Include="DocumentDAL.cs" />
     <Compile Include="GroupMasterDAL.cs" />
+    <Compile Include="HomeDAL.cs" />
     <Compile Include="ImportDAL.cs" />
     <Compile Include="ManualDAL.cs" />
     <Compile Include="PermissionRoleDAL.cs" />

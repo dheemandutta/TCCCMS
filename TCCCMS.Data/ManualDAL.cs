@@ -88,6 +88,7 @@ namespace TCCCMS.Data
                     file.ManualHtml = Convert.ToString(ds.Tables[0].Rows[0]["ManualHtml"]);
                     file.ManualHeader = Convert.ToString(ds.Tables[0].Rows[0]["ManualHeader"]);
                     file.ManualBodyText = Convert.ToString(ds.Tables[0].Rows[0]["ManualBodyText"]);
+                    file.ManualBodyHtml = Convert.ToString(ds.Tables[0].Rows[0]["ManualBodyHtml"]);
                     file.ActionName = Convert.ToString(ds.Tables[0].Rows[0]["ActionName"]);
                     file.ControllerName = Convert.ToString(ds.Tables[0].Rows[0]["ControllerName"]);
                     

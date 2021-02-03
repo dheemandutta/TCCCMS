@@ -16,6 +16,13 @@
     else {
         $('#Description').css('border-color', 'lightgrey');
     }
+    if ($('#Email').val().length === 0) {//Added on 30th Jan 2021 @BK
+        $('#Email').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#Email').css('border-color', 'lightgrey');
+    }
 
     return isValid;
 }
@@ -24,6 +31,7 @@ function clearTextBox() {
     $('#RankId').val("");
     $('#RankName').val("");
     $('#Description').val("");
+    $('#Email').val("");//Added on 30th Jan 2021 @BK
 }
 
 function SaveUpdateRank() {
@@ -38,9 +46,10 @@ function SaveUpdateRank() {
     //alert(res);
     if (res) {
         var Rank = {
-            RankId: $('#RankId').val(),
-            RankName: $('#RankName').val(),
-            Description: $('#Description').val(),
+            RankId:         $('#RankId').val(),
+            RankName:       $('#RankName').val(),
+            Description:    $('#Description').val(),
+            Email:          $('#Email').val()//Added on 30th Jan 2021 @BK
         };
 
         $.ajax({
@@ -138,6 +147,9 @@ function SetUpGrid() {
             {
                 "data": "RankName", "name": "RankName", "autoWidth": true
             },
+            {//Added on 30th Jan 2021 @BK
+                "data": "Email", "name": "Email", "autoWidth": true
+            },
             {
                 "data": "Description", "name": "Description", "autoWidth": true
             },
@@ -215,6 +227,7 @@ function GetRankByRankId(RankId) {
             $('#RankId').val(result.RankId);
             $('#RankName').val(result.RankName);
             $('#Description').val(result.Description);
+            $('#Email').val(result.Email);//Added on 30th Jan 2021 @BK
 
             $('#myModal').modal('show');
             $('#btnUpdate').show();
@@ -227,5 +240,19 @@ function GetRankByRankId(RankId) {
         }
     });
     return false;
+}
+
+function CheckEmail(email) {
+    var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    var regex1 = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    if (!regex1.test(email)) {
+        alert('Wrong formated emailID!');
+        $('#Email').css('border-color', 'Red');
+        $('#Email').focus();
+        return false;
+    } else {
+        $('#Email').css('border-color', 'lightgrey');
+        return true;
+    }
 }
 

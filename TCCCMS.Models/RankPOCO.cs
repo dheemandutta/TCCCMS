@@ -11,6 +11,7 @@ namespace TCCCMS.Models
         public int RankId { get; set; }
         public string RankName { get; set; }
         public string Description { get; set; }
+        public string Email { get; set; }//Added on 30th Jan 2021
         public int IsActive { get; set; }
     }
 }

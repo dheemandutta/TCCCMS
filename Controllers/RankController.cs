@@ -50,14 +50,15 @@ namespace TCCCMS.Controllers
             int totalrecords = 0;
 
             List<RankPOCO> pocoList = new List<RankPOCO>();
-            pocoList = bL.GetAllRankPageWise(pageIndex, ref totalrecords, length/*, int.Parse(Session["VesselID"].ToString())*/);
-            List<RankPOCO> pList = new List<RankPOCO>();
+            pocoList                = bL.GetAllRankPageWise(pageIndex, ref totalrecords, length/*, int.Parse(Session["VesselID"].ToString())*/);
+            List<RankPOCO> pList    = new List<RankPOCO>();
             foreach (RankPOCO pC in pocoList)
             {
-                RankPOCO pOCO = new RankPOCO();
-                pOCO.RankId = pC.RankId;
-                pOCO.RankName = pC.RankName;
-                pOCO.Description = pC.Description;
+                RankPOCO pOCO       = new RankPOCO();
+                pOCO.RankId         = pC.RankId;
+                pOCO.RankName       = pC.RankName;
+                pOCO.Description    = pC.Description;
+                pOCO.Email          = pC.Email;//Added on 30th Jan 2021 @BK
 
                 pList.Add(pOCO);
             }
@@ -68,29 +69,31 @@ namespace TCCCMS.Controllers
 
         public JsonResult SaveUpdateRank(RankPOCO pOCO)
         {
-            RankBL bL = new RankBL();
-            RankPOCO pC = new RankPOCO();
+            RankBL bL       = new RankBL();
+            RankPOCO pC     = new RankPOCO();
 
-            pC.RankId = pOCO.RankId;
+            pC.RankId       = pOCO.RankId;
 
-            pC.RankName = pOCO.RankName;
-            pC.Description = pOCO.Description;
+            pC.RankName     = pOCO.RankName;
+            pC.Description  = pOCO.Description;
+            pC.Email        = pOCO.Email;//Added on 30th Jan 2021 @BK
 
             return Json(bL.SaveUpdateRank(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetRankByRankId(int RankId)
         {
-            RankBL bL = new RankBL();
-            RankPOCO pOCOList = new RankPOCO();
+            RankBL bL           = new RankBL();
+            RankPOCO pOCOList   = new RankPOCO();
 
-            pOCOList = bL.GetRankByRankId(RankId);
+            pOCOList            = bL.GetRankByRankId(RankId);
 
-            RankPOCO dept = new RankPOCO();
+            RankPOCO dept       = new RankPOCO();
 
-            dept.RankId = pOCOList.RankId;
-            dept.RankName = pOCOList.RankName;
-            dept.Description = pOCOList.Description;
+            dept.RankId         = pOCOList.RankId;
+            dept.RankName       = pOCOList.RankName;
+            dept.Description    = pOCOList.Description;
+            dept.Email          = pOCOList.Email;//Added on 30th Jan 2021 @BK
 
             var data = dept;
 
