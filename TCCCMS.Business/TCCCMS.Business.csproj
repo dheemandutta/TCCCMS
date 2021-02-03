@@ -44,6 +44,7 @@
     <Compile Include="ApproverMasterBL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DocumentBL.cs" />
+    <Compile Include="HomeBL.cs" />
     <Compile Include="ManualBL.cs" />
     <Compile Include="GroupMasterBL.cs" />
     <Compile Include="PermissionRoleBL.cs" />

@@ -76,6 +76,7 @@ namespace TCCCMS.Controllers
                 UserMasterPOCO pOCO = new UserMasterPOCO();
                 pOCO.UserId = pC.UserId;
                 pOCO.UserName = pC.UserName;
+                pOCO.UserCode = pC.UserCode;
                 pOCO.CreatedOn1 = pC.CreatedOn1;
                 pOCO.Email = pC.Email;
                 //pOCO.CreatedBy = pC.CreatedBy;
@@ -100,21 +101,21 @@ namespace TCCCMS.Controllers
             UserMasterBL bL = new UserMasterBL();
             UserMasterPOCO pC = new UserMasterPOCO();
 
-            pC.UserId = pOCO.UserId;
-
-            pC.RankId = pOCO.RankId;
-            pC.ShipId = pOCO.ShipId;
-            pC.UserName = pOCO.UserName;
-            pC.Password = pOCO.Password;
-            pC.Email = pOCO.Email;
-            pC.CreatedBy = pOCO.CreatedBy;
-            pC.ModifiedBy = pOCO.ModifiedBy;
-            pC.Gender = pOCO.Gender;
-            pC.VesselIMO = pOCO.VesselIMO;
+            pC.UserId       = pOCO.UserId;
+            pC.RankId       = pOCO.RankId;
+            pC.ShipId       = pOCO.ShipId;
+            pC.UserName     = pOCO.UserName;
+            pC.UserCode     = pOCO.UserCode;
+            pC.Password     = pOCO.Password;
+            pC.Email        = pOCO.Email;
+            pC.CreatedBy    = pOCO.CreatedBy;
+            pC.ModifiedBy   = pOCO.ModifiedBy;
+            pC.Gender       = pOCO.Gender;
+            pC.VesselIMO    = pOCO.VesselIMO;
 
             //pC.UserCode = pOCO.UserCode;
-            pC.UserType = 1;
-            pC.IsAdmin = pOCO.IsAdmin;
+            pC.UserType     = pOCO.UserType;
+            pC.IsAdmin      = pOCO.IsAdmin;
 
             return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }
@@ -167,11 +168,6 @@ namespace TCCCMS.Controllers
             return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }
 
-
-
-
-       
-
         public JsonResult GetUserByUserId(int UserId)
         {
             UserMasterBL bL = new UserMasterBL();
@@ -183,6 +179,7 @@ namespace TCCCMS.Controllers
 
             dept.UserId = pOCOList.UserId;
             dept.UserName = pOCOList.UserName;
+            dept.UserCode = pOCOList.UserCode;//Added on 02nd Feb 2021
             dept.Password = pOCOList.Password;
             dept.CreatedOn = pOCOList.CreatedOn;
             dept.Email = pOCOList.Email;
@@ -201,8 +198,6 @@ namespace TCCCMS.Controllers
             return Json(data, JsonRequestBehavior.AllowGet);
         }
 
-
-
         public ActionResult DeleteUserMaster(int UserId/*, ref string recordCount*/)
         {
             UserMasterBL bL = new UserMasterBL();
@@ -211,11 +206,31 @@ namespace TCCCMS.Controllers
 
         }
 
+        public JsonResult GetIMONumberByShip(string shipId)
+        {
+            ApproverMaster approver = new ApproverMaster();
+            ShipBL shipBL = new ShipBL();
+            Ship ship = new Ship();
 
+            ship = shipBL.GetShipDetailsById(Convert.ToInt32(shipId));
+            approver.VesselIMONumber = ship.IMONumber;
+            approver.Ship = ship;
 
+            return Json(approver, JsonRequestBehavior.AllowGet);
+        }
 
+        public JsonResult GenerateUserCode(string userType, string shipId, string rankId, string userName)
+        {
+            string code = "";
+            UserMasterBL userBl = new UserMasterBL();
 
-       
+            code = userBl.GenerateUserCode(userType, shipId, rankId, userName);
+
+            return Json(code, JsonRequestBehavior.AllowGet);
+        }
+
+        #region Upload Form
+
         [HttpGet]
         public ActionResult UploadForm()
         {
@@ -291,7 +306,8 @@ namespace TCCCMS.Controllers
                 return Json("No files selected.");
             }
         }
-
+        #endregion
+        
         #region DropDown
         //for Ranks drp
         public void GetAllRanksForDrp()
@@ -312,8 +328,8 @@ namespace TCCCMS.Controllers
 
                 itmasterList.Add(unt);
             }
-
-            ViewBag.Ranks = itmasterList.Select(x =>
+            itmasterList.Add(new UserMasterPOCO { RankId = -1, RankName = "Please Select One" });
+            ViewBag.Ranks = itmasterList.OrderBy(s => s.RankId).Select(x =>
                                             new SelectListItem()
                                             {
                                                 Text = x.RankName,
@@ -340,8 +356,8 @@ namespace TCCCMS.Controllers
 
                 itmasterList.Add(unt);
             }
-
-            ViewBag.Ships = itmasterList.Select(x =>
+            itmasterList.Add(new UserMasterPOCO { ShipId = -1, ShipName = "Please Select One" });
+            ViewBag.Ships = itmasterList.OrderBy(s => s.ShipId).Select(x =>
                                             new SelectListItem()
                                             {
                                                 Text = x.ShipName,

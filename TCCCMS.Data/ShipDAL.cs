@@ -163,7 +163,7 @@ namespace TCCCMS.Data
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(ds);
-
+                    #region mapping dt to ship model
                     ship.ID                     = Convert.ToInt32(ds.Tables[0].Rows[0]["ID"]);
                     ship.ShipName               = Convert.ToString(ds.Tables[0].Rows[0]["ShipName"]);
                     ship.IMONumber              = Convert.ToInt32(ds.Tables[0].Rows[0]["IMONumber"]);
@@ -184,7 +184,7 @@ namespace TCCCMS.Data
                     //ship.VesselSubTypeName      = Convert.ToString(ds.Tables[0].Rows[0]["VesselSubTypeName"]);
                     ship.VesselSubSubTypeId     = Convert.ToInt32(ds.Tables[0].Rows[0]["VesselSubSubTypeID"]);
                     //ship.VesselSubSubTypeName   = Convert.ToString(ds.Tables[0].Rows[0]["VesselSubSubTypeName"]);
-                    
+                    #endregion
                     ship.ApproversCount = Convert.ToInt32(ds.Tables[1].Rows[0]["ApproversCount"]);//Added on 22nd JAN 2021 (for Approvers count checking on approver master)
 
                     con.Close();

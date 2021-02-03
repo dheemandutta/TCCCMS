@@ -145,10 +145,15 @@
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-reboot.css" />
     <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\jquery-ui.css" />
+    <Content Include="Content\jquery-ui.structure.css" />
+    <Content Include="Content\jquery-ui.theme.css" />
     <Content Include="Content\notify.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -589,6 +594,7 @@
     <Content Include="js\Approver\Approver.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="js\Login\Login.js" />
     <Content Include="js\Manual\ManualSearch.js" />
     <Content Include="js\owl.carousel.js" />
     <Content Include="js\Ship\Ship.js" />
@@ -623,6 +629,8 @@
     <Content Include="packages\bootstrap.4.5.3\LICENSE.txt" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="Forms\FormXyz1.docx" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
@@ -1372,6 +1380,7 @@
     <Content Include="Views\UserMaster\CompanyUser.cshtml" />
     <Content Include="Views\UserMaster\SupportUser.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\ISEPA.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

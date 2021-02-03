@@ -65,20 +65,20 @@ namespace TCCCMS.Controllers
             TempData["MRA"] = file.ManualBodyHtml;
             return View(file);
         }
-        public ActionResult DesignatedPerson()
-        {
-            Manual file = new Manual();
-            file = manualBL.GetManual(controllerName, "DesignatedPerson");
-            TempData["DesignatedPerson"] = file.ManualBodyHtml;
-            return View(file);
-        }
-        public ActionResult MastersRA()
-        {
-            Manual file = new Manual();
-            file = manualBL.GetManual(controllerName, "MastersRA");
-            TempData["MastersRA"] = file.ManualBodyHtml;
-            return View(file);
-        }
+        //public ActionResult DesignatedPerson()
+        //{
+        //    Manual file = new Manual();
+        //    file = manualBL.GetManual(controllerName, "DesignatedPerson");
+        //    TempData["DesignatedPerson"] = file.ManualBodyHtml;
+        //    return View(file);
+        //}
+        //public ActionResult MastersRA()
+        //{
+        //    Manual file = new Manual();
+        //    file = manualBL.GetManual(controllerName, "MastersRA");
+        //    TempData["MastersRA"] = file.ManualBodyHtml;
+        //    return View(file);
+        //}
         public ActionResult ResourcesAndPersonnel()
         {
             Manual file = new Manual();
@@ -93,13 +93,13 @@ namespace TCCCMS.Controllers
             TempData["PSO"] = file.ManualBodyHtml;
             return View(file);
         }
-        public ActionResult EmergencyPreparednes()
-        {
-            Manual file = new Manual();
-            file = manualBL.GetManual(controllerName, "EmergencyPreparednes");
-            TempData["EmergencyPreparednes"] = file.ManualBodyHtml;
-            return View(file);
-        }
+        //public ActionResult EmergencyPreparednes()
+        //{
+        //    Manual file = new Manual();
+        //    file = manualBL.GetManual(controllerName, "EmergencyPreparednes");
+        //    TempData["EmergencyPreparednes"] = file.ManualBodyHtml;
+        //    return View(file);
+        //}
         public ActionResult CNCCA()
         {
             Manual file = new Manual();
@@ -128,12 +128,12 @@ namespace TCCCMS.Controllers
             TempData["ISEPA"] = file.ManualBodyHtml;
             return View(file);
         }
-        public ActionResult DAP()
-        {
-            Manual file = new Manual();
-            file = manualBL.GetManual(controllerName, "DAP");
-            TempData["DAP"] = file.ManualBodyHtml;
-            return View(file);
-        }
+        //public ActionResult DAP()
+        //{
+        //    Manual file = new Manual();
+        //    file = manualBL.GetManual(controllerName, "DAP");
+        //    TempData["DAP"] = file.ManualBodyHtml;
+        //    return View(file);
+        //}
     }
 }

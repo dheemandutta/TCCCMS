@@ -23,7 +23,7 @@ namespace TCCCMS.Data
             cmd.Parameters.AddWithValue("@RankName", pOCO.RankName.ToString());
 
             cmd.Parameters.AddWithValue("@Description", pOCO.Description.ToString());
-
+            cmd.Parameters.AddWithValue("@Email", pOCO.Email.ToString());//Added on 30th Jan 2021 @BK
             //cmd.Parameters.AddWithValue("@IsActive", pOCO.IsActive);
 
             if (pOCO.RankId > 0)
@@ -71,7 +71,8 @@ namespace TCCCMS.Data
                         {
                             RankId = Convert.ToInt32(dr["RankId"]),
                             RankName = Convert.ToString(dr["RankName"]),
-                            Description = Convert.ToString(dr["Description"])
+                            Description = Convert.ToString(dr["Description"]),
+                            Email = Convert.ToString(dr["Email"])//Added on 30th Jan 2021 @BK
                         });
                     }
                     recordCount = Convert.ToInt32(cmd.Parameters["@RecordCount"].Value);
@@ -122,6 +123,8 @@ namespace TCCCMS.Data
 
                     if (item["Description"] != System.DBNull.Value)
                         pPOCOPC.Description = item["Description"].ToString();
+                    if (item["Email"] != System.DBNull.Value)//Added on 30th Jan 2021 @BK
+                        pPOCOPC.Email = item["Email"].ToString();
 
                     //pcList.Add(pPOCOPC);
                 }

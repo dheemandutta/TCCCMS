@@ -25,6 +25,9 @@ namespace TCCCMS
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/jqueryui/css").Include(
+                        "~/Content/jquery-ui.css",
+                        "~/Content/jquery-ui.theme.css"));
 
 
         }

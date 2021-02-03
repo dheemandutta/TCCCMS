@@ -3,8 +3,7 @@
     $('#ShipName').val("");
     $('#Flag').val("");
     $('#IMONumber').val("");
-    $('#btnUpdate').hide();
-    $('#btnAdd').show();
+   
 
     $('#ddlVesselType').val("-1");
     $('#ddlVesselSubType').val("");
@@ -28,6 +27,9 @@
     $('#ddlVesselSubType').css('border-color', 'lightgrey');
     $('#ddlVesselSubSubType').css('border-color', 'lightgrey');
     $('#IMONumber').css('border-color', 'lightgrey');
+
+    $('#btnUpdate').hide();
+    $('#btnAdd').show();
 
 }
 function validate() {
