@@ -1,0 +1,171 @@
+﻿
+@{
+    ViewBag.Title = "AdminDashboard";
+}
+
+@*<h2>AdminDashboard</h2>*@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tcc</title>
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/stellarnav.css" rel="stylesheet">
+    <link href="~/css/responsive.css" rel="stylesheet">
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <link href="~/css/owl.theme.default.css" rel="stylesheet">
+    <link href="~/css/animate.css" rel="stylesheet">
+    <style>
+        .layouttwo ul {
+        }
+
+            .layouttwo ul li {
+            }
+
+                .layouttwo ul li a {
+                    text-align: left;
+                    font-size: 19px;
+                    padding: 17px 31px 0 9%; /* width: 261px; */
+                }
+
+        .wel {
+            margin: 30px auto;
+            text-align: center;
+            width: 307px;
+            background: #dd3043;
+            color: #fff;
+            padding: 20px 0;
+            border-radius: 11px;
+        }
+
+            .wel h4 {
+                border-bottom: 1px solid #eee;
+                padding: 0 0 13px 0;
+            }
+
+            .wel h5 {
+                font-weight: 400;
+                text-align: left;
+                padding: 19px;
+            }
+
+            .wel h6 {
+                margin: 75% 10px 0;
+                text-align: center;
+            }
+
+        .card {
+            background: #3f4042;
+            border-radius: 9px;
+            padding: 20px;
+            width: 245px;
+            margin: 20px auto;
+        }
+
+            .card h6 {
+                color: #fff;
+                font-size: 22px;
+                padding: 12px 0 0;
+            }
+
+                .card h6 span {
+                    display: block;
+                }
+
+            .card img { /* width: 20px; */
+            }
+    </style>
+</head>
+
+<body>
+    
+
+    <section class="full_body">
+        <div class="content_body">
+            <div class="wel">
+                <h4>Welcome To TCCDOC</h4>
+                <h5>Hello Admin1</h5>
+                <h6>
+                    We Pledge to Serve
+                    <span>support@technology.com</span>
+                </h6>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Crew<span> 41</span></h6>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="~/images/adminf.png">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Vessel</h6>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="~/images/vissel.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer">
+                    <ul>
+                        <li><strong>Uncontrolled when printed</strong></li>
+                        <li>Revision 5.0.8</li>
+                        <li>Date:13 Dec 2019</li>
+                        <li><a href="#">View Revision Histroy</a></li>
+                        <li><a href="#">View Site Map</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+       
+
+    </section>
+
+    <script src="~/js/jquery.js"></script>
+    <script src="~/js/bootstrap.js"></script>
+    <script src="~/js/stellarnav.js"></script>
+    <script src="~/js/owl.carousel.js"></script>
+    <script src="~/js/theme.js"></script>
+    <script src="~/js/wow.min.js"></script>
+    <script src="~/js/jquery.slimscroll.js"></script>
+
+    <script>
+        wow = new WOW({
+            animateClass: 'animated',
+            offset: 100
+        });
+        wow.init();
+
+
+        jQuery(document).ready(function($) {
+            jQuery('.stellarnav').stellarNav({
+                theme: 'light'
+            });
+            jQuery('.stellarnav li').addClass('drop-left');
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+
+            $('#menuicon').click(function() {
+                $('#menu_sec').toggleClass('hidden');
+                 $('.content_body').toggleClass('wdth_chn');
+                $('#menuicon').toggleClass('show');
+
+            });
+        });
+    </script>
+</body>

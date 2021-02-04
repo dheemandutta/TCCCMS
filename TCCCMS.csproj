@@ -126,6 +126,7 @@
     <Compile Include="Controllers\CompanyPolicyManualController.cs" />
     <Compile Include="Controllers\CompanyProceduresManualController.cs" />
     <Compile Include="Controllers\CompanyResponsibilityAndAuthorityManualController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Controllers\FormsAndChecklistsController.cs" />
     <Compile Include="Controllers\GroupMasterController.cs" />
@@ -599,7 +600,9 @@
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\adminf.png" />
     <Content Include="images\logo.png" />
+    <Content Include="images\vissel.png" />
     <Content Include="js\Approver\Approver.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\jquery.js" />
@@ -1311,6 +1314,7 @@
     <Content Include="Scripts\UserGroup.js" />
     <Content Include="Scripts\UserMaster.js" />
     <Content Include="SQL Script\01.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
+    <Content Include="SQL Script\03.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\06.01.2021_Full_Script_Of_TCCCMSDB.sql" />
@@ -1480,6 +1484,8 @@
     <Content Include="Views\CompanyResponsibilityAndAuthorityManual\TEJD.cshtml" />
     <Content Include="Views\CompanyResponsibilityAndAuthorityManual\TOJD.cshtml" />
     <Content Include="Views\CompanyResponsibilityAndAuthorityManual\WJD.cshtml" />
+    <Content Include="Views\Dashboard\AdminDashboard.cshtml" />
+    <Content Include="Views\Dashboard\UserDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
