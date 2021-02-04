@@ -1393,6 +1393,7 @@
     <Content Include="Views\CompanyPolicyManual\ISEPA.cshtml" />
     <Content Include="Views\Import\Index.cshtml" />
     <Content Include="Views\Dashboard\AdminDashboard.cshtml" />
+    <Content Include="Views\Dashboard\UserDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

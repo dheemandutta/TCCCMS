@@ -8,6 +8,11 @@ namespace TCCCMS.Controllers
 {
     public class DashboardController : Controller
     {
+        public ActionResult UserDashboard()
+        {
+            return View();
+        }
+
         // GET: Dashboard
         public ActionResult AdminDashboard()
         {
