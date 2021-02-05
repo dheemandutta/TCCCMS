@@ -35,15 +35,15 @@ namespace TCCCMS.Data
                     da.Fill(ds);
                     if (ds.Tables[0].Rows.Count > 0)
                     {
-                        lUser.UserId = Convert.ToInt32(ds.Tables[0].Rows[0]["UserId"].ToString());
-                        lUser.UserName = ds.Tables[0].Rows[0]["UserName"].ToString();
-                        lUser.UserCode = ds.Tables[0].Rows[0]["UserCode"].ToString();
-                        lUser.Email = ds.Tables[0].Rows[0]["Email"].ToString();
-                        lUser.ShipId = Convert.ToInt32(ds.Tables[0].Rows[0]["ShipId"].ToString());
-                        lUser.ShipName = ds.Tables[0].Rows[0]["ShipName"].ToString();
-                        lUser.VesselIMO = ds.Tables[0].Rows[0]["VesselIMO"].ToString();
-                        lUser.UserType = Convert.ToInt32(ds.Tables[0].Rows[0]["UserType"].ToString());
-                        lUser.IsAdmin = Convert.ToInt32(ds.Tables[0].Rows[0]["IsAdmin"].ToString());
+                        lUser.UserId        = Convert.ToInt32(ds.Tables[0].Rows[0]["UserId"].ToString());
+                        lUser.UserName      = ds.Tables[0].Rows[0]["UserName"].ToString();
+                        lUser.UserCode      = ds.Tables[0].Rows[0]["UserCode"].ToString();
+                        lUser.Email         = ds.Tables[0].Rows[0]["Email"].ToString();
+                        lUser.ShipId        = Convert.ToInt32(ds.Tables[0].Rows[0]["ShipId"].ToString());
+                        lUser.ShipName      = ds.Tables[0].Rows[0]["ShipName"].ToString();
+                        lUser.VesselIMO     = ds.Tables[0].Rows[0]["VesselIMO"].ToString();
+                        lUser.UserType      = Convert.ToInt32(ds.Tables[0].Rows[0]["UserType"].ToString());
+                        lUser.IsAdmin       = Convert.ToInt32(ds.Tables[0].Rows[0]["IsAdmin"].ToString());
 
                         asReturnMessage = "1";
                     }

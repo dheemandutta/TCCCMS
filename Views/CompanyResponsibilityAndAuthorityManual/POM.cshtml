@@ -1,0 +1,13 @@
+﻿@model TCCCMS.Models.Manual
+@{
+    ViewBag.Title = "POM";
+}
+
+<h2>@*POM*@</h2>
+
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+
+<div id="POMHtml">
+    @Html.Raw(Model.ManualBodyHtml)
+
+</div>

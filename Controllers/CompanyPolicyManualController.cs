@@ -16,6 +16,10 @@ namespace TCCCMS.Controllers
         private string controllerName = "CompanyPolicyManual";
         ManualBL manualBL = new ManualBL();
         // GET: CompanyPolicyManual
+        public ActionResult Index()
+        {
+            return View();
+        }
         public ActionResult Manual()
         {
             Manual file = new Manual();
