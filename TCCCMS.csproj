@@ -1727,6 +1727,7 @@
     <Content Include="Views\MaintenanceOfShipAndEquipment\StandardPS.cshtml" />
     <Content Include="Views\ShipboardOperattion\NavigationProcedure.cshtml" />
     <Content Include="Views\ShipboardOperattion\NavigationAudit.cshtml" />
+    <Content Include="Views\Shared\Admin_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
