@@ -13,10 +13,6 @@
 
 
 
-
-
-
-
 body {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -226,18 +222,24 @@ header {
 }
 
 /*---Ship-----*/
-.colorWhite{color:white;}
-.marginTP10{margin-top:10px;}
-    .menu_icon a {
-        color: #fff;
-        font-size: 25px;
-        margin: 5px 0 0 0;
-        display: inline-block;
-        text-align: right;
-    }
+.colorWhite {
+    color: white;
+}
 
-        .menu_icon a img {
-        }
+.marginTP10 {
+    margin-top: 10px;
+}
+
+.menu_icon a {
+    color: #fff;
+    font-size: 25px;
+    margin: 5px 0 0 0;
+    display: inline-block;
+    text-align: right;
+}
+
+    .menu_icon a img {
+    }
 
 
 .marginTP10 {
@@ -363,8 +365,8 @@ header {
 
 .left_bo {
     background: url(../images/back.png) no-repeat 0 0;
-    background-size: cover;
-    padding: 28px 20px;
+    background-size: contain;
+    padding: 45px 20px;
 }
 
 .one_part {
@@ -597,3 +599,80 @@ header {
             font-size: 18px;
         }
 }
+
+
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 181px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: -117px;
+}
+
+    .dropdown-content ul li {
+        list-style-type: none;
+        text-align: left;
+    }
+
+        .dropdown-content ul li a:hover {
+            background: #dd3043;
+            color: #fff;
+        }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropmenuright .dropdown-rightcontent {
+    display: none;
+}
+
+.dropdown-rightcontent {
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 181px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    bottom: 0;
+    right: -181px;
+}
+
+.dropmenuright {
+    position: relative;
+}
+
+    .dropmenuright:after {
+        font-family: "FontAwesome";
+        content: "\f105";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 10px;
+        color: #000;
+    }
+    .dropmenuright:hover:after {
+        color: #fff;
+    }
+        .dropmenuright:hover .dropdown-rightcontent {
+        display: block;
+    }
