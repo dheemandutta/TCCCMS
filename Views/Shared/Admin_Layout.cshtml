@@ -89,13 +89,28 @@
                             </a>
                             <ul class="submenu">
                                 <li>
-                                    <a href='@Url.Action("Manual", "CompanyProceduresManual")'>
-                                        <span class="vul">Volume <b>II</b> </span><span class="pgnam" style="background-color:salmon;"> Manual</span>
+                                    <a href='@Url.Action("Index", "UserGroup")'>
+                                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Group</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href='@Url.Action("ProceduresExplained", "CompanyProceduresManual")'>
-                                        <span class="vul">Volume <b>II</b> </span><span class="pgnam" style="background-color:salmon;"> ProceduresExplained</span>
+                                    <a href='@Url.Action("Index", "UserMaster")'>
+                                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Master </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("CompanyUser", "UserMaster")'>
+                                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Company User</span>
+                                    </a>
+                                </li>
+                                @*<li>
+                    <a href='@Url.Action("SupportUser", "UserMaster")'>
+                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Support User</span>
+                    </a>
+                </li>*@
+                                <li>
+                                    <a href='@Url.Action("UploadForm", "UserMaster")'>
+                                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Upload Form</span>
                                     </a>
                                 </li>
                             </ul>
@@ -116,6 +131,71 @@
                         <li class="mainmenu">
                             <a href='   '>
                                 <span class="vul">5 </span><span class="pgnam">Sync</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "Ship")'>
+                                <span class="vul">6 </span><span class="pgnam">Ship</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "RoleMaster")'>
+                                <span class="vul">7 </span><span class="pgnam">Role Master</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "Rank")'>
+                                <span class="vul">8 </span><span class="pgnam">Rank </span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "PermissionRole")'>
+                                <span class="vul">9 </span><span class="pgnam">Permission Role </span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "Import")'>
+                                <span class="vul">10 </span><span class="pgnam">Import</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "GroupMaster")'>
+                                <span class="vul">11 </span><span class="pgnam">Group Master</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='   '>
+                                <span class="vul">12 </span><span class="pgnam"> Document </span>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href='@Url.Action("List", "Document")'>
+                                        <span class="vul">12 </span><span class="pgnam" style="background-color:salmon;"> Document List</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("UpdateForm", "Document")'>
+                                        <span class="vul">12 </span><span class="pgnam" style="background-color:salmon;"> Update Form </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("Upload", "Document")'>
+                                        <span class="vul">12 </span><span class="pgnam" style="background-color:salmon;"> Upload</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "Approver")'>
+                                <span class="vul">13 </span><span class="pgnam">Approver </span>
                             </a>
                         </li>
 
