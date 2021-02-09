@@ -30,10 +30,10 @@
                 </div>
                 <div class="col-lg-8 col-md-8 col-12">
                     <div class="search">
-                        <input type="text" class="searchTerm" placeholder="Search....">
+                        @*<input type="text" class="searchTerm" placeholder="Search....">
                         <button type="submit" class="searchButton">
                             <i class="fa fa-search"></i>
-                        </button>
+                        </button>*@
                     </div>
                 </div>
                 <div class="col-lg-1 col-md-1 col-12">
@@ -78,26 +78,14 @@
                     <ul>
 
                         <li class="mainmenu">
-                            <a href='@Url.Action("Index", "CompanyPolicyManual")'>
-                                <span class="vul">Volume <b>I</b> </span><span class="pgnam">Company Policy Manual</span>
+                            <a href='@Url.Action("UserDashboard", "Dashboard")'>
+                                <span class="vul">1 </span><span class="pgnam">User Dashboard</span>
                             </a>
-                            <ul class="submenu">
-                                <li>
-                                    <a href='@Url.Action("Manual", "CompanyPolicyManual")'>
-                                        <span class="vul">Volume <b>I</b> </span><span class="pgnam" style="background-color:salmon;"> Manual</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='@Url.Action("Introduction", "CompanyPolicyManual")'>
-                                        <span class="vul">Volume <b>I</b> </span><span class="pgnam" style="background-color:salmon;"> Introduction</span>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
                         <li class="mainmenu">
-                            <a href='@Url.Action("Index", "CompanyProceduresManual")'>
-                                <span class="vul">Volume <b>II</b> </span><span class="pgnam"> Procedures Manual </span>
+                            <a href='   '>
+                                <span class="vul">2 </span><span class="pgnam"> User Management </span>
                             </a>
                             <ul class="submenu">
                                 <li>
@@ -111,6 +99,24 @@
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='   '>
+                                <span class="vul">3 </span><span class="pgnam">Template</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='   '>
+                                <span class="vul">4 </span><span class="pgnam">Ticket</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='   '>
+                                <span class="vul">5 </span><span class="pgnam">Sync</span>
+                            </a>
                         </li>
 
                     </ul>
