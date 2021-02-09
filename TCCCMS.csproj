@@ -1655,7 +1655,7 @@
     <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\CCPTHRA.cshtml" />
     <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\CVA.cshtml" />
     <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\CSD.cshtml" />
-    <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\IMF.cshtml" />
+    <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\IMORF.cshtml" />
     <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\ESDC.cshtml" />
     <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\BSDC.cshtml" />
     <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\Section2.cshtml" />

@@ -92,13 +92,13 @@ namespace TCCCMS.Controllers
             TempData["CSD"] = file.ManualBodyHtml;
             return View(file);
         }
-        public ActionResult IMF()
+        public ActionResult IMORF()
         {
             //---------------Annex C - IMO Reporting Format  -----------------
 
             Manual file = new Manual();
-            file = manualBL.GetManual(controllerName, "IMF");
-            TempData["IMF"] = file.ManualBodyHtml;
+            file = manualBL.GetManual(controllerName, "IMORF");
+            TempData["IMORF"] = file.ManualBodyHtml;
             return View(file);
         }
         public ActionResult ESDC()

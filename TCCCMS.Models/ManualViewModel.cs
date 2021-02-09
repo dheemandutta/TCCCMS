@@ -13,5 +13,6 @@ namespace TCCCMS.Models
         public Pagination Pagination { get; set; }
 
         public List<Manual> ManualList { get; set; }
+        public int VolumeId { get; set; }
     }
 }

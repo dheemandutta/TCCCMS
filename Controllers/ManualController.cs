@@ -55,6 +55,7 @@ namespace TCCCMS.Controllers
             
             pgn.Count       = manuals.Count();
             fsvm.ManualList = manuals.Skip((pgn.CurrentPage - 1) * pgn.PageSize).Take(pgn.PageSize).ToList();
+            fsvm.VolumeId = Convert.ToInt32(volNo);
             fsvm.Pagination = pgn;
 
 
