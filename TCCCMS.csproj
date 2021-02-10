@@ -1728,6 +1728,7 @@
     <Content Include="Views\ShipboardOperattion\NavigationProcedure.cshtml" />
     <Content Include="Views\ShipboardOperattion\NavigationAudit.cshtml" />
     <Content Include="Views\Shared\Admin_Layout.cshtml" />
+    <Content Include="SQL Script\07.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.zip" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
