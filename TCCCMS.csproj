@@ -1771,11 +1771,15 @@
     <Content Include="Views\ShipboardOperattion\NavigationAudit.cshtml" />
     <Content Include="Views\Shared\Admin_Layout.cshtml" />
     <Content Include="SQL Script\07.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.zip" />
+    <Content Include="Views\Forms\ListOfAdministrationMmanagementForms.cshtml" />
+    <Content Include="Views\Forms\ListOfMaintenanceFroms.cshtml" />
+    <Content Include="Views\Forms\ListOfMmanagementOfShipPersonalForms.cshtml" />
+    <Content Include="Views\Forms\NavigationMmanagementForms.cshtml" />
+    <Content Include="Views\Forms\SafetyMmanagementForms.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Model\" />
-    <Folder Include="Views\Forms\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
