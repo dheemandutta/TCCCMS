@@ -29,7 +29,7 @@ namespace TCCCMS.Data
                     cmd.Parameters.AddWithValue("@PageSize", length);
                     cmd.Parameters.Add("@RecordCount", SqlDbType.Int, 4);
                     cmd.Parameters["@RecordCount"].Direction = ParameterDirection.Output;
-                    cmd.Parameters.AddWithValue("@UserType", CategoryId);
+                    cmd.Parameters.AddWithValue("@CategoryId", CategoryId);
                     con.Open();
 
                     DataSet ds = new DataSet();
