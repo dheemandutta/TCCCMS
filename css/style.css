@@ -1,6 +1,6 @@
 .submenu {
     display: none;
-    transition: .5s ease-in-out;
+    transition: .5s ease-in-out;position:relative;
 }
 
 .mainmenu:hover .submenu {
@@ -8,6 +8,95 @@
     transition: .5s ease-in-out;
     margin: 10px 0 0 20px;
 }
+
+.sub_submenu {
+    display: none;
+}
+.meutm{position:relative;}
+.meutm:hover .sub_submenu {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
+    .meutm:after {
+        font-family: "FontAwesome";
+        content: "\f104";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 20px;
+        color: #fff;
+    }
+
+.meutmtwo:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+}
+.meutmthree:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+}
+
+.sub_submenu {
+    display: none;
+}
+
+.meutmtwo {
+    position: relative;
+}
+.sub_submenutn{display:none;}
+
+.meutmtwo:hover .sub_submenutn {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
+
+.meutmthree {
+    position: relative;
+}
+
+.sub_submenutnth {
+    display: none;
+}
+
+.meutmthree:hover .sub_submenutnth {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
+
 
 
 
@@ -18,7 +107,7 @@ body {
     padding-bottom: 0px;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    background: #fff;
+    background: #fff;overflow-x:hidden;
 }
 
 a:hover {
@@ -324,6 +413,8 @@ header {
     vertical-align: top;
     border-left: 1px solid #c83a3a;
     height: 67px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 .bnr_bottom_sec {
@@ -544,9 +635,9 @@ header {
     top: 0;
     left: 0;
     background-color: #404040;
-    overflow-x: hidden;
+    /*overflow-x: hidden;*/
     transition: 0.5s;
-    padding-top: 60px;
+    /*padding-top: 60px;*/
 }
 
     .sidebar a {
@@ -563,11 +654,12 @@ header {
         }
 
     .sidebar .closebtn {
-        position: absolute;
+        position: relative;
         top: 0;
         right: 25px;
         font-size: 36px;
         margin-left: 46px;
+        text-align:right;
     }
 
 .openbtn {
@@ -670,9 +762,11 @@ header {
         top: 10px;
         color: #000;
     }
+
     .dropmenuright:hover:after {
         color: #fff;
     }
-        .dropmenuright:hover .dropdown-rightcontent {
+
+    .dropmenuright:hover .dropdown-rightcontent {
         display: block;
     }
