@@ -16,7 +16,8 @@ namespace TCCCMS
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "UserGroup", action = "Index", id = UrlParameter.Optional }
+                //defaults: new { controller = "UserGroup", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Dashboard", action = "AdminDashboard", id = UrlParameter.Optional }
             );
         }
     }
