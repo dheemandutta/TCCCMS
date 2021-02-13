@@ -1777,6 +1777,7 @@
     <Content Include="Views\Forms\ListOfMmanagementOfShipPersonalForms.cshtml" />
     <Content Include="Views\Forms\NavigationMmanagementForms.cshtml" />
     <Content Include="Views\Forms\SafetyMmanagementForms.cshtml" />
+    <Content Include="SQL Script\13.02.2021_Full_Script_Of_TCCCMSDB.zip" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
