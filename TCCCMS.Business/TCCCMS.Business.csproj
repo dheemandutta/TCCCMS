@@ -44,6 +44,7 @@
     <Compile Include="ApproverMasterBL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DocumentBL.cs" />
+    <Compile Include="DownloadableFromsBL.cs" />
     <Compile Include="HomeBL.cs" />
     <Compile Include="ImportBL.cs" />
     <Compile Include="ManualBL.cs" />
