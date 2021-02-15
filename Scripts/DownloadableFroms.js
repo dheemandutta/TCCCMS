@@ -54,25 +54,18 @@ function SetUpGrid(CategoryId) {
             {
                 "data": "FormName", "name": "FormName", "autoWidth": true
             },
+            //{
+            //    "data": "Path", "name": "Path", "autoWidth": true
+            //},
             {
-                "data": "Path", "name": "Path", "autoWidth": true
+                "data": "Path", "width": "150px", "render": function (data) {
+                    var str = '<div class="col-sm-12"><div class="row"><div class="col-sm-6"><a href="' + data + '" class="btn btn-info btn-sm" style="background-color: #e90000;" >Download</a></div>';
+                    return str;
+                },
             },
             {
                 "data": "Version", "name": "Version", "autoWidth": true
             }
-          
-
-            //,{
-            //    "data": "UserId", "width": "50px", "render": function (data) {
-            //        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
-            //    }
-            //},
-            //{
-            //    "data": "UserId", "width": "50px", "render": function (d) {
-            //        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
-            //    }
-            //}
-
         ],
         "rowId": "ID",
         "dom": "Bfrtip"

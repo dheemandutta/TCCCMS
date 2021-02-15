@@ -13,15 +13,15 @@
 @Html.Hidden("loaddata", @Url.Action("LoadData", "Forms"))
 
 <body>
-    <h2 class="ta">Downloadable Forms</h2>
+    @*<h2 class="ta">Downloadable Forms</h2>*@
     <div class="row">
-        @*<div class="col-md-3">
+        <div class="col-md-4">
                 <h2 class="ta">Downloadable Forms</h2>
-            </div>*@
+            </div>
 
-        <div class="col-md-20">
+        <div class="col-md-8">
             <div class="row">
-                <div class="col-md-20 bac1">
+                <div class="col-md-12 bac1">
 
                     <div style="margin:0 auto" class="tablecontainer">
                         <input type="hidden" id="hdnrole" />
@@ -29,7 +29,7 @@
                             <thead>
                                 <tr>
                                     <th>Form Name</th>
-                                    <th>Path</th>
+                                    <th>Forms Download</th>
                                     <th>Version</th>
                                     @*<th>Edit</th>
                                       <th>Delete</th>*@
