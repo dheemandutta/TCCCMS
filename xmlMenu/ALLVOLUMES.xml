@@ -131,9 +131,9 @@
 			<foldername name="Appendix">
 				<foldername name="JHA Templates">
 					<foldername name="Deck">
-						<filename>D1-STS Operation</filename>
-						<filename>D2-SBM Operation</filename>
-						<filename>D3-Rigging Unrigging of Razor Wire for anti-piracy</filename>
+						<filename>D1- STS Operation</filename>
+						<filename>D2- SBM Operation</filename>
+						<filename>D3- Rigging Unrigging of Razor Wire for anti-piracy</filename>
 						<filename>D4-Mast Riser Wire Mesh Strainer cleaning and inspection</filename>
 						<filename>D5-Personnel Transfer Using Ships Crane</filename>
 						<filename>D6-Radar Scanner inspection and cleaning</filename>
@@ -317,7 +317,7 @@
 				<filename>Chapter 12 Delegation of Duty</filename>
 				<filename>Sec 6 Contents</filename>
 			</foldername>
-			<filename>Vol IV. Manual</filename>
+			<filename>Vol. IV Manual</filename>
 		</volume>
 		
 		<volume id="5" name="Volume V">
