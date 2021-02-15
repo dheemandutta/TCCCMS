@@ -49,6 +49,7 @@
     <Compile Include="GroupMasterPOCO.cs" />
     <Compile Include="Manual.cs" />
     <Compile Include="ManualViewModel.cs" />
+    <Compile Include="Menu.cs" />
     <Compile Include="Pagination.cs" />
     <Compile Include="PermissionRolePOCO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="ShipViewModel.cs" />
     <Compile Include="UserGroupPOCO.cs" />
     <Compile Include="UserMasterPOCO.cs" />
+    <Compile Include="Volume.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

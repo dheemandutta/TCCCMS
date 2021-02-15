@@ -31,5 +31,22 @@ namespace TCCCMS.Business
             file = manualDAL.GetManual(controllerName,  actionName);
             return file;
         }
+
+        public Manual GetActionNameByFileName(string fileName)
+        {
+            Manual file = new Manual();
+            ManualDAL manualDAL = new ManualDAL();
+
+            file = manualDAL.GetActionNameByFileName(fileName);
+            return file;
+        }
+        public Volume GetVolumeById(string volumeId)
+        {
+            Volume vol = new Volume();
+            ManualDAL manualDAL = new ManualDAL();
+
+            vol = manualDAL.GetVolumeById(volumeId);
+            return vol;
+        }
     }
 }

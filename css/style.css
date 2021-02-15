@@ -96,18 +96,260 @@
     width: 273px;
     top: -9px;
 }
+/*-----************Dynamic Menu Style*********************-------*/
+.submenuL1 {
+    display: none;
+}
+.menu_itm {
+    position: relative;
+}
+.menu_itm:hover .submenuL1 {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
 
+.menu_itm:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+}
 
+.submenuL2 {
+    display: none;
+}
+.menu_itmL1 {
+    position: relative;
+}
+.menu_itmL1:hover .submenuL2 {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
+.menu_itmL1:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+}
+/*---*/
+.submenuL3 {
+    display: none;
+}
 
+.menu_itmL2 {
+    position: relative;
+}
 
+.menu_itmL2:hover .submenuL3 {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
 
+.menu_itmL2:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+}
+/*----*/
+.submenuL4 {
+    display: none;
+}
+
+.menu_itmL3 {
+    position: relative;
+}
+
+.menu_itmL3:hover .submenuL4 {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
+
+.menu_itmL3:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+}
+
+/*----*/
+.submenuL5 {
+    display: none;
+}
+
+.menu_itmL4 {
+    position: relative;
+}
+
+.menu_itmL4:hover .submenuL5 {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
+
+.menu_itmL4:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+}
+/*-----*/
+.submenuL6 {
+    display: none;
+}
+
+.menu_itmL5 {
+    position: relative;
+}
+
+.menu_itmL5:hover .submenuL6 {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
+
+.menu_itmL5:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+}
+/*-----*/
+.submenuL7 {
+    display: none;
+}
+
+.menu_itmL6 {
+    position: relative;
+}
+
+.menu_itmL6:hover .submenuL7 {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
+
+.menu_itmL6:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+}
+/**-----*/
+.submenuL8 {
+    display: none;
+}
+
+.menu_itmL7 {
+    position: relative;
+}
+
+.menu_itmL7:hover .submenuL8 {
+    display: block;
+    transition: .5s ease-in-out;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    left: -293px;
+    width: 273px;
+    top: -9px;
+}
+
+.menu_itmL7:after {
+    font-family: "FontAwesome";
+    content: "\f104";
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    position: absolute;
+    right: 12px;
+    top: 20px;
+    color: #fff;
+}
+    /*------*/
+/*-----*******End*****Dynamic Menu Style*********************-------*/
 
 body {
     padding-top: 0px;
     padding-bottom: 0px;
     font-family: 'Poppins', sans-serif;
     position: relative;
-    background: #fff;overflow-x:hidden;
+    background: #fff;
+    overflow-x: hidden;
 }
 
 a:hover {

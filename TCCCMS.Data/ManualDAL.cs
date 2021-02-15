@@ -99,5 +99,68 @@ namespace TCCCMS.Data
 
             return file;
         }
+
+        public Manual GetActionNameByFileName(string fileName)
+        {
+            Manual file = new Manual();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetActionByFileName", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@FileName", fileName);
+                    con.Open();
+
+                    DataSet ds          = new DataSet();
+                    SqlDataAdapter da   = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    if(ds.Tables[0].Rows.Count > 0)
+                    {
+                        file.ManualId           = Convert.ToInt32(ds.Tables[0].Rows[0]["ManualId"]);
+                        file.ManualFileName     = Convert.ToString(ds.Tables[0].Rows[0]["ManualFileName"]);
+                        file.ActionName         = Convert.ToString(ds.Tables[0].Rows[0]["ActionName"]);
+                        file.ControllerName     = Convert.ToString(ds.Tables[0].Rows[0]["ControllerName"]);
+
+                    }
+
+
+
+                    con.Close();
+                }
+            }
+
+            return file;
+        }
+
+        public Volume GetVolumeById(string volumeId)
+        {
+            Volume vol = new Volume();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetVolumeById", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@VolumeId", Convert.ToInt32(volumeId));
+                    con.Open();
+
+                    DataSet ds          = new DataSet();
+                    SqlDataAdapter da   = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+
+                    vol.VolumeId            = Convert.ToInt32(ds.Tables[0].Rows[0]["VolumeId"]);
+                    vol.Name                = Convert.ToString(ds.Tables[0].Rows[0]["VolumeName"]);
+                    vol.Description         = Convert.ToString(ds.Tables[0].Rows[0]["VolumeMasterDesc"]);
+                    vol.ControllerName      = Convert.ToString(ds.Tables[0].Rows[0]["ControllerName"]);
+
+
+                    con.Close();
+                }
+            }
+
+            return vol;
+        }
     }
 }
