@@ -122,7 +122,7 @@ namespace TCCCMS.Controllers
                             {
                                 sb.Append("\n");
                                 //sb.Append("<li><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + "</span></a></li>");
-                                sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + "</span></a></li>");
+                                sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + "</span></a></li>");
                             }
                            
                         }
@@ -131,7 +131,7 @@ namespace TCCCMS.Controllers
 
                             string fName = item.Attributes["name"].Value.ToString();
                             sb.Append("\n");
-                            sb.Append("<li class='menu_itm'><a href='#'><span class='vul'>Volume <b>"+ partName + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + fName + "</span></a>");
+                            sb.Append("<li class='menu_itm'><a href='#'><span class='vul'>Volume <b>"+ partName + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + fName + "</span></a>");
                             sb.Append("\n");
                             sb.Append("<ul class='submenuL" + l + "'>");
                             string sChild = GetChild(item, ref l, partName);
@@ -178,7 +178,7 @@ namespace TCCCMS.Controllers
                     {
                         sb.Append("\n");
                         //sb.Append("<li ><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
-                        sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
+                        sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
                     }
 
                 }
@@ -188,7 +188,7 @@ namespace TCCCMS.Controllers
                     string fName = item.Attributes["name"].Value.ToString();
                     sb.Append("\n");
 
-                    sb.Append("<li class='menu_itm" + l + "'><a href='#'><span class='vul'>Volume <b>"+part+"</b> </span><span class='pgnam' style='background - color:salmon; '>" + fName + " </span></a>");
+                    sb.Append("<li class='menu_itmL" + l + "'><a href='#'><span class='vul'>Volume <b>"+part+"</b> </span><span class='pgnam' style='background-color:salmon; '>" + fName + " </span></a>");
                     sb.Append("\n");
                     sb.Append("<ul class='submenuL" + (l + 1) + "'>");
                     x = l + 1;
