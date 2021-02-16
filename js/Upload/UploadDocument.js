@@ -124,7 +124,7 @@ function UploadAndUpdateForm() {
             var files = fileUpload.files;
             // Create FormData object  
             var fileData = new FormData();
-            
+
             // Looping over all files and add it to FormData object  
             for (var i = 0; i < files.length; i++) {
                 fileData.append(files[i].name, files[i]);
@@ -147,8 +147,9 @@ function UploadAndUpdateForm() {
                 data: fileData,
                 //data: { categoryId: y},
                 success: function (result) {
+                    alert("Form Updated Successfully");
                     //alert(result);
-                    //ClearFields();
+                    ClearFields();
                     toastr.options = {
                         "closeButton": false,
                         "debug": false,
@@ -166,19 +167,15 @@ function UploadAndUpdateForm() {
                         "showMethod": "fadeIn",
                         "hideMethod": "fadeOut"
                     };
-
                     toastr.success("Form Updated Successfully");
+                    //clearTextBox();
                 },
-                error: function (err) {
-                    alert(err.statusText);
+                error: function (errormessage) {
+                    console.log(errormessage.responseText);
                 }
             });
-        } else {
-            alert("FormData is not supported.");
         }
-
     }
-
 }
 
 function validate() {
@@ -209,42 +206,14 @@ function validate() {
 function validateForUpdateForm() {
     var isValid = true;
 
-    if ($("#ddlCategory").val() === 0 || $("#ddlCategory").val() < 0) {
-        $('#ddlCategory').css('border-color', 'Red');
+    if ($('#ddlForms').val().length === 0) {
+        $('#ddlForms').css('border-color', 'Red');
         isValid = false;
     }
     else {
-        $('#ddlCategory').css('border-color', 'lightgrey');
-        if ($("#ddlForms").val() === 0 || $("#ddlForms").val() < 0) {
-            $('#ddlForms').css('border-color', 'Red');
-            isValid = false;
-        }
-        else {
-            $('#ddlForms').css('border-color', 'lightgrey');
-            
-        }
+        $('#ddlForms').css('border-color', 'lightgrey');
     }
-    if ($("#fileUpload").is('[disabled=disabled]')) {
-        $('#ddlCategory').css('border-color', 'Red');
-        isValid = false;
-    }
-    else {
-        if ($("#fileUpload").get(0).files.length === 0) {
-            $('#fileUpload').css('border-color', 'Red');
-            isValid = false;
-        }
-        else {
-            if ($("#ddlForms option:selected").text() === $("#fileUpload").get(0).files[0].name) {
-                $('#fileUpload').css('border-color', 'lightgrey');
-            }
-            else {
-                $('#fileUpload').css('border-color', 'Red');
-                $('#ddlForms').css('border-color', 'Red');
-                isValid = false;
-            }
-                
-        } 
-    }
+
     if ($('#txtVersion').val().length === 0) {
         $('#txtVersion').css('border-color', 'Red');
         isValid = false;
@@ -252,6 +221,52 @@ function validateForUpdateForm() {
     else {
         $('#txtVersion').css('border-color', 'lightgrey');
     }
+
+
+
+    //if ($("#ddlCategory").val() === 0 || $("#ddlCategory").val() < 0) {
+    //    $('#ddlCategory').css('border-color', 'Red');
+    //    isValid = false;
+    //}
+    //else {
+    //    $('#ddlCategory').css('border-color', 'lightgrey');
+    //    if ($("#ddlForms").val() === 0 || $("#ddlForms").val() < 0) {
+    //        $('#ddlForms').css('border-color', 'Red');
+    //        isValid = false;
+    //    }
+    //    else {
+    //        $('#ddlForms').css('border-color', 'lightgrey');
+            
+    //    }
+    //}
+    //if ($("#fileUpload").is('[disabled=disabled]')) {
+    //    $('#ddlCategory').css('border-color', 'Red');
+    //    isValid = false;
+    //}
+    //else {
+    //    if ($("#fileUpload").get(0).files.length === 0) {
+    //        $('#fileUpload').css('border-color', 'Red');
+    //        isValid = false;
+    //    }
+    //    else {
+    //        if ($("#ddlForms option:selected").text() === $("#fileUpload").get(0).files[0].name) {
+    //            $('#fileUpload').css('border-color', 'lightgrey');
+    //        }
+    //        else {
+    //            $('#fileUpload').css('border-color', 'Red');
+    //            $('#ddlForms').css('border-color', 'Red');
+    //            isValid = false;
+    //        }
+                
+    //    } 
+    //}
+    //if ($('#txtVersion').val().length === 0) {
+    //    $('#txtVersion').css('border-color', 'Red');
+    //    isValid = false;
+    //}
+    //else {
+    //    $('#txtVersion').css('border-color', 'lightgrey');
+    //}
     
 
     return isValid;
@@ -261,6 +276,10 @@ function ClearFields() {
     $('#fileUpload').val('');
     $("#fileUpload").prop('disabled', true);
     $("#ddlCategory").prop('selectedIndex', 0);
+
+    $('#ddlCategory').val("");
+    $('#ddlForms').val("");
+    $('#txtVersion').val("");
 }
 
 function LoadFormsList(x) {

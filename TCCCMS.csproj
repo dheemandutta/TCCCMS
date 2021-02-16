@@ -686,6 +686,15 @@
     <Content Include="Forms\SAFETY MANAGEMENT FORMS\SM015 - NC _ Corrective Action Request.docx" />
     <Content Include="Forms\SAFETY MANAGEMENT FORMS\SM018 - Job Hazard  Risk Analysis Form.docx" />
     <Content Include="Forms\SAFETY MANAGEMENT FORMS\SM060 - Permit for Temporary Deviation.docx" />
+    <Content Include="Forms\LIST OF ADMINISTRATION &amp; MANAGEMENT FORMS\ADM007 - Management of Change.docx" />
+    <Content Include="Forms\LIST OF ADMINISTRATION &amp; MANAGEMENT FORMS\ADM008 - Checklist for Management of Change.docx" />
+    <Content Include="Forms\LIST OF ADMINISTRATION &amp; MANAGEMENT FORMS\ADM010 - Transmittal Form.docx" />
+    <Content Include="Forms\LIST OF ADMINISTRATION &amp; MANAGEMENT FORMS\ADM012 - Document Change Request.docx" />
+    <Content Include="Forms\LIST OF ADMINISTRATION &amp; MANAGEMENT FORMS\ADM015 - Office Staff Handover Form.docx" />
+    <Content Include="Forms\LIST OF ADMINISTRATION &amp; MANAGEMENT FORMS\ADM016 - Delegation of Duty.docx" />
+    <Content Include="Forms\LIST OF ADMINISTRATION &amp; MANAGEMENT FORMS\ADM019B - Record of Uncontrolled Form Used By Office.docx" />
+    <Content Include="Forms\LIST OF ADMINISTRATION &amp; MANAGEMENT FORMS\ADM020 - Record _ Logbook Correction Note.docx" />
+    <Content Include="Forms\LIST OF ADMINISTRATION &amp; MANAGEMENT FORMS\ADM021 - Record of Posters on board.docx" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
@@ -1783,6 +1792,7 @@
     <Content Include="Views\CompanyProceduresManual\Index.cshtml" />
     <Content Include="SQL Script\15.02.2021_Full_Script_Of_TCCCMSDB_II.zip" />
     <Content Include="SQL Script\15.02.2021_Full_Script_Of_TCCCMSDB.zip" />
+    <Content Include="SQL Script\16.02.2021_Full_Script_Of_TCCCMSDB.zip" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
