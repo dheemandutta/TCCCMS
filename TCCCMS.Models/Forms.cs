@@ -33,5 +33,7 @@ namespace TCCCMS.Models
         #endregion
 
 
+
+        public string ModifiedSection { get; set; }
     }
 }

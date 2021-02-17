@@ -121,6 +121,8 @@ function UploadAndUpdateForm() {
             var frmName = $("#ddlForms option:selected").text();
             var frmVersion = $("#txtVersion").val();
             var fileUpload = $("#fileUpload").get(0);
+            var ModifiedSection = $("#ModifiedSection").val();  // deep
+
             var files = fileUpload.files;
             // Create FormData object  
             var fileData = new FormData();
@@ -136,6 +138,8 @@ function UploadAndUpdateForm() {
             fileData.append('categoryName', catName);
             fileData.append('formName', frmName);
             fileData.append('formVersion', frmVersion);
+
+            fileData.append('modifiedSection', ModifiedSection); // deep
 
             $.ajax({
                 url: '/Document/UploadAndUpdateForm',
@@ -280,6 +284,8 @@ function ClearFields() {
     $('#ddlCategory').val("");
     $('#ddlForms').val("");
     $('#txtVersion').val("");
+
+    $('#ModifiedSection').val("");
 }
 
 function LoadFormsList(x) {

@@ -99,6 +99,9 @@ namespace TCCCMS.Data
                 cmd.Parameters.AddWithValue("@Description", form.FormName);
                 cmd.Parameters.AddWithValue("@Version", form.Version);
                 cmd.Parameters.AddWithValue("@User", form.CreateedBy);
+
+                cmd.Parameters.AddWithValue("@ModifiedSection", form.ModifiedSection);
+
                 int x = cmd.ExecuteNonQuery();
                 con.Close();
                 recorSaved = recorSaved + x;

@@ -254,7 +254,7 @@ namespace TCCCMS.Controllers
             return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
         }
 
-        public JsonResult UploadAndUpdateForm(string categoryId, string categoryName,string formName, string formVersion)
+        public JsonResult UploadAndUpdateForm(string categoryId, string categoryName,string formName, string formVersion, string modifiedSection)
         {
             List<Forms> formList = new List<Forms>();
             DocumentBL uploadBL = new DocumentBL();
@@ -322,6 +322,8 @@ namespace TCCCMS.Controllers
                         form.CategoryId = Convert.ToInt32(categoryId);
                         form.Version    = formVersion;
                         form.CreateedBy = 1;
+
+                        form.ModifiedSection = modifiedSection; // deep
 
                         formList.Add(form);
 
