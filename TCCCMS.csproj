@@ -139,6 +139,7 @@
     <Compile Include="Controllers\ManualController.cs" />
     <Compile Include="Controllers\PermissionRoleController.cs" />
     <Compile Include="Controllers\RankController.cs" />
+    <Compile Include="Controllers\RevisionHistoryController.cs" />
     <Compile Include="Controllers\RoleMasterController.cs" />
     <Compile Include="Controllers\ShipboardOperattionController.cs" />
     <Compile Include="Controllers\ShipController.cs" />
@@ -1794,6 +1795,7 @@
     <Content Include="SQL Script\15.02.2021_Full_Script_Of_TCCCMSDB.zip" />
     <Content Include="SQL Script\16.02.2021_Full_Script_Of_TCCCMSDB.zip" />
     <Content Include="SQL Script\17.02.2021_Full_Script_Of_TCCCMSDB.zip" />
+    <Content Include="Views\RevisionHistory\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
