@@ -18,5 +18,11 @@ namespace TCCCMS.Business
             RevisionHistoryDAL dAL = new RevisionHistoryDAL();
             return dAL.GetRevisionHistoryPageWise(pageIndex, ref recordCount, length/*, VesselID*/);
         }
+
+        public List<RevisionHistory> GetFormIdForModifiedSection()
+        {
+            RevisionHistoryDAL dAL = new RevisionHistoryDAL();
+            return dAL.GetFormIdForModifiedSection();
+        }
     }
 }

@@ -55,5 +55,24 @@ namespace TCCCMS.Data
             return pOList;
         }
 
+        public List<RevisionHistory> GetFormIdForModifiedSection()
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("GetFormIdForModifiedSection", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            DataTable myTable = ds.Tables[0];
+            List<RevisionHistory> List = myTable.AsEnumerable().Select(m => new RevisionHistory()
+            {
+                FormId = m.Field<int>("FormId")
+
+            }).ToList();
+
+            con.Close();
+            return List;
+        }
     }
 }

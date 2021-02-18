@@ -67,5 +67,15 @@ namespace TCCCMS.Controllers
             return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
 
+
+        public JsonResult GetFormIdForModifiedSection()
+        {
+            RevisionHistoryBL bL = new RevisionHistoryBL();
+
+            RevisionHistory pC = new RevisionHistory();
+            pC.FormId = pC.FormId;
+
+            return Json(bL.GetFormIdForModifiedSection(), JsonRequestBehavior.AllowGet);
+        }
     }
 }

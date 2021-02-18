@@ -17,5 +17,7 @@ namespace TCCCMS.Models
         public string UpdatedOn1 { get; set; }
         public string Version { get; set; }
 
+
+        public int FormId { get; set; }
     }
 }
