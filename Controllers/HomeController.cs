@@ -78,7 +78,7 @@ namespace TCCCMS.Controllers
         {
             Menu menu = new Menu();
             menu.Menulist = GenerateMenu();
-            return PartialView("_Manu_Layout", menu);
+            return PartialView("_Menu_Layout", menu);
         }
         #region Generate Menu--
 

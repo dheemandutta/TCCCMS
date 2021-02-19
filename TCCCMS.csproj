@@ -1778,7 +1778,7 @@
     <Content Include="Views\Forms\NavigationMmanagementForms.cshtml" />
     <Content Include="Views\Forms\SafetyMmanagementForms.cshtml" />
     <Content Include="SQL Script\13.02.2021_Full_Script_Of_TCCCMSDB.zip" />
-    <Content Include="Views\Shared\_Manu_Layout.cshtml" />
+    <Content Include="Views\Shared\_Menu_Layout.cshtml" />
     <Content Include="Views\CompanyPolicyManual\Index.cshtml" />
     <Content Include="Views\CompanyProceduresManual\Index.cshtml" />
   </ItemGroup>
