@@ -254,7 +254,7 @@ namespace TCCCMS.Controllers
             return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
         }
 
-        public JsonResult UploadAndUpdateForm(string categoryId, string categoryName,string formName, string formVersion)
+        public JsonResult UploadAndUpdateForm(string categoryId, string categoryName,string formName, string formVersion, string modifiedSection)
         {
             List<Forms> formList = new List<Forms>();
             DocumentBL uploadBL = new DocumentBL();
@@ -264,8 +264,8 @@ namespace TCCCMS.Controllers
                 try
                 {
                     string tempFolder = "~/UploadForUpdate/";
-                    string relativePath = "~/Uploads/" + categoryName;
-                    string path = Server.MapPath("~/Uploads/");
+                    string relativePath = "~/Forms/" + categoryName;  // deep
+                    string path = Server.MapPath("~/Forms/");         // deep
                     //string tempath = Server.MapPath(tempFolder);
                     string fileFath = Path.Combine(path, categoryName);
                     //if (!Directory.Exists(tempath))
@@ -276,7 +276,7 @@ namespace TCCCMS.Controllers
 
                     #region form to Archive
                     string archivedFolder       = "~/ArchivedForms/" + categoryName + "/";
-                    string uploadedFolder       = "~/Uploads/" + categoryName + "/";
+                    string uploadedFolder       = "~/Forms/" + categoryName + "/";          // deep
                     string sourcePath           = Server.MapPath(uploadedFolder);
                     string destinationPath      = Server.MapPath(archivedFolder);
                     string uploadedFile         = Path.Combine(sourcePath, formName);
@@ -322,6 +322,8 @@ namespace TCCCMS.Controllers
                         form.CategoryId = Convert.ToInt32(categoryId);
                         form.Version    = formVersion;
                         form.CreateedBy = 1;
+
+                        form.ModifiedSection = modifiedSection; // deep
 
                         formList.Add(form);
 
