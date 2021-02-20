@@ -1367,30 +1367,8 @@
     <Content Include="Scripts\Upload\jquery.filedrop.js" />
     <Content Include="Scripts\UserGroup.js" />
     <Content Include="Scripts\UserMaster.js" />
-    <Content Include="SQL Script\01.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\03.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB.sql" />
-    <Content Include="SQL Script\06.01.2021_Full_Script_Of_TCCCMSDB.sql" />
-    <Content Include="SQL Script\08.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\09.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\09.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29_II.sql" />
-    <Content Include="SQL Script\11.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\12.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\13.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\13.01.2021_Full_Script_Of_TCCCMSDB_II.sql" />
-    <Content Include="SQL Script\14.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\15.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\16.01.2021_Full_Script_Of_TCCCMSDB.sql" />
-    <Content Include="SQL Script\18.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\19.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\20.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\21.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\22.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\25.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\27.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\28.01.2021_Full_Script_Of_TCCCMSDB %28SQL Server 19%29.sql" />
-    <Content Include="SQL Script\Full_ScriptOf_TCCCMSDB.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1782,21 +1760,17 @@
     <Content Include="Views\ShipboardOperattion\NavigationProcedure.cshtml" />
     <Content Include="Views\ShipboardOperattion\NavigationAudit.cshtml" />
     <Content Include="Views\Shared\Admin_Layout.cshtml" />
-    <Content Include="SQL Script\07.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.zip" />
     <Content Include="Views\Forms\ListOfAdministrationMmanagementForms.cshtml" />
     <Content Include="Views\Forms\ListOfMaintenanceFroms.cshtml" />
     <Content Include="Views\Forms\ListOfMmanagementOfShipPersonalForms.cshtml" />
     <Content Include="Views\Forms\NavigationMmanagementForms.cshtml" />
     <Content Include="Views\Forms\SafetyMmanagementForms.cshtml" />
-    <Content Include="SQL Script\13.02.2021_Full_Script_Of_TCCCMSDB.zip" />
     <Content Include="Views\Shared\_Manu_Layout.cshtml" />
     <Content Include="Views\CompanyPolicyManual\Index.cshtml" />
     <Content Include="Views\CompanyProceduresManual\Index.cshtml" />
-    <Content Include="SQL Script\15.02.2021_Full_Script_Of_TCCCMSDB_II.zip" />
-    <Content Include="SQL Script\15.02.2021_Full_Script_Of_TCCCMSDB.zip" />
-    <Content Include="SQL Script\16.02.2021_Full_Script_Of_TCCCMSDB.zip" />
     <Content Include="SQL Script\17.02.2021_Full_Script_Of_TCCCMSDB.zip" />
     <Content Include="Views\RevisionHistory\Index.cshtml" />
+    <Content Include="SQL Script\20.02.2021_Full_Script_Of_TCCCMSDB.zip" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
