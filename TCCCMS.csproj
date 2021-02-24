@@ -1772,6 +1772,7 @@
     <Content Include="Views\RevisionHistory\Index.cshtml" />
     <Content Include="SQL Script\20.02.2021_Full_Script_Of_TCCCMSDB.zip" />
     <Content Include="SQL Script\20.02.2021_Full_Script_Of_TCCCMSDB_II.zip" />
+    <Content Include="Views\Home\Test2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
