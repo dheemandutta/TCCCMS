@@ -1,136 +1,141 @@
-﻿
+﻿@model TCCCMS.Models.UserMasterPOCO
 @{
     Layout = null;
 }
 
-<!DOCTYPE html>
+@{
+    ViewBag.Title = "Index";
+}
 
-<html>
-<head>
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken() // this is for prevent CSRF attack
+    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div class="divclass"><p style="margin:0;"><strong>  @ViewBag.Message</strong></p> </div>
+    }
+
     <meta name="viewport" content="width=device-width" />
     <title>Login</title>
     <link href="~/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
     <link href="~/css/Login.css" rel="stylesheet" />
-
-    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
     <script src="~/js/bootstrap.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-    
-</head>
-<body>
-    @Html.Hidden("urlCheckLogin", @Url.Action("Login", "Home"))
-    <div class="main">
-        <div class="container">
-            @*<center>*@
-            <div class="col-sm-12 col-xs-12">
 
-                <div class="row">
+    <script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                $(".divclass").hide("12000")
+            }, 1112000);
+        });
+    </script>
+    <style>
+        input, select, textarea {
+            max-width: 280px;
+        }
+
+        .log1 {
+            position: relative;
+            font-size: 19px;
+            color: #FFFFFF;
+            padding: -18px;
+            width: 291px;
+            text-align: center;
+            right: 24px;
+            bottom: 10px;
+            position: fixed;
+        }
+    </style>
+
+    <body>
+        @Html.Hidden("urlCheckLogin", @Url.Action("Login", "Home"))
+        <div class="main">
+            <div class="container">
+                @*<center>*@
+                <div class="col-sm-12 col-xs-12">
+
+                    <div class="row">
 
 
-                    <div class="logo col-sm-3 col-xs-12">
-                        <div style="display:contents;">
+                        <div class="logo col-sm-3 col-xs-12">
+                            <div style="display:contents;">
 
+                            </div>
+                            <div>
+                                <span><img src="/images/logo.png" /></span>
+                            </div>
+                            <h4 style="color:#e90000; font-family:Century;">TCC DOC SHIPS</h4>
+                            <h6 style="font-family: Lucida Calligraphy; font-weight:bold;">DIGITIZED SMS MANUALS</h6>
+                            <div class="clearfix"></div>
                         </div>
-                        <div>
-                            <span><img src="/images/logo.png" /></span>
-                        </div>
-                        <h4 style="color:#e90000; font-family:Century;">TCC DOC SHIPS</h4>
-                        <h6 style="font-family: Lucida Calligraphy; font-weight:bold;">DIGITIZED SMS MANUALS</h6>
-                        @*<label style="font-family: Lucida Calligraphy; font-weight:bold;">
-                                DIGITIZED SMS MANUALS
-                            </label>*@
-                        <div class="clearfix"></div>
-                    </div>
-                    <div id="login" class="col-sm-9 col-xs-12">
+                        <div id="login" class="col-sm-9 col-xs-12">
 
-                        @*--------------------------------------------*@
+                            <div style="background-color:#eee;text-align:left;  width:400px; padding:20px;">
+                                <div style="background-color:#ffffff; border-radius:25px; padding:15px;">
+                                    <form>
+                                        <div style="text-align:center">
+                                            <div style="display:contents">
+                                                <span class="logo"><img src="/images/flagimg.png" /></span>
+                                                <span style="display:inline;">Sign In</span>
 
-                        @*<div id="login-column" class="col-md-4">
-                                <div class="login-box col-md-12">
-                                    <form id="login-form" class="form" action="" method="post">
-                                        <h3 class="text-center text-info">Login</h3>
-                                        <div class="form-group">
-                                            <label for="username" class="text-info">Username:</label><br>
-                                            <input type="text" name="username" id="username" class="form-control">
+                                            </div>
+
+                                        </div>
+                                        <div class="clearfix"></div><div class="clearfix"></div>
+                                        <em id="errm" hidden style="text-emphasis-color:red; font-size:smaller;">** Invalid User Code or Password</em>
+                                        <div class="form-group" >
+                                            <label>User Code</label>
+                                            @Html.TextBoxFor(a => a.UserCode, new { @class = "form-control", @style = "border-radius:25px" })
+                                            @Html.ValidationMessageFor(a => a.UserCode)
                                         </div>
                                         <div class="form-group">
-                                            <label for="password" class="text-info">Password:</label><br>
-                                            <input type="text" name="password" id="password" class="form-control">
+                                            <label>Password</label>
+                                            @Html.PasswordFor(a => a.Password, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(a => a.Password)
                                         </div>
-                                        <div class="form-group">
-                                            <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                                            <input type="submit" name="submit" class="btn btn-info btn-md" value="SignIn">
+
+                                        <div style="display:contents">
+                                            <span style="float:left;">
+                                                <input name="remember" type="checkbox" id="chkRemember" checked value="Remember Me"><label style="display:inline; margin:5px;">Remember Me</label>
+                                            </span>
+                                            <span style="width:48%; float:right;  display: inline-block;">
+                                                <a class="small-text" href="#"> Forgot  password? </a>
+                                            </span>
+
                                         </div>
-                                        <div id="register-link" class="text-right">
-                                            <a href="#" class="text-info">Register here</a>
+                                        <div class="clearfix"></div>
+                                        <div class="signup_btn">
+                                            @*<span style="width:50%; text-align:left;  display: inline-block;"><input type="button" value="Sign In" onclick=" return CheckUserLogin()"></span>*@
+                                            <input type="submit" class="" style="background: #c83a3a; border: 0; color: #fff; padding: 10px 33px !important; border-radius: 24px; font-size: 15px; width: 120px; height:40px; margin: 0 0 19px 0;" id="btnAdd" value="Sign In" />
                                         </div>
                                     </form>
                                 </div>
-                            </div>*@
 
-                        @*--------------------------------------------*@
-
-                        <div style="background-color:#eee;text-align:left;  width:400px; padding:20px;">
-                            <div style="background-color:#ffffff; border-radius:25px; padding:15px;">
-                                <form>
-                                    <div style="text-align:center">
-                                        <div style="display:contents">
-                                            <span class="logo"><img src="/images/flagimg.png" /></span>
-                                            <span style="display:inline;">Sign In</span>
-                                            @*<h4 class="marginTP10">Sign In</h4>*@
-
-                                        </div>
-
-                                    </div>
-                                    <div class="clearfix"></div><div class="clearfix"></div>
-                                    <em id="errm" hidden style="text-emphasis-color:red; font-size:smaller;">** Invalid User Code or Password</em>
-                                    <div class="form-group">
-                                        <label>User Code</label>
-                                        <input id="userCode" type="text" class="form-control" placeholder="User Code">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Password</label>
-                                        <input id="password" type="password" class="form-control" placeholder="Enter Password">
-                                    </div>
-
-                                    <div style="display:contents">
-                                        <span style="float:left;">
-                                            <input name="remember" type="checkbox" id="chkRemember" checked value="Remember Me"><label style="display:inline; margin:5px;">Remember Me</label>
-                                        </span>
-                                        <span style="width:48%; float:right;  display: inline-block;">
-                                            <a class="small-text" href="#"> Forgot  password? </a>
-                                        </span>
-
-                                    </div>
-                                    <div class="clearfix"></div>
-                                    <div class="marginTP10">
-                                        @*<span style="width:50%; text-align:left;  display: inline-block;"><input type="submit" value="Sign In"></span>*@
-                                        <span style="width:50%; text-align:left;  display: inline-block;"><input type="button" value="Sign In" onclick=" return CheckUserLogin()"></span>
-                                    </div>
-                                </form>
                             </div>
+
+
+
+                            <div class="clearfix"></div>
 
                         </div>
 
 
-
-                        <div class="clearfix"></div>
-
                     </div>
-
-
                 </div>
-            </div>
 
-            @*</center>*@
+                @*</center>*@
+            </div>
         </div>
-    </div>
-    <script src="~/js/Login/Login.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('#errm').prop('hidden', true);
-        });
-    </script>
-</body>
-</html>
+        <script src="~/js/Login/Login.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $('#errm').prop('hidden', true);
+            });
+        </script>
+    </body>
+}
+

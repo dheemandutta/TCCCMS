@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.IO;
 using System.Xml;
 using System.Text;
+using System.Web.Routing;
 
 namespace TCCCMS.Controllers
 {
@@ -45,7 +46,7 @@ namespace TCCCMS.Controllers
             return View();
         }
 
-        //[HttpGet]
+        [HttpGet]
         public ActionResult Login()
         {
             return View();
@@ -71,10 +72,8 @@ namespace TCCCMS.Controllers
 
                 return RedirectToAction("UserDashboard", "Dashboard");
 
-                //var routeVals = TypeHelper.ObjectToDictionary(RouteData.Values);
-                //routeVals["controller"] = "YouControllerName";
-                //routeVals["action"] = "YouaActionName";
-                //return Redirect(ModuleRoutingProvider.Instance().GenerateUrl(routeVals, ModuleContext));
+                //return new RedirectToRouteResult(new RouteValueDictionary(
+                //new { action = "UserDashboard", controller = "Dashboard" }));
             }
             else
             {
