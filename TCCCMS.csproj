@@ -1717,6 +1717,7 @@
     <Content Include="Scripts\UserMaster.js" />
     <Content Include="SQL Script\03.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
     <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB.sql" />
+    <Content Include="SQL Script\V.V.I.P   Get_All_FileName_Of_A_Folder_And_Create_A_Table_With_All_FileName_Data.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
