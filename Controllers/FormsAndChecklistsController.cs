@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace TCCCMS.Controllers
 {
-    public class FormsForVol8Controller : Controller
+    public class FormsAndChecklistsController : Controller
     {
         // GET: FormsAndChecklists
         public ActionResult Index()
