@@ -9,11 +9,17 @@ using System.Web.Mvc;
 using System.IO;
 using System.Xml;
 using System.Text;
+using System.Web.Routing;
 
 namespace TCCCMS.Controllers
 {
     public class HomeController : Controller
     {
+        public ActionResult Test2()
+        {        
+            return View();
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -39,6 +45,7 @@ namespace TCCCMS.Controllers
 
             return View();
         }
+
         [HttpGet]
         public ActionResult Login()
         {
@@ -46,13 +53,11 @@ namespace TCCCMS.Controllers
         }
         [HttpPost]
         public ActionResult Login(UserMasterPOCO user)
-        {
-            string lsReturnMessage = "";
+        {            
             HomeBL homeBl = new HomeBL();
+            string lsReturnMessage = "0";
             UserMasterPOCO lUser = new UserMasterPOCO();
-
             lUser = homeBl.CheckUserLogin(user,ref lsReturnMessage);
-
             if(lsReturnMessage == "1")
             {
                 Session["UserId"]       = lUser.UserId.ToString();
@@ -65,13 +70,15 @@ namespace TCCCMS.Controllers
                 Session["UserType"]     = lUser.UserType.ToString();
                 Session["IsAdmin"]      = lUser.IsAdmin.ToString();
 
-                return RedirectToAction("Index","Ship");
+                return RedirectToAction("UserDashboard", "Dashboard");
+
+                //return new RedirectToRouteResult(new RouteValueDictionary(
+                //new { action = "UserDashboard", controller = "Dashboard" }));
             }
             else
             {
                 return Json(lsReturnMessage,JsonRequestBehavior.AllowGet);
             }
-
         }
 
         public ActionResult MenuLayout()

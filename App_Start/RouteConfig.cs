@@ -17,7 +17,7 @@ namespace TCCCMS
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 //defaults: new { controller = "UserGroup", action = "Index", id = UrlParameter.Optional }
-                defaults: new { controller = "Dashboard", action = "AdminDashboard", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Login", id = UrlParameter.Optional }
             );
         }
     }
