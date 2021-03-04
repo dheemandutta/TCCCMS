@@ -21,9 +21,19 @@ namespace TCCCMS.Controllers
         // GET: MajorCasualtyAndEnvironmentalProtectionPlan
         public ActionResult Index()
         {
-            return View();
-        }
+            Manual file = new Manual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLVOLUMES.xml");
+            file.ManualBodyHtml = manualBL.GenerateBodyContentHtml(xPath, 6);
 
+            return View(file);
+        }
+        public ActionResult Pages(string actionName)
+        {
+            Manual file = new Manual();
+            file = manualBL.GetManual(controllerName, actionName);
+            TempData[actionName] = file.ManualBodyHtml;
+            return View(file);
+        }
         #region All (5+6+7)(18)
 
         public ActionResult Manual()

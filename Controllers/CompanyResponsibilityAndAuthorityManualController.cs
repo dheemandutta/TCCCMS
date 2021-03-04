@@ -20,7 +20,19 @@ namespace TCCCMS.Controllers
         #region Main Manual
         public ActionResult Index()
         {
-            return View();
+            Manual file = new Manual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLVOLUMES.xml");
+            file.ManualBodyHtml = manualBL.GenerateBodyContentHtml(xPath, 3);
+
+            return View(file);
+        }
+
+        public ActionResult Pages(string actionName)
+        {
+            Manual file = new Manual();
+            file = manualBL.GetManual(controllerName, actionName);
+            TempData[actionName] = file.ManualBodyHtml;
+            return View(file);
         }
 
         [HttpGet]
