@@ -1,7 +1,9 @@
 ﻿function clearTextBox() {
     $('#ID').val("");
     $('#ShipName').val("");
+    $('#ShipName').prop('disabled', false);
     $('#Flag').val("");
+    $('#Flag').prop('disabled', false);
     $('#IMONumber').val("");
    
 
@@ -71,6 +73,13 @@ function validate() {
     }
     else {
         $('#IMONumber').css('border-color', 'lightgrey');
+    }
+    if ($('#Flag').val().length === 0) {
+        $('#Flag').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#Flag').css('border-color', 'lightgrey');
     }
 
     return isValid;

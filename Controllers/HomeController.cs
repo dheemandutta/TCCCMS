@@ -108,46 +108,57 @@ namespace TCCCMS.Controllers
                     //sb.Append("<li class='mainmenu'><a href='@Url.Action('Index', '"+vol.ControllerName+"')'><span class='vul'>Volume <b>"+ partName + "</b> </span><span class='pgnam'>" + vol.Description + "</span></a>");
                     sb.Append("<li class='mainmenu'><a href='/" + vol.ControllerName + "/Index'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam'>" + vol.Description + "</span></a>");
                     sb.Append("\n");
-                    sb.Append("<ul class='submenu'>");
-                    foreach (XmlNode item in volume)
-                    {
-                        Manual manual = new Manual();
-                        int l = 1;
 
-                        if (item.Name == "filename")
-                        {
-                            string filename = item.InnerText.ToString();
-                            manual = manuBl.GetActionNameByFileName(filename+".html");
-                            if(manual.ActionName != null)
-                            {
-                                sb.Append("\n");
-                                //sb.Append("<li><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + "</span></a></li>");
-                                sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + "</span></a></li>");
-                            }
-                           
-                        }
-                        else if (item.Name == "foldername")
-                        {
+                    #region Lines Commented
+                    /* ----------Lines Commented on 23rd Feb 2021 @BK  */
+                    //sb.Append("<ul class='submenu'>");
+                    //foreach (XmlNode item in volume)
+                    //{
+                    //    Manual manual = new Manual();
+                    //    int l = 1;
 
-                            string fName = item.Attributes["name"].Value.ToString();
-                            sb.Append("\n");
-                            sb.Append("<li class='menu_itm'><a href='#'><span class='vul'>Volume <b>"+ partName + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + fName + "</span></a>");
-                            sb.Append("\n");
-                            sb.Append("<ul class='submenuL" + l + "'>");
-                            string sChild = GetChild(item, ref l, partName);
-                            //l = l;
-                            sb.Append(sChild);
-                            sb.Append("\n");
-                            sb.Append("</ul>");
-                            sb.Append("\n");
-                            sb.Append("</li>");
-                        }
+                    //    if (item.Name == "filename")
+                    //    {
+                    //        string filename = item.InnerText.ToString();
+                    //        manual = manuBl.GetActionNameByFileName(filename+".html");
+                    //        if(manual.ActionName != null)
+                    //        {
+                    //            sb.Append("\n");
+                    //            //sb.Append("<li><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + "</span></a></li>");
+                    //            //sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + "</span></a></li>");
+                    //            //sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + "</span></a></li>");
+                    //            ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
+                    //            sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>");
+                    //            sb.Append(partName + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + "</span></a></li>");
 
 
+                    //        }
 
-                    }
-                    sb.Append("\n");
-                    sb.Append("</ul>");
+                    //    }
+                    //    else if (item.Name == "foldername")
+                    //    {
+
+                    //        string fName = item.Attributes["name"].Value.ToString();
+                    //        sb.Append("\n");
+                    //        sb.Append("<li class='menu_itm'><a href='#'><span class='vul'>Volume <b>"+ partName + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + fName + "</span></a>");
+                    //        sb.Append("\n");
+                    //        sb.Append("<ul class='submenuL" + l + "'>");
+                    //        string sChild = GetChild(item, ref l, partName);
+                    //        //l = l;
+                    //        sb.Append(sChild);
+                    //        sb.Append("\n");
+                    //        sb.Append("</ul>");
+                    //        sb.Append("\n");
+                    //        sb.Append("</li>");
+                    //    }
+
+
+
+                    //}
+                    //sb.Append("\n");
+                    //sb.Append("</ul>");
+                    /* ----End------Lines Commented on 23rd Feb 2021 @BK  */
+                    #endregion
                     sb.Append("\n");
                     sb.Append("</li>");
 
@@ -178,7 +189,11 @@ namespace TCCCMS.Controllers
                     {
                         sb.Append("\n");
                         //sb.Append("<li ><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
-                        sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
+                        //sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
+                        //sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
+                        ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
+                        sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>");
+                        sb.Append(part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
                     }
 
                 }
