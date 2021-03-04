@@ -128,6 +128,7 @@
     <Compile Include="Controllers\CompanyResponsibilityAndAuthorityManualController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
+    <Compile Include="Controllers\FormsAndChecklistsController.cs" />
     <Compile Include="Controllers\FormsForVol8Controller.cs" />
     <Compile Include="Controllers\FormsController.cs" />
     <Compile Include="Controllers\GroupMasterController.cs" />
@@ -2185,6 +2186,7 @@
     <Content Include="Views\FormsForVol8\FilingSystemAndRetentionMatrix.cshtml" />
     <Content Include="Views\FormsForVol8\CO031.cshtml" />
     <Content Include="SQL Script\02.03.2021_Full_Script_Of_TCCCMSDB.zip" />
+    <Content Include="Views\FormsAndChecklists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -166,7 +166,7 @@ namespace TCCCMS.Business
                     string filename = item.InnerText.ToString();
                     string actionName= item.Attributes["actionname"].Value.ToString();
                    // manual = manuBl.GetActionNameByFileName(filename + ".html");
-                    if (manual.ActionName != null)
+                    if (actionName != null)
                     {
                         sb.Append("\n");
                         //sb.Append("<li ><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
