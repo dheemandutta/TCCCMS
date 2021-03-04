@@ -11,10 +11,18 @@ namespace TCCCMS.Controllers
 {
     public class FormsAndChecklistsController : Controller
     {
+        //--------------------Vol8-------------------------
+
+        private string controllerName = "FormsAndChecklists";
+        ManualBL manualBL = new ManualBL();
         // GET: FormsAndChecklists
         public ActionResult Index()
         {
-            return View();
+            Manual file = new Manual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLVOLUMES.xml");
+            file.ManualBodyHtml = manualBL.GenerateBodyContentHtml(xPath, 8);
+
+            return View(file);
         }
 
         public ActionResult AdministrationAndMmgt()

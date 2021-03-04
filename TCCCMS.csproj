@@ -2185,6 +2185,7 @@
     <Content Include="Views\FormsAndChecklists\FilingSystemAndRetentionMatrix.cshtml" />
     <Content Include="Views\FormsAndChecklists\CO031.cshtml" />
     <Content Include="SQL Script\02.03.2021_Full_Script_Of_TCCCMSDB.zip" />
+    <Content Include="Views\FormsAndChecklists\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
