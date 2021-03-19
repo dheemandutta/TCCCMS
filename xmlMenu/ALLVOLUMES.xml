@@ -439,7 +439,7 @@
 		</volume>
 
 		<volume id="8"	name="Volume VIII" controllername="FormsAndChecklists">
-			<foldername name="Section 1 - Administration and Mmgt">
+			<foldername actionname="AdministrationAndMmgt" name="Section 1 - Administration and Mmgt">
 				<filename>ADM001 - Manual control</filename>
 				<filename>ADM002 - Manual revision record</filename>
 				<filename>ADM003 - Document Change Request Register</filename>
@@ -466,7 +466,7 @@
 				<filename>ADM022 - Port Agency Feedback Form - Master</filename>
 				<filename>Section 1 - Content</filename>
 			</foldername>
-			<foldername name="Section 2 - Management of ship personnel">
+			<foldername actionname="ManagementOfShipPersonnel" name="Section 2 - Management of ship personnel">
 				<filename>Section 2 - Content</filename>
 				<filename>Section 2 - Management of Ship Personnel Rev 01</filename>
 				<filename>SP001A - Welcome onboard</filename>
@@ -524,7 +524,7 @@
 				<filename>SP054 - Training Evaluation Form</filename>
 				<filename>SP055-Crew Familiarization for Mooring Systems</filename>
 			</foldername>
-			<foldername name="Section 3 Maintenance">
+			<foldername actionname="Maintenance" name="Section 3 Maintenance">
 				<filename>MA003 - Main Engine Bearing Clearance</filename>
 				<filename>MA004 - Main Engine - Cylinder overhaul report</filename>
 				<filename>MA005 - Main Engine - Inspection through Scavenge Ports</filename>
@@ -612,7 +612,7 @@
 				<filename>Section 3 - Content Rev 01</filename>
 				<filename>Section 3 - Maintenance Rev 01</filename>
 			</foldername>
-			<foldername name="Section 4-Navigation Management">
+			<foldername actionname="NavigationManagement" name="Section 4-Navigation Management">
 				<filename>NM001 - Passage Plan Rev 01</filename>
 				<filename>NM002 - Daily Bridge Equipment Tests</filename>
 				<filename>NM003 - Bridge Arrival Checklist</filename>
@@ -649,7 +649,7 @@
 				<filename>Section 4 - Content</filename>
 				<filename>Section 4 - Navigation Management Rev 01</filename>
 			</foldername>
-			<foldername name="Section 5-Cargo Operation">
+			<foldername actionname="CargoOperation" name="Section 5-Cargo Operation">
 				<foldername name="C0031">
 					<filename>CO031-1 - STS Cargo Operation Checklist</filename>
 					<filename>CO031-2- STS Cargo Operation Checklist</filename>
@@ -703,7 +703,7 @@
 				<filename>CO059 - Record of Vapour Tightness Test</filename>
 				<filename>Section 5 - Content</filename>
 			</foldername>
-			<foldername name="Section6-Safety Mmgt">
+			<foldername actionname="SafetyMmgt" name="Section6-Safety Mmgt">
 				<filename>Section 6 - Content</filename>
 				<filename>SM001 - Hot work permit form</filename>
 				<filename>SM002 - Hot work in Engine Room workshop</filename>
@@ -792,7 +792,7 @@
 				<filename>SM080 - Crane Operator Training Record</filename>
 				<filename>SM081- Marine Occurrence Investigation Report</filename>
 			</foldername>
-			<foldername name="Section 7-Filling System and Retention Matrix">
+			<foldername actionname="" name="Section 7-Filling System and Retention Matrix">
 				<filename actionname="NSMSFOR">Non SMS form and other records Rev 01</filename>
 				<filename actionname="S1AM">Section 1 - Administration and Management</filename>
 				<filename actionname="S2MSPR">Section 2 - Management of Ship Personnel Rev 01</filename>
@@ -802,7 +802,7 @@
 				<filename actionname="S6SM">Section 6 - Safety Management</filename>
 				<filename actionname="S7Content">Section 7 - Content</filename>
 			</foldername>
-			<filename>Vol. VIII Manual</filename>
+			<filename actionname="Manual">Vol. VIII Manual</filename>
 			
 		</volume>
 

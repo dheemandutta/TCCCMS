@@ -98,7 +98,7 @@ namespace TCCCMS.Business
                                 string filename = item.InnerText.ToString();
                                 string actionName = item.Attributes["actionname"].Value.ToString();
                                // manual = manuBl.GetActionNameByFileName(filename + ".html");
-                                if (actionName != null)
+                                if (actionName != null || actionName !="")
                                 {
                                     sb.Append("\n");
                                     //sb.Append("<li><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + "</span></a></li>");
@@ -117,17 +117,58 @@ namespace TCCCMS.Business
                             else if (item.Name == "foldername")
                             {
 
-                                string fName = item.Attributes["name"].Value.ToString();
-                                sb.Append("\n");
-                                sb.Append("<button class='accordion'>"+fName+"</button>");
-                                sb.Append("\n");
-                                sb.Append("<div class='panel'>");
-                                string sChild = GetChild(item, ref l, partName, ctrlName);
-                                //l = l;
-                                sb.Append(sChild);
-                                sb.Append("\n");
-                                sb.Append("</div>");
-                                sb.Append("\n");
+                                if(Convert.ToInt32(nodeId) == 8)
+                                {
+                                    string fName = item.Attributes["name"].Value.ToString();
+                                    string actionName = item.Attributes["actionname"].Value.ToString();
+                                    if (actionName != "")
+                                    {
+                                        sb.Append("\n");
+                                        sb.Append("<a href='/" + ctrlName + "/" + actionName + "' >");
+                                        sb.Append(fName + "</a>");
+                                        sb.Append("</br>");
+                                    }
+                                    else
+                                    {
+                                       
+                                        sb.Append("\n");
+                                        sb.Append("<button class='accordion'>" + fName + "</button>");
+                                        sb.Append("\n");
+                                        sb.Append("<div class='panel'>");
+                                        string sChild = GetChild(item, ref l, partName, ctrlName);
+                                        //l = l;
+                                        sb.Append(sChild);
+                                        sb.Append("\n");
+                                        sb.Append("</div>");
+                                        sb.Append("\n");
+                                    }
+
+                                }
+                                else
+                                {
+                                    string fName = item.Attributes["name"].Value.ToString();
+                                    sb.Append("\n");
+                                    sb.Append("<button class='accordion'>" + fName + "</button>");
+                                    sb.Append("\n");
+                                    sb.Append("<div class='panel'>");
+                                    string sChild = GetChild(item, ref l, partName, ctrlName);
+                                    //l = l;
+                                    sb.Append(sChild);
+                                    sb.Append("\n");
+                                    sb.Append("</div>");
+                                    sb.Append("\n");
+                                }
+                                //string fName = item.Attributes["name"].Value.ToString();
+                                //sb.Append("\n");
+                                //sb.Append("<button class='accordion'>"+fName+"</button>");
+                                //sb.Append("\n");
+                                //sb.Append("<div class='panel'>");
+                                //string sChild = GetChild(item, ref l, partName, ctrlName);
+                                ////l = l;
+                                //sb.Append(sChild);
+                                //sb.Append("\n");
+                                //sb.Append("</div>");
+                                //sb.Append("\n");
                             }
 
 
@@ -166,7 +207,7 @@ namespace TCCCMS.Business
                     string filename = item.InnerText.ToString();
                     string actionName= item.Attributes["actionname"].Value.ToString();
                    // manual = manuBl.GetActionNameByFileName(filename + ".html");
-                    if (actionName != null)
+                    if (actionName != null || actionName != "")
                     {
                         sb.Append("\n");
                         //sb.Append("<li ><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
