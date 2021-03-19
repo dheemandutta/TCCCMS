@@ -1827,7 +1827,6 @@
     <Content Include="Views\CompanyProceduresManual\ISEPA.cshtml" />
     <Content Include="Views\CompanyProceduresManual\DAP.cshtml" />
     <Content Include="Views\CompanyResponsibilityAndAuthorityManual\Index.cshtml" />
-    <Content Include="Views\FormsAndChecklists\Index.cshtml" />
     <Content Include="Views\MaintenanceOfShipAndEquipment\Index.cshtml" />
     <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\Index.cshtml" />
     <Content Include="Views\ShipboardOperattion\Index.cshtml" />
