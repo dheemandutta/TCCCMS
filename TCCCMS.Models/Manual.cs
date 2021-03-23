@@ -23,5 +23,9 @@ namespace TCCCMS.Models
         public int CreatedBy { get; set; }
         public DateTime ModifiedOn { get; set; }
         public int ModifiedBy { get; set; }
+
+        //************for PDF View*****************
+        public string PdfName { get; set; }
+        public string PdfPath { get; set; }
     }
 }

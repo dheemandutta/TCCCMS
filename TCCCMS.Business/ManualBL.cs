@@ -97,8 +97,9 @@ namespace TCCCMS.Business
                             {
                                 string filename = item.InnerText.ToString();
                                 string actionName = item.Attributes["actionname"].Value.ToString();
-                               // manual = manuBl.GetActionNameByFileName(filename + ".html");
-                                if (actionName != null || actionName !="")
+                                string type = item.Attributes["doctype"].Value.ToString();
+                                // manual = manuBl.GetActionNameByFileName(filename + ".html");
+                                if (actionName !="")
                                 {
                                     sb.Append("\n");
                                     //sb.Append("<li><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + "</span></a></li>");
@@ -110,6 +111,14 @@ namespace TCCCMS.Business
                                     sb.Append( filename + "</a>");
                                     sb.Append("</br>");
 
+
+                                }
+                                else if (type == "PDF")
+                                {
+                                    sb.Append("\n");
+                                    sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "' >");
+                                    sb.Append(filename + "</a>");
+                                    sb.Append("</br>");
 
                                 }
 
@@ -206,8 +215,9 @@ namespace TCCCMS.Business
 
                     string filename = item.InnerText.ToString();
                     string actionName= item.Attributes["actionname"].Value.ToString();
-                   // manual = manuBl.GetActionNameByFileName(filename + ".html");
-                    if (actionName != null || actionName != "")
+                    string type = item.Attributes["doctype"].Value.ToString();
+                    // manual = manuBl.GetActionNameByFileName(filename + ".html");
+                    if (actionName != "")
                     {
                         sb.Append("\n");
                         //sb.Append("<li ><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
@@ -218,6 +228,14 @@ namespace TCCCMS.Business
                         sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
                         sb.Append( filename + "</a>");
                         sb.Append("</br>");
+                    }
+                    else if (type == "PDF")
+                    {
+                        sb.Append("\n");
+                        sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "' >");
+                        sb.Append(filename + "</a>");
+                        sb.Append("</br>");
+
                     }
 
                 }

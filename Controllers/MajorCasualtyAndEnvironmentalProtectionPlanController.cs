@@ -34,6 +34,15 @@ namespace TCCCMS.Controllers
             TempData[actionName] = file.ManualBodyHtml;
             return View(file);
         }
+        public ActionResult PDFViewer(string fileName)
+        {
+            Manual file = new Manual();
+            string filePath = "../ManualsPDF/Volume VI/";
+            filePath = filePath + fileName + ".pdf";
+            file.PdfName = fileName;
+            file.PdfPath = filePath;
+            return View(file);
+        }
         #region All (5+6+7)(18)
 
         public ActionResult Manual()
