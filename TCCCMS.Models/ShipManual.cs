@@ -35,5 +35,9 @@ namespace TCCCMS.Models
         //public List<String> ErrorMessage { get; set; }
         //[NotMapped]
         //public bool FileCheck { get; set; }
+
+        //************for PDF View*****************
+        public string PdfName { get; set; }
+        public string PdfPath { get; set; }
     }
 }

@@ -32,5 +32,15 @@ namespace TCCCMS.Controllers
             TempData[actionName] = file.BodyHtml;
             return View(file);
         }
+        public ActionResult PDFViewer(string fileName, string relPDFPath)
+        {
+            ShipManual file = new ShipManual();
+            //string filePath = "../ManualsPDF/Volume I/";
+            string filePath = "../ShipManualsPDF/" + relPDFPath + "/";
+            filePath = filePath + fileName + ".pdf";
+            file.PdfName = fileName;
+            file.PdfPath = filePath;
+            return View(file);
+        }
     }
 }

@@ -31,10 +31,12 @@
                 </div>
                 <div class="col-lg-8 col-md-8 col-12">
                     <div class="search">
-                        <input type="text" class="searchTerm" placeholder="Search....">
-                        <button type="submit" class="searchButton">
+                        <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
+                        <a id="lnkAllSearch" class="btn btn-primary" href="@Url.Action("SearchList","Manual")"> <i class="fa fa-search"></i></a>
+
+                        @*<button type="submit" class="searchButton">
                             <i class="fa fa-search"></i>
-                        </button>
+                        </button>*@
                     </div>
                 </div>
                 <div class="col-lg-1 col-md-1 col-12">
@@ -105,6 +107,14 @@
 
 
     <script>
+        $(function () {
+            $('#txtAllSearctText').change(function () {
+                if ($(this).val() != "") {
+                    $("#lnkAllSearch").attr("href", $("#lnkAllSearch").attr("href") + "?currentPage=1&text=" + $(this).val());
+                }
+                
+            })
+        });
         $(document).ready(function () {
 
             $('#menuicon').click(function () {

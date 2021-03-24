@@ -3,12 +3,39 @@
     //ViewBag.Title = "Pages";
     ViewBag.Title = Model.ManualHeader;
 }
+@section Styles{
+    <link href="~/Scripts/highlight/css/default.css" rel="stylesheet" />
+    <style type="text/css">
+        /*span.highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }*/
 
-<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+        .highlight {
+            background: #b6ff00;
+            padding: 1px;
+            border: #00CC00 dotted 1px;
+        }
+    </style>
+}
+@*<script src="~/Scripts/jquery-3.5.1.min.js"></script>*@
 
-<div id="BodyHtml">
+<div id="BodyHtml" class="searchdContent">
     @Html.Raw(Model.ManualBodyHtml)
 
 </div>
+
+@section Scripts{
+    @*<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>*@
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/highlight/js/jquery.highlight.js"></script>
+    <script src="~/js/Manual/ManualSearch.js"></script>
+
+    <script type="text/javascript">
+
+
+    </script>
+}
+
 
 
