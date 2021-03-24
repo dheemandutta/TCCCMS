@@ -33,7 +33,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult PDFViewer(string fileName,string relPDFPath)
         {
-            ShipManual file = new ShipManual();
+            Manual file = new Manual();
             //string filePath = "../ManualsPDF/Volume II/";
             string filePath = "../ManualsPDF/" + relPDFPath + "/";
             filePath = filePath + fileName + ".pdf";
