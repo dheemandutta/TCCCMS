@@ -2,51 +2,48 @@
     <volumes>
 
         <volume id="1" name="Volume I" controllername="CompanyPolicyManual">
-
-            <filename actionname="Introduction">Introduction Rev 01</filename>
-            <filename actionname="Definition">PS 1.1 Definition</filename>
-            <filename actionname="SMS">PS 1.2 Safety Management System</filename>
-            <filename actionname="SFA">PS 1.3 Scope and Field Of Application</filename>
-            <filename actionname="SEPP">PS 2.0 Safety and Environmental Protection Policy</filename>
-            <filename actionname="MRA">PS 3.0 Management Responsibilty and Authority</filename>
-            <filename actionname="ResourcesAndPersonnel">PS 6.0 Resources and Personnel</filename>
-            <filename actionname="PSO">PS 7.0 Plans for Shipboard Operation</filename>
-            <filename actionname="CNCCA">PS 9.0 Control of Non-Conformance and Corrective Action</filename>
-            <filename actionname="MSE">PS 10.0 Maintenance of the Ship and Equipment</filename>
-            <filename actionname="DDC">PS 11.0 document and Data Control</filename>
-            <filename actionname="ISEPA">PS 12.0 Internal Safety and Environmental Protection Audits</filename>
-            <filename actionname="Manual">Vol. I Manual</filename>
-
-
+            <filename doctype="" actionname="Introduction">Introduction Rev 01</filename>
+            <filename doctype="" actionname="Definition">PS 1.1 Definition</filename>
+            <filename doctype="" actionname="SMS">PS 1.2 Safety Management System</filename>
+            <filename doctype="" actionname="SFA">PS 1.3 Scope and Field Of Application</filename>
+            <filename doctype="" actionname="SEPP">PS 2.0 Safety and Environmental Protection Policy</filename>
+            <filename doctype="" actionname="MRA">PS 3.0 Management Responsibilty and Authority</filename>
+            <filename doctype="" actionname="ResourcesAndPersonnel">PS 6.0 Resources and Personnel</filename>
+            <filename doctype="" actionname="PSO">PS 7.0 Plans for Shipboard Operation</filename>
+            <filename doctype="" actionname="CNCCA">PS 9.0 Control of Non-Conformance and Corrective Action</filename>
+            <filename doctype="" actionname="MSE">PS 10.0 Maintenance of the Ship and Equipment</filename>
+            <filename doctype="" actionname="DDC">PS 11.0 document and Data Control</filename>
+            <filename doctype="" actionname="ISEPA">PS 12.0 Internal Safety and Environmental Protection Audits</filename>
+            <filename doctype="" actionname="Manual">Vol. I Manual</filename>
         </volume>
 		
 		<volume id="2" name="Volume II" controllername="CompanyProceduresManual">
 		    <foldername name="Appendix">
-				<filename actionname="">1. PS019 - Mission Statement Rev01</filename>
-	            <filename actionname="">2. PS005 - DandA Policy Rev03</filename>
-	            <filename actionname="">3. PS017 - SandE Policy Rev02</filename>
-	            <filename actionname="">4. PS018 - Health Policy Rev02</filename>
-	            <filename actionname="DDMS">5. Appendix - Delegation of Duties Matrix Specimen</filename> 
-	            <filename actionname="">5. Appendix - Delegation of Duties Matrix Specimen</filename>
-	            <filename actionname="">6. PS011 - Smoking Policy Rev03</filename>
-	            <filename actionname="">7. PS034 - TCC Social Media Policy</filename>
-	            <filename actionname="">8. PS035-Vision Statement Rev01</filename>
+				<filename doctype="PDF" actionname="">1. PS019 - Mission Statement Rev01</filename>
+	            <filename doctype="PDF" actionname="">2. PS005 - DandA Policy Rev03</filename>
+	            <filename doctype="PDF" actionname="">3. PS017 - SandE Policy Rev02</filename>
+	            <filename doctype="PDF" actionname="">4. PS018 - Health Policy Rev02</filename>
+	            <filename doctype="doc" actionname="DDMS">5. Appendix - Delegation of Duties Matrix Specimen</filename> 
+	            <filename doctype="PDF" actionname="">5. Appendix - Delegation of Duties Matrix Specimen</filename>
+	            <filename doctype="PDF" actionname="">6. PS011 - Smoking Policy Rev03</filename>
+	            <filename doctype="PDF" actionname="">7. PS034 - TCC Social Media Policy</filename>
+	            <filename doctype="PDF" actionname="">8. PS035-Vision Statement Rev01</filename>
 
 			</foldername>
-			<filename actionname="ProceduresExplained">PP01.2 - Procedures Explained</filename>
-        	<filename actionname="SEP">PP02.0 - Safety Environmental Policy</filename>
-	        <filename actionname="MRA">PP03.0 - Management Responsibility and Authority</filename>
-	        <filename actionname="DesignatedPerson">PP04.0 - Designated Person</filename>
-			<filename actionname="MastersRA">PP05.0 - Master's Responsibility and Authority</filename>
-			<filename actionname="HRT">PP06.0 - Human Resource and Training</filename>
-			<filename actionname="PSO">PP07.0 - Plans for Shipboard Operation</filename>
-			<filename actionname="CCP">PP08.0 - Company Contingency Plan</filename>
-			<filename actionname="NCCA">PP09.0-Non Conformity and Corrective Action</filename>
-			<filename actionname="MIT">PP10.0 - Maintenance Inspection and Testing</filename>
-			<filename actionname="DDC">PP11.0 - Documents and Data Control</filename>
-			<filename actionname="ISEPA">PP12.0 - Internal Safety and Environmental Protection Audits</filename>
-			<filename actionname="DAP">PP20.0 - Drug and Alcohol Policy</filename>
-			<filename actionname="Manual">Vol. II Manual`</filename>
+			<filename doctype="" actionname="ProceduresExplained">PP01.2 - Procedures Explained</filename>
+        	<filename doctype="" actionname="SEP">PP02.0 - Safety Environmental Policy</filename>
+	        <filename doctype="" actionname="MRA">PP03.0 - Management Responsibility and Authority</filename>
+	        <filename doctype="" actionname="DesignatedPerson">PP04.0 - Designated Person</filename>
+			<filename doctype="" actionname="MastersRA">PP05.0 - Master's Responsibility and Authority</filename>
+			<filename doctype="" actionname="HRT">PP06.0 - Human Resource and Training</filename>
+			<filename doctype="" actionname="PSO">PP07.0 - Plans for Shipboard Operation</filename>
+			<filename doctype="" actionname="CCP">PP08.0 - Company Contingency Plan</filename>
+			<filename doctype="" actionname="NCCA">PP09.0-Non Conformity and Corrective Action</filename>
+			<filename doctype="" actionname="MIT">PP10.0 - Maintenance Inspection and Testing</filename>
+			<filename doctype="" actionname="DDC">PP11.0 - Documents and Data Control</filename>
+			<filename doctype="" actionname="ISEPA">PP12.0 - Internal Safety and Environmental Protection Audits</filename>
+			<filename doctype="" actionname="DAP">PP20.0 - Drug and Alcohol Policy</filename>
+			<filename doctype="" actionname="Manual">Vol. II Manual`</filename>
 		
 		</volume>
 		
@@ -131,192 +128,192 @@
 			<foldername name="Appendix">
 				<foldername name="JHA Templates">
 					<foldername name="Deck">
-						<filename actionname="STSOperation">D1- STS Operation</filename>
-						<filename actionname="SBMOperation">D2 - SBM Operation</filename>
-						<filename actionname="RURWAP">D3 - Rigging Unrigging of Razor Wire for anti-piracy</filename>
-						<filename actionname="RRWMSCI">D4 - Mast Riser Wire Mesh Strainer cleaning and inspection</filename>
-						<filename actionname="PTUSC">D5 - Personnel Transfer Using Ships Crane</filename>
-						<filename actionname="RSIC">D6 - Radar Scanner inspection and cleaning</filename>
-						<filename actionname="IGSI">D7 - IG Scrubber inspection</filename>
-						<filename actionname="COPSSI">D8 - COP Strainer, Seperator inspection</filename>
-						<filename actionname="COTWW">D9 - Cargo Oil Tank water washing</filename>
-						<filename actionname="TMLD">D10- Three monthly lifeboat drill</filename>
-						<filename actionname="HHH2SC">D11- Handling of High H2S Cargo</filename>
-						<filename actionname="MooringOperation">D12 - Mooring Operation</filename>
-						<filename actionname="TugOperation">D13 - Tug Operation</filename>
-						<filename actionname="AnchoringOperation">D14 - Anchoring Operation</filename>
-						<filename actionname="EBTADSR">D15 - Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)</filename>
-						<filename actionname="EntryBTADSR">D16 - Entry BT after de-ballasting for sediment removal (NEI)</filename>
-						<filename actionname="SOICOB">D17 - Simultaneous Operations including Cargo Operations and bunkering</filename>
+						<filename doctype="" actionname="STSOperation">D1- STS Operation</filename>
+						<filename doctype="" actionname="SBMOperation">D2 - SBM Operation</filename>
+						<filename doctype="" actionname="RURWAP">D3 - Rigging Unrigging of Razor Wire for anti-piracy</filename>
+						<filename doctype="" actionname="RRWMSCI">D4 - Mast Riser Wire Mesh Strainer cleaning and inspection</filename>
+						<filename doctype="" actionname="PTUSC">D5 - Personnel Transfer Using Ships Crane</filename>
+						<filename doctype="" actionname="RSIC">D6 - Radar Scanner inspection and cleaning</filename>
+						<filename doctype="" actionname="IGSI">D7 - IG Scrubber inspection</filename>
+						<filename doctype="" actionname="COPSSI">D8 - COP Strainer, Seperator inspection</filename>
+						<filename doctype="" actionname="COTWW">D9 - Cargo Oil Tank water washing</filename>
+						<filename doctype="" actionname="TMLD">D10- Three monthly lifeboat drill</filename>
+						<filename doctype="" actionname="HHH2SC">D11- Handling of High H2S Cargo</filename>
+						<filename doctype="" actionname="MooringOperation">D12 - Mooring Operation</filename>
+						<filename doctype="" actionname="TugOperation">D13 - Tug Operation</filename>
+						<filename doctype="" actionname="AnchoringOperation">D14 - Anchoring Operation</filename>
+						<filename doctype="" actionname="EBTADSR">D15 - Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)</filename>
+						<filename doctype="" actionname="EntryBTADSR">D16 - Entry BT after de-ballasting for sediment removal (NEI)</filename>
+						<filename doctype="" actionname="SOICOB">D17 - Simultaneous Operations including Cargo Operations and bunkering</filename>
 					</foldername>
 					<foldername name="Engine">
-						<filename actionname="AEM">E1- AE Maintenance</filename>
-						<filename actionname="COFFHFO2LSMGO">E2- Change Over of Fuel from HFO to LSMGO</filename>
-						<filename actionname="ICACG">E3- Inspection or Cleaning of AC Generator</filename>
-						<filename actionname="MBSAB">E4- Maintenance of Burner and Swirler of Aux Boiler</filename>
-						<filename actionname="MEEAP">E5- Maintenance of Elect. Equipment at Aloft Position</filename>
-						<filename actionname="MOWS">E6- Maintenance of OWS</filename>
-						<filename actionname="MESSCI">E7- ME Scavenge space Cleaning and Inspection</filename>
-						<filename actionname="OEM">E8- Overhauling of Electric Motor</filename>
-						<filename actionname="RPMS">E9- Renewal of Pump Mechanical Seal</filename>
-						<filename actionname="RMEFVHPP">E10- Replacement of ME Fuel Valve and HP Pipes</filename>
-						<filename actionname="SCSC">E11- Sea Chest Strainer Cleaning</filename>
-						<filename actionname="UREABO">E12 -UREA Bunkering Operation</filename>
-						<filename actionname="BWTSPO">E13 - BWTS Plant Operation</filename>
+						<filename doctype="" actionname="AEM">E1- AE Maintenance</filename>
+						<filename doctype="" actionname="COFFHFO2LSMGO">E2- Change Over of Fuel from HFO to LSMGO</filename>
+						<filename doctype="" actionname="ICACG">E3- Inspection or Cleaning of AC Generator</filename>
+						<filename doctype="" actionname="MBSAB">E4- Maintenance of Burner and Swirler of Aux Boiler</filename>
+						<filename doctype="" actionname="MEEAP">E5- Maintenance of Elect. Equipment at Aloft Position</filename>
+						<filename doctype="" actionname="MOWS">E6- Maintenance of OWS</filename>
+						<filename doctype="" actionname="MESSCI">E7- ME Scavenge space Cleaning and Inspection</filename>
+						<filename doctype="" actionname="OEM">E8- Overhauling of Electric Motor</filename>
+						<filename doctype="" actionname="RPMS">E9- Renewal of Pump Mechanical Seal</filename>
+						<filename doctype="" actionname="RMEFVHPP">E10- Replacement of ME Fuel Valve and HP Pipes</filename>
+						<filename doctype="" actionname="SCSC">E11- Sea Chest Strainer Cleaning</filename>
+						<filename doctype="" actionname="UREABO">E12 -UREA Bunkering Operation</filename>
+						<filename doctype="" actionname="BWTSPO">E13 - BWTS Plant Operation</filename>
 					</foldername>
-					<filename actionname="A1LSRATD">Appendix 1 - List of Sample Risk Assessment Template - Deck</filename>
-					<filename actionname="A1LSRATE">Appendix 1 - List of Sample Risk Assessment Template - Engine</filename>
+					<filename doctype="" actionname="A1LSRATD">Appendix 1 - List of Sample Risk Assessment Template - Deck</filename>
+					<filename doctype="" actionname="A1LSRATE">Appendix 1 - List of Sample Risk Assessment Template - Engine</filename>
 				</foldername>
-				<filename actionname="SFCE">Standard Filing for Chief Engineer</filename>
-				<filename actionname="SFCO">Standard Filing for Chief Officer Rev 01</filename>
-				<filename actionname="SFM">Standard Filing for Master</filename>
-				<filename actionname="SFSO">Standard Filing for Second Officer</filename>
-				<filename actionname="">Volume IV Appendix Contents</filename>
+				<filename doctype="" actionname="SFCE">Standard Filing for Chief Engineer</filename>
+				<filename doctype="" actionname="SFCO">Standard Filing for Chief Officer Rev 01</filename>
+				<filename doctype="" actionname="SFM">Standard Filing for Master</filename>
+				<filename doctype="" actionname="SFSO">Standard Filing for Second Officer</filename>
+				<filename doctype="" actionname="">Volume IV Appendix Contents</filename>
 
 			</foldername>
 			
 			<foldername name="Sec 1 Health Safety and Environmental">
 				<foldername name="Chapter 5 Work Permit System">
-					<filename actionname="WPS">Chapter 5.1 Work Permit System</filename>
-					<filename actionname="HWPP">Chapter 5.2 Hot Work permit procedure</filename>
-					<filename actionname="CWPP">Chapter 5.3 Cold Work Permit Procedure</filename>
-					<filename actionname="ESEWPP">Chapter 5.4 Enclosed space entry work permit procedure</filename>
-					<filename actionname="WAOWPP">Chapter 5.5 Working Aloft Overside Work Permit Procedure</filename>
-					<filename actionname="HVWPP">Chapter 5.6 High Voltage Work Permit Procedure</filename>
-					<filename actionname="UWPP">Chapter 5.7 Underwater work permit procedure</filename>
-					<filename actionname="WDDHWPP">Chapter 5.8 Working on Deck during Heavy Weather Permit Procedure</filename>
+					<filename doctype="" actionname="WPS">Chapter 5.1 Work Permit System</filename>
+					<filename doctype="" actionname="HWPP">Chapter 5.2 Hot Work permit procedure</filename>
+					<filename doctype="" actionname="CWPP">Chapter 5.3 Cold Work Permit Procedure</filename>
+					<filename doctype="" actionname="ESEWPP">Chapter 5.4 Enclosed space entry work permit procedure</filename>
+					<filename doctype="" actionname="WAOWPP">Chapter 5.5 Working Aloft Overside Work Permit Procedure</filename>
+					<filename doctype="" actionname="HVWPP">Chapter 5.6 High Voltage Work Permit Procedure</filename>
+					<filename doctype="" actionname="UWPP">Chapter 5.7 Underwater work permit procedure</filename>
+					<filename doctype="" actionname="WDDHWPP">Chapter 5.8 Working on Deck during Heavy Weather Permit Procedure</filename>
 				</foldername>
-				<filename actionname="">Ch 15 Annex 1 - Guidance on Usage of LOTO Kit Items</filename>
-				<filename actionname="LHM">Ch. 31 Annex 1 - List of Hazardous Materials</filename>
-				<filename actionname="FMD">Ch. 31 Annex 2 - Form of Material Declaration</filename>
-				<filename actionname="FSDC">Ch. 31 Annex 3 - Form of Suppliers Declaration of Conformity</filename>
-				<filename actionname="GSS">Chapter 1 General Shipboard Safety</filename>
-				<filename actionname="FSTS">Chapter 2 Annex 1 - First Schedule of Toxic Substances</filename>
-				<filename actionname="HealthAndHygiene">Chapter 2 Health and Hygiene</filename>
-				<filename actionname="Fatigue">Chapter 3 Fatigue</filename>
-				<filename actionname="ECR1">Chapter 4 Environmental Control Rev 10 - Annex 1</filename>
-				<filename actionname="ECR2">Chapter 4 Environmental Control Rev 10 - Annex 2</filename>
-				<filename actionname="EnvironmentalControl">Chapter 4 Environmental Control</filename>
-				<filename actionname="CTRR">Chapter 6 Casualty Treatment  Resuscitation and Rescue</filename>
-				<filename actionname="CWP">Chapter 7 Cold Weather Precaution</filename>
-				<filename actionname="TWM">Chapter 8 Tools and Workshop Machinery</filename>
-				<filename actionname="EEE">Chapter 9 Electric and Electrical Equipment</filename>
-				<filename actionname="SGP">Chapter 10 Safety in the Galley and Pantry</filename>
-				<filename actionname="ERESO">Chapter 12 Engine Room - Emergency and Safe Operation</filename>
-				<filename actionname="PSP">Chapter 13 Painting - Safety Precaution </filename>
-				<filename actionname="ShipyardSafety">Chapter 14 Shipyard safety</filename>
-				<filename actionname="LOTO">Chapter 15 Lock Out and Tag Out (LOTO) Rev 01</filename>
-				<filename actionname="LSE">Chapter 16 Life Saving Equipment</filename>
-				<filename actionname="HullMarking">Chapter 17 Hull Marking</filename>
-				<filename actionname="Fishing">Chapter 18 Fishing</filename>
-				<filename actionname="PCE1">Chapter 19 Protective Clothing and Equipment - Annex No.1</filename>
-				<filename actionname="PCE">Chapter 19 Protective Clothing and Equipment</filename>
-				<filename actionname="">Chapter 20 Annex 1-IMO 1045(27)- Pilot Transfer Arrangement</filename>
-				<filename actionname="MeansAccess">Chapter 20 Means of Access</filename>
-				<filename actionname="PRE">Chapter 21 Pump room entry</filename>
-				<filename actionname="">Chapter 22 MSDS - Annex IMO Res 286(86)</filename>
-				<filename actionname="MSDS">Chapter 22 MSDS</filename>
-				<filename actionname="CII">Chapter 23 Control and Isolation of Infectious</filename>
-				<filename actionname="SWO">Chapter 24 Stop Work Order</filename>
-				<filename actionname="TDCP">Chapter 25 Temporary Deviation from Company Procedure</filename>
-				<filename actionname="HandlingBenzene">Chapter 26 Handling of Benzene</filename>
-				<filename actionname="HCCM">Chapter 27 Handling cargo containing Mercury</filename>
-				<filename actionname="">Chapter 27 HIGH MERCURY CARGOES OCIMF guidelines</filename>
-				<filename actionname="PTSLG">Chapter 28 Personnel Transfer by Ship's Lifting Gear</filename>
-				<filename actionname="AWSP">Chapter 29 Arc Welding - Safety Precaution</filename>
-				<filename actionname="HHS">Chapter 30 Handling of Hydrogen Sulphide</filename>
-				<filename actionname="IHM">Chapter 31 Inventory of Hazardous Materials</filename>
-				<filename actionname="HCCMMercaptan">Chapter 32 Handling cargo containing Mercaptan</filename>
-				<filename actionname="SHUC">Chapter 33 Safe handling and Use of Chemicals</filename>
-				<filename actionname="S1Contents">Contents Rev 01</filename>
+				<filename doctype="" actionname="">Ch 15 Annex 1 - Guidance on Usage of LOTO Kit Items</filename>
+				<filename doctype="" actionname="LHM">Ch. 31 Annex 1 - List of Hazardous Materials</filename>
+				<filename doctype="" actionname="FMD">Ch. 31 Annex 2 - Form of Material Declaration</filename>
+				<filename doctype="" actionname="FSDC">Ch. 31 Annex 3 - Form of Suppliers Declaration of Conformity</filename>
+				<filename doctype="" actionname="GSS">Chapter 1 General Shipboard Safety</filename>
+				<filename doctype="" actionname="FSTS">Chapter 2 Annex 1 - First Schedule of Toxic Substances</filename>
+				<filename doctype="" actionname="HealthAndHygiene">Chapter 2 Health and Hygiene</filename>
+				<filename doctype="" actionname="Fatigue">Chapter 3 Fatigue</filename>
+				<filename doctype="" actionname="ECR1">Chapter 4 Environmental Control Rev 10 - Annex 1</filename>
+				<filename doctype="" actionname="ECR2">Chapter 4 Environmental Control Rev 10 - Annex 2</filename>
+				<filename doctype="" actionname="EnvironmentalControl">Chapter 4 Environmental Control</filename>
+				<filename doctype="" actionname="CTRR">Chapter 6 Casualty Treatment  Resuscitation and Rescue</filename>
+				<filename doctype="" actionname="CWP">Chapter 7 Cold Weather Precaution</filename>
+				<filename doctype="" actionname="TWM">Chapter 8 Tools and Workshop Machinery</filename>
+				<filename doctype="" actionname="EEE">Chapter 9 Electric and Electrical Equipment</filename>
+				<filename doctype="" actionname="SGP">Chapter 10 Safety in the Galley and Pantry</filename>
+				<filename doctype="" actionname="ERESO">Chapter 12 Engine Room - Emergency and Safe Operation</filename>
+				<filename doctype="" actionname="PSP">Chapter 13 Painting - Safety Precaution </filename>
+				<filename doctype="" actionname="ShipyardSafety">Chapter 14 Shipyard safety</filename>
+				<filename doctype="" actionname="LOTO">Chapter 15 Lock Out and Tag Out (LOTO) Rev 01</filename>
+				<filename doctype="" actionname="LSE">Chapter 16 Life Saving Equipment</filename>
+				<filename doctype="" actionname="HullMarking">Chapter 17 Hull Marking</filename>
+				<filename doctype="" actionname="Fishing">Chapter 18 Fishing</filename>
+				<filename doctype="" actionname="PCE1">Chapter 19 Protective Clothing and Equipment - Annex No.1</filename>
+				<filename doctype="" actionname="PCE">Chapter 19 Protective Clothing and Equipment</filename>
+				<filename doctype="" actionname="">Chapter 20 Annex 1-IMO 1045(27)- Pilot Transfer Arrangement</filename>
+				<filename doctype="" actionname="MeansAccess">Chapter 20 Means of Access</filename>
+				<filename doctype="" actionname="PRE">Chapter 21 Pump room entry</filename>
+				<filename doctype="" actionname="">Chapter 22 MSDS - Annex IMO Res 286(86)</filename>
+				<filename doctype="" actionname="MSDS">Chapter 22 MSDS</filename>
+				<filename doctype="" actionname="CII">Chapter 23 Control and Isolation of Infectious</filename>
+				<filename doctype="" actionname="SWO">Chapter 24 Stop Work Order</filename>
+				<filename doctype="" actionname="TDCP">Chapter 25 Temporary Deviation from Company Procedure</filename>
+				<filename doctype="" actionname="HandlingBenzene">Chapter 26 Handling of Benzene</filename>
+				<filename doctype="" actionname="HCCM">Chapter 27 Handling cargo containing Mercury</filename>
+				<filename doctype="" actionname="">Chapter 27 HIGH MERCURY CARGOES OCIMF guidelines</filename>
+				<filename doctype="" actionname="PTSLG">Chapter 28 Personnel Transfer by Ship's Lifting Gear</filename>
+				<filename doctype="" actionname="AWSP">Chapter 29 Arc Welding - Safety Precaution</filename>
+				<filename doctype="" actionname="HHS">Chapter 30 Handling of Hydrogen Sulphide</filename>
+				<filename doctype="" actionname="IHM">Chapter 31 Inventory of Hazardous Materials</filename>
+				<filename doctype="" actionname="HCCMMercaptan">Chapter 32 Handling cargo containing Mercaptan</filename>
+				<filename doctype="" actionname="SHUC">Chapter 33 Safe handling and Use of Chemicals</filename>
+				<filename doctype="" actionname="S1Contents">Contents Rev 01</filename>
 			</foldername>
 			
 			<foldername name="Sec 2 Safety of the Vessel">
 				<foldername name="Chapter 1 Navigational and Bridge Procedures">
-					<filename actionname="NBPC">Chapter 1 Navigational and Bridge Procedures Contents</filename>
-					<filename actionname="Responsibility">Chapter 1.1 Responsibility</filename>
-					<filename actionname="GuidelineMasterA1">Chapter 1.2 - Guideline to Master - Annex 1</filename>
-					<filename actionname="GuidelineMaster">Chapter 1.2 - Guideline to Master</filename>
-					<filename actionname="NavigationProcedure">Chapter 1.3 - Navigation Procedure</filename>
-					<filename actionname="WatchKeeping">Chapter 1.4 - Watch Keeping</filename>
-					<filename actionname="ChartPublication">Chapter 1.5 - Chart and Publication</filename>
-					<filename actionname="BRD">Chapter 1.6 - Bridge Records and Display</filename>
-					<filename actionname="BNE">Chapter 1.7 - Bridge Navigation Equipment</filename>
-					<filename actionname="ECDISR1">Chapter 1.7.30 - ECDIS Rev 01</filename>
-					<filename actionname="ECDISA1">Chapter 1.7.30.23 - ECDIS Annex 1</filename>
-					<filename actionname="ECDISA2">Chapter 1.7.30.23 - ECDIS Annex 2</filename>
-					<filename actionname="CON">Chapter 1.8 - Coastal and Ocean Navigation</filename>
-					<filename actionname="PilotageR1">Chapter 1.9 - Pilotage Rev 01</filename>
-					<filename actionname="Anchoring">Chapter 1.10 - Anchoring</filename>
-					<filename actionname="Weather">Chapter 1.11 - Weather</filename>
-					<filename actionname="Contingency">Chapter 1.12 - Contingency</filename>
-					<filename actionname="DistressSea">Chapter 1.13 - Distress at sea</filename>
-					<filename actionname="IceNavigation">Chapter 1.14 Ice Navigation</filename>
-					<filename actionname="NavigationAudit">Chapter 1.15 - Navigation Audit</filename>
-				</foldername>
-				<filename actionname="ERP">Chapter 2 Engine Room Procedures</filename>
-				<filename actionname="SSOP">Chapter 3 Special Shipboard Operation Procedures</filename>
-				<filename actionname="HelicopterOperations">Chapter 4 Helicopter Operations</filename>
-				<filename actionname="FPFF">Chapter 5 Fire Precautions and Fire Fighting</filename>
-				<filename actionname="MooringTowing">Chapter 6 Mooring and Towing</filename>
-				<filename actionname="LaunchingLifeboat">Chapter 7 Launching of lifeboat</filename>
-				<filename actionname="SFD">Chapter 8 Stability and Flooding Dangers</filename>
-				<filename actionname="PAP">Chapter 9 Preparation for arrival in port</filename>
-				<filename actionname="PreparingSea">Chapter 10 Preparing for Sea</filename>
-				<filename actionname="ManoeuvringData">Chapter 11 Manoeuvring Data</filename>
-				<filename actionname="S2Contents">Contents</filename>
+					<filename doctype="" actionname="NBPC">Chapter 1 Navigational and Bridge Procedures Contents</filename>
+					<filename doctype="" actionname="Responsibility">Chapter 1.1 Responsibility</filename>
+					<filename doctype="" actionname="GuidelineMasterA1">Chapter 1.2 - Guideline to Master - Annex 1</filename>
+					<filename doctype="" actionname="GuidelineMaster">Chapter 1.2 - Guideline to Master</filename>
+					<filename doctype="" actionname="NavigationProcedure">Chapter 1.3 - Navigation Procedure</filename>
+					<filename doctype="" actionname="WatchKeeping">Chapter 1.4 - Watch Keeping</filename>
+					<filename doctype="" actionname="ChartPublication">Chapter 1.5 - Chart and Publication</filename>
+					<filename doctype="" actionname="BRD">Chapter 1.6 - Bridge Records and Display</filename>
+					<filename doctype="" actionname="BNE">Chapter 1.7 - Bridge Navigation Equipment</filename>
+					<filename doctype="" actionname="ECDISR1">Chapter 1.7.30 - ECDIS Rev 01</filename>
+					<filename doctype="" actionname="ECDISA1">Chapter 1.7.30.23 - ECDIS Annex 1</filename>
+					<filename doctype="" actionname="ECDISA2">Chapter 1.7.30.23 - ECDIS Annex 2</filename>
+					<filename doctype="" actionname="CON">Chapter 1.8 - Coastal and Ocean Navigation</filename>
+					<filename doctype="" actionname="PilotageR1">Chapter 1.9 - Pilotage Rev 01</filename>
+					<filename doctype="" actionname="Anchoring">Chapter 1.10 - Anchoring</filename>
+					<filename doctype="" actionname="Weather">Chapter 1.11 - Weather</filename>
+					<filename doctype="" actionname="Contingency">Chapter 1.12 - Contingency</filename>
+					<filename doctype="" actionname="DistressSea">Chapter 1.13 - Distress at sea</filename>
+					<filename doctype="" actionname="IceNavigation">Chapter 1.14 Ice Navigation</filename>
+					<filename doctype="" actionname="NavigationAudit">Chapter 1.15 - Navigation Audit</filename>
+				</foldername> 
+				<filename doctype="" actionname="ERP">Chapter 2 Engine Room Procedures</filename>
+				<filename doctype="" actionname="SSOP">Chapter 3 Special Shipboard Operation Procedures</filename>
+				<filename doctype="" actionname="HelicopterOperations">Chapter 4 Helicopter Operations</filename>
+				<filename doctype="" actionname="FPFF">Chapter 5 Fire Precautions and Fire Fighting</filename>
+				<filename doctype="" actionname="MooringTowing">Chapter 6 Mooring and Towing</filename>
+				<filename doctype="" actionname="LaunchingLifeboat">Chapter 7 Launching of lifeboat</filename>
+				<filename doctype="" actionname="SFD">Chapter 8 Stability and Flooding Dangers</filename>
+				<filename doctype="" actionname="PAP">Chapter 9 Preparation for arrival in port</filename>
+				<filename doctype="" actionname="PreparingSea">Chapter 10 Preparing for Sea</filename>
+				<filename doctype="" actionname="ManoeuvringData">Chapter 11 Manoeuvring Data</filename>
+				<filename doctype="" actionname="S2Contents">Contents</filename>
 			</foldername>
 			<foldername name="Sec 3 Port Cargo Operations">
-				<filename actionname="WKP">Chapter 1 Watch Keeping in Port</filename>
-				<filename actionname="SafetyPort">Chapter 2 Safety in Port</filename>
-				<filename actionname="CargoCare">Chapter 3 Cargo Care</filename>
-				<filename actionname="Bunker">Chapter 4 Bunker</filename>
-				<filename actionname="CPHS">Chapter 5 Cargo planning Handling  Stowage</filename>
-				<filename actionname="CargoLoading">Chapter 6 Cargo Loading</filename>
-				<filename actionname="CargoDischarging">Chapter 7 Cargo Discharging</filename>
-				<filename actionname="BallastOperations">Chapter 8 Ballast Operations</filename>
-				<filename actionname="TankCleaning">Chapter 9 Tank Cleaning</filename>
-				<filename actionname="S3Contents">Contents</filename>
+				<filename doctype="" actionname="WKP">Chapter 1 Watch Keeping in Port</filename>
+				<filename doctype="" actionname="SafetyPort">Chapter 2 Safety in Port</filename>
+				<filename doctype="" actionname="CargoCare">Chapter 3 Cargo Care</filename>
+				<filename doctype="" actionname="Bunker">Chapter 4 Bunker</filename>
+				<filename doctype="" actionname="CPHS">Chapter 5 Cargo planning Handling  Stowage</filename>
+				<filename doctype="" actionname="CargoLoading">Chapter 6 Cargo Loading</filename>
+				<filename doctype="" actionname="CargoDischarging">Chapter 7 Cargo Discharging</filename>
+				<filename doctype="" actionname="BallastOperations">Chapter 8 Ballast Operations</filename>
+				<filename doctype="" actionname="TankCleaning">Chapter 9 Tank Cleaning</filename>
+				<filename doctype="" actionname="S3Contents">Contents</filename>
 			</foldername>
 			<foldername name="Sec 4 Safety Inspection and Audits">
-				<filename actionname="LSAI">Chapter 1 Life Saving Appliances Inspection</filename>
-				<filename actionname="FFAI">Chapter 2 Fire Fighting Appliances Inspection</filename>
-				<filename actionname="ISMIA">Chapter 3 ISM Internal Audit</filename>
-				<filename actionname="SafetyMeeting">Chapter 4 Safety Meeting</filename>
-				<filename actionname="SIF">Chapter 5 Safety Induction and Familiarisation</filename>
-				<filename actionname="SITOA">Chapter 6 Ship Inspection  Tanker Opers Audit</filename>
-				<filename actionname="PSCIA1">Chapter 7 Port State Control Inspection - Annex A</filename>
-				<filename actionname="PSCI">Chapter 7 Port State Control Inspection</filename>
-				<filename actionname="OMV">Chapter 8 Oil Major Vetting</filename>
-				<filename actionname="ImprovementProcess">Chapter 9 Improvement Process</filename>
-				<filename actionname="S4Content">Content</filename>
+				<filename doctype="" actionname="LSAI">Chapter 1 Life Saving Appliances Inspection</filename>
+				<filename doctype="" actionname="FFAI">Chapter 2 Fire Fighting Appliances Inspection</filename>
+				<filename doctype="" actionname="ISMIA">Chapter 3 ISM Internal Audit</filename>
+				<filename doctype="" actionname="SafetyMeeting">Chapter 4 Safety Meeting</filename>
+				<filename doctype="" actionname="SIF">Chapter 5 Safety Induction and Familiarisation</filename>
+				<filename doctype="" actionname="SITOA">Chapter 6 Ship Inspection  Tanker Opers Audit</filename>
+				<filename doctype="" actionname="PSCIA1">Chapter 7 Port State Control Inspection - Annex A</filename>
+				<filename doctype="" actionname="PSCI">Chapter 7 Port State Control Inspection</filename>
+				<filename doctype="" actionname="OMV">Chapter 8 Oil Major Vetting</filename>
+				<filename doctype="" actionname="ImprovementProcess">Chapter 9 Improvement Process</filename>
+				<filename doctype="" actionname="S4Content">Content</filename>
 			</foldername>
 			<foldername name="Sec 5 Reporting Accidents and NC">
-				<filename actionname="TINC">Chapter 1 Types of Incidents and NC</filename>
-				<filename actionname="">Chapter 1-Annex 1-Incident Matrix</filename>
-				<filename actionname="">Chapter 2 Annex-SAFIR Report Sample (Incident)</filename> 
-				<filename actionname="">Chapter 2 Annex-SAFIR Report Sample (Near Miss)</filename>
-				<filename actionname="RUAC">Chapter 2 Reporting of Unsafe Acts, Conditions</filename>
-				<filename actionname="IncidentInvestigationA1">Chapter 3 Incident Investigation - Annex 1</filename>
-				<filename actionname="IncidentInvestigation">Chapter 3 Incident Investigation</filename>
-				<filename actionname="IncidentManagement">Chapter 4 Incident Management</filename>
-				<filename actionname="JHRA">Chapter 5 Job Hazard and Risk Analyses</filename>
-				<filename actionname="S5Contents">Contents</filename>
+				<filename doctype="" actionname="TINC">Chapter 1 Types of Incidents and NC</filename>
+				<filename doctype="" actionname="">Chapter 1-Annex 1-Incident Matrix</filename>
+				<filename doctype="" actionname="">Chapter 2 Annex-SAFIR Report Sample (Incident)</filename> 
+				<filename doctype="" actionname="">Chapter 2 Annex-SAFIR Report Sample (Near Miss)</filename>
+				<filename doctype="" actionname="RUAC">Chapter 2 Reporting of Unsafe Acts, Conditions</filename>
+				<filename doctype="" actionname="IncidentInvestigationA1">Chapter 3 Incident Investigation - Annex 1</filename>
+				<filename doctype="" actionname="IncidentInvestigation">Chapter 3 Incident Investigation</filename>
+				<filename doctype="" actionname="IncidentManagement">Chapter 4 Incident Management</filename>
+				<filename doctype="" actionname="JHRA">Chapter 5 Job Hazard and Risk Analyses</filename>
+				<filename doctype="" actionname="S5Contents">Contents</filename>
 			</foldername>
 			<foldername name="Sec 6 Administration Management">
-				<filename actionname="DDC">Chapter 1 Document and Data Control</filename>
-				<filename actionname="SSF">Chapter 2 Shipboard Standard Filing</filename>
-				<filename actionname="ManagementChange">Chapter 3 Management of Change</filename>
-				<filename actionname="MPC">Chapter 4 Managing procedure changes</filename>
-				<filename actionname="MSMSR">Chapter 5 Master's SMS Review</filename>
-				<filename actionname="ManagementReview">Chapter 6 Management Review</filename>
-				<filename actionname="ShipComputer">Chapter 7 Ship Computer</filename>
-				<filename actionname="FleetCommunications">Chapter 8 Fleet Communications</filename>
-				<filename actionname="RKEDLR1">Chapter 9 Record Keeping - Entry of Data in Logbook Rev 01</filename>
-				<filename actionname="ListOfPublications">Chapter 10 List of Publications</filename>
-				<filename actionname="ListOfPosters">Chapter 11 List of Posters</filename>
-				<filename actionname="DelegationOfDuty">Chapter 12 Delegation of Duty</filename>
-				<filename actionname="S6Contents">Sec 6 Contents</filename>
+				<filename doctype="" actionname="DDC">Chapter 1 Document and Data Control</filename>
+				<filename doctype="" actionname="SSF">Chapter 2 Shipboard Standard Filing</filename>
+				<filename doctype="" actionname="ManagementChange">Chapter 3 Management of Change</filename>
+				<filename doctype="" actionname="MPC">Chapter 4 Managing procedure changes</filename>
+				<filename doctype="" actionname="MSMSR">Chapter 5 Master's SMS Review</filename>
+				<filename doctype="" actionname="ManagementReview">Chapter 6 Management Review</filename>
+				<filename doctype="" actionname="ShipComputer">Chapter 7 Ship Computer</filename>
+				<filename doctype="" actionname="FleetCommunications">Chapter 8 Fleet Communications</filename>
+				<filename doctype="" actionname="RKEDLR1">Chapter 9 Record Keeping - Entry of Data in Logbook Rev 01</filename>
+				<filename doctype="" actionname="ListOfPublications">Chapter 10 List of Publications</filename>
+				<filename doctype="" actionname="ListOfPosters">Chapter 11 List of Posters</filename>
+				<filename doctype="" actionname="DelegationOfDuty">Chapter 12 Delegation of Duty</filename>
+				<filename doctype="" actionname="S6Contents">Sec 6 Contents</filename>
 			</foldername>
 			<filename actionname="Manual">Vol. IV Manual</filename>
 		</volume>
@@ -396,47 +393,47 @@
 			
 		<volume id="6" name="Volume VI" controllername="MajorCasualtyAndEnvironmentalProtectionPlan">
 			<foldername name="Sec 2-Shipboard Emergency Plan - Action Check List">
-				<filename actionname="CVA">Annex A - Checklist for Vessel Action</filename>
-				<filename actionname="CSD">Annex B - Checklist for Submission of Document</filename>
-				<filename actionname="IMF">Annex C - IMO Reporting Format</filename>
-				<filename actionname="ESDC">Annex D - Emergency Squad Duty Card</filename>
-				<filename actionname="BSDC">Annex E - Back-up Squad Duty Card</filename>
-				<filename actionname="MPACRF">Annex F - MPA Casualty Reporting Form</filename>
-				<filename actionname="AMSA18">Annex G - AMSA18</filename>
-				<filename actionname="AMSA19">Annex G - AMSA19</filename>
-				<filename actionname="Section2">Volume VI - Section 2</filename>
+				<filename doctype="" actionname="CVA">Annex A - Checklist for Vessel Action</filename>
+				<filename doctype="" actionname="CSD">Annex B - Checklist for Submission of Document</filename>
+				<filename doctype="" actionname="IMF">Annex C - IMO Reporting Format</filename>
+				<filename doctype="" actionname="ESDC">Annex D - Emergency Squad Duty Card</filename>
+				<filename doctype="" actionname="BSDC">Annex E - Back-up Squad Duty Card</filename>
+				<filename doctype="" actionname="MPACRF">Annex F - MPA Casualty Reporting Form</filename>
+				<filename doctype="" actionname="AMSA18">Annex G - AMSA18</filename>
+				<filename doctype="" actionname="AMSA19">Annex G - AMSA19</filename>
+				<filename doctype="" actionname="Section2">Volume VI - Section 2</filename>
 			</foldername>
 			<foldername name="Sec 6-Company Contingency Plan">
-				<filename actionname="ERCO">Annex A - Emergency Reponse checklist office</filename>
-				<filename actionname="RecordOfEvent">Annex B - Record of Event</filename>
-				<filename actionname="CEL">Annex C - Casualty Event Log</filename>
-				<filename actionname="CMT">Annex D - Crisis Management Team</filename>
-				<filename actionname="ERCN">Annex E - Emergency Response Contact Numbers</filename>
-				<filename actionname="">Annex F - Ship Communication List</filename>
-				<filename actionname="">Annex G - LOF Rev 01</filename>
-				<filename actionname="VCPR">Annex H - Vessel Casualty Prompt Report</filename>
-				<filename actionname="Section6">Volume VI - Section 6</filename>
+				<filename doctype="" actionname="ERCO">Annex A - Emergency Reponse checklist office</filename>
+				<filename doctype="" actionname="RecordOfEvent">Annex B - Record of Event</filename>
+				<filename doctype="" actionname="CEL">Annex C - Casualty Event Log</filename>
+				<filename doctype="" actionname="CMT">Annex D - Crisis Management Team</filename>
+				<filename doctype="" actionname="ERCN">Annex E - Emergency Response Contact Numbers</filename>
+				<filename doctype="" actionname="">Annex F - Ship Communication List</filename>
+				<filename doctype="" actionname="">Annex G - LOF Rev 01</filename>
+				<filename doctype="" actionname="VCPR">Annex H - Vessel Casualty Prompt Report</filename>
+				<filename doctype="" actionname="Section6">Volume VI - Section 6</filename>
 			</foldername>
-			<filename actionname="SEPGG">Section 1 - Shipboard Emergency Plan – General Guidance</filename>
-			<filename actionname="SEPACS">Section 3 - Shipboard Emergency Plan – Action Checklist for Security</filename>
-			<filename actionname="SEPM">Section 4 - Shipboard Emergency Plan - Medical</filename>
-			<filename actionname="CCPTHRA">Section 5 - Company Contingency Plan for Transiting HRA</filename>
-			<filename actionname="Manual">Vol. VI Manual</filename>
-		</volume>
-
+			<filename doctype="" actionname="SEPGG">Section 1 - Shipboard Emergency Plan – General Guidance</filename>
+			<filename doctype="" actionname="SEPACS">Section 3 - Shipboard Emergency Plan – Action Checklist for Security</filename>
+			<filename doctype="" actionname="SEPM">Section 4 - Shipboard Emergency Plan - Medical</filename>
+			<filename doctype="" actionname="CCPTHRA">Section 5 - Company Contingency Plan for Transiting HRA</filename>
+			<filename doctype="" actionname="Manual">Vol. VI Manual</filename>
+		</volume>     
+                      
 		<volume id="7"	name="Volume VII" controllername="TrainingManual">
 			<foldername name="Appendix">
-				<filename actionname="STAFCTCCV">CBT - STA Flow Chart TCC Vessels</filename>
-				<filename actionname="">CBT - Starting modules</filename>
+				<filename doctype="" actionname="STAFCTCCV">CBT - STA Flow Chart TCC Vessels</filename>
+				<filename doctype="" actionname="">CBT - Starting modules</filename>
 			</foldername>
-			<filename actionname="StatutoryTraining">Section 1 - Statutory Training</filename>
-			<filename actionname="CDT">Section 2 - Career Development Training</filename>
-			<filename actionname="CadetTraining">Section 3 - Cadet Training</filename>
-			<filename actionname="CBT">Section 4 - Computer Based Training</filename>
-			<filename actionname="TPSP">Section 5 - Training Plan for Shore Personnel</filename>
-			<filename actionname="SDT">Section 6 - Shipboard Drill and Training</filename>
-			<filename actionname="Manual">Vol. VII Manual</filename>
-		</volume>
+			<filename doctype="" actionname="StatutoryTraining">Section 1 - Statutory Training</filename>
+			<filename doctype="" actionname="CDT">Section 2 - Career Development Training</filename>
+			<filename doctype="" actionname="CadetTraining">Section 3 - Cadet Training</filename>
+			<filename doctype="" actionname="CBT">Section 4 - Computer Based Training</filename>
+			<filename doctype="" actionname="TPSP">Section 5 - Training Plan for Shore Personnel</filename>
+			<filename doctype="" actionname="SDT">Section 6 - Shipboard Drill and Training</filename>
+			<filename doctype="" actionname="Manual">Vol. VII Manual</filename>
+		</volume>     
 
 		<volume id="8"	name="Volume VIII" controllername="FormsAndChecklists">
 			<foldername actionname="AdministrationAndMmgt" name="Section 1 - Administration and Mmgt">
@@ -793,16 +790,16 @@
 				<filename>SM081- Marine Occurrence Investigation Report</filename>
 			</foldername>
 			<foldername actionname="" name="Section 7-Filling System and Retention Matrix">
-				<filename actionname="NSMSFOR">Non SMS form and other records Rev 01</filename>
-				<filename actionname="S1AM">Section 1 - Administration and Management</filename>
-				<filename actionname="S2MSPR">Section 2 - Management of Ship Personnel Rev 01</filename>
-				<filename actionname="S3MR">Section 3 - Maintenance Rev 01</filename>
-				<filename actionname="S4NMR">Section 4 - Navigation Management Rev 01</filename>
-				<filename actionname="S5CO">Section 5 - Cargo Operation</filename>
-				<filename actionname="S6SM">Section 6 - Safety Management</filename>
-				<filename actionname="S7Content">Section 7 - Content</filename>
+				<filename doctype="" actionname="NSMSFOR">Non SMS form and other records Rev 01</filename>
+				<filename doctype="" actionname="S1AM">Section 1 - Administration and Management</filename>
+				<filename doctype="" actionname="S2MSPR">Section 2 - Management of Ship Personnel Rev 01</filename>
+				<filename doctype="" actionname="S3MR">Section 3 - Maintenance Rev 01</filename>
+				<filename doctype="" actionname="S4NMR">Section 4 - Navigation Management Rev 01</filename>
+				<filename doctype="" actionname="S5CO">Section 5 - Cargo Operation</filename>
+				<filename doctype="" actionname="S6SM">Section 6 - Safety Management</filename>
+				<filename doctype="" actionname="S7Content">Section 7 - Content</filename>
 			</foldername>
-			<filename actionname="Manual">Vol. VIII Manual</filename>
+			<filename doctype="" actionname="Manual">Vol. VIII Manual</filename>
 			
 		</volume>
 

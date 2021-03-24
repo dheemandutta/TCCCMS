@@ -2185,6 +2185,14 @@
     <Content Include="Views\FormsAndChecklists\CO031.cshtml" />
     <Content Include="SQL Script\02.03.2021_Full_Script_Of_TCCCMSDB.zip" />
     <Content Include="Views\FormsAndChecklists\Index.cshtml" />
+    <Content Include="Views\CompanyPolicyManual\PDFViewer.cshtml" />
+    <Content Include="Views\CompanyProceduresManual\PDFViewer.cshtml" />
+    <Content Include="Views\CompanyResponsibilityAndAuthorityManual\PDFViewer.cshtml" />
+    <Content Include="Views\FormsAndChecklists\PDFViewer.cshtml" />
+    <Content Include="Views\MaintenanceOfShipAndEquipment\PDFViewer.cshtml" />
+    <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\PDFViewer.cshtml" />
+    <Content Include="Views\ShipboardOperattion\PDFViewer.cshtml" />
+    <Content Include="Views\TrainingManual\PDFViewer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

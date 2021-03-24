@@ -25,6 +25,15 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        public ActionResult PDFViewer(string fileName)
+        {
+            Manual file = new Manual();
+            string filePath = "../ManualsPDF/Volume VIII/";
+            filePath = filePath + fileName + ".pdf";
+            file.PdfName = fileName;
+            file.PdfPath = filePath;
+            return View(file);
+        }
         public ActionResult AdministrationAndMmgt()
         {
             return View();
