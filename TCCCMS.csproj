@@ -2193,6 +2193,13 @@
     <Content Include="Views\MajorCasualtyAndEnvironmentalProtectionPlan\PDFViewer.cshtml" />
     <Content Include="Views\ShipboardOperattion\PDFViewer.cshtml" />
     <Content Include="Views\TrainingManual\PDFViewer.cshtml" />
+    <Content Include="Views\ShipCSKEndeavour\PDFViewer.cshtml" />
+    <Content Include="Views\ShipCSKValiant\PDFViewer.cshtml" />
+    <Content Include="Views\ShipCSKVanguard\PDFViewer.cshtml" />
+    <Content Include="Views\ShipKHKEmpress\PDFViewer.cshtml" />
+    <Content Include="Views\ShipKHKMajesty\PDFViewer.cshtml" />
+    <Content Include="Views\ShipKHKVision\PDFViewer.cshtml" />
+    <Content Include="Views\ShipKWKExcelsus\PDFViewer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

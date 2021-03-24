@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
+
 namespace TCCCMS.Controllers
 {
     public class CompanyPolicyManualController : Controller
@@ -32,10 +33,11 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
-        public ActionResult PDFViewer(string fileName)
+        public ActionResult PDFViewer(string fileName,string relPDFPath)
         {
             Manual file = new Manual();
-            string filePath = "../ManualsPDF/Volume I/";
+            //string filePath = "../ManualsPDF/Volume I/";
+            string filePath = "../ManualsPDF/" + relPDFPath + "/";
             filePath = filePath + fileName + ".pdf";
             file.PdfName = fileName;
             file.PdfPath = filePath;
