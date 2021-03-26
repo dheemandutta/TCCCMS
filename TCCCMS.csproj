@@ -140,6 +140,7 @@
     <Compile Include="Controllers\ManualController.cs" />
     <Compile Include="Controllers\PermissionRoleController.cs" />
     <Compile Include="Controllers\RankController.cs" />
+    <Compile Include="Controllers\ReferenceMaterialsController.cs" />
     <Compile Include="Controllers\RevisionHistoryController.cs" />
     <Compile Include="Controllers\RoleMasterController.cs" />
     <Compile Include="Controllers\ShipboardOperattionController.cs" />
@@ -2493,6 +2494,9 @@
     <Content Include="ShipManualsPDF\KHK Vision\6. KHKV VOC 15Oct20\PDF-KHKV-VOC 15Oct20\Chapter 8.pdf" />
     <Content Include="ShipManualsPDF\KHK Vision\6. KHKV VOC 15Oct20\PDF-KHKV-VOC 15Oct20\Chapter 9.pdf" />
     <Content Include="ShipManualsPDF\KHK Vision\will be changed KHK Vision NOI 2013 14Jun17.pdf" />
+    <Content Include="Views\ReferenceMaterials\Index.cshtml" />
+    <Content Include="Views\ReferenceMaterials\Pages.cshtml" />
+    <Content Include="Views\ReferenceMaterials\PDFViewer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

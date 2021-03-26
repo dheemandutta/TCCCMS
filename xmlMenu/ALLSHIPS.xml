@@ -3070,7 +3070,7 @@
 					<foldername name="Section 1 - MSMP (KHEM and KHMA)">
 						<filename doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHEM)</filename>
 						<filename doctype="DOC" actionname="LMPS1MEDP">Section 1 Part B - Mooring Equipment Design Philosophy</filename>
-						<filename doctype="DOC" actionname="">Section 1 Part C - Detailed List of Mooring Equiment</filename>
+						<filename doctype="DOC" actionname="LMPS1DLME">Section 1 Part C - Detailed List of Mooring Equiment</filename>
 						<filename doctype="DOC" actionname="LMPS1IMRSP">Section 1 Part D - Inspection, Maintenance and Retirement Strategies or Principles</filename>
 						<filename doctype="DOC" actionname="LMPS1RCMSPHF">Section 1 Part E - Risk and Chagne Mgmt, Safety of Personnel and Human Factors</filename>
 						<filename doctype="DOC" actionname="LMPS1RD">Section 1 Part F - Records and Documentation</filename>
