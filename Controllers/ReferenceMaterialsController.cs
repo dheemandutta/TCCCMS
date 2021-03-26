@@ -9,16 +9,16 @@ using System.Web.Mvc;
 
 namespace TCCCMS.Controllers
 {
-    public class CommonToAllManualController : Controller
+    public class ReferenceMaterialsController : Controller
     {
         private string controllerName = "CommonToAllManual";
         ManualBL manualBL = new ManualBL();
-        // GET: CommonToAllManual
+        // GET: ReferenceMaterials
         public ActionResult Index()
         {
-            ManualBL manualBL = new ManualBL();
+
             Manual file = new Manual();
-            string xPath = Server.MapPath("~/xmlMenu/" + "COMMONTOALL.xml");
+            string xPath = Server.MapPath("~/xmlMenu/" + "REFERENCEMATERIALS.xml");
             file.ManualBodyHtml = manualBL.GenerateBodyContentHtml(xPath, 0);
             return View(file);
         }
@@ -34,7 +34,7 @@ namespace TCCCMS.Controllers
             //-------------
             Manual file = new Manual();
             //string filePath = "../ManualsPDF/Volume I/";
-            string filePath = "../CommonToAllManualsPDF/" + relPDFPath + "/";
+            string filePath = "../ReferenceMaterialsPDF/" + relPDFPath + "/";
             filePath = filePath + fileName + ".pdf";
             file.PdfName = fileName;
             file.PdfPath = filePath;
