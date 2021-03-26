@@ -1134,6 +1134,8 @@
     <Content Include="ManualsPDF\Volume VI\Section 2 - Shipboard Emergency Plan – Action Checklist\Annex G - AMSA19.pdf" />
     <Content Include="ManualsPDF\Volume VI\Section 6 - Company Contingency Plan\Annex F - Ship Communication List.xls" />
     <Content Include="ManualsPDF\Volume VI\Section 6 - Company Contingency Plan\Annex G - LOF Rev 01.pdf" />
+    <Content Include="xmlMenu\ALLSHIPS.xml" />
+    <Content Include="xmlMenu\ALLVOLUMES.xml" />
     <None Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.js" />
     <Content Include="packages\jQuery.3.4.1\Content\Scripts\jquery-3.4.1.min.js" />
