@@ -1095,11 +1095,11 @@
     <Content Include="ManualsPDF\Volume IV\Sec 5 Reporting Accidents _ NC\Chapter 2 Annex-SAFIR Report Sample %28Incident%29.pdf" />
     <Content Include="ManualsPDF\Volume IV\Sec 5 Reporting Accidents _ NC\Chapter 2 Annex-SAFIR Report Sample %28Near Miss%29.pdf" />
     <Content Include="ManualsPDF\Volume VII\Appendix\CBT - Starting modules.xls" />
-    <Content Include="ManualsPDF\Volume VI\Section 2 - Shipboard Emergency Plan – Action Checklist\Annex F - MPA Casualty Reporting Form.pdf" />
-    <Content Include="ManualsPDF\Volume VI\Section 2 - Shipboard Emergency Plan – Action Checklist\Annex G - AMSA18.pdf" />
-    <Content Include="ManualsPDF\Volume VI\Section 2 - Shipboard Emergency Plan – Action Checklist\Annex G - AMSA19.pdf" />
     <Content Include="ManualsPDF\Volume VI\Section 6 - Company Contingency Plan\Annex F - Ship Communication List.xls" />
     <Content Include="ManualsPDF\Volume VI\Section 6 - Company Contingency Plan\Annex G - LOF Rev 01.pdf" />
+    <Content Include="ManualsPDF\Volume VI\Section 2 - Shipboard Emergency Plan - Action Checklist\Annex F - MPA Casualty Reporting Form.pdf" />
+    <Content Include="ManualsPDF\Volume VI\Section 2 - Shipboard Emergency Plan - Action Checklist\Annex G - AMSA18.pdf" />
+    <Content Include="ManualsPDF\Volume VI\Section 2 - Shipboard Emergency Plan - Action Checklist\Annex G - AMSA19.pdf" />
     <None Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.js" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.min.js" />
@@ -2242,7 +2242,6 @@
     <Content Include="ShipManualsPDF\KHK Vision\13. MSMP_LMP\Common to ALL\PDF %28Common%29\17.3 MA041E - Mooring Wire Rope  Inspection Record.pdf" />
     <Content Include="ShipManualsPDF\KHK Vision\13. MSMP_LMP\Common to ALL\PDF %28Common%29\18. Section 2 Part B6 - Record of inspections of Mooring Fittings on board.pdf" />
     <Content Include="ShipManualsPDF\KHK Vision\13. MSMP_LMP\Common to ALL\PDF %28Common%29\19. Section 2 Part B7 - Details of Changes in Mooring System.pdf" />
-    <Content Include="ShipManualsPDF\KHK Vision\13. MSMP_LMP\Common to ALL\PDF %28Common%29\20. Section 2 Part B8 - Record of ship’s crew familiarisation with mooring systems.pdf" />
     <Content Include="ShipManualsPDF\KHK Vision\13. MSMP_LMP\Common to ALL\PDF %28Common%29\20.1 SP055-Crew Familiarization for Mooring Systems.pdf" />
     <Content Include="ShipManualsPDF\KHK Vision\13. MSMP_LMP\Common to ALL\PDF %28Common%29\21. Section 2 Part B9 - List of critical spares.pdf" />
     <Content Include="ShipManualsPDF\KHK Vision\13. MSMP_LMP\Common to ALL\PDF %28Common%29\22. Section 2 Part B10 - Manufacturers Circulars or Communications.pdf" />
@@ -2461,6 +2460,7 @@
     <Content Include="Views\ReferenceMaterials\Pages.cshtml" />
     <Content Include="Views\ReferenceMaterials\PDFViewer.cshtml" />
     <Content Include="Views\Shared\_Menu_Layout.cshtml" />
+    <Content Include="ShipManualsPDF\KHK Vision\13. MSMP_LMP\Common to ALL\PDF %28Common%29\20. Section 2 Part B8 - Record of ships crew familiarisation with mooring systems.pdf" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
