@@ -11,7 +11,7 @@ namespace TCCCMS.Controllers
 {
     public class ReferenceMaterialsController : Controller
     {
-        private string controllerName = "CommonToAllManual";
+        private string controllerName = "ReferenceMaterials";
         ManualBL manualBL = new ManualBL();
         // GET: ReferenceMaterials
         public ActionResult Index()
