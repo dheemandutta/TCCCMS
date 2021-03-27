@@ -58,6 +58,7 @@
     <Compile Include="ShipManualBL.cs" />
     <Compile Include="UserGroupBL.cs" />
     <Compile Include="UserMasterBL.cs" />
+    <Compile Include="UserRoleBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TCCCMS.Data\TCCCMS.Data.csproj">
