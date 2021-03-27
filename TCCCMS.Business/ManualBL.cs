@@ -8,19 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Xml;
-using System.Text;
 namespace TCCCMS.Business
 {
     public class ManualBL
     {
-        
-        public List<Manual> SearchManuals(int pageIndex, ref int totalCount, int pageSize, int volumeId,string searchText)
+
+        public List<Manual> SearchManuals(int pageIndex, ref int totalCount, int pageSize, int volumeId, string searchText)
         {
             List<Manual> manualsList = new List<Manual>();
 
             ManualDAL manualDAL = new ManualDAL();
 
-            manualsList = manualDAL.SearchManuals(pageIndex, ref totalCount, pageSize, volumeId,searchText);
+            manualsList = manualDAL.SearchManuals(pageIndex, ref totalCount, pageSize, volumeId, searchText);
 
             return manualsList;
         }
@@ -30,7 +29,7 @@ namespace TCCCMS.Business
             Manual file = new Manual();
             ManualDAL manualDAL = new ManualDAL();
 
-            file = manualDAL.GetManual(controllerName,  actionName);
+            file = manualDAL.GetManual(controllerName, actionName);
             return file;
         }
 
@@ -52,7 +51,7 @@ namespace TCCCMS.Business
         }
 
         #region Generate Manual Body Html
-        public string GenerateBodyContentHtml(string aXmlPath,int partId)
+        public string GenerateBodyContentHtml(string aXmlPath, int partId)
         {
             ManualBL manuBl = new ManualBL();
 
@@ -69,12 +68,28 @@ namespace TCCCMS.Business
                 sb.Append("<div class='container'>");
                 foreach (XmlNode volume in node)
                 {
-                    Volume vol = new Volume();
+                    Volume vol = new Volume(); 
                     string volName = volume.Attributes["name"].Value.ToString();
                     string ctrlName = volume.Attributes["controllername"].Value.ToString();
                     string partName = volName.Split(' ').Last();
-                    string nodeId = volume.Attributes["id"].Value.ToString();
-                    if(Convert.ToInt32(nodeId) == partId)
+                    string mainNodeId = "0";
+                    if (volume.Name == "ship")
+                    {
+                        mainNodeId = volume.Attributes["shipnumber"].Value.ToString();
+                    }
+                    else if(volume.Name == "material")
+                    {
+                        mainNodeId = volume.Attributes["materialid"].Value.ToString();
+                    }
+                    else
+                    {
+                        mainNodeId = volume.Attributes["id"].Value.ToString();
+                    }
+
+                    string mainNodeName = volume.Attributes["name"].Value.ToString();
+                    string pdfRelativePath = volName;//---this for pdf preview link path
+
+                    if (Convert.ToInt32(mainNodeId) == partId)
                     {
                         //vol = manuBl.GetVolumeById(nodeId);
                         sb.Append("\n");
@@ -87,7 +102,7 @@ namespace TCCCMS.Business
 
                         #region child accordian
                         /* ----------Lines Commented on 23rd Feb 2021 @BK  */
-                       
+
                         foreach (XmlNode item in volume)
                         {
                             Manual manual = new Manual();
@@ -99,7 +114,7 @@ namespace TCCCMS.Business
                                 string actionName = item.Attributes["actionname"].Value.ToString();
                                 string type = item.Attributes["doctype"].Value.ToString();
                                 // manual = manuBl.GetActionNameByFileName(filename + ".html");
-                                if (actionName !="")
+                                if (actionName != "")
                                 {
                                     sb.Append("\n");
                                     //sb.Append("<li><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + "</span></a></li>");
@@ -108,7 +123,7 @@ namespace TCCCMS.Business
                                     ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
                                     //sb.Append("<a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' >");
                                     sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
-                                    sb.Append( filename + "</a>");
+                                    sb.Append(filename + "</a>");
                                     sb.Append("</br>");
 
 
@@ -116,7 +131,7 @@ namespace TCCCMS.Business
                                 else if (type == "PDF")
                                 {
                                     sb.Append("\n");
-                                    sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "' >");
+                                    sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + pdfRelativePath + "' >");
                                     sb.Append(filename + "</a>");
                                     sb.Append("</br>");
 
@@ -126,7 +141,8 @@ namespace TCCCMS.Business
                             else if (item.Name == "foldername")
                             {
 
-                                if(Convert.ToInt32(nodeId) == 8)
+
+                                if (Convert.ToInt32(mainNodeId) == 8 && mainNodeName == "Volume VIII")
                                 {
                                     string fName = item.Attributes["name"].Value.ToString();
                                     string actionName = item.Attributes["actionname"].Value.ToString();
@@ -139,12 +155,12 @@ namespace TCCCMS.Business
                                     }
                                     else
                                     {
-                                       
+                                        pdfRelativePath = pdfRelativePath + "/" + fName;
                                         sb.Append("\n");
                                         sb.Append("<button class='accordion'>" + fName + "</button>");
                                         sb.Append("\n");
                                         sb.Append("<div class='panel'>");
-                                        string sChild = GetChild(item, ref l, partName, ctrlName);
+                                        string sChild = GetChild(item, ref l, partName, ctrlName, ref pdfRelativePath);
                                         //l = l;
                                         sb.Append(sChild);
                                         sb.Append("\n");
@@ -156,11 +172,13 @@ namespace TCCCMS.Business
                                 else
                                 {
                                     string fName = item.Attributes["name"].Value.ToString();
+                                    pdfRelativePath = pdfRelativePath + "/" + fName;
+
                                     sb.Append("\n");
                                     sb.Append("<button class='accordion'>" + fName + "</button>");
                                     sb.Append("\n");
                                     sb.Append("<div class='panel'>");
-                                    string sChild = GetChild(item, ref l, partName, ctrlName);
+                                    string sChild = GetChild(item, ref l, partName, ctrlName, ref pdfRelativePath);
                                     //l = l;
                                     sb.Append(sChild);
                                     sb.Append("\n");
@@ -183,8 +201,8 @@ namespace TCCCMS.Business
 
 
                         }
-                       
-                        
+
+
                         /* ----End------Lines Commented on 23rd Feb 2021 @BK  */
                         #endregion
                         sb.Append("\n");
@@ -203,7 +221,7 @@ namespace TCCCMS.Business
             return sb.ToString();
         }
 
-        public string GetChild(XmlNode node, ref int l, string part,string ctrlName)
+        public string GetChild(XmlNode node, ref int l, string part, string ctrlName, ref string relativePath)
         {
             ManualBL manuBl = new ManualBL();
             StringBuilder sb = new StringBuilder();
@@ -214,7 +232,7 @@ namespace TCCCMS.Business
                 {
 
                     string filename = item.InnerText.ToString();
-                    string actionName= item.Attributes["actionname"].Value.ToString();
+                    string actionName = item.Attributes["actionname"].Value.ToString();
                     string type = item.Attributes["doctype"].Value.ToString();
                     // manual = manuBl.GetActionNameByFileName(filename + ".html");
                     if (actionName != "")
@@ -226,13 +244,13 @@ namespace TCCCMS.Business
                         ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
                         //sb.Append("<a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' >");
                         sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
-                        sb.Append( filename + "</a>");
+                        sb.Append(filename + "</a>");
                         sb.Append("</br>");
                     }
                     else if (type == "PDF")
                     {
                         sb.Append("\n");
-                        sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "' >");
+                        sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
                         sb.Append(filename + "</a>");
                         sb.Append("</br>");
 
@@ -243,12 +261,13 @@ namespace TCCCMS.Business
                 {
                     int x = 0;
                     string fName = item.Attributes["name"].Value.ToString();
+                    relativePath = relativePath + "/" + fName;
                     sb.Append("\n");
                     sb.Append("<button class='accordion'>" + fName + "</button>");
                     sb.Append("\n");
                     sb.Append("<div class='panel'>");
                     x = l + 1;
-                    string sChild = GetChild(item, ref x, part, ctrlName);
+                    string sChild = GetChild(item, ref x, part, ctrlName, ref relativePath);
                     sb.Append(sChild);
                     sb.Append("\n");
                     sb.Append("</div>");

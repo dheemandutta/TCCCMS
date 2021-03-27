@@ -2502,6 +2502,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="CommonToAllManualsPDF\" />
     <Folder Include="ManualsPDF\Volume III\Appendix 1 - Promotion Guidelines\" />
     <Folder Include="ManualsPDF\Volume III\Appendix 2 - Shipboard Job Description\" />
     <Folder Include="ManualsPDF\Volume IV\Sec 1 Health Safety and Environmental\Chapter 5 Work Permit System\" />
@@ -2514,6 +2515,7 @@
     <Folder Include="ManualsPDF\Volume V\23-Maintenance Procedure\" />
     <Folder Include="ManualsPDF\Volume V\Appendix\" />
     <Folder Include="Model\" />
+    <Folder Include="ReferenceMaterialsPDF\" />
     <Folder Include="ShipManualsPDF\KHK Vision\18. Biofouling Mgmt Plan\Biofouling-SP\Appendix 2 - Bridging Letter\" />
     <Folder Include="ShipManualsPDF\KHK Vision\18. Biofouling Mgmt Plan\Biofouling-SP\Cover\" />
     <Folder Include="ShipManualsPDF\KHK Vision\18. Biofouling Mgmt Plan\Biofouling-SP\Section 4\" />

@@ -6,10 +6,12 @@
 @section Styles{
 <style type="text/css">
     .accordion {
-        background-color: #eee;
+        /*background-color: #eee;*/
+        background-color: white;
         color: #444;
         cursor: pointer;
-        padding: 18px;
+        /*padding: 18px;*/
+        padding: 5px;
         width: 100%;
         border: none;
         text-align: left;
@@ -19,8 +21,21 @@
     }
 
         .active, .accordion:hover {
-            background-color: #ccc;
+            /*background-color: #ccc;*/
+            background-color: white;
         }
+
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: left;
+            margin-right: 5px;
+        }
+
+    .active:after {
+        content: "\2212";
+    }
 
     .panel {
         padding: 0 18px;
