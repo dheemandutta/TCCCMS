@@ -1774,7 +1774,6 @@
     <Content Include="Scripts\UserGroup.js" />
     <Content Include="Scripts\UserMaster.js" />
     <Content Include="SQL Script\03.02.2021_Full_Script_Of_TCCCMSDB %28SQL Server 16%29.sql" />
-    <Content Include="SQL Script\05.01.2021_Full_Script_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\V.V.I.P   Get_All_FileName_Of_A_Folder_And_Create_A_Table_With_All_FileName_Data.sql" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -2173,7 +2172,6 @@
     <Content Include="Views\Forms\SafetyMmanagementForms.cshtml" />
     <Content Include="Views\CompanyPolicyManual\Index.cshtml" />
     <Content Include="Views\CompanyProceduresManual\Index.cshtml" />
-    <Content Include="SQL Script\17.02.2021_Full_Script_Of_TCCCMSDB.zip" />
     <Content Include="Views\RevisionHistory\Index.cshtml" />
     <Content Include="Views\CompanyResponsibilityAndAuthorityManual\Pages.cshtml" />
     <Content Include="Views\CompanyPolicyManual\Pages.cshtml" />
@@ -2197,8 +2195,6 @@
     <Content Include="Views\ShipKHKVision\Index.cshtml" />
     <Content Include="Views\ShipKWKExcelsus\Index.cshtml" />
     <Content Include="Views\Shared\_ShipWise_Menu_Layout.cshtml" />
-    <Content Include="SQL Script\20.02.2021_Full_Script_Of_TCCCMSDB.zip" />
-    <Content Include="SQL Script\20.02.2021_Full_Script_Of_TCCCMSDB_II.zip" />
     <Content Include="Views\Home\Test2.cshtml" />
     <Content Include="Views\FormsAndChecklists\AdministrationAndMmgt.cshtml" />
     <Content Include="Views\FormsAndChecklists\ManagementOfShipPersonnel.cshtml" />
