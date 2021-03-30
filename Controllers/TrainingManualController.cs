@@ -20,7 +20,28 @@ namespace TCCCMS.Controllers
         // GET: TrainingManual
         public ActionResult Index()
         {
-            return View();
+            Manual file = new Manual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLVOLUMES.xml");
+            file.ManualBodyHtml = manualBL.GenerateBodyContentHtml(xPath, 7);
+
+            return View(file);
+        }
+        public ActionResult Pages(string actionName)
+        {
+            Manual file = new Manual();
+            file = manualBL.GetManual(controllerName, actionName);
+            TempData[actionName] = file.ManualBodyHtml;
+            return View(file);
+        }
+        public ActionResult PDFViewer(string fileName, string relPDFPath)
+        {
+            Manual file = new Manual();
+            //string filePath = "../ManualsPDF/Volume VII/";
+            string filePath = "../ManualsPDF/" + relPDFPath + "/";
+            filePath = filePath + fileName + ".pdf";
+            file.PdfName = fileName;
+            file.PdfPath = filePath;
+            return View(file);
         }
 
         #region All (7+1)(8)

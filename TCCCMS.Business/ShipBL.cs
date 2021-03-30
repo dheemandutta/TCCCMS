@@ -55,5 +55,19 @@ namespace TCCCMS.Business
         }
         #endregion
 
+
+        #region  Manuals
+        public ShipManual GetManual(string controllerName, string actionName)
+        {
+            ShipManual file = new ShipManual();
+            ShipDAL shipDAL = new ShipDAL();
+
+            file = shipDAL.GetManual(controllerName, actionName);
+            return file;
+        }
+
+
+        #endregion
+
     }
 }

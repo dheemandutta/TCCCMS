@@ -29,13 +29,16 @@
     <div class="container">
         @foreach (var item in Model.ManualList)
         {
-            <div class="card">
+            <div class="card marginTP10">
                 <div class="card-header">
                     @Html.HiddenFor(modelItem => item.ManualId)
                     @*<a href='@(item.FilePath + "/"+ item.Name )'  >
-                            <h5>@Html.DisplayFor(modelItem => item.Name)</h5>
-                        </a>*@
-                    <a href="@Url.Action(item.ActionName,item.ControllerName)">
+            <h5>@Html.DisplayFor(modelItem => item.Name)</h5>
+        </a>*@
+                    @*<a href="@Url.Action(item.ActionName,item.ControllerName)">
+                        <h5>@Html.DisplayFor(modelItem => item.ManualFileName)</h5>
+                    </a>*@
+                    <a href="@Url.Action("Pages",item.ControllerName, new { @actionName= item.ActionName})">
                         <h5>@Html.DisplayFor(modelItem => item.ManualFileName)</h5>
                     </a>
                 </div>
@@ -48,7 +51,7 @@
         }
     </div>
 
-    <div>
+    <div class="container marginTP10">
         <nav aria-label="Page navigation">
             <ul class="pagination flex-wrap">
                 <li class="page-item @(Model.Pagination.EnablePrevious ? " " : " disabled" )">

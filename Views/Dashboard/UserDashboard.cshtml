@@ -21,7 +21,9 @@
                         <img src="~/images/ship_icon.png">
                     </span>
                     <div class="dropdown-content">
-                        <ul>
+                        @Html.Action("ShipMenuLayout", "Dashboard")
+
+                        @*<ul>
                             <li><a href="#">Link 1</a></li>
 
                             <li class="dropmenuright">
@@ -35,7 +37,7 @@
                             </li>
 
                             <li><a href="#">Link 3</a></li>
-                        </ul>
+                        </ul>*@
                     </div>
 
                     <a href="#">Ship Specific Manuals & Plans</a>

@@ -57,6 +57,7 @@
     <Compile Include="RevisionHistory.cs" />
     <Compile Include="RoleMasterPOCO.cs" />
     <Compile Include="Ship.cs" />
+    <Compile Include="ShipManual.cs" />
     <Compile Include="ShipViewModel.cs" />
     <Compile Include="UserGroupPOCO.cs" />
     <Compile Include="UserMasterPOCO.cs" />
