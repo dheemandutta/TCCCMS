@@ -428,5 +428,12 @@ namespace TCCCMS.Controllers
         #endregion
 
 
+        public ActionResult GetRoleByUserId(int UserId/*, ref string recordCount*/)
+        {
+            UserMasterBL bL = new UserMasterBL();
+            string recordaffected = bL.GetRoleByUserId(UserId/*, ref recordCount*/);
+            return Json(recordaffected, JsonRequestBehavior.AllowGet);
+
+        }
     }
 }

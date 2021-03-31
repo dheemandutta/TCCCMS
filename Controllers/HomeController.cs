@@ -53,13 +53,31 @@ namespace TCCCMS.Controllers
         }
         [HttpPost]
         public ActionResult Login(UserMasterPOCO user)
-        {            
+        {
+            UserMasterBL userMasterBL = new UserMasterBL();
             HomeBL homeBl = new HomeBL();
             string lsReturnMessage = "0";
             UserMasterPOCO lUser = new UserMasterPOCO();
             lUser = homeBl.CheckUserLogin(user,ref lsReturnMessage);
             if(lsReturnMessage == "1")
             {
+
+
+
+                string role = userMasterBL.GetRoleByUserId(lUser.UserId);
+                if (!string.IsNullOrEmpty(role))
+                {
+                    System.Web.HttpContext.Current.Session["Role"] = role;
+                }
+                else
+                {
+                    return Json(0, JsonRequestBehavior.AllowGet);
+                }
+
+
+
+
+
                 Session["UserId"]       = lUser.UserId.ToString();
                 Session["UserCode"]     = lUser.UserCode.ToString();
                 Session["UserName"]     = lUser.UserName.ToString();
@@ -68,7 +86,7 @@ namespace TCCCMS.Controllers
                 Session["ShipName"]     = lUser.ShipName.ToString();
                 Session["VesselIMO"]    = lUser.VesselIMO.ToString();
                 Session["UserType"]     = lUser.UserType.ToString();
-                Session["IsAdmin"]      = lUser.IsAdmin.ToString();
+                //Session["IsAdmin"]      = lUser.IsAdmin.ToString();
 
                 return RedirectToAction("UserDashboard", "Dashboard");
 
@@ -231,5 +249,13 @@ namespace TCCCMS.Controllers
         #endregion
 
 
+
+        //public ActionResult GetRoleByUserId(int UserId/*, ref string recordCount*/)
+        //{
+        //    UserMasterBL bL = new UserMasterBL();
+        //    string recordaffected = bL.GetRoleByUserId(UserId/*, ref recordCount*/);
+        //    return Json(recordaffected, JsonRequestBehavior.AllowGet);
+
+        //}
     }
 }

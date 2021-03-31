@@ -685,5 +685,25 @@ namespace TCCCMS.Data
         #endregion
 
 
+
+
+        public string GetRoleByUserId(int UserId)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("GetRoleByUserId", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@UserId", UserId);
+
+           // string recordsAffected = cmd.ExecuteNonQuery().ToString();
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+
+            con.Close();
+            //return recordsAffected;
+            return ds.Tables[0].Rows[0]["RoleName"].ToString();
+        }
+
     }
 }
