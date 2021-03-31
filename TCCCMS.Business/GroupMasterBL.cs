@@ -25,13 +25,19 @@ namespace TCCCMS.Business
             return dAL.SaveUpdateGroupMaster(groupMaster/*, VesselID*/);
         }
 
-        public List<GroupMasterPOCO> GetAllGroupMaster(/*, int VesselID*/)
+        public List<GroupMasterPOCO> GetAllGroupMaster()
         {
             GroupMasterDAL dAL = new GroupMasterDAL();
-            return dAL.GetAllGroupMaster(/*, VesselID*/);
+            return dAL.GetAllGroupMaster();
         }
 
-        public GroupMasterPOCO GetGroupMasterByGroupId(int GroupId/*, int VesselID*/)
+        public List<GroupMasterPOCO> GetAllGroupsNotInRoles()
+        {
+            GroupMasterDAL dAL = new GroupMasterDAL();
+            return dAL.GetAllGroupsNotInRoles();
+        }
+
+            public GroupMasterPOCO GetGroupMasterByGroupId(int GroupId/*, int VesselID*/)
         {
             GroupMasterDAL dAL = new GroupMasterDAL();
             return dAL.GetGroupMasterByGroupId(GroupId/*, VesselID*/);

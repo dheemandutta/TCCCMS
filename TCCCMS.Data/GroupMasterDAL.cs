@@ -121,6 +121,26 @@ namespace TCCCMS.Data
             return ConvertDataTableToGetAllGroupMasterList(ds);
         }
 
+        public List<GroupMasterPOCO> GetAllGroupsNotInRoles()
+        {
+            List<GroupMasterPOCO> prodPOList = new List<GroupMasterPOCO>();
+            List<GroupMasterPOCO> prodPO = new List<GroupMasterPOCO>();
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetAllGroupsNotInRoles", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    con.Close();
+                }
+            }
+            return ConvertDataTableToGetAllGroupMasterList(ds);
+        }
+
         private List<GroupMasterPOCO> ConvertDataTableToGetAllGroupMasterList(DataSet ds)
         {
             List<GroupMasterPOCO> crewtimesheetList = new List<GroupMasterPOCO>();
@@ -143,8 +163,8 @@ namespace TCCCMS.Data
                     if (item["ModifiedBy"] != System.DBNull.Value)
                         groupMasterPOCO.ModifiedBy = item["ModifiedBy"].ToString();
 
-                    //if (item["CountryID"] != System.DBNull.Value)
-                    //    groupMasterPOCO.CountryID = Convert.ToInt16(item["CountryID"]);
+                    if (item["GroupId"] != System.DBNull.Value)
+                        groupMasterPOCO.GroupId = Convert.ToInt16(item["GroupId"]);
 
                     crewtimesheetList.Add(groupMasterPOCO);
                 }
