@@ -24,9 +24,9 @@ namespace TCCCMS.Controllers
         }
         public ActionResult Pages(string actionName)
         {
-            Manual file = new Manual();
-            file = manualBL.GetManual(controllerName, actionName);
-            TempData[actionName] = file.ManualBodyHtml;
+            ShipManual file = new ShipManual();
+            file = manualBL.GetReferenceMaterialManual(controllerName, actionName);
+            TempData[actionName] = file.BodyHtml;
             return View(file);
         }
         public ActionResult PDFViewer(string fileName, string relPDFPath)

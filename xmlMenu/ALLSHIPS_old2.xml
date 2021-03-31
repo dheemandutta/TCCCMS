@@ -356,11 +356,7 @@
 						<filename doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHKV)</filename>
 						<filename doctype="DOC" actionname="LMPS1MEDP">Section 1 Part B - Mooring Equipment Design Philosophy</filename>
 						<filename doctype="PDF" actionname="">Section 1 Part B - Static Mooring Analysis Report (KHKV)</filename>
-						<filename doctype="DOC" actionname="LMPS1PFMFRF">C1 – Permanent Fittings -mooring fittings, rollers, fairleads etc.</filename>
-						<filename doctype="DOC" actionname="LMPS1PMI">C2 - Permanent machinery installations</filename>
-						<filename doctype="DOC" actionname="LMPS1LECSE">C3 – Loose Equipment and C4 – Critical and Specialist Equipment</filename>
-						<filename doctype="DOC" actionname="LMPS1PSRMEF">C5 – Performance standards - requirements for mooring equipment and fittings.</filename>
-						<filename doctype="DOC" actionname="LMPS1LMPS1DSSUSLPF">C6 - Details of the Ship Structure and Underdeck Strengthening and C7 – Location of all permanent - fixed equipment.</filename>
+						<filename doctype="DOC" actionname="LMPS1DLME">Section 1 Part C - Detailed List of Mooring Equiment</filename>
 						<filename doctype="DOC" actionname="LMPS1IMRSP">Section 1 Part D - Inspection, Maintenance and Retirement Strategies or Principles</filename>
 						<filename doctype="DOC" actionname="LMPS1RCMSPHF">Section 1 Part E - Risk and Chagne Mgmt, Safety of Personnel and Human Factors</filename>
 						<filename doctype="DOC" actionname="LMPS1RD">Section 1 Part F - Records and Documentation</filename>
@@ -644,7 +640,7 @@
 			<filename doctype="PDF" actionname="">will be changed KHK Vision NOI 2013 14Jun17</filename>
 		</ship>
 		
-		<ship shipnumber="2" name="KWK Excelsus" controllername="ShipKWKExcelsus">
+		<ship shipnumber="2" name="2. KWK Excelsus" controllername="ShipKWKExcelsus">
 			<foldername name="3. SOPEP">
 				<foldername name="KWEX-SP">
 					<foldername name="Appendix 7">
@@ -1084,7 +1080,7 @@
 			<filename doctype="PDF" actionname="">29. KWK EXCELSUS - California Response Manual</filename>
 		</ship>
 		
-		<ship shipnumber="3" name="CSK Vanguard" controllername="ShipCSKVanguard">
+		<ship shipnumber="3" name="3. CSK Vanguard" controllername="ShipCSKVanguard">
 			<foldername name="3. SOPEP">
 				<foldername name="CSVA-SP">
 					<foldername name="Appendix 7">
@@ -1528,7 +1524,7 @@
 			<filename doctype="PDF" actionname="">will be changed CSK Vanguard NOI 2013 14Jun17</filename>
 		</ship>
 		
-		<ship shipnumber="4" name="CSK Valiant" controllername="ShipCSKValiant">
+		<ship shipnumber="4" name="4. CSK Valiant" controllername="ShipCSKValiant">
 			<foldername name="3. SOPEP">
 				<foldername name="CSVL-SP">
 					<foldername name="Appendix 7">
@@ -1988,7 +1984,7 @@
 			<filename doctype="PDF" actionname="">29. CSK VALIANT - California Response Manual</filename>
 		</ship>
 		
-		<ship shipnumber="5" name="CSK Endeavour" controllername="ShipCSKEndeavour">
+		<ship shipnumber="5" name="5. CSK Endeavour" controllername="ShipCSKEndeavour">
 			<foldername name="3. SOPEP">
 				<foldername name="CSEN-SP">
 					<foldername name="Appendix 7">
@@ -2432,7 +2428,7 @@
 			<filename doctype="PDF" actionname="">29. CSK ENDEAVOUR - California Response Manual</filename>
 		</ship>
 		
-		<ship shipnumber="6" name="KHK Empress" controllername="ShipKHKEmpress">
+		<ship shipnumber="6" name="6. KHK Empress" controllername="ShipKHKEmpress">
 			<foldername name="3. SOPEP">
 				<foldername name="KHEM-SP">
 					<foldername name="Appendix 7">
@@ -2604,11 +2600,7 @@
 					<foldername name="Section 1 - MSMP (KHEM and KHMA)">
 						<filename doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHEM)</filename>
 						<filename doctype="DOC" actionname="LMPS1MEDP">Section 1 Part B - Mooring Equipment Design Philosophy</filename>
-						<filename doctype="DOC" actionname="LMPS1PFMF">C1 – Permanent Fittings mooring fittings</filename>
-						<filename doctype="DOC" actionname="LMPS1PMI">C2 - Permanent machinery installations</filename>
-						<filename doctype="DOC" actionname="LMPS1LECSE">C3 – Loose Equipment C4 – Critical and Specialist Equip</filename>
-						<filename doctype="DOC" actionname="LMPS1PSR">C5 – Performance standards requirements</filename>
-						<filename doctype="DOC" actionname="LMPS1DSSUSLPE">C6 - Details of the Ship Structure and Underdeck Stren and C7 – Location of all permanentfixed equipment</filename>
+						<filename doctype="DOC" actionname="LMPS1DLME">Section 1 Part C - Detailed List of Mooring Equiment</filename>
 						<filename doctype="DOC" actionname="LMPS1IMRSP">Section 1 Part D - Inspection, Maintenance and Retirement Strategies or Principles</filename>
 						<filename doctype="DOC" actionname="LMPS1RCMSPHF">Section 1 Part E - Risk and Chagne Mgmt, Safety of Personnel and Human Factors</filename>
 						<filename doctype="DOC" actionname="LMPS1RD">Section 1 Part F - Records and Documentation</filename>
@@ -2907,7 +2899,7 @@
 			<filename doctype="PDF" actionname="">29. KHK EMPRESS - California Response Manual</filename>
 		</ship>
 		
-		<ship shipnumber="7" name="KHK Majesty" controllername="ShipKHKMajesty">
+		<ship shipnumber="7" name="7. KHK Majesty" controllername="ShipKHKMajesty">
 			<foldername name="3. SOPEP">
 				<foldername name="KHMA-SP">
 					<foldername name="Appendix 7">
@@ -3078,11 +3070,7 @@
 					<foldername name="Section 1 - MSMP (KHEM and KHMA)">
 						<filename doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHEM)</filename>
 						<filename doctype="DOC" actionname="LMPS1MEDP">Section 1 Part B - Mooring Equipment Design Philosophy</filename>
-						<filename doctype="DOC" actionname="LMPS1PF">C1 – Permanent Fittings (mooring fittings, rollers, fairleads</filename>
-						<filename doctype="DOC" actionname="LMPS1PMI">C2 - Permanent machinery installations</filename>
-						<filename doctype="DOC" actionname="LMPS1LECSE">C3 – Loose Equipment C4 – Critical and Specialist Equipment</filename>
-						<filename doctype="DOC" actionname="LMPS1PSRMEF">C5 – Performance standards  requirements for mooring equipment and fittings</filename>
-						<filename doctype="DOC" actionname="LMPS1DSSUSLPE">C6 - Details of the Ship Structure and Underdeck Strengthening and C7 – Location of all permanentfixed equipment</filename>
+						<filename doctype="DOC" actionname="LMPS1DLME">Section 1 Part C - Detailed List of Mooring Equiment</filename>
 						<filename doctype="DOC" actionname="LMPS1IMRSP">Section 1 Part D - Inspection, Maintenance and Retirement Strategies or Principles</filename>
 						<filename doctype="DOC" actionname="LMPS1RCMSPHF">Section 1 Part E - Risk and Chagne Mgmt, Safety of Personnel and Human Factors</filename>
 						<filename doctype="DOC" actionname="LMPS1RD">Section 1 Part F - Records and Documentation</filename>

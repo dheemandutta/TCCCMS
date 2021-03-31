@@ -1,6 +1,6 @@
 <xml>
 	<referencematerials>
-		<material materialid="0" name="Material 1" controllername="ReferenceMaterials">
+		<material materialid="0" name="Material 1" controllername="ReferenceMaterialManual">
 			<foldername name="BIMCO Paris MoU Guide">
 				<filename doctype="PDF" actionname="">bimco-paris-mou-guide-may2018</filename>
 			</foldername>
@@ -35,8 +35,8 @@
 				<filename doctype="PDF" actionname="">MESQAC_GAP_Analysis_2017_Rev1_lo-res_1</filename>
 				<filename doctype="PDF" actionname="">Mooring_web_22_2_2019</filename>
 				
-				<filename doctype="DOC" actionname="">NautSC_09_Minutes (1)</filename>
-				<filename doctype="DOC" actionname="">NSC_8_Minutes_Nov2019_London</filename>
+				<filename doctype="DOC" actionname="NSC9M">NautSC_09_Minutes (1)</filename>
+				<filename doctype="DOC" actionname="NSC8M">NSC_8_Minutes_Nov2019_London</filename>
 				
 				<filename doctype="PDF" actionname="">TMSA3 22 12 2016</filename>
 				<filename doctype="PDF" actionname="">Vessels-practical-guide-to-vetting - compressed</filename>
@@ -1330,7 +1330,7 @@
 							<filename doctype="PDF" actionname="">ReCAAP ISC Oct 2016 Report</filename>
 							<filename doctype="PDF" actionname="">ReCAAP ISC Single-sheet Summary for 3rd Quarter Report 2016</filename>
 							<filename doctype="PDF" actionname="">ReCAAP-Executive Director Report 2016</filename>
-							<filename doctype="DOC" actionname="">Regional Guide to Counter Piracy and Armed Robbery Against Ships in Asia...</filename>
+							<filename doctype="DOC" actionname="RGCPARASA">Regional Guide to Counter Piracy and Armed Robbery Against Ships in Asia...</filename>
 							<filename doctype="PDF" actionname="">Regional Guide to Counter Piracy and Armed Robbery Against Ships in Asia...</filename>
 							<filename doctype="PDF" actionname="">Single-sheet Summary for Half Yearly 2016 Report (January-June 2016)</filename>
 							<filename doctype="PDF" actionname="">SinglesheetSummary1.2016Report</filename>
@@ -1610,7 +1610,7 @@
 							<filename doctype="PDF" actionname="">ReCAAP ISC Weekly Report (30Apr- 06May 19)</filename>
 							<filename doctype="PDF" actionname="">ReCAAP ISC Weekly Report (31 Dec 19 -6 Jan 20)</filename>
 						</foldername>
-						<filename doctype="DOC" actionname="">Annex E - Emergency Response Contact Numbers Rev 12</filename>
+						<filename doctype="DOC" actionname="AEERCMR12">Annex E - Emergency Response Contact Numbers Rev 12</filename>
 					</foldername>
 					<foldername name="2020">
 						<foldername name="Incident Alert">
@@ -2153,7 +2153,7 @@
 						<filename doctype="PDF" actionname="">TN104 Calibration interval of the PMI offline sensor</filename>
 					</foldername>
 					<foldername name="Technical update from Viswa lab regarding VLSFO bad fuel cases">
-						<filename doctype="DOC" actionname="">Fuel characteristics _ Properties</filename>
+						<filename doctype="DOC" actionname="FCP">Fuel characteristics _ Properties</filename>
 						<filename doctype="PDF" actionname="">TechUpd 2019_12_26 Operational feedback and problems reported after use ...</filename>
 					</foldername>
 					<foldername name="Yanmar">

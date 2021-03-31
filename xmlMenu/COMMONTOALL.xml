@@ -1,0 +1,347 @@
+<xml>
+	<commontoalls>
+		<commontoall id="0" name="Common to All" controllername="CommonToAllManual">
+			<foldername name="7. Procurement Policy Manual 15Oct20">
+				<filename doctype="XLS" actionname="">Appendix A - Manual PO log Sheet</filename> 
+				<filename doctype="XLS" actionname="">Appendix B - Advance Payment Request Form</filename> 
+				<filename doctype="DOC" actionname="PPMRNV">Appendix C - Request for New Vendor</filename> 
+				<filename doctype="XLS" actionname="">Appendix D - Vendor Evaluation Form</filename> 
+				<filename doctype="XLS" actionname="">Appendix E - Suspension _ Blacklisting Supplier Form</filename> 
+				<filename doctype="XLS" actionname="">Appendix F - List of Approved Suppliers</filename> 
+				<filename doctype="DOC" actionname="PPMRWFC">Appendix G - Procurement Work flow Chart</filename> 
+				<filename doctype="DOC" actionname="PPMCSSPFC">Appendix H - Consumable Stores and Spare Parts Flow Chart</filename> 
+				<filename doctype="DOC" actionname="PPMEAPOI">Appendix I - Electronic Approval of Purchase Order and Invoice</filename> 
+				<filename doctype="DOC" actionname="PPMSSCSP">Appendix J - Service _ Supply Contract Signature Protocol</filename> 
+				<filename doctype="DOC" actionname="PPMOSAC">Appendix K - On-Site Audit Checklist</filename> 
+				<filename doctype="DOC" actionname="PPMMB">Main Body</filename> 
+				<filename doctype="DOC" actionname="PPMContents">PPM Contents</filename> 
+				<filename doctype="DOC" actionname="PPM">Procurement Policy Manual</filename> 
+			</foldername>
+			
+			<foldername name="8. TCC Cyber Guidance (Shipboard) 15Oct20">
+				<filename doctype="DOC" actionname="CGSF3PSAF">Appendix A - TCC Fleet 3rd Party Software Application Form</filename> 
+				<filename doctype="DOC" actionname="CGSFITCRF">Appendix B - TCC Fleet IT Change Request Form</filename> 
+				<filename doctype="DOC" actionname="CGSFITSARF">Appendix C - TCC Fleet IT System Access Request Form</filename> 
+				<filename doctype="DOC" actionname="CGSFUAL">Appendix D - TCC Fleet User Account List</filename> 
+				<filename doctype="DOC" actionname="CGSFUDUSBTDLS">Appendix E - TCC Fleet Dedicated USB Thumb Drive Log Sheet</filename> 
+				<filename doctype="DOC" actionname="CGSFUACL">Appendix F - TCC Fleet User Account Change Log (Sample)</filename> 
+				<filename doctype="DOC" actionname="CGSDCOC">Appendix G - TCC Designated Cyber Officer Contacts</filename> 
+				<filename doctype="DOC" actionname="CGSCSOS">Appendix H - CS001 Cyber Security Onboard Ships</filename> 
+				<filename doctype="DOC" actionname="CGSCSRP">Appendix I - CS002 Cyber Security Reporting Protocol</filename> 
+				<filename doctype="DOC" actionname="CGSCSSCU">Appendix J - CS003 Cyber Security Standalone Computer Usage</filename> 
+				<filename doctype="DOC" actionname="CGCContentS">CGS Contents</filename> 
+				<filename doctype="DOC" actionname="CGSDL">CGS Distribution List</filename> 
+				<filename doctype="DOC" actionname="CGSMC">CGS Manual Control</filename> 
+				<filename doctype="DOC" actionname="CGSObjectives">Chapter 1 - Objectives</filename> 
+				<filename doctype="DOC" actionname="CGSUTCT">Chapter 2 - Understsanding the Cyber Threats</filename> 
+				<filename doctype="DOC" actionname="CGSGI">Chapter 3 - TCC Group Infrastructure</filename> 
+				<filename doctype="DOC" actionname="CGSRAM">Chapter 4 - Risk Assessment Methodology</filename> 
+				<filename doctype="DOC" actionname="CGSITCCGPR">Chapter 5 - Identify TCC Group Potential Risks</filename> 
+				<filename doctype="DOC" actionname="CGSEPPP">Chapter 6 - Established Policy, Procedure, Process (or Practices)</filename> 
+				<filename doctype="DOC" actionname="CGSPG">Chapter 7 - Practice and Guidance</filename> 
+				<filename doctype="DOC" actionname="CGSBCP">Chapter 8 - Business Continuity Plans</filename> 
+				<filename doctype="DOC" actionname="CGSSIRP">Chapter 9 - System Incident Responding Protocol</filename>
+				<filename doctype="DOC" actionname="CGSConclution">Chapter 10 - Conclusion</filename>					
+				<filename doctype="DOC" actionname="CGSMCover">Manaul Cover</filename> 
+				<filename doctype="DOC" actionname="CGSMR">Manual Revisions</filename> 
+			</foldername>
+				
+			<foldername name="9. TCC Group Cyber Guidance (Shore) 15Oct20">
+				<filename doctype="DOC" actionname="GCGSITSRF">Appendix A - TCC IT Service Request Form</filename> 
+				<filename doctype="DOC" actionname="GCGSITELF">Appendix B - TCC IT Equipment Loan Form</filename> 
+				<filename doctype="DOC" actionname="GCGSUFC">Appendix C - TCC User File Classification</filename> 
+				<filename doctype="DOC" actionname="GCGSGCITSDF">Appendix D - TCC Group Critical ITIS Systems Drill Form</filename> 
+				<filename doctype="DOC" actionname="GCGSUTCT">Chapter 2 - Understanding the Cyber Threats</filename> 
+				<filename doctype="DOC" actionname="GCGSOITI">Chapter 3 - TCC Offices I.T Infrastructure</filename> 
+				<filename doctype="DOC" actionname="GCGSITCCGR">Chapter 5 - Identify TCC Group Risks</filename> 
+				<filename doctype="DOC" actionname="GCGSEPPP">Chapter 6 - Established Policy, Procedure, Process (or Practices)(1)</filename> 
+				<filename doctype="DOC" actionname="GCGSBCP">Chapter 8 - Business Continuity Plans (BCSPS)(1)</filename> 
+				<filename doctype="DOC" actionname="GCGSBCPlans">Chapter 8 - Business Continuity Plans (BCSPS)</filename> 
+				<filename doctype="DOC" actionname="GCGSSIRP">Chapter 9- System Incident Responding Protocol</filename> 
+				<filename doctype="DOC" actionname="GCGSObjectives">GCGS Chapter 1 - Objectives</filename> 
+				<filename doctype="DOC" actionname="GCGSRAM">GCGS Chapter 4 - Risk Assessment Methodology</filename> 
+				<filename doctype="DOC" actionname="GCGSEPPProcess">GCGS Chapter 6 - Established Policy, Procedure, Process (or Practices)</filename> 
+				<filename doctype="DOC" actionname="GCGSPG">GCGS Chapter 7 - Practice and Guidance</filename>
+				<filename doctype="DOC" actionname="GCGSConclution">GCGS Chapter 10 - Conclusion</filename> 
+				<filename doctype="DOC" actionname="GCGSContents">GCGS Contents</filename> 
+				<filename doctype="DOC" actionname="GCGSDL">GCGS Distribution List</filename> 
+				<filename doctype="DOC" actionname="GCGSMC">GCGS Manaul Cover</filename> 
+				<filename doctype="DOC" actionname="GCGSMCover">GCGS Manual Control</filename> 
+				<filename doctype="DOC" actionname="GCGSMR">GCGS Manual Revisions</filename> 
+			</foldername>
+			
+			<foldername name="10. Outbreak Mgmt Plan-COVID19 15Oct20">
+				<foldername name="7. Annexes">
+					<filename doctype="PDF" actionname="">Annex A - Record of Health Check Onboard</filename> 
+					<filename doctype="XLS" actionname="">Annex A - Record of Health Check Onboard</filename> 
+					<filename doctype="DOC" actionname="OMPVMM">Annex A - TCC virus mitigation measures (Ship Master Version)</filename> 
+					<filename doctype="PDF" actionname="">Annex A - TCC virus mitigation measures (Ship Master Version)</filename> 
+					<filename doctype="PDF" actionname="">Annex A - TCCHK FMA-2020-01 COVID-19 Outbreak, Precautions</filename> 
+					<filename doctype="PDF" actionname="">Annex A - Toolbox Talk - Corona</filename> 
+					<filename doctype="PDF" actionname="">Annex A - Visitor - Body Temperature Reading Record</filename> 
+					<filename doctype="XLS" actionname="">Annex A - Visitor - Body Temperature Reading Record</filename> 
+					<filename doctype="PDF" actionname="">Annex B - IMO Circular Letter No. 4204Add.3</filename> 
+					<filename doctype="PDF" actionname="">Annex C - WHO suggested list of supplies onboard</filename> 
+					<filename doctype="XLS" actionname="">Annex C - WHO suggested list of supplies onboard</filename> 
+					<filename doctype="PDF" actionname="">Annex D - TCC Specified Quantity of Supplies onboard</filename> 
+					<filename doctype="XLS" actionname="">Annex D - TCC Specified Quantity of Supplies onboard</filename> 
+					<filename doctype="PDF" actionname="">Annex E - Sequence for putting Personal Protective Equipment and ICS COVID-19 Posters</filename> 
+					<filename doctype="PDF" actionname="">Annex F - ECDC - Public health management of persons in the European Union (25-Feb-2020)</filename> 
+					<filename doctype="PDF" actionname="">Annex G - Guidance on the prevention and control of COVID-19 on board -China</filename> 
+					<filename doctype="DOC" actionname="OMPPBLF">Annex H - Pre-Boarding Locator Form (PLF)</filename> 
+					<filename doctype="PDF" actionname="">Annex H - Pre-Boarding Locator Form (PLF)</filename> 
+					<filename doctype="PDF" actionname="">Annex I - Outbreak Management Plan COVID-19, by Intertanko</filename> 
+					<filename doctype="PDF" actionname="">Annex J - MPA Shipping Circular No. 14 of 2020</filename> 
+					<filename doctype="PDF" actionname="">Annex J - MPA Shipping Circular No. 3 of 2020</filename> 
+					<filename doctype="PDF" actionname="">Annex K - D. G. Shipping, India Order No. 06 of 2020</filename> 
+					<filename doctype="PDF" actionname="">Annex L - Philippines MA 2020-23</filename> 
+					<filename doctype="PDF" actionname="">Annex L - Philippines MA 2020-43</filename> 
+					<filename doctype="PDF" actionname="">Annex L - Philippines MA 2020-44</filename> 
+					<filename doctype="PDF" actionname="">Annex M - Intertanko Crew Welfare Management and Mental Wellness</filename> 
+					<filename doctype="PDF" actionname="">Annex N - PMC 31 of 2020</filename> 
+					<filename doctype="PDF" actionname="">Annex N - PMC 32 of 2020</filename> 
+				</foldername>
+					<filename doctype="DOC" actionname="OMPCP">1. Cover Page</filename> 
+					<filename doctype="DOC" actionname="OMPMC">2. Manual Control</filename> 
+					<filename doctype="DOC" actionname="OMPDL">3. Distribution List</filename> 
+					<filename doctype="DOC" actionname="OMPMR">4. Manual Revision</filename> 
+					<filename doctype="DOC" actionname="OMPMContent">5. Manual Content</filename> 
+					<filename doctype="DOC" actionname="OMPMB">6. Main Body</filename>
+			</foldername>
+			
+			<foldername name="11. TOM 15Oct20">
+				<foldername name="Chapter 3">
+					<filename doctype="DOC" actionname="TOMCP">Chapter 3 Content Page</filename> 
+					<filename doctype="DOC" actionname="TOMMCB">Chapter 3.1 Main Cargo and Ballast </filename> 
+					<filename doctype="DOC" actionname="TOMGFF">Chapter 3.10 Gas Freeing Fans</filename> 
+					<filename doctype="DOC" actionname="TOMSS">Chapter 3.2 Stripping Systems</filename> 
+					<filename doctype="DOC" actionname="TOMPSVCFC">Chapter 3.3 Pipeline Systems, valves and cargo flow control</filename> 
+					<filename doctype="DOC" actionname="TOMIGSVCFC">Chapter 3.4 Inert Gas systems, valves and cargo flow control</filename> 
+					<filename doctype="DOC" actionname="TOMGE">Chapter 3.5 Gauging Equipment </filename> 
+					<filename doctype="DOC" actionname="TOMODMCE">Chapter 3.6 Oil Discharging Monitoring and Control Equipment</filename> 
+					<filename doctype="DOC" actionname="TOMTCCOWS">Chapter 3.7 Tank Cleaning and Crude Oil Washing sytems</filename> 
+					<filename doctype="DOC" actionname="TOMPCE">Chapter 3.8 Portable Cargo Equipment</filename> 
+					<filename doctype="DOC" actionname="TOMTCM">Chapter 3.9 Tanker Cleaning machines</filename> 
+				</foldername>
+				<foldername name="Chapter 4 - Practical Operational">
+					<filename doctype="DOC" actionname="TOMC4CP">Chapter 4 Content page</filename> 
+					<filename doctype="DOC" actionname="TOMBP">Chapter 4.1 The Ballast Passage</filename> 
+					<filename doctype="DOC" actionname="TOMLP">Chapter 4.2 Loading Port</filename> 
+					<filename doctype="DOC" actionname="TOMC4LP">Chapter 4.3 The Loaded Passage</filename> 
+					<filename doctype="DOC" actionname="TOMDP">Chapter 4.4 Discharge Port</filename> 
+					<filename doctype="DOC" actionname="TOMHCDD">Chapter 4.5 Hose Connection Disconnection and Draining</filename> 
+				</foldername>
+				<foldername name="Chapter 8 - Cargo Information">
+					<filename doctype="PDF" actionname="">8.3 Specification of Crude Oil (Include some Condensate)</filename> 
+					<filename doctype="PDF" actionname="">8.4 API _ temperature of Typical crude oil</filename> 
+					<filename doctype="PDF" actionname="">8.5 Specification of Product Cargo</filename> 
+					<filename doctype="PDF" actionname="">8.6 List of Loading Port</filename> 
+					<filename doctype="DOC" actionname="TOMCI">Chapter 8 - Cargo Information</filename> 
+				</foldername>
+				<filename doctype="DOC" actionname="TOMAForm">Appendix Forms</filename> 
+				<filename doctype="DOC" actionname="TOMTCPM">Chapter 1 - The cargo, pertoleum _ its nature</filename> 
+				<filename doctype="DOC" actionname="TOMCDMT">Chapter 2 - Construction _ Design Of The Modern Tanker  </filename>
+				<filename doctype="DOC" actionname="TOMOP">Chapter 5 - other operations</filename> 
+				<filename doctype="DOC" actionname="TOMDocumentation">Chapter 6 -  Documentation</filename> 
+				<filename doctype="DOC" actionname="TOMBO">Chapter 7 - Ballast Operations</filename> 
+				<filename doctype="DOC" actionname="TOMGT">Chapter 9 - Glossary of terms</filename> 
+				<filename doctype="DOC" actionname="TOMContents">Contents</filename> 
+				<filename doctype="DOC" actionname="TOMDL">Distribution List</filename> 
+				<filename doctype="DOC" actionname="TOMISMC">ISM Codes</filename> 
+				<filename doctype="DOC" actionname="TOMMC">Manual Control</filename> 
+				<filename doctype="DOC" actionname="TOMMCover">Manual Cover</filename> 
+				<filename doctype="DOC" actionname="TOMMR">Manual Revision</filename> 
+			</foldername>
+			
+			<foldername name="12. Pest Control Management Plan 15Oct20">
+				<foldername name="Appendixes">
+					<filename doctype="DOC" actionname="PCMPTKP">Appendix 1 - Taxonomic Keys - Pests</filename> 
+					<filename doctype="DOC" actionname="PCMPUO">Appendix 2 - Pesticides used onboard</filename> 
+					<filename doctype="DOC" actionname="PCMPLASP">Appendix 3 - List of Authorized Shipboard Pesticide</filename> 
+					<filename doctype="DOC" actionname="PCMPTVL">Appendix 4 - TVL</filename> 
+					<filename doctype="DOC" actionname="PCMPPCES">Appendix 5 - Pest Control Eqipment and Supplies</filename> 
+					<filename doctype="DOC" actionname="PCMPPPE">Appendix 6 - PPE</filename> 
+					<filename doctype="DOC" actionname="PCMPNR">Appendix 7 - Normative Reference</filename> 
+					<filename doctype="XLS" actionname="">Appendix 8 - Sample of Checklist for AGM inspection</filename> 
+					<filename doctype="DOC" actionname="PCMPPAC">Appendix 9 - Photos on AGM Cleaning</filename> 
+				</foldername>
+				<foldername name="Main Body">
+					<filename doctype="DOC" actionname="PCMPIntroduction">Chapter 1 - Introduction</filename> 
+					<filename doctype="DOC" actionname="PCMPOPR">Chapter 2 - Objectives and Plan Review</filename> 
+					<filename doctype="DOC" actionname="PCMPRR">Chapter 3 - Roles and Responsibilties</filename> 
+					<filename doctype="DOC" actionname="PCPMSPS">Chapter 4 - Shipboard Pests and Surveillance</filename> 
+					<filename doctype="DOC" actionname="PCMPCPM">Chapter 5 - Control and Preventive Measures</filename> 
+					<filename doctype="DOC" actionname="PCMPPesticides">Chapter 6 - Pesticides</filename> 
+					<filename doctype="DOC" actionname="PCMPPDE">Chapter 7 - Pesticides Dispersal Equipment</filename> 
+					<filename doctype="DOC" actionname="PCMPSP">Chapter 8 - Safety Precaution</filename> 
+					<filename doctype="DOC" actionname="PCMPSS">Chapter 9 - Ship Sanitation</filename> 
+					<filename doctype="DOC" actionname="PCMPAGM">Chapter 10 - AGM</filename>
+					<filename doctype="DOC" actionname="PCMPContent">PCMP Content</filename> 
+				</foldername>
+				<filename doctype="DOC" actionname="PCMPDL">PCMP Distribution List</filename> 
+				<filename doctype="DOC" actionname="PCMPMC">PCMP Manual Control</filename> 
+				<filename doctype="DOC" actionname="PCMPMCover">PCMP Manual Cover</filename> 
+				<filename doctype="DOC" actionname="PCMPMR">PCMP Manual Revision</filename> 
+			</foldername>
+			
+			<foldername name="15. EMS Manual 15Oct20">
+				<foldername name="Appendix">
+					<foldername name="Appendix II - Forms _ Checklists">
+						<filename doctype="DOC" actionname="EMSMFRM">EMS Form Retention Matrix</filename> 
+						<filename doctype="DOC" actionname="EMSMAOCRRI">EMS01A - Analyis of Organization Context - Risk Register - Internal</filename> 
+						<filename doctype="DOC" actionname="EMSMAOCRRE">EMS01B - Analyis of Organization Context - Risk Register - External</filename> 
+						<filename doctype="DOC" actionname="EMSMOR">EMS02A - Opportunity Register</filename> 
+						<filename doctype="DOC" actionname="EMSMOPP">EMS02B - Opportunity Pursuit Plan</filename> 
+						<filename doctype="DOC" actionname="EMSMSE">EMS03 - Stakeholder Engagement</filename> 
+						<filename doctype="DOC" actionname="EMSMLPR">EMS04 - Lifeycle Perspective Register</filename> 
+						<filename doctype="DOC" actionname="EMSMAEA">EMS05 - Analysis of Environmental Aspect</filename> 
+						<filename doctype="DOC" actionname="EMSMPAP">EMS06 - EMS Programme - Action Plan</filename> 
+						<filename doctype="DOC" actionname="EMSMEPRQ">EMS07- Environmental Preformance Report - Quarterly</filename> 
+						<filename doctype="XLS" actionname="">EMS08 - Environmental Monthly Performance Report</filename> 
+						<filename doctype="DOC" actionname="EMSMNCPTO">EMS09A - Notice to Contractor performing Tasks in Office</filename> 
+						<filename doctype="DOC" actionname="EMSMRNSC">EMS09B - Record of Notices sent to Contractor</filename> 
+						<filename doctype="DOC" actionname="EMSMIHTR">EMS10 - In-house Training Record</filename> 
+						<filename doctype="DOC" actionname="EMSMEELCR">EMS11 -  Evaluation of Env Legislation Compliance Register</filename> 
+						<filename doctype="DOC" actionname="EMSMCENL">EMS12A - Company Environmental Notification Letter</filename> 
+						<filename doctype="DOC" actionname="EMSMRNLSV">EMS12B - Record of Notification Letter sent to Vendor</filename> 
+						<filename doctype="DOC" actionname="EMSMECMM">EMS13 - Environmental Committee Meeting Minutes</filename> 
+						<filename doctype="DOC" actionname="EMSMEMRMM">EMS14 - Environmental Management Review Meeting Minutes</filename> 
+						<filename doctype="DOC" actionname="EMSMEMM">EMS15 - Environmental Monitoring Plan</filename> 
+						<filename doctype="DOC" actionname="EMSMAECM">EMS16 - Appointment of Environmental Committee Member</filename> 
+						<filename doctype="DOC" actionname="EMSMCOR">EMS17 - Compliance Obligation Register</filename> 
+					</foldername>
+					<filename doctype="DOC" actionname="EMSMCM">Appendix  I - Correlation Matrix</filename> 
+					<filename doctype="DOC" actionname="EMSMAContent">Appendix Content</filename>
+					<filename doctype="DOC" actionname="EMSMTM">Appendix III  - Trainng Matrix</filename> 
+					<filename doctype="DOC" actionname="EMSMTS">Appendix IV - Trainng Scope</filename> 
+					<filename doctype="DOC" actionname="EMSMGP">Appendix V - Green Pledge</filename> 
+					<filename doctype="DOC" actionname="EMSMEFSAE">Appendix VI - Environmental Fact Sheet - Air Emission</filename> 
+					<filename doctype="DOC" actionname="EMSMEFSH">Appendix VII - Environmental Fact Sheet - Hazard</filename> 
+				</foldername>
+				<foldername name="Section 4">
+					<filename doctype="DOC" actionname="EMSMA1SE">Section 4 - Annex 1 - Scope of EMS</filename> 
+					<filename doctype="DOC" actionname="EMSMA2SOD">Section 4 - Annex 2  - Shipboard Operation Discharge</filename> 
+					<filename doctype="DOC" actionname="EMSMCO">Section 4 - Context of Organization</filename> 
+				</foldername>
+				<foldername name="Section 5">
+					<filename doctype="DOC" actionname="EMSMA1SEP">Section 5 - Annex 1 - S_E Policy</filename> 
+					<filename doctype="DOC" actionname="EMSMA2EOC">Section 5 - Annex 2 - Environmental Organization Chart</filename> 
+					<filename doctype="DOC" actionname="EMSMA3RM">Section 5 - Annex 3 - EMS Responsibility Matrix</filename> 
+					<filename doctype="DOC" actionname="EMSMML">Section 5 - Management and Leadership</filename> 
+				</foldername>
+				<foldername name="Section 6">
+					<filename doctype="DOC" actionname="EMSMRRCM">Section 6 - Annex 1 - Risk Rank Criteria _ Matrix</filename> 
+					<filename doctype="DOC" actionname="EMSMOPAC">Section 6 - Annex 2 - Opportunit Pursuit Assessment Criteria</filename> 
+					<filename doctype="DOC" actionname="EMSMSAOC">Section 6 - Annex 3  - Sample of the Analysis of Organization Context</filename> 
+					<filename doctype="DOC" actionname="EMSMSOR">Section 6 - Annex 4 - Sample of the Opportunity Register</filename> 
+					<filename doctype="DOC" actionname="EMSMSSE">Section 6 - Annex 5 - Sample of the Stakeholder Engagement</filename> 
+					<filename doctype="DOC" actionname="EMSMSLPR">Section 6 - Annex 6 - Sample of the Lifecycle Perspective Register</filename> 
+					<filename doctype="DOC" actionname="EMSMPlanning">Section 6 - Planning</filename> 
+				</foldername>
+				<foldername name="Section 7">
+					<filename doctype="DOC" actionname="EMSMEVC">Section 7 - Annex 1 - Environmental Visitor Card</filename> 
+					<filename doctype="DOC" actionname="EMSMSCENL">Section 7 - Annex 2 - Sample of the Company Environmental Notification Letter</filename> 
+					<filename doctype="DOC" actionname="EMSMSNCPTO">Section 7 - Annex 3 - Sample of the Notice to Contractor performing Tasks in Office</filename> 
+					<filename doctype="DOC" actionname="EMSMDIR">Section 7 - Annex 4 - Documented Information Register</filename> 
+					<filename doctype="DOC" actionname="EMSMSupport">Section 7 - Support</filename> 
+				</foldername>
+				<foldername name="Section 8">
+					<filename doctype="DOC" actionname="EMSMCMT">Section 8 - Annex 1 - Crisis Management Team</filename> 
+					<filename doctype="DOC" actionname="EMSMSEMP">Section 8 - Annex 2 - Sample of Environmental Monitoring Plan</filename> 
+					<filename doctype="DOC" actionname="EMSMOperation">Section 8 - Operation</filename> 
+				</foldername>
+				<filename doctype="DOC" actionname="EMSMContents">EMSM Contents</filename> 
+				<filename doctype="DOC" actionname="EMSMDL">EMSM Distribution List</filename>
+				<filename doctype="DOC" actionname="EMSMMC">EMSM Manual Control</filename> 
+				<filename doctype="DOC" actionname="EMSMMCover">EMSM Manual Cover</filename> 
+				<filename doctype="DOC" actionname="EMSMMR">EMSM Manual Revision</filename> 
+				<filename doctype="DOC" actionname="EMSMGeneral">Section 1 - General</filename> 
+				<filename doctype="DOC" actionname="EMSMReference">Section 2 - Reference</filename> 
+				<filename doctype="DOC" actionname="EMSMTD">Section 3 - Terms _ Definitions</filename>
+				<filename doctype="DOC" actionname="EMSMPE">Section 9 - Performance Evaluation</filename> 
+				<filename doctype="DOC" actionname="EMSMImprovement">Section 10 - Improvement</filename>
+			</foldername>
+			
+			<foldername name="16. Manning manual">
+				<foldername name="Annexes">
+					<foldername name="Annex A - Manning Forms">
+						<filename doctype="DOC" actionname="MMFM">Manning Form Matrix</filename> 
+						<filename doctype="XLS" actionname="">MM01 - Biodata Form</filename> 
+						<filename doctype="DOC" actionname="MMIAFMCO">MM02 - Interview and Approval Form - Master and Chief Officer</filename> 
+						<filename doctype="DOC" actionname="MMIAFCESE">MM03 - Interview and Approval Form - Chief Engineer _ Second Engineer</filename> 
+						<filename doctype="DOC" actionname="MMIAFJDO">MM04 - Interview and Approval Form - Junior Deck Officer</filename> 
+						<filename doctype="DOC" actionname="MMIAFJEO">MM05 - Interview and Approval Form - Junior Engineer Officer</filename> 
+						<filename doctype="DOC" actionname="MMAPSO">MM06 - Approval for Promotion for Senior officer</filename> 
+						<filename doctype="DOC" actionname="MMAPJO">MM07 - Approval for Promotion for Junior officer</filename> 
+						<filename doctype="DOC" actionname="MMSMSF">MM08 - SMS Familization</filename> 
+						<filename doctype="DOC" actionname="MMDAD">MM09 - Drug _ Alcohol Declaration</filename> 
+						<filename doctype="DOC" actionname="MMHORAP">MM010 - Handing Over Report Action Plan</filename> 
+					</foldername>
+					<foldername name="Annex D - Medical Exam Body">
+						<filename doctype="DOC" actionname="MMSPEMEB">Annex D - Seafarer Pre Employment Medical Examination Body</filename> 
+						<filename doctype="PDF" actionname="">Guidance to search Registered MP in HK</filename> 
+						<filename doctype="PDF" actionname="">Indian - List of DG Shipping Approved Seafarer Medical Examination Body - Oct 2020</filename> 
+						<filename doctype="PDF" actionname="">MSA approved medical examinar</filename> 
+						<filename doctype="PDF" actionname="">PRC - List of MSA Approved Seafarer Medical Examination Body - Nov 2019</filename> 
+					</foldername>
+					<filename doctype="DOC" actionname="MMAContent">Annex - Content</filename>
+					<filename doctype="XLS" actionname="">Annex C - STCW Convention and Code</filename> 
+					<filename doctype="DOC" actionname="MMLMA">Annex E - List of Manning Agent</filename> 
+				</foldername>
+				<filename doctype="DOC" actionname="MMSTCCISOS">1. Annex B - Sample of TCC INDIAN SENIOR OFFICER SEA</filename> 
+				<filename doctype="DOC" actionname="MMMC">1. Manual Cover</filename> 
+				<filename doctype="DOC" actionname="MMSTCCOS">2. Annex B - Sample of TCC OTHER SENIOR OFFICER SEA</filename> 
+				<filename doctype="DOC" actionname="MMSPRCOS">3. Annex B - Sample of PRC Officer SEA</filename> 
+				<filename doctype="PDF" actionname="">4. Annex B  - Sample of POEA Contract</filename> 
+				<filename doctype="DOC" actionname="MMMR">4. Manual Revisions</filename> 
+				<filename doctype="DOC" actionname="MMContents">5. Contents</filename> 
+				<filename doctype="DOC" actionname="MMMPP">6. Manning Principal and Policy</filename> 
+				<filename doctype="DOC" actionname="MMDRRR">Chapter 1 - Definitions Reporting relations _ responsibilities</filename> 
+				<filename doctype="DOC" actionname="MMJD">Chapter 2 - Job Description</filename> 
+				<filename doctype="DOC" actionname="MMCE">Chapter 3 - Conditions of Employment</filename> 
+				<filename doctype="DOC" actionname="MMRSP">Chapter 4 - Recruitment of seagoing personnel</filename> 
+				<filename doctype="DOC" actionname="MMADSP">Chapter 5 - Appointment and Deployment of Seagoing Personnel</filename> 
+				<filename doctype="DOC" actionname="MMSPMC">Chapter 6 - Seagoing Personnel Medical Checks</filename> 
+				<filename doctype="DOC" actionname="MMDP">Chapter 7 - Disciplinary Procedures</filename> 
+				<filename doctype="DOC" actionname="MMWPRH">Chapter 8 - Working period and Rest hours</filename> 
+				<filename doctype="DOC" actionname="MMVA">Chapter 9 - Vessel Account</filename> 
+				<filename doctype="DOC" actionname="MMRPOP">Chapter 10 - Relief Planning _ Operating Proedures</filename> 
+				<filename doctype="DOC" actionname="MMPOR">Chapter 11 - Promotion of Officer and Rating</filename> 
+				<filename doctype="DOC" actionname="MMCPR">Chapter 12 - Crew Performance Review</filename> 
+				<filename doctype="DOC" actionname="MMTraining">Chapter 13 - Training</filename> 
+				<filename doctype="DOC" actionname="MMTPSTNBF">Chapter 14 - Training for Particular Ship Types _ New Building Familiarisation</filename> 
+				<filename doctype="DOC" actionname="MMMSPR">Chapter 15 - Maintenance of Seafarer Personnel Record</filename> 
+				<filename doctype="DOC" actionname="MMDE">Chapter 16 - Data Entry</filename> 
+				<filename doctype="DOC" actionname="MMRMT">Chapter 17 - Risk Management - Travel</filename> 
+				<filename doctype="DOC" actionname="MMIVA">Chapter 18 - Internal Verification Audit</filename>
+				<filename doctype="DOC" actionname="MMDL">MM Distribution List</filename> 
+				<filename doctype="DOC" actionname="MMMControl">MM Manual Control</filename> 
+			</foldername>
+			
+			<foldername name="24. CEM 15Oct20">
+				<filename doctype="PDF" actionname="">Annex 1 - EU MRV Regulation</filename> 
+				<filename doctype="PDF" actionname="">Annex 5 - Verifier Accreditation</filename> 
+				<filename doctype="DOC" actionname="CEMSDAL">Annex 6 - Sample of Deck Abstract Log</filename> 
+				<filename doctype="XLS" actionname="">Annex 6 - Sample of Deck Abstract Log</filename> 
+				<filename doctype="DOC" actionname="CEMFRM">Annex 7 - Form Retention Matrix</filename> 
+				<filename doctype="DOC" actionname="CEMRMPF">Annex 7 - MRV01 - Review of Monitoring Plan Form</filename> 
+				<filename doctype="DOC" actionname="CEMContent">CEM Content</filename> 
+				<filename doctype="DOC" actionname="CEMDL">CEM Distribution List</filename> 
+				<filename doctype="DOC" actionname="CEMMC">CEM Manual Control</filename> 
+				<filename doctype="DOC" actionname="CEMMCover">CEM Manual Cover</filename> 
+				<filename doctype="DOC" actionname="CEMMR">CEM Manual Revision</filename> 
+				<filename doctype="DOC" actionname="CEMEUMRVP">Section A - EU MRV Procedure</filename> 
+			</foldername>
+			
+			<foldername name="29. CALIFORNIA CONTIGENCY PLAN">
+				<foldername name="29. CALIFORNIA CONTIGENCY PLAN">
+					<filename doctype="PDF" actionname="">California Contigency Plan</filename> 
+				</foldername>
+			</foldername>
+			
+			<foldername name="30. Washington Area Vessel Contigency Plan">
+				<filename doctype="PDF" actionname="">WA  Vessel Contingency Plan</filename> 
+			</foldername>
+		</commontoall>
+	</commontoalls>
+</xml>

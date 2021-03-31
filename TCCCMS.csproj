@@ -226,6 +226,7 @@
     <Content Include="css\responsive.css" />
     <Content Include="css\stellarnav.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\TccAccordian.css" />
     <Content Include="DataTables\AutoFill-2.3.5\css\autoFill.bootstrap.css" />
     <Content Include="DataTables\AutoFill-2.3.5\css\autoFill.bootstrap.min.css" />
     <Content Include="DataTables\AutoFill-2.3.5\css\autoFill.bootstrap4.css" />

@@ -1,8 +1,8 @@
 ﻿
-@model TCCCMS.Models.Manual
+@model TCCCMS.Models.ShipManual
 @{
     //ViewBag.Title = "Pages";
-    ViewBag.Title = Model.ManualHeader;
+    ViewBag.Title = Model.BodyHeader;
 }
 @section Styles{
     <link href="~/Scripts/highlight/css/default.css" rel="stylesheet" />
@@ -22,7 +22,7 @@
 
 
 <div id="BodyHtml" class="searchdContent">
-    @Html.Raw(Model.ManualBodyHtml)
+    @Html.Raw(Model.BodyHtml)
 
 </div>
 

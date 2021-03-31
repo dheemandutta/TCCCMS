@@ -1,11 +1,12 @@
 ﻿
 @model TCCCMS.Models.Manual
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Commn To All Manual";
 }
 
 @section Styles{
-    <style type="text/css">
+    <link href="~/css/TccAccordian.css" rel="stylesheet" />
+    @*<style type="text/css">
         .accordion {
             background-color: #eee;
             color: #444;
@@ -29,10 +30,10 @@
             background-color: white;
             overflow: hidden;
         }
-    </style>
+    </style>*@
 
 }
-<h2>Index</h2>
+<h2>Commn To All Manual</h2>
 
 @Html.Raw(Model.ManualBodyHtml)
 

@@ -279,5 +279,25 @@ namespace TCCCMS.Business
             return sb.ToString();
         }
         #endregion
+
+        #region Common To All And Ref Matrial
+        public ShipManual GetCommonToAllManual(string controllerName, string actionName)
+        {
+            ShipManual file = new ShipManual();
+            ManualDAL manualDAL = new ManualDAL();
+
+            file = manualDAL.GetCommonToAllManual(controllerName, actionName);
+            return file;
+        }
+        public ShipManual GetReferenceMaterialManual(string controllerName, string actionName)
+        {
+            ShipManual file = new ShipManual();
+            ManualDAL manualDAL = new ManualDAL();
+
+            file = manualDAL.GetReferenceMaterialManual(controllerName, actionName);
+            return file;
+        }
+
+        #endregion
     }
 }

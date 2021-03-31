@@ -43,14 +43,14 @@ namespace TCCCMS.Data
                     {
                         manualsList.Add(new Manual
                         {
-                            ManualId = Convert.ToInt32(dr["ManualId"]),
+                            ManualId        = Convert.ToInt32(dr["ManualId"]),
                             //VolumeId = Convert.ToInt32(dr["VolumeId"]),
-                            ManualFileName = Convert.ToString(dr["ManualFileName"]),
-                            ManualHtml = Convert.ToString(dr["ManualHtml"]),
-                            ManualHeader = Convert.ToString(dr["ManualHeader"]),
-                            ManualBodyText = Convert.ToString(dr["ManualBodyText"]),
-                            ActionName = Convert.ToString(dr["ActionName"]),
-                            ControllerName = Convert.ToString(dr["ControllerName"])
+                            ManualFileName  = Convert.ToString(dr["ManualFileName"]),
+                            ManualHtml      = Convert.ToString(dr["ManualHtml"]),
+                            ManualHeader    = Convert.ToString(dr["ManualHeader"]),
+                            ManualBodyText  = Convert.ToString(dr["ManualBodyText"]),
+                            ActionName      = Convert.ToString(dr["ActionName"]),
+                            ControllerName  = Convert.ToString(dr["ControllerName"])
                         });
                     }
                     // totalCount = Convert.ToInt32(cmd.Parameters["@RecordCount"].Value);
@@ -162,5 +162,83 @@ namespace TCCCMS.Data
 
             return vol;
         }
+
+        #region Common to All Manual
+
+        public ShipManual GetCommonToAllManual(string controllerName, string actionName)
+        {
+            ShipManual file = new ShipManual();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetCommonToAllManualByControllerAction", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ControllerName", controllerName);
+                    cmd.Parameters.AddWithValue("@ActionName", actionName);
+                    con.Open();
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+
+                    file.Id             = Convert.ToInt32(ds.Tables[0].Rows[0]["Id"]);
+                    file.Name           = Convert.ToString(ds.Tables[0].Rows[0]["Name"]);
+                    file.Content        = Convert.ToString(ds.Tables[0].Rows[0]["Content"]);
+                    file.BodyHeader     = Convert.ToString(ds.Tables[0].Rows[0]["BodyHeader"]);
+                    file.BodyText       = Convert.ToString(ds.Tables[0].Rows[0]["BodyText"]);
+                    file.BodyHtml       = Convert.ToString(ds.Tables[0].Rows[0]["BodyHtml"]);
+                    file.ActionName     = Convert.ToString(ds.Tables[0].Rows[0]["ActionName"]);
+                    file.ControllerName = Convert.ToString(ds.Tables[0].Rows[0]["ControllerName"]);
+
+
+                    con.Close();
+                }
+            }
+
+            return file;
+        }
+
+        #endregion
+
+        #region Reference Material Manual
+
+        public ShipManual GetReferenceMaterialManual(string controllerName, string actionName)
+        {
+            ShipManual file = new ShipManual();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetReferenceMaterialManualByControllerAction", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ControllerName", controllerName);
+                    cmd.Parameters.AddWithValue("@ActionName", actionName);
+                    con.Open();
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+
+                    file.Id             = Convert.ToInt32(ds.Tables[0].Rows[0]["Id"]);
+                    file.Name           = Convert.ToString(ds.Tables[0].Rows[0]["Name"]);
+                    file.Content        = Convert.ToString(ds.Tables[0].Rows[0]["Content"]);
+                    file.BodyHeader     = Convert.ToString(ds.Tables[0].Rows[0]["BodyHeader"]);
+                    file.BodyText       = Convert.ToString(ds.Tables[0].Rows[0]["BodyText"]);
+                    file.BodyHtml       = Convert.ToString(ds.Tables[0].Rows[0]["BodyHtml"]);
+                    file.ActionName     = Convert.ToString(ds.Tables[0].Rows[0]["ActionName"]);
+                    file.ControllerName = Convert.ToString(ds.Tables[0].Rows[0]["ControllerName"]);
+
+
+                    con.Close();
+                }
+            }
+
+            return file;
+        }
+
+        #endregion
     }
 }
