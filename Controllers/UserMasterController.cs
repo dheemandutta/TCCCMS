@@ -17,11 +17,25 @@ namespace TCCCMS.Controllers
     {
         private int _shipId = 0;
         // GET: UserMaster
+
         public ActionResult Index()
         {
-            GetAllRanksForDrp();
-            GetAllShipForDrp();
-            return View();
+            try
+            {
+                if (Session["Role"].ToString() != "ShipAdmin" && Session["Role"].ToString() != "ShipUser")
+                {
+                    GetAllRanksForDrp();
+                    GetAllShipForDrp();
+                    return View();
+                }
+                else
+                    return RedirectToAction("Login", "Home");
+            }catch (Exception e)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            
+
         }
 
         public ActionResult CompanyUser()
@@ -37,7 +51,7 @@ namespace TCCCMS.Controllers
             GetAllShipForDrp();
             return View();
         }
-
+        [HttpPost]
         public JsonResult LoadData(int UserType)
         {
             int draw, start, length;

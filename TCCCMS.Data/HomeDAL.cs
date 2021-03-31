@@ -41,14 +41,17 @@ namespace TCCCMS.Data
 
                         if(ds.Tables[0].Rows[0]["Email"] != null)
                         lUser.Email         = ds.Tables[0].Rows[0]["Email"].ToString();
+                        if (ds.Tables[1].Rows.Count > 0)
+                        {
+                            if (ds.Tables[1].Rows[0]["Id"] != null)
+                                lUser.ShipId = Convert.ToInt32(ds.Tables[1].Rows[0]["Id"].ToString());
+                            else
+                                lUser.ShipId = 0;
 
-                        if (ds.Tables[0].Rows[0]["ShipId"] != null)
-                            lUser.ShipId = Convert.ToInt32(ds.Tables[0].Rows[0]["ShipId"].ToString());
-                        else
-                            lUser.ShipId = 0;
-
-                        if (ds.Tables[0].Rows[0]["ShipName"] != null)
-                            lUser.ShipName      = ds.Tables[0].Rows[0]["ShipName"].ToString();
+                            if (ds.Tables[1].Rows[0]["ShipName"] != null)
+                                lUser.ShipName = ds.Tables[1].Rows[0]["ShipName"].ToString();
+                        }
+                           
 
                         if (ds.Tables[0].Rows[0]["VesselIMO"] != null)
                             lUser.VesselIMO     = ds.Tables[0].Rows[0]["VesselIMO"].ToString();

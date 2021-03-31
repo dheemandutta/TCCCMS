@@ -262,8 +262,8 @@ function SetUpGridShipUser(UserType) {
 
     // alert('hh');
     var table = $("#UserMasterTable").DataTable({
-        "dom": 'Bfrtip',
-        "rowReorder": false,
+        //"dom": 'Bfrtip',
+        //"rowReorder": false,
         "ordering": false,
         "filter": false, // this is for disable filter (search box)
 
@@ -320,8 +320,8 @@ function SetUpGridShipUser(UserType) {
             }
 
         ],
-        "rowId": "UserId",
-        "dom": "Bfrtip"
+        "rowId": "UserId"
+        //"dom": "Bfrtip"
     });
 }
 
@@ -404,32 +404,32 @@ function SetUpGridShipUser(UserType) {
 //    });
 //}
 
-//function SetUpGridCompanyUser(UserType) {
-//    var loadposturl = $('#loaddata').val();
+function SetUpGridCompanyUser(UserType) {
+    var loadposturl = $('#loaddata').val();
 
-//    //do not throw error
-//    $.fn.dataTable.ext.errMode = 'none';
+    //do not throw error
+    $.fn.dataTable.ext.errMode = 'none';
 
-//    var UserType = 2; //////////////////////////////////////////////////////////////////////// SupportUser = 0, ShipUser(Index) = 1, CompanyUser = 2.
+    //var UserType = 2; //////////////////////////////////////////////////////////////////////// SupportUser = 0, ShipUser(Index) = 1, CompanyUser = 2.
 
-//    //check if datatable is already created then destroy iy and then create it
-//    if ($.fn.dataTable.isDataTable('#UserMasterTable')) {
-//        table = $('#UserMasterTable').DataTable();
-//        table.destroy();
-//    }
+    //check if datatable is already created then destroy iy and then create it
+    if ($.fn.dataTable.isDataTable('#UserMasterTable')) {
+        table = $('#UserMasterTable').DataTable();
+        table.destroy();
+    }
 
-//    // alert('hh');
-//    var table = $("#UserMasterTable").DataTable({
-//        "dom": 'Bfrtip',
-//        "rowReorder": false,
-//        "ordering": false,
-//        "filter": false, // this is for disable filter (search box)
+    // alert('hh');
+    var table = $("#UserMasterTable").DataTable({
+        //"dom": 'Bfrtip',
+        //"rowReorder": false,
+        "ordering": false,
+        "filter": false, // this is for disable filter (search box)
 
         "ajax": {
             "url": loadposturl,
             "type": "POST",
             "datatype": "json",
-            "data": { UserType: UserType },
+            "data": { UserType: UserType }
         },
         "columns": [
             //{
@@ -453,9 +453,9 @@ function SetUpGridShipUser(UserType) {
             //{
             //    "data": "ModifiedBy", "name": "ModifiedBy", "autoWidth": true
             //},
-            {
-                "data": "Gender", "name": "Gender", "autoWidth": true
-            },
+            //{
+            //    "data": "Gender", "name": "Gender", "autoWidth": true
+            //},
             //{
             //    "data": "VesselIMO", "name": "VesselIMO", "autoWidth": true
             //},
@@ -466,25 +466,25 @@ function SetUpGridShipUser(UserType) {
             //    "data": "ShipName", "name": "ShipName", "autoWidth": true
             //},
 
-//            {
-//                "data": "UserId", "width": "50px", "render": function (data) {
-//                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
-//                }
-//            },
-//            {
-//                "data": "UserId", "width": "50px", "render": function (d) {
-//                    //debugger;
-//                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
+            {
+                "data": "UserId", "width": "50px", "render": function (data) {
+                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
+                }
+            },
+            {
+                "data": "UserId", "width": "50px", "render": function (d) {
+                    //debugger;
+                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
 
 
-//                }
-//            }
+                }
+            }
 
-//        ],
-//        "rowId": "UserId",
-//        "dom": "Bfrtip"
-//    });
-//}
+        ],
+        "rowId": "UserId"
+       // "dom": "Bfrtip"
+    });
+}
 
 
 

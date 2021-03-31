@@ -5,148 +5,151 @@
     Layout = "~/Views/Shared/Admin_Layout.cshtml";
 }
 @Styles.Render("~/Content/jqueryui/css")
-<style type="text/css">
-    #tabs ul li {
-        /*background-color: #e90000 !important;*/
-        border-radius: 10px 10px 0 0 !important;
-    }
-    #tabs .ui-state-active {
-        background: #e90000 !important;
-    }
-</style>
-<link href="~/DataTables/datatables.min.css" rel="stylesheet" />
-<script src="~/Scripts/jquery-3.5.1.min.js"></script>
-<script src="~/DataTables/datatables.min.js"></script>
-<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 
-<script src="~/Scripts/UserMaster.js"></script>
+@section Styles{
+    <style type="text/css">
+        #tabs ul li {
+            /*background-color: #e90000 !important;*/
+            border-radius: 10px 10px 0 0 !important;
+        }
 
-@Html.Hidden("loaddata", @Url.Action("LoadData", "UserMaster"))
-@Html.Hidden("SaveUpdateUser", @Url.Action("SaveUpdateUser", "UserMaster"))
+        #tabs .ui-state-active {
+            background: #e90000 !important;
+        }
+    </style>
+    <link href="~/DataTables/datatables.min.css" rel="stylesheet" />
 
-@Html.Hidden("DeleteUserMaster", @Url.Action("DeleteUserMaster", "UserMaster"))
-@Html.Hidden("GetUserByUserId", @Url.Action("GetUserByUserId", "UserMaster"))
-@Html.Hidden("urlGetIMOByShip", @Url.Action("GetIMONumberByShip", "UserMaster"))
-@Html.Hidden("urlGenerateCode", @Url.Action("GenerateUserCode", "UserMaster"))
+ }
 
-<body>
-    <div class="row">
-        <div class="col-md-3">
-            <h2 class="ta">User Master </h2>
-        </div>
-        <div class="col-md-9">
-            <div class="row">
-                <div class="col-md-8 bac1">
 
-                    <div style="margin:0 auto" class="tablecontainer">
-                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal" onclick="clearTextBox(); LoadTab()">Add User</button><br /><br />
-                        <input type="hidden" id="hdnrole" />
-                        <table id="UserMasterTable" class="display" cellspacing="0">
-                            <thead>
-                                <tr>
-                                    @*<th>User Name</th>
-                                        
-                                    <th>Email</th>
-                                    <th>Gender</th>
-                                    <th>Vessel IMO</th>
-                                    <th>Rank Name</th>
-                                    <th>Ship Name</th>
+    @Html.Hidden("loaddata", @Url.Action("LoadData", "UserMaster"))
+    @Html.Hidden("SaveUpdateUser", @Url.Action("SaveUpdateUser", "UserMaster"))
 
-                                    <th>Edit</th>
-                                    <th>Delete</th>*@
-                                </tr>
-                            </thead>
-                        </table>
-                    </div>
+    @Html.Hidden("DeleteUserMaster", @Url.Action("DeleteUserMaster", "UserMaster"))
+    @Html.Hidden("GetUserByUserId", @Url.Action("GetUserByUserId", "UserMaster"))
+    @Html.Hidden("urlGetIMOByShip", @Url.Action("GetIMONumberByShip", "UserMaster"))
+    @Html.Hidden("urlGenerateCode", @Url.Action("GenerateUserCode", "UserMaster"))
 
-                    <!-- Modal -->
-                    <div class="modal fade" id="myModal" role="dialog">
-                        <div class="modal-dialog">
+    <body>
+        <div class="row">
+            <div class="col-md-3">
+                <h2 class="ta">User Master </h2>
+            </div>
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-md-8 bac1">
 
-                            <!-- Modal content-->
-                            <div class="modal-content">
-                                <div class="modal-header" style="background-color: #e90000;">
-                                    <h4 class="modal-title">Add User</h4>
-                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                </div>
+                        <div style="margin:0 auto" class="tablecontainer">
+                            <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal" onclick="clearTextBox(); LoadTab()">Add User</button><br /><br />
+                            <input type="hidden" id="hdnrole" />
+                            <table id="UserMasterTable" class="display" cellspacing="0">
+                                <thead>
+                                    <tr>
+                                        @*<th>User Name</th>
 
-                                <div class="form-group">
-                                    <input type="hidden" id="UserId" />
-                                </div>
-                                <div class="modal-body">
-                                    <div class="container">
-                                        <div id="tabs">
-                                            <input type="hidden" id="tab" />
-                                            <ul>
-                                                <li id="liTab1"><a href="#tabs-1">Ship User</a></li>
-                                                <li id="liTab2"><a href="#tabs-2">Company User</a></li>
+                                            <th>Email</th>
+                                            <th>Gender</th>
+                                            <th>Vessel IMO</th>
+                                            <th>Rank Name</th>
+                                            <th>Ship Name</th>
 
-                                            </ul>
+                                            <th>Edit</th>
+                                            <th>Delete</th>*@
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
 
-                                            <div id="tabs-1">
-                                                <div class="row">
-                                                    <div class="col-sm-12 col-xs-12">
-                                                        <div class="card">
-                                                            <div class="col-sm-12 col-xs-12 marginTP10">
-                                                                <div class="row">
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="Ship">Ship</label>
-                                                                            @Html.DropDownListFor(model => model.ShipId, (IEnumerable<SelectListItem>)ViewBag.Ships, new { @class = "form-control", onchange = "GetIMONumberByShip(this.value)" })
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                    <div class="modal-header" style="background-color: #e90000;">
+                                        <h4 class="modal-title">Add User</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <input type="hidden" id="UserId" />
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <div id="tabs">
+                                                <input type="hidden" id="tab" />
+                                                <ul>
+                                                    <li id="liTab1"><a href="#tabs-1">Ship User</a></li>
+                                                    <li id="liTab2"><a href="#tabs-2">Company User</a></li>
+
+                                                </ul>
+
+                                                <div id="tabs-1">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-xs-12">
+                                                            <div class="card">
+                                                                <div class="col-sm-12 col-xs-12 marginTP10">
+                                                                    <div class="row">
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="Ship">Ship</label>
+                                                                                @Html.DropDownListFor(model => model.ShipId, (IEnumerable<SelectListItem>)ViewBag.Ships, new { @class = "form-control", onchange = "GetIMONumberByShip(this.value)" })
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="VesselIMO">IMO Number</label>
-                                                                            <input type="number" class="form-control" id="VesselIMO" placeholder="Vessel IMO" disabled />
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="VesselIMO">IMO Number</label>
+                                                                                <input type="number" class="form-control" id="VesselIMO" placeholder="Vessel IMO" disabled />
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="Rank">Rank</label>
-                                                                            @Html.DropDownListFor(model => model.RankId, (IEnumerable<SelectListItem>)ViewBag.Ranks, new { @class = "form-control", onchange = "GetuUserCode()" })
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="Rank">Rank</label>
+                                                                                @Html.DropDownListFor(model => model.RankId, (IEnumerable<SelectListItem>)ViewBag.Ranks, new { @class = "form-control", onchange = "GetuUserCode()" })
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="UserCode">User Code</label>
-                                                                            <input type="text" class="form-control" id="UserCode" placeholder="UserCode" disabled />
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="UserCode">User Code</label>
+                                                                                <input type="text" class="form-control" id="UserCode" placeholder="UserCode" disabled />
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="UserName">User Name</label>
-                                                                            <input type="text" class="form-control" id="UserName" placeholder="User Name" />
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="UserName">User Name</label>
+                                                                                <input type="text" class="form-control" id="UserName" placeholder="User Name" />
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="Gender">Gender</label>
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="Gender">Gender</label>
 
-                                                                            <select name="Gender" class="form-control" id="Gender">
-                                                                                <option value="">Select</option>
-                                                                                <option value="M">M</option>
-                                                                                <option value="F">F</option>
-                                                                            </select>
+                                                                                <select name="Gender" class="form-control" id="Gender">
+                                                                                    <option value="">Select</option>
+                                                                                    <option value="M">M</option>
+                                                                                    <option value="F">F</option>
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="Password">Password</label>
-                                                                            <input type="password" class="form-control" id="Password" placeholder="Password" name="your_pass" value="" />
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="Password">Password</label>
+                                                                                <input type="password" class="form-control" id="Password" placeholder="Password" name="your_pass" value="" />
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="ConfirmPassword">Confirm Password</label>
-                                                                            <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" name="your_c_pass" value="" onblur="confirmPass()" />
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="ConfirmPassword">Confirm Password</label>
+                                                                                <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" name="your_c_pass" value="" onblur="confirmPass()" />
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="IsAdmin" style="padding:0;">Is Admin</label>
-                                                                            <input id="IsAdmin" type="checkbox" />
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="IsAdmin" style="padding:0;">Is Admin</label>
+                                                                                <input id="IsAdmin" type="checkbox" />
+                                                                            </div>
                                                                         </div>
+
                                                                     </div>
 
                                                                 </div>
@@ -158,62 +161,62 @@
                                                     </div>
 
                                                 </div>
+                                                <div id="tabs-2">
+                                                    <div class="row">
+                                                        <div class="col-sm-12 col-xs-12">
+                                                            <div class="card">
+                                                                <div class="col-sm-12 col-xs-12 marginTP10">
+                                                                    <div class="row">
 
-                                            </div>
-                                            <div id="tabs-2">
-                                                <div class="row">
-                                                    <div class="col-sm-12 col-xs-12">
-                                                        <div class="card">
-                                                            <div class="col-sm-12 col-xs-12 marginTP10">
-                                                                <div class="row">
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="UserName">User Name</label>
+                                                                                <input type="text" class="form-control" id="cUserName" placeholder="User Name" onblur="GetuUserCode()" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="UserCode">User Code</label>
+                                                                                <input type="text" class="form-control" id="cUserCode" placeholder="cUserCode" disabled />
+                                                                            </div>
+                                                                        </div>
 
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="UserName">User Name</label>
-                                                                            <input type="text" class="form-control" id="cUserName" placeholder="User Name" onblur="GetuUserCode()" />
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="Email">Email</label>
+                                                                                <input type="email" class="form-control" id="cEmail" placeholder="Email" onblur="return CheckEmail(this.value)" />
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="UserCode">User Code</label>
-                                                                            <input type="text" class="form-control" id="cUserCode" placeholder="cUserCode" disabled />
-                                                                        </div>
-                                                                    </div>
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="Gender">Gender</label>
 
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="Email">Email</label>
-                                                                            <input type="email" class="form-control" id="cEmail" placeholder="Email" onblur="return CheckEmail(this.value)" />
+                                                                                <select name="Gender" class="form-control" id="cGender">
+                                                                                    <option value="">Select</option>
+                                                                                    <option value="M">M</option>
+                                                                                    <option value="F">F</option>
+                                                                                </select>
+                                                                            </div>
                                                                         </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="Gender">Gender</label>
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="Password">Password</label>
+                                                                                <input type="password" class="form-control" id="cPassword" placeholder="Password" name="your_pass" value="1234" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="ConfirmPassword">Confirm Password</label>
+                                                                                <input type="password" class="form-control" id="cConfirmPassword" placeholder="Confirm Password" name="your_c_pass" value="1234" onblur="confirmPass()" />
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-sm-6 col-xs-12">
+                                                                            <div class="form-group">
+                                                                                <label for="IsAdmin" style="padding:0;">Is Admin</label>
+                                                                                <input id="cIsAdmin" type="checkbox" />
+                                                                            </div>
+                                                                        </div>
 
-                                                                            <select name="Gender" class="form-control" id="cGender">
-                                                                                <option value="">Select</option>
-                                                                                <option value="M">M</option>
-                                                                                <option value="F">F</option>
-                                                                            </select>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="Password">Password</label>
-                                                                            <input type="password" class="form-control" id="cPassword" placeholder="Password" name="your_pass" value="1234" />
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="ConfirmPassword">Confirm Password</label>
-                                                                            <input type="password" class="form-control" id="cConfirmPassword" placeholder="Confirm Password" name="your_c_pass" value="1234" onblur="confirmPass()" />
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="col-sm-6 col-xs-12">
-                                                                        <div class="form-group">
-                                                                            <label for="IsAdmin" style="padding:0;">Is Admin</label>
-                                                                            <input id="cIsAdmin" type="checkbox" />
-                                                                        </div>
                                                                     </div>
 
                                                                 </div>
@@ -221,128 +224,134 @@
                                                             </div>
 
                                                         </div>
-
                                                     </div>
-                                                </div>
 
+                                                </div>
                                             </div>
+
                                         </div>
 
                                     </div>
 
+                                    @*-----------------*@
+                                    @*<div class="modal-body">
+
+
+                                            <div class="form-group">
+                                                <label for="Rank">Rank</label>
+                                                @Html.DropDownListFor(model => model.RankId, (IEnumerable<SelectListItem>)ViewBag.Ranks, "Select", new { @class = "form-control" })
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Ship">Ship</label>
+                                                @Html.DropDownListFor(model => model.ShipId, (IEnumerable<SelectListItem>)ViewBag.Ships, "Select", new { @class = "form-control" })
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="UserName">User Name</label>
+                                                <input type="text" class="form-control" id="UserName" placeholder="User Name" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="UserCode">User Code</label>
+                                                <input type="text" class="form-control" id="UserCode" placeholder="UserCode" disabled />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Password">Password</label>
+                                                <input type="password" class="form-control" id="Password" placeholder="Password" name="your_pass" value="" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="ConfirmPassword">Confirm Password</label>
+                                                <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" name="your_c_pass" value="" onblur="confirmPass()" />
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="Email">Email</label>
+                                                <input type="email" class="form-control" id="Email" placeholder="Email" />
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label for="Gender">Gender</label>
+
+                                                <select name="Gender" class="form-control" id="Gender">
+                                                    <option value="">Select</option>
+                                                    <option value="M">M</option>
+                                                    <option value="F">F</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="VesselIMO">Vessel IMO</label>
+                                                <input type="number" class="form-control" id="VesselIMO" placeholder="Vessel IMO" />
+                                            </div>
+
+
+                                            <div class="form-group">
+                                                <label for="IsAdmin" style="padding:0;">Is Admin</label>
+                                                <input id="IsAdmin" type="checkbox" />
+                                            </div>
+
+                                        </div>*@
+
+
+                                    <div class="modal-footer" style="background-color:lightgray;">
+                                        <button type="button" class="btn btn-info btn-sm" id="btnAdd" style="background-color: #e90000; width:138px;" onclick="return SaveUpdateUser();">Add</button>
+                                        <button type="button" class="btn btn-info btn-sm" id="btnUpdate" style="background-color: #e90000; display: none; width: 86px;" onclick="SaveUpdateUser();">Update</button>
+                                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal">Close</button>
+                                    </div>
                                 </div>
 
-                                @*-----------------*@
-                                @*<div class="modal-body">
-
-
-                                        <div class="form-group">
-                                            <label for="Rank">Rank</label>
-                                            @Html.DropDownListFor(model => model.RankId, (IEnumerable<SelectListItem>)ViewBag.Ranks, "Select", new { @class = "form-control" })
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Ship">Ship</label>
-                                            @Html.DropDownListFor(model => model.ShipId, (IEnumerable<SelectListItem>)ViewBag.Ships, "Select", new { @class = "form-control" })
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="UserName">User Name</label>
-                                            <input type="text" class="form-control" id="UserName" placeholder="User Name" />
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="UserCode">User Code</label>
-                                            <input type="text" class="form-control" id="UserCode" placeholder="UserCode" disabled />
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="Password">Password</label>
-                                            <input type="password" class="form-control" id="Password" placeholder="Password" name="your_pass" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="ConfirmPassword">Confirm Password</label>
-                                            <input type="password" class="form-control" id="ConfirmPassword" placeholder="Confirm Password" name="your_c_pass" value="" onblur="confirmPass()" />
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="Email">Email</label>
-                                            <input type="email" class="form-control" id="Email" placeholder="Email" />
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="Gender">Gender</label>
-
-                                            <select name="Gender" class="form-control" id="Gender">
-                                                <option value="">Select</option>
-                                                <option value="M">M</option>
-                                                <option value="F">F</option>
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="VesselIMO">Vessel IMO</label>
-                                            <input type="number" class="form-control" id="VesselIMO" placeholder="Vessel IMO" />
-                                        </div>
-
-
-                                        <div class="form-group">
-                                            <label for="IsAdmin" style="padding:0;">Is Admin</label>
-                                            <input id="IsAdmin" type="checkbox" />
-                                        </div>
-
-                                    </div>*@
-
-
-                                <div class="modal-footer" style="background-color:lightgray;">
-                                    <button type="button" class="btn btn-info btn-sm" id="btnAdd"       style="background-color: #e90000; width:138px;"  onclick="return SaveUpdateUser();">Add</button>
-                                    <button type="button" class="btn btn-info btn-sm" id="btnUpdate"    style="background-color: #e90000; display: none; width: 86px;" onclick="SaveUpdateUser();">Update</button>
-                                    <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal">Close</button>
-                                </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
+    </body>
 
 
-<script type="text/javascript">
-    //function confirmPass() {
-    //    var pass = "";
-    //    var confPass = "";
-    //    if (selected_tab === 0) {
-    //        pass = document.getElementById("Password").value
-    //        confPass = document.getElementById("ConfirmPassword").value
-    //        if (pass != confPass) {
-    //            alert('Wrong confirm password !');
-    //        }
-    //    }
-    //    else if (selected_tab === 1) {
-    //        pass = document.getElementById("cPassword").value
-    //        confPass = document.getElementById("cConfirmPassword").value
-    //        if (pass != confPass) {
-    //            alert('Wrong confirm password !');
-    //        }
-    //    }
+    <script type="text/javascript">
+        //function confirmPass() {
+        //    var pass = "";
+        //    var confPass = "";
+        //    if (selected_tab === 0) {
+        //        pass = document.getElementById("Password").value
+        //        confPass = document.getElementById("ConfirmPassword").value
+        //        if (pass != confPass) {
+        //            alert('Wrong confirm password !');
+        //        }
+        //    }
+        //    else if (selected_tab === 1) {
+        //        pass = document.getElementById("cPassword").value
+        //        confPass = document.getElementById("cConfirmPassword").value
+        //        if (pass != confPass) {
+        //            alert('Wrong confirm password !');
+        //        }
+        //    }
 
-    //}
-</script>
+        //}
+    </script>
 
+    @section Scripts{
 
-<script>
-    $(document).ready(function () {
-        //var selected_tab = 0;
-        //$('#example').DataTable();
-        //SetUpGridShipUser();
-        CreateTableHeader(userType)
+        <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+        <script src="~/DataTables/datatables.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
 
-        $('#tabs').click('tabsselect', function (event, ui) {
+        <script src="~/Scripts/UserMaster.js"></script>
 
-            selected_tab = $("#tabs").tabs('option', 'active');
-            //var id = $('#Id').val();
-            //alert("tab clicked");
-            
-        });
+        <script>
+            $(document).ready(function () {
+                //var selected_tab = 0;
+                //$('#example').DataTable();
+                //SetUpGridShipUser();
+                CreateTableHeader(userType)
 
-    });
-</script>
+                $('#tabs').click('tabsselect', function (event, ui) {
+
+                    selected_tab = $("#tabs").tabs('option', 'active');
+                    //var id = $('#Id').val();
+                    //alert("tab clicked");
+
+                });
+
+            });
+        </script>
+    }
