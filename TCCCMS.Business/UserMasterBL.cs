@@ -84,5 +84,13 @@ namespace TCCCMS.Business
         }
 
         #endregion
+
+
+        public string GetRoleByUserId(int UserId/*, ref string oUTPUT*/)
+        {
+            UserMasterDAL dAL = new UserMasterDAL();
+            return dAL.GetRoleByUserId(UserId/*, ref oUTPUT*/);
+        }
+
     }
 }

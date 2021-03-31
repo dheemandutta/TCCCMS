@@ -158,6 +158,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\CustomAuthorizationFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1107,6 +1108,10 @@
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.slim.js" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.slim.min.js" />
     <None Include="packages\jQuery.3.5.1\Tools\jquery-3.5.1.intellisense.js" />
+    <Content Include="SQL Script\31.03.2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29.sql" />
+    <Content Include="SQL Script\31.03.2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29_II.sql" />
+    <Content Include="SQL Script\31.03.2021_Full_Schema_Of_TCCCMSDB.sql" />
+    <Content Include="SQL Script\31.03.2021_Full_Schema_Of_TCCCMSDB_II.sql" />
     <Content Include="xmlMenu\ALLSHIPS.xml" />
     <Content Include="xmlMenu\ALLVOLUMES.xml" />
     <Content Include="packages\jQuery.3.5.1\.signature.p7s" />
