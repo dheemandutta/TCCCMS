@@ -142,6 +142,7 @@
     <Compile Include="Controllers\RankController.cs" />
     <Compile Include="Controllers\ReferenceMaterialsController.cs" />
     <Compile Include="Controllers\RevisionHistoryController.cs" />
+    <Compile Include="Controllers\RoleGroupController.cs" />
     <Compile Include="Controllers\RoleMasterController.cs" />
     <Compile Include="Controllers\ShipboardOperattionController.cs" />
     <Compile Include="Controllers\ShipController.cs" />
@@ -2467,6 +2468,8 @@
     <Content Include="Views\ReferenceMaterials\PDFViewer.cshtml" />
     <Content Include="Views\Shared\_Menu_Layout.cshtml" />
     <Content Include="ShipManualsPDF\KHK Vision\13. MSMP_LMP\Common to ALL\PDF %28Common%29\20. Section 2 Part B8 - Record of ships crew familiarisation with mooring systems.pdf" />
+    <Content Include="Views\RoleGroup\GroupUser.cshtml" />
+    <Content Include="Views\RoleGroup\RoleGroup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
