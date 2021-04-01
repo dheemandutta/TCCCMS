@@ -166,10 +166,11 @@ function SaveUserGroupMapping() {
     //alert(res);
     if (res) {
         var GroupUser = {
-            GroupId: $('#GroupId').val(),
-            UserId: $('#UserId').val()
+            userId: $('#UserId').val(),
+            userGroupMapping: $('#GroupId').val()
+            
         };
-
+        console.log(GroupUser);
         $.ajax({
             url: posturl,
             data: JSON.stringify(GroupUser),

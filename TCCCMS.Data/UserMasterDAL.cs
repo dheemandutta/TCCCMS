@@ -20,30 +20,19 @@ namespace TCCCMS.Data
             SqlCommand cmd = new SqlCommand("stpSaveUpdateUser", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            if (pOCO.RankId == -1 || pOCO.RankId == 0)
+            if (pOCO.UserId > 0)
             {
-                cmd.Parameters.AddWithValue("@RankId", pOCO.RankId);
+                cmd.Parameters.AddWithValue("@UserId ", pOCO.UserId);
             }
             else
             {
-                cmd.Parameters.AddWithValue("@RankId", 0);
-            }
-
-            if (pOCO.ShipId == -1 || pOCO.ShipId == 0)
-            {
-                cmd.Parameters.AddWithValue("@ShipId", pOCO.ShipId);
-            }
-            else
-            {
-                cmd.Parameters.AddWithValue("@ShipId", 0);
+                cmd.Parameters.AddWithValue("@UserId ", DBNull.Value);
             }
 
             cmd.Parameters.AddWithValue("@UserName", pOCO.UserName.ToString());
-            cmd.Parameters.AddWithValue("@UserCode", pOCO.UserCode.ToString());
 
             cmd.Parameters.AddWithValue("@Password", pOCO.Password.ToString());
 
-            
             if (!String.IsNullOrEmpty(pOCO.Email))
             {
                 cmd.Parameters.AddWithValue("@Email", pOCO.Email.ToString());
@@ -89,20 +78,29 @@ namespace TCCCMS.Data
                 cmd.Parameters.AddWithValue("@VesselIMO", DBNull.Value);
             }
 
-
-            //cmd.Parameters.AddWithValue("@UserCode", pOCO.UserCode.ToString());
-            cmd.Parameters.AddWithValue("@UserType", pOCO.UserType);
-            cmd.Parameters.AddWithValue("@IsAdmin", pOCO.IsAdmin);
-
-
-            if (pOCO.UserId > 0)
+            if (pOCO.RankId == -1 || pOCO.RankId > 0)
             {
-                cmd.Parameters.AddWithValue("@UserId ", pOCO.UserId);
+                cmd.Parameters.AddWithValue("@RankId", pOCO.RankId);
             }
             else
             {
-                cmd.Parameters.AddWithValue("@UserId ", DBNull.Value);
+                cmd.Parameters.AddWithValue("@RankId", 0);
             }
+
+            if (pOCO.ShipId == -1 || pOCO.ShipId > 0)
+            {
+                cmd.Parameters.AddWithValue("@ShipId", pOCO.ShipId);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@ShipId", 0);
+            }
+       
+            cmd.Parameters.AddWithValue("@UserCode", pOCO.UserCode.ToString());
+
+            cmd.Parameters.AddWithValue("@UserType", pOCO.UserType);
+
+            //cmd.Parameters.AddWithValue("@IsAdmin", DBNull.Value);
 
             int recordsAffected = cmd.ExecuteNonQuery();
             con.Close();
@@ -146,9 +144,9 @@ namespace TCCCMS.Data
                             CreatedBy = Convert.ToString(dr["CreatedBy"]),
                             ModifiedBy = Convert.ToString(dr["ModifiedBy"]),
                             Gender = Convert.ToString(dr["Gender"]),
-                            VesselIMO = Convert.ToString(dr["VesselIMO"]),
-                            RankName = Convert.ToString(dr["RankName"]),
-                            ShipName = Convert.ToString(dr["ShipName"]),
+                            VesselIMO = Convert.ToString(dr["VesselIMO"])//,
+                            //RankName = Convert.ToString(dr["RankName"]),
+                            //ShipName = Convert.ToString(dr["ShipName"]),
                         });
                     }
                     recordCount = Convert.ToInt32(cmd.Parameters["@RecordCount"].Value);
@@ -192,8 +190,8 @@ namespace TCCCMS.Data
                 {
                     GroupUser pPOCOPC = new GroupUser();
 
-                    //if (item["ID"] != null)
-                    //    pPOCOPC.ID = Convert.ToInt32(item["ID"].ToString());
+                    if (item["UserId"] != null)
+                        pPOCOPC.UserId = Convert.ToInt32(item["UserId"].ToString());
 
                     if (item["UserName"] != System.DBNull.Value)
                         pPOCOPC.UserName = item["UserName"].ToString();

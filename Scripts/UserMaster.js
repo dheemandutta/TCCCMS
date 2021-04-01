@@ -50,13 +50,13 @@ function validate() {
         $('#Gender').css('border-color', 'lightgrey');
     }
 
-    if ($('#VesselIMO').val().length === 0) {
-        $('#VesselIMO').css('border-color', 'Red');
-        isValid = false;
-    }
-    else {
-        $('#VesselIMO').css('border-color', 'lightgrey');
-    }
+    //if ($('#VesselIMO').val().length === 0) {
+    //    $('#VesselIMO').css('border-color', 'Red');
+    //    isValid = false;
+    //}
+    //else {
+    //    $('#VesselIMO').css('border-color', 'lightgrey');
+    //}
 
 
     return isValid;
@@ -166,7 +166,7 @@ function SaveUpdateUser() {
                 Gender:     $('#Gender').val(),
                 VesselIMO:  $('#VesselIMO').val(),
 
-                IsAdmin:    document.getElementById("IsAdmin").checked,
+                /*IsAdmin:    document.getElementById("IsAdmin").checked,*/
                 UserType : 1
             };
         }
@@ -179,7 +179,7 @@ function SaveUpdateUser() {
                 Email:      $('#cEmail').val(),
                 Gender:     $('#cGender').val(),
 
-                IsAdmin:    document.getElementById("cIsAdmin").checked,
+                /*IsAdmin:    document.getElementById("cIsAdmin").checked,*/
                 UserType: 2
             };
         }
@@ -641,6 +641,16 @@ function LoadTab() {
 $('#tabs').click('tabsselect', function (event, ui) {
 
     selected_tab = $("#tabs").tabs('option', 'active');
+    console.log(selected_tab);
+    if (selected_tab === 0) {
+        userType = 1;
+    }
+    else if (selected_tab === 1) {
+        userType = 2;
+    }
+    else {
+        userType = 0;
+    }
     var id = $('#Id').val();
     if (selected_tab === 2 && id === "0") {
         //$('#TestCode1').prop('disabled', true);
