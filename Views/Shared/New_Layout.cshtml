@@ -44,9 +44,16 @@
                     <div class="menu_icon " class="openbtn" onclick="openNav()">
                         <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     </div>
-                    <div>
+                    @if (Session["UserName"] != null)
+                    {
+                        <div>
+                            <a id="lnkLogOut" class="btn btn-warning" href="@Url.Action("Login", "Home")"> Log Out</a>
+                        </div>
+                    }
+
+                    @*<div>
                         <button type="button" class="btn btn-warning">Log Off</button>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
