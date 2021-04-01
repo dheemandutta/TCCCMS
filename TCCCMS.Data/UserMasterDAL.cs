@@ -162,10 +162,10 @@ namespace TCCCMS.Data
 
 
 
-        public List<UserMasterPOCO> GetAllUser()
+        public List<GroupUser> GetAllUser()
         {
-            List<UserMasterPOCO> prodPOList = new List<UserMasterPOCO>();
-            List<UserMasterPOCO> prodPO = new List<UserMasterPOCO>();
+            List<GroupUser> prodPOList = new List<GroupUser>();
+            List<GroupUser> prodPO = new List<GroupUser>();
             DataSet ds = new DataSet();
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
             {
@@ -179,8 +179,52 @@ namespace TCCCMS.Data
                     con.Close();
                 }
             }
-            return ConvertDataTableToGetAllUserList(ds);
+            return ConvertDataTableToGetAllUserList2(ds);
         }
+
+        private List<GroupUser> ConvertDataTableToGetAllUserList2(DataSet ds)
+        {
+            List<GroupUser> pcList = new List<GroupUser>();
+            //check if there is at all any data
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow item in ds.Tables[0].Rows)
+                {
+                    GroupUser pPOCOPC = new GroupUser();
+
+                    //if (item["ID"] != null)
+                    //    pPOCOPC.ID = Convert.ToInt32(item["ID"].ToString());
+
+                    if (item["UserName"] != System.DBNull.Value)
+                        pPOCOPC.UserName = item["UserName"].ToString();
+
+                    if (item["CreatedOn"] != System.DBNull.Value)
+                        pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
+
+                    if (item["Email"] != System.DBNull.Value)
+                        pPOCOPC.Email = item["Email"].ToString();
+
+                    if (item["CreatedBy"] != System.DBNull.Value)
+                        pPOCOPC.CreatedBy = item["CreatedBy"].ToString();
+
+                    if (item["ModifiedBy"] != System.DBNull.Value)
+                        pPOCOPC.ModifiedBy = item["ModifiedBy"].ToString();
+
+                    if (item["Gender"] != System.DBNull.Value)
+                        pPOCOPC.Gender = item["Gender"].ToString();
+
+                    if (item["VesselIMO"] != System.DBNull.Value)
+                        pPOCOPC.VesselIMO = item["VesselIMO"].ToString();
+
+                    if (item["RankName"] != System.DBNull.Value)
+                        pPOCOPC.RankName = item["RankName"].ToString();
+
+                    pcList.Add(pPOCOPC);
+                }
+            }
+            return pcList;
+        }
+
 
         private List<UserMasterPOCO> ConvertDataTableToGetAllUserList(DataSet ds)
         {

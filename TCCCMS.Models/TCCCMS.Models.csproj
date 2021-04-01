@@ -47,6 +47,7 @@
     <Compile Include="FormsCategory.cs" />
     <Compile Include="FormsViewModel.cs" />
     <Compile Include="GroupMasterPOCO.cs" />
+    <Compile Include="GroupUser.cs" />
     <Compile Include="Manual.cs" />
     <Compile Include="ManualViewModel.cs" />
     <Compile Include="Menu.cs" />
@@ -55,6 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RankPOCO.cs" />
     <Compile Include="RevisionHistory.cs" />
+    <Compile Include="RoleGroup.cs" />
     <Compile Include="RoleMasterPOCO.cs" />
     <Compile Include="Ship.cs" />
     <Compile Include="ShipManual.cs" />

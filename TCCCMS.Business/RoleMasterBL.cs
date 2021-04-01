@@ -31,10 +31,30 @@ namespace TCCCMS.Business
             return dAL.GetRoleMasterByRoleId(RoleId/*, VesselID*/);
         }
 
+
+
         public int DeleteRoleMaster(int RoleId/*, ref string oUTPUT*/)
         {
             RoleMasterDAL dAL = new RoleMasterDAL();
             return dAL.DeleteRoleMaster(RoleId/*, ref oUTPUT*/);
+        }
+
+        public List<RoleGroup> GetAllRoles()
+        {
+            RoleMasterDAL dAL = new RoleMasterDAL();
+            return dAL.GetAllRoles();
+        }
+
+        public int SaveRoleGroup(RoleGroup pOCO)
+        {
+            RoleMasterDAL dAL = new RoleMasterDAL();
+            return dAL.SaveRoleGroup(pOCO);
+        }
+
+        public RoleMasterPOCO GetRoleByGroupId(int GroupId)
+        {
+            RoleMasterDAL dAL = new RoleMasterDAL();
+            return dAL.GetRoleByGroupId(GroupId);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace TCCCMS.Business
             return dAL.GetAllUserPageWise(pageIndex, ref recordCount, length, UserType);
         }
 
-        public List<UserMasterPOCO> GetAllUser(/*, int VesselID*/)
+        public List<GroupUser> GetAllUser(/*, int VesselID*/)
         {
             UserMasterDAL dAL = new UserMasterDAL();
             return dAL.GetAllUser(/*, VesselID*/);

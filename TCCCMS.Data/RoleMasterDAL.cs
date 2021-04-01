@@ -168,5 +168,118 @@ namespace TCCCMS.Data
             return recordsAffected;
         }
 
+
+        public List<RoleGroup> GetAllRoles()
+        {
+            RoleGroup roleMasterPOCO = new RoleGroup();
+            List<RoleGroup> roleMasterPOCOs = new List<RoleGroup>();
+
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetAllRole", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    con.Close();
+                }
+            }
+
+            return ConvertDataTableToRole2(ds);
+
+
+        }
+
+        private List<RoleMasterPOCO> ConvertDataTableToRole(DataSet ds)
+        {
+            
+            List<RoleMasterPOCO> roleMasterPOCOs = new List<RoleMasterPOCO>();
+            //check if there is at all any data
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow item in ds.Tables[0].Rows)
+                {
+                    RoleMasterPOCO pPOCOPC = new RoleMasterPOCO();
+
+                    if (item["Id"] != null)
+                        pPOCOPC.RoleId = Convert.ToInt32(item["Id"].ToString());
+
+                    if (item["RoleName"] != System.DBNull.Value)
+                        pPOCOPC.RoleName = item["RoleName"].ToString();
+                   
+                    roleMasterPOCOs.Add(pPOCOPC);
+                   
+                }
+            }
+            return roleMasterPOCOs;
+        }
+
+        public int SaveRoleGroup(RoleGroup pOCO)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("stpSaveRoleGroup", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@RoleId", pOCO.RoleId);
+            cmd.Parameters.AddWithValue("@GroupId", pOCO.GroupId);
+
+            
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return recordsAffected;
+        }
+
+        public RoleMasterPOCO GetRoleByGroupId(int GroupId)
+        {
+            RoleMasterPOCO roleMasterPOCO = new RoleMasterPOCO();
+            List<RoleMasterPOCO> roleMasterPOCOs = new List<RoleMasterPOCO>();
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetRoleNameByGroupId", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@GroupId", GroupId);
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    con.Close();
+                }
+            }
+            return ConvertDataTableToRole(ds).FirstOrDefault();
+        }
+
+
+
+        private List<RoleGroup> ConvertDataTableToRole2(DataSet ds)
+        {
+
+            List<RoleGroup> roleMasterPOCOs = new List<RoleGroup>();
+            //check if there is at all any data
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow item in ds.Tables[0].Rows)
+                {
+                    RoleGroup pPOCOPC = new RoleGroup();
+
+                    if (item["Id"] != null)
+                        pPOCOPC.RoleId = Convert.ToInt32(item["Id"].ToString());
+
+                    if (item["RoleName"] != System.DBNull.Value)
+                        pPOCOPC.RoleName = item["RoleName"].ToString();
+
+                    roleMasterPOCOs.Add(pPOCOPC);
+
+                }
+            }
+            return roleMasterPOCOs;
+        }
     }
 }
