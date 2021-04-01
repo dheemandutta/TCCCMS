@@ -25,7 +25,7 @@ namespace TCCCMS.Business
             return dAL.SaveUpdateGroupMaster(groupMaster/*, VesselID*/);
         }
 
-        public List<GroupMasterPOCO> GetAllGroupMaster()
+        public List<GroupUser> GetAllGroupMaster()
         {
             GroupMasterDAL dAL = new GroupMasterDAL();
             return dAL.GetAllGroupMaster();

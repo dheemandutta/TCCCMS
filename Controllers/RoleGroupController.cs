@@ -20,6 +20,13 @@ namespace TCCCMS.Controllers
             return View();
         }
 
+        public ActionResult GroupUser()
+        {
+            GetAllGroupMaster();
+            GetAllUser();
+            return View();
+        }
+
 
         public void GetAllRoles()
         {
@@ -86,5 +93,91 @@ namespace TCCCMS.Controllers
 
             return Json(bL.SaveRoleGroup(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }
+
+
+
+
+        public void GetAllGroupMaster()
+        {
+            GroupMasterBL bL = new GroupMasterBL();
+            List<GroupUser> pocoList = new List<GroupUser>();
+
+            pocoList = bL.GetAllGroupMaster(/*int.Parse(Session["VesselID"].ToString())*/);
+            List<GroupUser> itmasterList = new List<GroupUser>();
+
+            foreach (GroupUser up in pocoList)
+            {
+                GroupUser unt = new GroupUser();
+                unt.GroupId = up.GroupId;
+                unt.GroupName = up.GroupName;
+
+                itmasterList.Add(unt);
+            }
+
+            ViewBag.Groups = itmasterList.Select(x =>
+                                            new SelectListItem()
+                                            {
+                                                Text = x.GroupName,
+                                                Value = x.GroupId.ToString()
+                                            });
+
+        }
+
+
+        public JsonResult GetRoleByGroupId(int GroupId)
+        {
+            RoleMasterBL bL = new RoleMasterBL();
+            RoleMasterPOCO pOCOList = new RoleMasterPOCO();
+
+            pOCOList = bL.GetRoleByGroupId(GroupId);
+
+            RoleMasterPOCO dept = new RoleMasterPOCO();
+
+            dept.RoleId = pOCOList.RoleId;
+            dept.RoleName = pOCOList.RoleName;
+
+            var data = dept;
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+
+
+        public void GetAllUser()
+        {
+            UserMasterBL bL = new UserMasterBL();
+            List<GroupUser> pocoList = new List<GroupUser>();
+
+            pocoList = bL.GetAllUser(/*int.Parse(Session["VesselID"].ToString())*/);
+            List<GroupUser> itmasterList = new List<GroupUser>();
+
+            foreach (GroupUser up in pocoList)
+            {
+                GroupUser unt = new GroupUser();
+                unt.UserId = up.UserId;
+                unt.UserName = up.UserName;
+
+                itmasterList.Add(unt);
+            }
+
+            ViewBag.Users = itmasterList.Select(x =>
+                                            new SelectListItem()
+                                            {
+                                                Text = x.UserName,
+                                                Value = x.UserId.ToString()
+                                            });
+
+        }
+
+
+        public JsonResult SaveUserGroupMapping(int userId, string userGroupMapping)
+        {
+            UserGroupBL bL = new UserGroupBL();         
+            return Json(bL.SaveUserGroupMapping(userId, userGroupMapping), JsonRequestBehavior.AllowGet);
+        }
+
+
+
+
     }
 }
