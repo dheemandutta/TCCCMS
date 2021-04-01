@@ -169,10 +169,10 @@ namespace TCCCMS.Data
         }
 
 
-        public List<RoleMasterPOCO> GetAllRoles()
+        public List<RoleGroup> GetAllRoles()
         {
-            RoleMasterPOCO roleMasterPOCO = new RoleMasterPOCO();
-            List<RoleMasterPOCO> roleMasterPOCOs = new List<RoleMasterPOCO>();
+            RoleGroup roleMasterPOCO = new RoleGroup();
+            List<RoleGroup> roleMasterPOCOs = new List<RoleGroup>();
 
             DataSet ds = new DataSet();
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
@@ -188,7 +188,7 @@ namespace TCCCMS.Data
                 }
             }
 
-            return ConvertDataTableToRole(ds);
+            return ConvertDataTableToRole2(ds);
 
 
         }
@@ -256,5 +256,30 @@ namespace TCCCMS.Data
             return ConvertDataTableToRole(ds).FirstOrDefault();
         }
 
+
+
+        private List<RoleGroup> ConvertDataTableToRole2(DataSet ds)
+        {
+
+            List<RoleGroup> roleMasterPOCOs = new List<RoleGroup>();
+            //check if there is at all any data
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow item in ds.Tables[0].Rows)
+                {
+                    RoleGroup pPOCOPC = new RoleGroup();
+
+                    if (item["Id"] != null)
+                        pPOCOPC.RoleId = Convert.ToInt32(item["Id"].ToString());
+
+                    if (item["RoleName"] != System.DBNull.Value)
+                        pPOCOPC.RoleName = item["RoleName"].ToString();
+
+                    roleMasterPOCOs.Add(pPOCOPC);
+
+                }
+            }
+            return roleMasterPOCOs;
+        }
     }
 }

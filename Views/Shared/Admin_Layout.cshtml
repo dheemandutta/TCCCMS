@@ -90,9 +90,14 @@
                                 <span class="vul">2 </span><span class="pgnam"> User Management </span>
                             </a>
                             <ul class="submenu">
-                                <li>
+                                @*<li>
                                     <a href='@Url.Action("Index", "UserGroup")'>
                                         <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Group</span>
+                                    </a>
+                                </li>*@
+                                <li>
+                                    <a href='@Url.Action("RoleGroup", "RoleGroup")'>
+                                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Role Group</span>
                                     </a>
                                 </li>
                                 <li>
@@ -106,10 +111,10 @@
                                     </a>
                                 </li>
                                 @*<li>
-                    <a href='@Url.Action("SupportUser", "UserMaster")'>
-                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Support User</span>
-                    </a>
-                </li>*@
+            <a href='@Url.Action("SupportUser", "UserMaster")'>
+                <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Support User</span>
+            </a>
+        </li>*@
                                 <li>
                                     <a href='@Url.Action("UploadForm", "UserMaster")'>
                                         <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Upload Form</span>

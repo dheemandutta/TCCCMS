@@ -39,7 +39,7 @@ namespace TCCCMS.Business
             return dAL.DeleteRoleMaster(RoleId/*, ref oUTPUT*/);
         }
 
-        public List<RoleMasterPOCO> GetAllRoles()
+        public List<RoleGroup> GetAllRoles()
         {
             RoleMasterDAL dAL = new RoleMasterDAL();
             return dAL.GetAllRoles();

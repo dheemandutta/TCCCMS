@@ -31,7 +31,7 @@ namespace TCCCMS.Business
             return dAL.GetAllGroupMaster();
         }
 
-        public List<GroupMasterPOCO> GetAllGroupsNotInRoles()
+        public List<RoleGroup> GetAllGroupsNotInRoles()
         {
             GroupMasterDAL dAL = new GroupMasterDAL();
             return dAL.GetAllGroupsNotInRoles();

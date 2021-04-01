@@ -121,10 +121,10 @@ namespace TCCCMS.Data
             return ConvertDataTableToGetAllGroupMasterList(ds);
         }
 
-        public List<GroupMasterPOCO> GetAllGroupsNotInRoles()
+        public List<RoleGroup> GetAllGroupsNotInRoles()
         {
-            List<GroupMasterPOCO> prodPOList = new List<GroupMasterPOCO>();
-            List<GroupMasterPOCO> prodPO = new List<GroupMasterPOCO>();
+            List<RoleGroup> prodPOList = new List<RoleGroup>();
+            List<RoleGroup> prodPO = new List<RoleGroup>();
             DataSet ds = new DataSet();
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
             {
@@ -138,7 +138,7 @@ namespace TCCCMS.Data
                     con.Close();
                 }
             }
-            return ConvertDataTableToGetAllGroupMasterList(ds);
+            return ConvertDataTableToGetAllGroupMasterList2(ds);
         }
 
         private List<GroupMasterPOCO> ConvertDataTableToGetAllGroupMasterList(DataSet ds)
@@ -172,7 +172,36 @@ namespace TCCCMS.Data
             return crewtimesheetList;
         }
 
+        private List<RoleGroup> ConvertDataTableToGetAllGroupMasterList2(DataSet ds)
+        {
+            List<RoleGroup> crewtimesheetList = new List<RoleGroup>();
+            //check if there is at all any data
+            if (ds.Tables.Count > 0)
+            {
+                foreach (DataRow item in ds.Tables[0].Rows)
+                {
+                    RoleGroup groupMasterPOCO = new RoleGroup();
 
+                    //if (item["GroupId"] != System.DBNull.Value)
+                    //    groupMasterPOCO.GroupId = Convert.ToInt32(item["GroupId"].ToString());
+
+                    if (item["GroupName"] != System.DBNull.Value)
+                        groupMasterPOCO.GroupName = item["GroupName"].ToString();
+
+                    if (item["CreatedBy"] != System.DBNull.Value)
+                        groupMasterPOCO.CreatedBy = item["CreatedBy"].ToString();
+
+                    if (item["ModifiedBy"] != System.DBNull.Value)
+                        groupMasterPOCO.ModifiedBy = item["ModifiedBy"].ToString();
+
+                    if (item["GroupId"] != System.DBNull.Value)
+                        groupMasterPOCO.GroupId = Convert.ToInt16(item["GroupId"]);
+
+                    crewtimesheetList.Add(groupMasterPOCO);
+                }
+            }
+            return crewtimesheetList;
+        }
 
         public GroupMasterPOCO GetGroupMasterByGroupId(int GroupId)
         {
