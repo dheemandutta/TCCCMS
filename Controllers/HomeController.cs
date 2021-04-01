@@ -49,6 +49,17 @@ namespace TCCCMS.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            Session["UserId"] = null;
+            Session["UserCode"] = null;
+            Session["UserName"] = null;
+            Session["Email"] = null;
+            Session["ShipId"] = null;
+            Session["ShipName"] = null;
+            Session["VesselIMO"] = null;
+            Session["UserType"] = null;
+
+            System.Web.HttpContext.Current.Session["Role"] = null;
+
             return View();
         }
         [HttpPost]
@@ -99,6 +110,11 @@ namespace TCCCMS.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult LogOut()
+        {
+            return RedirectToAction("Login", "Home");
+        }
         public ActionResult MenuLayout()
         {
             Menu menu = new Menu();

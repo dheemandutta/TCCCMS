@@ -44,6 +44,12 @@
                     <div class="menu_icon " class="openbtn" onclick="openNav()">
                         <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     </div>
+                    @if (Session["UserName"].ToString() != null)
+                    {
+                        <div>
+                            <a id="lnkLogOut" class="btn btn-info btn-sm" href="@Url.Action("Login", "Home")"> Log Out</a>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
@@ -84,6 +90,7 @@
 
                 </div>
             </div>
+           
         </div>
 
     </section>

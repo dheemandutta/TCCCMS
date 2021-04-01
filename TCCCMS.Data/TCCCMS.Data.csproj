@@ -75,6 +75,7 @@
     <Compile Include="RevisionHistoryDAL.cs" />
     <Compile Include="RoleMasterDAL.cs" />
     <Compile Include="ShipDAL.cs" />
+    <Compile Include="TicketDAL.cs" />
     <Compile Include="UserGroupDAL.cs" />
     <Compile Include="UserMasterDAL.cs" />
     <Compile Include="UserRoleDAL.cs" />
