@@ -41,7 +41,6 @@
                     <div class="menu_icon" class="openbtn" onclick="openNav()">
                         <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     </div>
-                   
                 </div>
             </div>
         </div>
@@ -96,37 +95,46 @@
                 <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Group</span>
             </a>
         </li>*@
-                                <li>
-                                    <a href='@Url.Action("RoleGroup", "RoleGroup")'>
-                                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Associate Role Group</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='@Url.Action("GroupUser", "RoleGroup")'>
-                                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Associate Group User</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='@Url.Action("Index", "UserMaster")'>
-                                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Master </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href='@Url.Action("CompanyUser", "UserMaster")'>
-                                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Company User</span>
-                                    </a>
-                                </li>
-                                @*<li>
-            <a href='@Url.Action("SupportUser", "UserMaster")'>
-                <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Support User</span>
-            </a>
-        </li>*@
-                                <li>
-                                    <a href='@Url.Action("UploadForm", "UserMaster")'>
-                                        <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Upload Form</span>
-                                    </a>
-                                </li>
-                            </ul>
+
+
+                                @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
+                                {
+                                    <li>
+                                        <a href='@Url.Action("RoleGroup", "RoleGroup")'>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Associate Role Group</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='@Url.Action("GroupUser", "RoleGroup")'>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Associate Group User</span>
+                                        </a>
+                                    </li>
+                                }
+
+
+
+
+                                    <li>
+                                        <a href='@Url.Action("Index", "UserMaster")'>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Master </span>
+                                        </a>
+                                    </li>
+                                    @*<li>
+                                        <a href='@Url.Action("CompanyUser", "UserMaster")'>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Company User</span>
+                                        </a>
+                                    </li>*@
+                                    @*<li>
+                <a href='@Url.Action("SupportUser", "UserMaster")'>
+                    <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Support User</span>
+                </a>
+            </li>*@
+                                    <li>
+                                        <a href='@Url.Action("UploadForm", "UserMaster")'>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Upload Form</span>
+                                        </a>
+                                    </li>
+                                </ul>
                         </li>
 
                         <li class="mainmenu">

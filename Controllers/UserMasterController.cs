@@ -97,8 +97,8 @@ namespace TCCCMS.Controllers
                 //pOCO.ModifiedBy = pC.ModifiedBy;
                 pOCO.Gender = pC.Gender;
                 pOCO.VesselIMO = pC.VesselIMO;
-                pOCO.RankName = pC.RankName;
-                pOCO.ShipName = pC.ShipName;
+                //pOCO.RankName = pC.RankName;
+                //pOCO.ShipName = pC.ShipName;
 
                 pList.Add(pOCO);
             }
@@ -129,7 +129,7 @@ namespace TCCCMS.Controllers
 
             //pC.UserCode = pOCO.UserCode;
             pC.UserType     = pOCO.UserType;
-            pC.IsAdmin      = pOCO.IsAdmin;
+            //pC.IsAdmin      = pOCO.IsAdmin;
 
             return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }

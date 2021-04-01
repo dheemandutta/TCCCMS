@@ -36,15 +36,17 @@
                         <a id="lnkAllSearch" class="btn btn-primary" href="@Url.Action("SearchList","Manual")"> <i class="fa fa-search"></i></a>
 
                         @*<button type="submit" class="searchButton">
-                            <i class="fa fa-search"></i>
-                        </button>*@
+                    <i class="fa fa-search"></i>
+                </button>*@
                     </div>
                 </div>
                 <div class="col-lg-1 col-md-1 col-12">
                     <div class="menu_icon " class="openbtn" onclick="openNav()">
                         <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
                     </div>
-                    
+                    <div>
+                        <button type="button" class="btn btn-warning">Log Off</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -82,10 +84,21 @@
                 <div class="menu">
                     @Html.Action("MenuLayout", "Home")
 
+                    @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser" || Session["Role"].ToString() == "ShipAdmin")
+                    {
+                        <div> &nbsp;</div>
 
+                        <ul>
+    
+                            <li class="mainmenu">
+                            <a href='@Url.Action("AdminDashboard", "Dashboard")'>
+                                <span class="vul"> </span><span class="pgnam">Admin Dashboard</span>
+                            </a>
+                        </li>
+                    </ul>
+                    }
                 </div>
             </div>
-           
         </div>
 
     </section>
