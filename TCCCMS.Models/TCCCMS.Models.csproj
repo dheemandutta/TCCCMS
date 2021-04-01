@@ -61,6 +61,7 @@
     <Compile Include="Ship.cs" />
     <Compile Include="ShipManual.cs" />
     <Compile Include="ShipViewModel.cs" />
+    <Compile Include="Ticket.cs" />
     <Compile Include="UserGroupPOCO.cs" />
     <Compile Include="UserMasterPOCO.cs" />
     <Compile Include="Volume.cs" />

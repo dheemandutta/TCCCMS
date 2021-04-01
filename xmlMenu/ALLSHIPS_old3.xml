@@ -353,15 +353,14 @@
 				</foldername>
 				<foldername name="MSMPandLMP-SP (KHKV)">
 					<foldername name="Section 1 - MSMP (KHKV)">
-						<foldername name="Section 1 Part C - Detailed List of Mooring Equiment">
-							<filename doctype="DOC" actionname="LMPS1DLMEC1">C1 - Permanent Fittings mooring fittings rollers fairleads</filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC2">C2 - Permanent machinery installations </filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC3C4">C3 - Loose Equipment and C4 - Critical and Specialist Equipment </filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC5C6C7">C5 - Performance standards requirements and C6 and C7</filename>
-						</foldername>
 						<filename doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHKV)</filename>
 						<filename doctype="DOC" actionname="LMPS1MEDP">Section 1 Part B - Mooring Equipment Design Philosophy</filename>
 						<filename doctype="PDF" actionname="">Section 1 Part B - Static Mooring Analysis Report (KHKV)</filename>
+						<filename doctype="DOC" actionname="LMPS1PFMFRF">C1 – Permanent Fittings -mooring fittings, rollers, fairleads etc.</filename>
+						<filename doctype="DOC" actionname="LMPS1PMI">C2 - Permanent machinery installations</filename>
+						<filename doctype="DOC" actionname="LMPS1LECSE">C3 – Loose Equipment and C4 – Critical and Specialist Equipment</filename>
+						<filename doctype="DOC" actionname="LMPS1PSRMEF">C5 – Performance standards - requirements for mooring equipment and fittings.</filename>
+						<filename doctype="DOC" actionname="LMPS1LMPS1DSSUSLPF">C6 - Details of the Ship Structure and Underdeck Strengthening and C7 – Location of all permanent - fixed equipment.</filename>
 						<filename doctype="DOC" actionname="LMPS1IMRSP">Section 1 Part D - Inspection, Maintenance and Retirement Strategies or Principles</filename>
 						<filename doctype="DOC" actionname="LMPS1RCMSPHF">Section 1 Part E - Risk and Chagne Mgmt, Safety of Personnel and Human Factors</filename>
 						<filename doctype="DOC" actionname="LMPS1RD">Section 1 Part F - Records and Documentation</filename>
@@ -2603,15 +2602,13 @@
 				</foldername>
 				<foldername name="MSMPandLMP-SP (KHEM and KHMA)">
 					<foldername name="Section 1 - MSMP (KHEM and KHMA)">
-						<foldername name="Section 1 Part C - Detailed List of Mooring Equiment">
-							<filename doctype="DOC" actionname="LMPS1DLMEC1P1">C1 - Permanent Fittings Part 1</filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC1P2">C1 - Permanent Fittings Part 2</filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC2">C2 - Permanent machinery installations</filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC3C4">C3 – Loose Equipment and C4 - Critical and Specialist Equipment</filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC5C6C7">C5 - Performance standards requirements and C6 and C7</filename>
-						</foldername>
 						<filename doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHEM)</filename>
 						<filename doctype="DOC" actionname="LMPS1MEDP">Section 1 Part B - Mooring Equipment Design Philosophy</filename>
+						<filename doctype="DOC" actionname="LMPS1PFMF">C1 – Permanent Fittings mooring fittings</filename>
+						<filename doctype="DOC" actionname="LMPS1PMI">C2 - Permanent machinery installations</filename>
+						<filename doctype="DOC" actionname="LMPS1LECSE">C3 – Loose Equipment C4 – Critical and Specialist Equip</filename>
+						<filename doctype="DOC" actionname="LMPS1PSR">C5 – Performance standards requirements</filename>
+						<filename doctype="DOC" actionname="LMPS1DSSUSLPE">C6 - Details of the Ship Structure and Underdeck Stren and C7 – Location of all permanentfixed equipment</filename>
 						<filename doctype="DOC" actionname="LMPS1IMRSP">Section 1 Part D - Inspection, Maintenance and Retirement Strategies or Principles</filename>
 						<filename doctype="DOC" actionname="LMPS1RCMSPHF">Section 1 Part E - Risk and Chagne Mgmt, Safety of Personnel and Human Factors</filename>
 						<filename doctype="DOC" actionname="LMPS1RD">Section 1 Part F - Records and Documentation</filename>
@@ -3079,15 +3076,13 @@
 				</foldername>
 				<foldername name="MSMPandLMP-SP (KHEM and KHMA)">
 					<foldername name="Section 1 - MSMP (KHEM and KHMA)">
-						<foldername name="Section 1 Part C - Detailed List of Mooring Equiment">
-							<filename doctype="DOC" actionname="LMPS1DLMEC1P1">C1 - Permanent Fittings Part 1</filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC1P2">C1 - Permanent Fittings Part 2</filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC2">C2 - Permanent machinery installations</filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC3C4">C3 - Loose Equipment and C4 - Critical and Specialist Equipment</filename>
-							<filename doctype="DOC" actionname="LMPS1DLMEC5C6C7">C5 - Performance standards requirements and C6 and C7</filename>
-						</foldername>
 						<filename doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHEM)</filename>
 						<filename doctype="DOC" actionname="LMPS1MEDP">Section 1 Part B - Mooring Equipment Design Philosophy</filename>
+						<filename doctype="DOC" actionname="LMPS1PF">C1 – Permanent Fittings (mooring fittings, rollers, fairleads</filename>
+						<filename doctype="DOC" actionname="LMPS1PMI">C2 - Permanent machinery installations</filename>
+						<filename doctype="DOC" actionname="LMPS1LECSE">C3 – Loose Equipment C4 – Critical and Specialist Equipment</filename>
+						<filename doctype="DOC" actionname="LMPS1PSRMEF">C5 – Performance standards  requirements for mooring equipment and fittings</filename>
+						<filename doctype="DOC" actionname="LMPS1DSSUSLPE">C6 - Details of the Ship Structure and Underdeck Strengthening and C7 – Location of all permanentfixed equipment</filename>
 						<filename doctype="DOC" actionname="LMPS1IMRSP">Section 1 Part D - Inspection, Maintenance and Retirement Strategies or Principles</filename>
 						<filename doctype="DOC" actionname="LMPS1RCMSPHF">Section 1 Part E - Risk and Chagne Mgmt, Safety of Personnel and Human Factors</filename>
 						<filename doctype="DOC" actionname="LMPS1RD">Section 1 Part F - Records and Documentation</filename>
