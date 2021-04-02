@@ -161,6 +161,7 @@ function SaveUpdateUser() {
                 RankId:     $('#RankId').val(),
                 ShipId:     $('#ShipId').val(),
                 UserCode:   $('#UserCode').val(),
+                Email:      $('#Email').val(),
                 UserName:   $('#UserName').val(),
                 Password:   $('#Password').val(),
                 Gender:     $('#Gender').val(),
@@ -193,15 +194,31 @@ function SaveUpdateUser() {
             dataType: "json",
 
             success: function (result) {
-                //loadData();
+                loadData();
+                alert('Added Successfully');
+                //CreateTableHeader(userType)
+                //$('#myModal').modal('hide');
 
-                CreateTableHeader(userType)
-                $('#myModal').modal('hide');
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-bottom-full-width",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
 
+                toastr.success("Added Successfully");
                
-
-                
-
                 clearTextBox();
             },
             error: function (errormessage) {
