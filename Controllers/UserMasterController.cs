@@ -52,7 +52,7 @@ namespace TCCCMS.Controllers
             return View();
         }
         [HttpPost]
-        public JsonResult LoadData(int UserType)
+        public JsonResult LoadData()
         {
             int draw, start, length;
             int pageIndex = 0;
@@ -83,27 +83,27 @@ namespace TCCCMS.Controllers
             int totalrecords = 0;
 
             List<UserMasterPOCO> pocoList = new List<UserMasterPOCO>();
-            pocoList = bL.GetAllUserPageWise(pageIndex, ref totalrecords, length, UserType);
-            List<UserMasterPOCO> pList = new List<UserMasterPOCO>();
-            foreach (UserMasterPOCO pC in pocoList)
-            {
-                UserMasterPOCO pOCO = new UserMasterPOCO();
-                pOCO.UserId = pC.UserId;
-                pOCO.UserName = pC.UserName;
-                pOCO.UserCode = pC.UserCode;
-                pOCO.CreatedOn1 = pC.CreatedOn1;
-                pOCO.Email = pC.Email;
-                //pOCO.CreatedBy = pC.CreatedBy;
-                //pOCO.ModifiedBy = pC.ModifiedBy;
-                pOCO.Gender = pC.Gender;
-                pOCO.VesselIMO = pC.VesselIMO;
-                //pOCO.RankName = pC.RankName;
-                //pOCO.ShipName = pC.ShipName;
+            pocoList = bL.GetAllUserPageWise(pageIndex, ref totalrecords, length, Convert.ToInt32(Session["UserType"].ToString()));
+            //List<UserMasterPOCO> pList = new List<UserMasterPOCO>();
+            //foreach (UserMasterPOCO pC in pocoList)
+            //{
+            //    UserMasterPOCO pOCO = new UserMasterPOCO();
+            //    pOCO.UserId = pC.UserId;
+            //    pOCO.UserName = pC.UserName;
+            //    pOCO.UserCode = pC.UserCode;
+            //    pOCO.CreatedOn1 = pC.CreatedOn1;
+            //    pOCO.Email = pC.Email;
+            //    //pOCO.CreatedBy = pC.CreatedBy;
+            //    //pOCO.ModifiedBy = pC.ModifiedBy;
+            //    pOCO.Gender = pC.Gender;
+            //    pOCO.VesselIMO = pC.VesselIMO;
+            //    //pOCO.RankName = pC.RankName;
+            //    //pOCO.ShipName = pC.ShipName;
 
-                pList.Add(pOCO);
-            }
+            //    pList.Add(pOCO);
+            //}
 
-            var data = pList;
+            var data = pocoList;
             return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
 
@@ -216,6 +216,14 @@ namespace TCCCMS.Controllers
         {
             UserMasterBL bL = new UserMasterBL();
             int recordaffected = bL.DeleteUserMaster(UserId/*, ref recordCount*/);
+            return Json(recordaffected, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public ActionResult UploadPermissionUserMaster(int UserId/*, ref string recordCount*/)
+        {
+            UserMasterBL bL = new UserMasterBL();
+            int recordaffected = bL.UploadPermissionUserMaster(UserId/*, ref recordCount*/);
             return Json(recordaffected, JsonRequestBehavior.AllowGet);
 
         }

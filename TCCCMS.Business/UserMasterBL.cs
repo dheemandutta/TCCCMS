@@ -61,6 +61,11 @@ namespace TCCCMS.Business
             return dAL.DeleteUserMaster(UserId/*, ref oUTPUT*/);
         }
 
+        public int UploadPermissionUserMaster(int UserId/*, ref string oUTPUT*/)
+        {
+            UserMasterDAL dAL = new UserMasterDAL();
+            return dAL.UploadPermissionUserMaster(UserId/*, ref oUTPUT*/);
+        }
 
         public string GenerateUserCode(string asUserType, string asShipId, string asRankId, string asUserName)
         {

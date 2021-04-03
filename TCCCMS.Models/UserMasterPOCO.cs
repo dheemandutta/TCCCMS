@@ -36,5 +36,8 @@ namespace TCCCMS.Models
 
         public RankPOCO Rank { get; set; } //--Added on 20th JAN 2021 @BK
         public Ship Ship { get; set; }//--Added on 20th JAN 2021 @BK
+
+        public int UploadPermission { get; set; }
+        
     }
 }

@@ -144,9 +144,12 @@ namespace TCCCMS.Data
                             CreatedBy = Convert.ToString(dr["CreatedBy"]),
                             ModifiedBy = Convert.ToString(dr["ModifiedBy"]),
                             Gender = Convert.ToString(dr["Gender"]),
-                            VesselIMO = Convert.ToString(dr["VesselIMO"])//,
-                            //RankName = Convert.ToString(dr["RankName"]),
+                            VesselIMO = Convert.ToString(dr["VesselIMO"]),
+                            IsActive = Convert.ToInt32(dr["IsActive"]),
+                            UploadPermission = Convert.ToInt32(dr["UploadPermission"])
+
                             //ShipName = Convert.ToString(dr["ShipName"]),
+
                         });
                     }
                     recordCount = Convert.ToInt32(cmd.Parameters["@RecordCount"].Value);
@@ -570,10 +573,21 @@ namespace TCCCMS.Data
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@UserId", UserId);
 
+            int recordsAffected = cmd.ExecuteNonQuery();          
+
+            con.Close();
+            return recordsAffected;
+        }
+
+        public int UploadPermissionUserMaster(int UserId)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("stpUploadPermissionUserMaster", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@UserId", UserId);
+
             int recordsAffected = cmd.ExecuteNonQuery();
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
 
             con.Close();
             return recordsAffected;
