@@ -87,3 +87,121 @@ function GetFormIdForModifiedSection() {
     return false;
 }
 
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function validate() {
+    var isValid = true;
+
+    if ($('#Chapter').val().length === 0) {
+        $('#Chapter').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#Chapter').css('border-color', 'lightgrey');
+    }
+
+    if ($('#Section').val().length === 0) {
+        $('#Section').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#Section').css('border-color', 'lightgrey');
+    }
+    if ($('#ChangeComment').val().length === 0) {
+        $('#ChangeComment').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#ChangeComment').css('border-color', 'lightgrey');
+    }
+
+    if ($('#ModificationDate').val().length === 0) {
+        $('#ModificationDate').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#ModificationDate').css('border-color', 'lightgrey');
+    }
+
+    return isValid;
+}
+
+function clearTextBox() {
+    $('#RevisionHistoryId').val("");
+    $('#Chapter').val("");
+    $('#Section').val("");
+    $('#ChangeComment').val("");
+    $('#ModificationDate').val("");
+}
+
+function SaveRevisionHistory() {
+
+    //alert($('textarea#Comments').val());
+    //debugger;
+    var posturl = $('#SaveRevisionHistory').val();
+    var res = validate();
+    if (res == false) {
+        return false;
+    }
+    //alert(res);
+    if (res) {
+        var RevisionHistory = {
+            RevisionHistoryId: $('#RevisionHistoryId').val(),
+            Chapter: $('#Chapter').val(),
+            Section: $('#Section').val(),
+            ChangeComment: $('#ChangeComment').val(),
+            ModificationDate: $('#ModificationDate').val()
+        };
+
+        $.ajax({
+            url: posturl,
+            data: JSON.stringify(RevisionHistory),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+
+            //success: function (result) {
+
+            //    alert('Added Successfully');
+
+            //    clearTextBox();
+            //    }         
+            //,
+
+
+
+            success: function (result) {
+                //loadData();
+                //$('#myModal').modal('hide');
+                // alert('Added Successfully');
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-bottom-full-width",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+
+                toastr.success("Added Successfully");
+
+                clearTextBox();
+            },
+            error: function (errormessage) {
+                console.log(errormessage.responseText);
+            }
+        });
+    }
+}

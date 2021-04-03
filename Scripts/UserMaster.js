@@ -253,7 +253,7 @@ function loadData() {
 function CreateTableHeader(utyp) {
     
     if (utyp === 2) {
-        $('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Gender</th><th>Edit</th><th> Delete</th>');
+        $('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th>');
         SetUpGridCompanyUser(2);
     }
     else if (utyp === 1) {
@@ -421,7 +421,7 @@ function SetUpGridShipUser(UserType) {
 //    });
 //}
 
-function SetUpGridCompanyUser(UserType) {
+function SetUpGridCompanyUser() {
     var loadposturl = $('#loaddata').val();
 
     //do not throw error
@@ -446,56 +446,61 @@ function SetUpGridCompanyUser(UserType) {
             "url": loadposturl,
             "type": "POST",
             "datatype": "json",
-            "data": { UserType: UserType }
+            //"data": { UserType: UserType }
         },
         "columns": [
-            //{
-            //    "data": "Order", "name": "Order", "autoWidth": true, "className": 'reorder'
-            //},
             {
                 "data": "UserName", "name": "UserName", "autoWidth": true
             },
             {
                 "data": "UserCode", "name": "UserCode", "autoWidth": true
             },
-            //{
-            //    "data": "CreatedOn1", "name": "CreatedOn1", "autoWidth": true
-            //},
             {
                 "data": "Email", "name": "Email", "autoWidth": true
             },
-            //{
-            //    "data": "CreatedBy", "name": "CreatedBy", "autoWidth": true
-            //},
-            //{
-            //    "data": "ModifiedBy", "name": "ModifiedBy", "autoWidth": true
-            //},
-            //{
-            //    "data": "Gender", "name": "Gender", "autoWidth": true
-            //},
-            //{
-            //    "data": "VesselIMO", "name": "VesselIMO", "autoWidth": true
-            //},
-            //{
-            //    "data": "RankName", "name": "RankName", "autoWidth": true
-            //},
-            //{
-            //    "data": "ShipName", "name": "ShipName", "autoWidth": true
-            //},
-
             {
                 "data": "UserId", "width": "50px", "render": function (data) {
                     return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
                 }
             },
+            //{
+            //    "data": "UserId", "width": "50px", "render": function (data) {
+            //        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="                  ">Upload</a>';
+            //    }
+            //},
             {
-                "data": "UserId", "width": "50px", "render": function (d) {
-                    //debugger;
-                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
+                "data": "UploadPermission", "width": "50px", "render": function (data, type, row) {
 
+                    console.log(row.UserId);
 
+                    if (data == '1') {
+                        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="UploadPermissionUserMaster(' + row.UserId + ')">NotAllow</a>';
+                    }
+                    else if (data == '0') {
+                        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #7db700;" onclick="UploadPermissionUserMaster(' + row.UserId + ')">Allow</a>';
+
+                    }
+                }
+            },
+             {
+                 "data": "IsActive", "width": "50px", "render": function (data,type,row) {
+
+                     console.log(row.UserId);
+
+                     if (data == '1') {
+                         return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + row.UserId + ')">Inactive</a>';
+                    }
+                     else if (data == '0') {
+                         return '<a href="#" class="btn btn-info btn-sm" style="background-color: #7db700;" onclick="DeleteUserMaster(' + row.UserId + ')">Active</a>';
+
+                    }
                 }
             }
+
+
+
+
+
 
         ],
         "rowId": "UserId"
@@ -518,17 +523,9 @@ function DeleteUserMaster(UserId) {
             contentType: "application/json;charset=UTF-8",
             dataType: "json",
             success: function (result) {
-                // debugger;
 
-                if (result == -1) {
-                    alert(" cannot be deleted as this is already used.");
-                }
-                else if (result == 0) {
-                    alert(" cannot be deleted as this is already used.");
-                }
-                else {
-                    loadData();
-                }
+                SetUpGridCompanyUser();
+               
             },
             error: function () {
                 alert(" cannot be deleted as this is already used");
@@ -538,7 +535,28 @@ function DeleteUserMaster(UserId) {
 }
 
 
+function UploadPermissionUserMaster(UserId) {
+    var e = $('#UploadPermissionUserMaster').val();
+    var ans = confirm("Are you sure you want to delete this Record?");
+    if (ans) {
+        // debugger;
+        $.ajax({
+            url: e,
+            data: JSON.stringify({ UserId: UserId }),
+            type: "POST",
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (result) {
 
+                SetUpGridCompanyUser();
+
+            },
+            error: function () {
+                alert(" cannot be deleted as this is already used");
+            }
+        });
+    }
+}
 
 function GetUserByUserId(UserId) {
     $('#UserName').css('border-color', 'lightgrey');

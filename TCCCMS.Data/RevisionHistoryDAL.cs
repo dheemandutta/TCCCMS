@@ -74,5 +74,38 @@ namespace TCCCMS.Data
             con.Close();
             return List;
         }
+
+
+
+        public int SaveRevisionHistory(RevisionHistory pOCO)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("stpSaveRevisionHistory", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Chapter", pOCO.Chapter.ToString());
+            cmd.Parameters.AddWithValue("@Section", pOCO.Section.ToString());
+            cmd.Parameters.AddWithValue("@ChangeComment", pOCO.ChangeComment.ToString());
+            cmd.Parameters.AddWithValue("@ModificationDate", pOCO.ModificationDate);
+
+            if (pOCO.ID > 0)
+            {
+                cmd.Parameters.AddWithValue("@RevisionHistoryId", pOCO.ID);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@RevisionHistoryId ", DBNull.Value);
+            }
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return recordsAffected;
+        }
+
+
+
+
     }
 }

@@ -19,5 +19,15 @@ namespace TCCCMS.Models
 
 
         public int FormId { get; set; }
+
+
+
+        public string Chapter { get; set; }
+        public string Section { get; set; }
+        public string ChangeComment { get; set; }
+
+
+        //public DateTime ModificationDate { get; set; }
+        public string ModificationDate { get; set; }
     }
 }

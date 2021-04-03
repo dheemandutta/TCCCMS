@@ -1,0 +1,97 @@
+﻿@model TCCCMS.Models.RevisionHistory
+@{
+    ViewBag.Title = "RoleGroup";
+    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+}
+
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script src="~/Scripts/notify.min.js"></script>
+<link href="~/Content/notify.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+
+<link href="~/Content/toastr.min.css" rel="stylesheet" />
+<script src="~/Scripts/toastr.js"></script>
+
+<link href="~/Content/jquery-ui.css" rel="stylesheet" />
+
+<link href="~/Content/themes/base/datepicker.css" rel="stylesheet" />
+<link href="~/Content/plugin/datepicker/datepicker.css" rel="stylesheet" />
+<link href="~/Content/plugin/datepicker/css/pickmeup.css" rel="stylesheet" />
+
+<script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+<script src="~/Scripts/RevisionHistory.js"></script>
+
+@Html.Hidden("SaveRevisionHistory", @Url.Action("SaveRevisionHistory", "RevisionHistory"))
+
+<body>
+    <div class="row">
+        @*<div class="col-md-3">
+                <h2 class="ta">Revision History</h2>
+            </div>*@
+        <h2 class="ta">Revision History</h2>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-8 bac1">
+
+                    <div class="form-group">
+                        <input type="hidden" id="RevisionHistoryId" />
+                    </div>
+
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label for="Chapter">Chapter</label>
+                            <input type="text" class="form-control" id="Chapter" placeholder="Chapter" />
+                        </div>
+                        <div class="form-group">
+                            <label for="Section">Section</label>
+                            @*<input type="text" class="form-control" id="Section" placeholder="Section" />*@
+                            <textarea style="max-width: 540px;" class="form-control" id="Section" name="w3review" rows="9" cols="50"> </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="ChangeComment">Change Comment</label>
+                            @*<input type="text" class="form-control" id="ChangeComment" placeholder="Change Comment" />*@
+                            <textarea style="max-width: 540px;" class="form-control" id="ChangeComment" name="w3review" rows="9" cols="50"> </textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="ModificationDate"> Modification Date</label>
+                            <input type="text" class="form-control" id="ModificationDate" placeholder="Chapter" />
+                        </div>
+                    </div>
+
+
+                    <div class="modal-footer" @*style="background-color:lightgray;"*@>
+                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return SaveRevisionHistory();">Add</button>
+                    </div>
+                    @*</div>*@
+
+                    @*</div>*@
+                    @*</div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $(document).ready(function () {
+
+
+        //$("#drpUser").change(function () {
+        //    var selectedUser = $('#drpUser').val();
+        //    loadData(selectedUser);
+        //});
+
+    });
+
+    $("#ModificationDate").datepicker({
+
+        changeMonth: true,
+        changeYear: true,
+        dateFormat: 'd-M-yy',
+
+    });
+
+</script>
+
