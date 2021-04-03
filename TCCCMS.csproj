@@ -1117,6 +1117,8 @@
     <Content Include="Scripts\RoleGroup.js" />
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
+    <Content Include="SQL Script\02.04.2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29.sql" />
+    <Content Include="SQL Script\02.04.2021_Full_Schema_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\31.03.2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29.sql" />
     <Content Include="SQL Script\31.03.2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29_II.sql" />
     <Content Include="SQL Script\31.03.2021_Full_Schema_Of_TCCCMSDB.sql" />
@@ -2219,7 +2221,6 @@
     <Content Include="Views\FormsAndChecklists\SafetyMmgt.cshtml" />
     <Content Include="Views\FormsAndChecklists\FilingSystemAndRetentionMatrix.cshtml" />
     <Content Include="Views\FormsAndChecklists\CO031.cshtml" />
-    <Content Include="SQL Script\02.03.2021_Full_Script_Of_TCCCMSDB.zip" />
     <Content Include="Views\FormsAndChecklists\Index.cshtml" />
     <Content Include="Views\CompanyPolicyManual\PDFViewer.cshtml" />
     <Content Include="Views\CompanyProceduresManual\PDFViewer.cshtml" />

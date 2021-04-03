@@ -1,0 +1,263 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("Styles", required: false)
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/stellarnav.css" rel="stylesheet">
+    <link href="~/css/responsive.css" rel="stylesheet">
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <link href="~/css/owl.theme.default.css" rel="stylesheet">
+    <link href="~/css/animate.css" rel="stylesheet">
+    @*<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">*@
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-12">
+                    <div class="logo">
+                        <a href="#"><img src="~/images/logo.png"></a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-12">
+                    <div class="search">
+                        @*<input type="text" class="searchTerm" placeholder="Search....">
+                        <button type="submit" class="searchButton">
+                            <i class="fa fa-search"></i>
+                        </button>*@
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-12">
+                    <div class="menu_icon" class="openbtn" onclick="openNav()">
+                        <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="breadcrumbs">
+        <div class="steps steps_animation">
+            <div class="steps_item">
+                <span class="steps_content">
+                    <a href="#"> Home</a>
+                </span>
+            </div>
+            <div class="steps_item">
+                <span class="steps_content">
+                    Inner Page1
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="full_body">
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <!--<footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>-->
+        </div>
+
+
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <div class="menu_panel">
+                <div class="menu">
+                    <ul>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("UserDashboard", "Dashboard")'>
+                                <span class="vul">1 </span><span class="pgnam">User Dashboard</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='   '>
+                                <span class="vul">2 </span><span class="pgnam"> User Management </span>
+                            </a>
+                            <ul class="submenu">
+                                @*<li>
+            <a href='@Url.Action("Index", "UserGroup")'>
+                <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Group</span>
+            </a>
+        </li>*@
+
+
+                                @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
+                                {
+                                    <li>
+                                        <a href='@Url.Action("RoleGroup", "RoleGroup")'>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Associate Role Group</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href='@Url.Action("GroupUser", "RoleGroup")'>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Associate Group User</span>
+                                        </a>
+                                    </li>
+                                }
+
+
+
+
+                                    <li>
+                                        <a href='@Url.Action("Index", "UserMaster")'>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Master </span>
+                                        </a>
+                                    </li>
+                                    @*<li>
+                                        <a href='@Url.Action("CompanyUser", "UserMaster")'>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Company User</span>
+                                        </a>
+                                    </li>*@
+                                    @*<li>
+                <a href='@Url.Action("SupportUser", "UserMaster")'>
+                    <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Support User</span>
+                </a>
+            </li>*@
+                                    <li>
+                                        <a href='@Url.Action("UploadForm", "UserMaster")'>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Upload Form</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='   '>
+                                <span class="vul">3 </span><span class="pgnam">Template</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='   '>
+                                <span class="vul">4 </span><span class="pgnam">Ticket</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='   '>
+                                <span class="vul">5 </span><span class="pgnam">Sync</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "Ship")'>
+                                <span class="vul">6 </span><span class="pgnam">Ship</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "RoleMaster")'>
+                                <span class="vul">7 </span><span class="pgnam">Role Master</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "Rank")'>
+                                <span class="vul">8 </span><span class="pgnam">Rank </span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "PermissionRole")'>
+                                <span class="vul">9 </span><span class="pgnam">Permission Role </span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "Import")'>
+                                <span class="vul">10 </span><span class="pgnam">Import</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "GroupMaster")'>
+                                <span class="vul">11 </span><span class="pgnam">Group Master</span>
+                            </a>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='   '>
+                                <span class="vul">12 </span><span class="pgnam"> Document </span>
+                            </a>
+                            <ul class="submenu">
+                                <li>
+                                    <a href='@Url.Action("List", "Document")'>
+                                        <span class="vul">12 </span><span class="pgnam" style="background-color:salmon;"> Document List</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("UpdateForm", "Document")'>
+                                        <span class="vul">12 </span><span class="pgnam" style="background-color:salmon;"> Update Form </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href='@Url.Action("Upload", "Document")'>
+                                        <span class="vul">12 </span><span class="pgnam" style="background-color:salmon;"> Upload</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="mainmenu">
+                            <a href='@Url.Action("Index", "Approver")'>
+                                <span class="vul">13 </span><span class="pgnam">Approver </span>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    @*<script src="~/Scripts/jquery-3.5.1.min.js"></script>*@
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "500px";
+            document.getElementById("main").style.marginLeft = "500px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+    <script>
+        $(document).ready(function () {
+
+            $('#menuicon').click(function () {
+                $('#menu_sec').toggleClass('hidden');
+                $('.content_body').toggleClass('wdth_chn');
+                $('#menuicon').toggleClass('show');
+
+            });
+        });
+    </script>
+
+</body>
+
+</html>
