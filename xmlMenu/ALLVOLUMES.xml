@@ -116,7 +116,7 @@
 				<filename doctype="DOC" actionname="OSJD">OS Job Description</filename>
 				<filename doctype="DOC" actionname="PJD">Pump man Job Description</filename>
 				<filename doctype="DOC" actionname="SEJD">Second Engineer Job Description</filename>
-				<filename doctype="DOC" actionname="">Second Officer Job Description</filename>
+				<filename doctype="DOC" actionname="SOJD">Second Officer Job Description</filename>
 				<filename doctype="DOC" actionname="SSOJD">Senior Second Officer Job Description</filename>
 				<filename doctype="DOC" actionname="TEJD">Third Engineer Job Description</filename>
 				<filename doctype="DOC" actionname="TOJD">Third Officer Job Description</filename>
