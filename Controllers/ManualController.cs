@@ -39,6 +39,7 @@ namespace TCCCMS.Controllers
             {
                 searchText = "Business";
                 TempData["SearchText"] = "Business";
+                fsvm.SearchText = "Business";
             }
             else
             {
