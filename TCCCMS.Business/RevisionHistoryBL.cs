@@ -24,5 +24,11 @@ namespace TCCCMS.Business
             RevisionHistoryDAL dAL = new RevisionHistoryDAL();
             return dAL.GetFormIdForModifiedSection();
         }
+
+        public int SaveRevisionHistory(RevisionHistory pOCO /*,int VesselID*/)
+        {
+            RevisionHistoryDAL dAL = new RevisionHistoryDAL();
+            return dAL.SaveRevisionHistory(pOCO/*, VesselID*/);
+        }
     }
 }

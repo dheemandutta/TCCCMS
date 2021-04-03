@@ -8,12 +8,20 @@ using System.Web;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
 
+using System.IO;
+using Newtonsoft.Json;
+
 namespace TCCCMS.Controllers
 {
     public class RevisionHistoryController : Controller
     {
         // GET: RevisionHistory
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult RevisionHistory()
         {
             return View();
         }
@@ -78,5 +86,16 @@ namespace TCCCMS.Controllers
 
             return Json(bL.GetFormIdForModifiedSection(), JsonRequestBehavior.AllowGet);
         }
+
+
+
+        public JsonResult SaveRevisionHistory(RevisionHistory pOCO)
+        {
+            RevisionHistoryBL bL = new RevisionHistoryBL();
+            RevisionHistory pC = new RevisionHistory();
+
+            return Json(bL.SaveRevisionHistory(pOCO), JsonRequestBehavior.AllowGet);
+        }
+
     }
 }
