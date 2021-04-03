@@ -39,7 +39,7 @@ function SetUpGrid(CategoryId) {
 
     // alert('hh');
     var table = $("#DownloadableFromsTable").DataTable({
-        "dom": 'Bfrtip',
+        /*"dom": 'Bfrtip',*/
         "rowReorder": false,
         "ordering": false,
         "filter": false, // this is for disable filter (search box)
@@ -68,6 +68,6 @@ function SetUpGrid(CategoryId) {
             }
         ],
         "rowId": "ID",
-        "dom": "Bfrtip"
+        /*"dom": "Bfrtip"*/
     });
 }
