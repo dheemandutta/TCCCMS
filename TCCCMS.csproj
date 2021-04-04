@@ -133,6 +133,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
+    <Compile Include="Controllers\MainDocumentController.cs" />
     <Compile Include="Controllers\MaintenanceOfShipAndEquipmentController.cs" />
     <Compile Include="Controllers\MajorCasualtyAndEnvironmentalProtectionPlanController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
@@ -2228,6 +2229,8 @@
     <Content Include="Views\FormsAndChecklists\Pages.cshtml" />
     <Content Include="Views\RevisionHistory\RevisionHistory.cshtml" />
     <Content Include="Views\RevisionHistory\RevisionDetails.cshtml" />
+    <Content Include="Views\MainDocument\Index.cshtml" />
+    <Content Include="Views\MainDocument\Pages.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

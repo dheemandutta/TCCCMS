@@ -158,6 +158,7 @@ namespace TCCCMS.Controllers
                     string partName = volName.Split(' ').Last();
                     string volumeId = volume.Attributes["id"].Value.ToString();
                     vol = manuBl.GetVolumeById(volumeId);
+                   // string ctrlName = volume.Attributes["controllername"].Value.ToString();//--Added on 04/04/2021
                     sb.Append("\n");
                     //sb.Append("<li class='mainmenu'><a href='#'><span class='vul'>Volume <b>I</b> </span><span class='pgnam'>" + volName + "</span></a>");
                     //string s= "'@Url.Action('"

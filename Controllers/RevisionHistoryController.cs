@@ -106,5 +106,20 @@ namespace TCCCMS.Controllers
             return View(rhhVM);
         }
 
+        public JsonResult GetRevisionHeaderForDrp()
+        {
+            List<RevisionHeader> rHeaderList = new List<RevisionHeader>();
+            RevisionHistoryBL rhBl = new RevisionHistoryBL();
+            rHeaderList = rhBl.GetRevisionHeaderForDrp();
+            var data = rHeaderList;
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+        public JsonResult SaveRevisionHeader(RevisionHeader rHeader)
+        {
+            RevisionHistoryBL rhBl = new RevisionHistoryBL();
+            int x = rhBl.SaveRevisionHeader(rHeader);
+            return Json(x, JsonRequestBehavior.AllowGet);
+        }
+
     }
 }

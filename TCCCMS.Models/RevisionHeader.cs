@@ -11,6 +11,9 @@ namespace TCCCMS.Models
         public int Id { get; set; }
         public string RevisionNo { get; set; }
         public string RevisionDate { get; set; }
+
+        
+        public string RevisionName { get; set; }
         public string CreatedAt { get; set; }
         public int CreatedBy { get; set; }
 

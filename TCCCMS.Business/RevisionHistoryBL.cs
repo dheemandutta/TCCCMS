@@ -38,5 +38,16 @@ namespace TCCCMS.Business
             return rhDal.GetAllRevisionDetails();
 
         }
+        public List<RevisionHeader> GetRevisionHeaderForDrp()
+        {
+            RevisionHistoryDAL rhDal = new RevisionHistoryDAL();
+
+            return rhDal.GetRevisionHeaderForDrp();
+        }
+        public int SaveRevisionHeader(RevisionHeader rHeader )
+        {
+            RevisionHistoryDAL rhDal = new RevisionHistoryDAL();
+            return rhDal.SaveRevisionHeader(rHeader);
+        }
     }
 }

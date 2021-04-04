@@ -148,11 +148,12 @@ function SaveRevisionHistory() {
     //alert(res);
     if (res) {
         var RevisionHistory = {
-            RevisionHistoryId: $('#RevisionHistoryId').val(),
-            Chapter: $('#Chapter').val(),
-            Section: $('#Section').val(),
-            ChangeComment: $('#ChangeComment').val(),
-            ModificationDate: $('#ModificationDate').val()
+            RevisionHistoryId:  $('#RevisionHistoryId').val(),
+            HeaderId:           $('#ddlRevisionNo').val(),
+            Chapter:            $('#Chapter').val(),
+            Section:            $('#Section').val(),
+            ChangeComment:      $('#ChangeComment').val(),
+            ModificationDate:   $('#ModificationDate').val()
         };
 
         $.ajax({
@@ -204,4 +205,88 @@ function SaveRevisionHistory() {
             }
         });
     }
+}
+
+function LoadRevisionHeaderForDrp() {
+    var loadposturl = $('#loadHeader').val();
+    $.ajax({
+        url: loadposturl,
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            var drpRevisionNo = $('#ddlRevisionNo');
+            drpRevisionNo.find('option').remove();
+            $.each(result, function () {
+                drpRevisionNo.append('<option value=' + this.Id + '>' + this.RevisionName + '</option>');
+            });
+        },
+        error: function (errormessage) {
+            console.log(errormessage.responseText);
+        }
+    });
+
+}
+
+function SaveRevisionReader() {
+
+    var posturl = $('#saveHeader').val();
+    //var res = validate();
+    //if (res == false) {
+    //    return false;
+    //}
+    //alert(res);
+    //if (res) {
+        var rHeader = {
+            Id:             $('#hdnRevisionHeaderId').val(),
+            RevisionNo:     $('#txtRevisionNo').val(),
+            RevisionDate:   $('#txtRevisionDate').val()
+        };
+
+        $.ajax({
+            url: posturl,
+            data: JSON.stringify(rHeader),
+            type: "POST",
+            contentType: "application/json;charset=utf-8",
+            dataType: "json",
+
+            success: function (result) {
+                //loadData();
+                //$('#myModal').modal('hide');
+                // alert('Added Successfully');
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-bottom-full-width",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+
+                toastr.success("Added Successfully");
+                LoadRevisionHeaderForDrp();
+                $('#hdnRevisionHeaderId').val("");
+                $('#txtRevisionNo').val("");
+                $('#txtRevisionDate').val("");
+
+                $('#headerModal').modal('hide');
+
+
+
+            },
+            error: function (errormessage) {
+                console.log(errormessage.responseText);
+            }
+        });
+    //}
 }
