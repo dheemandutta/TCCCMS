@@ -96,24 +96,44 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-1 col-md-1 col-6">
-                </div>
+                @*<div class="col-lg-1 col-md-1 col-6">
+                </div>*@
+
                 <div class="col-lg-2 col-md-2 col-6">
-                    <a href="/CommonToAllManual/Index">
-                        <div class="icon_box dropdown">
-                            <span class="dropbtn">
-                                <img src="/images/user_m.png">
-                            </span>
-                            <div class="dropdown-content">
-
-                            </div>
-
-                            <h5> User Management</h5>
-
-
+                    <div class="icon_box dropdown">
+                        <span class="dropbtn">
+                            <img src="~/images/ship_icon.png">
+                        </span>
+                        <div class="dropdown-content" style="min-width: 300px;  top: -300px;">
+                            @Html.Action("ShipMenuLayout", "Dashboard")
                         </div>
-                    </a>
+                        <a href="#">Vessel Details</a>
+                    </div>
                 </div>
+
+                <div class="col-lg-2 col-md-2 col-6">
+                    <div class="icon_box dropdown">
+                        <span class="dropbtn">
+                            <img src="/images/user_m.png">
+                        </span>
+                        <div class="dropdown-content" style="min-width: 300px;  top: -130px;">
+                            <ul>
+                                @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
+                                {
+                                    <li><a href="@Url.Action("RoleGroup", "RoleGroup")">Associate Role Group</a></li>
+                                    <li><a href="@Url.Action("GroupUser", "RoleGroup")">Associate Group User</a></li>
+                                    <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
+                                }
+                                </ul>
+                        </div>
+
+                        <h5> User Management</h5>
+
+                    </div>
+                </div>
+
+
+
                 <div class="col-lg-2 col-md-2 col-6">
                     <a href="/CommonToAllManual/Index">
                         <div class="icon_box dropdown">

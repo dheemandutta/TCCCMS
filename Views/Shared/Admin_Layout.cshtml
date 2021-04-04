@@ -49,7 +49,7 @@
                         <button class="button log"><span><img src="~/images/user.png" style="width:27px;" /></span></button>
                         <div class="dropdown-content">
                             <h3>@Session["UserCode"].ToString() <span> @Session["Role"].ToString()</span></h3>
-                            <a href="@Url.Action("Login", "Home")">Sing Out</a>
+                            <a href="@Url.Action("Login", "Home")">Log Off</a>
                         </div>
                     </div>
                 </div>
@@ -134,7 +134,7 @@
 
                                     <li>
                                         <a href='@Url.Action("Index", "UserMaster")'>
-                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Master </span>
+                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Create User </span>
                                         </a>
                                     </li>
                                     @*<li>
