@@ -30,5 +30,13 @@ namespace TCCCMS.Business
             RevisionHistoryDAL dAL = new RevisionHistoryDAL();
             return dAL.SaveRevisionHistory(pOCO/*, VesselID*/);
         }
+
+        public RevisionHeaderHistoryViewModel GetAllRevisionDetails()
+        {
+            RevisionHistoryDAL rhDal = new RevisionHistoryDAL();
+
+            return rhDal.GetAllRevisionDetails();
+
+        }
     }
 }

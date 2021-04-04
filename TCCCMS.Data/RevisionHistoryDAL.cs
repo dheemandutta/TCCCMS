@@ -105,6 +105,58 @@ namespace TCCCMS.Data
         }
 
 
+        public RevisionHeaderHistoryViewModel GetAllRevisionDetails()
+        {
+            RevisionHeaderHistoryViewModel rhhVM = new RevisionHeaderHistoryViewModel();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetRevisionDetails", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    List<RevisionHeader> rHeaderList = new List<RevisionHeader>();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        RevisionHeader rHeader = new RevisionHeader();
+                        rHeader.Id = Convert.ToInt32(dr["Id"]);
+                        rHeader.RevisionNo = Convert.ToString(dr["RevisionNo"]);
+                        rHeader.RevisionDate = Convert.ToString(dr["RevisionDate"]);
+
+                        var histRows = ds.Tables[1].Rows
+                              .Cast<DataRow>()
+                              .Where(x => x.Field<int>(5) == rHeader.Id).ToList();
+
+                        List<RevisionHistory> rhList = new List<RevisionHistory>();
+                        foreach (DataRow drh in histRows)
+                        {
+                            RevisionHistory rh  = new RevisionHistory();
+                            rh.ID               = Convert.ToInt32(drh["RevisionHistoryId"]);
+                            rh.Chapter          = Convert.ToString(drh["Chapter"]);
+                            rh.Section          = Convert.ToString(drh["Section"]);
+                            rh.ChangeComment    = Convert.ToString(drh["ChangeComment"]);
+                            rh.ModificationDate = Convert.ToString(drh["ModificationDate"]);
+                            rh.HeaderId         = Convert.ToInt32(drh["HeaderId"]);
+
+                            rhList.Add(rh);
+                        }
+                        rHeader.RevisionHistoryList = rhList;
+
+
+                        rHeaderList.Add(rHeader);
+                    }
+                    rhhVM.RevisionHeaderList = rHeaderList;
+                }
+
+            }
+
+
+                return rhhVM;
+
+        }
 
 
     }

@@ -25,7 +25,7 @@ namespace TCCCMS.Models
         public string Chapter { get; set; }
         public string Section { get; set; }
         public string ChangeComment { get; set; }
-
+        public int HeaderId { get; set; }
 
         //public DateTime ModificationDate { get; set; }
         public string ModificationDate { get; set; }

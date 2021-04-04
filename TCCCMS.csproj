@@ -2501,6 +2501,7 @@
     <Content Include="Views\Ticket\Index.cshtml" />
     <Content Include="Views\FormsAndChecklists\Pages.cshtml" />
     <Content Include="Views\RevisionHistory\RevisionHistory.cshtml" />
+    <Content Include="Views\RevisionHistory\RevisionDetails.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
