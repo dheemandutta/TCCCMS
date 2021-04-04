@@ -9,21 +9,21 @@
 <script src="~/DataTables/datatables.min.js"></script>
 
 <script src="~/Scripts/DownloadableFroms.js"></script>
-
+<style>
+    table.dataTable.no-footer {
+        width: 100% !important;
+    }
+</style>
 @Html.Hidden("loaddata", @Url.Action("LoadData", "Forms"))
 
 
 <body>
     @*<h2 class="ta">Downloadable Forms</h2>*@
-    <div class="row">
-        <div class="col-md-4">
-            <h2 class="ta">Management Of Ship Personnel</h2>
-        </div>
-
-        <div class="col-md-8">
-            <div class="row">
-                <div class="col-md-12 bac1">
-
+    <div class="">
+        <div class="page_padding">
+            <div class="">
+                <div class="">
+                    <h2 class="ta_title">Management Of Ship Personnel</h2>
                     <div style="margin:0 auto" class="tablecontainer">
                         @*<p align="right">
                                 <a href="~/RevisionHistory/Index"> Revision History </a>
@@ -46,6 +46,15 @@
             </div>
         </div>
 
+    </div>
+    <div class="footer">
+        <ul>
+            <li><strong>Uncontrolled when printed</strong></li>
+            <li>Revision 0.0</li>
+            <li>01-May -21</li>
+            <li><a href="#">View Revision Histroy</a></li>
+
+        </ul>
     </div>
 </body>
 
