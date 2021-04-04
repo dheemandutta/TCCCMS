@@ -12,7 +12,7 @@ namespace TCCCMS.Infrastructure
     {
         public void OnAuthentication(AuthenticationContext filterContext)
         {
-            if (string.IsNullOrEmpty(Convert.ToString(filterContext.HttpContext.Session["UserName"])))
+            if (string.IsNullOrEmpty(Convert.ToString(filterContext.HttpContext.Session["Role"])))
             {
                 filterContext.Result = new HttpUnauthorizedResult();
             }
@@ -26,7 +26,7 @@ namespace TCCCMS.Infrastructure
                 filterContext.Result = new RedirectToRouteResult(
                 new RouteValueDictionary
                 {
-                     { "controller", "Account" },
+                     { "controller", "Home" },
                      { "action", "Login" }
                 });
             }

@@ -9,10 +9,11 @@ using System.Web.Mvc;
 using System.IO;
 using System.Xml;
 using System.Text;
-
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class DashboardController : Controller
     {
         public ActionResult UserDashboard()
