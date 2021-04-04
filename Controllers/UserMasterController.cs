@@ -350,7 +350,7 @@ namespace TCCCMS.Controllers
 
                 itmasterList.Add(unt);
             }
-            itmasterList.Add(new UserMasterPOCO { RankId = -1, RankName = "Please Select One" });
+            //itmasterList.Add(new UserMasterPOCO { RankId = -1, RankName = "Please Select One" });
             ViewBag.Ranks = itmasterList.OrderBy(s => s.RankId).Select(x =>
                                             new SelectListItem()
                                             {
@@ -378,7 +378,7 @@ namespace TCCCMS.Controllers
 
                 itmasterList.Add(unt);
             }
-            itmasterList.Add(new UserMasterPOCO { ShipId = -1, ShipName = "Please Select One" });
+            //itmasterList.Add(new UserMasterPOCO { ShipId = -1, ShipName = "Please Select One" });
             ViewBag.Ships = itmasterList.OrderBy(s => s.ShipId).Select(x =>
                                             new SelectListItem()
                                             {
