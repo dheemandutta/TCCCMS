@@ -54,12 +54,13 @@
                     </div>
                 </div>
                 <div class="col-lg-1 col-md-1 col-12">
-                    <div class="menu_icon" class="openbtn" onclick="openNav()">
-                        <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                    @if (Session["Role"].ToString() == "SupportUser")
+                    {
+                        <div class="menu_icon" class="openbtn" onclick="openNav()">
+                            <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                        </div>
+                    }
                     </div>
-
-                  
-                </div>
             </div>
         </div>
     </header>

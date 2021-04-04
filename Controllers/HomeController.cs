@@ -94,8 +94,17 @@ namespace TCCCMS.Controllers
                 Session["UserName"]     = lUser.UserName.ToString();
                 Session["Email"]        = lUser.Email.ToString();
                 Session["ShipId"]       = lUser.ShipId.ToString();
-                Session["ShipName"]     = lUser.ShipName.ToString();
-                Session["VesselIMO"]    = lUser.VesselIMO.ToString();
+
+                if (!string.IsNullOrEmpty(lUser.ShipName))
+                    Session["ShipName"] = lUser.ShipName.ToString();
+                else
+                    Session["ShipName"] = "";
+
+                if (!string.IsNullOrEmpty(lUser.VesselIMO))
+                    Session["VesselIMO"] = lUser.VesselIMO.ToString();
+                else
+                    Session["VesselIMO"] = "";
+
                 Session["UserType"]     = lUser.UserType.ToString();
                 //Session["IsAdmin"]      = lUser.IsAdmin.ToString();
 

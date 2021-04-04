@@ -50,6 +50,14 @@ function validate() {
         $('#Gender').css('border-color', 'lightgrey');
     }
 
+    if ($('#drpUserRole').val().length === 0) {
+        $('#drpUserRole').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#drpUserRole').css('border-color', 'lightgrey');
+    }
+
     //if ($('#VesselIMO').val().length === 0) {
     //    $('#VesselIMO').css('border-color', 'Red');
     //    isValid = false;
@@ -99,6 +107,13 @@ function validateCUser() {
         $('#cGender').css('border-color', 'lightgrey');
     }
 
+    if ($('#drpCompanyRole').val().length === 0) {
+        $('#drpCompanyRole').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#drpCompanyRole').css('border-color', 'lightgrey');
+    }
 
 
     return isValid;
@@ -252,95 +267,95 @@ function loadData() {
 
 function CreateTableHeader(utyp) {
     
-    if (utyp === 2) {
+/*    if (utyp === 2) {*/
         $('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th>');
         SetUpGridCompanyUser(2);
-    }
-    else if (utyp === 1) {
-        $('#UserMasterTable thead tr').append('<th>User Name</th><th>Created On</th><th>Email</th><th>Gender</th><th>Vessel IMO</th><th>Rank Name</th><th>Ship Name</th><th>Edit</th><th> Delete</th>');
-        SetUpGridShipUser(utyp);
-    }
+  /*  }*/
+    //else if (utyp === 1) {
+    //    $('#UserMasterTable thead tr').append('<th>User Name</th><th>Created On</th><th>Email</th><th>Gender</th><th>Vessel IMO</th><th>Rank Name</th><th>Ship Name</th><th>Edit</th><th> Delete</th>');
+    //    SetUpGridShipUser(utyp);
+    //}
         
 }
 
-function SetUpGridShipUser(UserType) {
-    var loadposturl = $('#loaddata').val();
+//function SetUpGridShipUser(UserType) {
+//    var loadposturl = $('#loaddata').val();
 
-    //do not throw error
-    $.fn.dataTable.ext.errMode = 'none';
+//    //do not throw error
+//    $.fn.dataTable.ext.errMode = 'none';
 
-   // var UserType = 1; //////////////////////////////////////////////////////////////////////// SupportUser = 0, ShipUser(Index) = 1, CompanyUser = 2.
+//   // var UserType = 1; //////////////////////////////////////////////////////////////////////// SupportUser = 0, ShipUser(Index) = 1, CompanyUser = 2.
 
-    //check if datatable is already created then destroy iy and then create it
-    if ($.fn.dataTable.isDataTable('#UserMasterTable')) {
-        table = $('#UserMasterTable').DataTable();
-        table.destroy();
-    }
+//    //check if datatable is already created then destroy iy and then create it
+//    if ($.fn.dataTable.isDataTable('#UserMasterTable')) {
+//        table = $('#UserMasterTable').DataTable();
+//        table.destroy();
+//    }
 
-    // alert('hh');
-    var table = $("#UserMasterTable").DataTable({
-        //"dom": 'Bfrtip',
-        //"rowReorder": false,
-        "ordering": false,
-        "filter": false, // this is for disable filter (search box)
+//    // alert('hh');
+//    var table = $("#UserMasterTable").DataTable({
+//        //"dom": 'Bfrtip',
+//        //"rowReorder": false,
+//        "ordering": false,
+//        "filter": false, // this is for disable filter (search box)
 
-        "ajax": {
-            "url": loadposturl,
-            "type": "POST",
-            "datatype": "json",
-            "data": { UserType: UserType }
-        },
-        "columns": [
-            //{
-            //    "data": "Order", "name": "Order", "autoWidth": true, "className": 'reorder'
-            //},
-            {
-                "data": "UserName", "name": "UserName", "autoWidth": true
-            },
-            {
-                "data": "CreatedOn1", "name": "CreatedOn1", "autoWidth": true
-            },
-            {
-                "data": "Email", "name": "Email", "autoWidth": true
-            },
-            //{
-            //    "data": "CreatedBy", "name": "CreatedBy", "autoWidth": true
-            //},
-            //{
-            //    "data": "ModifiedBy", "name": "ModifiedBy", "autoWidth": true
-            //},
-            {
-                "data": "Gender", "name": "Gender", "autoWidth": true
-            },
-            {
-                "data": "VesselIMO", "name": "VesselIMO", "autoWidth": true
-            },
-            {
-                "data": "RankName", "name": "RankName", "autoWidth": true
-            },
-            {
-                "data": "ShipName", "name": "ShipName", "autoWidth": true
-            },
+//        "ajax": {
+//            "url": loadposturl,
+//            "type": "POST",
+//            "datatype": "json",
+//            "data": { UserType: UserType }
+//        },
+//        "columns": [
+//            //{
+//            //    "data": "Order", "name": "Order", "autoWidth": true, "className": 'reorder'
+//            //},
+//            {
+//                "data": "UserName", "name": "UserName", "autoWidth": true
+//            },
+//            {
+//                "data": "CreatedOn1", "name": "CreatedOn1", "autoWidth": true
+//            },
+//            {
+//                "data": "Email", "name": "Email", "autoWidth": true
+//            },
+//            //{
+//            //    "data": "CreatedBy", "name": "CreatedBy", "autoWidth": true
+//            //},
+//            //{
+//            //    "data": "ModifiedBy", "name": "ModifiedBy", "autoWidth": true
+//            //},
+//            {
+//                "data": "Gender", "name": "Gender", "autoWidth": true
+//            },
+//            {
+//                "data": "VesselIMO", "name": "VesselIMO", "autoWidth": true
+//            },
+//            {
+//                "data": "RankName", "name": "RankName", "autoWidth": true
+//            },
+//            {
+//                "data": "ShipName", "name": "ShipName", "autoWidth": true
+//            },
 
-            {
-                "data": "UserId", "width": "50px", "render": function (data) {
-                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
-                }
-            },
-            {
-                "data": "UserId", "width": "50px", "render": function (d) {
-                    //debugger;
-                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
+//            {
+//                "data": "UserId", "width": "50px", "render": function (data) {
+//                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetUserByUserId(' + data + ')">Edit</a>';
+//                }
+//            },
+//            {
+//                "data": "UserId", "width": "50px", "render": function (d) {
+//                    //debugger;
+//                    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteUserMaster(' + d + ')">Delete</a>';
 
 
-                }
-            }
+//                }
+//            }
 
-        ],
-        "rowId": "UserId"
-        //"dom": "Bfrtip"
-    });
-}
+//        ],
+//        "rowId": "UserId"
+//        //"dom": "Bfrtip"
+//    });
+//}
 
 //function SetUpGridSupportUser(UserType) {
 //    var loadposturl = $('#loaddata').val();
