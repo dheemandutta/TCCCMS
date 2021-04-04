@@ -160,7 +160,7 @@
                     </a>
                 </div>
 
-                @if (Session["Role"].ToString() == "OfficeAdmin")
+                @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
                 {
                     <div class="col-lg-2 col-md-2 col-6">
                         <a href="">
@@ -174,7 +174,7 @@
                     </div>
                 }
 
-                    @if (Session["Role"].ToString() == "ShipAdmin")
+                    @if (Session["Role"].ToString() == "ShipAdmin" || Session["Role"].ToString() == "SupportUser")
                     {
                         <div class="col-lg-2 col-md-2 col-6">
                             <a href="">
