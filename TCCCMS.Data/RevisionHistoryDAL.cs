@@ -88,6 +88,7 @@ namespace TCCCMS.Data
             cmd.Parameters.AddWithValue("@Section", pOCO.Section.ToString());
             cmd.Parameters.AddWithValue("@ChangeComment", pOCO.ChangeComment.ToString());
             cmd.Parameters.AddWithValue("@ModificationDate", pOCO.ModificationDate);
+            cmd.Parameters.AddWithValue("@HeaderId", pOCO.HeaderId);
 
             if (pOCO.ID > 0)
             {
@@ -158,6 +159,62 @@ namespace TCCCMS.Data
 
         }
 
+        public List<RevisionHeader> GetRevisionHeaderForDrp()
+        {
+            List<RevisionHeader> rHeaderList = new List<RevisionHeader>();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetRevisionHeaderForDropDown", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    con.Open();
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        RevisionHeader rHeader = new RevisionHeader();
+                        rHeader.Id = Convert.ToInt32(dr["Id"]);
+                        //rHeader.RevisionNo = Convert.ToString(dr["RevisionNo"]);
+                        //rHeader.RevisionDate = Convert.ToString(dr["RevisionDate"]);
+                        rHeader.RevisionName = Convert.ToString(dr["RevisionNo"]) + " " + Convert.ToString(dr["RevisionDate"]);
+
+                        rHeaderList.Add(rHeader);
+                    }
+                }
+
+            }
+
+            return rHeaderList;
+
+        }
+
+        public int SaveRevisionHeader(RevisionHeader rHeader)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SaveRevisionHeader", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@RevisionNo", rHeader.RevisionNo.ToString());
+            cmd.Parameters.AddWithValue("@RevisionDate", rHeader.RevisionDate.ToString());
+            cmd.Parameters.AddWithValue("@CreatedBy", 1);
+
+            if (rHeader.Id > 0)
+            {
+                cmd.Parameters.AddWithValue("@RevisionHeaderId", rHeader.Id);
+            }
+            else
+            {
+                cmd.Parameters.AddWithValue("@RevisionHeaderId ", DBNull.Value);
+            }
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return recordsAffected;
+        }
 
     }
 }

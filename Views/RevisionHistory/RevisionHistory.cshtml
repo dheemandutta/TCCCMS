@@ -23,6 +23,9 @@
 <script src="~/Scripts/RevisionHistory.js"></script>
 
 @Html.Hidden("SaveRevisionHistory", @Url.Action("SaveRevisionHistory", "RevisionHistory"))
+@Html.Hidden("loadHeader", @Url.Action("GetRevisionHeaderForDrp", "RevisionHistory"))
+@Html.Hidden("saveHeader", @Url.Action("SaveRevisionHeader", "RevisionHistory"))
+
 
 <body>
     <div class="row">
@@ -39,7 +42,11 @@
                     </div>
 
                     <div class="modal-body">
-
+                        <div class="form-group">
+                            <label for="RevisionNo">Revision No</label>
+                            <select id="ddlRevisionNo" name="RevisionNo" class="form-control"></select>
+                            <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#headerModal">Add Revision Header</button>
+                        </div>
                         <div class="form-group">
                             <label for="Chapter">Chapter</label>
                             <input type="text" class="form-control" id="Chapter" placeholder="Chapter" />
@@ -72,6 +79,65 @@
             </div>
         </div>
     </div>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="headerModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header" style="background-color: #e90000;">
+                    <h4 class="modal-title colorWhite">Revision Header</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+
+                <div class="modal-body">
+                    @*<form>*@
+                    <div class="form-group">
+                        <input type="hidden" id="hdnRevisionHeaderId" />
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="card">
+                                <div class="">
+                                    <div class="col-sm-12 col-xs-12 marginTP10">
+                                        <div class="row">
+                                            <div class="col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label for="RevisionNo">Revision No</label>
+                                                    <input type="text" class="form-control" id="txtRevisionNo" placeholder="Revision No" />
+                                                </div>
+                                             </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-12 col-xs-12">
+                                                <div class="form-group">
+                                                    <label for=" RevisionDate">Revision Date</label>
+                                                    <input type="text" class="form-control" id="txtRevisionDate" placeholder="Revision Date" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    @*</form>*@
+
+                </div>
+
+
+                <div class="modal-footer" style="background-color:lightgray;">
+                    <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return SaveRevisionReader();">Add</button>
+                    <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 </body>
 
 <script>
@@ -82,6 +148,7 @@
         //    var selectedUser = $('#drpUser').val();
         //    loadData(selectedUser);
         //});
+        LoadRevisionHeaderForDrp();
 
     });
 
