@@ -97,5 +97,14 @@ namespace TCCCMS.Controllers
             return Json(bL.SaveRevisionHistory(pOCO), JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult RevisionDetails()
+        {
+            RevisionHistoryBL rhBl = new RevisionHistoryBL();
+            RevisionHeaderHistoryViewModel rhhVM = new RevisionHeaderHistoryViewModel();
+            rhhVM = rhBl.GetAllRevisionDetails();
+
+            return View(rhhVM);
+        }
+
     }
 }

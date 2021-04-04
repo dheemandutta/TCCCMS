@@ -38,6 +38,8 @@ namespace TCCCMS.Models
         public Ship Ship { get; set; }//--Added on 20th JAN 2021 @BK
 
         public int UploadPermission { get; set; }
-        
+
+        public int RoleType { get; set; }
+
     }
 }
