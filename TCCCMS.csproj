@@ -1138,6 +1138,8 @@
     <Content Include="SQL Script\02.04.2021_Full_Schema_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\03-04-2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29.sql" />
     <Content Include="SQL Script\03-04-2021_Full_Schema_Of_TCCCMSDB.sql" />
+    <Content Include="SQL Script\04-04-2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29.sql" />
+    <Content Include="SQL Script\04-04-2021_Full_Schema_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\31.03.2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29.sql" />
     <Content Include="SQL Script\31.03.2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29_II.sql" />
     <Content Include="SQL Script\31.03.2021_Full_Schema_Of_TCCCMSDB.sql" />

@@ -35,7 +35,7 @@
             margin: 30px auto;
             text-align: center;
             width: 307px;
-            background: #dd3043;
+            background: #e90000;
             color: #fff;
             padding: 20px 0;
             border-radius: 11px;
@@ -53,7 +53,7 @@
             }
 
             .wel h6 {
-                margin: 75% 10px 0;
+                margin: 57% 10px 0;
                 text-align: center;
             }
 
@@ -87,50 +87,139 @@
         <div class="content_body">
             <div class="wel">
                 <h4>Welcome To TCCDOC</h4>
-                <h5>Hello  @Session["UserName"].ToString()</h5>
+                @*<h5>Hello  @Session["UserName"].ToString()</h5>*@
+                <h5>Hello Admin</h5>
                 <h6>
                     We Pledge to Serve
                     <span>support@technology.com</span>
                 </h6>
             </div>
+
             <div class="row">
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h6>Crew<span> 41</span></h6>
-                            </div>
-                            <div class="col-md-6">
-                                <img src="~/images/adminf.png">
+                @*<div class="col-lg-1 col-md-1 col-6">
+                </div>*@
 
-                            </div>
+                <div class="col-lg-2 col-md-2 col-6">
+                    <div class="icon_box dropdown">
+                        <span class="dropbtn">
+                            <img src="~/images/ship_icon.png">
+                        </span>
+                        <div class="dropdown-content" style="min-width: 300px;  top: -300px;">
+                            @Html.Action("ShipMenuLayout", "Dashboard")
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="card">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h6>Vessel</h6>
-                            </div>
-                            <div class="col-md-6">
-                                <img src="~/images/vissel.png">
-                            </div>
-                        </div>
+                        <a href="#">Vessel Details</a>
                     </div>
                 </div>
 
-                <div class="footer">
-                    <ul>
-                        <li><strong>Uncontrolled when printed</strong></li>
-                        <li>Revision 0.0</li>
-                        <li>Date:01-May -21</li>
-                        <li><a href="#">View Revision Histroy</a></li>
-                        @*<li><a href="#">View Site Map</a></li>*@
-                    </ul>
+                <div class="col-lg-2 col-md-2 col-6">
+                    <div class="icon_box dropdown">
+                        <span class="dropbtn">
+                            <img src="/images/user_m.png">
+                        </span>
+                        <div class="dropdown-content" style="min-width: 300px;  top: -130px;">
+                            <ul>
+                                @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
+                                {
+                                    <li><a href="@Url.Action("RoleGroup", "RoleGroup")">Associate Role Group</a></li>
+                                    <li><a href="@Url.Action("GroupUser", "RoleGroup")">Associate Group User</a></li>
+                                    <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
+                                }
+                                </ul>
+                        </div>
+
+                        <h5> User Management</h5>
+
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-6">
+                    <a href="@Url.Action("Index", "Ticket")">
+                        <div class="icon_box dropdown">
+                            <span class="dropbtn">
+                                <img src="/images/ticket_icon.png">
+                            </span>
+                            <h5>Ticket</h5>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-6">
+                    <a href="">
+                        <div class="icon_box dropdown">
+                            <span class="dropbtn">
+                                <img src="/images/Sync_icon.png">
+                            </span>
+                            <div class="dropdown-content">
+
+                            </div>
+                            <h5>Sync</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-2 col-6">
+                    <a href="">
+                        <div class="icon_box dropdown">
+                            <span class="dropbtn">
+                                <img src="/images/Update_icon.png">
+                            </span>
+                            <h5>Update Manual</h5>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-2 col-md-2 col-6">
+                    <a href="">
+                        <div class="icon_box dropdown">
+                            <span class="dropbtn">
+                                <img src="/images/Template_icon.png">
+                            </span>
+                            <div class="dropdown-content">
+
+                            </div>
+                            <h5>Template </h5>
+
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-1 col-md-1 col-6">
+                </div>
+                @*<div class="col-md-6">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Crew<span> 41</span></h6>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="~/images/adminf.png">
+
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Vessel</h6>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="~/images/vissel.png">
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+                <div class="col-lg-12">
+                    <div class="footer">
+                        <ul>
+                            <li><strong>Uncontrolled when printed</strong></li>
+                            <li>Revision 0.0</li>
+                            <li>Date:01-May -21</li>
+                            <li><a href="#">View Revision Histroy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
        
 
     </section>
