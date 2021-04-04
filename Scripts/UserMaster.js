@@ -181,7 +181,7 @@ function SaveUpdateUser() {
                 Password:   $('#Password').val(),
                 Gender:     $('#Gender').val(),
                 VesselIMO:  $('#VesselIMO').val(),
-
+                RoleType =  $('#drpUserRole').val(),
                 /*IsAdmin:    document.getElementById("IsAdmin").checked,*/
                 UserType : 1
             };
@@ -194,7 +194,7 @@ function SaveUpdateUser() {
                 Password:   $('#cPassword').val(),
                 Email:      $('#cEmail').val(),
                 Gender:     $('#cGender').val(),
-
+                RoleType =  $('#drpCompanyRole').val(),
                 /*IsAdmin:    document.getElementById("cIsAdmin").checked,*/
                 UserType: 2
             };

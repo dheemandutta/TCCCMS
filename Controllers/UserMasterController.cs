@@ -126,7 +126,7 @@ namespace TCCCMS.Controllers
             pC.ModifiedBy   = pOCO.ModifiedBy;
             pC.Gender       = pOCO.Gender;
             pC.VesselIMO    = pOCO.VesselIMO;
-
+            pC.RoleType = pOCO.RoleType;
             //pC.UserCode = pOCO.UserCode;
             pC.UserType     = pOCO.UserType;
             //pC.IsAdmin      = pOCO.IsAdmin;
