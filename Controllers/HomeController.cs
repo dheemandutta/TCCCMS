@@ -108,6 +108,12 @@ namespace TCCCMS.Controllers
                 Session["UserType"]     = lUser.UserType.ToString();
                 //Session["IsAdmin"]      = lUser.IsAdmin.ToString();
 
+
+                if (role == "OfficeAdmin" || role == "ShipAdmin")
+                {
+                    return RedirectToAction("AdminDashboard", "Dashboard");
+                }
+                else
                 return RedirectToAction("UserDashboard", "Dashboard");
 
                 //return new RedirectToRouteResult(new RouteValueDictionary(

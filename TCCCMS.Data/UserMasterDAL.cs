@@ -100,6 +100,8 @@ namespace TCCCMS.Data
 
             cmd.Parameters.AddWithValue("@UserType", pOCO.UserType);
 
+            cmd.Parameters.AddWithValue("@RoleType", pOCO.RoleType);
+
             //cmd.Parameters.AddWithValue("@IsAdmin", DBNull.Value);
 
             int recordsAffected = cmd.ExecuteNonQuery();

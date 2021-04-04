@@ -10,6 +10,15 @@ function validate() {
         $('#RankId').css('border-color', 'lightgrey');
     }
 
+    if ($('#UserCode').val().length === 0) {
+        $('#UserCode').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#UserCode').css('border-color', 'lightgrey');
+    }
+
+
     if ($('#ShipId').val().length === 0) {
         $('#ShipId').css('border-color', 'Red');
         isValid = false;
@@ -89,6 +98,14 @@ function validateCUser() {
     }
     else {
         $('#cPassword').css('border-color', 'lightgrey');
+    }
+
+    if ($('#cUserCode').val().length === 0) {
+        $('#cUserCode').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#cUserCode').css('border-color', 'lightgrey');
     }
 
     if ($('#cEmail').val().length === 0) {
@@ -181,7 +198,7 @@ function SaveUpdateUser() {
                 Password:   $('#Password').val(),
                 Gender:     $('#Gender').val(),
                 VesselIMO:  $('#VesselIMO').val(),
-
+                RoleType:   $('#drpUserRole').val(),
                 /*IsAdmin:    document.getElementById("IsAdmin").checked,*/
                 UserType : 1
             };
@@ -194,7 +211,7 @@ function SaveUpdateUser() {
                 Password:   $('#cPassword').val(),
                 Email:      $('#cEmail').val(),
                 Gender:     $('#cGender').val(),
-
+                RoleType:   $('#drpCompanyRole').val(),
                 /*IsAdmin:    document.getElementById("cIsAdmin").checked,*/
                 UserType: 2
             };
@@ -210,9 +227,9 @@ function SaveUpdateUser() {
 
             success: function (result) {
                 loadData();
-                alert('Added Successfully');
+                //alert('Added Successfully');
                 //CreateTableHeader(userType)
-                //$('#myModal').modal('hide');
+                $('#myModal').modal('hide');
 
                 toastr.options = {
                     "closeButton": false,
