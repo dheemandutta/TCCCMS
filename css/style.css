@@ -1,6 +1,7 @@
 .submenu {
     display: none;
-    transition: .5s ease-in-out;position:relative;
+    transition: .5s ease-in-out;
+    position: relative;
 }
 
 .mainmenu:hover .submenu {
@@ -12,16 +13,21 @@
 .sub_submenu {
     display: none;
 }
-.meutm{position:relative;}
-.meutm:hover .sub_submenu {
-    display: block;
-    transition: .5s ease-in-out;
-    margin: 10px 0 0 20px;
-    position: absolute;
-    left: -293px;
-    width: 273px;
-    top: -9px;
+
+.meutm {
+    position: relative;
 }
+
+    .meutm:hover .sub_submenu {
+        display: block;
+        transition: .5s ease-in-out;
+        margin: 10px 0 0 20px;
+        position: absolute;
+        left: -293px;
+        width: 273px;
+        top: -9px;
+    }
+
     .meutm:after {
         font-family: "FontAwesome";
         content: "\f104";
@@ -47,6 +53,7 @@
     top: 20px;
     color: #fff;
 }
+
 .meutmthree:after {
     font-family: "FontAwesome";
     content: "\f104";
@@ -67,7 +74,10 @@
 .meutmtwo {
     position: relative;
 }
-.sub_submenutn{display:none;}
+
+.sub_submenutn {
+    display: none;
+}
 
 .meutmtwo:hover .sub_submenutn {
     display: block;
@@ -100,59 +110,64 @@
 .submenuL1 {
     display: none;
 }
+
 .menu_itm {
     position: relative;
 }
-.menu_itm:hover .submenuL1 {
-    display: block;
-    transition: .5s ease-in-out;
-    margin: 10px 0 0 20px;
-    position: absolute;
-    left: -293px;
-    width: 273px;
-    top: -9px;
-}
 
-.menu_itm:after {
-    font-family: "FontAwesome";
-    content: "\f104";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-    position: absolute;
-    right: 12px;
-    top: 20px;
-    color: #fff;
-}
+    .menu_itm:hover .submenuL1 {
+        display: block;
+        transition: .5s ease-in-out;
+        margin: 10px 0 0 20px;
+        position: absolute;
+        left: -293px;
+        width: 273px;
+        top: -9px;
+    }
+
+    .menu_itm:after {
+        font-family: "FontAwesome";
+        content: "\f104";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 20px;
+        color: #fff;
+    }
 
 .submenuL2 {
     display: none;
 }
+
 .menu_itmL1 {
     position: relative;
 }
-.menu_itmL1:hover .submenuL2 {
-    display: block;
-    transition: .5s ease-in-out;
-    margin: 10px 0 0 20px;
-    position: absolute;
-    left: -293px;
-    width: 273px;
-    top: -9px;
-}
-.menu_itmL1:after {
-    font-family: "FontAwesome";
-    content: "\f104";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-    position: absolute;
-    right: 12px;
-    top: 20px;
-    color: #fff;
-}
+
+    .menu_itmL1:hover .submenuL2 {
+        display: block;
+        transition: .5s ease-in-out;
+        margin: 10px 0 0 20px;
+        position: absolute;
+        left: -293px;
+        width: 273px;
+        top: -9px;
+    }
+
+    .menu_itmL1:after {
+        font-family: "FontAwesome";
+        content: "\f104";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 20px;
+        color: #fff;
+    }
 /*---*/
 .submenuL3 {
     display: none;
@@ -162,28 +177,28 @@
     position: relative;
 }
 
-.menu_itmL2:hover .submenuL3 {
-    display: block;
-    transition: .5s ease-in-out;
-    margin: 10px 0 0 20px;
-    position: absolute;
-    left: -293px;
-    width: 273px;
-    top: -9px;
-}
+    .menu_itmL2:hover .submenuL3 {
+        display: block;
+        transition: .5s ease-in-out;
+        margin: 10px 0 0 20px;
+        position: absolute;
+        left: -293px;
+        width: 273px;
+        top: -9px;
+    }
 
-.menu_itmL2:after {
-    font-family: "FontAwesome";
-    content: "\f104";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-    position: absolute;
-    right: 12px;
-    top: 20px;
-    color: #fff;
-}
+    .menu_itmL2:after {
+        font-family: "FontAwesome";
+        content: "\f104";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 20px;
+        color: #fff;
+    }
 /*----*/
 .submenuL4 {
     display: none;
@@ -193,28 +208,28 @@
     position: relative;
 }
 
-.menu_itmL3:hover .submenuL4 {
-    display: block;
-    transition: .5s ease-in-out;
-    margin: 10px 0 0 20px;
-    position: absolute;
-    left: -293px;
-    width: 273px;
-    top: -9px;
-}
+    .menu_itmL3:hover .submenuL4 {
+        display: block;
+        transition: .5s ease-in-out;
+        margin: 10px 0 0 20px;
+        position: absolute;
+        left: -293px;
+        width: 273px;
+        top: -9px;
+    }
 
-.menu_itmL3:after {
-    font-family: "FontAwesome";
-    content: "\f104";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-    position: absolute;
-    right: 12px;
-    top: 20px;
-    color: #fff;
-}
+    .menu_itmL3:after {
+        font-family: "FontAwesome";
+        content: "\f104";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 20px;
+        color: #fff;
+    }
 
 /*----*/
 .submenuL5 {
@@ -225,28 +240,28 @@
     position: relative;
 }
 
-.menu_itmL4:hover .submenuL5 {
-    display: block;
-    transition: .5s ease-in-out;
-    margin: 10px 0 0 20px;
-    position: absolute;
-    left: -293px;
-    width: 273px;
-    top: -9px;
-}
+    .menu_itmL4:hover .submenuL5 {
+        display: block;
+        transition: .5s ease-in-out;
+        margin: 10px 0 0 20px;
+        position: absolute;
+        left: -293px;
+        width: 273px;
+        top: -9px;
+    }
 
-.menu_itmL4:after {
-    font-family: "FontAwesome";
-    content: "\f104";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-    position: absolute;
-    right: 12px;
-    top: 20px;
-    color: #fff;
-}
+    .menu_itmL4:after {
+        font-family: "FontAwesome";
+        content: "\f104";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 20px;
+        color: #fff;
+    }
 /*-----*/
 .submenuL6 {
     display: none;
@@ -256,28 +271,28 @@
     position: relative;
 }
 
-.menu_itmL5:hover .submenuL6 {
-    display: block;
-    transition: .5s ease-in-out;
-    margin: 10px 0 0 20px;
-    position: absolute;
-    left: -293px;
-    width: 273px;
-    top: -9px;
-}
+    .menu_itmL5:hover .submenuL6 {
+        display: block;
+        transition: .5s ease-in-out;
+        margin: 10px 0 0 20px;
+        position: absolute;
+        left: -293px;
+        width: 273px;
+        top: -9px;
+    }
 
-.menu_itmL5:after {
-    font-family: "FontAwesome";
-    content: "\f104";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-    position: absolute;
-    right: 12px;
-    top: 20px;
-    color: #fff;
-}
+    .menu_itmL5:after {
+        font-family: "FontAwesome";
+        content: "\f104";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 20px;
+        color: #fff;
+    }
 /*-----*/
 .submenuL7 {
     display: none;
@@ -287,28 +302,28 @@
     position: relative;
 }
 
-.menu_itmL6:hover .submenuL7 {
-    display: block;
-    transition: .5s ease-in-out;
-    margin: 10px 0 0 20px;
-    position: absolute;
-    left: -293px;
-    width: 273px;
-    top: -9px;
-}
+    .menu_itmL6:hover .submenuL7 {
+        display: block;
+        transition: .5s ease-in-out;
+        margin: 10px 0 0 20px;
+        position: absolute;
+        left: -293px;
+        width: 273px;
+        top: -9px;
+    }
 
-.menu_itmL6:after {
-    font-family: "FontAwesome";
-    content: "\f104";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-    position: absolute;
-    right: 12px;
-    top: 20px;
-    color: #fff;
-}
+    .menu_itmL6:after {
+        font-family: "FontAwesome";
+        content: "\f104";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 20px;
+        color: #fff;
+    }
 /**-----*/
 .submenuL8 {
     display: none;
@@ -318,29 +333,29 @@
     position: relative;
 }
 
-.menu_itmL7:hover .submenuL8 {
-    display: block;
-    transition: .5s ease-in-out;
-    margin: 10px 0 0 20px;
-    position: absolute;
-    left: -293px;
-    width: 273px;
-    top: -9px;
-}
+    .menu_itmL7:hover .submenuL8 {
+        display: block;
+        transition: .5s ease-in-out;
+        margin: 10px 0 0 20px;
+        position: absolute;
+        left: -293px;
+        width: 273px;
+        top: -9px;
+    }
 
-.menu_itmL7:after {
-    font-family: "FontAwesome";
-    content: "\f104";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-    position: absolute;
-    right: 12px;
-    top: 20px;
-    color: #fff;
-}
-    /*------*/
+    .menu_itmL7:after {
+        font-family: "FontAwesome";
+        content: "\f104";
+        display: inline-block;
+        padding-right: 3px;
+        vertical-align: middle;
+        font-weight: 900;
+        position: absolute;
+        right: 12px;
+        top: 20px;
+        color: #fff;
+    }
+/*------*/
 /*-----*******End*****Dynamic Menu Style*********************-------*/
 
 body {
@@ -523,7 +538,7 @@ header {
     border: 2px solid #ffffff;
     border-right: none;
     padding: 6px;
-    height: 36px;
+    height: 33px;
     border-radius: 5px 0 0 5px;
     outline: none;
     color: #e90000;
@@ -556,6 +571,7 @@ header {
 .colorWhite {
     color: white;
 }
+
 .marginTP5 {
     margin-top: 5px;
 }
@@ -567,7 +583,7 @@ header {
 .menu_icon a {
     color: #fff;
     font-size: 25px;
-    margin: 5px 0 0 0;
+    margin: 11px 0 0 0;
     display: inline-block;
     text-align: right;
 }
@@ -616,7 +632,7 @@ header {
 
     .menu ul li a {
         color: #fff;
-        background: #dd3043;
+        background: #e90000;
         width: 100%;
         display: block; /* padding: 8px 15px; */
         border-radius: 5px;
@@ -904,7 +920,7 @@ header {
         right: 25px;
         font-size: 36px;
         margin-left: 46px;
-        text-align:right;
+        text-align: right;
     }
 
 .openbtn {
@@ -1016,10 +1032,10 @@ header {
         display: block;
     }
 
-    /*--------Ship Menu------------*/
-    .dropmenurightL1 .dropdown-rightcontentL1 {
-        display: none;
-    }
+/*--------Ship Menu------------*/
+.dropmenurightL1 .dropdown-rightcontentL1 {
+    display: none;
+}
 
 .dropdown-rightcontentL1 {
     position: absolute;
@@ -1056,11 +1072,11 @@ header {
         display: block;
     }
 
-    /*--------------------------------*/
+/*--------------------------------*/
 
-    .dropmenurightL2 .dropdown-rightcontentL2 {
-        display: none;
-    }
+.dropmenurightL2 .dropdown-rightcontentL2 {
+    display: none;
+}
 
 .dropdown-rightcontentL2 {
     position: absolute;
@@ -1096,7 +1112,7 @@ header {
     .dropmenurightL2:hover .dropdown-rightcontentL2 {
         display: block;
     }
-    /*--------------------------*/
+/*--------------------------*/
 .dropmenurightL3 .dropdown-rightcontentL3 {
     display: none;
 }
@@ -1135,7 +1151,7 @@ header {
     .dropmenurightL3:hover .dropdown-rightcontentL3 {
         display: block;
     }
-    /*------------------------*/
+/*------------------------*/
 .dropmenurightL4 .dropdown-rightcontentL4 {
     display: none;
 }
@@ -1256,9 +1272,9 @@ header {
     }
 
 /*--------------------------------*/
-    .dropmenurightL7 .dropdown-rightcontentL7 {
-        display: none;
-    }
+.dropmenurightL7 .dropdown-rightcontentL7 {
+    display: none;
+}
 
 .dropdown-rightcontentL7 {
     position: absolute;
@@ -1296,9 +1312,9 @@ header {
     }
 
 /*--------------------------------*/
-    .dropmenurightL8 .dropdown-rightcontentL8 {
-        display: none;
-    }
+.dropmenurightL8 .dropdown-rightcontentL8 {
+    display: none;
+}
 
 .dropdown-rightcontentL8 {
     position: absolute;
@@ -1337,3 +1353,64 @@ header {
 
 /*--------------------------------*/
 /*--------Ship Menu------------*/
+
+.breadcrumbs .search {
+    float: right;
+    width: 34%;
+}
+
+    .breadcrumbs .search a {
+        height: 33px;
+        background: #e90000;
+        padding: 4px 13px;
+        border: 1px solid #e90000;
+    }
+
+
+.admin .dropdown-content {
+    top: 40px;
+    padding: 14px;
+    z-index: 9999999;
+}
+
+    .admin .dropdown-content h3 {
+        font-size: 18px;
+        font-weight: 400;
+        text-align: center;
+        border-bottom: 1px solid #eee;
+        padding: 0 0 5px 0;
+    }
+
+    .admin .dropdown-content a {
+        padding: 0;
+    }
+
+.admin .button.log {
+    background: #e90000;
+    border: 0;
+    border: 2px solid #fff;
+    padding: 6px;
+    border-radius: 22px;
+    text-align: right;
+}
+
+.admin {
+    margin: 10px 0 0 0;
+}
+
+.logo img {
+    width: 100%;
+}
+
+.admin .dropdown-content h3 span {
+    display: block;
+    font-size: 13px;
+    padding: 3px;
+}
+.icon_box {}
+.icon_box h5 {
+        font-size: 18px;
+        padding: 20px 0;
+        color: #000000;
+        font-weight: 400;
+    }
