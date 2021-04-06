@@ -84,7 +84,7 @@
     
 
     <section class="full_body">
-        <div class="content_body">
+        <div class="content_body" style="width: 100%;">
             <div class="wel">
                 <h4>Welcome To TCCDOC</h4>
                 @*<h5>Hello  @Session["UserName"].ToString()</h5>*@
@@ -96,8 +96,10 @@
             </div>
 
             <div class="row">
-                @*<div class="col-lg-1 col-md-1 col-6">
-        </div>*@
+
+
+                <div class="col-lg-1 col-md-1 col-6">
+                </div>
 
                 <div class="col-lg-2 col-md-2 col-6">
                     <div class="icon_box dropdown">
@@ -116,7 +118,7 @@
                         <span class="dropbtn">
                             <img src="/images/user_m.png">
                         </span>
-                        <div class="dropdown-content" style="min-width: 300px;  top: -130px;">
+                        @*<div class="dropdown-content" style="min-width: 300px;  top: -130px;">
                             <ul>
                                 @if (Session["Role"].ToString() == "SupportUser")
                                 {
@@ -128,7 +130,28 @@
                                     <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
                                 }
                             </ul>
-                        </div>
+                        </div>*@
+
+                        @if (Session["Role"].ToString() == "SupportUser")
+                        {
+                            <div class="dropdown-content" style="min-width: 200px;  top: -130px;">
+                                <ul>
+                                    <li><a href="@Url.Action("RoleGroup", "RoleGroup")">Associate Role Group</a></li>
+                                    <li><a href="@Url.Action("GroupUser", "RoleGroup")">Associate Group User</a></li>
+                                    <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
+                                </ul>
+                            </div>
+                        }
+
+                        @if (Session["Role"].ToString() == "OfficeAdmin")
+                        {
+                            <div class="dropdown-content" style="min-width: 200px;  top: -40px;">
+                                <ul>
+                                    <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
+                                </ul>
+                            </div>
+                        }
+
 
                         <h5> User Management</h5>
 
@@ -191,6 +214,8 @@
                             </a>
                         </div>
                     }
+
+
                     <div class="col-lg-1 col-md-1 col-6">
                     </div>
                     @*<div class="col-md-6">
@@ -219,10 +244,10 @@
                 </div>
             </div>*@
 
-                    <div class="col-lg-12">
+                    <div class="col-lg-12" hidden>
                         <div class="footer">
                             <ul>
-                                <li><strong>Uncontrolled when printed</strong></li>
+                                <li disabled><strong>Uncontrolled when printed</strong></li>
                                 <li>Revision 0.0</li>
                                 <li>Date:01-May -21</li>
                                 <li><a href="#">View Revision Histroy</a></li>
