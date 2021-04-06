@@ -12,22 +12,21 @@
             @foreach (var header in Model.RevisionHeaderList)
             {
                 <button class="accordion">@header.RevisionNo @if (@header.RevisionDate != null){@header.RevisionDate}</button>
-                <div class="panel">
+                <div class="panel marginTP10">
                     <div class="row">
-                        <div class="col-md-3">
+                        
+                        <div class="col-sm-12 col-xs-12 marginTP10">
                             <h2 class="ta">Revision History </h2>
-                        </div>
-                        <div class="col-md-9">
                             <div class="row">
                                 <div class="col-md-12 bac1">
 
                                     <div style="margin:0 auto" class="tablecontainer">
                                         <input type="hidden" id="hdnrole" />
-                                        <table id="RevisionHistoryTable" class="display" cellspacing="0">
+                                        <table id="RevisionHistoryTable" class="display table" cellspacing="0">
                                             <thead>
                                                 <tr>
                                                     <th>Volume Name</th>
-                                                    <th>Manual Name</th>
+                                                    <th style="border-left:solid 1px; border-right:solid 1px;">Manual Name</th>
                                                     <th>Change Comment</th>
                                                 </tr>
                                             </thead>
@@ -36,7 +35,7 @@
                                                 {
                                                     <tr>
                                                         <td>@item.Chapter</td>
-                                                        <td>@item.Section</td>
+                                                        <td style="border-left:solid 1px; border-right:solid 1px;">@item.Section</td>
                                                         <td>@item.ChangeComment</td>
                                                     </tr>
 

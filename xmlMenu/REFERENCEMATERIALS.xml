@@ -1,6 +1,6 @@
 <xml>
 	<referencematerials>
-		<material materialid="0" name="Material 1" controllername="ReferenceMaterialManual">
+		<material materialid="0" name="Material 1" controllername="ReferenceMaterials">
 			<foldername name="BIMCO Paris MoU Guide">
 				<filename ismodify="" doctype="PDF" actionname="">bimco-paris-mou-guide-may2018</filename>
 			</foldername>
