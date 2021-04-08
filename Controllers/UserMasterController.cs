@@ -220,6 +220,14 @@ namespace TCCCMS.Controllers
 
         }
 
+        public ActionResult ApprovedRoNotInUserMaster(int UserId/*, ref string recordCount*/)
+        {
+            UserMasterBL bL = new UserMasterBL();
+            int recordaffected = bL.ApprovedRoNotInUserMaster(UserId/*, ref recordCount*/);
+            return Json(recordaffected, JsonRequestBehavior.AllowGet);
+
+        }
+
         public ActionResult UploadPermissionUserMaster(int UserId/*, ref string recordCount*/)
         {
             UserMasterBL bL = new UserMasterBL();

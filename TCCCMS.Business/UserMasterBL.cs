@@ -61,6 +61,12 @@ namespace TCCCMS.Business
             return dAL.DeleteUserMaster(UserId/*, ref oUTPUT*/);
         }
 
+        public int ApprovedRoNotInUserMaster(int UserId/*, ref string oUTPUT*/)
+        {
+            UserMasterDAL dAL = new UserMasterDAL();
+            return dAL.ApprovedRoNotInUserMaster(UserId/*, ref oUTPUT*/);
+        }
+
         public int UploadPermissionUserMaster(int UserId/*, ref string oUTPUT*/)
         {
             UserMasterDAL dAL = new UserMasterDAL();

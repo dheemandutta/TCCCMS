@@ -148,7 +148,8 @@ namespace TCCCMS.Data
                             Gender = Convert.ToString(dr["Gender"]),
                             VesselIMO = Convert.ToString(dr["VesselIMO"]),
                             IsActive = Convert.ToInt32(dr["IsActive"]),
-                            UploadPermission = Convert.ToInt32(dr["UploadPermission"])
+                            UploadPermission = Convert.ToInt32(dr["UploadPermission"]),
+                            IsApprover = Convert.ToInt32(dr["IsApprover"])
 
                             //ShipName = Convert.ToString(dr["ShipName"]),
 
@@ -576,6 +577,20 @@ namespace TCCCMS.Data
             cmd.Parameters.AddWithValue("@UserId", UserId);
 
             int recordsAffected = cmd.ExecuteNonQuery();          
+
+            con.Close();
+            return recordsAffected;
+        }
+
+        public int ApprovedRoNotInUserMaster(int UserId)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("stpApprovedRoNotInUserMaster", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@UserId", UserId);
+
+            int recordsAffected = cmd.ExecuteNonQuery();
 
             con.Close();
             return recordsAffected;

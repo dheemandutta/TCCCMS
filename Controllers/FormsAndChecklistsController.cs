@@ -131,6 +131,7 @@ namespace TCCCMS.Controllers
                 pOCO.ID = pC.ID;
                 pOCO.FormName = pC.FormName;
                 pOCO.Path = pC.Path;
+                pOCO.IsUpload = pC.IsUpload;
                 pOCO.Version = pC.Version;
 
                 pList.Add(pOCO);

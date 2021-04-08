@@ -285,7 +285,7 @@ function loadData() {
 function CreateTableHeader(utyp) {
     
 /*    if (utyp === 2) {*/
-        $('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th>');
+    $('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th><th>Approved/NotApproved</th>');
         SetUpGridCompanyUser(2);
   /*  }*/
     //else if (utyp === 1) {
@@ -527,6 +527,20 @@ function SetUpGridCompanyUser() {
 
                     }
                 }
+            },
+            {
+                "data": "IsApprover", "width": "50px", "render": function (data, type, row) {
+
+                    console.log(row.UserId);
+
+                    if (data == '1') {
+                        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApprovedRoNotInUserMaster(' + row.UserId + ')">Not Approved</a>';
+                    }
+                    else if (data == '0') {
+                        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #7db700;" onclick="ApprovedRoNotInUserMaster(' + row.UserId + ')">Approved</a>';
+
+                    }
+                }
             }
 
 
@@ -558,6 +572,29 @@ function DeleteUserMaster(UserId) {
 
                 SetUpGridCompanyUser();
                
+            },
+            error: function () {
+                alert(" cannot be deleted as this is already used");
+            }
+        });
+    }
+}
+
+function ApprovedRoNotInUserMaster(UserId) {
+    var e = $('#ApprovedRoNotInUserMaster').val();
+    var ans = confirm("Are you sure you want to chenge this Record?");
+    if (ans) {
+        // debugger;
+        $.ajax({
+            url: e,
+            data: JSON.stringify({ UserId: UserId }),
+            type: "POST",
+            contentType: "application/json;charset=UTF-8",
+            dataType: "json",
+            success: function (result) {
+
+                SetUpGridCompanyUser();
+
             },
             error: function () {
                 alert(" cannot be deleted as this is already used");

@@ -63,6 +63,52 @@ function SetUpGrid(CategoryId) {
                     return str;
                 },
             },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            //{
+            //    "data": "IsUpload", "width": "150px", "render": function (data) {
+            //        var str = '<div class="col-sm-12"><div class="row"><div class="col-sm-6"><a href="            " class="btn btn-info btn-sm" style="background-color: #e90000;" >Upload</a></div>';
+            //        return str;
+            //    },
+            //},
+
+
+            {
+                "data": "IsUpload", "width": "50px", "render": function (data, row) {
+
+                    console.log(row.CategoryId);
+
+                    if (data == '0') {
+                        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" >Not Upload</a>';
+                    }
+                    else if (data == '1') {
+                        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #7db700;" >Upload</a>';
+
+                    }
+                }
+            },
+
+
+
+
+
+
+
+
+
+
             {
                 "data": "Version", "name": "Version", "autoWidth": true
             }
