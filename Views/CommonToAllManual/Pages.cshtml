@@ -17,11 +17,21 @@
             padding: 1px;
             border: #00CC00 dotted 1px;
         }
+        .pad30 {
+            padding-left: 30px;
+            padding-right: 30px;
+            /*padding: 30px;*/
+        }
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
     </style>
 }
 
 
-<div id="BodyHtml" class="searchdContent">
+<div id="BodyHtml" class="searchdContent pad30 container">
     @Html.Raw(Model.BodyHtml)
 
 </div>

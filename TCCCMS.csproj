@@ -1674,6 +1674,7 @@
     <Content Include="packages\System.Security.Principal.Windows.5.0.0\System.Security.Principal.Windows.5.0.0.nupkg" />
     <Content Include="packages\WebGrease.1.6.0\.signature.p7s" />
     <Content Include="packages\WebGrease.1.6.0\WebGrease.1.6.0.nupkg" />
+    <None Include="Properties\PublishProfiles\TCCSMS.pubxml" />
     <None Include="Scripts\jquery-3.5.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.5.1.js" />
     <Content Include="Scripts\jquery-3.5.1.min.js" />
@@ -2233,6 +2234,8 @@
     <Content Include="Views\RevisionHistory\RevisionDetails.cshtml" />
     <Content Include="Views\MainDocument\Index.cshtml" />
     <Content Include="Views\MainDocument\Pages.cshtml" />
+    <Content Include="Views\Forms\FormsApprovalList.cshtml" />
+    <Content Include="Views\Forms\FillupFormList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -111,6 +111,13 @@ namespace TCCCMS.Data
 
             return recorSaved;
         }
+        /// <summary>
+        /// Old
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="approvers"></param>
+        /// <param name="catchMessage"></param>
+        /// <returns></returns>
         public int SaveFilledUpForm(Forms form, List<ApproverMaster> approvers, ref string catchMessage)
         {
             int recorSaved = 0;
@@ -144,6 +151,48 @@ namespace TCCCMS.Data
                     catchMessage = expErr.Message;
                 }
             }
+
+            return recorSaved;
+        }
+
+        /// <summary>
+        /// New
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="approvers"></param>
+        /// <param name="catchMessage"></param>
+        /// <returns></returns>
+        public int SaveFilledUpForm(Forms form, ref string catchMessage)
+        {
+            int recorSaved = 0;
+           
+                try
+                {
+                    SqlConnection con = new SqlConnection(connectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SaveFilledUpFormsForCompanyApproval", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@Name",            form.FilledUpFormName);
+                    cmd.Parameters.AddWithValue("@Path",            form.FilePath);
+                    cmd.Parameters.AddWithValue("@ShipId",          form.ShipId);
+                    cmd.Parameters.AddWithValue("@OriginalForm",    form.FormName);
+                    cmd.Parameters.AddWithValue("@User",            form.CreateedBy);
+                    int x = cmd.ExecuteNonQuery();
+                    con.Close();
+                    //recorSaved = recorSaved + x;
+                    recorSaved = x;
+
+
+
+                    return recorSaved;
+                }
+                catch (Exception expErr)
+                {
+                    recorSaved = 0;
+                    catchMessage = expErr.Message;
+                }
+          
 
             return recorSaved;
         }
@@ -252,6 +301,91 @@ namespace TCCCMS.Data
                 CatchMessage = expErr.Message;
             }
             return bReturn;
+        }
+
+        public List<Forms> GetFilledupFormList()
+        {
+            List<Forms> filledupFormList = new List<Forms>();
+
+
+            return filledupFormList;
+
+        }
+
+        public List<Forms> GetFilledupFormRequiredApprovalList(int approverUserId)
+        {
+            List<Forms> filledupFormList = new List<Forms>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetFilledupFormRequiredApprovalListPageWise", con))
+                {
+                    con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ApproverUserId", approverUserId);
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        Ship ship           = new Ship();
+                        ship.ID             = Convert.ToInt32(dr["ShipId"]);
+                        ship.ShipName       = Convert.ToString(dr["ShipName"]);
+
+                        UserMasterPOCO user = new UserMasterPOCO();
+                        user.UserId         = Convert.ToInt32(dr["UserId"]);
+                        user.UserName       = Convert.ToString(dr["UserName"]);
+
+                        filledupFormList.Add(new Forms
+                        {
+                            ID                  = Convert.ToInt32(dr["ID"]),//--FilledUp Form Id
+                            FilledUpFormName    = Convert.ToString(dr["FilledupFormName"]),
+                            FilePath            = Convert.ToString(dr["FormsPath"]),
+
+                            ShipId              = Convert.ToInt32(dr["ShipId"]),
+                            Ship                = ship,
+
+                            User                = user,
+                        }); ;
+                    }
+                    con.Close();
+                }
+            }
+
+                    
+            return filledupFormList;
+
+        }
+
+        public int ApproveFilledUpForm(int filledUpFormId, int approverUserId)
+        {
+            int recorSaved = 0;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("ApproveFilledupForm", con))
+                {
+                    try
+                    {
+
+                        con.Open();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@ApproverUserId", approverUserId);
+                        cmd.Parameters.AddWithValue("@FilledUpFormId", filledUpFormId);
+
+                        int x = cmd.ExecuteNonQuery();
+                        con.Close();
+                        recorSaved = x;
+                        return recorSaved;
+                    }
+                    catch (Exception expErr)
+                    {
+                        recorSaved = 0;
+                       // catchMessage = expErr.Message;
+                    }
+                }
+            }
+
+            return recorSaved;
         }
     }
 }

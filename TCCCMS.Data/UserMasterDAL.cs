@@ -359,8 +359,8 @@ namespace TCCCMS.Data
                     if (item["UserType"] != null)
                         pPOCOPC.UserType = Convert.ToInt32(item["UserType"].ToString());
 
-                    if (item["IsAdmin"] != null)
-                        pPOCOPC.IsAdmin = Convert.ToInt32(item["IsAdmin"].ToString());
+                    //if (item["IsAdmin"] != null || item["IsAdmin"] != "")
+                    //    pPOCOPC.IsAdmin = Convert.ToInt32(item["IsAdmin"].ToString());
 
                     //pcList.Add(pPOCOPC);
                 }

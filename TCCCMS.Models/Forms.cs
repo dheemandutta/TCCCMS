@@ -29,6 +29,15 @@ namespace TCCCMS.Models
         public int ShipId { get; set; }
         public string FilledUpFormName { get; set; }
         public string Approvers { get; set; }
+        public int IsApproved { get; set; }
+
+        public Ship Ship { get; set; }
+
+        public int ApproverUserId { get; set; }
+        public UserMasterPOCO User { get; set; }
+
+        public UserMasterPOCO ApproverUser { get; set; }
+
 
         #endregion
 
