@@ -32,11 +32,31 @@ namespace TCCCMS.Business
             return documentDal.SaveUploadedForms(formsList);
 
         }
+        /// <summary>
+        /// Old
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="approvers"></param>
+        /// <param name="catchMessage"></param>
+        /// <returns></returns>
         public int SaveFilledUpForm(Forms form, List<ApproverMaster> approvers, ref string catchMessage)
         {
             DocumentDAL documentDal = new DocumentDAL();
 
             return documentDal.SaveFilledUpForm(form, approvers,ref catchMessage);
+
+        }
+        /// <summary>
+        /// new 
+        /// </summary>
+        /// <param name="form"></param>
+        /// <param name="catchMessage"></param>
+        /// <returns></returns>
+        public int SaveFilledUpForm(Forms form,  ref string catchMessage)
+        {
+            DocumentDAL documentDal = new DocumentDAL();
+
+            return documentDal. SaveFilledUpForm(form, ref catchMessage);
 
         }
 
@@ -45,6 +65,21 @@ namespace TCCCMS.Business
             DocumentDAL documentDal = new DocumentDAL();
 
             return documentDal.DeleteForm(formName);
+        }
+
+        public List<Forms> GetFilledupFormRequiredApprovalList(int approverUserId)
+        {
+            DocumentDAL documentDal = new DocumentDAL();
+            return documentDal.GetFilledupFormRequiredApprovalList(approverUserId);
+        }
+
+        public int ApproveFilledUpForm(int filledUpFormId,int approverUserId)
+        {
+            DocumentDAL documentDal = new DocumentDAL();
+
+
+
+            return documentDal.ApproveFilledUpForm(filledUpFormId, approverUserId);
         }
 
         #region DropDown

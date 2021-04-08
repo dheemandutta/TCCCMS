@@ -103,6 +103,71 @@ function UploadFilledUpForm() {
     }
 
 }
+///--------below-----UploadFilledUpFormNew() created on 7th APR 2021 due change approval logic that company users which has approval rights can approve froms
+function UploadFilledUpFormNew() {
+
+    var url = $('#urlFilledUpForm').val();
+    
+    //********--------------------------------------------------------------------------
+    //Checking whether FormData is available in browser  
+    if (window.FormData !== undefined) {
+
+        var fileUpload = $("#fileUpload").get(0);
+        var files = fileUpload.files;
+        // Create FormData object  
+        var fileData = new FormData();
+
+        // Looping over all files and add it to FormData object  
+        for (var i = 0; i < files.length; i++) {
+            fileData.append(files[i].name, files[i]);
+        }
+
+        // Adding one more key to FormData object 
+        //fileData.append('formVersion', frmVersion);
+        
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            //datatype: "json",
+            //contentType: "application/json; charset=utf-8",
+            contentType: false, // Not to set any content header  
+            processData: false, // Not to process data  
+            data: fileData,
+            //data: { categoryId: y},
+            success: function (result) {
+                alert(result);
+                //ClearFields();
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-bottom-full-width",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+
+                toastr.success("Form Updated Successfully");
+                $('#filledUpFormModal').modal('hide');
+            },
+            error: function (err) {
+                alert(err.statusText);
+            }
+        });
+    } else {
+        alert("FormData is not supported.");
+    }
+
+}
 function LoadApprover() {
     if ($("#ddlUser").val() === 0 || $("#ddlUser").val() < 0) {
         $('#ddlUser').css('border-color', 'Red');
@@ -227,3 +292,52 @@ function RemoveTempApprover(id) {
 
     SetUpTempApproverGrid();
 }
+
+function ApproveFilledUpForm(approverUserId,filledUpFormId) {
+
+    var posturl = $('#urlApproveFilledUpForm').val();
+    var   Forms = {
+        ID: filledUpFormId,
+        ApproverUserId: approverUserId
+    };
+       
+
+    $.ajax({
+        url: posturl,
+        data: JSON.stringify(Forms),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+
+        success: function (result) {
+            loadData();
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-bottom-full-width",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "300",
+                "hideDuration": "1000",
+                "timeOut": "5000",
+                "extendedTimeOut": "1000",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "fadeIn",
+                "hideMethod": "fadeOut"
+            };
+
+            toastr.success("Approved Successfully");
+
+            //clearTextBox();
+        },
+        error: function (errormessage) {
+            console.log(errormessage.responseText);
+        }
+    });
+    
+}
+
+

@@ -86,5 +86,22 @@ namespace TCCCMS.Controllers
         }
 
 
+        public ActionResult FormsApprovalList()
+        {
+            List<Forms> formList = new List<Forms>();
+            DocumentBL documentBL = new DocumentBL();
+            formList = documentBL.GetFilledupFormRequiredApprovalList(Convert.ToInt32(Session["UserId"].ToString()));
+            return View(formList);
+        }
+
+        public JsonResult ApproveFilledUpForm(Forms form)
+        {
+            DocumentBL documentBl = new DocumentBL();
+            int filledUpFormId = form.ID;
+           int x = documentBl.ApproveFilledUpForm(filledUpFormId, Convert.ToInt32(Session["UserId"].ToString()));
+            return Json("", JsonRequestBehavior.AllowGet);
+        }
+
+
     }
 }
