@@ -20,7 +20,7 @@
 }
 <script src="~/Scripts/jquery-3.5.1.min.js"></script>
 @*<script src="~/Scripts/notify.min.js"></script>
-<link href="~/Content/notify.css" rel="stylesheet" />*@
+    <link href="~/Content/notify.css" rel="stylesheet" />*@
 <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 
 <link href="~/DataTables/datatables.min.css" rel="stylesheet" />
@@ -39,6 +39,8 @@
 @Html.Hidden("GetUserByUserId", @Url.Action("GetUserByUserId", "UserMaster"))
 @Html.Hidden("urlGetIMOByShip", @Url.Action("GetIMONumberByShip", "UserMaster"))
 @Html.Hidden("urlGenerateCode", @Url.Action("GenerateUserCode", "UserMaster"))
+
+@Html.Hidden("ApprovedRoNotInUserMaster", @Url.Action("ApprovedRoNotInUserMaster", "UserMaster"))
 
 <body>
     <div class="row">

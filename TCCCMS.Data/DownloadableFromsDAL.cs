@@ -44,6 +44,7 @@ namespace TCCCMS.Data
                             ID = Convert.ToInt32(dr["ID"]),
                             FormName = Convert.ToString(dr["FormName"]),
                             Path = Convert.ToString(dr["Path"]),
+                            IsUpload = Convert.ToString(dr["IsUpload"]),
                             Version = Convert.ToString(dr["Version"])
                         });
                     }

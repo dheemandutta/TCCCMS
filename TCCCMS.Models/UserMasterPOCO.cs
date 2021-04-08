@@ -41,5 +41,7 @@ namespace TCCCMS.Models
 
         public int RoleType { get; set; }
 
+        public int IsApprover { get; set; }
+
     }
 }

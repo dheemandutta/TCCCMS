@@ -12,5 +12,7 @@ namespace TCCCMS.Models
         public string FormName { get; set; }
         public string Path { get; set; }
         public string Version { get; set; }
+
+        public string IsUpload { get; set; }
     }
 }
