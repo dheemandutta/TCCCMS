@@ -45,7 +45,7 @@
                                             else if (item.IsApproved == 0)
                                             {
                                                 <div class="form-group">
-                                                    <input type="button" id="btnApprove" value="Approved" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm()" />
+                                                    <input type="button" id="btnApprove" value="Approved" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID)" />
                                                 </div>
                                             }
                                         </td>

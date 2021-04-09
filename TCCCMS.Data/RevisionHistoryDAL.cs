@@ -123,9 +123,9 @@ namespace TCCCMS.Data
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         RevisionHeader rHeader = new RevisionHeader();
-                        rHeader.Id = Convert.ToInt32(dr["Id"]);
-                        rHeader.RevisionNo = Convert.ToString(dr["RevisionNo"]);
-                        rHeader.RevisionDate = Convert.ToString(dr["RevisionDate"]);
+                        rHeader.Id              = Convert.ToInt32(dr["Id"]);
+                        rHeader.RevisionNo      = Convert.ToString(dr["RevisionNo"]);
+                        rHeader.RevisionDate    = Convert.ToString(dr["RevisionDate"]);
 
                         var histRows = ds.Tables[1].Rows
                               .Cast<DataRow>()

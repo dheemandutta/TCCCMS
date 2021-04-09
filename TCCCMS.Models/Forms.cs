@@ -31,12 +31,17 @@ namespace TCCCMS.Models
         public string Approvers { get; set; }
         public int IsApproved { get; set; }
 
+        public string ApprovedOn { get; set; }
+
         public Ship Ship { get; set; }
 
         public int ApproverUserId { get; set; }
         public UserMasterPOCO User { get; set; }
 
         public UserMasterPOCO ApproverUser { get; set; }
+
+        public List<FormsApproval> ApproverList { get; set; }
+
 
 
         #endregion
