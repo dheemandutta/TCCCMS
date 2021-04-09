@@ -86,9 +86,9 @@ function SetUpGrid(CategoryId) {
 
 
             {
-                "data": "IsUpload", "width": "50px", "render": function (data, row) {
+                "data": "IsUpload", "width": "50px", "render": function (data) {
 
-                    console.log(row.CategoryId);
+                    /*console.log(row.CategoryId);*/
 
                     if (data == '0') {
                         return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" >Not Upload</a>';
