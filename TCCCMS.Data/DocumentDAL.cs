@@ -387,5 +387,57 @@ namespace TCCCMS.Data
 
             return recorSaved;
         }
+
+        public ApprovedFilledupFormAndApproverViewModel GetApprovedFilledUpForms(int userId)
+        {
+            ApprovedFilledupFormAndApproverViewModel AFFAVM = new ApprovedFilledupFormAndApproverViewModel();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetApprovedFilledupFormList", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    con.Open();
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    List<Forms> approvedFormList = new List<Forms>();
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        Forms approvedForm = new Forms();
+                        approvedForm.ID                 = Convert.ToInt32(dr["ID"]);
+                        approvedForm.FilledUpFormName   = Convert.ToString(dr["FormsName"]);
+                        approvedForm.IsApproved         = Convert.ToInt32(dr["IsApprove"]);
+                        approvedForm.ApprovedOn         = Convert.ToString(dr["ApprovedOn"]);
+
+                        var approverRows = ds.Tables[1].Rows
+                             .Cast<DataRow>()
+                             .Where(x => x.Field<int>(1) == approvedForm.ID).ToList();
+
+                        List<FormsApproval> approverList = new List<FormsApproval>();
+                        foreach (DataRow dra in approverRows)
+                        {
+                            FormsApproval approver = new FormsApproval();
+                            approver.ApprovalId         = Convert.ToInt32(dra["ID"]);
+                            approver.UploadedFormId     = Convert.ToInt32(dra["UploadedFormId"]);
+                            approver.IsApprove          = Convert.ToInt32(dra["IsApprove"]);
+                            approver.ApproverUserId     = Convert.ToInt32(dra["ApproverUserId"]);
+                            approver.ApproverUserName   = Convert.ToString(dra["ApproverUser"]);
+                            approver.ApprovedOn         = Convert.ToString(dra["ApprovedOn"]);
+
+                            approverList.Add(approver);
+                        }
+                        approvedForm.ApproverList = approverList;
+
+                        approvedFormList.Add(approvedForm);
+                    }
+                    AFFAVM.ApprovedFormList = approvedFormList;
+                }
+            }
+                   
+            return AFFAVM;
+
+        }
     }
 }

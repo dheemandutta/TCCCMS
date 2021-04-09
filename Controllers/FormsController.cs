@@ -73,10 +73,11 @@ namespace TCCCMS.Controllers
             foreach (DownloadableFroms pC in pocoList)
             {
                 DownloadableFroms pOCO = new DownloadableFroms();
-                pOCO.ID = pC.ID;
-                pOCO.FormName = pC.FormName;
-                pOCO.Path = pC.Path;
-                pOCO.Version = pC.Version;
+                pOCO.ID         = pC.ID;
+                pOCO.FormName   = pC.FormName;
+                pOCO.Path       = pC.Path;
+                pOCO.Version    = pC.Version;
+                pOCO.IsUpload   = pC.IsUpload;
 
                 pList.Add(pOCO);
             }
@@ -100,6 +101,14 @@ namespace TCCCMS.Controllers
             int filledUpFormId = form.ID;
            int x = documentBl.ApproveFilledUpForm(filledUpFormId, Convert.ToInt32(Session["UserId"].ToString()));
             return Json("", JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult FillupFormList()
+        {
+            ApprovedFilledupFormAndApproverViewModel affaVM = new ApprovedFilledupFormAndApproverViewModel();
+            DocumentBL documentBL = new DocumentBL();
+            affaVM = documentBL.GetApprovedFilledUpForms(Convert.ToInt32(Session["UserId"].ToString()));
+            return View(affaVM);
         }
 
 

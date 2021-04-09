@@ -107,7 +107,7 @@ function UploadFilledUpForm() {
 function UploadFilledUpFormNew() {
 
     var url = $('#urlFilledUpForm').val();
-    
+    //var url = "/UserMaster/UploadFilledUpForm";
     //********--------------------------------------------------------------------------
     //Checking whether FormData is available in browser  
     if (window.FormData !== undefined) {
@@ -136,7 +136,7 @@ function UploadFilledUpFormNew() {
             data: fileData,
             //data: { categoryId: y},
             success: function (result) {
-                alert(result);
+                //alert(result);
                 //ClearFields();
                 toastr.options = {
                     "closeButton": false,

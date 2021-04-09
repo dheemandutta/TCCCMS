@@ -81,6 +81,11 @@ namespace TCCCMS.Business
 
             return documentDal.ApproveFilledUpForm(filledUpFormId, approverUserId);
         }
+        public ApprovedFilledupFormAndApproverViewModel GetApprovedFilledUpForms(int userId)
+        {
+            DocumentDAL documentDal = new DocumentDAL();
+            return documentDal.GetApprovedFilledUpForms(userId);
+        }
 
         #region DropDown
 
