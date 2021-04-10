@@ -66,7 +66,11 @@
     </header>
     <div class="breadcrumbs">
         <div class="steps steps_animation">
-            <div class="steps_item">
+            <!-- #region Breadcrumb -->
+            @Html.Raw(Html.BuildBreadcrumbNavigation())
+            <!-- #endregion -->
+
+            @*<div class="steps_item">
                 <span class="steps_content">
                     <a href="#"> Home</a>
                 </span>
@@ -75,7 +79,7 @@
                 <span class="steps_content">
                     Inner Page1
                 </span>
-            </div>
+            </div>*@
         </div>
     </div>
 
