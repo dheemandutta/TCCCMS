@@ -29,6 +29,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult Pages(string actionName)
         {
+            System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
             Manual file = new Manual();
             file = manualBL.GetManual(controllerName, actionName);
             TempData[actionName] = file.ManualBodyHtml;
