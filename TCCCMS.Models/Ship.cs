@@ -47,6 +47,7 @@ namespace TCCCMS.Models
 
     }
 
+
     public class VesselType
     {
         public int ID { get; set; }
