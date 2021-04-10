@@ -2236,6 +2236,7 @@
     <Content Include="Views\MainDocument\Pages.cshtml" />
     <Content Include="Views\Forms\FormsApprovalList.cshtml" />
     <Content Include="Views\Forms\FillupFormList.cshtml" />
+    <Content Include="Views\Shared\_FilledupFormUploadModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

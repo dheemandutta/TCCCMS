@@ -9,9 +9,9 @@
 <script src="~/DataTables/datatables.min.js"></script>
 
 <script src="~/Scripts/DownloadableFroms.js"></script>
-
+<script src="~/js/UserMaster/UserUploadForm.js"></script>
 @Html.Hidden("loaddata", @Url.Action("LoadData", "Forms"))
-
+@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpForm", "UserMaster"))
 
 <body>
     @*<h2 class="ta">Downloadable Forms</h2>*@
@@ -37,7 +37,7 @@
                                     <th>Forms Upload</th>
                                     <th>Version</th>
                                     @*<th>Edit</th>
-        <th>Delete</th>*@
+                                        <th>Delete</th>*@
                                 </tr>
                             </thead>
                         </table>
@@ -48,6 +48,9 @@
         </div>
 
     </div>
+
+    @Html.Partial("_FilledupFormUploadModal");
+
 </body>
 
 <script>
