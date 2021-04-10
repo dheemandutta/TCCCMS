@@ -56,57 +56,8 @@
 
         </ul>
     </div>
+    @Html.Partial("_FilledupFormUploadModal");
 
-    <!-- Modal -->
-    <div class="modal fade" id="filledUpFormModal" role="dialog">
-        <div class="modal-dialog ">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header" style="background-color: #e90000;">
-                    <h4 class="modal-title colorWhite">Upload Filledup Form</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-
-
-                <div class="modal-body">
-                    @*<form>*@
-                    <div class="form-group">
-                        <input type="hidden" id="hdnFilledUpFormID" />
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-12 col-xs-12">
-                            <div class="card">
-                                <div class="">
-                                    <div class="col-sm-12 col-xs-12 marginTP10">
-                                        <div class="row">
-
-                                            <div class="col-sm-12 col-xs-12">
-                                                <div class="form-group">
-                                                    <input type="file" id="fileUpload" />
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                    @*</form>*@
-
-                </div>
-
-
-                <div class="modal-footer" style="background-color:lightgray;">
-                    <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return UploadFilledUpFormNew();">Upload</button>
-                    <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
 </body>
 
 <script>

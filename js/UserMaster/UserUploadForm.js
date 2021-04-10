@@ -105,7 +105,7 @@ function UploadFilledUpForm() {
 }
 ///--------below-----UploadFilledUpFormNew() created on 7th APR 2021 due change approval logic that company users which has approval rights can approve froms
 function UploadFilledUpFormNew() {
-
+    $('#fileUpload').val('');
     var url = $('#urlFilledUpForm').val();
     //var url = "/UserMaster/UploadFilledUpForm";
     //********--------------------------------------------------------------------------

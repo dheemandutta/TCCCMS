@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BreadCrumbHtmlExtensions.cs" />
     <Compile Include="Controllers\ApproverController.cs" />
     <Compile Include="Controllers\CommonToAllManualController.cs" />
     <Compile Include="Controllers\CompanyPolicyManualController.cs" />
@@ -162,6 +163,7 @@
     </Compile>
     <Compile Include="Infrastructure\CustomAuthorizationFilter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="background\excel.png" />
@@ -2236,6 +2238,7 @@
     <Content Include="Views\MainDocument\Pages.cshtml" />
     <Content Include="Views\Forms\FormsApprovalList.cshtml" />
     <Content Include="Views\Forms\FillupFormList.cshtml" />
+    <Content Include="Views\Shared\_FilledupFormUploadModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
