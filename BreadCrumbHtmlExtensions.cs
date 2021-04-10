@@ -92,19 +92,22 @@ namespace TCCCMS
                     breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
                     string s = helper.ViewContext.RouteData.Values["action"].ToString();
                     s = s + "?actionName=" + manualFileAction;
-                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString().Titleize(),
-                                                        s,
-                                                        //helper.ViewContext.RouteData.Values["action"].ToString() + "?actionName=" + manualFileAction,
-                                                        helper.ViewContext.RouteData.Values["controller"].ToString()));
+                    //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString().Titleize(),
+                    //                                    s,
+                    //                                    //helper.ViewContext.RouteData.Values["action"].ToString() + "?actionName=" + manualFileAction,
+                    //                                    helper.ViewContext.RouteData.Values["controller"].ToString()));
+                    breadcrumb2.Append(helper.ViewContext.RouteData.Values["action"].ToString());
 
                     breadcrumb2.Append("</span></div>");
                 }
                 else
                 {
                     breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
-                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString().Titleize(),
-                                                        helper.ViewContext.RouteData.Values["action"].ToString(),
-                                                        helper.ViewContext.RouteData.Values["controller"].ToString()));
+                    //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString().Titleize(),
+                    //                                    helper.ViewContext.RouteData.Values["action"].ToString(),
+                    //                                    helper.ViewContext.RouteData.Values["controller"].ToString()));
+
+                    breadcrumb2.Append(helper.ViewContext.RouteData.Values["action"].ToString());
 
                     breadcrumb2.Append("</span></div>");
                 }
