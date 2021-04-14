@@ -87,7 +87,7 @@ namespace TCCCMS.Business
                     }
 
                     string mainNodeName = volume.Attributes["name"].Value.ToString();
-                    string pdfRelativePath = volName;//---this for pdf preview link path
+                    string relaiveFilePath = volName;//---this for pdf preview link path
 
                     if (Convert.ToInt32(mainNodeId) == partId)
                     {
@@ -113,6 +113,7 @@ namespace TCCCMS.Business
                                 string filename = item.InnerText.ToString();
                                 string actionName = item.Attributes["actionname"].Value.ToString();
                                 string type = item.Attributes["doctype"].Value.ToString();
+                                string isDownload = item.Attributes["isdownloadable"].Value.ToString();
                                 // manual = manuBl.GetActionNameByFileName(filename + ".html");
                                 if (type == "DOC" && actionName != "")
                                 {
@@ -122,7 +123,15 @@ namespace TCCCMS.Business
                                     //sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + "</span></a></li>");
                                     ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
                                     //sb.Append("<a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' >");
-                                    sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
+                                    if(isDownload =="YES")
+                                    {
+                                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath="+ relaiveFilePath+ "' >");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
+                                    }
+                                    
                                     sb.Append(filename + "</a>");
                                     sb.Append("</br>");
 
@@ -131,7 +140,7 @@ namespace TCCCMS.Business
                                 else if (type == "PDF")
                                 {
                                     sb.Append("\n");
-                                    sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + pdfRelativePath + "' >");
+                                    sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
                                     sb.Append(filename + "</a>");
                                     sb.Append("</br>");
 
@@ -155,12 +164,12 @@ namespace TCCCMS.Business
                                     }
                                     else
                                     {
-                                        pdfRelativePath = pdfRelativePath + "/" + fName;
+                                        relaiveFilePath = relaiveFilePath + "/" + fName;
                                         sb.Append("\n");
                                         sb.Append("<button class='accordion'>" + fName + "</button>");
                                         sb.Append("\n");
                                         sb.Append("<div class='panel'>");
-                                        string sChild = GetChild(item, ref l, partName, ctrlName, ref pdfRelativePath);
+                                        string sChild = GetChild(item, ref l, partName, ctrlName, ref relaiveFilePath);
                                         //l = l;
                                         sb.Append(sChild);
                                         sb.Append("\n");
@@ -172,13 +181,13 @@ namespace TCCCMS.Business
                                 else
                                 {
                                     string fName = item.Attributes["name"].Value.ToString();
-                                    pdfRelativePath = pdfRelativePath + "/" + fName;
+                                    relaiveFilePath = relaiveFilePath + "/" + fName;
 
                                     sb.Append("\n");
                                     sb.Append("<button class='accordion'>" + fName + "</button>");
                                     sb.Append("\n");
                                     sb.Append("<div class='panel'>");
-                                    string sChild = GetChild(item, ref l, partName, ctrlName, ref pdfRelativePath);
+                                    string sChild = GetChild(item, ref l, partName, ctrlName, ref relaiveFilePath);
                                     //l = l;
                                     sb.Append(sChild);
                                     sb.Append("\n");
@@ -234,8 +243,9 @@ namespace TCCCMS.Business
                     string filename = item.InnerText.ToString();
                     string actionName = item.Attributes["actionname"].Value.ToString();
                     string type = item.Attributes["doctype"].Value.ToString();
+                    string isDownload = item.Attributes["isdownloadable"].Value.ToString();
                     // manual = manuBl.GetActionNameByFileName(filename + ".html");
-                    if (actionName != "")
+                    if (type == "DOC" && actionName != "")
                     {
                         sb.Append("\n");
                         //sb.Append("<li ><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
@@ -243,7 +253,15 @@ namespace TCCCMS.Business
                         //sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
                         ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
                         //sb.Append("<a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' >");
-                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
+                        //sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
+                        if (isDownload == "YES")
+                        {
+                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relativePath + "' >");
+                        }
+                        else
+                        {
+                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
+                        }
                         sb.Append(filename + "</a>");
                         sb.Append("</br>");
                     }
