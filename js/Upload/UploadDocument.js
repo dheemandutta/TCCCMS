@@ -1,4 +1,4 @@
-﻿    function EnableFileControl(x) {
+﻿ function EnableFileControl(x) {
     //var catId = x.value;
     var catId = x
     if (catId > 0) {

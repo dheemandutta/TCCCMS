@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Text;
+using System.IO;
 using System.Web.Mvc;
 
 
@@ -17,7 +19,7 @@ namespace TCCCMS.Controllers
         private string controllerName = "CompanyResponsibilityAndAuthorityManual";
         ManualBL manualBL = new ManualBL();
         // GET: CompanyResponsibilityAndAuthorityManual
-        #region Main Manual
+        
         public ActionResult Index()
         {
             Manual file = new Manual();
@@ -27,15 +29,35 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
-        public ActionResult Pages(string actionName)
+        //public ActionResult Pages(string actionName)
+        //{
+        //    System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
+        //    Manual file = new Manual();
+        //    file = manualBL.GetManual(controllerName, actionName);
+        //    TempData[actionName] = file.ManualBodyHtml;
+        //    return View(file);
+        //}
+        public ActionResult Pages(string actionName, string formName = "", string relformPath = "")
         {
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
             Manual file = new Manual();
             file = manualBL.GetManual(controllerName, actionName);
-            TempData[actionName] = file.ManualBodyHtml;
+            if (formName != "")
+            {
+                StringBuilder sb = new StringBuilder("<div><div style = 'height: 800px; overflow: scroll;' >");
+                sb.Append(file.ManualBodyHtml);
+
+                sb.Append("</div>");
+                sb.Append("<div class='col-sm-12.><div class='row'><div class='col-sm-6'><a href='/" + controllerName + "/Download?fileName=");
+                sb.Append(formName + "&relformPath=" + relformPath + "' class='btn btn-info btn-sm' style='background-color: #e90000;' >Download</a></div></div></div>");
+                sb.Append("</div>");
+
+                file.ManualBodyHtml = sb.ToString();
+            }
+
+            //TempData[actionName] = file.ManualBodyHtml;
             return View(file);
         }
-
         public ActionResult PDFViewer(string fileName, string relPDFPath)
         {
             Manual file = new Manual();
@@ -47,6 +69,40 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        public FileResult Download(string fileName, string relformPath)
+        {
+            string path = Server.MapPath("~/ManualsPDF/"+ relformPath+"/");
+            //var folderPath = Path.Combine(path, relformPath);
+            //var filePath = Path.Combine(path, fileName);
+            var filePath = Directory.GetFiles(path, "*.doc?")
+                                                        .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")).First();
+            var memory = new MemoryStream();
+            using (var stream = new FileStream(filePath, FileMode.Open))
+            {
+                stream.CopyToAsync(memory);
+            }
+            memory.Position = 0;
+            var ext = Path.GetExtension(filePath).ToLowerInvariant();
+            return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
+        }
+        private Dictionary<string, string> GetMimeTypes()
+        {
+            return new Dictionary<string, string>
+            {
+                {".txt", "text/plain"},
+                {".pdf", "application/pdf"},
+                {".doc", "application/vnd.ms-word"},
+                {".docx", "application/vnd.ms-word"},
+                {".png", "image/png"},
+                {".jpg", "image/jpeg"},
+                //{".xlsx", "application/vnd.openxmlformats officedocument.spreadsheetml.sheet"},
+                {".jpeg", "image/jpeg"},
+                {".gif", "image/gif"},
+                {".csv", "text/csv"}
+            };
+        }
+
+        #region Other Action Not Used
         [HttpGet]
         public ActionResult Manual()
         {
@@ -361,7 +417,7 @@ namespace TCCCMS.Controllers
             TempData["TRM"] = file.ManualBodyHtml;
             return View(file);
         }
-        #endregion
+        
 
         //-----31 AC
 
@@ -716,6 +772,8 @@ namespace TCCCMS.Controllers
         }
 
         ////------------End------------Appendix 2 - Shipboard Job Description-----------------------
+        #endregion
+
         #endregion
     }
 }
