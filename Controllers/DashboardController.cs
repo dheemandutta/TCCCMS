@@ -10,6 +10,7 @@ using System.IO;
 using System.Xml;
 using System.Text;
 using TCCCMS.Infrastructure;
+using System.Web.Mvc.Html;
 
 namespace TCCCMS.Controllers
 {
@@ -38,6 +39,9 @@ namespace TCCCMS.Controllers
 
         public string GenerateShipWiseMenu()
         {
+            string userType = Session["UserType"].ToString();
+            string UserRole = Session["Role"].ToString();
+            string shipId = Session["ShipId"].ToString();   
             ManualBL manuBl = new ManualBL();
 
 
@@ -47,21 +51,43 @@ namespace TCCCMS.Controllers
             StringBuilder sb = new StringBuilder();
             foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
             {
+                if (userType == "1")
+                {
+                    sb.Append("<div class='dropdown-content' style='min-width: 300px; top: -45px; '>");
+                }
+                else
+                {
+                    sb.Append("<div class='dropdown-content' style='min-width: 300px; top: -300px; '>");
 
+                }
+                sb.Append("\n");
                 sb.Append("<ul>");//---ul1
                 foreach (XmlNode ship in node)
                 {
-                    Volume vol = new Volume();
-                    string sName = ship.Attributes["name"].Value.ToString();
-                    string ctrlName = ship.Attributes["controllername"].Value.ToString();
-                    string partName = sName.Split(' ').Last();
-                    string sNo = ship.Attributes["shipnumber"].Value.ToString();
+                    Volume vol          = new Volume();
+                    string sName        = ship.Attributes["name"].Value.ToString();
+                    string ctrlName     = ship.Attributes["controllername"].Value.ToString();
+                    string partName     = sName.Split(' ').Last();
+                    string sNo          = ship.Attributes["shipnumber"].Value.ToString();
                     //vol = manuBl.GetVolumeById(sNo);
                     sb.Append("\n");
                     //sb.Append("<li class='mainmenu'><a href='#'><span class='vul'>Volume <b>I</b> </span><span class='pgnam'>" + volName + "</span></a>");
                     //string s= "'@Url.Action('"
                     //sb.Append("<li class='mainmenu'><a href='@Url.Action('Index', '"+vol.ControllerName+"')'><span class='vul'>Volume <b>"+ partName + "</b> </span><span class='pgnam'>" + vol.Description + "</span></a>");
                     //sb.Append("<li class='dropmenuright' ><a href='/" + vol.ControllerName + "/Index'> "+ vol.Description +"</a>");///------------li1
+                   if(userType == "1")
+                    {
+                        if (shipId == sNo)
+                        {
+                            sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Index'> " + sName + "</a>");///------------li1
+                            sb.Append("</li>");///----End--------li1
+                        }
+
+                    }
+                    else
+                    {
+
+                    
                     sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Index'> " + sName + "</a>");///------------li1
                     #region Line Commented on 23rd Feb 2021
                     //sb.Append("\n");
@@ -114,12 +140,14 @@ namespace TCCCMS.Controllers
                     //sb.Append("\n");
                     #endregion
                     sb.Append("</li>");///----End--------li1
+                    }
 
 
                 }
                 sb.Append("\n");
                 sb.Append("</ul>");//--End--ul1
-
+                sb.Append("\n");
+                sb.Append("</div>");
                 //WriteToText(sb);
 
             }
