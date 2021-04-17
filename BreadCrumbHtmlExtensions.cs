@@ -24,14 +24,24 @@ namespace TCCCMS
 
             StringBuilder breadcrumb = new StringBuilder("<ol class='breadcrumb'><li>").Append(helper.ActionLink("Home", "Index", "Home").ToHtmlString()).Append("</li>");
             breadcrumb.Append("<li>");
-            breadcrumb.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
+            //--- Titleize() makes all characters to lower case of a single word except First Chracter
+            //breadcrumb.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
+            //                                  "Index",
+            //                                  helper.ViewContext.RouteData.Values["controller"].ToString()));
+
+            breadcrumb.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
                                               "Index",
                                               helper.ViewContext.RouteData.Values["controller"].ToString()));
             breadcrumb.Append("</li>");
             if (helper.ViewContext.RouteData.Values["action"].ToString() != "Index")
             {
                 breadcrumb.Append("<li>");
-                breadcrumb.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString().Titleize(),
+                //--- Titleize() makes all characters to lower case of a single word except First Chracter
+                //breadcrumb.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString().Titleize(),
+                //                                    helper.ViewContext.RouteData.Values["action"].ToString(),
+                //                                    helper.ViewContext.RouteData.Values["controller"].ToString()));
+
+                breadcrumb.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString(),
                                                     helper.ViewContext.RouteData.Values["action"].ToString(),
                                                     helper.ViewContext.RouteData.Values["controller"].ToString()));
 
@@ -62,12 +72,22 @@ namespace TCCCMS
             {
                 if(UserRole == "OfficeUser" || UserRole == "ShipUser")
                 {
+                    //--- Titleize() makes all characters to lower case of a single word except First Chracter
+                    //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
+                    //                           "UserDashboard",
+                    //                           helper.ViewContext.RouteData.Values["controller"].ToString()));
+
                     breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
-                                               "UserDashboard",
-                                               helper.ViewContext.RouteData.Values["controller"].ToString()));
+                                              "UserDashboard",
+                                              helper.ViewContext.RouteData.Values["controller"].ToString()));
                 }
                 else
                 {
+                    //--- Titleize() makes all characters to lower case of a single word except First Chracter
+                    //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
+                    //                                               "AdminDashboard",
+                    //                                               helper.ViewContext.RouteData.Values["controller"].ToString()));
+
                     breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
                                                                    "AdminDashboard",
                                                                    helper.ViewContext.RouteData.Values["controller"].ToString()));
@@ -76,9 +96,14 @@ namespace TCCCMS
             }
             else
             {
+                //--- Titleize() makes all characters to lower case of a single word except First Chracter
+                //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
+                //                               "Index",
+                //                               helper.ViewContext.RouteData.Values["controller"].ToString()));
+
                 breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
-                                               "Index",
-                                               helper.ViewContext.RouteData.Values["controller"].ToString()));
+                                              "Index",
+                                              helper.ViewContext.RouteData.Values["controller"].ToString()));
             }
             
 
@@ -88,10 +113,10 @@ namespace TCCCMS
             {
                 if(helper.ViewContext.RouteData.Values["action"].ToString() == "Pages")
                 {
-                    string manualFileAction = HttpContext.Current.Session["ManualFileActionName"].ToString();
+                    //string manualFileAction = HttpContext.Current.Session["ManualFileActionName"].ToString();
                     breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
                     string s = helper.ViewContext.RouteData.Values["action"].ToString();
-                    s = s + "?actionName=" + manualFileAction;
+                    //s = s + "?actionName=" + manualFileAction;
                     //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString().Titleize(),
                     //                                    s,
                     //                                    //helper.ViewContext.RouteData.Values["action"].ToString() + "?actionName=" + manualFileAction,
