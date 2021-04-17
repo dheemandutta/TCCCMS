@@ -88,10 +88,10 @@ namespace TCCCMS
             {
                 if(helper.ViewContext.RouteData.Values["action"].ToString() == "Pages")
                 {
-                    string manualFileAction = HttpContext.Current.Session["ManualFileActionName"].ToString();
+                   // string manualFileAction = HttpContext.Current.Session["ManualFileActionName"].ToString();
                     breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
                     string s = helper.ViewContext.RouteData.Values["action"].ToString();
-                    s = s + "?actionName=" + manualFileAction;
+                   // s = s + "?actionName=" + manualFileAction;
                     //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString().Titleize(),
                     //                                    s,
                     //                                    //helper.ViewContext.RouteData.Values["action"].ToString() + "?actionName=" + manualFileAction,
