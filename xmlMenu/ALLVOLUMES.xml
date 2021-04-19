@@ -199,7 +199,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECDISR1">Chapter 1.7.30 - ECDIS </filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECDISA1">Chapter 1.7.30.23 - ECDIS Annex 1</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECDISA2">Chapter 1.7.30.23 - ECDIS Annex 2</filename>
-					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CON">Chapter 1.8 - Coastal and Ocean Navigation</filename> -->
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CostalON">Chapter 1.8 - Coastal and Ocean Navigation</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PilotageR1">Chapter 1.9 - Pilotage </filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Anchoring">Chapter 1.10 - Anchoring</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Weather">Chapter 1.11 - Weather</filename>
