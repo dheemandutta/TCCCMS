@@ -1,7 +1,15 @@
 <xml>
     <volumes>
 		<volume id="0" name="Volume O" controllername="MainDocument">
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCSMD">TCCS SMS - Main Document (FINAL) </filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCSMD">TCCS SMS - Main Document (FINAL)</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCGP">TCC GROUP POLICIES</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAAOTVA">APPENDIX A - TCCS SMS Oil Tankers, Volumes At A Glance</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCADFC">APPENDIX D - FLOW CHART OF SMS MANUALS - OIL TANKERS</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAEFC">APPENDIX E - FLOW CHART OF SMS MANUALS - BULK CARRIERS</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAFOC">TAPPENDIX F - ORGANIZATION CHART OF TCC GROUP</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAGOCSG">APPENDIX G - ORGANIZATION CHART OF TCC SINGAPORE - HEAD OFFICE</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAHOCHK">APPENDIX H - ORGANIZATION CHART OF TCC HONG KONG - BRANCH OFFICE</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAIOCSH">APPENDIX I - ORGANIZATION CHART OF TCC SHANGHAI - BRANCH OFFICE</filename>
 		</volume>
 
         <volume id="1" name="Volume I" controllername="CompanyPolicyManual">
@@ -88,42 +96,42 @@
 		
 			<foldername name="Appendix 1 - Promotion Guidelines">
 				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ETO">Promotion to  Electro-Technical Officer</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2SecondEngineer">Promotion to 2nd Engineer</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2SecondOfficer">Promotion to 2nd Officer</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2ThirdEngineer">Promotion to 3rd Engineer</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2ThirdOfficer">Promotion to 3rd Officer</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2FourthEngineer">Promotion to 4th Engineer</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2AB">Promotion to AB</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2Bosun">Promotion to Bosun</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2ChiefCook">Promotion to Chief Cook</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2ChiefEngineer">Promotion to Chief Engineer</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2ChiefOfficer">Promotion to Chief Officer</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2Fitter">Promotion to Fitter</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2Master">Promotion to Master</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2Oiler">Promotion to Oiler</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="P2Pumpman">Promotion to Pumpman</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2SecondEngineer">Promotion to 2nd Engineer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2SecondOfficer">Promotion to 2nd Officer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ThirdEngineer">Promotion to 3rd Engineer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ThirdOfficer">Promotion to 3rd Officer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2FourthEngineer">Promotion to 4th Engineer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2AB">Promotion to AB</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Bosun">Promotion to Bosun</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ChiefCook">Promotion to Chief Cook</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ChiefEngineer">Promotion to Chief Engineer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ChiefOfficer">Promotion to Chief Officer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Fitter">Promotion to Fitter</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Master">Promotion to Master</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Oiler">Promotion to Oiler</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Pumpman">Promotion to Pumpman</filename>
 						  
 			</foldername>
 			<foldername name="Appendix 2 - Ship Board Job Description">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ABJD">AB Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BJD">Bosun Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CCJD">Chief Cook Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CEJD">Chief Engineer Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="COJD">Chief Officer Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETOJD">Electro-Technical Officer Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FJD">Fitter Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FEJD">Fourth Engineer Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MJD">Master Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MessmanJD">Messman Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OJD">Oiler Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OSJD">OS Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PJD">Pump man Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEJD">Second Engineer Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOJD">Second Officer Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SSOJD">Senior Second Officer Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TEJD">Third Engineer Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOJD">Third Officer Job Description</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WJD">Wiper Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="ABJD">AB Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="BJD">Bosun Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="CCJD">Chief Cook Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="CEJD">Chief Engineer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="COJD">Chief Officer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="ETOJD">Electro-Technical Officer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="FJD">Fitter Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="FEJD">Fourth Engineer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MJD">Master Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MessmanJD">Messman Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="OJD">Oiler Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="OSJD">OS Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="PJD">Pump man Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SEJD">Second Engineer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SOJD">Second Officer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SSOJD">Senior Second Officer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="TEJD">Third Engineer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="TOJD">Third Officer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="WJD">Wiper Job Description</filename>
 			
 			</foldername>	
 		</volume>
@@ -199,7 +207,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECDISR1">Chapter 1.7.30 - ECDIS </filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECDISA1">Chapter 1.7.30.23 - ECDIS Annex 1</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECDISA2">Chapter 1.7.30.23 - ECDIS Annex 2</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CostalON">Chapter 1.8 - Coastal and Ocean Navigation</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CoastalON">Chapter 1.8 - Coastal and Ocean Navigation</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PilotageR1">Chapter 1.9 - Pilotage </filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Anchoring">Chapter 1.10 - Anchoring</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Weather">Chapter 1.11 - Weather</filename>
@@ -276,72 +284,72 @@
 			<foldername name="Appendix">
 				<foldername name="JHA Templates">
 					<foldername name="Deck">
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSOperation">D1- STS Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="STSOperation">D1- STS Operation</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D1-STS Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SBMOperation">D2 - SBM Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SBMOperation">D2 - SBM Operation</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D2-SBM Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RURWAP">D3 - Rigging Unrigging of Razor Wire for anti-piracy</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="RURWAP">D3 - Rigging Unrigging of Razor Wire for anti-piracy</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D3-Rigging Unrigging of Razor Wire for anti-piracy</filename>
-						<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="RRWMSCI">D4 - Mast Riser Wire Mesh Strainer cleaning and inspection</filename> -->
+						<!-- <filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="RRWMSCI">D4 - Mast Riser Wire Mesh Strainer cleaning and inspection</filename> -->
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D4-Mast Riser Wire Mesh Strainer cleaning _ inspection</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PTUSC">D5 - Personnel Transfer Using Ships Crane</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="PTUSC">D5 - Personnel Transfer Using Ships Crane</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D5-Personnel Transfer Using Ships Crane</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RSIC">D6 - Radar Scanner inspection and cleaning</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="RSIC">D6 - Radar Scanner inspection and cleaning</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D6-Radar Scanner inspection and cleaning</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IGSI">D7 - IG Scrubber inspection</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="IGSI">D7 - IG Scrubber inspection</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D7-IG Scrubber inspection</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="COPSSI">D8 - COP Strainer, Seperator inspection</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="COPSSI">D8 - COP Strainer, Seperator inspection</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D8-COP Strainer, Seperator inspection(1)</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D8-COP Strainer, Seperator inspection</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="COTWW">D9 - Cargo Oil Tank water washing</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="COTWW">D9 - Cargo Oil Tank water washing</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D9-Cargo Oil Tank water washing</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TMLD">D10- Three monthly lifeboat drill</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="TMLD">D10- Three monthly lifeboat drill</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D10-Three monthly lifeboat drill</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HHH2SC">D11- Handling of High H2S Cargo</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="HHH2SC">D11- Handling of High H2S Cargo</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D11-Handling of High H2S Cargo</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MooringOperation">D12 - Mooring Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MooringOperation">D12 - Mooring Operation</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D12-Mooring Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TugOperation">D13 - Tug Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="TugOperation">D13 - Tug Operation</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D13-Tug Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="AnchoringOperation">D14 - Anchoring Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="AnchoringOperation">D14 - Anchoring Operation</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D14-Anchoring Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EBTADSR">D15 - Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="EBTADSR">D15 - Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D15-Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)(1)</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D15-Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EntryBTADSR">D16 - Entry BT after de-ballasting for sediment removal (NEI)</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="EntryBTADSR">D16 - Entry BT after de-ballasting for sediment removal (NEI)</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D16-Entry BT after de-ballasting for sediment removal (NEI)(1)</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D16-Entry BT after de-ballasting for sediment removal (NEI)</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOICOB">D17 - Simultaneous Operations including Cargo Operations and bunkering</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SOICOB">D17 - Simultaneous Operations including Cargo Operations and bunkering</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D17-Simultaneous Operations including Cargo Operations and bunkering</filename>
 					</foldername>
 					<foldername name="Engine">
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E1- AE Maintenance </filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="AEM">E1- AE Maintenance</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="AEM">E1- AE Maintenance</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E2 - Change over procedure from HSFO to LSMGO</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="COFFHFO2LSMGO">E2- Change Over of Fuel from HFO to LSMGO</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="COFFHFO2LSMGO">E2- Change Over of Fuel from HFO to LSMGO</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E3 - Inspection or Cleaning of AC Generator</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ICACG">E3- Inspection or Cleaning of AC Generator</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="ICACG">E3- Inspection or Cleaning of AC Generator</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E4 - Maintenance of Burner and Swirler of Aux Boiler</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MBSAB">E4- Maintenance of Burner and Swirler of Aux Boiler</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MBSAB">E4- Maintenance of Burner and Swirler of Aux Boiler</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E5 - Maintenance of Electric Equipment at Aloft Position</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MEEAP">E5- Maintenance of Elect. Equipment at Aloft Position</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MEEAP">E5- Maintenance of Elect. Equipment at Aloft Position</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E6 - Maintenance of OWS</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MOWS">E6- Maintenance of OWS</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MOWS">E6- Maintenance of OWS</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E7 - ME Scavenge space Cleaning and Inspection</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MESSCI">E7- ME Scavenge space Cleaning and Inspection</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MESSCI">E7- ME Scavenge space Cleaning and Inspection</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E8 -  Overhauling of Electric Motor</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OEM">E8- Overhauling of Electric Motor</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="OEM">E8- Overhauling of Electric Motor</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E9 - Renewal of Pump Mechanical Seal</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RPMS">E9- Renewal of Pump Mechanical Seal</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RMEFVHPP">E10- Replacement of ME Fuel Valve and HP Pipes</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="RPMS">E9- Renewal of Pump Mechanical Seal</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="RMEFVHPP">E10- Replacement of ME Fuel Valve and HP Pipes</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E10- Replacement of ME Fuel Valve and HP Pipes</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E11 - Sea Chest Strainer Cleaning</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SCSC">E11- Sea Chest Strainer Cleaning</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SCSC">E11- Sea Chest Strainer Cleaning</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E12 - UREA Bunkering Operation at Sunken Deck Manifold (Port or Stbd)(1)</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="UREABO">E12 - UREA Bunkering Operation at Sunken Deck Manifold (Port or Stbd)</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="UREABO">E12 -UREA Bunkering Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="UREABO">E12 -UREA Bunkering Operation</filename>
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E13 - BWTS Plant Operation for Ballasting and Deballasting Operation </filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWTSPO">E13 - BWTS Plant Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="BWTSPO">E13 - BWTS Plant Operation</filename>
 					</foldername>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="A1LSRATD">Appendix 1 - List of Sample Risk Assessment Template - Deck</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="A1LSRATE">Appendix 1 - List of Sample Risk Assessment Template - Engine</filename>
@@ -379,9 +387,9 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HullParts">Annex 1C - Hull Parts</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HPP">Annex 1D - Hull Preparation and Paintings</filename>
 				</foldername>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DryDocking">14 - Dry Docking</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDPFC">Annex 2 - Dry Docking Process Flow Chart</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDPBM">Annex 3 - Dry Docking Project Bassnet Module</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DryDocking">14 - Dry Docking</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDPFC">Annex 2 - Dry Docking Process Flow Chart</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDPBM">Annex 3 - Dry Docking Project Bassnet Module</filename>
 			</foldername>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LandingAdvice">15-Landing Advice</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="NewBuilding">16 - New Building</filename>
@@ -392,11 +400,11 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ORB">21-Oil Record Book</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VesselImmobilisation">22-Vessel Immobilisation</filename>
 			<foldername name="23-Maintenance Procedure">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MaintenanceProcedure">23-Maintenance Procedure </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SPMSWPFC">23-Shipboard PMS Work process flow chart (Annex A)</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SBPMSWPFC">23-Shore Based PMS Work process flow chart (Annex B)</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MaintenanceMatrix">23-Maintenance Matrix (Annex C)</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DRFC">23-Defect Reporting Flow Chart (Annex D)</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MaintenanceProcedure">23-Maintenance Procedure </filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SPMSWPFC">23-Shipboard PMS Work process flow chart (Annex A)</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SBPMSWPFC">23-Shore Based PMS Work process flow chart (Annex B)</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DRFC">23-Defect Reporting Flow Chart (Annex D)</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MaintenanceMatrix">23-Maintenance Matrix (Annex C)</filename>
 			</foldername>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MaintenancePMS">24-Maintenance PMS (Bassnet)</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SRMRTIR1">25- Annex A -Soft Rope and Mooring Rope Tail Inspection </filename>
