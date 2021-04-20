@@ -364,9 +364,6 @@
 		</volume>
 		
 		<volume id="5" name="Volume V" controllername="MaintenanceOfShipAndEquipment">
-			
-			
-			
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Boiler">1-Boiler</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SteeringGear">2-Steering Gear</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MainEngines">3-Main Engines</filename>
@@ -838,14 +835,14 @@
 				<filename isdownloadable="" ismodify="">SM081- Marine Occurrence Investigation Report</filename>
 			</foldername>
 			<foldername actionname="" name="Section 7-Filling System and Retention Matrix">
-				<filename isdownloadable="" ismodify="" doctype="" actionname="NSMSFOR">Non SMS form and other records </filename>
-				<filename isdownloadable="" ismodify="" doctype="" actionname="S1AM">Section 1 - Administration and Management</filename>
-				<filename isdownloadable="" ismodify="" doctype="" actionname="S2MSPR">Section 2 - Management of Ship Personnel </filename>
-				<filename isdownloadable="" ismodify="" doctype="" actionname="S3MR">Section 3 - Maintenance </filename>
-				<filename isdownloadable="" ismodify="" doctype="" actionname="S4NMR">Section 4 - Navigation Management </filename>
-				<filename isdownloadable="" ismodify="" doctype="" actionname="S5CO">Section 5 - Cargo Operation</filename>
-				<filename isdownloadable="" ismodify="" doctype="" actionname="S6SM">Section 6 - Safety Management</filename>
-				<filename isdownloadable="" ismodify="" doctype="" actionname="S7Content">Section 7 - Content</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="NSMSFOR">Non SMS form and other records </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S1AM">Section 1 - Administration and Management</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S2MSPR">Section 2 - Management of Ship Personnel </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S3MR">Section 3 - Maintenance </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S4NMR">Section 4 - Navigation Management </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S5CO">Section 5 - Cargo Operation</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S6SM">Section 6 - Safety Management</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S7Content">Section 7 - Content</filename>
 			</foldername>
 			<!-- <filename isdownloadable="" ismodify="" doctype="" actionname="Manual">Vol. VIII Manual</filename> -->
 			

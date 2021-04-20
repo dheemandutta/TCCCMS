@@ -164,12 +164,13 @@ namespace TCCCMS.Business
                                     }
                                     else
                                     {
-                                        relaiveFilePath = relaiveFilePath + "/" + fName;
+                                        string relFilePath = "";
+                                        relFilePath = relaiveFilePath + "/" + fName;
                                         sb.Append("\n");
                                         sb.Append("<button class='accordion'>" + fName + "</button>");
                                         sb.Append("\n");
                                         sb.Append("<div class='panel'>");
-                                        string sChild = GetChild(item, ref l, partName, ctrlName, ref relaiveFilePath);
+                                        string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
                                         //l = l;
                                         sb.Append(sChild);
                                         sb.Append("\n");
@@ -181,13 +182,14 @@ namespace TCCCMS.Business
                                 else
                                 {
                                     string fName = item.Attributes["name"].Value.ToString();
-                                    relaiveFilePath = relaiveFilePath + "/" + fName;
+                                    string relFilePath = "";
+                                    relFilePath = relaiveFilePath + "/" + fName;
 
                                     sb.Append("\n");
                                     sb.Append("<button class='accordion'>" + fName + "</button>");
                                     sb.Append("\n");
                                     sb.Append("<div class='panel'>");
-                                    string sChild = GetChild(item, ref l, partName, ctrlName, ref relaiveFilePath);
+                                    string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
                                     //l = l;
                                     sb.Append(sChild);
                                     sb.Append("\n");
