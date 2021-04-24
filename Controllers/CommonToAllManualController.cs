@@ -58,7 +58,7 @@ namespace TCCCMS.Controllers
             Manual file = new Manual();
             //string filePath = "../ManualsPDF/Volume I/";
             string filePath = "../CommonToAllManualsPDF/" + relPDFPath + "/";
-            filePath = filePath + fileName + ".pdf";
+            filePath = filePath + fileName + ".pdf#toolbar=0";
             file.PdfName = fileName;
             file.PdfPath = filePath;
             return View(file);

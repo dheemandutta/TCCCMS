@@ -165,6 +165,7 @@ namespace TCCCMS.Business
                                     else
                                     {
                                         string relFilePath = "";
+
                                         relFilePath = relaiveFilePath + "/" + fName;
                                         sb.Append("\n");
                                         sb.Append("<button class='accordion'>" + fName + "</button>");
@@ -281,13 +282,14 @@ namespace TCCCMS.Business
                 {
                     int x = 0;
                     string fName = item.Attributes["name"].Value.ToString();
-                    relativePath = relativePath + "/" + fName;
+                    string relFilePath = "";
+                    relFilePath = relativePath + "/" + fName;
                     sb.Append("\n");
                     sb.Append("<button class='accordion'>" + fName + "</button>");
                     sb.Append("\n");
                     sb.Append("<div class='panel'>");
                     x = l + 1;
-                    string sChild = GetChild(item, ref x, part, ctrlName, ref relativePath);
+                    string sChild = GetChild(item, ref x, part, ctrlName, ref relFilePath);
                     sb.Append(sChild);
                     sb.Append("\n");
                     sb.Append("</div>");
