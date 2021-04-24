@@ -66,7 +66,7 @@ namespace TCCCMS.Controllers
         [HttpGet]
         public JsonResult GetSearchText()
         {
-            string text = "Business";
+            string text = "";
             if (TempData["SearchText"] != null)
             {
                 text = TempData["SearchText"].ToString();
