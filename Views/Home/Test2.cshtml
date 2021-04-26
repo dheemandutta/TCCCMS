@@ -27,7 +27,12 @@
             }
 
             .accordion:after {
-                content: '\002B';
+                /* content: '🔻';*/
+                /* content: background: 'url(../images/thumb-pin.png) no-repeat';*/
+                /*background-image: url('../../images/ticket_icon.png');*/
+                content: url('../../images/Collapsed.png');
+                /*                background-image: url('../../images/Expanded.png');
+                background-image: url('../../images/Collapsed.png');*/
                 color: #777;
                 font-weight: bold;
                 float: right;
@@ -35,7 +40,8 @@
             }
 
         .active:after {
-            content: "\2212";
+            /*content: "🔺";*/
+            content: url('../../images/Expanded.png');
         }
 
         .panel {
