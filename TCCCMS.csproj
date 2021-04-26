@@ -639,7 +639,9 @@
     <Content Include="images\adminf.png" />
     <Content Include="images\back.png" />
     <Content Include="images\board.png" />
+    <Content Include="images\Collapsed.png" />
     <Content Include="images\dcu_icon.png" />
+    <Content Include="images\Expanded.png" />
     <Content Include="images\flagimg.png" />
     <Content Include="images\job.png" />
     <Content Include="images\logo.png" />

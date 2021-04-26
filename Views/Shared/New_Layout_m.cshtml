@@ -1,0 +1,250 @@
+﻿<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("Styles", required: false)
+    <link rel="shortcut icon" href="~/flagimg1.ico" type="image/x-icon" />
+    <link href="~/css/bootstrap.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/stellarnav.css" rel="stylesheet">
+    <link href="~/css/responsive.css" rel="stylesheet">
+    <link href="~/css/owl.carousel.css" rel="stylesheet">
+    <link href="~/css/owl.theme.default.css" rel="stylesheet">
+    <link href="~/css/animate.css" rel="stylesheet">
+    @*<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">*@
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <style>
+        #Div2 {
+            display: none;
+        }
+            #Div2.menu ul li a {
+                height: 58px;
+            }
+            #Div2.menu ul li {
+                margin: 0 0 4px 0 !important;
+            }
+                #Div2.menu ul li a span.vul {
+                    width: 11%;
+                }
+                #Div2.menu ul li a span.pgnam {
+                    height: 55px;
+                    width: 86%;
+                }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-12">
+                    <div class="logo">
+                        <a href="#"><img src="~/images/logo.png"></a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 col-12">
+
+                </div>
+                <div class="col-lg-1 col-md-1 col-12">
+                    @*@if (Session["UserName"] != null)
+                    {
+                        <div>
+                            <a id="lnkLogOut" class="btn btn-warning" href="@Url.Action("Login", "Home")"> Log Out</a>
+                        </div>
+                    }*@
+
+                    <div class="dropdown admin">
+                        <button class="button log"><span><img src="~/images/user.png" style="width:27px;" /></span></button>
+                        <div class="dropdown-content">
+                            <h3>Mousumi <span>Admin</span></h3>
+                            <a href="#">Sing Out</a>
+                        </div>
+                    </div>
+
+                </div>
+                    <div class="col-lg-1 col-md-1 col-12">
+                        <div class="menu_icon " class="openbtn" onclick="openNav()" >
+                            <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                        </div>
+                       
+
+                        @*<div>
+                    <button type="button" class="btn btn-warning">Log Off</button>
+                </div>*@
+                    </div>
+                </div>
+            </div>
+    </header>
+    <div class="breadcrumbs">
+        <div class="steps steps_animation">
+            <div class="steps_item">
+                <span class="steps_content">
+                    <a href="#"> Home</a>
+                </span>
+            </div>
+            <div class="steps_item">
+                <span class="steps_content">
+                    Inner Page1
+                </span>
+            </div>
+
+            <div class="search">
+                <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
+                <a id="lnkAllSearch" class="btn btn-primary" href="@Url.Action("SearchList","Manual")"> <i class="fa fa-search"></i></a>
+
+                @*<button type="submit" class="searchButton">
+                <i class="fa fa-search"></i>
+            </button>*@
+            </div>
+        </div>
+    </div>
+    
+    <section class="full_body">
+
+
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <!--<footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>-->
+        </div>
+
+
+        <div id="mySidebar" class="sidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <div class="menu_panel">
+                <div class="menu" id="Div1">
+                    @Html.Action("MenuLayout", "Home")
+
+                    @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser" || Session["Role"].ToString() == "ShipAdmin")
+                    {
+                        <div> &nbsp;</div>
+
+                        <ul>
+
+                            <li class="mainmenu">
+                                <a href='@Url.Action("AdminDashboard", "Dashboard")'>
+                                    <span class="vul"> </span><span class="pgnam">Admin Dashboard</span>
+                                </a>
+                            </li>
+                        </ul>
+                    }
+                </div>
+
+                <div class="menu" id="Div2">
+                
+
+                    <ul>
+
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">SOPEP</span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">KHKV STS 15Oct20 </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">KHKV BWMP 15Oct20 </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">KHKV VOC 15Oct20 </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">MSMPandLMP </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">Plans recover persons water </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">Biofouling Mgmt Plan  </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">CWBMP 15Oct20 </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">GMP 15Oct20  </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">KHKV ETA 15Oct20  </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">SEEMP Part I 15Oct20  </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">SEEMP Part II 15Oct20  </span></a>
+                        </li>
+                        <li class="mainmenu">
+                            <a href="#"><span class="vul"> </span><span class="pgnam">KHK VISION -California Response Manual ( California Response Manual )</span></a>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    @*<script src="~/Scripts/jquery-3.5.1.min.js"></script>*@
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "500px";
+            document.getElementById("main").style.marginLeft = "500px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+    </script>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("Scripts", required: false)
+
+
+    <script>
+        $(function () {
+            $('#txtAllSearctText').change(function () {
+                if ($(this).val() != "") {
+                    $("#lnkAllSearch").attr("href", $("#lnkAllSearch").attr("href") + "?currentPage=1&text=" + $(this).val());
+                }
+                
+            })
+        });
+        $(document).ready(function () {
+
+            $('#menuicon').click(function () {
+                $('#menu_sec').toggleClass('hidden');
+                $('.content_body').toggleClass('wdth_chn');
+                $('#menuicon').toggleClass('show');
+
+            });
+        });
+
+
+
+        function openNav() {
+            if (document.getElementById('Div1')) {
+
+                if (document.getElementById('Div1').style.display == 'none') {
+                    document.getElementById('Div1').style.display = 'block';
+                    document.getElementById('Div2').style.display = 'none';
+                }
+                else {
+                    document.getElementById('Div1').style.display = 'none';
+                    document.getElementById('Div2').style.display = 'block';
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
