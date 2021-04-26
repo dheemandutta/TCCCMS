@@ -46,8 +46,96 @@ namespace TCCCMS.Controllers
         {
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
-            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS.xml");
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1,"SOPEP");
+            return View(file);
+        }
+        public ActionResult STS()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "STS");
+            return View(file);
+        }
+        public ActionResult BWMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "BWMP");
+            return View(file);
+        }
+        public ActionResult VOC()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "VOC");
+            return View(file);
+        }
+        public ActionResult MSMPLMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "MSMPLMP");
+            return View(file);
+        }
+        public ActionResult PRPW()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "PRPW");
+            return View(file);
+        }
+        public ActionResult BMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "BMP");
+            return View(file);
+        }
+        public ActionResult CWBMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "CWBMP");
+            return View(file);
+        }
+        public ActionResult GMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "GMP");
+            return View(file);
+        }
+        public ActionResult ETA()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "ETA");
+            return View(file);
+        }
+        public ActionResult SEEMP1()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "SEEMP1");
+            return View(file);
+        }
+        public ActionResult SEEMP2()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1, "SEEMP2");
             return View(file);
         }
 

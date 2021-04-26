@@ -2,22 +2,15 @@
 	<ships>
 		<ship shipnumber="1" name="KHK Vision" controllername="ShipKHKVision">
 			<foldername actionname="SOPEP" name="3. SOPEP">
-				<foldername actionname="" name="KHKV-SP">
-					<foldername actionname=""  name="Appendix 7">
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHKV-Capacity Plan</filename>
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHKV-General Arr Plan</filename>
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHKV-Midship Section</filename>
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHKV-Piping Diagram of Ballast System</filename>
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHKV-Piping Diagram of Cargo System</filename>
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHKV-Pumping Plan 1</filename>
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHKV-Pumping Plan 2</filename>
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHKV-Pumping Plan 3</filename>
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHKV-Shell Expansion</filename>
-					</foldername>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPSP">Ship's Particulars (KHKV)</filename>
-				</foldername>
-				<foldername actionname="" name="SOPEP-MB (Common to ALL)">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPAppendices">Appendices</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPIntroduction">Introduction</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS1Preamble">Section 1 - Preamble</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2RR">Section 2 - Reporting requirements</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2SCD">Section 3 - Steps to control discharge</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS4NLC">Section 4 - National and Local Coordination</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS5AI">Section 5 - Additional information</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPAppendices">Appendices</filename>
+				<foldername actionname="" name="Appendices">
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="SOPEPA1CP">Appendix 1 - Contact Point 31Oct20 (need to be updated)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPA1LNOCP">Appendix 1 - List of National Operational Contact Point</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPA2LPC">Appendix 2 - List of Port Contacts</filename>
@@ -28,16 +21,6 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPA7SPD">Appendix 7 Ship's Plans and Drawing</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPA8OSRE">Appendix 8 - Oill Spill Response Equipment</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPA9ROSD">Appendix 9 - Record of Oil Spill Drill</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPIntroduction">Introduction</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPMC">Manual Control</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPMCover">Manual Cover</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPMR">Manual Revision</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS1Preamble">Section 1 - Preamble</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2RR">Section 2 - Reporting requirements</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2SCD">Section 3 - Steps to control discharge</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS4NLC">Section 4 - National and Local Coordination</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS5AI">Section 5 - Additional information</filename>
 				</foldername>
 			</foldername>
 			<foldername actionname="STS" name="4. KHKV STS">

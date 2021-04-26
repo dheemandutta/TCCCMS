@@ -2,6 +2,7 @@
 	<commontoalls>
 		<commontoall id="0" name="Common to All" controllername="CommonToAllManual">
 			<foldername name="7. Procurement Policy Manual ">
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMMB">Main Body</filename> 
 				<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix A - Manual PO log Sheet</filename> 
 				<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix B - Advance Payment Request Form</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMRNV">Appendix C - Request for New Vendor</filename> 
@@ -13,7 +14,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMEAPOI">Appendix I - Electronic Approval of Purchase Order and Invoice</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMSSCSP">Appendix J - Service _ Supply Contract Signature Protocol</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMOSAC">Appendix K - On-Site Audit Checklist</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMMB">Main Body</filename> 
+				
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMContents">PPM Contents</filename>  -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPM">Procurement Policy Manual</filename>  -->
 			</foldername>

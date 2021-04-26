@@ -40,9 +40,33 @@ namespace TCCCMS.Controllers
         {
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
             Manual file = new Manual();
-            file = manualBL.GetManual(controllerName, actionName);
-            if (formName != "")
+            //file = manualBL.GetManual(controllerName, actionName);
+            //if (formName != "")
+            //{
+            //    StringBuilder sb = new StringBuilder("<div><div style = 'height: 800px; overflow: scroll;' >");
+            //    sb.Append(file.ManualBodyHtml);
+
+            //    sb.Append("</div>");
+            //    sb.Append("<div class='col-sm-12.><div class='row'><div class='col-sm-6'><a href='/" + controllerName + "/Download?fileName=");
+            //    sb.Append(formName + "&relformPath=" + relformPath + "' class='btn btn-info btn-sm' style='background-color: #e90000;' >Download</a></div></div></div>");
+            //    sb.Append("</div>");
+
+            //    file.ManualBodyHtml = sb.ToString();
+            //}
+            //------------------------------------------------------
+
+            if (formName == "")
             {
+                file = manualBL.GetManual(controllerName, actionName);
+            }
+            else
+            {
+                string filePath = "../ManualsPDF/" + relformPath + "/";
+                filePath = filePath + formName + ".pdf#toolbar=0";
+                file.PdfName = formName;
+                file.PdfPath = filePath;
+
+
                 StringBuilder sb = new StringBuilder("<div><div style = 'height: 800px; overflow: scroll;' >");
                 sb.Append(file.ManualBodyHtml);
 
@@ -50,8 +74,43 @@ namespace TCCCMS.Controllers
                 sb.Append("<div class='col-sm-12.><div class='row'><div class='col-sm-6'><a href='/" + controllerName + "/Download?fileName=");
                 sb.Append(formName + "&relformPath=" + relformPath + "' class='btn btn-info btn-sm' style='background-color: #e90000;' >Download</a></div></div></div>");
                 sb.Append("</div>");
+                //-------------------------------------------------------------------------
+                StringBuilder sb2 = new StringBuilder("<div class='row'>");
+                sb2.Append("<div class='col-sm-12 col-xs-12 marginTP10'>");
+                sb2.Append("<div class='card'>");
+                sb2.Append("<div class='col-sm-12 col-xs-12'>");
+                sb2.Append("<div class='row'>");
+                //------
+                sb2.Append("<p class='marginTP10'>");
+                sb2.Append("<div class='col-sm-10 col-xs-12'>");
+                sb2.Append("<label>" + formName + "</label>");
+                sb2.Append("</div>");
 
-                file.ManualBodyHtml = sb.ToString();
+                sb2.Append("<div class='col-sm-2 col-xs-12'>");
+                sb2.Append("<button type='button' class='btn btn-info btn-sm' style='background-color: #e90000;' data-toggle='modal' data-target='#formPreviewModal' >Preview</button>");
+                //sb2.Append("</div>");
+
+                //sb2.Append("<div class='col-sm-2 col-xs-12'>");
+                sb2.Append("<a href='/" + controllerName + "/Download?fileName=");
+                sb2.Append(formName + "&relformPath=" + relformPath + "' class='btn btn-info btn-sm' style='background-color: #e90000;' >Download</a>");
+
+                sb2.Append("</div>");
+                sb2.Append("</p>");
+                //-------
+                sb2.Append("\n");
+                sb2.Append("</div>");
+                sb2.Append("\n");
+                sb2.Append("</div>");
+                sb2.Append("\n");
+                sb2.Append("</div>");
+                sb2.Append("\n");
+                sb2.Append("</div>");
+                sb2.Append("\n");
+                sb2.Append("</div>");
+
+
+                //file.ManualBodyHtml = sb.ToString();
+                file.ManualBodyHtml = sb2.ToString();
             }
 
             //TempData[actionName] = file.ManualBodyHtml;
