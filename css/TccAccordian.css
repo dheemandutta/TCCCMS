@@ -19,7 +19,8 @@
     }
 
     .accordion:after {
-        content: '\002B';
+        /*content: '\002B';*/
+        content: url('../../images/Collapsed.png');
         color: #777;
         font-weight: bold;
         float: left;
@@ -27,7 +28,8 @@
     }
 
 .active:after {
-    content: "\2212";
+    /*content: "\2212";*/
+    content: url('../../images/Expanded.png');
 }
 
 .panel {
