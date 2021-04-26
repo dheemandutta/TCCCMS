@@ -300,6 +300,100 @@ namespace TCCCMS.Business
 
             return sb.ToString();
         }
+
+        public string GenerateShipWiseFolderBodyContentHtml(string aXmlPath, int partId,string folderAction)
+        {
+            ManualBL manuBl = new ManualBL();
+            string xPath = aXmlPath;
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(xPath);
+            StringBuilder sb = new StringBuilder();
+            foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
+            {
+
+                sb.Append("<div class='container'>");
+                foreach (XmlNode ship in node)
+                {
+                    Volume vol = new Volume();
+                    string volName = ship.Attributes["name"].Value.ToString();
+                    string ctrlName = ship.Attributes["controllername"].Value.ToString();
+                    string partName = volName.Split(' ').Last();
+                    string sNo = "0";
+                    if (ship.Name == "ship")
+                    {
+                        sNo = ship.Attributes["shipnumber"].Value.ToString();
+                    }
+
+                    string mainNodeName = ship.Attributes["name"].Value.ToString();
+                    string relaiveFilePath = volName;//---this for pdf preview link path
+
+                    if (Convert.ToInt32(sNo) == partId)
+                    {
+                        //vol = manuBl.GetVolumeById(nodeId);
+                        sb.Append("\n");
+                        //sb.Append("<li class='mainmenu'><a href='#'><span class='vul'>Volume <b>I</b> </span><span class='pgnam'>" + volName + "</span></a>");
+                        //string s= "'@Url.Action('"
+                        //sb.Append("<li class='mainmenu'><a href='@Url.Action('Index', '"+vol.ControllerName+"')'><span class='vul'>Volume <b>"+ partName + "</b> </span><span class='pgnam'>" + vol.Description + "</span></a>");
+                        //sb.Append("<li class='mainmenu'><a href='/" + vol.ControllerName + "/Index'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam'>" + vol.Description + "</span></a>");
+                        sb.Append("<div>");
+                        sb.Append("\n");
+
+                        #region child accordian
+                        /* ----------Lines Commented on 23rd Feb 2021 @BK  */
+
+                        foreach (XmlNode item in ship)
+                        {
+                            Manual manual = new Manual();
+                            int l = 1;
+
+                           
+                            if (item.Name == "foldername")
+                            {
+                                string actionName = item.Attributes["actionname"].Value.ToString();
+
+
+
+                                if(actionName == folderAction)
+                                {
+                                    string fName = item.Attributes["name"].Value.ToString();
+                                    string relFilePath = "";
+                                    relFilePath = relaiveFilePath + "/" + fName;
+
+                                    sb.Append("\n");
+                                   // sb.Append("<button class='accordion'>" + fName + "</button>");
+                                    //sb.Append("\n");
+                                    //sb.Append("<div class='panel'>");
+                                    string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
+                                    //l = l;
+                                    sb.Append(sChild);
+                                    //sb.Append("\n");
+                                    //sb.Append("</div>");
+                                    sb.Append("\n");
+                                }
+                            }
+
+
+
+                        }
+
+
+                        /* ----End------Lines Commented on 23rd Feb 2021 @BK  */
+                        #endregion
+                        sb.Append("\n");
+                        sb.Append("</div>");
+
+                    }
+
+
+                }
+                sb.Append("\n");
+                sb.Append("</div>");
+
+                //WriteToText(sb);
+
+            }
+            return sb.ToString();
+        }
         #endregion
 
         #region Common To All And Ref Matrial

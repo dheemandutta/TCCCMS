@@ -137,6 +137,13 @@ namespace TCCCMS.Controllers
             menu.Menulist = GenerateMenu();
             return PartialView("_Menu_Layout", menu);
         }
+        public ActionResult ShipsMenuLayout()
+        {
+            Menu menu = new Menu();
+
+            menu.Menulist = GenerateShipWiseMenu(1);
+            return PartialView("_Menu_Layout", menu);
+        }
         #region Generate Menu--
 
         public string GenerateMenu()
@@ -292,17 +299,15 @@ namespace TCCCMS.Controllers
             {
 
                 sb.Append("<ul>");
-                foreach (XmlNode volume in node)
+                foreach (XmlNode ship in node)
                 {
                     Volume vol = new Volume();
-                    string volName = volume.Attributes["name"].Value.ToString();
-                    //string partName = volName.Split(' ').Last();
-                   // string volumeId = volume.Attributes["id"].Value.ToString();
-                    //vol = manuBl.GetVolumeById(volumeId);
-                    string mainNodeId = volume.Attributes["shipnumber"].Value.ToString();
-                    if (Convert.ToInt32(mainNodeId) == shipId)
+                    string sName = ship.Attributes["name"].Value.ToString();
+                    string ctrlName = ship.Attributes["controllername"].Value.ToString();
+                    string sNo = ship.Attributes["shipnumber"].Value.ToString();
+                    if (Convert.ToInt32(sNo) == shipId)
                     {
-                        foreach (XmlNode item in volume)
+                        foreach (XmlNode item in ship)
                         {
                             if (item.Name == "filename")
                             {
@@ -330,7 +335,7 @@ namespace TCCCMS.Controllers
 
                                     //sb.Append(filename + "</a>");
                                     //sb.Append("</br>");
-                                    sb.Append("<li class='mainmenu'><a href='#'><span class='pgnam'>" + filename + "</span></a>");
+                                    sb.Append("<li class='mainmenu'><a href='/" + ctrlName + "/Pages?actionName=" + actionName+" ><span class='pgnam'>" + filename + "</span></a>");
 
 
                                 }
@@ -349,21 +354,27 @@ namespace TCCCMS.Controllers
 
 
                                 string fName = item.Attributes["name"].Value.ToString();
-                               // string relFilePath = "";
-                               // //relFilePath = relaiveFilePath + "/" + fName;
+                                string actionName = item.Attributes["actionname"].Value.ToString();
+                                // string relFilePath = "";
+                                // //relFilePath = relaiveFilePath + "/" + fName;
 
-                               // sb.Append("\n");
-                               // sb.Append("<button class='accordion'>" + fName + "</button>");
-                               // sb.Append("\n");
-                               // sb.Append("<div class='panel'>");
-                               // //string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
-                               // //l = l;
-                               //// sb.Append(sChild);
-                               // sb.Append("\n");
-                               // sb.Append("</div>");
-                               // sb.Append("\n");
+                                // sb.Append("\n");
+                                // sb.Append("<button class='accordion'>" + fName + "</button>");
+                                // sb.Append("\n");
+                                // sb.Append("<div class='panel'>");
+                                // //string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
+                                // //l = l;
+                                //// sb.Append(sChild);
+                                // sb.Append("\n");
+                                // sb.Append("</div>");
+                                // sb.Append("\n");
+                                if(actionName != "")
+                                {
+                                    sb.Append("<li class='mainmenu'><a href='/" + ctrlName + "/" + actionName + "'><span class='pgnam'>" + fName + "</span></a>");
 
-                                sb.Append("<li class='mainmenu'><a href='#'><span class='pgnam'>" + fName + "</span></a>");
+                                }
+
+                                
 
                             }
                         }
