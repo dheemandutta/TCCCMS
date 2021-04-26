@@ -2242,6 +2242,9 @@
     <Content Include="Views\Forms\FillupFormList.cshtml" />
     <Content Include="Views\Shared\_FilledupFormUploadModal.cshtml" />
     <Content Include="Views\Shared\_pvFormPreviewModal.cshtml" />
+    <Content Include="Views\Shared\_Ship_Layout.cshtml" />
+    <Content Include="Views\Dashboard\ShipDashboard.cshtml" />
+    <Content Include="Views\ShipKHKVision\SOPEP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

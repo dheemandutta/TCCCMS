@@ -42,6 +42,14 @@ namespace TCCCMS.Controllers
             file.PdfPath = filePath;
             return View(file);
         }
+        public ActionResult SOPEP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS.xml");
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, 1,"SOPEP");
+            return View(file);
+        }
 
         #region All (22+24+33+17+39)=()
 

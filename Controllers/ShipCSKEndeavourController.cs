@@ -37,7 +37,7 @@ namespace TCCCMS.Controllers
             ShipManual file = new ShipManual();
             //string filePath = "../ManualsPDF/Volume I/";
             string filePath = "../ShipManualsPDF/" + relPDFPath + "/";
-            filePath = filePath + fileName + ".pdf";
+            filePath = filePath + fileName + ".pdf#toolbar=0";
             file.PdfName = fileName;
             file.PdfPath = filePath;
             return View(file);

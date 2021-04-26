@@ -28,6 +28,10 @@ namespace TCCCMS.Controllers
         {
             return View();
         }
+        public ActionResult ShipDashboard()
+        {
+            return View();
+        }
         public ActionResult ShipMenuLayout()
         {
             Menu menu = new Menu();

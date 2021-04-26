@@ -51,7 +51,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DAP">PP20.0 - Drug and Alcohol Policy</filename>
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. II Manual`</filename> -->
 		<foldername name="Appendix">
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">1. PS019 - Mission Statement Rev01</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">1. PS019 - Mission Statement</filename>
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2. PS005 - D and A Policy</filename>
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3. PS017 - S and E Policy</filename> 
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">4. PS018 - Health Policy</filename>
@@ -59,7 +59,7 @@
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">5. Appendix - Delegation of Duties Matrix Specimen</filename>
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">6. PS011 - Smoking Policy</filename>
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">7. PS034 - TCC Social Media Policy</filename>
-	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">8. PS035-Vision Statement Rev01</filename>
+	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">8. PS035-Vision Statement</filename>
 
 			</foldername>
 		</volume>
@@ -149,8 +149,8 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FSTS">Chapter 2 Annex 1 - First Schedule of Toxic Substances</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HealthAndHygiene">Chapter 2 Health and Hygiene</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Fatigue">Chapter 3 Fatigue</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECR1">Chapter 4 Environmental Control Rev 10 - Annex 1</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECR2">Chapter 4 Environmental Control Rev 10 - Annex 2</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECR1">Chapter 4 Environmental Control - Annex 1</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECR2">Chapter 4 Environmental Control - Annex 2</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EnvironmentalControl">Chapter 4 Environmental Control</filename>
 				<foldername name="Chapter 5 Work Permit System">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WPS">Chapter 5.1 Work Permit System</filename>
