@@ -12,12 +12,12 @@
     <div class="banner_div">
         @if (Session["Role"].ToString() == "ShipUser")
         {
-            @*var path = "~/images/" + @Session["ShipName"].ToString() + ".png";
+            @*var path = "~/images/" + @Session["ShipName"].ToString() + ".jpg";
             <img src="@path">*@
 
             if (Session["ShipId"].ToString() == "1")
             {
-                <img src="~/images/KHK VISION.JPG">
+                <img src="~/images/KHK Vision.jpg">
             }
         }
         else
@@ -42,9 +42,10 @@
                     {
                         @*<a href="#">SMS Manuals</a>*@
 
-                        <a href='@Url.Action("ShipDashboard", "Dashboard")'>
-                            <span>SMS Manuals</span>
-                        </a>
+                <a href='@Url.Action("ShipDashboard", "Dashboard")'>
+                    Ship Specific Manuals & Plans
+                    
+                </a>
 
                     }
                     else

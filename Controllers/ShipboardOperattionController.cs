@@ -39,15 +39,20 @@ namespace TCCCMS.Controllers
         {
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
             Manual file = new Manual();
-            file = manualBL.GetManual(controllerName, actionName);
+            if (formName == "")
+            {
+                file = manualBL.GetManual(controllerName, actionName);
+            }
 
-            string filePath = "../ManualsPDF/" + relformPath + "/";
-            filePath = filePath + formName + ".pdf#toolbar=0";
-            file.PdfName = formName;
-            file.PdfPath = filePath;
+           
 
             if (formName != "")
             {
+                string filePath = "../ManualsPDF/" + relformPath + "/";
+                filePath = filePath + formName + ".pdf#toolbar=0";
+                file.PdfName = formName;
+                file.PdfPath = filePath;
+
                 StringBuilder sb = new StringBuilder("<div><div style = 'height: 800px; overflow: scroll;' >");
                 sb.Append(file.ManualBodyHtml);
 

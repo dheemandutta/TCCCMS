@@ -44,11 +44,8 @@ namespace TCCCMS.Controllers
             if(formName == "")
             {
                 file = manualBL.GetManual(controllerName, actionName);
-            }
-            
-
-           
-            if (formName != "")
+            } 
+            else
             {
                 string filePath = "../ManualsPDF/" + relformPath + "/";
                 filePath = filePath + formName + ".pdf#toolbar=0";

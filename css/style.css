@@ -670,6 +670,18 @@ header {
     vertical-align: top;
     display: inline-block;
     padding: 14px;
+    width: 75%;
+    vertical-align: top;
+    border-left: 1px solid #c83a3a;
+    height: 67px;
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.spgnam {
+    vertical-align: top;
+    display: inline-block;
+    padding: 14px;
     width: 90%;
     vertical-align: top;
     border-left: 1px solid #c83a3a;

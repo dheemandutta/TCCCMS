@@ -335,7 +335,7 @@ namespace TCCCMS.Controllers
 
                                     //sb.Append(filename + "</a>");
                                     //sb.Append("</br>");
-                                    sb.Append("<li class='mainmenu'><a href='/" + ctrlName + "/Pages?actionName=" + actionName+" ><span class='pgnam'>" + filename + "</span></a>");
+                                    sb.Append("<li class='mainmenu'><a href='/" + ctrlName + "/Pages?actionName=" + actionName+"' ><span class='pgnam'>" + filename + "</span></a>");
 
 
                                 }
