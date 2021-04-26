@@ -641,9 +641,9 @@
     <Content Include="images\board.png" />
     <Content Include="images\Collapsed - big.png" />
     <Content Include="images\Collapsed.png" />
-    <Content Include="images\CSK  VanGaurd.jpg" />
-    <Content Include="images\CSK Endeavour.JPG" />
+    <Content Include="images\CSK Endeavour.jpg" />
     <Content Include="images\CSK VALIANT.jpg" />
+    <Content Include="images\CSK Vanguard.jpg" />
     <Content Include="images\dcu_icon.png" />
     <Content Include="images\Expanded - big.png" />
     <Content Include="images\Expanded.png" />
@@ -651,8 +651,8 @@
     <Content Include="images\job.png" />
     <Content Include="images\KHK Empress.jpg" />
     <Content Include="images\KHK Majesty.jpg" />
-    <Content Include="images\KHK VISION.JPG" />
-    <Content Include="images\KWK Excelsus.JPG" />
+    <Content Include="images\KHK Vision.jpg" />
+    <Content Include="images\KWK Excelsus.jpg" />
     <Content Include="images\logo.png" />
     <Content Include="images\search_icon.png" />
     <Content Include="images\ship.jpg" />
