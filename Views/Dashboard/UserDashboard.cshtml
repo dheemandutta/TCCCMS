@@ -10,7 +10,20 @@
 </style>
 <div class="">
     <div class="banner_div">
-        <img src="~/images/ship.png">
+        @if (Session["Role"].ToString() == "ShipUser")
+        {
+            @*var path = "~/images/" + @Session["ShipName"].ToString() + ".png";
+            <img src="@path">*@
+
+            if (Session["ShipId"].ToString() == "1")
+            {
+                <img src="~/images/KHK VISION.JPG">
+            }
+        }
+        else
+        {
+            <img src="~/images/ship.png">
+        }
     </div>
     <div class="bnr_bottom_sec">
         <div class="row">
