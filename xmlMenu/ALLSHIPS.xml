@@ -40,7 +40,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS5AI">Section 5 - Additional information</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="STS" name="4. KHKV STS 15Oct20">
+			<foldername actionname="STS" name="4. KHKV STS">
 				<foldername actionname="" name="STS-MB-KHKV">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSA5GRA">Appendix No.5 - Guidance on risk assessment</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSP3OM">PART A 3-STS OPERATION AND MANAGEMENT</filename>
@@ -75,7 +75,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSP2SP">PART A 2-SHIP PARTICULAR (KHKV)</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="BWMP" name="5. KHKV BWMP 15Oct20">
+			<foldername actionname="BWMP" name="5. KHKV BWMP">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix II - Normative Reference">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="BWMPA2A868">Appendix II - A.868(20) (1)</filename>
@@ -206,7 +206,7 @@
 				</foldername>
 			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="BWMPKHKV">ONE PDF-BWMP-KHKV-15Oct20</filename>
 			</foldername>
-			<foldername actionname="VOC" name="6. KHKV VOC 15Oct20">
+			<foldername actionname="VOC" name="6. KHKV VOC">
 				<foldername actionname="" name="Main Body">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap1">Chapter 1</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap2">Chapter 2</filename>
@@ -378,7 +378,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (KHKV)</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="PRPW" name="14. Plans recover persons water 15Oct20">
+			<foldername actionname="PRPW" name="14. Plans recover persons water">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1RA">Annex 1-RA</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1SSI">Annex 2 - Ship-Specific Info (KHKV)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix No.1 - MSC.1-Circ.1447</filename>
@@ -448,7 +448,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPSBMAP">Table 1 Sample of the Biofouling Management Action Plan</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPRPCAFS">Table 3 - Risks and Precautions concerning the anti-fouling system</filename>
 			</foldername>
-			<foldername actionname="CWBMP" name="19. CWBMP 15Oct20">
+			<foldername actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - The Shipping Federation Code of Best Practices for BW</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix C - A Guide to Canada's BWC and Mgmt Reg-TP13617E (2019)</filename>
@@ -461,7 +461,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename>
 			</foldername>
-			<foldername actionname="GMP" name="20. GMP 15Oct20">
+			<foldername actionname="GMP" name="20. GMP">
 				<foldername actionname="" name="Annexes">
 					<foldername actionname="" name="Annex 7">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPLCB">Annex 7 - List of Country Baselines</filename>
@@ -511,7 +511,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPMR">Manual Revision</filename>
 			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA-Used Batteries regarded as E-Waste (05Apr18)-filed in front of GMP</filename>
 			</foldername>
-			<foldername actionname="ETA" name="21. KHKV ETA 15Oct20">
+			<foldername actionname="ETA" name="21. KHKV ETA">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETACP">Appendix - Cover Page</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAContents">Contents</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETACover">Cover- KHK Vision</filename>
@@ -526,7 +526,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAPTO">Section 6 - Preparation for the towing operation</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETATI">Section 7 - Table of Information</filename>
 			</foldername>
-			<foldername actionname="SEEMP1" name="22. SEEMP Part I 15Oct20">
+			<foldername actionname="SEEMP1" name="22. SEEMP Part I">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix IV - Action Plan - Sample and Record">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAPS">Appendix IV Action Plan - Sample No.1</filename>
@@ -561,7 +561,7 @@
 				</foldername>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">KHKV Vessel's Particulars</filename>
 			</foldername>
-			<foldername actionname="SEEMP2" name="23. SEEMP Part II 15Oct20">
+			<foldername actionname="SEEMP2" name="23. SEEMP Part II">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix D - Data Collection Plan -need SMD update">
 						<foldername actionname="" name="Not used">
@@ -682,7 +682,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS5AI">Section 5 - Additional information</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="4. KWEX STS 15Oct20">
+			<foldername actionname="" name="4. KWEX STS">
 				<foldername actionname="" name="KWEX-SP">
 					<foldername actionname="" name="Appendix 1-4">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX-Appendix 1-GA Plan</filename>
@@ -832,7 +832,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (Alframax)</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="14. Plans recover persons water 15Oct20">
+			<foldername actionname="" name="14. Plans recover persons water">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1RA">Annex 1-RA</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1SSI">Annex 2 - Ship-Specific Info (KWEX)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix No.1 - MSC.1-Circ.1447</filename>
@@ -903,7 +903,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPSBMAP">Table 1 Sample of the Biofouling Management Action Plan</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPRPCAFS">Table 3 - Risks and Precautions concerning the anti-fouling system</filename>
 			</foldername>
-			<foldername actionname="" name="19. CWBMP 15Oct20">
+			<foldername actionname="" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - The Shipping Federation Code of Best Practices for BW</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix C - A Guide to Canada's BWC and Mgmt Reg-TP13617E (2019)</filename>
@@ -916,7 +916,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename>
 			</foldername>
-			<foldername actionname="" name="20. GMP 15Oct20">
+			<foldername actionname="" name="20. GMP">
 				<foldername actionname="" name="Annexes">
 					<foldername actionname="" name="Annex 7">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPLCB">Annex 7 - List of Country Baselines</filename>
@@ -966,7 +966,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPMR">Manual Revision</filename>
 			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA-Used Batteries regarded as E-Waste (05Apr18)-filed in front of GMP</filename>
 			</foldername>
-			<foldername actionname="" name="22. SEEMP Part I 15Oct20">
+			<foldername actionname="" name="22. SEEMP Part I">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix IV - Action Plan - Sample and Record">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAPS">Appendix IV Action Plan - Sample No.1</filename>
@@ -1001,7 +1001,7 @@
 				</foldername>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">KWEX Vessel's Particulars</filename>	
 			</foldername>
-			<foldername actionname="" name="23. SEEMP Part II 15Oct20">
+			<foldername actionname="" name="23. SEEMP Part II">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix D - Data Collection Plan -need SMD update">
 						<foldername actionname="" name="Not used">
@@ -1122,7 +1122,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS5AI">Section 5 - Additional information</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="4. CSVA STS 15Oct20">
+			<foldername actionname="" name="4. CSVA STS">
 				<foldername actionname="" name="CSVA-SP">
 					<foldername actionname="" name="Appendix 1-4">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVA-15.AP1- GA Plan</filename>
@@ -1273,7 +1273,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (Alframax)</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="14. Plans recover persons water 15Oct20">
+			<foldername actionname="" name="14. Plans recover persons water">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1RA">Annex 1-RA</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1SSI">Annex 2 - Ship-Specific Info (CSVA)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix No.1 - MSC.1-Circ.1447</filename>
@@ -1344,7 +1344,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPSBMAP">Table 1 Sample of the Biofouling Management Action Plan</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPRPCAFS">Table 3 - Risks and Precautions concerning the anti-fouling system</filename>
 			</foldername>
-			<foldername actionname="" name="19. CWBMP 15Oct20">
+			<foldername actionname="" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - The Shipping Federation Code of Best Practices for BW</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix C - A Guide to Canada's BWC and Mgmt Reg-TP13617E (2019)</filename>
@@ -1357,7 +1357,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename>
 			</foldername>
-			<foldername actionname="" name="20. GMP 15Oct20">
+			<foldername actionname="" name="20. GMP">
 				<foldername actionname="" name="Annexes">
 					<foldername actionname="" name="Annex 7">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPLCB">Annex 7 - List of Country Baselines</filename>
@@ -1410,7 +1410,7 @@
 			<foldername actionname="" name="21. ETA - CSVA">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3. CSVA ETA 24Oct16</filename>
 			</foldername>
-			<foldername actionname="" name="22. SEEMP Part I 15Oct20">
+			<foldername actionname="" name="22. SEEMP Part I">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix IV - Action Plan - Sample and Record">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAPS">Appendix IV Action Plan - Sample No.1</filename>
@@ -1445,7 +1445,7 @@
 				</foldername>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">CSVA Vessel's Particulars </filename>
 			</foldername>
-			<foldername actionname="" name="23. SEEMP Part II 15Oct20">
+			<foldername actionname="" name="23. SEEMP Part II">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix D - Data Collection Plan -need SMD update">
 						<foldername actionname="" name="Not used">
@@ -1566,7 +1566,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS5AI">Section 5 - Additional information</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="4. CSVL STS 15Oct20">
+			<foldername actionname="" name="4. CSVL STS">
 				<foldername actionname="" name="CSVL-SP">
 					<foldername actionname="" name="Appendix1-4">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL-Appendix 1-GA Plan</filename>
@@ -1716,7 +1716,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (Alframax)</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="14. Plans recover persons water 15Oct20">
+			<foldername actionname="" name="14. Plans recover persons water">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1RA">Annex 1-RA</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA2SS">Annex 2 - Ship-Specific (CSVL)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix No.1 - MSC.1-Circ.1447</filename>
@@ -1787,7 +1787,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPSBMAP">Table 1 Sample of the Biofouling Management Action Plan</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPRPCAFS">Table 3 - Risks and Precautions concerning the anti-fouling system</filename>
 			</foldername>
-			<foldername actionname="" name="19. CWBMP 15Oct20">
+			<foldername actionname="" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - The Shipping Federation Code of Best Practices for BW</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix C - A Guide to Canada's BWC and Mgmt Reg-TP13617E (2019)</filename>
@@ -1800,7 +1800,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename>
 			</foldername>
-			<foldername actionname="" name="20. GMP 15Oct20">
+			<foldername actionname="" name="20. GMP">
 				<foldername actionname="" name="Annexes">
 					<foldername actionname="" name="Annex 7">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPLCB">Annex 7 - List of Country Baselines"</filename>
@@ -1852,7 +1852,7 @@
 			<foldername actionname="" name="21. ETA - VALIANT">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">4. CSVL ETA 04Aug17</filename>
 			</foldername>
-			<foldername actionname="" name="22. SEEMP Part I 15Oct20">
+			<foldername actionname="" name="22. SEEMP Part I">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix IV - Action Plan - Sample and Record">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAPS">Appendix IV Action Plan - Sample No.1</filename>
@@ -1904,7 +1904,7 @@
 				</foldername>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">CSVL Vessel's Particulars</filename>
 			</foldername>
-			<foldername actionname="" name="23. SEEMP Part II 15Oct20">
+			<foldername actionname="" name="23. SEEMP Part II">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix D - Data Collection Plan -need SMD update">
 						<foldername actionname="" name="Not used">
@@ -2025,7 +2025,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS5AI">Section 5 - Additional information</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="4. CSEN STS 15Oct20">
+			<foldername actionname="" name="4. CSEN STS">
 				<foldername actionname="" name="CSEN-SP">
 					<foldername actionname="" name="Appendix1-4">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-Appendix 1-GA Plan</filename>
@@ -2176,7 +2176,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (Alframax)</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="14. Plans recover persons water 15Oct20">
+			<foldername actionname="" name="14. Plans recover persons water">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1RA">Annex 1-RA</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1SSI">Annex 2 - Ship-Specific (CSEN)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix No.1 - MSC.1-Circ.1447</filename>
@@ -2247,7 +2247,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPSBMAP">Table 1 Sample of the Biofouling Management Action Plan</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPRPCAFS">Table 3 - Risks and Precautions concerning the anti-fouling system</filename>
 			</foldername>
-			<foldername actionname="" name="19. CWBMP 15Oct20">
+			<foldername actionname="" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - The Shipping Federation Code of Best Practices for BW</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix C - A Guide to Canada's BWC and Mgmt Reg-TP13617E (2019)</filename>
@@ -2260,7 +2260,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename>
 			</foldername>
-			<foldername actionname="" name="20. GMP 15Oct20">
+			<foldername actionname="" name="20. GMP">
 				<foldername actionname="" name="Annexes">
 					<foldername actionname="" name="Annex 7">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPLCB">Annex 7 - List of Country Baselines</filename>
@@ -2313,7 +2313,7 @@
 			<foldername actionname="" name="21. ETA - ENDEVOUR">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">5. CSEN ETA 24Aug17</filename>
 			</foldername>
-			<foldername actionname="" name="22. SEEMP Part I 15Oct20">
+			<foldername actionname="" name="22. SEEMP Part I">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix IV - Action Plan - Sample and Record">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAPS">Appendix IV Action Plan - Sample No.1</filename>
@@ -2348,7 +2348,7 @@
 				</foldername>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">CSEN Vessel's Particulars</filename>
 			</foldername>
-			<foldername actionname="" name="23. SEEMP Part II 15Oct20">
+			<foldername actionname="" name="23. SEEMP Part II">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix D - Data Collection Plan -need SMD update">
 						<foldername actionname="" name="Not used">
@@ -2470,7 +2470,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS5AI">Section 5 - Additional information</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="4. KHEM STS 15Oct20">
+			<foldername actionname="" name="4. KHEM STS">
 				<foldername actionname="" name="KHEM-SP">
 					<foldername actionname="" name="Appendix1-4">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHEM-Appendix 1-GA Plan</filename>
@@ -2627,7 +2627,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPSPMC">Manual Control - KHMA 07</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="14. Plans recover persons water 15Oct20">	
+			<foldername actionname="" name="14. Plans recover persons water">	
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1RA">Annex 1-RA</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1SS">Annex 2 - Ship-Specific (KHEM)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix No.1 - MSC.1-Circ.1447</filename>
@@ -2698,7 +2698,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPSBMAP">Table 1 Sample of the Biofouling Management Action Plan</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPRPCAFS">Table 3 - Risks and Precautions concerning the anti-fouling system</filename>
 			</foldername>
-			<foldername actionname="" name="19. CWBMP 15Oct20">
+			<foldername actionname="" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - The Shipping Federation Code of Best Practices for BW</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix C - A Guide to Canada's BWC and Mgmt Reg-TP13617E (2019)</filename>
@@ -2711,7 +2711,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename>
 			</foldername>
-			<foldername actionname="" name="20. GMP 15Oct20">
+			<foldername actionname="" name="20. GMP">
 				<foldername actionname="" name="Annexes">
 					<foldername actionname="" name="Annex 7">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPLCB">Annex 7 - List of Country Baselines</filename>
@@ -2761,7 +2761,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPMR">Manual Revision</filename>
 			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA-Used Batteries regarded as E-Waste (05Apr18)-filed in front of GMP</filename>
 			</foldername>
-			<foldername actionname="" name="21. KHEM ETA 15Oct20">
+			<foldername actionname="" name="21. KHEM ETA">
 				<foldername actionname="" name="ETA-MB">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETACP">Appendix - Cover Page</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAContents">Contents</filename>
@@ -2794,7 +2794,7 @@
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">13. MSC.1 Circ 1255</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="22. SEEMP Part I 15Oct20">
+			<foldername actionname="" name="22. SEEMP Part I">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix IV - Action Plan - Sample and Record">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAPS">Appendix IV Action Plan - Sample No.1</filename>
@@ -2830,7 +2830,7 @@
 				</foldername>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">KHEM Vessel's Particulars</filename>
 			</foldername>
-			<foldername actionname="" name="23. SEEMP Part II 15Oct20">
+			<foldername actionname="" name="23. SEEMP Part II">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix D - Data Collection Plan -need SMD update">
 						<foldername actionname="" name="Not used">
@@ -2948,7 +2948,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS5AI">Section 5 - Additional information</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="4. KHMA STS 15Oct20">
+			<foldername actionname="" name="4. KHMA STS">
 				<foldername actionname="" name="KHMA-SP">
 					<foldername actionname="" name="Appendix1-4">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA-Appendix 1-GA Plan</filename>
@@ -3105,7 +3105,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (KHEM and KHMA)</filename>
 				</foldername>
 			</foldername>
-			<foldername actionname="" name="14. Plans recover persons water 15Oct20">
+			<foldername actionname="" name="14. Plans recover persons water">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1RA">Annex 1-RA</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWA1SS">Annex 2 - Ship-Specific (KHMA)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix No.1 - MSC.1-Circ.1447</filename>
@@ -3174,7 +3174,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPSBMAP">Table 1 Sample of the Biofouling Management Action Plan</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPRPCAFS">Table 3 - Risks and Precautions concerning the anti-fouling system</filename>
 			</foldername>
-			<foldername actionname="" name="19. CWBMP 15Oct20">
+			<foldername actionname="" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - The Shipping Federation Code of Best Practices for BW</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix C - A Guide to Canada's BWC and Mgmt Reg-TP13617E (2019)</filename>
@@ -3187,7 +3187,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename>
 			</foldername>
-			<foldername actionname="" name="20. GMP 15Oct20">
+			<foldername actionname="" name="20. GMP">
 				<foldername actionname="" name="Annexes">
 					<foldername actionname="" name="Annex 7">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPLCB">Annex 7 - List of Country Baselines</filename>
@@ -3237,7 +3237,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPMR">Manual Revision</filename>
 			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA-Used Batteries regarded as E-Waste (05Apr18)-filed in front of GMP</filename>
 			</foldername>
-			<foldername actionname="" name="21. KHMA-ETA 15Oct20">
+			<foldername actionname="" name="21. KHMA-ETA">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETACP">Appendix - Cover Page</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAContents">Contents</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETACover">Cover- KHK Majesty</filename>
@@ -3252,7 +3252,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAPTO">Section 6 - Preparation for the towing operation</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETATI">Section 7 - Table of Information</filename>
 			</foldername>
-			<foldername actionname="" name="22. SEEMP Part I 15Oct20">
+			<foldername actionname="" name="22. SEEMP Part I">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix IV - Action Plan - Sample and Record">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAPS">Appendix IV Action Plan - Sample No.1</filename>
@@ -3287,7 +3287,7 @@
 				</foldername>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">KHMA Vessel's Particulars</filename>
 			</foldername>
-			<foldername actionname="" name="23. SEEMP Part II 15Oct20">
+			<foldername actionname="" name="23. SEEMP Part II">
 				<foldername actionname="" name="Appendix">
 					<foldername actionname="" name="Appendix D - Data Collection Plan -need SMD update">
 						<foldername actionname="" name="Not used">
