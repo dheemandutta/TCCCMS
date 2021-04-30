@@ -11,19 +11,98 @@
 
 <div class="">
     <div class="banner_div">
-        @if (Session["Role"].ToString() == "ShipUser")
+       @if (Session["Role"].ToString() == "ShipUser")
         {
             @*var path = "~/images/" + @Session["ShipName"].ToString() + ".jpg";
             <img src="@path">*@
+
+            @*if (Session["ShipId"].ToString() != null)
+            {
+                var path = "~/images/" + @Session["ShipName"].ToString() + ".jpg";
+                <img src="@path">
+            }
+            else
+            {
+                <img src="~/images/ship.png">
+            }*@
+
 
             if (Session["ShipId"].ToString() == "1")
             {
                 <img src="~/images/KHK Vision.jpg">
             }
+            else if (Session["ShipId"].ToString() == "2")
+            {
+                <img src="~/images/KWK Excelsus.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "3")
+            {
+                <img src="~/images/CSK Vanguard.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "4")
+            {
+                <img src="~/images/CSK Valiant.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "5")
+            {
+                <img src="~/images/CSK Endeavour.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "6")
+            {
+                <img src="~/images/KHK Empress.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "7")
+            {
+                <img src="~/images/KHK Majesty.jpg">
+            }
         }
         else
         {
-            <img src="~/images/ship.png">
+
+            @*if (Session["ShipId"].ToString() != null)
+            {
+                var path = "~/images/" + @Session["ShipName"].ToString() + ".jpg";
+                <img src="@path">
+            }
+            else
+            {
+                <img src="~/images/ship.png">
+            }*@
+
+            if (Session["ShipId"].ToString() == "1")
+            {
+                <img src="~/images/KHK Vision.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "2")
+            {
+                <img src="~/images/KWK Excelsus.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "3")
+            {
+                <img src="~/images/CSK Vanguard.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "4")
+            {
+                <img src="~/images/CSK Valiant.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "5")
+            {
+                <img src="~/images/CSK Endeavour.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "6")
+            {
+                <img src="~/images/KHK Empress.jpg">
+            }
+            else if (Session["ShipId"].ToString() == "7")
+            {
+                <img src="~/images/KHK Majesty.jpg">
+            }
+            else
+            {
+                <img src="~/images/ship.png">
+            }
+
+
         }
 
     </div>

@@ -2885,3 +2885,16 @@ header {
 .ta {
     padding: 23px 0 8px;
 }
+
+.shipmenu .menu ul li a {
+    height: 34px;
+}
+.shipmenu .pgnam {
+    height: 34px;
+    width: 100%;
+    padding: 8px;
+    border: 0;
+}
+.shipmenu .menu ul li {
+    margin: 0 0 7px 0;
+}

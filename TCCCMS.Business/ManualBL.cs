@@ -285,9 +285,9 @@ namespace TCCCMS.Business
                     string relFilePath = "";
                     relFilePath = relativePath + "/" + fName;
                     sb.Append("\n");
-                    sb.Append("<button class='accordion'>" + fName + "</button>");
+                    sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fName + "</button>");
                     sb.Append("\n");
-                    sb.Append("<div class='panel'>");
+                    sb.Append("<div class='panel' style='margin-left:5px;'>");
                     x = l + 1;
                     string sChild = GetChild(item, ref x, part, ctrlName, ref relFilePath);
                     sb.Append(sChild);
