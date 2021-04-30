@@ -78,13 +78,25 @@
     </div>
 
     <section class="full_body">
+        @*<div class="container body-content">
+            @RenderBody()
+            <hr />*@
+
         <div class="container body-content">
             @RenderBody()
-            <hr />
-
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-
+            <div class="footer">
+                <div>&nbsp; &nbsp; &nbsp;</div>
+                <ul>
+                    <li disabled><strong>Uncontrolled when printed</strong></li>
+                    <li>Revision 0.0</li>
+                    <li>Date:01-May -21</li>
+                    <li><a href="#">View Revision Histroy</a></li>
+                </ul>
+                <div>&nbsp; &nbsp; &nbsp;</div>
+            </div>
         </div>
+
+        @*</div>*@
 
         <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
@@ -96,6 +108,8 @@
             </div>
         </div>
     </section>
+
+
     <script src="~/Scripts/bootstrap.min.js"></script>
 
     <script>
