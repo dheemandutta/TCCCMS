@@ -15,6 +15,8 @@ namespace TCCCMS.Controllers
         //--------------------Ship5-------------------------
 
         private string controllerName = "ShipCSKEndeavour";
+        private int shipId = 5;
+        private string xmlPath = "~/xmlMenu/" + "ALLSHIPS1.xml";
         ShipBL shipBL = new ShipBL();
         // GET: ShipCSKEndeavour
         public ActionResult Index()
@@ -22,7 +24,7 @@ namespace TCCCMS.Controllers
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS.xml");
-            file.BodyHtml = manualBL.GenerateBodyContentHtml(xPath, 5);
+            file.BodyHtml = manualBL.GenerateBodyContentHtml(xPath, shipId);
             return View(file);
         }
         public ActionResult Pages(string actionName)
@@ -40,6 +42,103 @@ namespace TCCCMS.Controllers
             filePath = filePath + fileName + ".pdf#toolbar=0";
             file.PdfName = fileName;
             file.PdfPath = filePath;
+            return View(file);
+        }
+
+        public ActionResult SOPEP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "SOPEP");
+            return View(file);
+        }
+        public ActionResult STS()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "STS");
+            return View(file);
+        }
+        public ActionResult BWMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "BWMP");
+            return View(file);
+        }
+        public ActionResult VOC()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "VOC");
+            return View(file);
+        }
+        public ActionResult MSMPLMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "MSMPLMP");
+            return View(file);
+        }
+        public ActionResult PRPW()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "PRPW");
+            return View(file);
+        }
+        public ActionResult BMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "BMP");
+            return View(file);
+        }
+        public ActionResult CWBMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "CWBMP");
+            return View(file);
+        }
+        public ActionResult GMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "GMP");
+            return View(file);
+        }
+        public ActionResult ETA()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "ETA");
+            return View(file);
+        }
+        public ActionResult SEEMP1()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "SEEMP1");
+            return View(file);
+        }
+        public ActionResult SEEMP2()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "SEEMP2");
             return View(file);
         }
     }

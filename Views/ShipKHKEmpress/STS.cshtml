@@ -1,0 +1,38 @@
+﻿@model TCCCMS.Models.ShipManual
+@{
+    //ViewBag.Title = Model.ShipName;
+    ViewBag.Title = "STS";
+    Layout = "~/Views/Shared/_Ship_Layout.cshtml";
+}
+@section Styles{
+    <link href="~/css/TccAccordian.css" rel="stylesheet" />
+
+
+}
+<h2>STS</h2>
+
+
+@Html.Raw(Model.BodyHtml)
+
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+}
