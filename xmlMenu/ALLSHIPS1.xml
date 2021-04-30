@@ -444,7 +444,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix F - BW Mgmt Inspection Report</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPCSGS">Appendix G - Conversion of Specific Gravity to Salinity for BW Reg Mgmt</filename>
 			</foldername>
-			<foldername description="GMP" actionname="GMP" name="20. GMP">
+			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">KHKV Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
@@ -628,7 +628,7 @@
 			<!-- </foldername> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM">29. KHK Vision - California Response Manual</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM2">29. KHK Vision - California Response Manual</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">29. KHK Vision - California Response Manual</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">will be changed KHK Vision NOI 2013 14Jun17</filename> -->
 		</ship>
 		
@@ -969,7 +969,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
-			<foldername description="GMP" actionname="GMP" name="20. GMP">
+			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">KWEX Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
@@ -1146,7 +1146,7 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">21. KWEX ETA 14Jul16</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. KWK EXCELSUS_VGP Rev02</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KWK Excelsus NOI 2013 09Mar20</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">29. KWK EXCELSUS - California Response Manual</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
 		</ship>
 		
 		<ship shipnumber="3" name="CSK Vanguard" controllername="ShipCSKVanguard">
@@ -1484,7 +1484,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
-			<foldername description="GMP" actionname="GMP" name="20. GMP">
+			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
 			
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">CSVA Vessel Particular</filename>
@@ -1657,7 +1657,7 @@
 			<!-- </foldername> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">21. CSVA ETA 24Oct16</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. CSK VANGUARD_VGP Rev01</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">29. CSK VANGUARD - California Response Manual</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">will be changed CSK Vanguard NOI 2013 14Jun17</filename> -->
 		</ship>
 		
@@ -1992,7 +1992,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
-			<foldername description="GMP" actionname="GMP" name="20. GMP">
+			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">CSVL Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
@@ -2173,7 +2173,7 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">21. CSVA ETA 24Oct16</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. CSK VALIANT_VGP</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be chnaged CSK Valiant NOI 2013 14Jun17</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">29. CSK VALIANT - California Response Manual</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
 		</ship>
 		
 		<ship shipnumber="5" name="CSK Endeavour" controllername="ShipCSKEndeavour">
@@ -2512,7 +2512,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
-			<foldername description="GMP" actionname="GMP" name="20. GMP">
+			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">CSEN Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
@@ -2688,7 +2688,7 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">21. CSEN ETA 24Aug17</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27.  VGP WILL BE CHANGED  CSK Endeavour NOI 2013 15Aug17</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. CSK ENDEAVOUR_VGP </filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">29. CSK ENDEAVOUR - California Response Manual</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
 		</ship>
 		
 		<ship shipnumber="6" name="KHK Empress" controllername="ShipKHKEmpress">
@@ -3052,7 +3052,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
-			<foldername description="GMP" actionname="GMP" name="20. GMP">
+			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">KHEM Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
@@ -3266,7 +3266,7 @@
 			</foldername>
 		    <!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. KHK EMPRESS_VGP Rev01</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KHK Empress NOI 2013 14Jul19</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">29. KHK EMPRESS - California Response Manual</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
 		</ship>
 		
 		<ship shipnumber="7" name="KHK Majesty" controllername="ShipKHKMajesty">
@@ -3625,7 +3625,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
-			<foldername description="GMP" actionname="GMP" name="20. GMP">
+			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">KHMA Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
@@ -3817,7 +3817,7 @@
 			<!-- </foldername> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. KHK MAJESTY_VGP</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KHK Majesty NOI 2013 12Apr19</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">29. KHK MAJESTY - California Response Manual</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
 		</ship>
 	</ships>
 </xml>
