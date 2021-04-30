@@ -42,10 +42,10 @@
                     {
                         @*<a href="#">SMS Manuals</a>*@
 
-                <a href='@Url.Action("ShipDashboard", "Dashboard")'>
-                    Ship Specific Manuals & Plans
+                        <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
+                            Ship Specific Manuals & Plans
                     
-                </a>
+                        </a>
 
                     }
                     else

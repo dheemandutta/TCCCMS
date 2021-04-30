@@ -444,7 +444,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix F - BW Mgmt Inspection Report</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPCSGS">Appendix G - Conversion of Specific Gravity to Salinity for BW Reg Mgmt</filename>
 			</foldername>
-			<foldername description="GMP" actionname="GMP" name="20. GMP">
+			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">KHKV Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
@@ -498,7 +498,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPMR">Manual Revision</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA-Used Batteries regarded as E-Waste (05Apr18)-filed in front of GMP</filename> -->
 			</foldername>
-			<foldername description="Energy Towwing Booklet" actionname="ETA" name="21. KHKV ETA">
+			<foldername description="Emergency Toowing Arrangement" actionname="ETA" name="21. KHKV ETA">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETACP">Appendix - Cover Page</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAContents">Contents</filename>
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETACover">Cover- KHK Vision</filename> -->
@@ -969,7 +969,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
-			<foldername description="GMP" actionname="GMP" name="20. GMP">
+			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">KWEX Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
