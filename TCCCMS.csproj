@@ -138,6 +138,7 @@
     <Compile Include="Controllers\MaintenanceOfShipAndEquipmentController.cs" />
     <Compile Include="Controllers\MajorCasualtyAndEnvironmentalProtectionPlanController.cs" />
     <Compile Include="Controllers\ManualController.cs" />
+    <Compile Include="Controllers\NoticeBoardController.cs" />
     <Compile Include="Controllers\PermissionRoleController.cs" />
     <Compile Include="Controllers\RankController.cs" />
     <Compile Include="Controllers\ReferenceMaterialsController.cs" />
@@ -2338,11 +2339,25 @@
     <Content Include="Views\ShipKWKExcelsus\STS.cshtml" />
     <Content Include="Views\ShipKWKExcelsus\VOC.cshtml" />
     <Content Include="Views\Dashboard\CommonToAllManualDashboard.cshtml" />
+    <Content Include="Views\CommonToAllManual\CEM.cshtml" />
+    <Content Include="Views\CommonToAllManual\CGS.cshtml" />
+    <Content Include="Views\CommonToAllManual\EMS.cshtml" />
+    <Content Include="Views\CommonToAllManual\GCGS.cshtml" />
+    <Content Include="Views\CommonToAllManual\Manning.cshtml" />
+    <Content Include="Views\CommonToAllManual\OMPCOV.cshtml" />
+    <Content Include="Views\CommonToAllManual\PCMP.cshtml" />
+    <Content Include="Views\CommonToAllManual\PPM.cshtml" />
+    <Content Include="Views\CommonToAllManual\TOM.cshtml" />
+    <Content Include="Views\NoticeBoard\Advisory.cshtml" />
+    <Content Include="Views\NoticeBoard\Notices.cshtml" />
+    <Content Include="Views\NoticeBoard\SafetyCampaigns.cshtml" />
+    <Content Include="Views\NoticeBoard\PDFViewer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="CommonToAllManualsPDF\" />
     <Folder Include="Model\" />
+    <Folder Include="NoticeBoardPDF\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Text;
 using System.IO;
+using System.Xml;
 using System.Web.Mvc;
 
 namespace TCCCMS.Controllers
@@ -14,6 +15,7 @@ namespace TCCCMS.Controllers
     public class CommonToAllManualController : Controller
     {
         private string controllerName = "CommonToAllManual";
+        private string xmlPath = "~/xmlMenu/" + "COMMONTOALL.xml";
         ManualBL manualBL = new ManualBL();
         // GET: CommonToAllManual
         public ActionResult Index()
@@ -21,7 +23,8 @@ namespace TCCCMS.Controllers
             ManualBL manualBL = new ManualBL();
             Manual file = new Manual();
             string xPath = Server.MapPath("~/xmlMenu/" + "COMMONTOALL.xml");
-            file.ManualBodyHtml = manualBL.GenerateBodyContentHtml(xPath, 0);
+            //file.ManualBodyHtml = manualBL.GenerateBodyContentHtml(xPath, 0);
+            file.ManualBodyHtml = GenerateC2AMenu();
             return View(file);
         }
         //public ActionResult Pages(string actionName)
@@ -95,6 +98,160 @@ namespace TCCCMS.Controllers
                 {".gif", "image/gif"},
                 {".csv", "text/csv"}
             };
+        }
+
+        public ActionResult PPM()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "PPM");
+            return View(file);
+        }
+        public ActionResult CGS()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "CGS");
+            return View(file);
+        }
+        public ActionResult GCGS()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "GCGS");
+            return View(file);
+        }
+        public ActionResult OMPCOV()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "OMPCOV");
+            return View(file);
+        }
+        public ActionResult TOM()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "TOM");
+            return View(file);
+        }
+        public ActionResult PCMP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "PCMP");
+            return View(file);
+        }
+        public ActionResult EMS()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "EMS");
+            return View(file);
+        }
+        public ActionResult Manning()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "Manning");
+            return View(file);
+        }
+        public ActionResult CEM()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "CEM");
+            return View(file);
+        }
+
+        public string GenerateC2AMenu()
+        {
+            string xPath = Server.MapPath("~/xmlMenu/" + "COMMONTOALL.xml");
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(xPath);
+            StringBuilder sb = new StringBuilder();
+            foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
+            {
+
+                sb.Append("<ul>");
+                foreach (XmlNode c2a in node)
+                {
+
+                    string c2aName = c2a.Attributes["name"].Value.ToString();
+                    string ctrlName = c2a.Attributes["controllername"].Value.ToString();
+                    string relaiveFilePath = c2aName;//---this for pdf preview link path
+
+                    foreach (XmlNode item in c2a)
+                    {
+                        if (item.Name == "filename")
+                        {
+                            string filename = item.InnerText.ToString();
+                            string actionName = item.Attributes["actionname"].Value.ToString();
+                            string type = item.Attributes["doctype"].Value.ToString();
+                            string isDownload = item.Attributes["isdownloadable"].Value.ToString();
+                            // manual = manuBl.GetActionNameByFileName(filename + ".html");
+                            if (type == "DOC" && actionName != "")
+                            {
+                                sb.Append("\n");
+
+                                sb.Append("<li ><span>></span><a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >" + filename + "</a>");
+                            }
+                            else if (type == "PDF")
+                            {
+                                sb.Append("\n");
+                                sb.Append("<li ><span style='margin-right:5px;'>></span><a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
+                                sb.Append(filename + "</a>");
+                                sb.Append("</br>");
+
+                            }
+
+                        }
+                        else if (item.Name == "foldername")
+                        {
+
+
+                            string fName = item.Attributes["name"].Value.ToString();
+                            string fDesc = item.Attributes["description"].Value.ToString();
+                            string actionName = item.Attributes["actionname"].Value.ToString();
+
+                            if (actionName != "")
+                            {
+                                if (fDesc != "")
+                                {
+                                    sb.Append("<li ><span>></span><a href='/" + ctrlName + "/" + actionName + "'>" + fDesc + "</a>");
+                                }
+                                else
+                                {
+                                    sb.Append("<li><a href='/" + ctrlName + "/" + actionName + "'>" + fName + "</a>");
+
+                                }
+
+                            }
+                        }
+                    }
+
+                    sb.Append("\n");
+                    sb.Append("\n");
+                    sb.Append("</li>");
+
+
+                }
+                sb.Append("\n");
+                sb.Append("</ul>");
+
+                //WriteToText(sb);
+
+            }
+            return sb.ToString();
         }
     }
 }

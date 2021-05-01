@@ -282,10 +282,19 @@ namespace TCCCMS.Business
                 {
                     int x = 0;
                     string fName = item.Attributes["name"].Value.ToString();
+                    string fDesc = item.Attributes["description"].Value.ToString();
                     string relFilePath = "";
                     relFilePath = relativePath + "/" + fName;
                     sb.Append("\n");
-                    sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fName + "</button>");
+                    if (fDesc != "")
+                    {
+                        sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fDesc + "</button>");
+                    }
+                    else
+                    {
+                        sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fName + "</button>");
+                    }
+                        
                     sb.Append("\n");
                     sb.Append("<div class='panel' style='margin-left:5px;'>");
                     x = l + 1;
@@ -384,6 +393,146 @@ namespace TCCCMS.Business
                         sb.Append("</div>");
 
                     }
+
+
+                }
+                sb.Append("\n");
+                sb.Append("</div>");
+
+                //WriteToText(sb);
+
+            }
+            return sb.ToString();
+        }
+
+        public string GenerateC2AFolderBodyContentHtml(string aXmlPath, string folderAction)
+        {
+            ManualBL manuBl = new ManualBL();
+            string xPath = aXmlPath;
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(xPath);
+            StringBuilder sb = new StringBuilder();
+            foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
+            {
+
+                sb.Append("<div class='container'>");
+                foreach (XmlNode c2a in node)
+                {
+                    Volume vol = new Volume();
+                    string c2aName = c2a.Attributes["name"].Value.ToString();
+                    string ctrlName = c2a.Attributes["controllername"].Value.ToString();
+                    string partName = c2aName.Split(' ').Last();
+                   
+                    string mainNodeName = c2a.Attributes["name"].Value.ToString();
+                    string relaiveFilePath = c2aName;//---this for pdf preview link path
+
+                    
+                        sb.Append("\n");sb.Append("<div>");
+                        sb.Append("\n");
+
+                        #region child accordian
+                        foreach (XmlNode item in c2a)
+                        {
+                            Manual manual = new Manual();
+                            int l = 1;
+
+
+                            if (item.Name == "foldername")
+                            {
+                                string actionName = item.Attributes["actionname"].Value.ToString();
+                                if (actionName == folderAction)
+                                {
+                                    string fName = item.Attributes["name"].Value.ToString();
+                                    string fDesc = item.Attributes["description"].Value.ToString();
+                                    string relFilePath = "";
+                                    relFilePath = relaiveFilePath + "/" + fName;
+
+                                    sb.Append("\n");
+                                    string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
+                                    sb.Append(sChild);
+                                    sb.Append("\n");
+                                }
+                            }
+
+
+
+                        }
+
+                        #endregion
+                        sb.Append("\n");
+                        sb.Append("</div>");
+
+                    
+
+
+                }
+                sb.Append("\n");
+                sb.Append("</div>");
+
+                //WriteToText(sb);
+
+            }
+            return sb.ToString();
+        }
+
+        public string GenerateNoticeBoardFolderBodyContentHtml(string aXmlPath, string folderAction)
+        {
+            ManualBL manuBl = new ManualBL();
+            string xPath = aXmlPath;
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(xPath);
+            StringBuilder sb = new StringBuilder();
+            foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
+            {
+
+                sb.Append("<div class='container'>");
+                foreach (XmlNode c2a in node)
+                {
+                    Volume vol = new Volume();
+                    string c2aName = c2a.Attributes["name"].Value.ToString();
+                    string ctrlName = c2a.Attributes["controllername"].Value.ToString();
+                    string partName = c2aName.Split(' ').Last();
+
+                    string mainNodeName = c2a.Attributes["name"].Value.ToString();
+                    string relaiveFilePath = c2aName;//---this for pdf preview link path
+
+
+                    sb.Append("\n"); sb.Append("<div>");
+                    sb.Append("\n");
+
+                    #region child accordian
+                    foreach (XmlNode item in c2a)
+                    {
+                        Manual manual = new Manual();
+                        int l = 1;
+
+
+                        if (item.Name == "foldername")
+                        {
+                            string actionName = item.Attributes["actionname"].Value.ToString();
+                            if (actionName == folderAction)
+                            {
+                                string fName = item.Attributes["name"].Value.ToString();
+                                string fDesc = item.Attributes["description"].Value.ToString();
+                                string relFilePath = "";
+                                relFilePath = relaiveFilePath + "/" + fName;
+
+                                sb.Append("\n");
+                                string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
+                                sb.Append(sChild);
+                                sb.Append("\n");
+                            }
+                        }
+
+
+
+                    }
+
+                    #endregion
+                    sb.Append("\n");
+                    sb.Append("</div>");
+
+
 
 
                 }
