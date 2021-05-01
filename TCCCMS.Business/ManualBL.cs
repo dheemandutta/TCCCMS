@@ -168,9 +168,9 @@ namespace TCCCMS.Business
 
                                         relFilePath = relaiveFilePath + "/" + fName;
                                         sb.Append("\n");
-                                        sb.Append("<button class='accordion'>" + fName + "</button>");
+                                        sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fName + "</button>");
                                         sb.Append("\n");
-                                        sb.Append("<div class='panel'>");
+                                        sb.Append("<div class='panel' style='margin-left:5px;'>");
                                         string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
                                         //l = l;
                                         sb.Append(sChild);
@@ -187,9 +187,9 @@ namespace TCCCMS.Business
                                     relFilePath = relaiveFilePath + "/" + fName;
 
                                     sb.Append("\n");
-                                    sb.Append("<button class='accordion'>" + fName + "</button>");
+                                    sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fName + "</button>");
                                     sb.Append("\n");
-                                    sb.Append("<div class='panel'>");
+                                    sb.Append("<div class='panel' style='margin-left:5px;'>");
                                     string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
                                     //l = l;
                                     sb.Append(sChild);

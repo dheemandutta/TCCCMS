@@ -1,14 +1,19 @@
 <xml>
 	<commontoalls>
 		<commontoall id="0" name="Common to All" controllername="CommonToAllManual">
-			<foldername name="7. Procurement Policy Manual ">
+			<foldername description="Procurement Policy Manual" name="7. Procurement Policy Manual">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMMB">Main Body</filename> 
-				<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix A - Manual PO log Sheet</filename> 
-				<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix B - Advance Payment Request Form</filename> 
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix A - Manual PO log Sheet</filename>  -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Manual PO log Sheet</filename> 
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix B - Advance Payment Request Form</filename>  -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - Advance Payment Request Form</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMRNV">Appendix C - Request for New Vendor</filename> 
-				<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix D - Vendor Evaluation Form</filename> 
-				<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix E - Suspension _ Blacklisting Supplier Form</filename> 
-				<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix F - List of Approved Suppliers</filename> 
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix D - Vendor Evaluation Form</filename>  -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix D - Vendor Evaluation Form</filename> 
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix E - Suspension _ Blacklisting Supplier Form</filename>  -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix E - Suspension _ Blacklisting Supplier Form</filename> 
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix F - List of Approved Suppliers</filename>  -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix F - List of Approved Suppliers</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMRWFC">Appendix G - Procurement Work flow Chart</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMCSSPFC">Appendix H - Consumable Stores and Spare Parts Flow Chart</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMEAPOI">Appendix I - Electronic Approval of Purchase Order and Invoice</filename> 
@@ -19,7 +24,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPM">Procurement Policy Manual</filename>  -->
 			</foldername>
 			
-			<foldername name="8. TCC Cyber Guidance (Shipboard) ">
+			<foldername description="TCC Group Cyber Guidance (Shore)" name="8. TCC Cyber Guidance (Shipboard)">
 				 
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CGCContentS">CGS Contents</filename>  -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CGSDL">CGS Distribution List</filename> 
@@ -48,23 +53,23 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CGSMR">Manual Revisions</filename>  -->
 			</foldername>
 				
-			<foldername name="9. TCC Group Cyber Guidance (Shore) ">
+			<foldername description="TCC Group Cyber Guidance (Shore)" name="9. TCC Group Cyber Guidance (Shore)">
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSObjectives">Chapter 1 - Objectives</filename> <!-- GCGS Chapter 1 - Objectives  -->
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSUTCT">Chapter 2 - Understanding the Cyber Threats</filename> 
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSOITI">Chapter 3 - TCC Offices I.T Infrastructure</filename> 
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSRAM">Chapter 4 - Risk Assessment Methodology</filename> <!-- GCGS Chapter 4 - Risk Assessment Methodology  -->
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSITCCGR">Chapter 5 - Identify TCC Group Risks</filename> 
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSEPPP">Chapter 6 - Established Policy, Procedure, Process (or Practices)(1)</filename> 
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSEPPProcess">Chapter 6 - Established Policy, Procedure, Process (or Practices)</filename> <!-- GCGS Chapter 6 - Established Policy, Procedure, Process (or Practices)  -->
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSPG">Chapter 7 - Practice and Guidance</filename><!-- GCGS Chapter 7 - Practice and Guidance  -->
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSBCP">Chapter 8 - Business Continuity Plans (BCSPS)(1)</filename> 
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSBCPlans">Chapter 8 - Business Continuity Plans (BCSPS)</filename> 
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSSIRP">Chapter 9- System Incident Responding Protocol</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSConclution">GCGS Chapter 10 - Conclusion</filename> <!-- GCGS Chapter 10 - Conclusion  -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSITSRF">Appendix A - TCC IT Service Request Form</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSITELF">Appendix B - TCC IT Equipment Loan Form</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSUFC">Appendix C - TCC User File Classification</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSGCITSDF">Appendix D - TCC Group Critical ITIS Systems Drill Form</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSUTCT">Chapter 2 - Understanding the Cyber Threats</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSOITI">Chapter 3 - TCC Offices I.T Infrastructure</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSITCCGR">Chapter 5 - Identify TCC Group Risks</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSEPPP">Chapter 6 - Established Policy, Procedure, Process (or Practices)(1)</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSBCP">Chapter 8 - Business Continuity Plans (BCSPS)(1)</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSBCPlans">Chapter 8 - Business Continuity Plans (BCSPS)</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSSIRP">Chapter 9- System Incident Responding Protocol</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSObjectives">GCGS Chapter 1 - Objectives</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSRAM">GCGS Chapter 4 - Risk Assessment Methodology</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSEPPProcess">GCGS Chapter 6 - Established Policy, Procedure, Process (or Practices)</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSPG">GCGS Chapter 7 - Practice and Guidance</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSConclution">GCGS Chapter 10 - Conclusion</filename> 
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSGCITSDF">Appendix D - TCC Group Critical ITIS Systems Drill Form</filename>  
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSContents">GCGS Contents</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSDL">GCGS Distribution List</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSMC">GCGS Manaul Cover</filename> 
@@ -72,11 +77,11 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSMR">GCGS Manual Revisions</filename>  -->
 			</foldername>
 			
-			<foldername name="10. Outbreak Mgmt Plan-COVID19 ">
+			<foldername description="Outbreak Mgmt Plan-COVID19" name="10. Outbreak Mgmt Plan-COVID19">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPCP">1. Cover Page</filename> 
-					<foldername name="7. Annexes">
+					<foldername description="" name="7. Annexes">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex A - Record of Health Check Onboard</filename> 
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Annex A - Record of Health Check Onboard</filename> 
+						<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Annex A - Record of Health Check Onboard</filename>  -->
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPVMM">Annex A - TCC virus mitigation measures (Ship Master Version)</filename> 
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex A - TCC virus mitigation measures (Ship Master Version)</filename> 
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex A - TCCHK FMA-2020-01 COVID-19 Outbreak, Precautions</filename> 
@@ -111,10 +116,10 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPMB">6. Main Body</filename> -->
 			</foldername>
 			
-			<foldername name="11. TOM ">
+			<foldername description="TOM" name="11. TOM">
 				 <filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMTCPM">Chapter 1 - The cargo, pertoleum _ its nature</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMCDMT">Chapter 2 - Construction _ Design Of The Modern Tanker  </filename>
-				<foldername name="Chapter 3">
+				<foldername description="" name="Chapter 3">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMCP">Chapter 3 Content Page</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMMCB">Chapter 3.1 Main Cargo and Ballast </filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMGFF">Chapter 3.10 Gas Freeing Fans</filename> 
@@ -127,7 +132,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMPCE">Chapter 3.8 Portable Cargo Equipment</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMTCM">Chapter 3.9 Tanker Cleaning machines</filename> 
 				</foldername>
-				<foldername name="Chapter 4 - Practical Operational">
+				<foldername description="" name="Chapter 4 - Practical Operational">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMC4CP">Chapter 4 Content page</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMBP">Chapter 4.1 The Ballast Passage</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMLP">Chapter 4.2 Loading Port</filename> 
@@ -138,7 +143,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMOP">Chapter 5 - other operations</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMDocumentation">Chapter 6 -  Documentation</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMBO">Chapter 7 - Ballast Operations</filename> 
-				<foldername name="Chapter 8 - Cargo Information">
+				<foldername description="" name="Chapter 8 - Cargo Information">
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">8.3 Specification of Crude Oil (Include some Condensate)</filename> 
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">8.4 API _ temperature of Typical crude oil</filename> 
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">8.5 Specification of Product Cargo</filename> 
@@ -155,7 +160,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMMR">Manual Revision</filename>  -->
 			</foldername>
 			
-			<foldername name="12. Pest Control Management Plan ">
+			<foldername description="EMS Manual" name="12. Pest Control Management Plan">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPIntroduction">Chapter 1 - Introduction</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPOPR">Chapter 2 - Objectives and Plan Review</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPRR">Chapter 3 - Roles and Responsibilties</filename> 
@@ -167,7 +172,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPSS">Chapter 9 - Ship Sanitation</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPAGM">Chapter 10 - AGM</filename>
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPContent">PCMP Content</filename>  -->
-				<!-- <foldername name="Main Body"> -->
+				<!-- <foldername description="" name="Main Body"> -->
 					
 					
 				<!-- </foldername> -->
@@ -175,7 +180,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPMC">PCMP Manual Control</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPMCover">PCMP Manual Cover</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPMR">PCMP Manual Revision</filename>  -->
-			<foldername name="Appendixes">
+			<foldername description="" name="Appendixes">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPTKP">Appendix 1 - Taxonomic Keys - Pests</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPUO">Appendix 2 - Pesticides used onboard</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCMPLASP">Appendix 3 - List of Authorized Shipboard Pesticide</filename> 
@@ -188,7 +193,7 @@
 				</foldername>
 			</foldername>
 			
-			<foldername name="15. EMS Manual ">
+			<foldername description="" name="15. EMS Manual">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMContents">EMSM Contents</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMDL">EMSM Distribution List</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMMC">EMSM Manual Control</filename> 
@@ -197,18 +202,18 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMGeneral">Section 1 - General</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMReference">Section 2 - Reference</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMTD">Section 3 - Terms _ Definitions</filename>
-				<foldername name="Section 4">
+				<foldername description="Section 5 - Management and Leadership" name="Section 4">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMA1SE">Section 4 - Annex 1 - Scope of EMS</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMA2SOD">Section 4 - Annex 2  - Shipboard Operation Discharge</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMCO">Section 4 - Context of Organization</filename> 
 				</foldername>
-				<foldername name="Section 5">
+				<foldername description="Section 5 - Management and Leadership" name="Section 5">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMA1SEP">Section 5 - Annex 1 - S_E Policy</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMA2EOC">Section 5 - Annex 2 - Environmental Organization Chart</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMA3RM">Section 5 - Annex 3 - EMS Responsibility Matrix</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMML">Section 5 - Management and Leadership</filename> 
 				</foldername>
-				<foldername name="Section 6">
+				<foldername description="Section 6 - Planning" name="Section 6">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMRRCM">Section 6 - Annex 1 - Risk Rank Criteria _ Matrix</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMOPAC">Section 6 - Annex 2 - Opportunit Pursuit Assessment Criteria</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMSAOC">Section 6 - Annex 3  - Sample of the Analysis of Organization Context</filename> 
@@ -217,22 +222,22 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMSLPR">Section 6 - Annex 6 - Sample of the Lifecycle Perspective Register</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMPlanning">Section 6 - Planning</filename> 
 				</foldername>
-				<foldername name="Section 7">
+				<foldername description="Section 7 - Support" name="Section 7">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMEVC">Section 7 - Annex 1 - Environmental Visitor Card</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMSCENL">Section 7 - Annex 2 - Sample of the Company Environmental Notification Letter</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMSNCPTO">Section 7 - Annex 3 - Sample of the Notice to Contractor performing Tasks in Office</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMDIR">Section 7 - Annex 4 - Documented Information Register</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMSupport">Section 7 - Support</filename> 
 				</foldername>
-				<foldername name="Section 8">
+				<foldername description="Section 8 - Operation" name="Section 8">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMCMT">Section 8 - Annex 1 - Crisis Management Team</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMSEMP">Section 8 - Annex 2 - Sample of Environmental Monitoring Plan</filename> 
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMOperation">Section 8 - Operation</filename> 
 				</foldername>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMPE">Section 9 - Performance Evaluation</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMImprovement">Section 10 - Improvement</filename>
-			<foldername name="Appendix">
-					<foldername name="Appendix II - Forms _ Checklists">
+			<foldername description="" name="Appendix">
+					<foldername description="" name="Appendix II - Forms _ Checklists">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMFRM">EMS Form Retention Matrix</filename> 
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMAOCRRI">EMS01A - Analyis of Organization Context - Risk Register - Internal</filename> 
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMAOCRRE">EMS01B - Analyis of Organization Context - Risk Register - External</filename> 
@@ -266,7 +271,7 @@
 				</foldername>
 			</foldername>
 			
-			<foldername name="16. Manning manual">
+			<foldername description="Manning manual" name="16. Manning manual">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMMR">4. Manual Revisions</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMContents">5. Contents</filename>  --> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMDRRR">Chapter 1 - Definitions Reporting relations _ responsibilities</filename> 
@@ -287,8 +292,8 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMDE">Chapter 16 - Data Entry</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMRMT">Chapter 17 - Risk Management - Travel</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMIVA">Chapter 18 - Internal Verification Audit</filename>
-				<foldername name="Annexes">
-					<foldername name="Annex A - Manning Forms">
+				<foldername description="" name="Annexes">
+					<foldername description="" name="Annex A - Manning Forms">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMFM">Manning Form Matrix</filename> 
 						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">MM01 - Biodata Form</filename> 
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMIAFMCO">MM02 - Interview and Approval Form - Master and Chief Officer</filename> 
@@ -301,7 +306,7 @@
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMDAD">MM09 - Drug _ Alcohol Declaration</filename> 
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMHORAP">MM010 - Handing Over Report Action Plan</filename> 
 					</foldername>
-					<foldername name="Annex D - Medical Exam Body">
+					<foldername description="" name="Annex D - Medical Exam Body">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMSPEMEB">Annex D - Seafarer Pre Employment Medical Examination Body</filename> 
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Guidance to search Registered MP in HK</filename> 
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Indian - List of DG Shipping Approved Seafarer Medical Examination Body - Oct 2020</filename> 
@@ -322,7 +327,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMMControl">MM Manual Control</filename>  -->
 			</foldername>
 			
-			<foldername name="24. CEM ">
+			<foldername description="CEM" name="24. CEM ">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CEMEUMRVP">Section A - EU MRV Procedure</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex 1 - EU MRV Regulation</filename> 
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex 5 - Verifier Accreditation</filename> 
@@ -337,13 +342,14 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CEMMR">CEM Manual Revision</filename>  --> 
 			</foldername>
 			
-			<foldername name="29. CALIFORNIA CONTIGENCY PLAN">
-				<foldername name="29. CALIFORNIA CONTIGENCY PLAN">
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Contigency Plan</filename> 
-				</foldername>
+			<foldername description="CALIFORNIA CONTIGENCY PLAN" name="29. CALIFORNIA CONTIGENCY PLAN">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Contigency Plan</filename> 
+				<!-- <foldername description="" name="29. CALIFORNIA CONTIGENCY PLAN"> -->
+					<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Contigency Plan</filename>  -->
+				<!-- </foldername> -->
 			</foldername>
 			
-			<foldername name="30. Washington Area Vessel Contigency Plan">
+			<foldername description="Washington Area Vessel Contigency Plan" name="30. Washington Area Vessel Contigency Plan">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">WA  Vessel Contingency Plan</filename> 
 			</foldername>
 		</commontoall>
