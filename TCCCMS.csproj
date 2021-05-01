@@ -2337,6 +2337,7 @@
     <Content Include="Views\ShipKWKExcelsus\SOPEP.cshtml" />
     <Content Include="Views\ShipKWKExcelsus\STS.cshtml" />
     <Content Include="Views\ShipKWKExcelsus\VOC.cshtml" />
+    <Content Include="Views\Dashboard\CommonToAllManualDashboard.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
