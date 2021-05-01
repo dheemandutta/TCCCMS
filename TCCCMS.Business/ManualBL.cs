@@ -356,6 +356,7 @@ namespace TCCCMS.Business
                                 if(actionName == folderAction)
                                 {
                                     string fName = item.Attributes["name"].Value.ToString();
+                                    string fDesc = item.Attributes["description"].Value.ToString();
                                     string relFilePath = "";
                                     relFilePath = relaiveFilePath + "/" + fName;
 
