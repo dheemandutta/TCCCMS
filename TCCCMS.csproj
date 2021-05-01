@@ -657,9 +657,12 @@
     <Content Include="images\search_icon.png" />
     <Content Include="images\ship.jpg" />
     <Content Include="images\ship.png" />
+    <Content Include="images\shipimg.jpg" />
     <Content Include="images\ship_icon.png" />
     <Content Include="images\ship_old.png" />
     <Content Include="images\Sync_icon.png" />
+    <Content Include="images\TCC flag without background.png" />
+    <Content Include="images\TCC Group Logo - high resolution.png" />
     <Content Include="images\Template_icon.png" />
     <Content Include="images\ticket_icon.png" />
     <Content Include="images\Update_icon.png" />
