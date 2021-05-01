@@ -7,35 +7,267 @@
 @section Styles{
     <link href="~/css/TccAccordian.css" rel="stylesheet" />
     @*<style type="text/css">
-        .accordion {
-            background-color: #eee;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            transition: 0.4s;
-        }
-
-            .active, .accordion:hover {
-                background-color: #ccc;
+            .accordion {
+                background-color: #eee;
+                color: #444;
+                cursor: pointer;
+                padding: 18px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 15px;
+                transition: 0.4s;
             }
 
-        .panel {
-            padding: 0 18px;
-            display: none;
-            background-color: white;
-            overflow: hidden;
-        }
-    </style>*@
+                .active, .accordion:hover {
+                    background-color: #ccc;
+                }
+
+            .panel {
+                padding: 0 18px;
+                display: none;
+                background-color: white;
+                overflow: hidden;
+            }
+        </style>*@
 
 }
-<h2>Common To All Manual</h2>
+<h2>@*Common To All Manual*@</h2>
 
-@Html.Raw(Model.ManualBodyHtml)
+@*@Html.Raw(Model.ManualBodyHtml)*@
+
+<div class="">
+    <div class="ship_sec">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="~/images/shipimg.jpg" />
+            </div>
+            <div class="col-lg-6">
+                <div class="common_txt">
+                    <h3>Common To All Manual</h3>
+                    @*<ul>
+                            <li><span>></span> Procurement Policy Manual</li>
+                            <li><span>></span> TCC Cyber Guidance(Shipboard)</li>
+                        </ul>*@
+
+                    @Html.Raw(Model.ManualBodyHtml)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bnr_bottom_sec">
+        <div class="row">
+
+            <div class="col-lg-2 col-md-2 col-6">
+                <div class="icon_box dropdown">
+                    <span class="dropbtn">
+                        <img src="~/images/ship_icon.png">
+                    </span>
+
+                    @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
+                            @Html.Action("ShipMenuLayout", "Dashboard")
+                        </div>*@
+
+                    @if (Session["Role"].ToString() == "ShipUser")
+                    {
+                        @*<a href="#">SMS Manuals</a>*@
+
+                        <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
+                            Ship Specific Manuals & Plans
+
+                        </a>
+
+                    }
+                    else
+                    {
+                        @Html.Action("ShipMenuLayout", "Dashboard")
+                        <a href="#">Ship Specific Manuals & Plans</a>
+                    }
+
+                </div>
+            </div>
+
+            @*<div class="col-lg-2 col-md-2 col-6">
+                <div class="icon_box">
+                    <span>  <img src="~/images/job.png"></span>
+                    <a href="#">Job Description</a>
+                </div>
+                </div>*@
+
+            <div class="col-lg-2 col-md-2 col-6">
+                <a href="@Url.Action("Index", "CommonToAllManual")">
+                    <div class="icon_box dropdown">
+                        <span class="dropbtn">
+                            <img src="~/images/job.png">
+                        </span>
+                        <div class="dropdown-content">
+                            @*<ul>
+                                    <li><a href="#">Link 1</a></li>
+
+                                    <li class="dropmenuright">
+                                        <a href="#">Link 2</a>
+                                        <ul class="dropdown-rightcontent">
+                                            <li><a href="#">Link 2.1</a></li>
+                                            <li>
+                                                <a href="#">Link 2.2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="#">Link 3</a></li>
+                                </ul>*@
+                        </div>
+
+                        Common Manuals & Plans
+
+
+                    </div>
+                </a>
+            </div>
+
+            @*<div class="col-lg-2 col-md-2 col-6">
+                <div class="icon_box">
+                    <span> <img src="~/images/dcu_icon.png"></span>
+                    <a href="#">Reference Documents</a>
+                </div>
+                </div>*@
+            <div class="col-lg-2 col-md-2 col-6">
+                <a href="@Url.Action("Index", "ReferenceMaterials")">
+                    <div class="icon_box dropdown">
+                        <span class="dropbtn">
+                            <img src="~/images/dcu_icon.png">
+                        </span>
+                        <div class="dropdown-content">
+                            @*<ul>
+                                    <li><a href="#">Link 1</a></li>
+
+                                    <li class="dropmenuright">
+                                        <a href="#">Link 2</a>
+                                        <ul class="dropdown-rightcontent">
+                                            <li><a href="#">Link 2.1</a></li>
+                                            <li>
+                                                <a href="#">Link 2.2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li><a href="#">Link 3</a></li>
+                                </ul>*@
+                        </div>
+
+                        Reference Material
+
+
+                    </div>
+                </a>
+            </div>
+
+
+
+
+
+
+
+            <div class="col-lg-2 col-md-2 col-6">
+                <a href="@Url.Action("RevisionDetails", "RevisionHistory")">
+                    <div class="icon_box dropdown">
+                        <span class="dropbtn">
+                            <img src="~/images/search_icon.png">
+                        </span>
+                        <div class="dropdown-content">
+                        </div>
+                        Revisions
+                    </div>
+                </a>
+            </div>
+
+
+
+
+
+            @*<div class="col-lg-2 col-md-2 col-6">
+                    <div class="icon_box dropdown">
+                        <span class="dropbtn">
+                            <img src="~/images/dcu_icon.png">
+                        </span>
+                        <div class="dropdown-content" style="min-width: 300px;  top: -250px;">
+                            <ul>
+                                <li><a href="@Url.Action("ListOfAdministrationMmanagementForms", "Forms")">LIST OF ADMINISTRATION & MANAGEMENT FORMS</a></li>
+                                <li><a href="@Url.Action("ListOfMmanagementOfShipPersonalForms", "Forms")">LIST OF MANAGEMENT OF SHIP PERSONNEL FORMS</a></li>
+                                <li><a href="@Url.Action("ListOfMaintenanceFroms", "Forms")">LIST OF MAINTENANCE FORMS</a></li>
+                                <li><a href="@Url.Action("NavigationMmanagementForms", "Forms")">NAVIGATION MANAGEMENT FORMS</a></li>
+                                <li><a href="@Url.Action("SafetyMmanagementForms", "Forms")">SAFETY MANAGEMENT FORMS</a></li>
+                            </ul>
+                        </div>
+
+                        <a href="#">Forms</a>
+
+                    </div>
+                </div>*@
+
+
+
+
+
+            @*<div class="col-lg-5 col-md-5 col-12">
+                    <div class="left_bo">
+                        <div class="one_part">
+                            <img src="~/images/board.png">
+                            <a href="#">Notice Board</a>
+                        </div>
+                        <div class="two_part">
+                            <ul>
+                                <li><a href="#"><img src="~/images/1.png">Bulletins</a></li>
+                                <li><a href="#"><img src="~/images/2.png">Circulars</a></li>
+                                <li><a href="#"><img src="~/images/3.png">Instructions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>*@
+
+
+
+            <div class="col-lg-4 col-md-5 col-12">
+                <div class="left_bo dropdown">
+                    <span class="one_part dropbtn">
+                        <img src="~/images/board.png">
+                        <a href="#">Notice Board</a>
+                    </span>
+                    @*<div class="dropdown-content">
+                            <ul>
+                                <li><a href="#">Link 1</a></li>
+
+                                <li class="dropmenuright">
+                                    <a href="#">Link 2</a>
+                                    <ul class="dropdown-rightcontent">
+                                        <li><a href="#">Link 2.1</a></li>
+                                        <li>
+                                            <a href="#">Link 2.2</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li><a href="#">Link 3</a></li>
+                            </ul>
+                        </div>*@
+
+                    <div class="two_part">
+                        <ul>
+                            <li><a href="#"><img src="~/images/1.png">Notice</a></li>
+                            <li><a href="#"><img src="~/images/2.png">Advisory</a></li>
+                            <li><a href="#"><img src="~/images/3.png">Campaign</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
 
 
 
