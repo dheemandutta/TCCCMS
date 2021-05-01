@@ -24,6 +24,14 @@ namespace TCCCMS.Controllers
             //return RedirectToAction("UserDashboard", "Dashboard");
         }
 
+        public ActionResult CommonToAllManualDashboard()
+        {
+            //-------
+            return View();
+            //return RedirectToAction("UserDashboard", "Dashboard");
+        }
+        
+
         // GET: Dashboard
         public ActionResult AdminDashboard()
         {
