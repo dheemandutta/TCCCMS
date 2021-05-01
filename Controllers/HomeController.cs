@@ -15,6 +15,7 @@ namespace TCCCMS.Controllers
 {
     public class HomeController : Controller
     {
+
         public ActionResult Test2()
         {        
             return View();
