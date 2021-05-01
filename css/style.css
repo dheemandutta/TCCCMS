@@ -2898,3 +2898,34 @@ header {
 .shipmenu .menu ul li {
     margin: 0 0 7px 0;
 }
+
+.ship_sec {
+}
+
+    .ship_sec img {
+        width: 100%;
+    }
+
+.common_txt {
+    margin-top: 30px;
+}
+
+    .common_txt h3 {
+        font-weight: 400;
+    }
+
+    .common_txt ul {
+    }
+
+        .common_txt ul li {
+            list-style-type: none;
+            font-size: 15px;
+            line-height: 28px;
+            color: #747474;
+            font-weight: 300;
+        }
+
+            .common_txt ul li span {
+                color: #e90000;
+                font-weight: 500;
+            }
