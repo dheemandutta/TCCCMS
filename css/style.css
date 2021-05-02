@@ -1025,7 +1025,7 @@ header {
 
     .dropmenuright:after {
         font-family: "FontAwesome";
-        content: "\f105";
+        /*content: "\f105";*/
         display: inline-block;
         padding-right: 3px;
         vertical-align: middle;
@@ -1065,7 +1065,7 @@ header {
 
     .dropmenurightL1:after {
         font-family: "FontAwesome";
-        content: "\f105";
+        /*content: "\f105";*/
         display: inline-block;
         padding-right: 3px;
         vertical-align: middle;
@@ -2460,7 +2460,7 @@ header {
 
     .dropmenuright:after {
         font-family: "FontAwesome";
-        content: "\f105";
+        /*content: "\f105";*/
         display: inline-block;
         padding-right: 3px;
         vertical-align: middle;

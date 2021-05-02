@@ -97,7 +97,7 @@ namespace TCCCMS.Controllers
                         if (shipId == sNo)
                         {
                             //sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Index'> " + sName + "</a>");///------------li1
-                            sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Index'> " + sName + "</a>");///------------li1
+                            sb.Append("<li class='dropmenuright' ><a href='/Dashboard/ShipDashboard/" + sNo + "'> " + sName + "</a>");
                             sb.Append("</li>");///----End--------li1
                         }
 
