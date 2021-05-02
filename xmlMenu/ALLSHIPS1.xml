@@ -676,7 +676,7 @@
 			</foldername>
 			<foldername description="STS Transfer Operation Plan" actionname="STS" name="4. KWEX STS">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename>
-				<foldername description="" actionname="" name="Part A - Main Document">
+				<foldername description="" actionname="" name="Part A - MAIN DOCUMENT">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSIntroduction">PART A 1-INTRODUCTION (KWEX)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSSP">PART A 2-SHIP PARTICULAR (KWEX)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSP3OM">PART A 3-STS OPERATION AND MANAGEMENT</filename>
@@ -743,7 +743,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPDR">BWMP direct revison on SP (KWEX)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX BWMP - Appendix 7 with ABS endorsement 12May18</filename>
 			</foldername>
-			<foldername description="VOC Management Plan" actionname="VOC" name="6. VOC - KWK Excelsus_9728411">
+			<foldername description="VOC Management Plan" actionname="VOC" name="6. VOC">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCRC">Revision content on VOC cover (KWEX,CSVA,CSVL,CSEN only)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_9728411</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-address update (ABS endorsed 19Dec17)</filename>
