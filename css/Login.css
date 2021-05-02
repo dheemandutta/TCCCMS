@@ -92,6 +92,8 @@ p {
     color: #000;
     font-size: 16px;
     line-height: 125px;
+    text-align: left;
+    margin-bottom: 25px;
 }
 
 #login form span.fa {

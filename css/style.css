@@ -617,7 +617,7 @@ header {
 
 .menu_panel {
     background: #404040;
-    padding: 0 20px;
+    padding: 0 20px 10px;
     transition: .5s ease-in-out;
 }
 
@@ -2061,13 +2061,13 @@ header {
 
 .menu_panel {
     background: #404040;
-    padding: 0 20px;
+    padding: 0 20px 10px;
     transition: .5s ease-in-out;
 }
 
 .menu ul li {
     list-style-type: none;
-    margin: 0 0 13px 0;
+    margin: 0 0 5px 0;
 }
 
     .menu ul li:last-child {
@@ -2078,11 +2078,12 @@ header {
         color: #fff;
         background: #e90000;
         width: 100%;
-        display: block; /* padding: 8px 15px; */
+        display: block;
+        /* padding: 8px 15px; */
         border-radius: 5px;
         font-weight: 300;
         font-size: 13px;
-        height: 67px;
+        height: 51px;
     }
 
         .menu ul li a span.vul {
@@ -2092,7 +2093,7 @@ header {
             text-align: center;
             position: relative;
             width: 25%;
-            padding: 14px 10px;
+            padding: 7px 10px;
         }
 
             .menu ul li a span.vul:before {
@@ -2113,11 +2114,11 @@ header {
 .pgnam {
     vertical-align: top;
     display: inline-block;
-    padding: 14px;
+    padding: 7px;
     width: 75%;
     vertical-align: top;
     border-left: 1px solid #c83a3a;
-    height: 67px;
+    height: 50px;
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
 }
@@ -2162,14 +2163,14 @@ header {
 .left_bo {
     background: url(../images/back.png) no-repeat 0 0;
     background-size: contain;
-    padding: 45px 20px;
+    padding: 19px 20px;
 }
 
 .one_part {
     display: inline-block;
-    width: 42%;
+    width: 34%;
     text-align: center;
-    padding: 0 31px 0 0;
+    padding: 0 12px 0 0;
 }
 
     .one_part a {
@@ -2193,7 +2194,7 @@ header {
 
         .two_part ul li a {
             color: #000;
-            font-size: 15px;
+            font-size: 14px;
         }
 
             .two_part ul li a img {
@@ -2423,6 +2424,8 @@ header {
         .dropdown-content ul li a:hover {
             background: #dd3043;
             color: #fff;
+            margin: 10px;
+            border-radius: 7px;
         }
 
     .dropdown-content a {
@@ -2889,12 +2892,14 @@ header {
 .shipmenu .menu ul li a {
     height: 34px;
 }
+
 .shipmenu .pgnam {
     height: 34px;
     width: 100%;
     padding: 8px;
     border: 0;
 }
+
 .shipmenu .menu ul li {
     margin: 0 0 7px 0;
 }
@@ -2919,13 +2924,26 @@ header {
 
         .common_txt ul li {
             list-style-type: none;
-            font-size: 15px;
-            line-height: 28px;
-            color: #747474;
-            font-weight: 300;
         }
+
+            .common_txt ul li a {
+                font-size: 15px;
+                line-height: 28px;
+                color: #747474;
+                font-weight: 300;
+            }
 
             .common_txt ul li span {
                 color: #e90000;
                 font-weight: 500;
+                padding-right: 10px;
             }
+
+.sitxt {
+    font-size: 25px;
+    padding-left: 13px;
+}
+
+.bnr_bottom_sec a {
+    color: #000;
+}
