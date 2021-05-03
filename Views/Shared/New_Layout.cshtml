@@ -109,7 +109,9 @@
                 <div class="menu">
                     @Html.Action("MenuLayout", "Home")
 
-                    @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser" || Session["Role"].ToString() == "ShipAdmin")
+                    @*--remove the quoted condition ' || Session["Role"].ToString() == "ShipAdmin"' on 2nd May 2021 AS-----*@
+
+                    @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
                     {
                         <div> &nbsp;</div>
 
