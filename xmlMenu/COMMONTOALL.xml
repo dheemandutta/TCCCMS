@@ -116,7 +116,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPMB">6. Main Body</filename> -->
 			</foldername>
 			
-			<foldername actionname="TOM" description="TOM" name="11. TOM">
+			<foldername actionname="TOM" description="Tanker Operation Manual" name="11. TOM">
 				 <filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMTCPM">Chapter 1 - The cargo, pertoleum _ its nature</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMCDMT">Chapter 2 - Construction _ Design Of The Modern Tanker  </filename>
 				<foldername actionname="" description="" name="Chapter 3 Cargo Systems and Equipment">

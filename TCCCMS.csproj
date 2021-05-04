@@ -2355,6 +2355,7 @@
     <Content Include="Views\NoticeBoard\Notices.cshtml" />
     <Content Include="Views\NoticeBoard\SafetyCampaigns.cshtml" />
     <Content Include="Views\NoticeBoard\PDFViewer.cshtml" />
+    <Content Include="Views\Shared\_pvSearchAlertModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

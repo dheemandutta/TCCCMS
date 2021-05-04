@@ -14,7 +14,16 @@ namespace TCCCMS
         {
             string userType = HttpContext.Current.Session["UserType"].ToString();
             string UserRole = HttpContext.Current.Session["Role"].ToString();
-            
+            string ShipId = null;
+            if(HttpContext.Current.Session["DashboardShipId"].ToString() != null)
+            {
+                ShipId = HttpContext.Current.Session["DashboardShipId"].ToString();
+            }
+            else if(HttpContext.Current.Session["ShipId"].ToString() != null)
+            {
+                ShipId = HttpContext.Current.Session["ShipId"].ToString();
+            }
+
             // optional condition: I didn't wanted it to show on home and account controller
             if (helper.ViewContext.RouteData.Values["controller"].ToString() == "Home" ||
                 helper.ViewContext.RouteData.Values["controller"].ToString() == "Account")
@@ -28,10 +37,19 @@ namespace TCCCMS
             //breadcrumb.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
             //                                  "Index",
             //                                  helper.ViewContext.RouteData.Values["controller"].ToString()));
-
-            breadcrumb.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+            if(ShipId !=null)
+            {
+                breadcrumb.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                                              "ShipDashboard",
+                                              "Dashboard", new { id = ShipId }));
+            }
+            else
+            {
+                breadcrumb.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
                                               "Index",
                                               helper.ViewContext.RouteData.Values["controller"].ToString()));
+            }
+            
             breadcrumb.Append("</li>");
             if (helper.ViewContext.RouteData.Values["action"].ToString() != "Index")
             {

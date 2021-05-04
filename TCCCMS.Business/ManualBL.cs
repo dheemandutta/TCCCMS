@@ -13,13 +13,13 @@ namespace TCCCMS.Business
     public class ManualBL
     {
 
-        public List<Manual> SearchManuals(int pageIndex, ref int totalCount, int pageSize, int volumeId, string searchText)
+        public List<Manual> SearchManuals(int pageIndex, ref int totalCount, int pageSize, int volumeId, string searchText,int shipId)
         {
             List<Manual> manualsList = new List<Manual>();
 
             ManualDAL manualDAL = new ManualDAL();
 
-            manualsList = manualDAL.SearchManuals(pageIndex, ref totalCount, pageSize, volumeId, searchText);
+            manualsList = manualDAL.SearchManuals(pageIndex, ref totalCount, pageSize, volumeId, searchText,shipId);
 
             return manualsList;
         }

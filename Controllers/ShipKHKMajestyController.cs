@@ -23,7 +23,8 @@ namespace TCCCMS.Controllers
         {
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
-            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS.xml");
+            //string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS.xml");
+            string xPath = Server.MapPath(xmlPath);
             file.BodyHtml = manualBL.GenerateBodyContentHtml(xPath, 7);
             return View(file);
         }
