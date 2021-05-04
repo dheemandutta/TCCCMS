@@ -29,17 +29,39 @@ namespace TCCCMS.Controllers
             int totalrecords = 0;
             ManualViewModel fsvm = new ManualViewModel();
             List<Manual> manuals = new List<Manual>();
-           
+            int shipId = 0;
+
+            if(Session["ShipId"] !=null)
+            {
+                shipId = int.Parse(Session["ShipId"].ToString());
+            }
+
+                if (Request.QueryString["s"] != null)
+            {
+                text = Request.QueryString["s"].ToString().Trim();
+            }
+
+            if(Request.QueryString["vol"] != null)
+            {
+                volNo = Request.QueryString["vol"].ToString();
+            }
+
+
 
             Pagination pgn = new Pagination();
             pgn.CurrentPage = currentPage == 0 ? 1 : currentPage;
 
             string searchText;
-            if (text == null)
+            if (String.IsNullOrEmpty(text))
             {
-                searchText = "Business";
+                searchText = "";
                 //TempData["SearchText"] = "Business";
-                fsvm.SearchText = "Business";
+                //stop searching -- Dheeman
+                //fsvm.SearchText = "Business";
+                // show modal popup to user -- Dheeman 
+                //searchText = "";
+                
+                
             }
             else
             {
@@ -49,19 +71,20 @@ namespace TCCCMS.Controllers
                 TempData["SearchText"] = text;
                 searchText = text;
                 fsvm.SearchText = text;
+
+                manuals = manualBL.SearchManuals(currentPage, ref totalrecords, pgn.PageSize, Convert.ToInt32(volNo), searchText);
+                pgn.Count = manuals.Count();
+                fsvm.ManualList = manuals.Skip((pgn.CurrentPage - 1) * pgn.PageSize).Take(pgn.PageSize).ToList();
+                fsvm.VolumeId = Convert.ToInt32(volNo);
+                fsvm.Pagination = pgn;
+               
             }
 
-            manuals = manualBL.SearchManuals(currentPage, ref totalrecords, pgn.PageSize,Convert.ToInt32(volNo), searchText);
-
-            
-            pgn.Count       = manuals.Count();
-            fsvm.ManualList = manuals.Skip((pgn.CurrentPage - 1) * pgn.PageSize).Take(pgn.PageSize).ToList();
-            fsvm.VolumeId = Convert.ToInt32(volNo);
-            fsvm.Pagination = pgn;
-
+           
 
 
             return View(fsvm);
+
         }
         [HttpGet]
         public JsonResult GetSearchText()

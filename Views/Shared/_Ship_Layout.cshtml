@@ -71,7 +71,7 @@
 
             <div class="search">
                 <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
-                <a id="lnkAllSearch" class="btn btn-primary" href="@Url.Action("SearchList","Manual")"> <i class="fa fa-search"></i></a>
+                <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
 
             </div>
         </div>
@@ -130,9 +130,9 @@
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("Scripts", required: false)
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
 
-
-    <script>
+<script>
         $(function () {
             $('#txtAllSearctText').change(function () {
                 if ($(this).val() != "") {
@@ -149,8 +149,20 @@
                 $('#menuicon').toggleClass('show');
 
             });
+
+              $('#lnkAllSearch').click(function () {
+
+                  console.log('From Ship Layout');
+                  console.log($('#txtAllSearctText').val());
+                if ($('#txtAllSearctText').val() == '') {
+                    alert('You cannot search with a blank string');
+                }
+                else {
+                    window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() ;
+                }
+            });
         });
-    </script>
+</script>
 
 </body>
 </html>

@@ -29,7 +29,7 @@
                         <option value="8">Volume 8</option>
                     </select>
                     <input id="txtSearchText" class="form-control form-control-sm mr-3 w-50" type="text" placeholder="Search" aria-label="Search" />
-                    <a id="lnkSearch" class="btn btn-primary" href="@Url.Action("SearchList","Manual")"> Search</a>
+                    <a id="lnkSearch" class="btn btn-primary" href="#"> Search</a>
                 </form>
 
             </div>
@@ -42,17 +42,7 @@
 @section Scripts{
     <script src="~/js/SearchHtml/Search.js"></script>
     <script type="text/javascript">
-        //function getSelected() {
-        //    var selected = '';
 
-        //    if (window.getSelection) {
-        //        selected = window.getSelection().toString();
-        //    } else if (document.getSelection) {
-        //        selected = document.getSelection();
-        //    } else if (document.selection) {
-        //        selected = document.selection.createRange().text;
-        //    }
-        //}
         $(function () {
             $('#txtSearchText').change(function () {
 
@@ -60,21 +50,20 @@
             })
         });
         $(document).ready(function () {
-            //alert("Hi");
-            //$('p').live('mouseup', function () {
-            //    var selected = getSelected();
+            $('#lnkSearch').click(function () {
 
-            //    $(this).html($(this).html().replace(selected, '<span class="highlight">' + selected + '</span>'));
-            //});
-
-            //replaceText();
-            //$(function () {
-            //    var foundin = $('*:contains("Learn")');
-            //    console.log(foundin);
-            //});
+                  console.log('From Ship Layout');
+                console.log($('#txtSearchText').val());
+                if ($('#txtSearchText').val() == '') {
+                    alert('You cannot search with a blank string');
+                }
+                else {
+                    window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtSearchText').val() + '&vol=' + $("#drpVolume option:selected").val();
+                }
+            });
         });
 
-       
+
         function replaceText() {
 
             //$('body').highlight('welcome Learn');
