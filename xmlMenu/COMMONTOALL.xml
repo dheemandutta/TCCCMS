@@ -77,9 +77,9 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSMR">GCGS Manual Revisions</filename>  -->
 			</foldername>
 			
-			<foldername actionname="OMPCOV" description="Outbreak Mgmt Plan-COVID19" name="10. Outbreak Mgmt Plan-COVID19">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPCP">1. Cover Page</filename> 
-					<foldername actionname="" description="" name="7. Annexes">
+			<foldername actionname="OMPCOV" description="Outbreak Management Plan-COVID19" name="10. Outbreak Mgmt Plan-COVID19">
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPCP">1. Cover Page</filename>  -->
+					<foldername actionname="" description="Annexes" name="7. Annexes">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex A - Record of Health Check Onboard</filename> 
 						<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Annex A - Record of Health Check Onboard</filename>  -->
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPVMM">Annex A - TCC virus mitigation measures (Ship Master Version)</filename> 
@@ -238,6 +238,10 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMPE">Section 9 - Performance Evaluation</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMImprovement">Section 10 - Improvement</filename>
 				<foldername actionname="" description="" name="Appendix">
+					
+						<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMAContent">Appendix Content</filename> -->
+						
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMCM">Appendix  I - Correlation Matrix</filename> 
 						<foldername actionname="" description="" name="Appendix II - Forms _ Checklists">
 							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMFRM">EMS Form Retention Matrix</filename> 
 							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMAOCRRI">EMS01A - Analyis of Organization Context - Risk Register - Internal</filename> 
@@ -263,8 +267,6 @@
 							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMAECM">EMS16 - Appointment of Environmental Committee Member</filename> 
 							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMCOR">EMS17 - Compliance Obligation Register</filename> 
 						</foldername>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMCM">Appendix  I - Correlation Matrix</filename> 
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMAContent">Appendix Content</filename>
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMTM">Appendix III  - Trainng Matrix</filename> 
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMTS">Appendix IV - Trainng Scope</filename> 
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMGP">Appendix V - Green Pledge</filename> 
@@ -295,7 +297,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMRMT">Chapter 17 - Risk Management - Travel</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMIVA">Chapter 18 - Internal Verification Audit</filename>
 				<foldername actionname="" description="" name="Annexes">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMAContent">Annex - Content</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMAContent">Annex - Content</filename> -->
 					<foldername actionname="" description="" name="Annex A - Manning Forms">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMFM">Manning Form Matrix</filename> 
 						<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">MM01 - Biodata Form</filename>   -->
