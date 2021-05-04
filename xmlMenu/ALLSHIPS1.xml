@@ -2,7 +2,7 @@
 	<ships>
 		<ship shipnumber="1" name="KHK Vision" controllername="ShipKHKVision">
 			<foldername description="SOPEP" actionname="SOPEP" name="3. SOPEP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPIntroduction">Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS1Preamble">Section 1 - Preamble</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2RR">Section 2 - Reporting requirements</filename>
@@ -79,7 +79,7 @@
 			</foldername>
 			<foldername description="Blast Water Management Plan" actionname="BWMP" name="5. KHKV BWMP">
 				
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPS1Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPS2Definition">Section 2 - Definition</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPS3SPS">Section 3 - Ship's Particular and System</filename>
@@ -205,7 +205,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">ONE PDF-VOC-KHKV-15Oct20</filename>
 			</foldername>
 			<foldername description="MSMP and LMP" actionname="MSMPLMP" name="13. MSMP_LMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPSPIntroduction">Introduction (KHKV)</filename>
 				<foldername description="" actionname="" name="Section 1 - MOORING SYSTEM MANAGEMENT PLAN (MSMP)">
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHKV)</filename>
@@ -365,7 +365,7 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS2PO">Section 2 - Principles of Operation</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS3RR">Section 3 - Roles and Responsibilities</filename>
@@ -383,7 +383,7 @@
 				
 			</foldername>
 			<foldername description="Biofouling Management Plan" actionname="BMP" name="18. Biofouling Mgmt Plan">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPVP">KHKV Vessel's Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPDefinition">Section 2 - Definition</filename>
@@ -445,7 +445,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPCSGS">Appendix G - Conversion of Specific Gravity to Salinity for BW Reg Mgmt</filename>
 			</foldername>
 			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">KHKV Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPIntroduction">Section 1 - Introduction</filename>
@@ -500,7 +500,7 @@
 			</foldername>
 			<foldername description="Emergency Towing Arrangement" actionname="ETA" name="21. KHKV ETA"> 
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETACP">Appendix - Cover Page</filename> -->
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAContents">Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAContents">Contents</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETACover">Cover- KHK Vision</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAMR">Manual Revision (KHKV)</filename> -->
 				
@@ -517,7 +517,7 @@
 				</foldername>
 			</foldername>
 			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">KHKV Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPPolicy">Section 2 - Policy</filename>
@@ -532,7 +532,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPDocumentation">Section 11 - Documentation</filename>
 				<foldername description="" actionname="" name="Appendix">
 					
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAContent">Appendix Content</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAContent">Appendix Content</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix I - EEOI Baseline and EPI Form and Sample</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAEA">Appendix II - Analysis of Energy Activity</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPEEPSR">Appendix III Energy Efficiency Programme-Sample and Record</filename>
@@ -546,7 +546,7 @@
 				
 			</foldername>
 			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">KHKV Vessel's Particulars</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Scope">Section 2 - Scope</filename>
@@ -560,7 +560,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2RR">Section 10 - Roles and Responsbilities</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Documentation">Section 11 - Documentation</filename>
 				<foldername description="" actionname="" name="Appendix">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2AContents">Appendix Content</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2AContents">Appendix Content</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2TF">Appendix A - Types of Fuel</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2ADRF">Appendix B - Annual Data Reporting Format for DCS</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2SBDNS">Appendix C-1 - Sample of the BDN Summaries</filename>
@@ -634,7 +634,7 @@
 		
 		<ship shipnumber="2" name="KWK Excelsus" controllername="ShipKWKExcelsus">
 			<foldername description="SOPEP" actionname="SOPEP" name="3. SOPEP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPIntroduction">Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS1Preamble">Section 1 - Preamble</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2RR">Section 2 - Reporting requirements</filename>
@@ -675,7 +675,7 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="STS Transfer Operation Plan" actionname="STS" name="4. KWEX STS">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename> -->
 				<foldername description="" actionname="" name="Part A - MAIN DOCUMENT">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSIntroduction">PART A 1-INTRODUCTION (KWEX)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSSP">PART A 2-SHIP PARTICULAR (KWEX)</filename>
@@ -749,7 +749,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-address update (ABS endorsed 19Dec17)</filename>
 			</foldername>
 			<foldername description="MSMP and LMP" actionname="MSMPLMP" name="13. MSMP_LMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPSPIntroduction">Introduction (KWEX)</filename>
 				<foldername description="" actionname="" name="Section 1 - MOORING SYSTEM MANAGEMENT PLAN (MSMP)">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KWEX)</filename>
@@ -868,7 +868,7 @@
 			</foldername>
 			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
 				
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS2PO">Section 2 - Principles of Operation</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS3RR">Section 3 - Roles and Responsibilities</filename>
@@ -892,7 +892,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWMR">Manual Revision</filename> -->
 			</foldername>
 			<foldername description="Biofouling Management Plan" actionname="BMP" name="18. Biofouling Mgmt Plan">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPDefinition">Section 2 - Definition</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPObjectives">Section 3 - Objectives</filename>
@@ -970,7 +970,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
 			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">KWEX Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPIntroduction">Section 1 - Introduction</filename>
@@ -1022,7 +1022,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA-Used Batteries regarded as E-Waste (05Apr18)-filed in front of GMP</filename> -->
 				</foldername>
 			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">KWEX Vessel's Particulars</filename>	
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPPolicy">Section 2 - Policy</filename>
@@ -1063,7 +1063,7 @@
 			
 			</foldername>
 			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">KWEX Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Scope">Section 2 - Scope</filename>
@@ -1152,7 +1152,7 @@
 		
 		<ship shipnumber="3" name="CSK Vanguard" controllername="ShipCSKVanguard">
 			<foldername description="SOPEP" actionname="SOPEP" name="3. SOPEP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPIntroduction">Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS1Preamble">Section 1 - Preamble</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2RR">Section 2 - Reporting requirements</filename>
@@ -1409,7 +1409,7 @@
 			</foldername>
 			<foldername description="Biofouling Management Plan" actionname="BMP" name="18. Biofouling Mgmt Plan">
 				
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPDefinition">Section 2 - Definition</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPObjectives">Section 3 - Objectives</filename>
@@ -1487,7 +1487,7 @@
 			</foldername>
 			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
 			
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">CSVA Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPIntroduction">Section 1 - Introduction</filename>
@@ -1579,7 +1579,7 @@
 			
 			</foldername>
 			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">CSVA Vessel's Particulars </filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Scope">Section 2 - Scope</filename>
@@ -1593,7 +1593,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2RR">Section 10 - Roles and Responsbilities</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Documentation">Section 11 - Documentation</filename>
 				<foldername description="" actionname="" name="Appendix">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2AContents">Appendix Content</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2AContents">Appendix Content</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2TF">Appendix A - Types of Fuel</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2ADRF">Appendix B - Annual Data Reporting Format for DCS</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2SBDNS">Appendix C-1 - Sample of the BDN Summaries</filename>
@@ -1665,7 +1665,7 @@
 		
 		<ship shipnumber="4" name="CSK Valiant" controllername="ShipCSKValiant">
 			<foldername description="SOPEP" actionname="SOPEP" name="3. SOPEP"><!-- 3. SOPEP -->
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPIntroduction">Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS1Preamble">Section 1 - Preamble</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2RR">Section 2 - Reporting requirements</filename>
@@ -1704,7 +1704,7 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="STS Transfer Operation Plan" actionname="STS" name="4. CSVL STS">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename> -->
 				<foldername description="" actionname="" name="Part A - MAIN DOCUMENT">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSIntroduction">PART A 1-INTRODUCTION (CSVL)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSSP">PART A 2-SHIP PARTICULAR (CSVL)</filename>
@@ -1777,7 +1777,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-address update (ABS endorsed 09Dec17)</filename>
 			</foldername>
 			<foldername description="MSMP and LMP" actionname="MSMPLMP" name="13. MSMP_LMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPSPIntroduction">Introduction (CSVL)</filename>
 				<foldername description="" actionname="" name="Section 1 - MOORING SYSTEM MANAGEMENT PLAN (MSMP)">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (CSVL)</filename>
@@ -1916,7 +1916,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWMR">Manual Revision</filename> -->
 			</foldername> 
 			<foldername description="Biofouling Management Plan" actionname="BMP" name="18. Biofouling Mgmt Plan">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPDefinition">Section 2 - Definition</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPObjectives">Section 3 - Objectives</filename>
@@ -1995,7 +1995,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
 			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">CSVL Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPIntroduction">Section 1 - Introduction</filename>
@@ -2048,7 +2048,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">4. CSVL ETA 04Aug17</filename>
 			</foldername>
 			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">CSVL Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPPolicy">Section 2 - Policy</filename>
@@ -2062,7 +2062,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPTraining">Section 10 - Training</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPDocumentation">Section 11 - Documentation</filename>
 				<foldername description="" actionname="" name="Appendix">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAContent">Appendix Content</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAContent">Appendix Content</filename> -->
 					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix I - EEOI Baseline and EPI Form and Sample</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix I - EEOI Baseline and EPI Form and Sample</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAEA">Appendix II - Analysis of Energy Activity</filename>
@@ -2093,7 +2093,7 @@
 			
 			</foldername>
 			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">CSVL Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Scope">Section 2 - Scope</filename>
@@ -2108,7 +2108,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Documentation">Section 11 - Documentation</filename>
 				
 				<foldername description="" actionname="" name="Appendix">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2AContents">Appendix Content</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2AContents">Appendix Content</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2TF">Appendix A - Types of Fuel</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2ADRF">Appendix B - Annual Data Reporting Format for DCS</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2SBDNS">Appendix C-1 - Sample of the BDN Summaries</filename>
@@ -2181,7 +2181,7 @@
 		
 		<ship shipnumber="5" name="CSK Endeavour" controllername="ShipCSKEndeavour">
 			<foldername description="SOPEP" actionname="SOPEP" name="3. SOPEP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPSP">Ship's Particulars (CSEN)</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPIntroduction">Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS1Preamble">Section 1 - Preamble</filename>
@@ -2222,7 +2222,7 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="STS Transfer Operation Plan" actionname="STS" name="4. CSEN STS">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename> -->
 				<foldername description="" actionname="" name="Part A - MAIN DOCUMENT">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSIntroduction">PART A 1-INTRODUCTION (CSEN)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSSP">PART A 2-SHIP PARTICULAR (CSEN)</filename>
@@ -2298,7 +2298,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-address update (ABS endorsed 13Jan8)</filename>
 			</foldername>
 			<foldername description="MSMP and LMP" actionname="MSMPLMP" name="13. MSMP_LMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPSPIntroduction">Introduction (CSEN)</filename>
 				<foldername description="" actionname="" name="Section 1 - MOORING SYSTEM MANAGEMENT PLAN (MSMP)">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (CSEN)</filename>
@@ -2411,7 +2411,7 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS2PO">Section 2 - Principles of Operation</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS3RR">Section 3 - Roles and Responsibilities</filename>
@@ -2437,7 +2437,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWMR">Manual Revision</filename> -->
 			</foldername>
 			<foldername description="Biofouling Management Plan" actionname="BMP" name="18. Biofouling Mgmt Plan">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPDefinition">Section 2 - Definition</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPObjectives">Section 3 - Objectives</filename>
@@ -2516,7 +2516,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
 			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">CSEN Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPIntroduction">Section 1 - Introduction</filename>
@@ -2571,7 +2571,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">5. CSEN ETA 24Aug17</filename>
 			</foldername>
 			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">CSEN Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPPolicy">Section 2 - Policy</filename>
@@ -2608,7 +2608,7 @@
 			
 			</foldername>
 			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">CSEN Vessel's Particulars</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Scope">Section 2 - Scope</filename>
@@ -2624,7 +2624,7 @@
 				
 				
 				<foldername description="" actionname="" name="Appendix">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2AContents">Appendix Content</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2AContents">Appendix Content</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2TF">Appendix A - Types of Fuel</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2ADRF">Appendix B - Annual Data Reporting Format for DCS</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2SBDNS">Appendix C-1 - Sample of the BDN Summaries</filename>
@@ -2697,7 +2697,7 @@
 		
 		<ship shipnumber="6" name="KHK Empress" controllername="ShipKHKEmpress">
 			<foldername description="SOPEP" actionname="SOPEP" name="3. SOPEP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPSP">Ship's Particulars (KHEM)</filename>	
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPIntroduction">Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS1Preamble">Section 1 - Preamble</filename>
@@ -2741,7 +2741,7 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="STS Transfer Operation Plan" actionname="STS" name="4. KHEM STS">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename> -->
 				<foldername description="" actionname="" name="Part A - MAIN DOCUMENT">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSIntroduction">PART A 1-INTRODUCTION (KHEM)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSSP">PART A 2-SHIP PARTICULAR (KHEM)</filename><filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSP3OM">PART A 3-STS OPERATION AND MANAGEMENT</filename>
@@ -2821,7 +2821,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KHK Empress_9830965</filename>
 			</foldername>
 			<foldername description="MSMP and LMP" actionname="MSMPLMP" name="13. MSMP_LMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPSPIntroduction">Introduction (KHMA)</filename>
 				<foldername description="" actionname="" name="Section 1 - MOORING SYSTEM MANAGEMENT PLAN (MSMP)">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHEM)</filename>
@@ -2946,7 +2946,7 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">	
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS2PO">Section 2 - Principles of Operation</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS3RR">Section 3 - Roles and Responsibilities</filename>
@@ -2972,7 +2972,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWMR">Manual Revision</filename> -->
 			</foldername>
 			<foldername description="Biofouling Management Plan" actionname="BMP" name="18. Biofouling Mgmt Plan">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPVP">KHEM Vessel's Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPDefinition">Section 2 - Definition</filename>
@@ -3057,7 +3057,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
 			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">KHEM Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPIntroduction">Section 1 - Introduction</filename>
@@ -3168,7 +3168,7 @@
 					
 				<foldername description="" actionname="" name="Appendix">
 					
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAContent">Appendix Content</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAContent">Appendix Content</filename> -->
 					<!-- new actionname added below, it doesnot exist in html bt located in DOC -->
 					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="SEEMPAEBEFS">Appendix I - EEOI Baseline and EPI Form and Sample</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="SEEMPAEBEFS">Appendix I - EEOI Baseline and EPI Form and Sample</filename>
@@ -3207,7 +3207,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2RR">Section 11 - Documentation</filename>
 				
 				<foldername description="" actionname="" name="Appendix">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2AContents">Appendix Content</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2AContents">Appendix Content</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2TF">Appendix A - Types of Fuel</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2ADRF">Appendix B - Annual Data Reporting Format for DCS</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2SBDNS">Appendix C-1 - Sample of the BDN Summaries</filename>
@@ -3276,7 +3276,7 @@
 		
 		<ship shipnumber="7" name="KHK Majesty" controllername="ShipKHKMajesty">
 			<foldername description="SOPEP" actionname="SOPEP" name="3. SOPEP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPSP">Ship's Particulars (KHMA)</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPIntroduction">Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS1Preamble">Section 1 - Preamble</filename>
@@ -3320,7 +3320,7 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="STS Transfer Operation Plan" actionname="STS" name="4. KHMA STS">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename> -->
 				<foldername description="" actionname="" name="Part A - MAIN DOCUMENT">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSIntroduction">PART A 1-INTRODUCTION (KHMA)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSSP">PART A 2-SHIP PARTICULAR (KHMA)</filename>
@@ -3396,7 +3396,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KHK Majesty_9830977</filename>
 			</foldername>
 			<foldername description="MSMP and LMP" actionname="MSMPLMP" name="13. MSMP_LMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPSPIntroduction">Introduction (KHMA)</filename>
 				<foldername description="" actionname="" name="Section 1 - MOORING SYSTEM MANAGEMENT PLAN (MSMP)">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHEM)</filename>
@@ -3547,7 +3547,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWMR">Manual Revision</filename> -->
 			</foldername>
 			<foldername description="Biofouling Management Plan" actionname="BMP" name="18. Biofouling Mgmt Plan">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPVP">KHMA Vessel's Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPIntroduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPDefinition">Section 2 - Definition</filename>
@@ -3631,7 +3631,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 			</foldername>
 			<foldername description="Garbage Management Plan" actionname="GMP" name="20. GMP">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPVP">KHMA Vessel Particular</filename>
 				<foldername description="" actionname="" name="Main Body">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPIntroduction">Section 1 - Introduction</filename>
@@ -3682,7 +3682,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA-Used Batteries regarded as E-Waste (05Apr18)-filed in front of GMP</filename> -->
 			</foldername>
 			<foldername description="Emergency Towing Arrangement" actionname="ETA" name="21. KHMA-ETA">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAContents">Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAContents">Contents</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAGeneral">Section 1- General</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETASSD">Section 2 - Ship Specific Data</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETADTPM">Section 3 - Towing Patterns Matrix</filename>
@@ -3716,7 +3716,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPDocumentation">Section 11 - Documentation</filename>
 				                                                 
 				<foldername description="" actionname="" name="Appendix">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAContent">Appendix Content</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAContent">Appendix Content</filename> -->
 					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix I - EEOI Baseline and EPI Form and Sample</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix I - EEOI Baseline and EPI Form and Sample</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAEA">Appendix II - Analysis of Energy Activity</filename>
@@ -3741,7 +3741,7 @@
 			
 			</foldername>
 			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">KHMA Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Scope">Section 2 - Scope</filename>
