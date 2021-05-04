@@ -25,7 +25,7 @@ namespace TCCCMS.Controllers
         {
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
-            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS.xml");
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
             file.BodyHtml = manualBL.GenerateBodyContentHtml(xPath, 1);
             return View(file);
         }
@@ -108,7 +108,8 @@ namespace TCCCMS.Controllers
             ShipManual file = new ShipManual();
             //string filePath = "../ManualsPDF/Volume I/";
             string filePath = "../ShipManualsPDF/" + relPDFPath + "/";
-            filePath = filePath + fileName + ".pdf";
+            // filePath = filePath + fileName + ".pdf#toolbar=0&zoom=137";//----#zoom=85&scrollbar=0&toolbar=0&navpanes=0
+            filePath = filePath + fileName + ".pdf#zoom=137";
             file.PdfName = fileName;
             file.PdfPath = filePath;
             return View(file);

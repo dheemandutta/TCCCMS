@@ -97,7 +97,7 @@ namespace TCCCMS.Controllers
                 Session["UserName"]     = lUser.UserName.ToString();
                 Session["Email"]        = lUser.Email.ToString();
                 Session["ShipId"]       = lUser.ShipId.ToString();
-
+                Session["DashboardShipId"] = lUser.ShipId.ToString();
                 if (!string.IsNullOrEmpty(lUser.ShipName))
                     Session["ShipName"] = lUser.ShipName.ToString();
                 else

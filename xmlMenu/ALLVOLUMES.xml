@@ -432,7 +432,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LCE">29.3 - Annex A - List of Critical Equipment</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GTI">30-Guidelines for Tanker Inspection</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RecyclingOfVessel">31-Recycling of Vessel</filename>
-			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="EGCS">32-Exhaust Gas Cleaning System</filename> -->
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EGCS">32-Exhaust Gas Cleaning System</filename> 
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SCRS">33-Selective Catalytic Reduction System</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SPM">34-Shipboard Procurement Management</filename>
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. V Manual</filename> -->

@@ -10,6 +10,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @RenderSection("Styles", required: false)
+
     <link rel="shortcut icon" href="~/flagimg1.ico" type="image/x-icon" />
     <link href="~/css/bootstrap.css" rel="stylesheet">
     <link href="~/css/style.css" rel="stylesheet">
@@ -82,7 +83,7 @@
 
             <div class="search">
                 <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
-                <a id="lnkAllSearch" class="btn btn-primary" href="@Url.Action("SearchList","Manual")"> <i class="fa fa-search"></i></a>
+                <a id="lnkAllSearch" class="btn btn-primary"  href="#"> <i class="fa fa-search"></i></a>
 
                 @*<button type="submit" class="searchButton">
                         <i class="fa fa-search"></i>
@@ -109,7 +110,9 @@
                 <div class="menu">
                     @Html.Action("MenuLayout", "Home")
 
-                    @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser" || Session["Role"].ToString() == "ShipAdmin")
+                    @*--remove the quoted condition ' || Session["Role"].ToString() == "ShipAdmin"' on 2nd May 2021 AS-----*@
+
+                    @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
                     {
                         <div> &nbsp;</div>
 
@@ -163,9 +166,9 @@
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("Scripts", required: false)
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
 
-
-    <script>
+<script>
         $(function () {
             $('#txtAllSearctText').change(function () {
                 if ($(this).val() != "") {
@@ -182,8 +185,19 @@
                 $('#menuicon').toggleClass('show');
 
             });
+
+            $('#lnkAllSearch').click(function () {
+                
+                console.log($('#txtAllSearctText').val());
+                if ($('#txtAllSearctText').val() == '') {
+                    alert('You cannot search with a blank string');
+                }
+                else {
+                    window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val();
+                }
+            });
         });
-    </script>
+</script>
 
 </body>
 
