@@ -53,7 +53,7 @@ namespace TCCCMS.Controllers
 
             string searchText;
             if (String.IsNullOrEmpty(text))
-            string searchText="";
+                searchText = text;
             if (text == null)
             {
                 searchText = "";
@@ -74,7 +74,7 @@ namespace TCCCMS.Controllers
                 searchText = text;
                 fsvm.SearchText = text;
 
-                manuals = manualBL.SearchManuals(currentPage, ref totalrecords, pgn.PageSize, Convert.ToInt32(volNo), searchText);
+                manuals = manualBL.SearchManuals(currentPage, ref totalrecords, pgn.PageSize, Convert.ToInt32(volNo), searchText, shipId);
                 pgn.Count = manuals.Count();
                 fsvm.ManualList = manuals.Skip((pgn.CurrentPage - 1) * pgn.PageSize).Take(pgn.PageSize).ToList();
                 fsvm.VolumeId = Convert.ToInt32(volNo);

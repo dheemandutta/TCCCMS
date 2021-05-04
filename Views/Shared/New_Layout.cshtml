@@ -83,7 +83,7 @@
 
             <div class="search">
                 <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
-                <a id="lnkAllSearch" class="btn btn-primary"  href="#"> <i class="fa fa-search"></i></a>
+                <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
 
                 @*<button type="submit" class="searchButton">
                         <i class="fa fa-search"></i>
@@ -97,7 +97,7 @@
 
         <div class="container body-content">
             @RenderBody()
-         
+
             <!--<footer>
                 <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
             </footer>-->
@@ -133,19 +133,21 @@
 
 
 
-        <div class="container body-content">
-            <div class="footer">
-                <div>&nbsp; &nbsp; &nbsp;</div>
-                <ul>
-                    <li disabled><strong>Uncontrolled when printed</strong></li>
-                    <li>Revision 0.0</li>
-                    <li>Date:01-May -21</li>
-                    <li><a href="#">View Revision Histroy</a></li>
-                </ul>
-                <div>&nbsp; &nbsp; &nbsp;</div>
-            </div>
+    <div class="container body-content">
+        <div class="footer">
+            <div>&nbsp; &nbsp; &nbsp;</div>
+            <ul>
+                <li disabled><strong>Uncontrolled when printed</strong></li>
+                <li>Revision 0.0</li>
+                <li>Date:01-May -21</li>
+                <li><a href="#">View Revision Histroy</a></li>
+            </ul>
+            <div>&nbsp; &nbsp; &nbsp;</div>
         </div>
-    
+    </div>
+
+
+    @Html.Partial("_pvSearchAlertModal");
 
 
 
@@ -166,9 +168,9 @@
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("Scripts", required: false)
-<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
 
-<script>
+    <script>
         $(function () {
             $('#txtAllSearctText').change(function () {
                 if ($(this).val() != "") {
@@ -187,17 +189,19 @@
             });
 
             $('#lnkAllSearch').click(function () {
-                
+
                 console.log($('#txtAllSearctText').val());
                 if ($('#txtAllSearctText').val() == '') {
-                    alert('You cannot search with a blank string');
+                    //alert('You cannot search with a blank string');
+                    //$('#searchAlertModal').toggleClass('hidden');
+                    $('#searchAlertModal').modal('show');
                 }
                 else {
                     window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val();
                 }
             });
         });
-</script>
+    </script>
 
 </body>
 

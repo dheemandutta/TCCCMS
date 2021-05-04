@@ -114,6 +114,8 @@
         </div>
     </div>
 
+    @Html.Partial("_pvSearchAlertModal")
+
     <script src="~/Scripts/bootstrap.min.js"></script>
 
     <script>
@@ -130,9 +132,10 @@
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("Scripts", required: false)
-<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
 
-<script>
+    <script>
         $(function () {
             $('#txtAllSearctText').change(function () {
                 if ($(this).val() != "") {
@@ -155,14 +158,16 @@
                   console.log('From Ship Layout');
                   console.log($('#txtAllSearctText').val());
                 if ($('#txtAllSearctText').val() == '') {
-                    alert('You cannot search with a blank string');
+                    //alert('You cannot search with a blank string');
+                    $('#searchAlertModal').modal('show');
+                    //alert('You cannot search with a blank string');
                 }
                 else {
                     window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() ;
                 }
             });
         });
-</script>
+    </script>
 
 </body>
 </html>

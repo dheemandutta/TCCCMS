@@ -18,7 +18,7 @@ namespace TCCCMS.Data
         string connectionString = ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString;
         //SqlConnection con ;
 
-        public List<Manual> SearchManuals(int pageIndex, ref int totalCount, int pageSize, int volumeId,string serachText)
+        public List<Manual> SearchManuals(int pageIndex, ref int totalCount, int pageSize, int volumeId,string serachText,int shipId)
         {
             List<Manual> manualsList = new List<Manual>();
 
@@ -33,6 +33,7 @@ namespace TCCCMS.Data
                     //cmd.Parameters["@TotalCount"].Direction = ParameterDirection.Output;
                     cmd.Parameters.AddWithValue("@VolumeId", volumeId);
                     cmd.Parameters.AddWithValue("@SearchText", serachText);
+                    cmd.Parameters.AddWithValue("@ShipId", shipId);
                     con.Open();
 
                     DataSet ds = new DataSet();
