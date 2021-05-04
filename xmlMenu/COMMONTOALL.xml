@@ -77,7 +77,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSMR">GCGS Manual Revisions</filename>  -->
 			</foldername>
 			
-			<foldername actionname="OMPCOV" description="Outbreak Mgmt Plan-COVID19" name="10. Outbreak Mgmt Plan-COVID19">
+			<foldername actionname="OMPCOV" description="Outbreak Management Plan-COVID19" name="10. Outbreak Mgmt Plan-COVID19">
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPCP">1. Cover Page</filename>  -->
 					<foldername actionname="" description="Annexes" name="7. Annexes">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex A - Record of Health Check Onboard</filename> 
