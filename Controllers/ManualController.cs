@@ -34,7 +34,7 @@ namespace TCCCMS.Controllers
             Pagination pgn = new Pagination();
             pgn.CurrentPage = currentPage == 0 ? 1 : currentPage;
 
-            string searchText;
+            string searchText="";
             if (text == null)
             {
                 searchText = "Business";
