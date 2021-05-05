@@ -1,17 +1,34 @@
 ﻿var stxt = "Company";
 $(document).ready(function () {
-    GetSearchText();
     
-
     console.log(stxt + "  after");
     //HighlightText(stxt);
-});
 
+    GetSearchText();
+});
 
 function HighlightText(x) {
     $('.searchdContent').highlight(x);
+    console.log('from highlight');
     console.log(x);
 }
+
+function replaceText(searchword) {
+
+    $("body").find(".highlight").removeClass("highlight");
+
+    //var searchword = $("#searchtxt").val();
+
+    var custfilter = new RegExp(searchword, "ig");
+    var repstr = "<span class='highlight'>" + searchword + "</span>";
+
+    if (searchword != "") {
+        $('body').each(function () {
+            $(this).html($(this).html().replace(custfilter, repstr));
+        })
+    }
+}
+
 function GetSearchText() {
     $.ajax({
         //url: '@Url.Action("SearchPage", "Home")',
@@ -22,9 +39,12 @@ function GetSearchText() {
         success: function (data) {
             stxt = data;
             console.log(stxt);
-            console.log("b4hilt")
+            console.log("b4hightlite")
             //stxt = ['company', 'business'];
-            HighlightText(stxt); console.log("after hglt");
+           // HighlightText(stxt);
+            console.log("after highlite--" + stxt);
+            //$('.searchdContent').highlight(stxt);
+            replaceText(stxt);
         },
         //error: function (data) {
         //    console.log(data);

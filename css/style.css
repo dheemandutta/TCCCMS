@@ -2947,3 +2947,9 @@ header {
 .bnr_bottom_sec a {
     color: #000;
 }
+
+.texthighlight {
+    background: #00FF00;
+    padding: 1px;
+    border: #00CC00 dotted 1px;
+}
