@@ -120,7 +120,7 @@ namespace TCCCMS.Controllers
             //var folderPath = Path.Combine(path, relformPath);
             //var filePath = Path.Combine(path, fileName);
             var filePath = Directory.GetFiles(path, "*.doc?")
-                                                        .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")).First();
+                                                        .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx") || s.Contains(fileName + ".xls")).First();
             var memory = new MemoryStream();
             using (var stream = new FileStream(filePath, FileMode.Open))
             {

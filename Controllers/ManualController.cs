@@ -23,7 +23,7 @@ namespace TCCCMS.Controllers
         //{
         //    return View();
         //}
-        public ActionResult SearchList(int currentPage = 1, string volNo = "0", string text = null)
+        public ActionResult SearchList(int currentPage = 1, string volNo = "-1", string text = null)
         {
             ManualBL manualBL = new ManualBL();
             int totalrecords = 0;
