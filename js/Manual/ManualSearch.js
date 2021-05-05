@@ -15,7 +15,7 @@ function HighlightText(x) {
 
 function replaceText(searchword) {
 
-    $("body").find(".highlight").removeClass("highlight");
+    $(".searchdContent").find(".highlight").removeClass("highlight");
 
     //var searchword = $("#searchtxt").val();
 
@@ -23,7 +23,7 @@ function replaceText(searchword) {
     var repstr = "<span class='highlight'>" + searchword + "</span>";
 
     if (searchword != "") {
-        $('body').each(function () {
+        $('.searchdContent').each(function () {
             $(this).html($(this).html().replace(custfilter, repstr));
         })
     }
@@ -41,7 +41,7 @@ function GetSearchText() {
             console.log(stxt);
             console.log("b4hightlite")
             //stxt = ['company', 'business'];
-           // HighlightText(stxt);
+            //HighlightText(stxt);
             console.log("after highlite--" + stxt);
             //$('.searchdContent').highlight(stxt);
             replaceText(stxt);

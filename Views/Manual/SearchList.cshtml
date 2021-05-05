@@ -18,13 +18,18 @@
             border: #00CC00 dotted 1px;
         }
     </style>
+
 }
+
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+
+
 @*<h2>SearchList</h2>*@
-<div class="searchdContent">
+<div class="">
    
         <h2>Your search for "@(Model.SearchText)" returned @Model.Pagination.Count result(s).</h2>
 
-        <div class="container">
+        <div class="container searchdContent">
 
             @foreach (var item in Model.ManualList)
             {
@@ -127,6 +132,7 @@
 
 @section Scripts{
    
-    @*<script src="~/js/Manual/ManualSearch.js"></script>*@
+    <script src="~/js/Manual/ManualSearch.js"></script>
+
 
 }
