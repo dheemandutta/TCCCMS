@@ -232,7 +232,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PAP">Chapter 9 Preparation for arrival in port</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PreparingSea">Chapter 10 Preparing for Sea</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ManoeuvringData">Chapter 11 Manoeuvring Data</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S2Contents">Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S2Contents">Contents</filename> -->
 			</foldername>
 			<foldername actionname="" description="" name="Sec 3 Port Cargo Operations">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WKP">Chapter 1 Watch Keeping in Port</filename>
@@ -244,7 +244,8 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CargoDischarging">Chapter 7 Cargo Discharging</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BallastOperations">Chapter 8 Ballast Operations</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TankCleaning">Chapter 9 Tank Cleaning</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S3Contents">Contents</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IPGFO">Chapter 10 Inerting Purging and Gas-Freeing Operations</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S3Contents">Contents</filename> -->
 			</foldername>
 			<foldername actionname="" description="" name="Sec 4 Safety Inspection and Audits">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LSAI">Chapter 1 Life Saving Appliances Inspection</filename>
@@ -257,7 +258,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PSCI">Chapter 7 Port State Control Inspection</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMV">Chapter 8 Oil Major Vetting</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ImprovementProcess">Chapter 9 Improvement Process</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S4Content">Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S4Content">Content</filename> -->
 			</foldername>
 			<foldername actionname="" description="" name="Sec 5 Reporting Accidents and NC">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TINC">Chapter 1 Types of Incidents and NC</filename>
@@ -270,7 +271,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IncidentInvestigation">Chapter 3 Incident Investigation</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IncidentManagement">Chapter 4 Incident Management</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="JHRA">Chapter 5 Job Hazard and Risk Analyses</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S5Contents">Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S5Contents">Contents</filename> -->
 			</foldername>
 			<foldername actionname="" description="" name="Sec 6 Administration Management">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDC">Chapter 1 Document and Data Control</filename>
@@ -285,7 +286,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ListOfPublications">Chapter 10 List of Publications</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ListOfPosters">Chapter 11 List of Posters</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DelegationOfDuty">Chapter 12 Delegation of Duty</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S6Contents">Sec 6 Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S6Contents">Sec 6 Contents</filename> -->
 			</foldername>
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. IV Manual</filename> -->
 			<foldername actionname="" description="" name="Appendix">
@@ -365,7 +366,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SFCO">Standard Filing for Chief Officer </filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SFM">Standard Filing for Master</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SFSO">Standard Filing for Second Officer</filename>
-				<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Volume IV Appendix Contents</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Volume IV Appendix Contents</filename> -->
 
 			</foldername>
 		</volume>
@@ -658,7 +659,7 @@
 				<filename isdownloadable="" ismodify="">MA075-Port Mooring Operation Record - Alframax</filename>
 				<filename isdownloadable="" ismodify="">MA075-Port Mooring Operation Record - KHKV</filename>
 				<filename isdownloadable="" ismodify="">MA075-Port Mooring Operation Record - VLCC</filename>
-				<filename isdownloadable="" ismodify="">Section 3 - Content </filename>
+				<!-- <filename isdownloadable="" ismodify="">Section 3 - Content </filename> -->
 				<filename isdownloadable="" ismodify="">Section 3 - Maintenance </filename>
 			</foldername>
 			<foldername description="" actionname="NavigationManagement" name="Section 4-Navigation Management">
@@ -695,7 +696,7 @@
 				<filename isdownloadable="" ismodify="">NM026 - Passage Planning Electronic Chart</filename>
 				<filename isdownloadable="" ismodify="">NM028 - Echo Sounder Depth Comparison Form</filename>
 				<filename isdownloadable="" ismodify="">NM029 - VDR Review Report</filename>
-				<filename isdownloadable="" ismodify="">Section 4 - Content</filename>
+				<!-- <filename isdownloadable="" ismodify="">Section 4 - Content</filename> -->
 				<filename isdownloadable="" ismodify="">Section 4 - Navigation Management </filename>
 			</foldername>
 			<foldername description="" actionname="CargoOperation" name="Section 5-Cargo Operation">
@@ -750,7 +751,7 @@
 				<filename isdownloadable="" ismodify="">CO057 - Onboard Cargo Operation Audit Form</filename>
 				<filename isdownloadable="" ismodify="">CO058 - Cargo Sample Log</filename>
 				<filename isdownloadable="" ismodify="">CO059 - Record of Vapour Tightness Test</filename>
-				<filename isdownloadable="" ismodify="">Section 5 - Content</filename>
+				<!-- <filename isdownloadable="" ismodify="">Section 5 - Content</filename> -->
 			</foldername>
 			<foldername description="" actionname="SafetyMmgt" name="Section6-Safety Mmgt">
 				<filename isdownloadable="" ismodify="">Section 6 - Content</filename>
@@ -849,7 +850,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S4NMR">Section 4 - Navigation Management </filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S5CO">Section 5 - Cargo Operation</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S6SM">Section 6 - Safety Management</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S7Content">Section 7 - Content</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S7Content">Section 7 - Content</filename> -->
 			</foldername>
 			<!-- <filename isdownloadable="" ismodify="" doctype="" actionname="Manual">Vol. VIII Manual</filename> -->
 			
