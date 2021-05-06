@@ -38,9 +38,32 @@ namespace TCCCMS.Controllers
         {
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
             ShipManual file = new ShipManual();
-            file = manualBL.GetCommonToAllManual(controllerName, actionName);
-            if (formName != "")
+            //file = manualBL.GetCommonToAllManual(controllerName, actionName);
+            //if (formName != "")
+            //{
+            //    StringBuilder sb = new StringBuilder("<div><div style = 'height: 800px; overflow: scroll;' >");
+            //    sb.Append(file.BodyHtml);
+
+            //    sb.Append("</div>");
+            //    sb.Append("<div class='col-sm-12.><div class='row'><div class='col-sm-6'><a href='/" + controllerName + "/Download?fileName=");
+            //    sb.Append(formName + "&relformPath=" + relformPath + "' class='btn btn-info btn-sm' style='background-color: #e90000;' >Download</a></div></div></div>");
+            //    sb.Append("</div>");
+
+            //    file.BodyHtml = sb.ToString();
+            //}
+
+            //--------------------------------------------------------------------------------
+            if (formName == "")
             {
+                file = manualBL.GetCommonToAllManual(controllerName, actionName);
+            }
+            else
+            {
+                string filePath = "../CommonToAllManualsPDF/" + relformPath + "/";
+                filePath = filePath + formName + ".pdf#toolbar=0";
+                file.PdfName = formName;
+                file.PdfPath = filePath;
+                //-----------Not used old-------------
                 StringBuilder sb = new StringBuilder("<div><div style = 'height: 800px; overflow: scroll;' >");
                 sb.Append(file.BodyHtml);
 
@@ -48,9 +71,47 @@ namespace TCCCMS.Controllers
                 sb.Append("<div class='col-sm-12.><div class='row'><div class='col-sm-6'><a href='/" + controllerName + "/Download?fileName=");
                 sb.Append(formName + "&relformPath=" + relformPath + "' class='btn btn-info btn-sm' style='background-color: #e90000;' >Download</a></div></div></div>");
                 sb.Append("</div>");
+                //------End-----Not used old-------------
 
-                file.BodyHtml = sb.ToString();
+                //-------------------------------------------------------------------------
+                StringBuilder sb2 = new StringBuilder("<div class='row'>");
+                sb2.Append("<div class='col-sm-12 col-xs-12 marginTP10'>");
+                sb2.Append("<div class='card'>");
+                sb2.Append("<div class='col-sm-12 col-xs-12'>");
+                sb2.Append("<div class='row'>");
+                //------
+                sb2.Append("<p class='marginTP10'>");
+                sb2.Append("<div class='col-sm-10 col-xs-12'>");
+                sb2.Append("<label>" + formName + "</label>");
+                sb2.Append("</div>");
+
+                sb2.Append("<div class='col-sm-2 col-xs-12'>");
+                sb2.Append("<button type='button' class='btn btn-info btn-sm' style='background-color: #e90000;' data-toggle='modal' data-target='#formPreviewModal' >Preview</button>");
+                //sb2.Append("</div>");
+
+                //sb2.Append("<div class='col-sm-2 col-xs-12'>");
+                sb2.Append("<a href='/" + controllerName + "/Download?fileName=");
+                sb2.Append(formName + "&relformPath=" + relformPath + "' class='btn btn-info btn-sm' style='background-color: #e90000;' >Download</a>");
+
+                sb2.Append("</div>");
+                sb2.Append("</p>");
+                //-------
+                sb2.Append("\n");
+                sb2.Append("</div>");
+                sb2.Append("\n");
+                sb2.Append("</div>");
+                sb2.Append("\n");
+                sb2.Append("</div>");
+                sb2.Append("\n");
+                sb2.Append("</div>");
+                sb2.Append("\n");
+                sb2.Append("</div>");
+
+
+                //file.ManualBodyHtml = sb.ToString();
+                file.BodyHtml = sb2.ToString();
             }
+            //--------------------------------------------------------------------------------
 
             //TempData[actionName] = file.ManualBodyHtml;
             return View(file);
@@ -73,8 +134,14 @@ namespace TCCCMS.Controllers
             string path = Server.MapPath("~/CommonToAllManualsPDF/" + relformPath + "/");
             //var folderPath = Path.Combine(path, relformPath);
             //var filePath = Path.Combine(path, fileName);
-            var filePath = Directory.GetFiles(path, "*.doc?")
-                                    .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")).First();
+            //var filePath = Directory.GetFiles(path, "*.doc?")
+            //                        .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
+            //                                || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
+
+            var filePath = Directory.GetFiles(path, "*.*")
+                                    .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
+                                            || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
+
             var memory = new MemoryStream();
             using (var stream = new FileStream(filePath, FileMode.Open))
             {

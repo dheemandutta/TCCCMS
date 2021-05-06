@@ -114,9 +114,16 @@ namespace TCCCMS.Controllers
         }
         public FileResult Download(string fileName, string relformPath)
         {
-            string path = Server.MapPath("~/View/" + controllerName + "/");
-            var folderPath = Path.Combine(path, relformPath);
-            var filePath = Path.Combine(folderPath, fileName);
+            string path = Server.MapPath("~/ManualsPDF/" + relformPath + "/");
+            //var folderPath = Path.Combine(path, relformPath);
+            //var filePath = Path.Combine(path, fileName);
+            //var filePath = Directory.GetFiles(path, "*.doc?")
+            //                                            .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
+            //                                                    || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
+
+            var filePath = Directory.GetFiles(path, "*.*")
+                                                       .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
+                                                               || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
             var memory = new MemoryStream();
             using (var stream = new FileStream(filePath, FileMode.Open))
             {
