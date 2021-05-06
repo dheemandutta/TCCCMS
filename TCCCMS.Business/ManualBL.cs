@@ -276,6 +276,14 @@ namespace TCCCMS.Business
                         sb.Append("</br>");
 
                     }
+                    else if (type == "XLS")
+                    {
+                        if (isDownload == "YES")
+                        {
+                            sb.Append("<a href='/" + ctrlName + "/Pages?formName=" + filename + "&relformPath=" + relativePath + "' >");
+                        }
+                    }
+
 
                 }
                 else if (item.Name == "foldername")

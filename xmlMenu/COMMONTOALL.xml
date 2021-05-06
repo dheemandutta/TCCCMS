@@ -299,28 +299,41 @@
 				<foldername actionname="" description="" name="Annexes">
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMAContent">Annex - Content</filename> -->
 					<foldername actionname="" description="" name="Annex A - Manning Forms">
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMFM">Manning Form Matrix</filename> 
-						<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">MM01 - Biodata Form</filename>   -->
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MM01 - Biodata Form</filename> 
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMIAFMCO">MM02 - Interview and Approval Form - Master and Chief Officer</filename> 
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMIAFCESE">MM03 - Interview and Approval Form - Chief Engineer _ Second Engineer</filename> 
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMIAFJDO">MM04 - Interview and Approval Form - Junior Deck Officer</filename> 
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMIAFJEO">MM05 - Interview and Approval Form - Junior Engineer Officer</filename> 
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMAPSO">MM06 - Approval for Promotion for Senior officer</filename> 
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMAPJO">MM07 - Approval for Promotion for Junior officer</filename> 
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMSMSF">MM08 - SMS Familization</filename> 
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMDAD">MM09 - Drug _ Alcohol Declaration</filename> 
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMHORAP">MM010 - Handing Over Report Action Plan</filename> 
+						
+						<filename isdownloadable="YES" ismodify="" doctype="XLS" actionname="">MM01 - Biodata Form</filename>  
+						<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MM01 - Biodata Form</filename>  -->
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MMIAFMCO">MM02 - Interview and Approval Form - Master and Chief Officer</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MMIAFCESE">MM03 - Interview and Approval Form - Chief Engineer _ Second Engineer</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MMIAFJDO">MM04 - Interview and Approval Form - Junior Deck Officer</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MMIAFJEO">MM05 - Interview and Approval Form - Junior Engineer Officer</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MMAPSO">MM06 - Approval for Promotion for Senior officer</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MMAPJO">MM07 - Approval for Promotion for Junior officer</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MMSMSF">MM08 - SMS Familization</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MMDAD">MM09 - Drug _ Alcohol Declaration</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MMHORAP">MM010 - Handing Over Report Action Plan</filename> 
+						<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMFM">Manning Form Matrix</filename> -->
+						 <!-- ********************** Original Name in Db of the below line is Manning Form Matrix, reason of such change is content page********** -->
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMFM">Filing System and Retention Period Matrix - Manning Form</filename>
+					</foldername>
+					<foldername actionname="" description="" name="Annex B - Seafarer Employment Agreement">
+						
+					</foldername>
+					<foldername actionname="" description="" name="Annex C - STCW Convention and Code">
+						<filename isdownloadable="YES" ismodify="" doctype="XLS" actionname="">Table of the STCW 2010 Manila Amendments – Deck Officer</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="XLS" actionname="">Table of the STCW 2010 Manila Amendments – Engine Officer</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="XLS" actionname="">Table of the STCW 2010 Manila Amendments – Rating</filename> 
+						<filename isdownloadable="YES" ismodify="" doctype="XLS" actionname="">Table of the STCW 2010 Manila Amendments – Others</filename> 
 					</foldername>
 					
 					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Annex C - STCW Convention and Code</filename>  -->
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex C - STCW Convention and Code</filename> 
-					<foldername actionname="" description="" name="Annex D - Medical Exam Body">
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMSPEMEB">Annex D - Seafarer Pre Employment Medical Examination Body</filename> 
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Guidance to search Registered MP in HK</filename> 
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Indian - List of DG Shipping Approved Seafarer Medical Examination Body - Oct 2020</filename> 
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MSA approved medical examinar</filename> 
-						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">PRC - List of MSA Approved Seafarer Medical Examination Body - Nov 2019</filename> 
+					<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex C - STCW Convention and Code</filename>  -->
+					<foldername actionname="" description="" name="Annex D - Seafarer Pre Employment Medical Examination Body">
+						<!-- ********************** Original Name in Db of the below line is Annex D - Seafarer Pre Employment Medical Examination Body, reason of such change is content page********** -->
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMSPEMEB">Prescribed Doctors and Clinics for Company Medical</filename> 
+						<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Guidance to search Registered MP in HK</filename>  -->
+						<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Indian - List of DG Shipping Approved Seafarer Medical Examination Body - Oct 2020</filename>  -->
+						<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MSA approved medical examinar</filename>  -->
+						<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">PRC - List of MSA Approved Seafarer Medical Examination Body - Nov 2019</filename>  -->
 					</foldername>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMLMA">Annex E - List of Manning Agent</filename> 
 				</foldername>
