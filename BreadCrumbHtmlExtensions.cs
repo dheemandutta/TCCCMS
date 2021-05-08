@@ -15,13 +15,13 @@ namespace TCCCMS
             string userType = HttpContext.Current.Session["UserType"].ToString();
             string UserRole = HttpContext.Current.Session["Role"].ToString();
             string ShipId = null;
-            if(HttpContext.Current.Session["DashboardShipId"].ToString() != null)
-            {
-                ShipId = HttpContext.Current.Session["DashboardShipId"].ToString();
-            }
-            else if(HttpContext.Current.Session["ShipId"].ToString() != null)
+            if(HttpContext.Current.Session["ShipId"].ToString() != null)
             {
                 ShipId = HttpContext.Current.Session["ShipId"].ToString();
+            }
+            else if(HttpContext.Current.Session["DashboardShipId"].ToString() != null)
+            {
+                ShipId = HttpContext.Current.Session["DashboardShipId"].ToString();
             }
 
             // optional condition: I didn't wanted it to show on home and account controller
@@ -30,7 +30,7 @@ namespace TCCCMS
             {
                 return string.Empty;
             }
-
+            #region Not Used Old
             StringBuilder breadcrumb = new StringBuilder("<ol class='breadcrumb'><li>").Append(helper.ActionLink("Home", "Index", "Home").ToHtmlString()).Append("</li>");
             breadcrumb.Append("<li>");
             //--- Titleize() makes all characters to lower case of a single word except First Chracter
@@ -65,7 +65,7 @@ namespace TCCCMS
 
                 breadcrumb.Append("</li>");
             }
-
+            #endregion
             ///------------------------------------------------------------------------------
             //StringBuilder breadcrumb2 = new StringBuilder("<div class='steps_item'><span class='steps_content'>").Append(helper.ActionLink("Home", "Index", "Home").ToHtmlString()).Append("</span></div>");
             StringBuilder breadcrumb2 = new StringBuilder();
@@ -85,8 +85,8 @@ namespace TCCCMS
            
             breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
 
-           
-            if(helper.ViewContext.RouteData.Values["controller"].ToString() == "Dashboard")
+            string controller = helper.ViewContext.RouteData.Values["controller"].ToString();
+            if (controller == "Dashboard")
             {
                 if(UserRole == "OfficeUser" || UserRole == "ShipUser")
                 {
@@ -95,9 +95,24 @@ namespace TCCCMS
                     //                           "UserDashboard",
                     //                           helper.ViewContext.RouteData.Values["controller"].ToString()));
 
-                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
+                    //if (ShipId != null)
+                    //{
+                    //    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                    //                                  "ShipDashboard",
+                    //                                  "Dashboard", new { id = ShipId }));
+                    //}
+                    //else
+                    //{
+                    //    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                    //                          "UserDashboard",
+                    //                          helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+                    //}
+
+                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
                                               "UserDashboard",
-                                              helper.ViewContext.RouteData.Values["controller"].ToString()));
+                                              helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+
+
                 }
                 else
                 {
@@ -106,9 +121,24 @@ namespace TCCCMS
                     //                                               "AdminDashboard",
                     //                                               helper.ViewContext.RouteData.Values["controller"].ToString()));
 
-                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
-                                                                   "AdminDashboard",
-                                                                   helper.ViewContext.RouteData.Values["controller"].ToString()));
+                    //if (ShipId != null)
+                    //{
+                    //    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                    //                                  "ShipDashboard",
+                    //                                  "Dashboard", new { id = ShipId }).ToHtmlString());
+                    //}
+                    //else
+                    //{
+
+                    //    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                    //                                                   "AdminDashboard",
+                    //                                                   helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+                    //}
+
+                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                                                                      "AdminDashboard",
+                                                                      helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+
                 }
                 
             }
@@ -119,11 +149,34 @@ namespace TCCCMS
                 //                               "Index",
                 //                               helper.ViewContext.RouteData.Values["controller"].ToString()));
 
-                breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
+                if (controller == "ShipKHKVision" || controller == "ShipKWKExcelsus" || controller == "ShipCSKVanguard" || controller == "ShipCSKValiant" || controller == "ShipCSKEndeavour" || controller == "ShipKHKEmpress" || controller == "ShipKHKMajesty")
+                {
+                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                                                     "ShipDashboard",
+                                                     "Dashboard"));
+
+                    //breadcrumb2.Append(helper.ActionLink("Bingshu",
+                    //                                 "ShipDashboard",
+                    //                                 "Dashboard"));
+
+                    //breadcrumb2.Append("< a href = '/Dashboard/ShipDashboard/" + ShipId + "' >");
+                    //breadcrumb2.Append(controller + "</ a >");
+                }
+                else
+                {
+                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
                                               "Index",
-                                              helper.ViewContext.RouteData.Values["controller"].ToString()));
+                                              helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+                }
+
+                //--------------test
+                //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                //                             "Index",
+                //                              "Ship").ToHtmlString());
+                //-------------test end
+
             }
-            
+
 
             breadcrumb2.Append("</span></div>");
 
