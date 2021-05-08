@@ -13,11 +13,13 @@
             padding: 1px;
             border: #00CC00 dotted 1px;
         }
+
         .pad30 {
             padding-left: 30px;
             padding-right: 30px;
             /*padding: 30px;*/
         }
+
         section::after {
             content: "";
             display: table;
@@ -31,6 +33,7 @@
     @Html.Raw(Model.BodyHtml)
 
 </div>
+@Html.Partial("_pvFormPreviewModal")
 
 @section Scripts{
     @*<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>*@
