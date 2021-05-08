@@ -57,11 +57,17 @@ function SetUpGrid(CategoryId) {
             //{
             //    "data": "Path", "name": "Path", "autoWidth": true
             //},
-            {
+            {   
+                
                 "data": "Path", "width": "150px", "render": function (data) {
-                    var str = '<div class="col-sm-12"><div class="row"><div class="col-sm-6"><a href="' + data + '" class="btn btn-info btn-sm" style="background-color: #e90000;" >Download</a></div>';
+                   
+                    var str = '<div class="col-sm-12"><div class="row"> ';
+                    str = str + '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="PreviewModal(\''+data+'\')" >Preview</a>';
+                    str = str + '<a href="' + data + '" class="btn btn-info btn-sm" style="background-color: #e90000;" >Download</a>';
                     return str;
                 },
+
+
             },
 
 
@@ -117,4 +123,32 @@ function SetUpGrid(CategoryId) {
         "rowId": "ID",
         /*"dom": "Bfrtip"*/
     });
+}
+
+
+function PreviewModal(path) {
+
+    $.ajax({
+        url: "/FormsAndChecklists/PreviewModal",
+        data:
+        {
+            relPDFPath: path
+        },
+        type: "GET",
+        contentType: "application/json;charset=UTF-8",
+        dataType: "json",
+        success: function (result) {
+
+            $('#hHeader').html(result.PdfName);
+            $('#embedPDF').attr('src', result.PdfPath);
+
+            $('#pdfPreviewModal').modal('show');
+
+        },
+        error: function (errormessage) {
+            //debugger;
+            console.log(errormessage.responseText);
+        }
+    });
+
 }

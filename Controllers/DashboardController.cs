@@ -39,7 +39,24 @@ namespace TCCCMS.Controllers
         }
         public ActionResult ShipDashboard(string id)
         {
-            Session["DashboardShipId"] = id;
+            string x = Session["DashboardShipId"].ToString();
+           if(Session["Role"].ToString() == "ShipUser" || Session["Role"].ToString() == "ShipAdmin")
+           {
+                if (Session["DashboardShipId"].ToString() == null || Session["DashboardShipId"].ToString() == "0")
+                {
+                    Session["DashboardShipId"] = id;
+                }
+           }
+            else
+            {
+                if(id != null)
+                {
+
+                    Session["DashboardShipId"] = id;
+                }
+            }
+            
+           
             return View();
         }
        

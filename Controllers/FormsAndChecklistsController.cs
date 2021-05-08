@@ -16,6 +16,7 @@ namespace TCCCMS.Controllers
         //--------------------Vol8-------------------------
 
         private string controllerName = "FormsAndChecklists";
+        string parentPdfPath = "/FormsAndChecklists/";
         ManualBL manualBL = new ManualBL();
         // GET: FormsAndChecklists
         public ActionResult Index()
@@ -118,13 +119,35 @@ namespace TCCCMS.Controllers
         public ActionResult PDFViewer(string fileName, string relPDFPath)
         {
             Manual file = new Manual();
+            string filePath = "";
+            if (fileName == "")
+            {
+                filePath = Path.ChangeExtension(relPDFPath, "pdf");
+                file.PdfName = Path.GetFileName(filePath);
+                file.PdfPath = filePath;
+            }
+            else
+            {
+                filePath = "../ManualsPDF/" + relPDFPath + "/";
+                // filePath = filePath + fileName + ".pdf#toolbar=0&zoom=137";//----#zoom=85&scrollbar=0&toolbar=0&navpanes=0
+                filePath = filePath + fileName + ".pdf#zoom=137";
+                file.PdfName = fileName;
+                file.PdfPath = filePath;
+            }
             //string filePath = "../ManualsPDF/Volume III/";
-            string filePath = "../ManualsPDF/" + relPDFPath + "/";
-            // filePath = filePath + fileName + ".pdf#toolbar=0&zoom=137";//----#zoom=85&scrollbar=0&toolbar=0&navpanes=0
-            filePath = filePath + fileName + ".pdf#zoom=137";
-            file.PdfName = fileName;
-            file.PdfPath = filePath;
+           
+           
             return View(file);
+        }
+
+        public JsonResult PreviewModal(string relPDFPath)
+        {
+            Manual file = new Manual();
+            string filePath = "";
+            filePath = Path.ChangeExtension(relPDFPath, "pdf");
+            file.PdfName = Path.GetFileName(filePath);
+            file.PdfPath = parentPdfPath + filePath;
+            return Json(file, JsonRequestBehavior.AllowGet);
         }
 
         public FileResult Download(string fileName, string relformPath)
