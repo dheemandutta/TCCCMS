@@ -280,7 +280,10 @@ namespace TCCCMS.Business
                     {
                         if (isDownload == "YES")
                         {
+                            sb.Append("\n");
                             sb.Append("<a href='/" + ctrlName + "/Pages?formName=" + filename + "&relformPath=" + relativePath + "' >");
+                            sb.Append(filename + "</a>");
+                            sb.Append("</br>");
                         }
                     }
 

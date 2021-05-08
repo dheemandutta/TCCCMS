@@ -161,7 +161,8 @@ namespace TCCCMS.Controllers
                 {".docx", "application/vnd.ms-word"},
                 {".png", "image/png"},
                 {".jpg", "image/jpeg"},
-                //{".xlsx", "application/vnd.openxmlformats officedocument.spreadsheetml.sheet"},
+                {".xlsx", "application/vnd.openxmlformats officedocument.spreadsheetml.sheet"},
+                {".xls", "application/vnd.openxmlformats officedocument.spreadsheetml.sheet"},
                 {".jpeg", "image/jpeg"},
                 {".gif", "image/gif"},
                 {".csv", "text/csv"}
