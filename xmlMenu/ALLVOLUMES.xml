@@ -14,6 +14,7 @@
 
         <volume id="1" name="Volume I" controllername="CompanyPolicyManual">
 			<!-- 4.0,5.0,8.0,13.0 added on 22nd Apr 2021 -->
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOL1FC">Flow Chart</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Introduction">Introduction </filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Definition">PS 1.1 Definition</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SMS">PS 1.2 Safety Management System</filename>
@@ -22,7 +23,6 @@
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="MRA">PS 3.0 Management Responsibilty and Authority</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DesignatedPerson">PS 4.0 Designated Person</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MastersRA">PS 5.0 Masters Responsibility and Authority</filename>
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="MastersRA">PS005 - Drug and Aochol Policy</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ResourcesAndPersonnel">PS 6.0 Resources and Personnel</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PSO">PS 7.0 Plans for Shipboard Operation</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="EmergencyPreparednes">PS 8.0 Emergency Preparedness</filename>
@@ -32,6 +32,14 @@
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ISEPA">PS 12.0 Internal Safety and Environmental Protection Audits</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ACP">PS 13.0 Anti-Corruption Policy</filename>
             <!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. I Manual</filename> -->
+			<foldername actionname="" description="" name="TCCHK Signed Polices and Statements">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS5DAP">PS005 - Drug and Aochol Policy</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS11SP">PS011 - Smoking Policy</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS17SEP">PS017 - S and E Policy</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS18HP">PS018 - Health Policy</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS34SMP">PS034 - TCC Social Media Policy</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS37ACP">PS037 - Anti-Corruption Policy -TCCHK</filename>
+			</foldername>
         </volume>
 		
 		<volume id="2" name="Volume II" controllername="CompanyProceduresManual">
@@ -50,7 +58,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ISEPA">PP12.0 - Internal Safety and Environmental Protection Audits</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DAP">PP20.0 - Drug and Alcohol Policy</filename>
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. II Manual`</filename> -->
-		<foldername actionname="" description="" name="Appendix">
+			<foldername actionname="" description="" name="Appendix">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">1. PS019 - Mission Statement</filename>
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2. PS005 - D and A Policy</filename>
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3. PS017 - S and E Policy</filename> 
