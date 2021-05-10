@@ -97,10 +97,14 @@ function SetUpGrid(CategoryId) {
                     console.log(row.CategoryId);
                     console.log(data);
 
-                    if (data == '0') {
-                        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" >Not Upload</a>';
-                    }
-                    else if (data == '1') {
+                    //if (data == '0') {
+                    //    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" >Not Upload</a>';
+                    //}
+                    //else if (data == '1') {
+                    //    return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal" >Upload</button>';
+
+                    //}
+                    if (data == '1') {
                         return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal" >Upload</button>';
 
                     }
@@ -127,6 +131,9 @@ function SetUpGrid(CategoryId) {
 
 
 function PreviewModal(path) {
+
+    $('#hHeader').html("");
+    $('#embedPDF').removeAttr("src");
 
     $.ajax({
         url: "/FormsAndChecklists/PreviewModal",
