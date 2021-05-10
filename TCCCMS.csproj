@@ -655,6 +655,7 @@
     <Content Include="images\KHK Vision.jpg" />
     <Content Include="images\KWK Excelsus.jpg" />
     <Content Include="images\logo.png" />
+    <Content Include="images\logo2.png" />
     <Content Include="images\search_icon.png" />
     <Content Include="images\ship.jpg" />
     <Content Include="images\ship.png" />
@@ -1101,6 +1102,7 @@
     <Content Include="SQL Script\06-04-2021_Full_Schema_Of_TCCCMSDB.sql" />
     <Content Include="xmlMenu\ALLSHIPS1.xml" />
     <Content Include="xmlMenu\COMMONTOALL.xml" />
+    <Content Include="xmlMenu\NOTICEBOARD.xml" />
     <Content Include="xmlMenu\REFERENCEMATERIALS.xml" />
     <None Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.js" />
