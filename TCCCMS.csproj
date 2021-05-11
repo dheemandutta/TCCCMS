@@ -2359,6 +2359,7 @@
     <Content Include="Views\NoticeBoard\PDFViewer.cshtml" />
     <Content Include="Views\Shared\_pvSearchAlertModal.cshtml" />
     <Content Include="Views\Shared\_pvFormPreviewModalVol8.cshtml" />
+    <Content Include="Views\Shared\_pvRevisionViewers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

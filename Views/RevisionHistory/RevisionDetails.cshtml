@@ -11,10 +11,10 @@
         <div class="container marginTP10">
             @foreach (var header in Model.RevisionHeaderList)
             {
-                <button class="accordion">@header.RevisionNo @if (@header.RevisionDate != null){@header.RevisionDate}</button>
+                <button class="accordion" onclick="SaveRevisionViewer(@header.Id); GetViewersByRevision(@header.Id);">@header.RevisionNo @if (@header.RevisionDate != null){@header.RevisionDate}</button>
                 <div class="panel marginTP10">
                     <div class="row">
-                        
+
                         <div class="col-sm-12 col-xs-12 marginTP10">
                             <h2 class="ta">Revision History </h2>
                             <div class="row">
@@ -50,11 +50,13 @@
                         </div>
                     </div>
 
-                   
+                    <div class="row">
+                        <div id="divViewer_@header.Id">
+                        </div>
+                    </div>
+
                 </div>
-            }
-
-
+             }
 
 
         </div>
@@ -77,6 +79,64 @@
                     panel.style.display = "block";
                 }
             });
+        }
+
+        function GetViewersByRevision(id) {
+            $('#divViewer_' + id).html("");
+            var x = id;
+            @*$.post("@Url.Action("GetViewerByRevision", "RevisionHistory",new { id =x})", function (data) {
+                if (data) {
+                    $('#divViewer_' + id).append(data);
+
+                }
+
+            });*@
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("GetViewerByRevision", "RevisionHistory")',
+                data: { Id: id },
+                success: function(data){
+                    if (data) {
+                        $('#divViewer_' + id).append(data);
+                        LoadAccordian();
+
+                    }
+                }
+            });
+        }
+
+        function SaveRevisionViewer(id) {
+           
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("SaveRevisionViewer", "RevisionHistory")',
+                data: { revisionId: id },
+                success: function(data){
+                    if (data) {
+                    //$('#divViewer_' + id).append(data);
+
+                    }
+                }
+            });
+        }
+
+        function LoadAccordian() {
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+                acc[i].addEventListener("click", function () {
+                    this.classList.toggle("active");
+                    var panel = this.nextElementSibling;
+                    if (panel.style.display === "block") {
+                        panel.style.display = "none";
+                    } else {
+                        panel.style.display = "block";
+                    }
+                });
+            }
         }
 
     </script>
