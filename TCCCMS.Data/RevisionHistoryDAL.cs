@@ -216,5 +216,63 @@ namespace TCCCMS.Data
             return recordsAffected;
         }
 
+        public int SaveRevisionViewer(RevisionViewer rViewer)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("SaveRevisionViewer", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@RevisionId", rViewer.RevisionId);
+            cmd.Parameters.AddWithValue("@UserId", rViewer.UserId);
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+            con.Close();
+
+            return recordsAffected;
+        }
+
+
+        public List<RevisionViewer> GetAllRevisionViewers(int revisionId)
+        {
+            List<RevisionViewer> rViewers = new List<RevisionViewer>();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetRevisionViewers", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@RevisionId", revisionId);
+                    con.Open();
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                   
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        RevisionViewer rViewer = new RevisionViewer();
+                        rViewer.Id          = Convert.ToInt32(dr["Id"]);
+                        rViewer.RevisionId  = Convert.ToInt32(dr["RevisionId"]);
+                        rViewer.UserId      = Convert.ToInt32(dr["UserId"]);
+                        rViewer.UserName    = Convert.ToString(dr["UserName"]);
+                        rViewer.RankId      = Convert.ToInt32(dr["RankId"]);
+                        rViewer.RankName    = Convert.ToString(dr["RankName"]);
+                        rViewer.ShipId      = Convert.ToInt32(dr["ShipId"]);
+                        rViewer.ShipName    = Convert.ToString(dr["ShipName"]);
+                        rViewer.ShipName    = Convert.ToString(dr["CreatedAt"]);
+
+
+
+                        rViewers.Add(rViewer);
+                    }
+                    
+                }
+
+            }
+
+
+            return rViewers;
+
+        }
     }
 }

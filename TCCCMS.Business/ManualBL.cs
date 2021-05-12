@@ -576,5 +576,23 @@ namespace TCCCMS.Business
         }
 
         #endregion
+
+        public Dictionary<string, string> GetMimeTypes()
+        {
+            return new Dictionary<string, string>
+            {
+                {".txt", "text/plain"},
+                {".pdf", "application/pdf"},
+                {".doc", "application/vnd.ms-word"},
+                {".docx", "application/vnd.ms-word"},
+                {".png", "image/png"},
+                {".jpg", "image/jpeg"},
+                {".xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"},
+                {".xls", "application/vnd.ms-excel"},
+                {".jpeg", "image/jpeg"},
+                {".gif", "image/gif"},
+                {".csv", "text/csv"}
+            };
+        }
     }
 }

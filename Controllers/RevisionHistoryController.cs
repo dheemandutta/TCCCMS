@@ -122,5 +122,28 @@ namespace TCCCMS.Controllers
             return Json(x, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult SaveRevisionViewer(string revisionId)
+        {
+            RevisionHistoryBL rhBl = new RevisionHistoryBL();
+            RevisionViewer rViewer = new RevisionViewer();
+           
+            int x = 0;
+            if (Session["Role"].ToString() == "ShipUser"/* || Session["Role"].ToString() == "ShipAdmin"*/)
+            {
+                rViewer.RevisionId = Convert.ToInt32(revisionId);
+                rViewer.UserId = Convert.ToInt32(Session["UserId"].ToString());
+                x = rhBl.SaveRevisionViewer(rViewer);
+            }
+               
+            return Json(x, JsonRequestBehavior.AllowGet);
+        }
+
+        public ActionResult GetViewerByRevision(int id)
+        {
+           List<RevisionViewer> viewers = new List<RevisionViewer>();
+            RevisionHistoryBL rhBL = new RevisionHistoryBL();
+            viewers = rhBL.GetAllRevisionViewers(id);
+            return PartialView("_pvRevisionViewers", viewers);
+        }
     }
 }

@@ -19,5 +19,7 @@ namespace TCCCMS.Models
 
         public List<RevisionHistory> RevisionHistoryList { get; set; }
 
+        public List<RevisionViewer> RevisionViewers { get; set; }
+
     }
 }

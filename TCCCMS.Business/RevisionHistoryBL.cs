@@ -49,5 +49,19 @@ namespace TCCCMS.Business
             RevisionHistoryDAL rhDal = new RevisionHistoryDAL();
             return rhDal.SaveRevisionHeader(rHeader);
         }
+
+        public int SaveRevisionViewer(RevisionViewer rViewer)
+        {
+            RevisionHistoryDAL rhDal = new RevisionHistoryDAL();
+            return rhDal.SaveRevisionViewer(rViewer);
+        }
+
+        public List<RevisionViewer> GetAllRevisionViewers(int revisionId)
+        {
+            RevisionHistoryDAL rhDal = new RevisionHistoryDAL();
+
+            return rhDal.GetAllRevisionViewers(revisionId);
+
+        }
     }
 }

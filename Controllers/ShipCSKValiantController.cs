@@ -51,6 +51,7 @@ namespace TCCCMS.Controllers
 
         public FileResult Download(string fileName, string relformPath)
         {
+            ManualBL manualBl = new ManualBL();
             string path = Server.MapPath("~/ShipManualsPDF/" + relformPath + "/");
             //var folderPath = Path.Combine(path, relformPath);
             //var filePath = Path.Combine(path, fileName);
@@ -60,31 +61,19 @@ namespace TCCCMS.Controllers
                                                        .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
                                                                || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
 
-            var memory = new MemoryStream();
-            using (var stream = new FileStream(filePath, FileMode.Open))
-            {
-                stream.CopyToAsync(memory);
-            }
-            memory.Position = 0;
+            //var memory = new MemoryStream();
+            //using (var stream = new FileStream(filePath, FileMode.Open))
+            //{
+            //    stream.CopyToAsync(memory);
+            //}
+            //memory.Position = 0;
             var ext = Path.GetExtension(filePath).ToLowerInvariant();
-            return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
+            //return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
+
+            byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
+            return File(fileBytes, manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
         }
-        private Dictionary<string, string> GetMimeTypes()
-        {
-            return new Dictionary<string, string>
-            {
-                {".txt", "text/plain"},
-                {".pdf", "application/pdf"},
-                {".doc", "application/vnd.ms-word"},
-                {".docx", "application/vnd.ms-word"},
-                {".png", "image/png"},
-                {".jpg", "image/jpeg"},
-                //{".xlsx", "application/vnd.openxmlformats officedocument.spreadsheetml.sheet"},
-                {".jpeg", "image/jpeg"},
-                {".gif", "image/gif"},
-                {".csv", "text/csv"}
-            };
-        }
+       
         public ActionResult SOPEP()
         {
             ManualBL manualBL = new ManualBL();

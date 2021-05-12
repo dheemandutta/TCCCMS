@@ -113,6 +113,7 @@ namespace TCCCMS.Controllers
 
         public FileResult Download(string fileName, string relformPath)
         {
+            ManualBL manualBl = new ManualBL();
             string path = Server.MapPath("~/ManualsPDF/" + relformPath + "/");
             //var folderPath = Path.Combine(path, relformPath);
             //var filePath = Path.Combine(path, fileName);
@@ -123,32 +124,21 @@ namespace TCCCMS.Controllers
             var filePath = Directory.GetFiles(path, "*.*")
                                                        .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
                                                                || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
-            var memory = new MemoryStream();
-            using (var stream = new FileStream(filePath, FileMode.Open))
-            {
-                stream.CopyToAsync(memory);
-            }
-            memory.Position = 0;
-            var ext = Path.GetExtension(filePath).ToLowerInvariant();
-            return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
-        }
-        private Dictionary<string, string> GetMimeTypes()
-        {
-            return new Dictionary<string, string>
-            {
-                {".txt", "text/plain"},
-                {".pdf", "application/pdf"},
-                {".doc", "application/vnd.ms-word"},
-                {".docx", "application/vnd.ms-word"},
-                {".png", "image/png"},
-                {".jpg", "image/jpeg"},
-                //{".xlsx", "application/vnd.openxmlformats officedocument.spreadsheetml.sheet"},
-                {".jpeg", "image/jpeg"},
-                {".gif", "image/gif"},
-                {".csv", "text/csv"}
-            };
-        }
+            //var memory = new MemoryStream();
+            //using (var stream = new FileStream(filePath, FileMode.Open))
+            //{
+            //    stream.CopyToAsync(memory);
+            //    //memory.WriteTo(stream);
+            //}
 
+            //memory.Position = 0;
+            var ext = Path.GetExtension(filePath).ToLowerInvariant();
+            //return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
+
+            byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
+            return File(fileBytes, manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
+        }
+       
         [HttpGet]
 
         #region All (1+36+47+31+10+11+7+13)(156)

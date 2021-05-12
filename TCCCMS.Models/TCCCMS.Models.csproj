@@ -59,6 +59,7 @@
     <Compile Include="RevisionHeader.cs" />
     <Compile Include="RevisionHeaderHistoryViewModel.cs" />
     <Compile Include="RevisionHistory.cs" />
+    <Compile Include="RevisionViewer.cs" />
     <Compile Include="RoleGroup.cs" />
     <Compile Include="RoleMasterPOCO.cs" />
     <Compile Include="Ship.cs" />
