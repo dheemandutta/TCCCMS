@@ -455,7 +455,7 @@
 			
 		<volume id="6" name="Volume VI" controllername="MajorCasualtyAndEnvironmentalProtectionPlan">
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEPGG">Section 1 - Shipboard Emergency Plan – General Guidance</filename>
-			<foldername actionname="" description="" name="Sec 2-Shipboard Emergency Plan - Action Check List">
+			<foldername actionname="" description="" name="Section 2 - Shipboard Emergency Plan - Action Checklist">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CVA">Annex A - Checklist for Vessel Action</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CSD">Annex B - Checklist for Submission of Document</filename>
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="IMF">Annex C - IMO Reporting Format</filename> -->
@@ -468,7 +468,8 @@
 			</foldername>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEPACS">Section 3 - Shipboard Emergency Plan – Action Checklist for Security</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEPM">Section 4 - Shipboard Emergency Plan - Medical</filename>
-			<foldername actionname="" description="" name="Sec 6-Company Contingency Plan">
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CCPTHRA">Section 5 - Company Contingency Plan for Transiting HRA</filename>
+			<foldername actionname="" description="" name="Section 6 - Company Contingency Plan">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ERCO">Annex A - Emergency Reponse checklist office</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RecordOfEvent">Annex B - Record of Event</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CEL">Annex C - Casualty Event Log</filename>
@@ -479,7 +480,6 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VCPR">Annex H - Vessel Casualty Prompt Report</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Section6">Volume VI - Section 6</filename>
 			</foldername>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CCPTHRA">Section 5 - Company Contingency Plan for Transiting HRA</filename>
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. VI Manual</filename> -->
 		</volume>     
                       
