@@ -132,6 +132,9 @@ function SetUpGrid(CategoryId) {
 
 function PreviewModal(path) {
 
+    $('#pdfContent').html("");
+    $('#pdfContent').html('<embed id="embedPDF" src="" width="100%" height="600px;" />');
+
     $('#hHeader').html("");
     $('#embedPDF').removeAttr("src");
 
