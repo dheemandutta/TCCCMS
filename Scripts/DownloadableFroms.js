@@ -137,12 +137,12 @@ function PreviewModal(path) {
 
     $('#hHeader').html("");
     $('#embedPDF').removeAttr("src");
-
+    var x = decodeURI(path);
     $.ajax({
         url: "/FormsAndChecklists/PreviewModal",
         data:
         {
-            relPDFPath: path
+            relPDFPath: decodeURI(path)
         },
         type: "GET",
         contentType: "application/json;charset=UTF-8",

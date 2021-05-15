@@ -26,13 +26,16 @@
     @Html.Raw(Model.BodyHtml)
 
 </div>
-
+@Html.Partial("_pvFormPreviewModal")
+@*-----Below line for Linked Form Preview-----Added on 15th May 2021 --by BB- -*@
+@Html.Partial("_pvFormPreviewModalVol8")
 
 @section Scripts{
-   
-    <script src="~/js/Manual/ManualSearch.js"></script>
 
-    
+    <script src="~/js/Manual/ManualSearch.js"></script>
+    <script src="~/Scripts/DownloadableFroms.js"></script>
+
+
 }
 
 
