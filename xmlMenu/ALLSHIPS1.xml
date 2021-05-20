@@ -212,10 +212,10 @@
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1MEDP">Section 1 Part B - Mooring Equipment Design Philosophy</filename>
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Section 1 Part B - Static Mooring Analysis Report (KHKV)</filename>
 						<foldername description="" actionname="" name="Section 1 Part C - Detailed List of Mooring Equiment">
-							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PFMFRF">C1 - Permanent Fittings mooring fittings rollers fairleads</filename>
-							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PMI">C2 - Permanent machinery installations </filename>
-							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1LECSE">C3 - Loose Equipment and C4 - Critical and Specialist Equipment </filename>
-							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PSR">C5 - Performance standards requirements and C6 and C7</filename>
+							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC1">C1 - Permanent Fittings mooring fittings rollers fairleads</filename>
+							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC2">C2 - Permanent machinery installations </filename>
+							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC3C4">C3 - Loose Equipment and C4 - Critical and Specialist Equipment </filename>
+							<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC5C6C7">C5 - Performance standards requirements and C6 and C7</filename>
 						</foldername>
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1IMRSP">Section 1 Part D - Inspection, Maintenance and Retirement Strategies or Principles</filename>
 						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1RCMSPHF">Section 1 Part E - Risk and Chagne Mgmt, Safety of Personnel and Human Factors</filename>
@@ -2830,11 +2830,11 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHEM)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1MEDP">Section 1 Part B - Mooring Equipment Design Philosophy</filename>
 					<foldername description="" actionname="" name="Section 1 Part C - Detailed List of Mooring Equiment">
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PFP1">C1 - Permanent Fittings Part 1</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PFP2">C1 - Permanent Fittings Part 2</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PMI">C2 - Permanent machinery installations</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1LECSE">C3 – Loose Equipment and C4 - Critical and Specialist Equipment</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PSR">C5 - Performance standards requirements and C6 and C7</filename>
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC1P1">C1 - Permanent Fittings Part 1</filename>
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC1P2">C1 - Permanent Fittings Part 2</filename>
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC2">C2 - Permanent machinery installations</filename>
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC3C4">C3 – Loose Equipment and C4 - Critical and Specialist Equipment</filename>
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC5C6C7">C5 - Performance standards requirements and C6 and C7</filename>
 					</foldername>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1IMRSP">Section 1 Part D - Inspection, Maintenance and Retirement Strategies or Principles</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1RCMSPHF">Section 1 Part E - Risk and Chagne Mgmt, Safety of Personnel and Human Factors</filename>
@@ -3405,11 +3405,11 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1GSP">Section 1 Part A - General Ship Particulars (KHEM)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1MEDP">Section 1 Part B - Mooring Equipment Design Philosophy</filename>
 					<foldername description="" actionname="" name="Section 1 Part C - Detailed List of Mooring Equiment">
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PFP1">C1 - Permanent Fittings Part 1</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PFP2">C1 - Permanent Fittings Part 2</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PMI">C2 - Permanent machinery installations</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1LECSE">C3 - Loose Equipment and C4 - Critical and Specialist Equipment</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1PSR">C5 - Performance standards requirements and C6 and C7</filename>
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC1P1">C1 - Permanent Fittings Part 1</filename>
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC1P2">C1 - Permanent Fittings Part 2</filename>
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC2">C2 - Permanent machinery installations</filename>
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC3C4">C3 - Loose Equipment and C4 - Critical and Specialist Equipment</filename>
+						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1DLMEC5C6C7">C5 - Performance standards requirements and C6 and C7</filename>
 					</foldername>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1IMRSP">Section 1 Part D - Inspection, Maintenance and Retirement Strategies or Principles</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS1RCMSPHF">Section 1 Part E - Risk and Chagne Mgmt, Safety of Personnel and Human Factors</filename>
