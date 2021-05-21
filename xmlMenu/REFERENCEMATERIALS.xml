@@ -51,7 +51,7 @@
 			</foldername>
 			<foldername actionname="" description="" name="Marine Notice (Safety)">
 				<foldername actionname="" description="" name="1. MPA">
-					<foldername actionname="" description="" name="MPA Notice (selected)">
+					<foldername actionname="" description="MPA Notice (selected)" name="MPA Notice (selected)">
 						<foldername actionname="" description="" name="MPA Notice 1 of 2020">
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Guidance</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA Notice 1 of 2020</filename>
@@ -800,10 +800,11 @@
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">sc_no_1_of_2021</filename>
 						</foldername>
 					</foldername>
-					<foldername actionname="" description="" name="MPA Survey Circular (selected)">
-						<foldername actionname="" description="" name="Survey Circular No. 1 of 2012">
+					<foldername actionname="" description="MPA Survey Circular (selected)" name="MPA S C">
+						<foldername actionname="" description="Survey Circular No. 1 of 2012" name="S C No. 1 of 2012">
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA Survey Circular 1_2012_Acceptance of Equipment</filename>
-							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA Survey Circular 1_2012_SAMPLE Statement of Acceptance of Equipment for SRS_revised 01June2012</filename>
+							<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA Survey Circular 1_2012_SAMPLE Statement of Acceptance of Equipment for SRS_revised 01June2012</filename> -->
+							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA Survey Circular 1_2012_SAMPLE</filename>
 						</foldername>
 					</foldername>
 				</foldername>
@@ -1614,10 +1615,13 @@
 					</foldername>
 					<foldername actionname="" description="" name="2020">
 						<foldername actionname="" description="" name="Incident Alert">
-							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 01-2020 Incidents involving ships while underway in the eastbound lane of Singapore Strait (Part VI) (19 Jan 20)</filename>
+							<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 01-2020 Incidents involving ships while underway in the eastbound lane of Singapore Strait (Part VI) (19 Jan 20)</filename> -->
+							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 01-2020</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 02-2020 Abduction of Crew from fishing boat SSK 00534 (17 Jan 20  )</filename>
-							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 03-2020 Incidents involving ships while underway in the eastbound lane of Singapore Strait (Part VII) (9 Feb 20)</filename>
-							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 04-2020 Incidents involving ships while underway in the eastbound lane of Singapore Strait (Part VIII) (30 Apr 20)</filename>
+							<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 03-2020 Incidents involving ships while underway in the eastbound lane of Singapore Strait (Part VII) (9 Feb 20)</filename> -->
+							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 03-2020</filename>
+							<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 04-2020 Incidents involving ships while underway in the eastbound lane of Singapore Strait (Part VIII) (30 Apr 20)</filename> -->
+							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 04-2020 (Part VIII) (30 Apr 20)</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 05-2020 Incidents in Batangas, Philippines (25 August 2020)</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 06-2020 Incidents against ships in the eastbound lane of Singapore Strait (Part IX) (26 Oct 20)</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">IA 07-2020 Incidents against ships in the eastbound lane of Singapore Strait (Part X) (9 Nov 20)</filename>
@@ -1838,9 +1842,10 @@
 					<foldername actionname="" description="" name="Port Security Advisory">
 						<foldername actionname="" description="" name="USCG Port Advisory - NOT VALID">
 							<foldername actionname="" description="" name="2009">
-								<foldername actionname="" description="" name="Port Security Advisory 08-09">
+								<foldername actionname="" description="Port Security Advisory 08-09" name="P S A 08-09">
 									<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Port Security Advisory Weapons 08-09</filename>
-									<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">PSA _8-09_ Port Information Matrix dtd 2-2-2012</filename>
+									<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">PSA _8-09_ Port Information Matrix dtd 2-2-2012</filename> -->
+									<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">PSA</filename>
 								</foldername>
 								<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Port Security Advisory 2-09 (Rev 3)</filename>
 								<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Port Security Advisory 3-09 Self Defense18Jun09 final_2</filename>
@@ -2024,8 +2029,9 @@
 				</foldername>
 				<foldername actionname="" description="" name="4. ICC -Piracy _ Armed Robbery Report">
 					<foldername actionname="" description="" name="2018">
-						<foldername actionname="" description="" name="2018_Q2_IMB_Piracy_Report (no need to ships)">
-							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2018 Q2 IMB Piracy Report Inforgraphics for Media Release</filename>
+						<foldername actionname="" description="2018_Q2_IMB_Piracy_Report (no need to ships)" name="2018_Q2_IMB">
+							<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2018 Q2 IMB Piracy Report Inforgraphics for Media Release</filename> -->
+							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2018 Q2 IMB P R I</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2018 Q2 IMB Piracy Report MEDIA RELEASE</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2018 Q2 IMB Piracy Report</filename>
 						</foldername>

@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Net.Mail;
 using System.Text;
 using System.IO;
+using System.Configuration;
 
 namespace TCCCMS.Controllers
 {
@@ -17,6 +18,12 @@ namespace TCCCMS.Controllers
 
 			try
 			{
+				string smtpEmail = ConfigurationManager.AppSettings["smtpEmail"];
+				string smtpEmailPwd = ConfigurationManager.AppSettings["smtpEmailPwd"];
+				string smtpServer = ConfigurationManager.AppSettings["smtpServer"];
+				int smtpPort = Convert.ToInt32(ConfigurationManager.AppSettings["smtpPort"]);
+				string supportEmail = ConfigurationManager.AppSettings["supportEmail"];
+
 				StringBuilder mailBody = new StringBuilder();
 				using (MailMessage mail = new MailMessage())
 				{
@@ -33,7 +40,8 @@ namespace TCCCMS.Controllers
 
 					mail.From = new MailAddress(senderEmail);
 					mail.To.Add(senderEmail);
-					mail.CC.Add(receiverEmail);
+					//mail.CC.Add(receiverEmail);
+					mail.CC.Add(supportEmail);
 
 					mail.Subject = subject;
 					mail.Body = mailBody.ToString();
@@ -43,11 +51,17 @@ namespace TCCCMS.Controllers
 						mail.Attachments.Add(new Attachment(errorImg));
 					}
 
-					SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+					//SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+					//smtp.EnableSsl = true;
+					//smtp.Port = 587;
+					////smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "tcccms202112345");
+					//smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "cableman24x712345");
+
+					SmtpClient smtp = new SmtpClient(smtpServer);
 					smtp.EnableSsl = true;
-					smtp.Port = 587;
+					smtp.Port = smtpPort;
 					//smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "tcccms202112345");
-					smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "cableman24x712345");
+					smtp.Credentials = new System.Net.NetworkCredential(smtpEmail, smtpEmailPwd);
 
 					smtp.Send(mail);
 
