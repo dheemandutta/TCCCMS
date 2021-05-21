@@ -9,7 +9,9 @@ using System.Web.Mvc;
 using System.IO;
 using System.Xml;
 using System.Text;
+using System.Net.Mail;
 using System.Web.Routing;
+using System.Configuration;
 
 namespace TCCCMS.Controllers
 {
@@ -33,6 +35,8 @@ namespace TCCCMS.Controllers
                     string relativePath = "~/TicketFiles";
                     string path = Server.MapPath(relativePath);
                     //string fileFath = Path.Combine(path, categoryName);
+                    StringBuilder mailBody = new StringBuilder();
+                    string senderEmail = string.Empty;
                     string fileFath = path;
                     if (!Directory.Exists(fileFath))
                     {
@@ -72,7 +76,41 @@ namespace TCCCMS.Controllers
                     int ticketNumber = ticketBl.SaveTicket(ticket);
                     if(ticketNumber > 0)
                     {
-                        SendEmail.SendMail("Ticket","cableman24x7@Gmail.com", "tcccms2021@gmail.com", ticketNumber.ToString(), error, description,Server.MapPath(ticket.FilePath));
+                        if(Session["UserType"].ToString() == "1")
+                        {
+                            senderEmail= ConfigurationManager.AppSettings["shipEmail"];
+                        }
+                        else
+                        {
+                            senderEmail = Session["Email"].ToString();
+                        }
+                        MailMessage mail = new MailMessage();
+                        
+                            mailBody.Append("Ticket Number : ");
+                            mailBody.Append(ticketNumber.ToString());
+                            mailBody.Append("\n");
+                            mailBody.Append("Error Message : ");
+                            mailBody.Append(error);
+                            mailBody.Append("\n");
+                            mailBody.Append("Error Description : ");
+                            mailBody.Append(description);
+                            mailBody.Append("\n");
+
+
+                            if (ticket.FilePath != null || ticket.FilePath != "")
+                            {
+                                mail.Attachments.Add(new Attachment(Server.MapPath(ticket.FilePath)));
+                            }
+                        
+
+
+                        if (!String.IsNullOrEmpty(senderEmail))
+                        {
+                            SendEmail.SendMail("Ticket", senderEmail, "tcccms2021@gmail.com", ticketNumber.ToString(), error, description, Server.MapPath(ticket.FilePath));
+
+                            SendEmail.SendMail("Ticket", senderEmail, mail);
+                        }
+                        //SendEmail.SendMail("Ticket", "cableman24x7@Gmail.com", "tcccms2021@gmail.com", ticketNumber.ToString(), error, description, Server.MapPath(ticket.FilePath));
                         //SendEmail.SendMail("Ticket", "tcccms2021@Gmail.com", Session["Email"].ToString(), ticketNumber.ToString(), error, description, Server.MapPath(ticket.FilePath));
                     }
                     // Returns message that successfully uploaded  

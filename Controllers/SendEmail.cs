@@ -39,9 +39,9 @@ namespace TCCCMS.Controllers
 
 
 					mail.From = new MailAddress(senderEmail);
-					mail.To.Add(senderEmail);
+					mail.To.Add(supportEmail);
 					//mail.CC.Add(receiverEmail);
-					mail.CC.Add(supportEmail);
+					//mail.CC.Add(supportEmail);
 
 					mail.Subject = subject;
 					mail.Body = mailBody.ToString();
@@ -67,6 +67,53 @@ namespace TCCCMS.Controllers
 
 					isMailSendSuccessful = true;
 				}
+			}
+			catch (Exception ex)
+			{
+				//EventLog.WriteEntry("DataExport-SendMail", ex.Message + " :" + ex.InnerException, EventLogEntryType.Error);
+				isMailSendSuccessful = false;
+
+			}
+
+		}
+
+		public static void SendMail(string subject, string senderEmail, MailMessage mailBodyMsg)
+		{
+
+			try
+			{
+				string smtpEmail = ConfigurationManager.AppSettings["smtpEmail"];
+				string smtpEmailPwd = ConfigurationManager.AppSettings["smtpEmailPwd"];
+				string smtpServer = ConfigurationManager.AppSettings["smtpServer"];
+				int smtpPort = Convert.ToInt32(ConfigurationManager.AppSettings["smtpPort"]);
+				string supportEmail = ConfigurationManager.AppSettings["supportEmail"];
+
+				StringBuilder mailBody = new StringBuilder();
+				MailMessage mail = new MailMessage();
+
+				mail = mailBodyMsg;
+				mail.From = new MailAddress(senderEmail);
+				mail.To.Add(supportEmail);
+				mail.Subject = subject;
+
+
+
+				//SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+				//smtp.EnableSsl = true;
+				//smtp.Port = 587;
+				////smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "tcccms202112345");
+				//smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "cableman24x712345");
+
+				SmtpClient smtp = new SmtpClient(smtpServer);
+				smtp.EnableSsl = true;
+				smtp.Port = smtpPort;
+				//smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "tcccms202112345");
+				smtp.Credentials = new System.Net.NetworkCredential(smtpEmail, smtpEmailPwd);
+
+				smtp.Send(mail);
+
+				isMailSendSuccessful = true;
+
 			}
 			catch (Exception ex)
 			{
