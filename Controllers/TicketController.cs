@@ -106,7 +106,7 @@ namespace TCCCMS.Controllers
 
                         if (!String.IsNullOrEmpty(senderEmail))
                         {
-                            SendEmail.SendMail("Ticket", senderEmail, "tcccms2021@gmail.com", ticketNumber.ToString(), error, description, Server.MapPath(ticket.FilePath));
+                            //SendEmail.SendMail("Ticket", senderEmail, "tcccms2021@gmail.com", ticketNumber.ToString(), error, description, Server.MapPath(ticket.FilePath));
 
                             SendEmail.SendMail("Ticket", senderEmail, mail);
                         }

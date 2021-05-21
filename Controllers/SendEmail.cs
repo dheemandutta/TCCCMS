@@ -107,6 +107,8 @@ namespace TCCCMS.Controllers
 				SmtpClient smtp = new SmtpClient(smtpServer);
 				smtp.EnableSsl = true;
 				smtp.Port = smtpPort;
+				smtp.UseDefaultCredentials = false;
+				smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
 				//smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "tcccms202112345");
 				smtp.Credentials = new System.Net.NetworkCredential(smtpEmail, smtpEmailPwd);
 
