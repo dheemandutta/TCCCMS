@@ -255,6 +255,7 @@ namespace TCCCMS.Data
                         rViewer.RevisionId  = Convert.ToInt32(dr["RevisionId"]);
                         rViewer.UserId      = Convert.ToInt32(dr["UserId"]);
                         rViewer.UserName    = Convert.ToString(dr["UserName"]);
+                        rViewer.UserCode    = Convert.ToString(dr["UserCode"]);//Added on 25th May 2021
                         rViewer.RankId      = Convert.ToInt32(dr["RankId"]);
                         rViewer.RankName    = Convert.ToString(dr["RankName"]);
                         rViewer.ShipId      = Convert.ToInt32(dr["ShipId"]);

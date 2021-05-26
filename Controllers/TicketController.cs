@@ -27,6 +27,7 @@ namespace TCCCMS.Controllers
         public ActionResult SendTicket( string error, string description, List<HttpPostedFileBase> fileData)
         {
             TicketBL ticketBl = new TicketBL();
+            bool isSendSuccessfully = false;
             Ticket ticket = new Ticket();
             if (Request.Files.Count > 0)
             {
@@ -96,7 +97,7 @@ namespace TCCCMS.Controllers
                             mailBody.Append(description);
                             mailBody.Append("\n");
 
-
+                        mail.Body = mailBody.ToString();
                             if (ticket.FilePath != null || ticket.FilePath != "")
                             {
                                 mail.Attachments.Add(new Attachment(Server.MapPath(ticket.FilePath)));
@@ -106,9 +107,9 @@ namespace TCCCMS.Controllers
 
                         if (!String.IsNullOrEmpty(senderEmail))
                         {
-                            SendEmail.SendMail("Ticket", senderEmail, "tcccms2021@gmail.com", ticketNumber.ToString(), error, description, Server.MapPath(ticket.FilePath));
+                            //SendEmail.SendMail("Ticket", senderEmail, "tcccms2021@gmail.com", ticketNumber.ToString(), error, description, Server.MapPath(ticket.FilePath));
 
-                            SendEmail.SendMail("Ticket", senderEmail, mail);
+                            SendEmail.SendMail("Ticket", senderEmail, mail,ref isSendSuccessfully);
                         }
                         //SendEmail.SendMail("Ticket", "cableman24x7@Gmail.com", "tcccms2021@gmail.com", ticketNumber.ToString(), error, description, Server.MapPath(ticket.FilePath));
                         //SendEmail.SendMail("Ticket", "tcccms2021@Gmail.com", Session["Email"].ToString(), ticketNumber.ToString(), error, description, Server.MapPath(ticket.FilePath));
