@@ -70,9 +70,10 @@
                                                         }
                                                         else
                                                         {
-                                                            <label class="btn-sml" style="background-color: #e90000;">Approval Pending By&nbsp;</label>
+                                                            <label class="btn-sml" style="background-color: #e90000;">Approval Pending By&nbsp;&nbsp;</label>
+                                                            <button class="btn btn-sml" style="background-color: #e90000; margin-left:5px;" onclick="SendMailForapproval(@approver.ApprovalId,@approver.ApproverUserId);">Send Mail&nbsp;</button>
                                                         }
-                                                    <label style="font-size:10px;">&nbsp;&nbsp;@approver.ApproverUserName</label>
+                                                        <label style="font-size:10px;">&nbsp;&nbsp;@approver.ApproverUserName</label>
                                                     </div>
                                                 </div>
 

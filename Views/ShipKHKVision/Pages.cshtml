@@ -12,6 +12,7 @@
 
 @section Styles{
     <link href="~/Scripts/highlight/css/default.css" rel="stylesheet" />
+    <link href="~/css/TccAccordian.css" rel="stylesheet" />
     <style type="text/css">
 
 
@@ -29,7 +30,7 @@
 </div>
 
 @Html.Partial("_pvFormPreviewModal")
- @*-----Below line for Linked Form Preview-----Added on 15th May 2021 --by BB- -*@
+@*-----Below line for Linked Form Preview-----Added on 15th May 2021 --by BB- -*@
 @Html.Partial("_pvFormPreviewModalVol8")
 
 
@@ -40,6 +41,22 @@
     <script src="~/js/Manual/ManualSearch.js"></script>
     <script src="~/Scripts/DownloadableFroms.js"></script>
 
+    <script type="text/javascript">
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
 
 }
 

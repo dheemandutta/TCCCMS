@@ -12,6 +12,7 @@ namespace TCCCMS.Models
         public int RevisionId { get; set; }
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public string UserCode { get; set; }//Added on 25th May 2021
         public int RankId { get; set; }
         public string RankName { get; set; }
         public int ShipId { get; set; }

@@ -10,7 +10,7 @@ namespace TCCCMS.Models
     {
         public Forms ApprovedForm { get; set; }
         public UserMasterPOCO ApproverUser { get; set; }
-        public FormsApproval Approver { get; set; }
+        public FormsApproval ApprovalForm { get; set; }
         public List<Forms> ApprovedFormList { get; set; }
         public List<UserMasterPOCO> ApproverUserList { get; set; }
         public List<FormsApproval> ApproverList { get; set; }

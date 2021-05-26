@@ -77,7 +77,7 @@ namespace TCCCMS.Controllers
 
 		}
 
-		public static void SendMail(string subject, string senderEmail, MailMessage mailBodyMsg)
+		public static void SendMail(string subject, string senderEmail, MailMessage mailBodyMsg,ref bool isSendSuccessfully)
 		{
 
 			try
@@ -92,35 +92,43 @@ namespace TCCCMS.Controllers
 				MailMessage mail = new MailMessage();
 
 				mail = mailBodyMsg;
-				mail.From = new MailAddress(senderEmail);
-				mail.To.Add(supportEmail);
+				//mail.From = new MailAddress(senderEmail);
+				//mail.To.Add(supportEmail);
+				//mail.From = new MailAddress(supportEmail);
+				//mail.To.Add(senderEmail);
+
+				mail.From = new MailAddress("b_bingshu@yahoo.in");
+				mail.To.Add("tcccms2021@gmail.com");
+
 				mail.Subject = subject;
 
 
 
-				//SmtpClient smtp = new SmtpClient("smtp.gmail.com");
-				//smtp.EnableSsl = true;
-				//smtp.Port = 587;
-				////smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "tcccms202112345");
-				//smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "cableman24x712345");
+                SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+                smtp.EnableSsl = true;
+                smtp.Port = 587;
+                smtp.UseDefaultCredentials = false;
+                //smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "tcccms202112345");
+                smtp.Credentials = new System.Net.NetworkCredential("cableman24x7@gmail.com", "cableman24x712345");
 
-				SmtpClient smtp = new SmtpClient(smtpServer);
-				smtp.EnableSsl = true;
-				smtp.Port = smtpPort;
-				smtp.UseDefaultCredentials = false;
-				smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
-				//smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "tcccms202112345");
-				smtp.Credentials = new System.Net.NetworkCredential(smtpEmail, smtpEmailPwd);
+                //SmtpClient smtp = new SmtpClient(smtpServer);
+                //smtp.EnableSsl = true;
+                //smtp.Port = smtpPort;
+                //smtp.UseDefaultCredentials = false;
+                //smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                //smtp.Credentials = new System.Net.NetworkCredential(smtpEmail, smtpEmailPwd);
 
-				smtp.Send(mail);
+                smtp.Send(mail);
 
 				isMailSendSuccessful = true;
+				isSendSuccessfully = true;
 
 			}
 			catch (Exception ex)
 			{
 				//EventLog.WriteEntry("DataExport-SendMail", ex.Message + " :" + ex.InnerException, EventLogEntryType.Error);
 				isMailSendSuccessful = false;
+				isSendSuccessfully = false;
 
 			}
 

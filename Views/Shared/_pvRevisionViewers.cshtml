@@ -19,7 +19,7 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
-                                    <td>@item.UserName</td>
+                                    <td>@item.UserName ( @item.UserCode )</td> @*--Added 'UserCode on 25th May 2021 @BK'--*@
                                     <td style="border-left:solid 1px;">@item.RankName</td>
                                 </tr>
 

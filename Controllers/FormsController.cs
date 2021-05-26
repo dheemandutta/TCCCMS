@@ -111,6 +111,12 @@ namespace TCCCMS.Controllers
             return View(affaVM);
         }
 
+        public JsonResult SendMailForapproval(string approvalId,string approverUserId)
+        {
+
+            return Json("", JsonRequestBehavior.AllowGet);
+        }
+
 
     }
 }
