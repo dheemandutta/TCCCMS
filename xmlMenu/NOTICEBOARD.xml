@@ -9,35 +9,26 @@
 						</foldername>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2010-17 Anchor Chain Entangle</filename>
 					</foldername>
-					<foldername name="2011" actionname="" description="">
-						<foldername name="FMA-2011-03 E Coli" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">5keys</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2011-03 E.Coli Virus </filename>
-						</foldername>
-					</foldername>
+					<!-- <foldername name="2011" actionname="" description=""> -->
+						<!-- <foldername name="FMA-2011-03 E Coli" actionname="" description=""> -->
+							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">5keys</filename> -->
+							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2011-03 E.Coli Virus </filename> -->
+						<!-- </foldername> -->
+					<!-- </foldername> -->
 					<foldername name="2017" actionname="" description="">
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2017-04 California New Reg Reporting</filename>
 						<foldername name="FMA-2017-06 China – Mobile Phone Inspection by Authorities" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">China---mobile-phone-inspection-by-authorities</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2017-06</filename>
 						</foldername>
 					</foldername>
 					<foldername name="2018" actionname="" description="">
-						<foldername name="FMA-2018-01 Job Hazard and Risk Analysis" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2018-01</filename>
-						</foldername>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2018-02 Safe Location for Lifeboat Drill</filename>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2018-05  Fire Fighters Communication</filename>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2018-07 MSMP _ LMP</filename>
+						
 						<foldername name="FMA-2018-09  Johor Bahru Port Limits, Exercise Caution" actionname="" description="">
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2018-09</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">MMD-Port-Circular</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">MPA-PMS-on-Territorial-waters</filename>
 						</foldername>
-						<foldername name="FMA-2018-10  Emission Control Areas in Chinese Territorial waters" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">20181213-PNI1816</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2018-10</filename>
-						</foldername>
+						
 					</foldername>
 					<foldername name="2019" actionname="" description="">
 						<foldername name="FMA-2019-01 Indonesia – Vessel Detentions" actionname="" description="">
@@ -46,13 +37,7 @@
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2019-01</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Indonesian-Navy-detentions</filename>
 						</foldername>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2019-02 Fleet Marine Notices Review</filename>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2019-03 Fleet Marine Advisory Review</filename>
-						<foldername name="FMA-2019-04 Protection against Cyber Security on-board (Rev of 2018-08)" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2019-04 Protection against Cyber Sec oboard</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">JHA - USB Blockers in CCR  ECR</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">JHA - USB Blockers on Bridge</filename>
-						</foldername>
+						
 						<foldername name="FMA-2019-05 Discharge of treated sewage water in Chinese ports" actionname="" description="">
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2019-05 Discharge of treated sewage water in Chinese ports</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">GB3552-2018-English</filename>
@@ -71,74 +56,9 @@
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Toolbox Talk - Corona</filename>
 							<filename doctype="XLS" actionname="" isdownloadable="" ismodify="">Visitor - Body Temperature Reading Record - Rev 01</filename>
 						</foldername>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2020-03 Fleet Marine Notices Review</filename>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2020-04 Fleet Marine Advisory Review</filename>
-						<foldername name="FMA-2020-05 Bassnet Library" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2020-05 Bassnet Library</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Publication Layout in Bassnet ‘Library’ Folder – as of 08 May 2020</filename>
-						</foldername>
-						<foldername name="FMA-2020-06" actionname="" description="FMA-2020-06 Transition Survey ECDIS">
-							<foldername name="Coll of com sur" actionname="" description="Collection of completed surveys">
-								<foldername name="Done" actionname="" description="">
-									<foldername name="CO" actionname="" description="">
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">C01-20200519-CSK Endeavour (CO George Camacho)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">C02-20200517-KWK Excelsus (CO Sherwin Clyde)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">C03-20200514-KHK Majesty (CO Keenan Fernandes)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">C04-20200515-KHK Empress (CO Gagat Satyaprakash)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">C05-20200516-CSK Endeavour (CO Shrawan Khanna)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">C06-20200514-KWK Excelsus (CO Ayaz Khot)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">C07-20200516-CSK Vanguard (CO Harshal Jagtap)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">C08-20200518-KHK Vision-CO Ashish Raichur</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">C09-20200517-CSK Valiant (CO Gokula Saravanan)</filename>
-									</foldername>
-									<foldername name="MAS" actionname="" description="">
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M01-20200520-CSK Vanguard (Capt. Girish Batham)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M02-20200516-KHK Empress (Capt. Arindam Biswas)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M03-20200519-CSK Vanguard (Capt. Dong Shu Bao)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M04-20200514-CSK Endeavour (Capt. Sanjay Ghosh)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M05-20200516-KHK Majesty (Capt. Kedar Joglekar)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M06-20200521-KWK Excelsus (Capt. Dharmendra Kumar)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M07-20200519-KHK Vision (Capt. Manjeshwar)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M08-20200514-KHK Majesty (Capt. Mirza)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M09-20200513-KHK Empress (Capt. Sagar Naik)</filename>
-										<foldername name="M10-20200514" actionname="" description="M10-20200514-CSK Valiant (Capt. Ankur Pandey)">
-											<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">20200514-CSK Valiant (Capt. Ankur Pandey)</filename> -->
-											<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">20200514-CSK Valiant</filename>
-											<!-- <filename doctype="XLS" actionname="" isdownloadable="" ismodify="">ecdis setting COASTAL PASSAGE VOY 17L3</filename> -->
-											<filename doctype="XLS" actionname="" isdownloadable="" ismodify="">COASTAL PASS VOY 17L3</filename>
-										</foldername>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M11-20200512-KWK Excelsus (Capt. Oberoi)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M12-20200514-CSK Valiant (Capt. Nithin Prakashan)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M13-20200512-KHK Vision (Capt. BP Sagar)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M14-20200516-KHK Empress (Capt. Amit Saxena)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">M15-20200516-CSK Endeavour (Capt. Joseph Siscar)</filename>
-									</foldername>
-									<foldername name="No need" actionname="" description="">
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">20200516-CSK Endeavour (2O John Artil)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">20200516-CSK Endeavour (3O Gerby Ochoa)</filename>
-										<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">20200516-CSK Endeavour (3O Henry Carolino)</filename>
-									</foldername>
-								</foldername>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Summary of ECDIS Survey 2020-EDITED 22MAY20</filename>
-								<filename doctype="XLS" actionname="" isdownloadable="" ismodify="">Summary of ECDIS Survey 2020-EDITED 22MAY20</filename>
-							</foldername>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">ECDIS RA</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2020-06 Transition Survey ECDIS as Primary means for Navigation</filename>
-						</foldername>
-						<foldername name="FMA-2020-07 SOX ECA Korea" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA 2020-07  Attachment-KR 2020-ETC-01</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2020-07 Designation of SOX Emission Control Area in Republic of Korea</filename>
-						</foldername>
+						
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2020-08 VDR analysis review 2019 (Internal)</filename>
-						<foldername name="FMA-2020-09 JHA review during external TMSA audit" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">D17 - Simultaneous Operations including Cargo Operations and bunkering</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2020-09 JHA, review during external TMSA audit</filename>
-						</foldername>
-						<foldername name="FMA-2020-10 Sulphur 2020 PSC Inspection preparations" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Attachment - Sulphur 2020 PSC Inspection by UK P_I</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2020-10 Sulphur 2020 PSC Inspection preparations</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">MEPC1Circ882</filename>
-						</foldername>
+						
 						<foldername name="FMA-2020-11 Safety of Navigation off Chinese Coast" actionname="" description="">
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Attachment 1-MPA Circular No. 7 of 2018</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Attachment 2-PNI1708</filename>
@@ -177,11 +97,42 @@
 						</foldername>
 					</foldername>
 					<foldername name="2021" actionname="" description="">
-						<foldername name="FMA-2021-01 Security Incident - Offshore Al Faw" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">D-4 Check List - Fujairah _ AG - Updated 07</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2021-01 Security Incident - Offshore Al Faw</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">~$A-2021-01 Security Incident - Offshore Al Faw</filename>
+						<!-- <foldername name="FMA-2021-01 Security Incident - Offshore Al Faw" actionname="" description=""> -->
+							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">D-4 Check List - Fujairah _ AG - Updated 07</filename> -->
+							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2021-01 Security Incident - Offshore Al Faw</filename> -->
+							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">~$A-2021-01 Security Incident - Offshore Al Faw</filename> -->
+						<!-- </foldername> -->
+						
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2021-01 Security Incident - Offshore Al Faw</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2021-02 Occupational Exposure Limit of H2S, Standard Alarm Settings</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2021-03 Correct procedure for RA and fill in JHA form</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2021-04 EPA NPDES Vessel General Permit</filename>
+						<foldername name="FMA-2021-04 Attachments" actionname="" description="">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">1. 2013 VGP</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">2. Compliance Matrix for 27 Discharges</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">3. TCC Sample Log Book Entries</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">4. 2013 VGP Forms</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">5. Sample Statement of Docking Survey Page</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">6. VGP Sampling - Laboratory Contacts Copy</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">7. VGP Sampling and analysis guidelines from ABS Copy</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">8. Exhaust Gas Cleaning System Washwater Discharge Requirements Copy</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">9. 2021 VGP Checklist Rev 0 Copy</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">10. Environmentally Accepted Lubricants Copy</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">11. Intertanko - Guidance on Monitoring and Sampling for Compliance with the 2013 VGP Copy</filename>
+
 						</foldername>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2021-05 Review of FMN </filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2021-06 Review of FMA, FNA, FPA</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMA-2021-07</filename>
+						<foldername name="FMA-2021-07 Attachments" actionname="" description="">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">1. Malaysia Shipping Notice (MSN) 5 of 2014</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">2. MPA Port Marine Circular No. 03 of 2017</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">3. Intertanko update on Malaysian Enforcement Actions in East Joho Waters</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">4. DNK IOC Warning Malaysian Anchorage Vessels at possible risk</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">5. Standard Club – STS in the Singapore OPL– Don’t!</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">6. SN-1-Circ-282-Information concerning anchoring in the TSS in the SOMS</filename>
+						</foldername>
+
 					</foldername>
 				</foldername>
 				<foldername name="Fleet Navigation Advisory" actionname="" description="">
@@ -209,6 +160,14 @@
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Navtex message TT672</filename>
 						</foldername>
 					</foldername>
+					<foldername name="2021" actionname="" description="">
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FNA-2021-01 Fatigue poor bridge</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FNA-2021-02 Close Quarter Situation with a Submarine</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FNA-2021-03 Structure Damage due to push tug</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FNA-2021-04 Close Quarter Situation with other anchored vessel</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FNA-2021-05 Role of PPU in Bridge Resource Management</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FNA-2021-06 Navigation Through Suez Canal</filename>
+					</foldername>
 				</foldername>
 				<foldername name="Fleet Personnel Advisory" actionname="" description="">
 					<foldername name="2020" actionname="" description="">
@@ -225,6 +184,11 @@
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">TCC Tanker Wage Scale - Year 2021 - Phil _ PRC Sr Officers</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">TCC TANKER WAGE SCALE YEAR 2021</filename>
 						</foldername>
+					</foldername>
+					<foldername name="2021" actionname="" description="">
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FPA-2021-01 Amendment to clause 7 of Seafarer Employment Agreement</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FPA-2021-02 - Renewal of Certificates and Traveling documents during vacation</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FPA-2021-03 Assessment of Manning Level</filename>
 					</foldername>
 				</foldername>
 				<foldername name="Fleet Procurement Advisory" actionname="" description="">
@@ -337,160 +301,52 @@
 				</foldername>
 				<foldername name="F M N" actionname="" description="Fleet Marine Notice">
 					<foldername name="2020" actionname="" description="">
-						<foldername name="FMN-2020-01" actionname="" description="FMN-2020-01 Revised Onboard Navigation Audit Procedure">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">A-Guide-to-Best-Practice-for-Navigational-Assessments-and-Audits</filename>
-							<foldername name="Blank SMS" actionname="" description="Blank SMS forms of SM017A-17E">
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017A-Onboard Nav Pro Audit Form (Part A) - Summary</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017A</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017B-Onboard Nav Pro Audit Form (Part B) - Technical Baseline</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017B</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-1-Onboard Nav Pro Audit Form (Part C1) - Master</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-1</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-2-Onboard Nav Pro Audit Form (Part C2) - CO or Traninee Master</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-2</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-3-Onboard Nav Pro Audit Form (Part C3) - Nav Officer</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-3</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-4-Onboard Nav Pro Audit Form (Part C4) - Helmsman</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-4</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017D-Onboard Nav Pro Audit Form (Part D) - Resilience</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017D</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017E-Onboard Nav Pro Audit Form (Part E) - Observation Report</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017E</filename>
-							</foldername>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.15 - Navigation Audit Rev 11</filename>
-							<foldername name="SM017A-C,E" actionname="" description="Completed Sample forms of SM017A-C,E">
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017A-Onboard Nav Pro Audit Form (Part A) - Summary</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017A</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017B-Onboard Nav Pro Audit Form (Part B) - Technical Baseline</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017B</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-1-Onboard Nav Pro Audit Form (Part C1) - Master</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-1</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-2-Onboard Nav Pro Audit Form (Part C2) - CO or Traninee Master</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-2</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-3-Onboard Nav Pro Audit Form (Part C3) - Nav Officer</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-3</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-4-Onboard Nav Pro Audit Form (Part C4) - Helmsman</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017C-4</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017E-Onboard Nav Pro Audit Form (Part E) - Observation Report (2)</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM017E</filename>
-							</foldername>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-01 Revised Onboard Navigation Audit Procedure Rev02</filename>
-						</foldername>
-						<foldername name="FMN-2020-02 Revised Smoking Policy" actionname="" description="">
-							<foldername name="FMN-2020-02 Attachment" actionname="" description="">
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 5 Fire Precautions _ Fire Fighting Rev 05</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">PS011 - Smoking Policy Rev02</filename>
-							</foldername>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-02 Revised Smoking Policy</filename>
-						</foldername>
+						<!-- ////////REMOVE 2020-01 TO 2020-02 AND 2020-04 TO 2020-09///////////ON 27TH MAY 2021///////////// -->
 						<foldername name="FMN-2020-03 Guidelines for the use of new SSSCL" actionname="" description="">
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">CO029 - Ship-Shore Safety Checklist Rev 01</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-03 Guidelines for the use of new SSSCL</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Frequent Asked Questions to ISGOTT 6th Edition</filename>
 						</foldername>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-04 Critical  Navigational Areas</filename>
-						<foldername name="FMN-2020-05 Revised ‘Promotion to Master’ Checklist" actionname="" description="">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-05 Revised ‘Promotion to Master’ Checklist</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Promotion to Master Rev03</filename>
-						</foldername>
-						<foldername name="FMN-2020-06" actionname="" description="FMN-2020-06 Revised Enclosed Space_Cargo PR Entry">
-							<foldername name="Attachment to FMN-2020-06" actionname="" description="">
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 21 Pump room entry Rev 03</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 5.4 Enclosed space entry work permit procedure Rev 08</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 5.4</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SM003 - Enclosed space entry form Rev 09</filename>
-							</foldername>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-06 Revised Enclosed Space_Cargo Pumproom Entry</filename>
-						</foldername>
-						<foldername name="FMN-2020-07" actionname="" description="FMN-2020-07 Paper Charts to ECDIS">
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-07 Transition from Paper Charts to ECDIS Navigation</filename>
-							<foldername name="Transition to ECDIS" actionname="" description="Transition to ECDIS navigation, procedure, forms and checklists">
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.7.30 - ECDIS Rev 15</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.7.30.23 - ECDIS Annex 1 Rev 01</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.7.30.23 - ECDIS Annex 1</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.7.30.23 - ECDIS Annex 2 Rev 01</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.7.30.23 - ECDIS Annex 2</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM002 - Daily Bridge Equipment Tests Rev 06</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM002</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM003 - Bridge Arrival Checklist Rev 10</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM003</filename>
-								<!-- <filename doctype="XLS" actionname="" isdownloadable="" ismodify="">NM006 - Pilot Card _ Information Exchange Rev 14</filename> -->
-								<filename doctype="XLS" actionname="" isdownloadable="" ismodify="">NM006</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM007 - Bridge departure Checklist Rev 11</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM007</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM009 - Bridge Watch Hand Over at Sea Checklist Rev 07</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM009</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM013A - Anchoring Checklist Rev 01</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM013B - Anchor watch Checklist Rev 04</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM023 - Navigating in Restricted Visibilty Checklist  Rev 02</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM023</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM024 - Navigating in Congested Coastal waters TSS Checklist Rev 02</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM024</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM025A - Master’s Random Verification of ENC Corrections</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM025A</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM026 - Passage Planning Electronic Chart Rev 01</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM026</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Section 4 - Content Rev 09</filename>
-							</foldername>
-						</foldername>
-						<foldername name="FMN-2020-08" actionname="" description="FMN-2020-08 Amendments to Vol IV Sec2 Ch1 and Navi. forms, checklists (NM)">
-							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-08 - Amendments to Vol IV Section 2 Chapter 1 and Navigational forms, check lists (NM)</filename> -->
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-08</filename>
-							<foldername name="Navigation Procedures" actionname="" description="">
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.1 Responsibility Rev 03</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.10 - Anchoring Rev 06</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.11 - Weather Rev 05</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.12 - Contingency Rev 02</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.13 - Distress at sea Rev 03</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.15 - Navigation Audit Rev 11</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.2 - Guideline to Master - Annex 1 Rev 01</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.2 Annex 1</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.2 - Guideline to Master Rev 04</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.2</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.3 - Navigation Procedure Rev 10</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.3</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.4 - Watch Keeping Rev 14</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.5 - Chart _ Publication Rev 06</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.6 - Bridge Records and Display Rev 03</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.6</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.7 - Bridge Navigation Equipment Rev 12</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.7</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.7.30 - ECDIS Rev 15</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.7.30.23 - ECDIS Annex 1 Rev 01</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.7.30.23 - ECDIS Annex 2 Rev 01</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.8 - Coastal and Ocean Navigation Rev 09</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.8</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1.9 - Pilotage Rev 04</filename>
-							</foldername>
-							<foldername name="Sec 4" actionname="" description="">
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM002 - Daily Bridge Equipment Tests Rev 06</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM003 - Bridge Arrival Checklist Rev 10</filename>
-								<filename doctype="XLS" actionname="" isdownloadable="" ismodify="">NM006 - Pilot Card _ Information Exchange Rev 14</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM007 - Bridge departure Checklist Rev 11</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM009 - Bridge Watch Hand Over at Sea Checklist Rev 07</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM010 - Engine Room handover watch Rev 03 </filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM013A - Anchoring Checklist Rev 01</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM013B - Anchor watch Checklist Rev 04</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM023 - Navigating in Restricted Visibilty Checklist  Rev 02</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM023</filename>
-								<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM024 - Navigating in Congested Coastal waters TSS Checklist Rev 02</filename> -->
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM024</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM025A - Master’s Random Verification of ENC Corrections</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">NM026 - Passage Planning Electronic Chart Rev 01</filename>
-								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Section 4 - Content Rev 09</filename>
-							</foldername>
-						</foldername>
-						<foldername name="FMN-2020-09 Revised Lock out Tag out (LOTO) procedures" actionname="" description="">
-							<filename doctype="XLS" actionname="" isdownloadable="" ismodify="">Annex 1 – Guidance on Usage of LOTO Kit Items</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 15 Lock Out and Tag Out Rev 02</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-09 Revised Lock out Tag out (LOTO) procedures</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SP003 - Familiarization with Deck Equipment Rev 02</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SP005 - Familiarization with engine room equipment Rev 04</filename>
-						</foldername>
+						
 						<foldername name="FMN-2020-10 Revised Master Pilot Information Exchange" actionname="" description="">
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2020-10 Revised Master Pilot Information Exchange</filename>
 							<filename doctype="XLS" actionname="" isdownloadable="" ismodify="">Revised NM006 - Pilot Card  Information Exchange Rev 14</filename>
 						</foldername>
+					</foldername>
+				
+					<foldername name="2021" actionname="" description="">
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2021-01 Revised procedures for Risk Mgmt _ Incident Reporting</filename>
+						<foldername name="FMN-2021-01 Attachment" actionname="" description="">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">1. Vol 4 Sec 1 Contents Rev 12</filename>
+							<foldername name="1. Vol 4 Sec 5 (whole)" actionname="" description="">
+								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1 Types of Incidents and NC Rev 04</filename>
+								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 1 Annex 1 - Incident Classification Matrix</filename>
+								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 2 Annex-SAFIR Report Sample (Incident)</filename>
+								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 2 Annex-SAFIR Report Sample (Near Miss)</filename>
+								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 2 Incident and NC Reporting Rev 08</filename>
+								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 3 Incident Investigation - Annex 1 (no change)</filename>
+								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 3 Incident Investigation Rev 06</filename>
+								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 4 Incident Management Rev 04</filename>
+								<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">Chapter 5 Job Hazard and Risk Analyses</filename>
+								
+							</foldername>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">2. SM018 - Job Hazard  Risk Analysis Form Rev 10</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">3. Chapter 1, Annex 1 - Incident Classification Matrix</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">4. Record Book of Unsafe Acts and Conditions Rev00-15Jan21</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">5.Poster PS029 - Safety is not an Accident Rev 01</filename>
+						</foldername>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2021-02 Rev procedures Grey Water in Aft Peak Tank</filename>
+						<foldername name="FMN-2021-02 Attachment" actionname="" description="">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SMS Vol IV Section 1 Chapter 4 Environmental Control</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">SMS Vol IV Section 3 Chapter 8 Ballast Operations</filename>
+						</foldername>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2021-03 Revised Cargo _ Ballast Tank Inspection Form</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2021-04 Revised Enclosed Space Entry Permit Form-SM003</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2021-05 - Amendment to RA and Approval Process</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2021-06 Revised Procedures for Accommodation Ladder</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2021-07 Introduction of STS Feedback Form</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2021-08 Revised Procedures for SBMTandem Mooring</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="">FMN-2021-09 Implementation of Bruusgaard system</filename>
 					</foldername>
 				</foldername>
 				<foldername name="Fleet Technical Notice" actionname="" description="">

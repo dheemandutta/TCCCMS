@@ -67,15 +67,16 @@ namespace TCCCMS.Controllers
                         string fnameWithPath = fileFath +"/"+ fname;
                         file.SaveAs(fnameWithPath);
 
-                        ticket.Error = error;
-                        ticket.Description = description;
-                        ticket.FilePath = relativePath+"/"+fname;
+                        ticket.Error        = error;
+                        ticket.Description  = description;
+                        ticket.FilePath     = relativePath+"/"+fname;
+                        ticket.ShipId       = Convert.ToInt32(Session["ShipId"].ToString());
 
 
                     }
 
-                    int ticketNumber = ticketBl.SaveTicket(ticket);
-                    if(ticketNumber > 0)
+                    string ticketNumber = ticketBl.SaveTicket(ticket, Convert.ToInt32(Session["UserType"].ToString()));
+                    if(ticketNumber != null)
                     {
                         if(Session["UserType"].ToString() == "1")
                         {
