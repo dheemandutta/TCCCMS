@@ -77,7 +77,7 @@
 					<!-- <filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="STSTOL">STS TRANSFER OPERATION LOG</filename> -->
 				</foldername>
 			</foldername>
-			<foldername description="Blast Water Management Plan" actionname="BWMP" name="5. KHKV BWMP">
+			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. KHKV BWMP">
 				
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPS1Introduction">Section 1 - Introduction</filename>
@@ -739,7 +739,7 @@
 					
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Blast Water Management Plan" actionname="BWMP" name="5. KWEX BWMP (ABS Approved)">
+			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. KWEX BWMP (ABS Approved)">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPDR">BWMP direct revison on SP (KWEX)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX BWMP - Appendix 7 with ABS endorsement 12May18</filename>
 			</foldername>
@@ -1261,7 +1261,7 @@
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBRP">STS Main Body - Responsible Persons for STS Operations</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Blast Water Management Plan" actionname="BWMP" name="5. CSVA BWMP (ABS Approved)">
+			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. CSVA BWMP (ABS Approved)">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPDR">BWMP direct revison on SP (CSVA)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Vanguard BWMP - ABS approved 27Oct16</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVA BWMP - Appendix 7 with ABS endorsement 04May18</filename>
@@ -1770,7 +1770,7 @@
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBRP">STS Main Body - Responsible Persons for STS Operations</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Blast Water Management Plan" actionname="BWMP" name="5. CSVL BWMP (ABS Approved)">
+			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. CSVL BWMP (ABS Approved)">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - ABS approved 24Jul17</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL BWMP - Appendix 7 with ABS endorsement 29Jul18</filename>
 			</foldername>
@@ -2290,7 +2290,7 @@
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBRP">STS Main Body - Responsible Persons for STS Operations</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Blast Water Management Plan" actionname="BWMP" name="5. CSEN BWMP (ABS Approved)">
+			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. CSEN BWMP (ABS Approved)">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPDR">BWMP direct revison on SP (CSEN)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN BWMP - Appendix 7 with ABS endorsement 18Aug18</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Endeavour BWMP - ABS approved 07Sep17</filename>
@@ -2816,7 +2816,7 @@
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBRP">STS Main Body - Responsible Persons for STS Operations</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Blast Water Management Plan" actionname="BWMP" name="5. KHEM BWMP (ABS Approved)">
+			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. KHEM BWMP (ABS Approved)">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHEM BWMP - Appendix 6 with ABS endorsement 09Mar19</filename>
 				
 			</foldername>  
