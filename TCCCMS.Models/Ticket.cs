@@ -15,6 +15,7 @@ namespace TCCCMS.Models
         public string FilePath { get; set; }
         public string Email { get; set; }
         public int IsSolved { get; set; }
+        public int ShipId { get; set; }// Added on 27th May 2021 @BK
 
         public int CreatedBy { get; set; }
         public DateTime CreatedAt { get; set; }

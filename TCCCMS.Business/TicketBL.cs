@@ -11,11 +11,11 @@ namespace TCCCMS.Business
 {
     public class TicketBL
     {
-        public int SaveTicket(Ticket ticket)
+        public string SaveTicket(Ticket ticket,int userType)
         {
             TicketDAL ticketDal = new TicketDAL();
 
-            return ticketDal.SaveTicket(ticket);
+            return ticketDal.SaveTicket(ticket, userType);
         
         }
         

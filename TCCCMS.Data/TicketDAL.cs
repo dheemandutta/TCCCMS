@@ -13,7 +13,7 @@ namespace TCCCMS.Data
 {
     public class TicketDAL
     {
-        public int SaveTicket(Ticket ticket)
+        public string SaveTicket(Ticket ticket,int userType)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
@@ -26,12 +26,14 @@ namespace TCCCMS.Data
 
             cmd.Parameters.AddWithValue("@FilePath", ticket.FilePath.ToString());
             cmd.Parameters.AddWithValue("@CreatedBy", 1);
-            cmd.Parameters.Add("@TicketNumber", SqlDbType.Int);
+            cmd.Parameters.Add("@TicketNumber", SqlDbType.VarChar,50);
             cmd.Parameters["@TicketNumber"].Direction = ParameterDirection.Output;
+            cmd.Parameters.AddWithValue("@UserType", userType);
+            cmd.Parameters.AddWithValue("@shipId", ticket.ShipId);
 
-            
+
             cmd.ExecuteScalar();
-            int tktNumber = Convert.ToInt32(cmd.Parameters[4].Value);
+            string tktNumber = cmd.Parameters[4].Value.ToString();
             con.Close();
 
             return tktNumber;
