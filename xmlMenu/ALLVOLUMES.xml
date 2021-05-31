@@ -6,7 +6,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAAOTVA">APPENDIX A - TCCS SMS Oil Tankers, Volumes At A Glance</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCADFC">APPENDIX D - FLOW CHART OF SMS MANUALS - OIL TANKERS</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAEFC">APPENDIX E - FLOW CHART OF SMS MANUALS - BULK CARRIERS</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAFOC">TAPPENDIX F - ORGANIZATION CHART OF TCC GROUP</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAFOC">APPENDIX F - ORGANIZATION CHART OF TCC GROUP</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAGOCSG">APPENDIX G - ORGANIZATION CHART OF TCC SINGAPORE - HEAD OFFICE</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAHOCHK">APPENDIX H - ORGANIZATION CHART OF TCC HONG KONG - BRANCH OFFICE</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAIOCSH">APPENDIX I - ORGANIZATION CHART OF TCC SHANGHAI - BRANCH OFFICE</filename>
@@ -97,7 +97,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PBS">Section 17 - Provision and Bond Store</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DressCode">Section 18  - Dress Code</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CrewWelfare">Section 19 - Crew Welfare</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="">Section 20 - Accommodation and Sanitary</filename>
+			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S20AS">Section 20 - Accommodation and Sanitary</filename> -->
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FamilyOnboard">Section 21 - Family Onboard</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CGM">Section 22 - Crew General Matters</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VesselAccount">Section 23 - Vessel Account</filename>
@@ -458,7 +458,7 @@
 			<foldername actionname="" description="" name="Section 2 - Shipboard Emergency Plan - Action Checklist">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CVA">Annex A - Checklist for Vessel Action</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CSD">Annex B - Checklist for Submission of Document</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="IMF">Annex C - IMO Reporting Format</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IMORF">Annex C - IMO Reporting Format</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ESDC">Annex D - Emergency Squad Duty Card</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BSDC">Annex E - Back-up Squad Duty Card</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="MPACRF">Annex F - MPA Casualty Reporting Form</filename>
@@ -475,7 +475,8 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CEL">Annex C - Casualty Event Log</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CMT">Annex D - Crisis Management Team</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ERCN">Annex E - Emergency Response Contact Numbers</filename>
-				<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Annex F - Ship Communication List</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Annex F - Ship Communication List</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex F - Ship Communication List</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex G - LOF </filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VCPR">Annex H - Vessel Casualty Prompt Report</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Section6">Volume VI - Section 6</filename>
@@ -494,7 +495,8 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. VII Manual</filename> -->
 			<foldername actionname="" description="" name="Appendix">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STAFCTCCV">CBT - STA Flow Chart TCC Vessels</filename>
-				<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">CBT - Starting modules</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">CBT - Starting modules</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CBT - Starting modules</filename>
 			</foldername>
 		</volume>  		
 

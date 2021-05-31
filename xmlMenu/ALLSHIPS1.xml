@@ -103,7 +103,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPA6RFB">Appendix VI - Reporting form and book</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPARF">Appendix VII - Reporting form - Port States</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPA8BWMTR">Appendix VIII - Ballast water management training record</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="BWMPA9WMOD">Appendix IX - WMO Definition</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPA9WMOD">Appendix IX - WMO Definition</filename>
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="BWMPA10WBTASP">Appendix X - WBT arrangement and Sampling Point</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPA11SP">Appendix XI - Ship_s Plan</filename>
 						
@@ -431,14 +431,14 @@
 				</foldername>
 			
 			</foldername>
-			<foldername description="Canada Blast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">KHKV Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMR">Manual Revisions</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - The Shipping Federation Code of Best Practices for BW</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix C - A Guide to Canada's BWC and Mgmt Reg-TP13617E (2019)</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix C - A Guide to Canada BWC and Mgmt Reg-TP13617E (2019)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix D - Canada BWC and Mgmt Reg</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix E - IMO Resolution A.868 (20)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix F - BW Mgmt Inspection Report</filename>
@@ -533,7 +533,8 @@
 				<foldername description="" actionname="" name="Appendix">
 					
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAContent">Appendix Content</filename> -->
-					<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix I - EEOI Baseline and EPI Form and Sample</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix I - EEOI Baseline and EPI Form and Sample</filename> -->
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix I - EEOI Baseline and EPI Form and Sample</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPAEA">Appendix II - Analysis of Energy Activity</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPEEPSR">Appendix III Energy Efficiency Programme-Sample and Record</filename>
 					<foldername description="" actionname="" name="Appendix IV - Action Plan - Sample and Record">
@@ -588,21 +589,21 @@
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Data Collection Plan-KWEX (19Sep18)</filename>
 				</foldername>
 				<foldername description="" actionname="" name="Appendix E - COC and SOC">
-						<foldername description="" actionname="" name="Confirmation of Compliance">
+						<foldername description="Confirmation of Compliance" actionname="" name="COC">
 							<!-- <foldername description="" actionname="" name="old"> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-COC-21Sep18</filename> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSKS-COC-18Sep18</filename> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL-COC-19Sep18</filename> -->
 							<!-- </foldername> -->
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-COC-18Oct18</filename>
-							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-COC-18Oct18</filename>
+							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVA-COC-19Sep18</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL-COC-18Oct18</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHEM-COC-19Feb19</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHKV-COC-18Sep18</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA-COC-02May19</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX-COC-19Sep18</filename>
 						</foldername>
-						<foldername description="" actionname="" name="Statement of Compliance">
+						<foldername description="Statement of Compliance" actionname="" name="SOC">
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVA-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL-SOC-valid until 31May21</filename>
@@ -958,7 +959,7 @@
 			
 			
 			</foldername>
-			<foldername description="Canada Blast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
 				
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">KWEX Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
@@ -1108,7 +1109,7 @@
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Data Collection Plan-KWEX (19Sep18)</filename>
 					</foldername>
 					<foldername description="" actionname="" name="Appendix E - COC and SOC">
-						<foldername description="" actionname="" name="Confirmation of Compliance">
+						<foldername description="Confirmation of Compliance" actionname="" name="COC">
 							<!-- <foldername description="" actionname="" name="old"> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-COC-21Sep18</filename> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSKS-COC-18Sep18</filename> -->
@@ -1122,7 +1123,7 @@
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA-COC-02May19</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX-COC-19Sep18</filename>
 						</foldername>
-						<foldername description="" actionname="" name="Statement of Compliance">
+						<foldername description="Statement of Compliance" actionname="" name="SOC">
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVA-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL-SOC-valid until 31May21</filename>
@@ -1475,7 +1476,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMC">Manual Control</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMR">Manual Revisions - for all ships</filename> -->
 			</foldername>
-			<foldername description="Canada Blast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">CSVA Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
@@ -1624,7 +1625,7 @@
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Data Collection Plan-KWEX (19Sep18)</filename>
 					</foldername>
 					<foldername description="" actionname="" name="Appendix E - COC and SOC">
-						<foldername description="" actionname="" name="Confirmation of Compliance">
+						<foldername description="Confirmation of Compliance" actionname="" name="COC">
 							<!-- <foldername description="" actionname="" name="old"> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-COC-21Sep18</filename> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSKS-COC-18Sep18</filename> -->
@@ -1638,7 +1639,7 @@
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA-COC-02May19</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX-COC-19Sep18</filename>
 						</foldername>
-						<foldername description="" actionname="" name="Statement of Compliance">
+						<foldername description="Statement of Compliance" actionname="" name="SOC">
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVA-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL-SOC-valid until 31May21</filename>
@@ -1984,7 +1985,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMC">Manual Control</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMR">Manual Revisions - for all ships</filename> -->
 			</foldername>
-			<foldername description="Canada Blast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">CSVL Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
@@ -2139,7 +2140,7 @@
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Data Collection Plan-KWEX (19Sep18)</filename>
 					</foldername>
 					<foldername description="" actionname="" name="Appendix E - COC and SOC">
-						<foldername description="" actionname="" name="Confirmation of Compliance">
+						<foldername description="Confirmation of Compliance" actionname="" name="COC">
 							<!-- <foldername description="" actionname="" name="old"> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-COC-21Sep18</filename> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSKS-COC-18Sep18</filename> -->
@@ -2153,7 +2154,7 @@
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA-COC-02May19</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX-COC-19Sep18</filename>
 						</foldername>
-						<foldername description="" actionname="" name="Statement of Compliance">
+						<foldername description="Statement of Compliance" actionname="" name="SOC">
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVA-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL-SOC-valid until 31May21</filename>
@@ -2505,7 +2506,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMC">Manual Control</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMR">Manual Revisions - for all ships</filename> -->
 			</foldername>
-			<foldername description="Canada Blast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">CSEN Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
@@ -2655,7 +2656,7 @@
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Data Collection Plan-KWEX (19Sep18)</filename>
 					</foldername>
 					<foldername description="" actionname="" name="Appendix E - COC and SOC">
-						<foldername description="" actionname="" name="Confirmation of Compliance">
+						<foldername description="Confirmation of Compliance" actionname="" name="COC">
 							<!-- <foldername description="" actionname="" name="old"> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-COC-21Sep18</filename> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSKS-COC-18Sep18</filename> -->
@@ -2669,7 +2670,7 @@
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA-COC-02May19</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX-COC-19Sep18</filename>
 						</foldername>
-						<foldername description="" actionname="" name="Statement of Compliance">
+						<foldername description="Statement of Compliance" actionname="" name="SOC">
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVA-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL-SOC-valid until 31May21</filename>
@@ -3046,7 +3047,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMC">Manual Control</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMR">Manual Revisions - for all ships</filename> -->
 			</foldername>
-			<foldername description="Canada Blast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">KHEM Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
@@ -3238,7 +3239,7 @@
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Data Collection Plan-KWEX (19Sep18)</filename>
 					</foldername>
 					<foldername description="" actionname="" name="Appendix E - COC and SOC">
-						<foldername description="" actionname="" name="Confirmation of Compliance">
+						<foldername description="Confirmation of Compliance" actionname="" name="COC">
 							<!-- <foldername description="" actionname="" name="old"> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-COC-21Sep18</filename> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSKS-COC-18Sep18</filename> -->
@@ -3252,7 +3253,7 @@
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA-COC-02May19</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX-COC-19Sep18</filename>
 						</foldername>
-						<foldername description="" actionname="" name="Statement of Compliance">
+						<foldername description="Statement of Compliance" actionname="" name="SOC">
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVA-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL-SOC-valid until 31May21</filename>
@@ -3391,7 +3392,7 @@
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBRP">STS Main Body - Responsible Persons for STS Operations</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Blast Water Management Plan" actionname="BWMP" name="5. KHMA BWMP (ABS Approved)">
+			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. KHMA BWMP (ABS Approved)">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Majesty BWMP - ABS approved 07May19</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA BWMP - Appendix 6 with ABS endorsement 23Oct19	</filename>
 			</foldername>
@@ -3620,7 +3621,7 @@
 			
 			
 			</foldername>
-			<foldername description="Canada Blast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">KHEM Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
@@ -3787,7 +3788,7 @@
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Data Collection Plan-KWEX (19Sep18)</filename>
 					</foldername>
 					<foldername description="" actionname="" name="Appendix E - COC and SOC">
-						<foldername description="" actionname="" name="Confirmation of Compliance">
+						<foldername description="Confirmation of Compliance" actionname="" name="COC">
 							<!-- <foldername description="" actionname="" name="old"> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-COC-21Sep18</filename> -->
 								<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSKS-COC-18Sep18</filename> -->
@@ -3801,7 +3802,7 @@
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA-COC-02May19</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX-COC-19Sep18</filename>
 						</foldername>
-						<foldername description="" actionname="" name="Statement of Compliance">
+						<foldername description="Statement of Compliance" actionname="" name="SOC">
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSEN-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVA-SOC-valid until 31May21</filename>
 							<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL-SOC-valid until 31May21</filename>
