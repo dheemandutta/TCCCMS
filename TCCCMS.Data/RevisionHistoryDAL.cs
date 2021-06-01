@@ -225,6 +225,7 @@ namespace TCCCMS.Data
 
             cmd.Parameters.AddWithValue("@RevisionId", rViewer.RevisionId);
             cmd.Parameters.AddWithValue("@UserId", rViewer.UserId);
+            cmd.Parameters.AddWithValue("@ShipId", rViewer.ShipId);//Added on 1st Jun 2021
 
             int recordsAffected = cmd.ExecuteNonQuery();
             con.Close();
@@ -251,7 +252,7 @@ namespace TCCCMS.Data
                     foreach (DataRow dr in ds.Tables[0].Rows)
                     {
                         RevisionViewer rViewer = new RevisionViewer();
-                        rViewer.Id          = Convert.ToInt32(dr["Id"]);
+                        //rViewer.Id          = Convert.ToInt32(dr["Id"]);
                         rViewer.RevisionId  = Convert.ToInt32(dr["RevisionId"]);
                         rViewer.UserId      = Convert.ToInt32(dr["UserId"]);
                         rViewer.UserName    = Convert.ToString(dr["UserName"]);
