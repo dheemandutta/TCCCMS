@@ -132,6 +132,7 @@ namespace TCCCMS.Controllers
             {
                 rViewer.RevisionId = Convert.ToInt32(revisionId);
                 rViewer.UserId = Convert.ToInt32(Session["UserId"].ToString());
+                rViewer.ShipId = Convert.ToInt32(Session["ShipId"].ToString());//Added on 1st Jun 2021
                 x = rhBl.SaveRevisionViewer(rViewer);
             }
                
