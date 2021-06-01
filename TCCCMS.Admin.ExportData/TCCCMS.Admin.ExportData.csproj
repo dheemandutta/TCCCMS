@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6CDDC342-9C34-47EE-8257-63CBBF09D2A7}</ProjectGuid>
+    <ProjectGuid>{C15AF0C1-5861-4B99-B1FF-7FE62128FFA8}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TCCMS.Ship.ExportData</RootNamespace>
-    <AssemblyName>TCCMS.Ship.ExportData</AssemblyName>
+    <RootNamespace>TCCCMS.Admin.ExportData</RootNamespace>
+    <AssemblyName>TCCCMS.Admin.ExportData</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -79,10 +79,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="app.config" />
     <None Include="NLog.xsd">
       <SubType>Designer</SubType>
     </None>
