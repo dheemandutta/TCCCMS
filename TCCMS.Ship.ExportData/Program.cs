@@ -30,82 +30,82 @@ namespace TCCMS.Ship.ExportData
             logger.Info("Process Started. - {0}", DateTime.Now.ToString());
 
             ExportData();
-            //CreateZip();
+            CreateZip();
 
-            //if (ZipDirectoryContainsFiles())
-            //{
-            //    SendMail();
-            //    if (isMailSendSuccessful)
-            //    {
-            //        ArchiveZipFiles();
-            //        //redo the whole process again
-            //        isMailSendSuccessful = false;
-            //        ExportData();
-            //        CreateZip();
-            //        SendMail();
-            //        if (isMailSendSuccessful)
-            //        {
-            //            ArchiveZipFiles();
-            //        }
-            //    }
-            //}
-            //else
-            //{
-            //    isMailSendSuccessful = false;
-            //    ExportData();
-            //    CreateZip();
-            //    SendMail();
-            //    if (isMailSendSuccessful)
-            //    {
-            //        ArchiveZipFiles();
-            //    }
-            //}
+            if (ZipDirectoryContainsFiles())
+            {
+                SendMail();
+                if (isMailSendSuccessful)
+                {
+                    ArchiveZipFiles();
+                    //redo the whole process again
+                    isMailSendSuccessful = false;
+                    ExportData();
+                    CreateZip();
+                    SendMail();
+                    if (isMailSendSuccessful)
+                    {
+                        ArchiveZipFiles();
+                    }
+                }
+            }
+            else
+            {
+                isMailSendSuccessful = false;
+                ExportData();
+                CreateZip();
+                SendMail();
+                if (isMailSendSuccessful)
+                {
+                    ArchiveZipFiles();
+                }
+            }
 
         }
 
 
-        //public static void CreateZip()
-        //{
+        public static void CreateZip()
+        {
 
-        //    try
-        //    {             
-        //        string[] xmlPaths = Directory.GetFiles(path + "\\");
+            try
+            {
+                string[] xmlPaths = Directory.GetFiles(path + "\\");
 
-        //        foreach (string xmlfilePath in xmlPaths)
-        //        {
-        //            //xml file copy to temp folder and then zip that file
-        //            string xmlFile = Path.GetFileName(xmlfilePath);
-        //            string tmpxPath = Path.Combine(Path.GetDirectoryName(xmlfilePath), "temp");
-        //            File.Copy(xmlfilePath, Path.Combine(tmpxPath, xmlFile));
+                foreach (string xmlfilePath in xmlPaths)
+                {
+                    //xml file copy to temp folder and then zip that file
+                    string xmlFile = Path.GetFileName(xmlfilePath);
+                    string tmpxPath = Path.Combine(Path.GetDirectoryName(xmlfilePath), "temp");
+                    File.Copy(xmlfilePath, Path.Combine(tmpxPath, xmlFile));
 
-        //            string fileName = Path.GetFileNameWithoutExtension(xmlfilePath);
-        //            fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
-        //            fileName = fileName + ".zip";
-        //           // using (ZipFile zip = new ZipFile())
-        //            {
-        //                zip.AddDirectory(tmpxPath + "\\");
-        //                zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
+                    string fileName = Path.GetFileNameWithoutExtension(xmlfilePath);
+                    fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
+                    fileName = fileName + ".zip";
+                    // using (ZipFile zip = new ZipFile())
+                    {
+                        zip.AddDirectory(tmpxPath + "\\");
+                        zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
 
-        //                zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
-        //                zip.Save(zippath + "\\" + fileName);
+                        zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
+                        zip.Save(zippath + "\\" + fileName);
 
-        //                //Delete file from temp foldes
-        //                File.Delete(Path.Combine(tmpxPath, xmlFile));
-        //            }
+                        //Delete file from temp foldes
+                        File.Delete(Path.Combine(tmpxPath, xmlFile));
+                    }
 
-        //            File.Delete(xmlfilePath);
+                    File.Delete(xmlfilePath);
 
-        //        }
-        //    }
-        //    catch (Exception ex)
-        //    {
+                }
+            }
+            catch (Exception ex)
+            {
 
 
-        //        logger.Error("Error in CreateZip. - {0}", ex.Message + " :" + ex.InnerException);
-        //        logger.Info("Export process terminated unsuccessfully in CreateZip.");
-        //        //Environment.Exit(0);
-        //    }
-        //}
+                logger.Error("Error in CreateZip. - {0}", ex.Message + " :" + ex.InnerException);
+                logger.Info("Export process terminated unsuccessfully in CreateZip.");
+                //Environment.Exit(0);
+            }
+        }
 
         public static void ExportData()
         {
