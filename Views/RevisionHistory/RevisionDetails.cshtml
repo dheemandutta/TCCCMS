@@ -35,7 +35,8 @@
                                                 {
                                                     <tr>
                                                         <td>@item.Chapter</td>
-                                                        <td style="border-left:solid 1px; border-right:solid 1px;">@item.Section</td>
+                                                        @*<td style="border-left:solid 1px; border-right:solid 1px;">@item.Section</td>*@
+                                                        <td style="border-left:solid 1px; border-right:solid 1px;"> @Html.Raw(item.Section)</td>
                                                         <td>@item.ChangeComment</td>
                                                     </tr>
 

@@ -1,26 +1,20 @@
-﻿using Quartz;
-using Quartz.Impl;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Quartz;
 
-namespace TCCCMS.Ship.ExportData
+namespace TCCCMS.Ship.ImportData
 {
-    class Program 
+    static class Program
     {
-
         private static IScheduler scheduler;
-
         static void Main(string[] args)
         {
-            ExportScheduler.Start();
+            ImportScheduler.Start();
             Console.ReadKey();
             scheduler.Shutdown();
         }
-
-
     }
-
 }

@@ -1,0 +1,82 @@
+﻿@model TCCCMS.Models.Manual
+@{
+    //ViewBag.Title = "Pages";
+    ViewBag.Title = Model.ManualHeader;
+}
+<script src="~/Scripts/jquery-3.5.1.min.js"></script>
+@section Styles{
+    <link href="~/Scripts/highlight/css/default.css" rel="stylesheet" />
+    <link href="~/css/TccAccordian.css" rel="stylesheet" />
+    <style type="text/css">
+
+        .highlight {
+            background: #b6ff00;
+            padding: 1px;
+            border: #00CC00 dotted 1px;
+        }
+
+        .pad30 {
+            padding-left: 50px;
+            padding-right: 50px;
+            /*text-align:center;*/
+            /*padding: 30px;*/
+        }
+        /*section {
+            padding-left: 30px;
+            padding-right: 30px;
+        }*/
+
+        section::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .revisedBG{
+            background-color:yellow;
+        }
+    </style>
+}
+
+
+<div id="BodyHtml" class="searchdContent  container">
+    <input type="hidden" id="hdnRevisionId" value="@Model.RevisionId" />
+    @Html.Raw(Model.ManualBodyHtml)
+
+</div>
+@Html.Partial("_pvFormPreviewModal")
+@*-----Below line for Linked Form Preview-----Added on 15th May 2021 --by BB- -*@
+@Html.Partial("_pvFormPreviewModalVol8")
+
+@section Scripts{
+    @*<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>*@
+    @* <script src="~/Scripts/jquery-3.5.1.min.js"></script>*@
+    @* <script src="~/Scripts/highlight/js/jquery.highlight.js"></script>*@
+    <script src="~/js/Manual/ManualSearch.js"></script>
+    <script src="~/Scripts/DownloadableFroms.js"></script>
+
+    <script type="text/javascript">
+
+        //var divRevised = document.getElementsByClassName("divRevised_" + $("#hdnRevisionId").val());
+
+        //divRevised.addClass('revisedBG');
+       
+        $(".divRevised_" + $("#hdnRevisionId").val()).addClass('revisedBG');
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+}
+
