@@ -203,11 +203,17 @@ namespace TCCCMS.Admin.ExportData
         {
             try
             {
-                FillupFormsUploaded();
-                FillupFormApproverMapper();
+                
                 Ticket();
-                RevisionViewer();
-
+                logger.Info("Ticket Export Complete. - {0}", DateTime.Now.ToString());
+                RevisionHeader();
+                logger.Info("Revision Header Export Complete. - {0}", DateTime.Now.ToString());
+                RevisionDetails();
+                logger.Info("Revision History Export Complete. - {0}", DateTime.Now.ToString());
+                FillupFormsUploaded();
+                logger.Info("Fillup Forms  Export Complete. - {0}", DateTime.Now.ToString());
+                FillupFormApproverMapper();
+                logger.Info("Fillup Form Approver Mapper Export Complete. - {0}", DateTime.Now.ToString());
             }
             catch (Exception ex)
             {
@@ -223,7 +229,7 @@ namespace TCCCMS.Admin.ExportData
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
             //SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
-            SqlCommand cmd = new SqlCommand("stpExportTicketFromShip", con);
+            SqlCommand cmd = new SqlCommand("stpExportTicketFromAdmin", con);
             cmd.CommandType = CommandType.StoredProcedure;
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -241,7 +247,7 @@ namespace TCCCMS.Admin.ExportData
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
             //SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
-            SqlCommand cmd = new SqlCommand("stpExportFillupUoloadedFormsFromShip", con);
+            SqlCommand cmd = new SqlCommand("stpExportFillupUoloadedFormsFromAdmin", con);
             cmd.CommandType = CommandType.StoredProcedure;
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -259,7 +265,7 @@ namespace TCCCMS.Admin.ExportData
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
             //SqlCommand cmd = new SqlCommand("stpExporttblFormsUploadedApproverMapping", con);
-            SqlCommand cmd = new SqlCommand("stpExportFillupFormApproverFromShip", con);
+            SqlCommand cmd = new SqlCommand("stpExportFillupFormApproverFromAdmin", con);
             cmd.CommandType = CommandType.StoredProcedure;
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -272,7 +278,7 @@ namespace TCCCMS.Admin.ExportData
             con.Close();
         }
 
-        public static void RevisionViewer()
+        public static void RevisionHeader()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
@@ -290,6 +296,23 @@ namespace TCCCMS.Admin.ExportData
             con.Close();
         }
 
+        public static void RevisionDetails()
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
+            SqlCommand cmd = new SqlCommand("stpExportRevisionViewerFromAdmin", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlRevisionViewer"].ToString(), XmlWriteMode.WriteSchema);
+            }
+            con.Close();
+        }
 
         #endregion
 
@@ -303,7 +326,7 @@ namespace TCCCMS.Admin.ExportData
             {
                 using (MailMessage mail = new MailMessage())
                 {
-                    mail.Subject = GetConfigData("tccSsubject");
+                    mail.Subject = GetConfigData("tccAsubject");
                     mail.From = new MailAddress(GetConfigData("mailfrom"));
 
                     mail.To.Add(GetConfigData("mailto"));
