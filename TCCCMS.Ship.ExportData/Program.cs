@@ -15,7 +15,7 @@ using System.Globalization;
 using System.Diagnostics;
 using Quartz;
 
-namespace TCCMS.Ship.ExportData
+namespace TCCCMS.Ship.ExportData
 {
     public class Program : IJob
     {
@@ -24,6 +24,13 @@ namespace TCCMS.Ship.ExportData
         static String ziparchivePath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8)), "Archive");
         public static bool isMailSendSuccessful = false;
         static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
+
+        static void Main(string[] args)
+        {
+            Execute();
+        }
+
 
         public async Task Execute(IJobExecutionContext context)
         {
@@ -343,4 +350,3 @@ namespace TCCMS.Ship.ExportData
     }
 
 }
-
