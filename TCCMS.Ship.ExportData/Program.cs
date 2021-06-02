@@ -29,78 +29,40 @@ namespace TCCMS.Ship.ExportData
         {
             logger.Info("Process Started. - {0}", DateTime.Now.ToString());
 
-            ExportData();
-            CreateZip();
+            //ExportData();
+            //CreateZip();
 
             if (ZipDirectoryContainsFiles())
             {
-                //SendMail();
-                //if (isMailSendSuccessful)
-                //{
+                SendMail();
+                if (isMailSendSuccessful)
+                {
                     ArchiveZipFiles();
                     //redo the whole process again
                     isMailSendSuccessful = false;
                     ExportData();
                     CreateZip();
-                    //SendMail();
-                    //if (isMailSendSuccessful)
-                    //{
-                    //    ArchiveZipFiles();
-                    //}
-                //}
+                    SendMail();
+                    if (isMailSendSuccessful)
+                    {
+                        ArchiveZipFiles();
+                    }
+                }
             }
             else
             {
                 isMailSendSuccessful = false;
                 ExportData();
                 CreateZip();
-                //SendMail();
-                //if (isMailSendSuccessful)
-                //{
-                //    ArchiveZipFiles();
-                //}
-            }
-
-        }
-
-
-        public static void SendMail()
-        {
-
-            try
-            {
-                using (MailMessage mail = new MailMessage())
+                SendMail();
+                if (isMailSendSuccessful)
                 {
-                    mail.Subject = GetConfigData("subject");
-                    mail.From = new MailAddress(GetConfigData("mailfrom"));
-
-                    mail.To.Add(GetConfigData("mailto"));
-
-                    if (ZipDirectoryContainsZipFiles())
-                    {
-                        mail.Attachments.Add(new Attachment(zippath + "\\" + GetZipFileName()));
-                    }
-
-                    SmtpClient smtp = new SmtpClient(GetConfigData("smtp"));
-                    smtp.EnableSsl = true;
-                    smtp.Port = int.Parse(GetConfigData("port"));
-                    smtp.Credentials = new System.Net.NetworkCredential(GetConfigData("mailfrom").Trim(), GetConfigData("frompwd").Trim());
-
-                    smtp.Send(mail);
-
-                    isMailSendSuccessful = true;
+                    ArchiveZipFiles();
                 }
             }
-            catch (Exception ex)
-            {
-                //EventLog.WriteEntry("DataExport-SendMail", ex.Message + " :" + ex.InnerException, EventLogEntryType.Error);
-                isMailSendSuccessful = false;
-                logger.Error("Mail send failed - {0}", ex.Message + " :" + ex.InnerException);
-                logger.Info("Export process terminated unsuccessfully.");
-                Environment.Exit(0);
-            }
 
         }
+
 
         public static bool ZipDirectoryContainsZipFiles()
         {
@@ -121,7 +83,7 @@ namespace TCCMS.Ship.ExportData
 
         public static string GetConfigData(string KeyName)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RestHourDBConnectionString"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("stpGetAlltblConfig", con);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -214,7 +176,7 @@ namespace TCCMS.Ship.ExportData
                     string fileName = Path.GetFileNameWithoutExtension(xmlfilePath);
                     fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
                     fileName = fileName + ".zip";
-                     using (ZipFile zip = new ZipFile())
+                    using (ZipFile zip = new ZipFile())
                     {
                         zip.AddDirectory(tmpxPath + "\\");
                         zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
@@ -240,6 +202,7 @@ namespace TCCMS.Ship.ExportData
             }
         }
 
+        #region Export Data From DB
         public static void ExportData()
         {
             try
@@ -259,7 +222,23 @@ namespace TCCMS.Ship.ExportData
             }
         }
 
+        public static void Ticket()
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            //SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
+            SqlCommand cmd = new SqlCommand("stpExportTicketFromShip", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
 
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
+            }
+            con.Close();
+        }
 
         public static void FillupFormsUploaded()
         {
@@ -297,24 +276,6 @@ namespace TCCMS.Ship.ExportData
             con.Close();
         }
 
-        public static void Ticket()
-        {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
-            SqlCommand cmd = new SqlCommand("stpExportTicketFromShip", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
-            }
-            con.Close();
-        }
-
         public static void RevisionViewer()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
@@ -333,6 +294,52 @@ namespace TCCMS.Ship.ExportData
             con.Close();
         }
 
+
+        #endregion
+
+        #region Sending Mail
+
+
+        public static void SendMail()
+        {
+
+            try
+            {
+                using (MailMessage mail = new MailMessage())
+                {
+                    mail.Subject = GetConfigData("tccSsubject");
+                    mail.From = new MailAddress(GetConfigData("mailfrom"));
+
+                    mail.To.Add(GetConfigData("mailto"));
+
+                    if (ZipDirectoryContainsZipFiles())
+                    {
+                        mail.Attachments.Add(new Attachment(zippath + "\\" + GetZipFileName()));
+                    }
+
+                    SmtpClient smtp = new SmtpClient(GetConfigData("smtp"));
+                    smtp.EnableSsl = true;
+                    smtp.Port = int.Parse(GetConfigData("port"));
+                    smtp.Credentials = new System.Net.NetworkCredential(GetConfigData("mailfrom").Trim(), GetConfigData("frompwd").Trim());
+
+                    smtp.Send(mail);
+
+                    isMailSendSuccessful = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                //EventLog.WriteEntry("DataExport-SendMail", ex.Message + " :" + ex.InnerException, EventLogEntryType.Error);
+                isMailSendSuccessful = false;
+                logger.Error("Mail send failed - {0}", ex.Message + " :" + ex.InnerException);
+                logger.Info("Export process terminated unsuccessfully.");
+                Environment.Exit(0);
+            }
+
+        }
+
+
+        #endregion
     }
 }
 
