@@ -112,7 +112,21 @@ namespace TCCCMS.Controllers
             file.PdfPath = filePath;
             return View(file);
         }
-       
+
+
+        public ActionResult RevisiedPages(string actionName, string rv = "")
+        {
+            System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
+            Manual file = new Manual();
+           
+            file = manualBL.GetManual(controllerName, actionName);
+
+            file.RevisionId = int.Parse(rv);
+
+            //TempData[actionName] = file.ManualBodyHtml;
+            return View(file);
+        }
+
         private Dictionary<string, string> GetMimeTypes()
         {
             return new Dictionary<string, string>

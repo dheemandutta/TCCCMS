@@ -27,5 +27,7 @@ namespace TCCCMS.Models
         //************for PDF View*****************
         public string PdfName { get; set; }
         public string PdfPath { get; set; }
+
+        public int RevisionId { get; set; }
     }
 }
