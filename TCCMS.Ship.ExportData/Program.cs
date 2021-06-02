@@ -81,7 +81,7 @@ namespace TCCMS.Ship.ExportData
                     string fileName = Path.GetFileNameWithoutExtension(xmlfilePath);
                     fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
                     fileName = fileName + ".zip";
-                    // using (ZipFile zip = new ZipFile())
+                    using (ZipFile zip = new ZipFile())
                     {
                         zip.AddDirectory(tmpxPath + "\\");
                         zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
