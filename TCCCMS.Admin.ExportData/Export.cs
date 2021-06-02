@@ -4,20 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-using System.Reflection;
 using System.Data;
-using System.Data.SqlClient;
-using System.Configuration;
-using Ionic.Zip;
 using System.Net.Mail;
-
-using System.Globalization;
+using System.Reflection;
 using System.Diagnostics;
+using System.Configuration;
+using System.Globalization;
+using System.Data.SqlClient;
+using Ionic.Zip;
 using Quartz;
+using System.Threading;
 
-namespace TCCMS.Ship.ExportData
+namespace TCCCMS.Admin.ExportData
 {
-    public class Program : IJob
+
+    public class Export : IJob
     {
         static String path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8)), "xml");
         static String zippath = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8)), "ZipFile");
@@ -28,10 +29,6 @@ namespace TCCMS.Ship.ExportData
         public async Task Execute(IJobExecutionContext context)
         {
             logger.Info("Process Started. - {0}", DateTime.Now.ToString());
-
-            //ExportData();
-            //CreateZip();
-
             if (ZipDirectoryContainsFiles())
             {
                 SendMail();
@@ -62,7 +59,6 @@ namespace TCCMS.Ship.ExportData
             }
 
         }
-
 
         public static bool ZipDirectoryContainsZipFiles()
         {
@@ -343,4 +339,3 @@ namespace TCCMS.Ship.ExportData
     }
 
 }
-
