@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCCCMS.Models", "TCCCMS.Mod
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCCMS.Ship.ExportData", "TCCMS.Ship.ExportData\TCCMS.Ship.ExportData.csproj", "{6CDDC342-9C34-47EE-8257-63CBBF09D2A7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCCCMS.Admin.ExportData", "TCCCMS.Admin.ExportData\TCCCMS.Admin.ExportData.csproj", "{C15AF0C1-5861-4B99-B1FF-7FE62128FFA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6CDDC342-9C34-47EE-8257-63CBBF09D2A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CDDC342-9C34-47EE-8257-63CBBF09D2A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CDDC342-9C34-47EE-8257-63CBBF09D2A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C15AF0C1-5861-4B99-B1FF-7FE62128FFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15AF0C1-5861-4B99-B1FF-7FE62128FFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15AF0C1-5861-4B99-B1FF-7FE62128FFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15AF0C1-5861-4B99-B1FF-7FE62128FFA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

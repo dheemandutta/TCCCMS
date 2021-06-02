@@ -15,7 +15,7 @@ using System.Globalization;
 using System.Diagnostics;
 using Quartz;
 
-namespace TCCMS.Ship.ExportData
+namespace TCCCMS.Admin.ExportData
 {
     public class Program : IJob
     {
@@ -37,16 +37,16 @@ namespace TCCMS.Ship.ExportData
                 //SendMail();
                 //if (isMailSendSuccessful)
                 //{
-                    ArchiveZipFiles();
-                    //redo the whole process again
-                    isMailSendSuccessful = false;
-                    ExportData();
-                    CreateZip();
-                    //SendMail();
-                    //if (isMailSendSuccessful)
-                    //{
-                    //    ArchiveZipFiles();
-                    //}
+                ArchiveZipFiles();
+                //redo the whole process again
+                isMailSendSuccessful = false;
+                ExportData();
+                CreateZip();
+                //SendMail();
+                //if (isMailSendSuccessful)
+                //{
+                //    ArchiveZipFiles();
+                //}
                 //}
             }
             else
@@ -244,10 +244,11 @@ namespace TCCMS.Ship.ExportData
         {
             try
             {
-                FillupFormsUploaded();
-                FillupFormApproverMapper();
+                FormsUploadedApproverMapping();
+                FormsUploaded();
+                RevisionHeader();
+                RevisionHistory();
                 Ticket();
-                RevisionViewer();
 
             }
             catch (Exception ex)
@@ -261,12 +262,12 @@ namespace TCCMS.Ship.ExportData
 
 
 
-        public static void FillupFormsUploaded()
+        public static void FormsUploadedApproverMapping()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
             //SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
-            SqlCommand cmd = new SqlCommand("stpExportFillupUoloadedFormsFromShip", con);
+            SqlCommand cmd = new SqlCommand("stpExportFillupFormApproverFromAdmin", con);
             cmd.CommandType = CommandType.StoredProcedure;
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -274,17 +275,17 @@ namespace TCCMS.Ship.ExportData
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString(), XmlWriteMode.WriteSchema);
+                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFormsUploadedApproverMapping"].ToString(), XmlWriteMode.WriteSchema);
             }
             con.Close();
         }
 
-        public static void FillupFormApproverMapper()
+        public static void FormsUploaded()
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblFormsUploadedApproverMapping", con);
-            SqlCommand cmd = new SqlCommand("stpExportFillupFormApproverFromShip", con);
+            //SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
+            SqlCommand cmd = new SqlCommand("stpExportFillupUoloadedFormsFromAdmin", con);
             cmd.CommandType = CommandType.StoredProcedure;
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -292,7 +293,43 @@ namespace TCCMS.Ship.ExportData
 
             if (ds.Tables[0].Rows.Count > 0)
             {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString(), XmlWriteMode.WriteSchema);
+                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFormsUploaded"].ToString(), XmlWriteMode.WriteSchema);
+            }
+            con.Close();
+        }
+
+        public static void RevisionHeader()
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            //SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
+            SqlCommand cmd = new SqlCommand("stpExportRevisionHeaderFromAdmin", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlRevisionHeader"].ToString(), XmlWriteMode.WriteSchema);
+            }
+            con.Close();
+        }
+
+        public static void RevisionHistory()
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            //SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
+            SqlCommand cmd = new SqlCommand("stpExportRevisionHistoryFromAdmin", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlRevisionHistory"].ToString(), XmlWriteMode.WriteSchema);
             }
             con.Close();
         }
@@ -301,8 +338,8 @@ namespace TCCMS.Ship.ExportData
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
-            SqlCommand cmd = new SqlCommand("stpExportTicketFromShip", con);
+            //SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
+            SqlCommand cmd = new SqlCommand("stpExportTicketFromAdmin", con);
             cmd.CommandType = CommandType.StoredProcedure;
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -315,24 +352,5 @@ namespace TCCMS.Ship.ExportData
             con.Close();
         }
 
-        public static void RevisionViewer()
-        {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
-            SqlCommand cmd = new SqlCommand("stpExportRevisionViewerFromShip", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlRevisionViewer"].ToString(), XmlWriteMode.WriteSchema);
-            }
-            con.Close();
-        }
-
     }
 }
-
