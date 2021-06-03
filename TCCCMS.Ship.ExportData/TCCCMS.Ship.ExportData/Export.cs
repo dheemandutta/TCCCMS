@@ -238,7 +238,7 @@ namespace TCCCMS.Ship.ExportData
 
                 foreach (string xmlfilePath in xmlPaths)
                 {
-                    string sourcePath = @"C:\\inetpub\\wwwroot\\";
+                    string sourcePath = @"C:\\inetpub\\wwwroot\\TCCCMS\\";
                     //xml file copy to temp folder and then zip that file
                     string xmlFile = Path.GetFileName(xmlfilePath);
                     string tmpxPath = Path.Combine(Path.GetDirectoryName(xmlfilePath), "temp");
@@ -296,6 +296,10 @@ namespace TCCCMS.Ship.ExportData
 
         public static void Ticket()
         {
+            string uploadedFileName = string.Empty;
+            string relativePath = string.Empty;
+            string filePath = string.Empty;
+
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
             //SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
@@ -310,6 +314,14 @@ namespace TCCCMS.Ship.ExportData
                 ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
             }
             con.Close();
+
+            if (!String.IsNullOrEmpty(filePath))
+            {
+                uploadedFileName = Path.GetFileName(filePath);
+                relativePath = Path.GetDirectoryName(filePath);
+                relativePath = relativePath.Replace("\\", "/") + "/";
+                CreateUploadedFileZip(uploadedFileName, relativePath);
+            }
         }
 
         public static void FillupFormsUploaded()
