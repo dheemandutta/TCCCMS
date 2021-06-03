@@ -663,8 +663,6 @@
     <Content Include="images\ship_icon.png" />
     <Content Include="images\ship_old.png" />
     <Content Include="images\Sync_icon.png" />
-    <Content Include="images\TCC flag without background.png" />
-    <Content Include="images\TCC Group Logo - high resolution.png" />
     <Content Include="images\Template_icon.png" />
     <Content Include="images\ticket_icon.png" />
     <Content Include="images\Update_icon.png" />
@@ -1124,7 +1122,6 @@
     <Content Include="SQL Script\31.03.2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29_II.sql" />
     <Content Include="SQL Script\31.03.2021_Full_Schema_Of_TCCCMSDB.sql" />
     <Content Include="SQL Script\31.03.2021_Full_Schema_Of_TCCCMSDB_II.sql" />
-    <Content Include="xmlMenu\ALLSHIPS.xml" />
     <Content Include="xmlMenu\ALLVOLUMES.xml" />
     <Content Include="packages\jQuery.3.5.1\.signature.p7s" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.min.map" />
