@@ -12,6 +12,8 @@ using Quartz;
 using Ionic.Zip;
 
 
+
+
 namespace TCCCMS.Ship.ImportData
 {
     public class Import : IJob
@@ -246,6 +248,7 @@ namespace TCCCMS.Ship.ImportData
             {
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
+                int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
 
                 DataSet dataSet = new DataSet();
                 dataSet.ReadXmlSchema(xmlFile);
@@ -260,39 +263,44 @@ namespace TCCCMS.Ship.ImportData
                 {
                     //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
 
-                    cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
-                   
-
-                    if (row["IsSolved"] != DBNull.Value)
+                    if(ShipId== int.Parse(row["ShipId"].ToString()))
                     {
-                        cmd.Parameters.AddWithValue("@IsSolved", Boolean.Parse(row["IsSolved"].ToString()));
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@IsSolved", DBNull.Value);
-                    }
-
-                    cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
-                    if (row["UpdatedBy"] != DBNull.Value)
-                    {
-                        cmd.Parameters.AddWithValue("@UpdatedBy", int.Parse(row["UpdatedBy"].ToString()));
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@UpdatedBy", DBNull.Value);
-                    }
-                    if (row["UpdatedAt"] != DBNull.Value)
-                    {
-                        cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Parse(row["UpdatedAt"].ToString()));
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@UpdatedAt", DBNull.Value);
-                    }
+                        cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
 
 
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                        if (row["IsSolved"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@IsSolved", Boolean.Parse(row["IsSolved"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@IsSolved", DBNull.Value);
+                        }
+
+                        cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
+                        if (row["UpdatedBy"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@UpdatedBy", int.Parse(row["UpdatedBy"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@UpdatedBy", DBNull.Value);
+                        }
+                        if (row["UpdatedAt"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Parse(row["UpdatedAt"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@UpdatedAt", DBNull.Value);
+                        }
+
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
+                    
                 }
             }
             catch (Exception ex)
@@ -394,7 +402,7 @@ namespace TCCCMS.Ship.ImportData
             {
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
-
+                int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
                 DataSet dataSet = new DataSet();
                 dataSet.ReadXmlSchema(xmlFile);
                 dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
@@ -406,22 +414,25 @@ namespace TCCCMS.Ship.ImportData
 
                 foreach (DataRow row in dataSet.Tables[0].Rows)
                 {
-                    
-                    cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
-                    cmd.Parameters.AddWithValue("@IsApprove", Boolean.Parse(row["IsApprove"].ToString()));
-                    if (row["ApprovedOn"] != DBNull.Value)
+                    if (ShipId == int.Parse(row["ShipId"].ToString()))
                     {
-                        cmd.Parameters.AddWithValue("@ApprovedOn", DateTime.Parse(row["ApprovedOn"].ToString()));
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@ApprovedOn", DBNull.Value);
-                    }
-                    
+                        cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
+                        cmd.Parameters.AddWithValue("@IsApprove", Boolean.Parse(row["IsApprove"].ToString()));
+                        if (row["ApprovedOn"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@ApprovedOn", DateTime.Parse(row["ApprovedOn"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@ApprovedOn", DBNull.Value);
+                        }
 
 
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
+
                 }
             }
             catch (Exception ex)
@@ -437,6 +448,7 @@ namespace TCCCMS.Ship.ImportData
             {
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString();
+                int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
 
                 DataSet dataSet = new DataSet();
                 dataSet.ReadXmlSchema(xmlFile);
@@ -449,22 +461,24 @@ namespace TCCCMS.Ship.ImportData
 
                 foreach (DataRow row in dataSet.Tables[0].Rows)
                 {
-                    cmd.Parameters.AddWithValue("@UploadedFormName", row["UploadedFormName"].ToString());
-                    cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
-                    cmd.Parameters.AddWithValue("@IsApprove", Boolean.Parse(row["IsApprove"].ToString()));
-                    if (row["ApprovedOn"] != DBNull.Value)
+                    if (ShipId == int.Parse(row["ShipId"].ToString()))
                     {
-                        cmd.Parameters.AddWithValue("@ApprovedOn", DateTime.Parse(row["ApprovedOn"].ToString()));
+                        cmd.Parameters.AddWithValue("@UploadedFormName", row["UploadedFormName"].ToString());
+                        cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
+                        cmd.Parameters.AddWithValue("@IsApprove", Boolean.Parse(row["IsApprove"].ToString()));
+                        if (row["ApprovedOn"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@ApprovedOn", DateTime.Parse(row["ApprovedOn"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@ApprovedOn", DBNull.Value);
+                        }
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
                     }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@ApprovedOn", DBNull.Value);
-                    }
-
-
-
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                       
                 }
             }
             catch (Exception ex)

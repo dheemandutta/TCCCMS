@@ -144,6 +144,43 @@ namespace TCCCMS.Admin.ImportData
             isMailReadSuccessful = false;
             //System.IO.File.Move(sourceFilePath, destinationFilePath);
         }
+
+        public static void CopyUploadedFiles(string f, string relativePath)
+        {
+            //string sourceFilePath = zipPath + "\\";
+            string sourceFilePath = extractPath + "\\";
+            string destinationFilePath = @"C\\inetpub\\wwwroot\\TCCCMS" + "\\";
+
+            destinationFilePath = destinationFilePath +  relativePath.Replace("~/","").Replace("/","\\") ;
+
+            string[] sourceFiles = Directory.GetFiles(sourceFilePath);
+
+            foreach (string sourceFile in sourceFiles)
+            {
+                try
+                {
+                    string fName = Path.GetFileName(sourceFile);
+                    if (fName == f)
+                    {
+                        string destFile = Path.Combine(destinationFilePath, fName);
+
+                        //File.Move(sourceFile, destFile);
+                        File.Copy(sourceFile, destFile);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    logger.Error(ex.Message);
+                    logger.Info("Import process terminated unsuccessfully in CopyUploadedFiles. - {0}", DateTime.Now.ToString());
+                    //Environment.Exit(0);
+                }
+
+            }
+            isMailReadSuccessful = false;
+            //System.IO.File.Move(sourceFilePath, destinationFilePath);
+        }
+
         /// <summary>
         /// Returns true if Zip files directory contains zip files
         /// </summary>
@@ -257,6 +294,10 @@ namespace TCCCMS.Admin.ImportData
                 {
                     //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
 
+                    string uploadedFileName = string.Empty;
+                    string relativePath = string.Empty;
+                    string filePath = string.Empty;
+
                     cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
                     cmd.Parameters.AddWithValue("@Error", row["Error"].ToString());
                     if (row["Description"] != DBNull.Value)
@@ -269,6 +310,7 @@ namespace TCCCMS.Admin.ImportData
                     }
 
                     cmd.Parameters.AddWithValue("@FilePath", row["FilePath"].ToString());
+                    filePath = row["FilePath"].ToString();
 
                     if (row["Email"] != DBNull.Value)
                     {
@@ -311,6 +353,15 @@ namespace TCCCMS.Admin.ImportData
 
                     cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
+                    if (!String.IsNullOrEmpty(filePath))
+                    {
+                        uploadedFileName = Path.GetFileName(filePath);
+                        relativePath = Path.GetDirectoryName(filePath);
+                        relativePath = relativePath.Replace("\\", "/") + "/";
+                        CopyUploadedFiles(uploadedFileName, relativePath);
+                    }
+
+                   // CopyUploadedFiles(row["FilePath"].ToString());
                 }
             }
             catch (Exception ex)
@@ -383,12 +434,16 @@ namespace TCCCMS.Admin.ImportData
 
                 foreach (DataRow row in dataSet.Tables[0].Rows)
                 {
+                    string uploadedFileName = string.Empty;
+                    string relativePath = string.Empty;
+
                     cmd.Parameters.AddWithValue("@FormId", int.Parse(row["FormId"].ToString()));
 
                     cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
                     cmd.Parameters.AddWithValue("@FormsPath", row["FormsPath"].ToString());
                     cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
-
+                    uploadedFileName = row["FormsName"].ToString();
+                    relativePath = row["FormsPath"].ToString();
                     if (row["CreatedOn"] != DBNull.Value)
                     {
                         cmd.Parameters.AddWithValue("@CreatedOn", DateTime.Parse(row["CreatedOn"].ToString()));
@@ -402,6 +457,10 @@ namespace TCCCMS.Admin.ImportData
 
                     cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
+                    if(!String.IsNullOrEmpty(uploadedFileName) && !String.IsNullOrEmpty(relativePath))
+                    {
+                        CopyUploadedFiles(uploadedFileName, relativePath);
+                    }
                 }
             }
             catch (Exception ex)
