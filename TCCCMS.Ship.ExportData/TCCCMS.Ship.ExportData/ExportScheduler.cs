@@ -16,8 +16,6 @@ namespace TCCCMS.Ship.ExportData
     {
         public static async void Start()
         {
-            //IScheduler scheduler = StdSchedulerFactory.GetDefaultScheduler();
-
             StdSchedulerFactory factory = new StdSchedulerFactory();
             IScheduler scheduler = await factory.GetScheduler();
 

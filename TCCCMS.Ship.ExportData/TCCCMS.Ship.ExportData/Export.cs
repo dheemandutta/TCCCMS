@@ -15,9 +15,8 @@ using Ionic.Zip;
 using Quartz;
 using System.Threading;
 
-namespace TCCCMS.Admin.ExportData
+namespace TCCCMS.Ship.ExportData
 {
-
     public class Export : IJob
     {
         static String path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().GetName().CodeBase.Substring(8)), "xml");
@@ -160,17 +159,94 @@ namespace TCCCMS.Admin.ExportData
 
             try
             {
+                //string[] xmlPaths = Directory.GetFiles(path + "\\");
+
+                //foreach (string xmlfilePath in xmlPaths)
+                //{
+                //    //xml file copy to temp folder and then zip that file
+                //    string xmlFile = Path.GetFileName(xmlfilePath);
+                //    string tmpxPath = Path.Combine(Path.GetDirectoryName(xmlfilePath), "temp");
+                //    File.Copy(xmlfilePath, Path.Combine(tmpxPath, xmlFile));
+
+                //    string fileName = Path.GetFileNameWithoutExtension(xmlfilePath);
+                //    fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
+                //    fileName = fileName + ".zip";
+                //    using (ZipFile zip = new ZipFile())
+                //    {
+                //        zip.AddDirectory(tmpxPath + "\\");
+                //        zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
+
+                //        zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
+                //        zip.Save(zippath + "\\" + fileName);
+
+                //        //Delete file from temp foldes
+                //        File.Delete(Path.Combine(tmpxPath, xmlFile));
+                //    }
+
+                //    File.Delete(xmlfilePath);
+
+                //}
+
+                //------------------------------------------------------------------------------------------------------------
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
+                con.Open();
+                SqlCommand cmd = new SqlCommand("GetShipDetailsById", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ShipId", ShipId);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+                //string fileName = ds.Tables[0].Rows[0]["IMONumber"].ToString();
+                string fileName = ds.Tables[0].Rows[0]["ID"].ToString();
+                fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
+                fileName = fileName + ".zip";
+
+                using (ZipFile zip = new ZipFile())
+                {
+                    zip.AddDirectory(path + "\\");
+                    zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
+
+                    zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
+                    zip.Save(zippath + "\\" + fileName);
+                    // SegmentsCreated = zip.NumberOfSegmentsForMostRecentSave;
+                }
+
+                //delete xml files 
+                string[] filePaths = Directory.GetFiles(path + "\\");
+
+                foreach (string filePath in filePaths)
+
+                    File.Delete(filePath);
+            }
+            catch (Exception ex)
+            {
+
+
+                logger.Error("Error in CreateZip. - {0}", ex.Message + " :" + ex.InnerException);
+                logger.Info("Export process terminated unsuccessfully in CreateZip.");
+                //Environment.Exit(0);
+            }
+        }
+
+        public static void CreateUploadedFileZip(string fileName, string relativePath)
+        {
+            try
+            {
+
                 string[] xmlPaths = Directory.GetFiles(path + "\\");
 
                 foreach (string xmlfilePath in xmlPaths)
                 {
+                    string sourcePath = @"C:\\inetpub\\wwwroot\\";
                     //xml file copy to temp folder and then zip that file
                     string xmlFile = Path.GetFileName(xmlfilePath);
                     string tmpxPath = Path.Combine(Path.GetDirectoryName(xmlfilePath), "temp");
                     File.Copy(xmlfilePath, Path.Combine(tmpxPath, xmlFile));
 
-                    string fileName = Path.GetFileNameWithoutExtension(xmlfilePath);
-                    fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
+                    //string fileName = Path.GetFileNameWithoutExtension(xmlfilePath);
+                    //fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
+                    fileName = Path.GetFileNameWithoutExtension(fileName);
                     fileName = fileName + ".zip";
                     using (ZipFile zip = new ZipFile())
                     {
@@ -337,5 +413,4 @@ namespace TCCCMS.Admin.ExportData
 
         #endregion
     }
-
 }

@@ -8,19 +8,15 @@ using System.Threading.Tasks;
 
 namespace TCCCMS.Ship.ExportData
 {
-    class Program 
+    static class Program 
     {
 
         private static IScheduler scheduler;
-
         static void Main(string[] args)
         {
             ExportScheduler.Start();
             Console.ReadKey();
             scheduler.Shutdown();
         }
-
-
     }
-
 }
