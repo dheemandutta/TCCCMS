@@ -11,7 +11,7 @@ namespace TCCCMS.LOG
 {
     public class TccLog
     {
-        public static void UpdateLog(string Message, DateTime OperationDate, string MessageType)
+        public static void UpdateLog(string Message, DateTime OperationDate, LogMessageType MessageType,string messageSource)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
@@ -19,24 +19,10 @@ namespace TCCCMS.LOG
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@Message", Message.ToString());
+                     
+            cmd.Parameters.AddWithValue("@MessageType", Enum.GetName(typeof(LogMessageType),MessageType));
 
-            //if (!String.IsNullOrEmpty(OperationDate))
-            //{
-            //    cmd.Parameters.AddWithValue("@OperationDate", OperationDate.ToString());
-            //}
-            //else
-            //{
-            //    cmd.Parameters.AddWithValue("@OperationDate", DBNull.Value);
-            //}
-
-            if (!String.IsNullOrEmpty(MessageType))
-            {
-                cmd.Parameters.AddWithValue("@MessageType", MessageType.ToString());
-            }
-            else
-            {
-                cmd.Parameters.AddWithValue("@MessageType", DBNull.Value);
-            }
+            cmd.Parameters.AddWithValue("@MessageSource", messageSource);
 
             int recordsAffected = cmd.ExecuteNonQuery();
             con.Close();
@@ -45,5 +31,12 @@ namespace TCCCMS.LOG
         }
 
 
+    }
+
+    public enum LogMessageType
+    {
+        Info,
+        War,
+        Error
     }
 }
