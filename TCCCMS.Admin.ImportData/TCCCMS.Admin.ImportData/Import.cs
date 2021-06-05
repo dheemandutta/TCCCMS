@@ -62,7 +62,7 @@ namespace TCCCMS.Admin.ImportData
             catch (Exception ex)
             {
 
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import");
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import - StartImport");
                 logger.Error("Directory not found. - {0}", DateTime.Now.ToString(), ex.Message);
                 logger.Info("Import process terminated unsuccessfully.  - {0}", DateTime.Now.ToString());
                 //Environment.Exit(0);
@@ -106,7 +106,7 @@ namespace TCCCMS.Admin.ImportData
                     }
                     catch (Exception ex)
                     {
-                        TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-StartImport");
+                        TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import-StartImport2");
                         logger.Error("Could not unzip file {0}", extractPath);
                         logger.Info("Import process terminated unsuccessfully.  - {0}", DateTime.Now.ToString());
                         //Environment.Exit(0);
@@ -170,7 +170,7 @@ namespace TCCCMS.Admin.ImportData
                 }
                 catch (Exception ex)
                 {
-                    TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-ArchiveFiles");
+                    TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import-ArchiveFiles");
                     logger.Error(ex.Message);
                     logger.Info("Import process terminated unsuccessfully in ArchiveZipFiles. - {0}", DateTime.Now.ToString());
                     //Environment.Exit(0);
@@ -197,7 +197,7 @@ namespace TCCCMS.Admin.ImportData
             //----------------------------------------------------------------
             foreach (DataRow row in dataSet.Tables[0].Rows)
             {
-                string destinationFilePath = @"C\\inetpub\\wwwroot\\TCCCMS";
+                string destinationFilePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
                 string tempSourcePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
                 string uploadedFileName = string.Empty;
                 string relPath = string.Empty;
@@ -290,7 +290,7 @@ namespace TCCCMS.Admin.ImportData
             catch (Exception ex)
             {
 
-                logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.InnerException);
+                logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.Message);
                 logger.Info("Import process terminated unsuccessfully in ZipDirectoryContainsZipFiles.");
                 return false;
                 //Environment.Exit(0);
@@ -319,7 +319,7 @@ namespace TCCCMS.Admin.ImportData
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-ImportData");
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import-ImportData");
                 logger.Error(ex.Message);
                 logger.Info("Import process terminated unsuccessfully. - {0}", DateTime.Now.ToString());
                 //Environment.Exit(0);
@@ -365,7 +365,7 @@ namespace TCCCMS.Admin.ImportData
             catch (Exception ex)
             {
 
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-UpdateLastSyncDate");
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import-UpdateLastSyncDate");
                 logger.Error(ex.Message);
                 logger.Info("Import process terminated unsuccessfully while updating last sysn date. - {0}", DateTime.Now.ToString());
                 //Environment.Exit(0);
@@ -622,8 +622,10 @@ namespace TCCCMS.Admin.ImportData
 
         static void ImportMail()
         {
+            MailOps mailops = null;
             try
             {
+                TccLog.UpdateLog("Import Zip from Mailbox Started.", LogMessageType.Info, "Admin Import");
                 logger.Info("Import Zip from Mailbox Started. - {0}", DateTime.Now.ToString());
                 string mTyp = GetConfigData("protocol");
                 //Creating Mail configuration 
@@ -653,21 +655,28 @@ namespace TCCCMS.Admin.ImportData
                     //---------------------------------
                 };
 
-                MailOps mailops = new MailOps
+                mailops = new MailOps
                 {
                     MailServerType = serviceconf.MailServerType
                 };
                 //mailops.Connect(serviceconf.MailId, Security.DecryptString(serviceconf.MailPassword), serviceconf.MailServerDomain, serviceconf.Port);
                 mailops.Connect(serviceconf.MailId, serviceconf.MailPassword, serviceconf.MailServerDomain, serviceconf.Port);
+                TccLog.UpdateLog("Connect Sucessfull.", LogMessageType.Info, "Admin Import");
                 mailops.DownloadAllNewMails(serviceconf.SubjectLine, serviceconf.AttachmentPath);
+                TccLog.UpdateLog("Download Sucessfull", LogMessageType.Info, "Admin Import");
 
                 isMailReadSuccessful = true;
                 logger.Info("Import Zip from Mailbox process Successfully Completed. - {0}", DateTime.Now.ToString());
             }
             catch (Exception ex)
             {
-                logger.Error("Import Zip from Mailbox. - {0}", DateTime.Now.ToString(), ex.Message + " :" + ex.InnerException);
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import - ImportMail");
+                logger.Error("Import Zip from Mailbox. - {0}", DateTime.Now.ToString(), ex.Message + " :" + ex.Message);
                 logger.Info("Import Zip from Mailbox process terminated unsuccessfully in Importmail. - {0}", DateTime.Now.ToString());
+            }
+            finally
+            {
+                mailops.Dispose();
             }
 
 
