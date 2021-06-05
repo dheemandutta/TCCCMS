@@ -17,7 +17,7 @@ namespace TCCCMS.Admin.ImportData
             //string s = "~/TicketFiles/202105211145_teamError.JPG";
             //string name = Path.GetFileName(s);
             //string path = Path.GetDirectoryName(s);
-            string n = Path.GetFileNameWithoutExtension("tem.jpeg");
+            //string n = Path.GetFileNameWithoutExtension("tem.jpeg");
 
             ImportScheduler.Start();
             Console.ReadKey();

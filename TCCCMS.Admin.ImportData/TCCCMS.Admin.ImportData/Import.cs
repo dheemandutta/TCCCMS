@@ -23,28 +23,35 @@ namespace TCCCMS.Admin.ImportData
 
         public async Task Execute(IJobExecutionContext context)
         {
-            ImportMail();
-            if (isMailReadSuccessful)
-            {
+            //ImportMail();
+            //if (isMailReadSuccessful)
+            //{
                 if (ZipDirectoryContainsFiles())
-                {
+                 {
 
                     StartImport();
                 }
 
-            }
+            //}
 
             //throw new NotImplementedException();
         }
 
 
         #region Import Data To Database
+
+        static void UnzipDoloadedFile()
+        {
+
+        }
         static void StartImport()
         {
             logger.Info("Import Process Started. - {0}", DateTime.Now.ToString());
 
             String TargetDirectory = zipPath + "\\";
             string[] filePaths = null;
+
+            string tmpPath = Path.Combine(Path.GetDirectoryName(zipPath), "temp");
 
             try
             {
@@ -62,13 +69,18 @@ namespace TCCCMS.Admin.ImportData
             {
                 //read file name
                 string fileName = Path.GetFileName(filePath);
-                
+
                 ////extract IMO number 
                 //string[] vesselIMONumber = fileName.Split('_');
                 //////check for valid IMO
                 ////bool isValidIMO = CheckValidIMO(int.Parse(vesselIMONumber[0].ToString())) == 0 ? false : true;
 
                 //logger.Info("IMO- {0}", vesselIMONumber[0].ToString());
+
+                //------------------------------------------
+                string[] fileNameParts = fileName.Split('_');
+                string fileCategory = fileNameParts[1].ToString();
+                //------------------------------------------
 
 
                 //unzip the file
@@ -77,7 +89,15 @@ namespace TCCCMS.Admin.ImportData
                     //Unzip a file
                     try
                     {
-                        zip1.ExtractAll(extractPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
+                        if(fileCategory == "TICKET" || fileCategory == "FILLUPUPLOADEDFILE")
+                        {
+                            zip1.ExtractAll(tmpPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
+                        }
+                        else
+                        {
+                            zip1.ExtractAll(extractPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
+                        }
+                        
                     }
                     catch (Exception ex)
                     {
@@ -105,6 +125,14 @@ namespace TCCCMS.Admin.ImportData
                     File.Delete(files);
                 }
                 logger.Info("Files Deleted . - {0}", DateTime.Now.ToString());
+
+                //Delete temp files
+                string[] tempFiles = Directory.GetFiles(tmpPath + "\\");
+                foreach (string files in tempFiles)
+                {
+                    File.Delete(files);
+                }
+                logger.Info("Temp Files Deleted . - {0}", DateTime.Now.ToString());
                 //Archive zip file
                 ArchiveZipFiles(fileName);
                 logger.Info("Archive Complete . - {0}", DateTime.Now.ToString());
@@ -145,13 +173,61 @@ namespace TCCCMS.Admin.ImportData
             //System.IO.File.Move(sourceFilePath, destinationFilePath);
         }
 
-        public static void CopyUploadedFiles(string f, string relativePath)
+        public static void CopyUploadedFiles(string partName, string xmlFile)
+        {
+            
+            string sourceFilePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
+
+            DataSet dataSet = new DataSet();
+            dataSet.ReadXmlSchema(xmlFile);
+            dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+            string[] sourceFiles = Directory.GetFiles(sourceFilePath);
+
+
+            //----------------------------------------------------------------
+            foreach (DataRow row in dataSet.Tables[0].Rows)
+            {
+                string destinationFilePath = @"C\\inetpub\\wwwroot\\TCCCMS";
+                string tempSourcePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
+                string uploadedFileName = string.Empty;
+                string relPath = string.Empty;
+                string filePath = string.Empty;
+                if (partName == "TICKET")
+                {
+                    filePath = row["FilePath"].ToString();
+                    uploadedFileName = Path.GetFileName(filePath);
+                   // destinationFilePath = destinationFilePath + "\\TicketFiles";
+                }
+                else
+                {
+                    filePath = row["FormsPath"].ToString();
+                    uploadedFileName = row["FormsName"].ToString();
+                    //destinationFilePath = destinationFilePath + "\\UploadFilledUpFormForApproval";
+                }
+
+                relPath = Path.GetDirectoryName(filePath);
+                relPath = relPath.Replace("~", "").Replace("/", "");
+
+                destinationFilePath = destinationFilePath + relPath;
+                tempSourcePath = Path.Combine(tempSourcePath, uploadedFileName);
+                if (File.Exists(tempSourcePath))
+                    File.Copy(tempSourcePath, Path.Combine(destinationFilePath, uploadedFileName));
+
+
+
+            }
+
+            isMailReadSuccessful = false;
+            //System.IO.File.Move(sourceFilePath, destinationFilePath);
+        }
+
+        public static void CopyUploadedFiles2(string f, string relativePath)
         {
             //string sourceFilePath = zipPath + "\\";
             string sourceFilePath = extractPath + "\\";
             string destinationFilePath = @"C\\inetpub\\wwwroot\\TCCCMS" + "\\";
 
-            destinationFilePath = destinationFilePath +  relativePath.Replace("~/","").Replace("/","\\") ;
+            destinationFilePath = destinationFilePath + relativePath.Replace("~/", "").Replace("/", "\\");
 
             string[] sourceFiles = Directory.GetFiles(sourceFilePath);
 
@@ -353,15 +429,15 @@ namespace TCCCMS.Admin.ImportData
 
                     cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
-                    if (!String.IsNullOrEmpty(filePath))
-                    {
-                        uploadedFileName = Path.GetFileName(filePath);
-                        relativePath = Path.GetDirectoryName(filePath);
-                        relativePath = relativePath.Replace("\\", "/") + "/";
-                        CopyUploadedFiles(uploadedFileName, relativePath);
-                    }
-
-                   // CopyUploadedFiles(row["FilePath"].ToString());
+                    //if (!String.IsNullOrEmpty(filePath))
+                    //{
+                    //    uploadedFileName = Path.GetFileName(filePath);
+                    //    relativePath = Path.GetDirectoryName(filePath);
+                    //    relativePath = relativePath.Replace("\\", "/") + "/";
+                    //    CopyUploadedFiles(uploadedFileName, relativePath);
+                    //}
+                    CopyUploadedFiles("TICKET", xmlFile);
+                    // CopyUploadedFiles(row["FilePath"].ToString());
                 }
             }
             catch (Exception ex)
@@ -457,10 +533,12 @@ namespace TCCCMS.Admin.ImportData
 
                     cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
-                    if(!String.IsNullOrEmpty(uploadedFileName) && !String.IsNullOrEmpty(relativePath))
-                    {
-                        CopyUploadedFiles(uploadedFileName, relativePath);
-                    }
+                    //if(!String.IsNullOrEmpty(uploadedFileName) && !String.IsNullOrEmpty(relativePath))
+                    //{
+                    //    CopyUploadedFiles(uploadedFileName, relativePath);
+                    //}
+
+                    CopyUploadedFiles("FILLUPUPLOADEDFILE", xmlFile);
                 }
             }
             catch (Exception ex)
