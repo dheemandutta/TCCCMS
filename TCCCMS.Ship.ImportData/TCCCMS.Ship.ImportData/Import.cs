@@ -10,7 +10,7 @@ using System.Configuration;
 using System.Threading.Tasks;
 using Quartz;
 using Ionic.Zip;
-
+using TCCCMS.LOG;
 
 
 
@@ -45,7 +45,7 @@ namespace TCCCMS.Ship.ImportData
         static void StartImport()
         {
             logger.Info("Import Process Started. - {0}", DateTime.Now.ToString());
-
+            TccLog.UpdateLog("Import Process Started", LogMessageType.Info, "Import");
             String TargetDirectory = zipPath + "\\";
             string[] filePaths = null;
 
@@ -55,7 +55,7 @@ namespace TCCCMS.Ship.ImportData
             }
             catch (Exception ex)
             {
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-StartImport");
                 logger.Error("Directory not found. - {0}", DateTime.Now.ToString(), ex.Message);
                 logger.Info("Import process terminated unsuccessfully.  - {0}", DateTime.Now.ToString());
                 //Environment.Exit(0);
@@ -84,7 +84,7 @@ namespace TCCCMS.Ship.ImportData
                     }
                     catch (Exception ex)
                     {
-
+                        TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-StartImport-ZipExtract");
                         logger.Error("Could not unzip file {0}", extractPath);
                         logger.Info("Import process terminated unsuccessfully.  - {0}", DateTime.Now.ToString());
                         //Environment.Exit(0);
@@ -93,10 +93,11 @@ namespace TCCCMS.Ship.ImportData
                 }
 
                 logger.Info("UnZip Complete. - {0}", DateTime.Now.ToString());
-
+                TccLog.UpdateLog("Unzip Complete", LogMessageType.Info, "Import");
                 // start DB sync process
                 ImportData();
                 logger.Info("Data Import Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Data Import Complete", LogMessageType.Info, "Import");
                 //Update last stnc date for IMO
                 //UpdateLastSyncDate(int.Parse(vesselIMONumber[0].ToString()));
                 //logger.Info("Update Sync Date Complete. - {0}", DateTime.Now.ToString());
@@ -108,9 +109,11 @@ namespace TCCCMS.Ship.ImportData
                     File.Delete(files);
                 }
                 logger.Info("Files Deleted . - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Files Deleted", LogMessageType.Info, "Import");
                 //Archive zip file
                 ArchiveZipFiles(fileName);
                 logger.Info("Archive Complete . - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Archive Complete", LogMessageType.Info, "Import");
 
 
             }
@@ -137,7 +140,7 @@ namespace TCCCMS.Ship.ImportData
                 }
                 catch (Exception ex)
                 {
-
+                    TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-ArchiveZipFiles");
                     logger.Error(ex.Message);
                     logger.Info("Import process terminated unsuccessfully in ArchiveZipFiles. - {0}", DateTime.Now.ToString());
                     //Environment.Exit(0);
@@ -160,7 +163,7 @@ namespace TCCCMS.Ship.ImportData
             }
             catch (Exception ex)
             {
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-ZipDirectoryContainsFiles");
                 logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Import process terminated unsuccessfully in ZipDirectoryContainsZipFiles.");
                 return false;
@@ -175,18 +178,24 @@ namespace TCCCMS.Ship.ImportData
 
                 Ticket();
                 logger.Info("Ticket Import Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Ticket Import Complete", LogMessageType.Info, "Import");
                 RevisionHeader();
                 logger.Info("Revision Header Import Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Revision Header Import Complete", LogMessageType.Info, "Import");
                 RevisionDetails();
                 logger.Info("Revision History Import Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Revision History Import Complete", LogMessageType.Info, "Import");
                 FillupFormsUploaded();
                 logger.Info("Fillup Forms  Import Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Fillup Forms  Import Complete", LogMessageType.Info, "Import");
                 FillupFormApproverMapper();
                 logger.Info("Fillup Form Approver Mapper Import Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Fillup Form Approver Mapper Import Complete", LogMessageType.Info, "Import");
 
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-ImportData");
                 logger.Error(ex.Message);
                 logger.Info("Import process terminated unsuccessfully. - {0}", DateTime.Now.ToString());
                 //Environment.Exit(0);
@@ -231,7 +240,7 @@ namespace TCCCMS.Ship.ImportData
             }
             catch (Exception ex)
             {
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-UpdateLastSyncDate");
                 logger.Error(ex.Message);
                 logger.Info("Import process terminated unsuccessfully while updating last sysn date. - {0}", DateTime.Now.ToString());
                 //Environment.Exit(0);
@@ -305,6 +314,7 @@ namespace TCCCMS.Ship.ImportData
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-Ticket");
                 logger.Error(ex, "Ticket Import");
                 //throw;
             }
@@ -356,6 +366,7 @@ namespace TCCCMS.Ship.ImportData
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-RevisonHeader");
                 logger.Error(ex, "Crew Import");
                 //throw;
             }
@@ -391,6 +402,7 @@ namespace TCCCMS.Ship.ImportData
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-CrewImport");
                 logger.Error(ex, "Crew Import");
                 //throw;
             }
@@ -437,6 +449,7 @@ namespace TCCCMS.Ship.ImportData
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-FilupFormsUploaded");
                 logger.Error(ex, "FillupFormsUploaded Import");
                 //throw;
             }
@@ -483,6 +496,7 @@ namespace TCCCMS.Ship.ImportData
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-FillupFormApproverMapper");
                 logger.Error(ex, "FillupFormApproverMapper Import");
                 //throw;
             }
