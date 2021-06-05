@@ -643,6 +643,8 @@
     <Content Include="dlls\NLog.xml" />
     <Content Include="dlls\Quartz.dll" />
     <Content Include="dlls\Quartz.xml" />
+    <Content Include="dlls\TCCCMS.LOG.dll" />
+    <Content Include="dlls\TCCCMS.LOG.pdb" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
