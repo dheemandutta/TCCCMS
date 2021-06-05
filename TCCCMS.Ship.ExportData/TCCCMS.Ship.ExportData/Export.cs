@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using Ionic.Zip;
 using Quartz;
 using System.Threading;
+using TCCCMS.LOG;
 
 namespace TCCCMS.Ship.ExportData
 {
@@ -28,9 +29,11 @@ namespace TCCCMS.Ship.ExportData
         public async Task Execute(IJobExecutionContext context)
         {
             logger.Info("Process Started. - {0}", DateTime.Now.ToString());
+            TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Export");
             //DB logger added..
             if (ZipDirectoryContainsFiles())
             {
+                TccLog.UpdateLog("Send Mail Process Started", LogMessageType.Info, "Export");
                 SendMail();
                 if (isMailSendSuccessful)
                 {
@@ -127,10 +130,12 @@ namespace TCCCMS.Ship.ExportData
 
                     File.Move(sourceFile, destFile);
                 }
+
+                TccLog.UpdateLog("ArchiveZipFiles Process Complete", LogMessageType.Info, "Export");
             }
             catch (Exception ex)
             {
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export");
                 logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in ArchiveZipFiles.");
                 Environment.Exit(0);
@@ -148,7 +153,7 @@ namespace TCCCMS.Ship.ExportData
             }
             catch (Exception ex)
             {
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-ZipDirectoryContainsZipFiles");
                 logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in ZipDirectoryContainsZipFiles.");
                 return false;
@@ -223,7 +228,7 @@ namespace TCCCMS.Ship.ExportData
             catch (Exception ex)
             {
 
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-CreateZip");
                 logger.Error("Error in CreateZip. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in CreateZip.");
                 //Environment.Exit(0);
@@ -312,7 +317,7 @@ namespace TCCCMS.Ship.ExportData
             catch (Exception ex)
             {
 
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-CreateUploadedZipFile");
                 logger.Error("Error in CreateZip. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in CreateZip.");
                 //Environment.Exit(0);
@@ -323,17 +328,22 @@ namespace TCCCMS.Ship.ExportData
         public static void ExportData()
         {
             logger.Info("Import Process Started. - {0}", DateTime.Now.ToString());
+            TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Export");
             try
             {
                 FillupFormsUploaded();
+                TccLog.UpdateLog("FillUpFormsUploaded Complete", LogMessageType.Info, "Export");
                 FillupFormApproverMapper();
+                TccLog.UpdateLog("FillUpFormApproverMapper Process Complete", LogMessageType.Info, "Export");
                 Ticket();
+                TccLog.UpdateLog("Ticket Process Complete", LogMessageType.Info, "Export");
                 RevisionViewer();
+                TccLog.UpdateLog("Revision Viewer Process Complete", LogMessageType.Info, "Export");
 
             }
             catch (Exception ex)
             {
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-ExportData");
                 logger.Error("Error in ExportData. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in ExportData.");
                 //Environment.Exit(0);
@@ -346,91 +356,113 @@ namespace TCCCMS.Ship.ExportData
             string relativePath = string.Empty;
             string filePath = string.Empty;
 
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
-            SqlCommand cmd = new SqlCommand("stpExportTicketFromShip", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
-            }
-            con.Close();
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                //SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
+                SqlCommand cmd = new SqlCommand("stpExportTicketFromShip", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
 
-            //foreach (DataRow row in ds.Tables[0].Rows)
-            //{
-            //    filePath = row["FilePath"].ToString();
-            //    if (!String.IsNullOrEmpty(filePath))
-            //    {
-            //        uploadedFileName = Path.GetFileName(filePath);
-            //        relativePath = Path.GetDirectoryName(filePath);
-            //        relativePath = relativePath.Replace("\\", "/") + "/";
-            //        CreateUploadedFileZip();
-            //    }
-            //}
-            string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
-            CreateUploadedFileZip("TICKET", xmlFile);
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
+                }
+                con.Close();
+
+
+                string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
+                CreateUploadedFileZip("TICKET", xmlFile);
+            }
+            catch (Exception ex)
+            {
+
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-Ticket");
+            }
 
         }
 
         public static void FillupFormsUploaded()
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
-            SqlCommand cmd = new SqlCommand("stpExportFillupUoloadedFormsFromShip", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString(), XmlWriteMode.WriteSchema);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                //SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
+                SqlCommand cmd = new SqlCommand("stpExportFillupUoloadedFormsFromShip", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString(), XmlWriteMode.WriteSchema);
+                }
+                con.Close();
+                string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
+                CreateUploadedFileZip("FILLUPUPLOADEDFILE", xmlFile);
             }
-            con.Close();
-            string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
-            CreateUploadedFileZip("FILLUPUPLOADEDFILE", xmlFile);
+            catch (Exception ex)
+            {
+
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-FillupFoormsUploaded");
+            }
         }
 
         public static void FillupFormApproverMapper()
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblFormsUploadedApproverMapping", con);
-            SqlCommand cmd = new SqlCommand("stpExportFillupFormApproverFromShip", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString(), XmlWriteMode.WriteSchema);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                //SqlCommand cmd = new SqlCommand("stpExporttblFormsUploadedApproverMapping", con);
+                SqlCommand cmd = new SqlCommand("stpExportFillupFormApproverFromShip", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString(), XmlWriteMode.WriteSchema);
+                }
+                con.Close();
             }
-            con.Close();
+            catch (Exception ex)
+            {
+
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-FillupFormApproverMapper");
+            }
         }
 
         public static void RevisionViewer()
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
-            SqlCommand cmd = new SqlCommand("stpExportRevisionViewerFromShip", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlRevisionViewer"].ToString(), XmlWriteMode.WriteSchema);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
+                SqlCommand cmd = new SqlCommand("stpExportRevisionViewerFromShip", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlRevisionViewer"].ToString(), XmlWriteMode.WriteSchema);
+                }
+                con.Close();
             }
-            con.Close();
+            catch (Exception ex)
+            {
+
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-RevisionViewer");
+            }
         }
 
 
@@ -442,6 +474,7 @@ namespace TCCCMS.Ship.ExportData
         public static void SendMail()
         {
 
+            
             try
             {
                 using (MailMessage mail = new MailMessage())
@@ -462,7 +495,7 @@ namespace TCCCMS.Ship.ExportData
                     smtp.Credentials = new System.Net.NetworkCredential(GetConfigData("mailfrom").Trim(), GetConfigData("frompwd").Trim());
 
                     smtp.Send(mail);
-
+                    TccLog.UpdateLog("Send Mail Successfull", LogMessageType.Info, "Export");
                     isMailSendSuccessful = true;
                 }
             }
@@ -470,6 +503,7 @@ namespace TCCCMS.Ship.ExportData
             {
                 //EventLog.WriteEntry("DataExport-SendMail", ex.Message + " :" + ex.InnerException, EventLogEntryType.Error);
                 isMailSendSuccessful = false;
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-SendMail");
                 logger.Error("Mail send failed - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully.");
                 Environment.Exit(0);

@@ -24,16 +24,16 @@ namespace TCCCMS.Admin.ImportData
 
         public async Task Execute(IJobExecutionContext context)
         {
-            //ImportMail();
-            //if (isMailReadSuccessful)
-            //{
+            ImportMail();
+            if (isMailReadSuccessful)
+            {
                 if (ZipDirectoryContainsFiles())
                  {
 
                     StartImport();
                 }
 
-            //}
+            }
 
             //throw new NotImplementedException();
         }
@@ -43,6 +43,7 @@ namespace TCCCMS.Admin.ImportData
 
         static void UnzipDoloadedFile()
         {
+
 
         }
         static void StartImport()
