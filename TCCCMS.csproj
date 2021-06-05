@@ -2378,6 +2378,11 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="CommonToAllManualsPDF\" />
+    <Folder Include="dmmyFolder\Archive\" />
+    <Folder Include="dmmyFolder\logs\" />
+    <Folder Include="dmmyFolder\temp\" />
+    <Folder Include="dmmyFolder\xml\" />
+    <Folder Include="dmmyFolder\ZipFile\" />
     <Folder Include="Model\" />
     <Folder Include="NoticeBoardPDF\" />
   </ItemGroup>
