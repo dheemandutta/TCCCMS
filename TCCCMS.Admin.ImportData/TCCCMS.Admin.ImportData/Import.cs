@@ -10,6 +10,7 @@ using System.Configuration;
 using System.Threading.Tasks;
 using Quartz;
 using Ionic.Zip;
+using TCCCMS.LOG;
 
 namespace TCCCMS.Admin.ImportData
 {
@@ -47,7 +48,7 @@ namespace TCCCMS.Admin.ImportData
         static void StartImport()
         {
             logger.Info("Import Process Started. - {0}", DateTime.Now.ToString());
-
+            TccLog.UpdateLog("Import Process Started", LogMessageType.Info, "Admin Import");
             String TargetDirectory = zipPath + "\\";
             string[] filePaths = null;
 
@@ -60,6 +61,7 @@ namespace TCCCMS.Admin.ImportData
             catch (Exception ex)
             {
 
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import");
                 logger.Error("Directory not found. - {0}", DateTime.Now.ToString(), ex.Message);
                 logger.Info("Import process terminated unsuccessfully.  - {0}", DateTime.Now.ToString());
                 //Environment.Exit(0);
@@ -92,16 +94,18 @@ namespace TCCCMS.Admin.ImportData
                         if(fileCategory == "TICKET" || fileCategory == "FILLUPUPLOADEDFILE")
                         {
                             zip1.ExtractAll(tmpPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
+                            TccLog.UpdateLog("Unzip Complete for Ticket And FILLUPUPLOADEDFILE", LogMessageType.Info, "Admin Import");
                         }
                         else
                         {
                             zip1.ExtractAll(extractPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
+                            TccLog.UpdateLog("Unzip Complete", LogMessageType.Info, "Admin Import");
                         }
                         
                     }
                     catch (Exception ex)
                     {
-
+                        TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-StartImport");
                         logger.Error("Could not unzip file {0}", extractPath);
                         logger.Info("Import process terminated unsuccessfully.  - {0}", DateTime.Now.ToString());
                         //Environment.Exit(0);
@@ -110,10 +114,12 @@ namespace TCCCMS.Admin.ImportData
                 }
 
                 logger.Info("UnZip Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Unzip Complete", LogMessageType.Info, "Admin Import");
 
                 // start DB sync process
                 ImportData();
                 logger.Info("Data Import Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Data Import Complete", LogMessageType.Info, "Admin Import");
                 //Update last stnc date for IMO
                 //UpdateLastSyncDate(int.Parse(vesselIMONumber[0].ToString()));
                 //logger.Info("Update Sync Date Complete. - {0}", DateTime.Now.ToString());
@@ -125,7 +131,7 @@ namespace TCCCMS.Admin.ImportData
                     File.Delete(files);
                 }
                 logger.Info("Files Deleted . - {0}", DateTime.Now.ToString());
-
+                TccLog.UpdateLog("File Deletion Complete", LogMessageType.Info, "Admin Import");
                 //Delete temp files
                 string[] tempFiles = Directory.GetFiles(tmpPath + "\\");
                 foreach (string files in tempFiles)
@@ -133,10 +139,11 @@ namespace TCCCMS.Admin.ImportData
                     File.Delete(files);
                 }
                 logger.Info("Temp Files Deleted . - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Temporary File Deletion Complete", LogMessageType.Info, "Admin Import");
                 //Archive zip file
                 ArchiveZipFiles(fileName);
                 logger.Info("Archive Complete . - {0}", DateTime.Now.ToString());
-
+                TccLog.UpdateLog("Archive Complete", LogMessageType.Info, "Admin Import");
 
             }
         }
@@ -162,7 +169,7 @@ namespace TCCCMS.Admin.ImportData
                 }
                 catch (Exception ex)
                 {
-
+                    TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-ArchiveFiles");
                     logger.Error(ex.Message);
                     logger.Info("Import process terminated unsuccessfully in ArchiveZipFiles. - {0}", DateTime.Now.ToString());
                     //Environment.Exit(0);
@@ -286,16 +293,21 @@ namespace TCCCMS.Admin.ImportData
                 
                 Ticket();
                 logger.Info("Ticket Import Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Ticket Import Complete", LogMessageType.Info, "Admin Import");
                 RevisionViewer();
                 logger.Info("Revision Viewers Import Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Revision Viewers Import Complete", LogMessageType.Info, "Admin Import");
                 FillupFormsUploaded();
                 logger.Info("Fillup Forms  Import Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Fillup Forms  Import Complete", LogMessageType.Info, "Admin Import");
                 FillupFormApproverMapper();
                 logger.Info("Fillup Form Approver Mapper Import Complete. - {0}", DateTime.Now.ToString());
-               
+                TccLog.UpdateLog("Fillup Form Approver Mapper Import Complete", LogMessageType.Info, "Admin Import");
+
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-ImportData");
                 logger.Error(ex.Message);
                 logger.Info("Import process terminated unsuccessfully. - {0}", DateTime.Now.ToString());
                 //Environment.Exit(0);
@@ -341,6 +353,7 @@ namespace TCCCMS.Admin.ImportData
             catch (Exception ex)
             {
 
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-UpdateLastSyncDate");
                 logger.Error(ex.Message);
                 logger.Info("Import process terminated unsuccessfully while updating last sysn date. - {0}", DateTime.Now.ToString());
                 //Environment.Exit(0);
