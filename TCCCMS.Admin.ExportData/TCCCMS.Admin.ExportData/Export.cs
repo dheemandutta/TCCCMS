@@ -14,6 +14,7 @@ using System.Data.SqlClient;
 using Ionic.Zip;
 using Quartz;
 using System.Threading;
+using TCCCMS.LOG;
 
 namespace TCCCMS.Admin.ExportData
 {
@@ -29,20 +30,31 @@ namespace TCCCMS.Admin.ExportData
         public async Task Execute(IJobExecutionContext context)
         {
             logger.Info("Process Started. - {0}", DateTime.Now.ToString());
+            TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Admin Export");
             if (ZipDirectoryContainsFiles())
             {
                 SendMail();
                 if (isMailSendSuccessful)
                 {
+                    TccLog.UpdateLog("ArchiveZipFiles Process Started", LogMessageType.Info, "Admin Export");
                     ArchiveZipFiles();
+                    TccLog.UpdateLog("ArchiveZipFiles Process Completed", LogMessageType.Info, "Admin Export");
                     //redo the whole process again
                     isMailSendSuccessful = false;
+                    TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Admin Export");
                     ExportData();
+                    TccLog.UpdateLog("Export Process Completed", LogMessageType.Info, "Admin Export");
+                    TccLog.UpdateLog("Zip Process Started", LogMessageType.Info, "Admin Export");
                     CreateZip();
+                    TccLog.UpdateLog("Zip Process Completed", LogMessageType.Info, "Admin Export");
+                    TccLog.UpdateLog("SendMail Process Started", LogMessageType.Info, "Admin Export");
                     SendMail();
+                    TccLog.UpdateLog("SendMail Process Completed", LogMessageType.Info, "Admin Export");
                     if (isMailSendSuccessful)
                     {
+                        TccLog.UpdateLog("Archive Process Started", LogMessageType.Info, "Admin Export");
                         ArchiveZipFiles();
+                        TccLog.UpdateLog("Archive Process Completed", LogMessageType.Info, "Admin Export");
                     }
                 }
             }
@@ -146,7 +158,7 @@ namespace TCCCMS.Admin.ExportData
             }
             catch (Exception ex)
             {
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Export-ArchiveZipFiles");
                 logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in ArchiveZipFiles.");
                 Environment.Exit(0);
@@ -164,7 +176,7 @@ namespace TCCCMS.Admin.ExportData
             }
             catch (Exception ex)
             {
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Export");
                 logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in ZipDirectoryContainsZipFiles.");
                 return false;
@@ -222,18 +234,23 @@ namespace TCCCMS.Admin.ExportData
                 
                 Ticket();
                 logger.Info("Ticket Export Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Ticket Export Completed", LogMessageType.Info, "Admin Export");
                 RevisionHeader();
                 logger.Info("Revision Header Export Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Revision Header Export Complete", LogMessageType.Info, "Admin Export");
                 RevisionDetails();
                 logger.Info("Revision History Export Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Revision Hostory Export Complete", LogMessageType.Info, "Admin Export");
                 FillupFormsUploaded();
                 logger.Info("Fillup Forms  Export Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Fillup Forms Export Complete", LogMessageType.Info, "Admin Export");
                 FillupFormApproverMapper();
                 logger.Info("Fillup Form Approver Mapper Export Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Fillup form approver mapper export complete", LogMessageType.Info, "Admin Export");
             }
             catch (Exception ex)
             {
-
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Export-ExportData");
                 logger.Error("Error in ExportData. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in ExportData.");
                 //Environment.Exit(0);
@@ -411,6 +428,7 @@ namespace TCCCMS.Admin.ExportData
         public static void SendMail()
         {
             logger.Info("Sending Mail Process Start. - {0}", DateTime.Now.ToString());
+            TccLog.UpdateLog("Send Mail Process Started", LogMessageType.Info, "Admin Export");
 
             //string sourceFilePath = path + "\\"; // old code line
             string sourceFilePath = zippath + "\\";
@@ -461,13 +479,14 @@ namespace TCCCMS.Admin.ExportData
 
                         smtp.Send(mail);
                         logger.Info("Mail send Successfully to the Vessel_" + vesselIMO[0].ToString() + ". - {0}", DateTime.Now.ToString());
+                        TccLog.UpdateLog("Mail Sent Successfully", LogMessageType.Info, "Admin Export");
                         isMailSendSuccessful = true;
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    //EventLog.WriteEntry("DataExport-SendMail", ex.Message + " :" + ex.InnerException, EventLogEntryType.Error);
+                    TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Export-SendMail");
                     isMailSendSuccessful = false;
                     logger.Error("Mail send failed - {0}", DateTime.Now.ToString(), ex.Message + " :" + ex.InnerException);
                     logger.Info("Export process terminated unsuccessfully. - {0}", DateTime.Now.ToString());
@@ -524,14 +543,25 @@ namespace TCCCMS.Admin.ExportData
 
         private static DataSet GetRegistrerdVessels()
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
-            SqlCommand cmd = new SqlCommand("stpGETAllRegisteredVessels", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
+            DataSet ds;
+            try
+            {
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
+                SqlCommand cmd = new SqlCommand("stpGETAllRegisteredVessels", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                
+            }
+            catch (Exception ex)
+            {
+
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Export-GetRegistrerdVessels");
+            }
 
             return ds;
         }
