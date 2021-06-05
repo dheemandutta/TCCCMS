@@ -36,7 +36,7 @@ namespace TCCCMS.LOG
     public enum LogMessageType
     {
         Info,
-        War,
+        Warn,
         Error
     }
 }
