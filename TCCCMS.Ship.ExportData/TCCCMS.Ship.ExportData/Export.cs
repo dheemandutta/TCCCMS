@@ -50,7 +50,7 @@ namespace TCCCMS.Ship.ExportData
                 isMailSendSuccessful = false;
                 ExportData();
                 CreateZip();
-                SendMail();
+                //SendMail();
                 if (isMailSendSuccessful)
                 {
                     ArchiveZipFiles();
@@ -229,40 +229,84 @@ namespace TCCCMS.Ship.ExportData
             }
         }
 
-        public static void CreateUploadedFileZip(string fileName, string relativePath)
+        public static void CreateUploadedFileZip(string partName, string xmlFile)
         {
             try
             {
 
-                string[] xmlPaths = Directory.GetFiles(path + "\\");
+                //string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
+                string tmpPath = Path.Combine(Path.GetDirectoryName(path), "temp");
+                
 
-                foreach (string xmlfilePath in xmlPaths)
+                DataSet dataSet = new DataSet();
+                dataSet.ReadXmlSchema(xmlFile);
+                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                foreach (DataRow row in dataSet.Tables[0].Rows)
                 {
-                    string sourcePath = @"C:\\inetpub\\wwwroot\\TCCCMS\\";
-                    //xml file copy to temp folder and then zip that file
-                    string xmlFile = Path.GetFileName(xmlfilePath);
-                    string tmpxPath = Path.Combine(Path.GetDirectoryName(xmlfilePath), "temp");
-                    File.Copy(xmlfilePath, Path.Combine(tmpxPath, xmlFile));
-
-                    //string fileName = Path.GetFileNameWithoutExtension(xmlfilePath);
-                    //fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
-                    fileName = Path.GetFileNameWithoutExtension(fileName);
-                    fileName = fileName + ".zip";
-                    using (ZipFile zip = new ZipFile())
+                    string sourcePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
+                    string uploadedFileName = string.Empty;
+                    string relPath = string.Empty;
+                    string filePath = string.Empty;
+                    if(partName == "TICKET")
                     {
-                        zip.AddDirectory(tmpxPath + "\\");
-                        zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
-
-                        zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
-                        zip.Save(zippath + "\\" + fileName);
-
-                        //Delete file from temp foldes
-                        File.Delete(Path.Combine(tmpxPath, xmlFile));
+                        filePath = row["FilePath"].ToString();
+                        uploadedFileName = Path.GetFileName(filePath);
                     }
+                    else
+                    {
+                        filePath = row["FormsPath"].ToString();
+                        uploadedFileName = row["FormsName"].ToString();
+                    }
+                    
+                    relPath = Path.GetDirectoryName(filePath);
+                    relPath = relPath.Replace("~", "").Replace("/","");
 
-                    File.Delete(xmlfilePath);
+                    //sourcePath = Path.Combine(sourcePath, relPath);
+                    sourcePath = sourcePath + relPath;
+                    sourcePath = Path.Combine(sourcePath, uploadedFileName);
+                    if(File.Exists(sourcePath))
+                        File.Copy(sourcePath, Path.Combine(tmpPath, uploadedFileName));
+
+
 
                 }
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
+                con.Open();
+                SqlCommand cmd = new SqlCommand("GetShipDetailsById", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ShipId", ShipId);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+                //string fileName = ds.Tables[0].Rows[0]["IMONumber"].ToString();
+                string zipName = ds.Tables[0].Rows[0]["ID"].ToString();
+                //zipName = zipName + "_TICKET_" + DateTime.Now.ToString("MMddyyyyhhmm");
+                zipName = zipName + "_"+ partName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
+                zipName = zipName + ".zip";
+
+                using (ZipFile zip = new ZipFile())
+                {
+                    zip.AddDirectory(tmpPath + "\\");
+                    zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
+
+                    zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
+                    zip.Save(zippath + "\\" + zipName);
+                    // SegmentsCreated = zip.NumberOfSegmentsForMostRecentSave;
+                }
+
+                //delete xml files 
+                string[] filePaths = Directory.GetFiles(tmpPath + "\\");
+
+                foreach (string filePath in filePaths)
+
+                    File.Delete(filePath);
+
+
+                ///------------------------------------------------
+
             }
             catch (Exception ex)
             {
@@ -315,13 +359,20 @@ namespace TCCCMS.Ship.ExportData
             }
             con.Close();
 
-            if (!String.IsNullOrEmpty(filePath))
-            {
-                uploadedFileName = Path.GetFileName(filePath);
-                relativePath = Path.GetDirectoryName(filePath);
-                relativePath = relativePath.Replace("\\", "/") + "/";
-                CreateUploadedFileZip(uploadedFileName, relativePath);
-            }
+            //foreach (DataRow row in ds.Tables[0].Rows)
+            //{
+            //    filePath = row["FilePath"].ToString();
+            //    if (!String.IsNullOrEmpty(filePath))
+            //    {
+            //        uploadedFileName = Path.GetFileName(filePath);
+            //        relativePath = Path.GetDirectoryName(filePath);
+            //        relativePath = relativePath.Replace("\\", "/") + "/";
+            //        CreateUploadedFileZip();
+            //    }
+            //}
+            string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
+            CreateUploadedFileZip("TICKET", xmlFile);
+
         }
 
         public static void FillupFormsUploaded()
@@ -340,6 +391,8 @@ namespace TCCCMS.Ship.ExportData
                 ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString(), XmlWriteMode.WriteSchema);
             }
             con.Close();
+            string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
+            CreateUploadedFileZip("FILLUPUPLOADEDFILE", xmlFile);
         }
 
         public static void FillupFormApproverMapper()
