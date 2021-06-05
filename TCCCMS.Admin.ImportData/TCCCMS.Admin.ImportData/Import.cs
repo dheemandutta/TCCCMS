@@ -93,17 +93,20 @@ namespace TCCCMS.Admin.ImportData
                     //Unzip a file
                     try
                     {
-                        if(fileCategory == "TICKET" || fileCategory == "FILLUPUPLOADEDFILE")
-                        {
-                            zip1.ExtractAll(tmpPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
-                            TccLog.UpdateLog("Unzip Complete for Ticket And FILLUPUPLOADEDFILE", LogMessageType.Info, "Admin Import");
-                        }
-                        else
-                        {
-                            zip1.ExtractAll(extractPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
-                            TccLog.UpdateLog("Unzip Complete", LogMessageType.Info, "Admin Import");
-                        }
-                        
+                        //if(fileCategory == "TICKET" || fileCategory == "FILLUPUPLOADEDFILE")
+                        //{
+                        //    zip1.ExtractAll(tmpPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
+                        //    TccLog.UpdateLog("Unzip Complete for Ticket And FILLUPUPLOADEDFILE", LogMessageType.Info, "Admin Import");
+                        //}
+                        //else
+                        //{
+                        //    zip1.ExtractAll(extractPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
+                        //    TccLog.UpdateLog("Unzip Complete", LogMessageType.Info, "Admin Import");
+                        //}
+
+                        zip1.ExtractAll(extractPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
+                        TccLog.UpdateLog("Unzip Complete", LogMessageType.Info, "Admin Import");
+
                     }
                     catch (Exception ex)
                     {
@@ -117,6 +120,9 @@ namespace TCCCMS.Admin.ImportData
 
                 logger.Info("UnZip Complete. - {0}", DateTime.Now.ToString());
                 TccLog.UpdateLog("Unzip Complete", LogMessageType.Info, "Admin Import");
+
+                UnzipUploadedFiles();
+                TccLog.UpdateLog("Uploaded File Unzip Complete", LogMessageType.Info, "Admin Import");
 
                 // start DB sync process
                 ImportData();
@@ -146,8 +152,62 @@ namespace TCCCMS.Admin.ImportData
                 ArchiveZipFiles(fileName);
                 logger.Info("Archive Complete . - {0}", DateTime.Now.ToString());
                 TccLog.UpdateLog("Archive Complete", LogMessageType.Info, "Admin Import");
-
             }
+        }
+
+        public static void UnzipUploadedFiles()
+        {
+            logger.Info("Uploaded File Uizip Started. - {0}", DateTime.Now.ToString());
+            TccLog.UpdateLog("Uploaded File Uizip Started", LogMessageType.Info, "Admin Import");
+            String TargetDirectory = extractPath + "\\";
+            string tmpPath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
+            string[] filePaths = null;
+
+            try
+            {
+                filePaths = Directory.GetFiles(TargetDirectory,"*.zip");
+            }
+            catch (Exception ex)
+            {
+
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import - StartImport");
+                logger.Error("Directory not found. - {0}", DateTime.Now.ToString(), ex.Message);
+                logger.Info("Import process terminated unsuccessfully.  - {0}", DateTime.Now.ToString());
+                //Environment.Exit(0);
+            }
+            foreach (string filePath in filePaths)
+            {
+                string fileName = Path.GetFileName(filePath);
+
+                //------------------------------------------
+                string[] fileNameParts = fileName.Split('_');
+                string fileCategory = fileNameParts[1].ToString();
+                //------------------------------------------
+
+
+                //unzip the file
+                using (ZipFile zip1 = ZipFile.Read(filePath))
+                {
+                    try
+                    {
+                        if (fileCategory == "TICKET" || fileCategory == "FILLUPUPLOADEDFILE")
+                        {
+                            zip1.ExtractAll(tmpPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
+                            TccLog.UpdateLog("Uploaded File Unzip Complete for Ticket And FILLUPUPLOADEDFILE", LogMessageType.Info, "Admin Import");
+                        }
+                        
+
+                    }
+                    catch (Exception ex)
+                    {
+                        TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import-StartImport");
+                        logger.Error("Could not unzip file {0}", extractPath);
+                        logger.Info("Import process terminated unsuccessfully.  - {0}", DateTime.Now.ToString());
+                        //Environment.Exit(0);
+                    }
+                }
+            }
+
         }
 
         public static void ArchiveZipFiles(string f)

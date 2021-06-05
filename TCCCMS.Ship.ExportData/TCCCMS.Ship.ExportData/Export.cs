@@ -240,6 +240,8 @@ namespace TCCCMS.Ship.ExportData
         {
             try
             {
+                TccLog.UpdateLog("Uploaded File Zip Creation Started", LogMessageType.Info, "Export-CreateZip");
+                logger.Info("Uploaded File Zip Creation Started.- {0}", DateTime.Now.ToString());
 
                 //string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
                 string tmpPath = Path.Combine(Path.GetDirectoryName(path), "temp");
@@ -300,7 +302,7 @@ namespace TCCCMS.Ship.ExportData
                     zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
 
                     zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
-                    zip.Save(zippath + "\\" + zipName);
+                    zip.Save(path + "\\" + zipName);//---Create Zip of Uploaded file in 'xml' folder. ---
                     // SegmentsCreated = zip.NumberOfSegmentsForMostRecentSave;
                 }
 
