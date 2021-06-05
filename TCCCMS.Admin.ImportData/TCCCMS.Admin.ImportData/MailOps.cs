@@ -13,6 +13,7 @@ using MailKit;
 using MimeKit;
 using MailKit.Security;
 using System.Collections.Generic;
+using TCCCMS.LOG;
 
 namespace TCCCMS.Admin.ImportData
 {
@@ -118,40 +119,187 @@ namespace TCCCMS.Admin.ImportData
                 }
                 else if (MailServerType == MailType.IMAP)
                 {
-                    var inbox = imap_Client.Inbox;
-                    inbox.Open(FolderAccess.ReadWrite);
-                    IList<UniqueId> uids = inbox.Search(SearchQuery.NotSeen);
-                    foreach (UniqueId uid in uids)
+                    try
                     {
+                        IList<UniqueId> uids = null;
+                        var inbox = imap_Client.Inbox;
+                        if (inbox != null)
+                        {
+                            inbox.Open(FolderAccess.ReadWrite);
+                            uids = inbox.Search(SearchQuery.NotSeen);
+                        }
+                        if (uids != null)
+                        {
+                            foreach (UniqueId uid in uids)
+                            {
 
-                        MimeMessage message = inbox.GetMessage(uid);
+                                MimeMessage message = inbox.GetMessage(uid);
+                                if (message.Subject.Equals(subjectLine))
+                                {
+                                    foreach (MimeEntity attach in message.Attachments)
+                                    {
+                                        var fileName = attach.ContentDisposition?.FileName ?? attach.ContentType.Name;
+                                        string filePath = Path.Combine(attachmentFolderPath, fileName);
+                                        using (var streem = File.Create(filePath))
+                                        {
+                                            if (attach is MessagePart)
+                                            {
+                                                var part = (MessagePart)attach;
+                                                part.Message.WriteTo(streem);
+                                            }
+                                            else
+                                            {
+                                                var part = (MimePart)attach;
+                                                part.Content.DecodeTo(streem);
+
+                                            }
+                                        }
+
+
+                                    }
+                                    inbox.AddFlags(uid, MessageFlags.Deleted, true);
+                                    inbox.Expunge();
+                                }
+
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import - DownloadAllNewMails");
+                    }
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                LogHelper.Log(LogTarget.EventLog, ex.Message);
+            }
+            finally
+            {
+                if (MailServerType == MailType.POP3)
+                {
+                    //pop.Disconnect();
+                    pop_Client.Disconnect(true);
+
+                }
+                else
+                {
+                    //imap.Disconnect();
+                    imap_Client.Disconnect(true);
+                }
+                // Dispose();
+            }
+            if (MailServerType == MailType.POP3)
+            {
+                //pop.Disconnect();
+                pop_Client.Disconnect(true);
+
+            }
+            else
+            {
+                //imap.Disconnect();
+                imap_Client.Disconnect(true);
+            }
+
+
+        }
+
+        public void DownloadAllNewMails(string subjectLine, string attachmentFolderPath, MailServiceConfiguration mailServiceConfiguration)
+        {
+
+            try
+            {
+                if (MailServerType == MailType.POP3)
+                {
+
+                    for (int i = 0; i < pop_Client.Count; i++)
+                    {
+                        MimeMessage message = pop_Client.GetMessage(i);
                         if (message.Subject.Equals(subjectLine))
                         {
-                            foreach (MimeEntity attach in message.Attachments)
+                            foreach (var attachment in message.Attachments)
                             {
-                                var fileName = attach.ContentDisposition?.FileName ?? attach.ContentType.Name;
+                                var fileName = attachment.ContentDisposition?.FileName ?? attachment.ContentType.Name;
                                 string filePath = Path.Combine(attachmentFolderPath, fileName);
-                                using (var streem = File.Create(filePath))
+                                using (var stream = File.Create(filePath))
                                 {
-                                    if (attach is MessagePart)
+                                    if (attachment is MessagePart)
                                     {
-                                        var part = (MessagePart)attach;
-                                        part.Message.WriteTo(streem);
+                                        var part = (MessagePart)attachment;
+
+                                        part.Message.WriteTo(stream);
                                     }
                                     else
                                     {
-                                        var part = (MimePart)attach;
-                                        part.Content.DecodeTo(streem);
+                                        var part = (MimePart)attachment;
 
+                                        part.Content.DecodeTo(stream);
                                     }
                                 }
-
-
                             }
-                            inbox.AddFlags(uid, MessageFlags.Deleted, true);
-                            inbox.Expunge();
+                            pop_Client.DeleteMessage(i);
                         }
 
+                    }
+
+
+
+                }
+                else if (MailServerType == MailType.IMAP)
+                {
+                    try
+                    {
+                        IList<UniqueId> uids = null;
+                        if (imap_Client == null) {
+                            Connect(mailServiceConfiguration.MailId, mailServiceConfiguration.MailPassword, mailServiceConfiguration.MailServerDomain, mailServiceConfiguration.Port);
+                        }
+                        var inbox = imap_Client.Inbox;
+                        if (inbox != null)
+                        {
+                            inbox.Open(FolderAccess.ReadWrite);
+                            uids = inbox.Search(SearchQuery.NotSeen);
+                        }
+                        if (uids != null)
+                        {
+                            foreach (UniqueId uid in uids)
+                            {
+
+                                MimeMessage message = inbox.GetMessage(uid);
+                                if (message.Subject.Equals(subjectLine))
+                                {
+                                    foreach (MimeEntity attach in message.Attachments)
+                                    {
+                                        var fileName = attach.ContentDisposition?.FileName ?? attach.ContentType.Name;
+                                        string filePath = Path.Combine(attachmentFolderPath, fileName);
+                                        using (var streem = File.Create(filePath))
+                                        {
+                                            if (attach is MessagePart)
+                                            {
+                                                var part = (MessagePart)attach;
+                                                part.Message.WriteTo(streem);
+                                            }
+                                            else
+                                            {
+                                                var part = (MimePart)attach;
+                                                part.Content.DecodeTo(streem);
+
+                                            }
+                                        }
+
+
+                                    }
+                                    inbox.AddFlags(uid, MessageFlags.Deleted, true);
+                                    inbox.Expunge();
+                                }
+
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import - DownloadAllNewMails");
                     }
                 }
 
@@ -197,8 +345,9 @@ namespace TCCCMS.Admin.ImportData
         {
             //pop.Dispose();
             //imap.Dispose();
-
+            if (imap_Client != null)
             imap_Client.Dispose();
+            if (pop_Client != null)
             pop_Client.Dispose();
 
         }
