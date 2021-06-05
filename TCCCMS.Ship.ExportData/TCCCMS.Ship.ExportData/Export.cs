@@ -28,6 +28,7 @@ namespace TCCCMS.Ship.ExportData
         public async Task Execute(IJobExecutionContext context)
         {
             logger.Info("Process Started. - {0}", DateTime.Now.ToString());
+            //DB logger added..
             if (ZipDirectoryContainsFiles())
             {
                 SendMail();
@@ -321,6 +322,7 @@ namespace TCCCMS.Ship.ExportData
         #region Export Data From DB
         public static void ExportData()
         {
+            logger.Info("Import Process Started. - {0}", DateTime.Now.ToString());
             try
             {
                 FillupFormsUploaded();
