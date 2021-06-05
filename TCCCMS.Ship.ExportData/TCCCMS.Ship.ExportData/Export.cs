@@ -54,7 +54,8 @@ namespace TCCCMS.Ship.ExportData
                 isMailSendSuccessful = false;
                 ExportData();
                 CreateZip();
-                //SendMail();
+                TccLog.UpdateLog("Send Mail Process Started from Else", LogMessageType.Info, "Export");
+                SendMail();
                 if (isMailSendSuccessful)
                 {
                     ArchiveZipFiles();
@@ -488,7 +489,14 @@ namespace TCCCMS.Ship.ExportData
 
                     if (ZipDirectoryContainsZipFiles())
                     {
-                        mail.Attachments.Add(new Attachment(zippath + "\\" + GetZipFileName()));
+                        string[] sourceFiles = Directory.GetFiles(zippath);
+
+                        foreach (string sourceFile in sourceFiles)
+                        {
+                            //mail.Attachments.Add(new Attachment(zippath + "\\" + GetZipFileName()));
+                            mail.Attachments.Add(new Attachment(sourceFile));
+                        }
+                        
                     }
 
                     SmtpClient smtp = new SmtpClient(GetConfigData("smtp"));

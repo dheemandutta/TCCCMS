@@ -183,7 +183,9 @@ namespace TCCCMS.Admin.ImportData
 
         public static void CopyUploadedFiles(string partName, string xmlFile)
         {
-            
+            logger.Info("Copy uploaded file Started. - {0}", DateTime.Now.ToString());
+            TccLog.UpdateLog("Copy uploaded file Started", LogMessageType.Info, "Admin Import");
+
             string sourceFilePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
 
             DataSet dataSet = new DataSet();
@@ -205,6 +207,7 @@ namespace TCCCMS.Admin.ImportData
                     filePath = row["FilePath"].ToString();
                     uploadedFileName = Path.GetFileName(filePath);
                    // destinationFilePath = destinationFilePath + "\\TicketFiles";
+
                 }
                 else
                 {
@@ -218,6 +221,12 @@ namespace TCCCMS.Admin.ImportData
 
                 destinationFilePath = destinationFilePath + relPath;
                 tempSourcePath = Path.Combine(tempSourcePath, uploadedFileName);
+
+                logger.Info(destinationFilePath +" - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog(destinationFilePath, LogMessageType.Info, "Admin Import");
+                logger.Info(tempSourcePath+ ". - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog(tempSourcePath, LogMessageType.Info, "Admin Import");
+
                 if (File.Exists(tempSourcePath))
                     File.Copy(tempSourcePath, Path.Combine(destinationFilePath, uploadedFileName));
 
@@ -231,6 +240,8 @@ namespace TCCCMS.Admin.ImportData
 
         public static void CopyUploadedFiles2(string f, string relativePath)
         {
+            logger.Info("Copy uploaded file Started. - {0}", DateTime.Now.ToString());
+            TccLog.UpdateLog("Copy uploaded file Started", LogMessageType.Info, "Admin Import");
             //string sourceFilePath = zipPath + "\\";
             string sourceFilePath = extractPath + "\\";
             string destinationFilePath = @"C\\inetpub\\wwwroot\\TCCCMS" + "\\";
