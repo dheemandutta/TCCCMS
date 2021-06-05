@@ -481,8 +481,10 @@ namespace TCCCMS.Ship.ExportData
                 {
                     mail.Subject = GetConfigData("tccSsubject");
                     mail.From = new MailAddress(GetConfigData("mailfrom"));
-
                     mail.To.Add(GetConfigData("mailto"));
+
+                    //mail.From = new MailAddress(GetConfigData("shipemail"));
+                    //mail.To.Add(GetConfigData("admincenteremail"));
 
                     if (ZipDirectoryContainsZipFiles())
                     {

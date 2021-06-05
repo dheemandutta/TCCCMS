@@ -543,7 +543,7 @@ namespace TCCCMS.Admin.ExportData
 
         private static DataSet GetRegistrerdVessels()
         {
-            DataSet ds;
+            DataSet ds = new DataSet();
             try
             {
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
@@ -551,7 +551,7 @@ namespace TCCCMS.Admin.ExportData
                 // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
                 SqlCommand cmd = new SqlCommand("stpGETAllRegisteredVessels", con);
                 cmd.CommandType = CommandType.StoredProcedure;
-                ds = new DataSet();
+                //ds = new DataSet();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(ds);
 
