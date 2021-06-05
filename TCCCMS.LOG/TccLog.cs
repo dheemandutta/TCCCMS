@@ -11,7 +11,7 @@ namespace TCCCMS.LOG
 {
     public class TccLog
     {
-        public static void UpdateLog(string Message, DateTime OperationDate, LogMessageType MessageType,string messageSource)
+        public static void UpdateLog(string Message, LogMessageType MessageType,string messageSource)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
