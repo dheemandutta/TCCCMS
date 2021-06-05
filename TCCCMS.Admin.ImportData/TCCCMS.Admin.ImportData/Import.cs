@@ -117,6 +117,7 @@ namespace TCCCMS.Admin.ImportData
                 logger.Info("UnZip Complete. - {0}", DateTime.Now.ToString());
                 TccLog.UpdateLog("Unzip Complete", LogMessageType.Info, "Admin Import");
 
+
                 // start DB sync process
                 ImportData();
                 logger.Info("Data Import Complete. - {0}", DateTime.Now.ToString());
@@ -659,6 +660,7 @@ namespace TCCCMS.Admin.ImportData
                 };
                 //mailops.Connect(serviceconf.MailId, Security.DecryptString(serviceconf.MailPassword), serviceconf.MailServerDomain, serviceconf.Port);
                 mailops.Connect(serviceconf.MailId, serviceconf.MailPassword, serviceconf.MailServerDomain, serviceconf.Port);
+
                 mailops.DownloadAllNewMails(serviceconf.SubjectLine, serviceconf.AttachmentPath);
 
                 isMailReadSuccessful = true;
