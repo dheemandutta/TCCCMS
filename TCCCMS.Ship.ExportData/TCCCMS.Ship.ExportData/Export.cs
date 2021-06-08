@@ -29,36 +29,52 @@ namespace TCCCMS.Ship.ExportData
         public async Task Execute(IJobExecutionContext context)
         {
             logger.Info("Process Started. - {0}", DateTime.Now.ToString());
-            TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Export");
-            //DB logger added..
+            TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Ship Export");
             if (ZipDirectoryContainsFiles())
             {
-                TccLog.UpdateLog("Send Mail Process Started", LogMessageType.Info, "Export");
+                TccLog.UpdateLog("Send Mail Process Started", LogMessageType.Info, "Ship Export");
                 SendMail();
                 if (isMailSendSuccessful)
                 {
+                    TccLog.UpdateLog("ArchiveZipFiles Process Started", LogMessageType.Info, "Ship Export");
                     ArchiveZipFiles();
+                    TccLog.UpdateLog("ArchiveZipFiles Process Completed", LogMessageType.Info, "Ship Export");
                     //redo the whole process again
                     isMailSendSuccessful = false;
+                    TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Ship Export");
                     ExportData();
+                    TccLog.UpdateLog("Export Process Completed", LogMessageType.Info, "Ship Export");
+                    TccLog.UpdateLog("Zip Process Started", LogMessageType.Info, "Ship Export");
                     CreateZip();
+                    TccLog.UpdateLog("Zip Process Completed", LogMessageType.Info, "Ship Export");
+                    TccLog.UpdateLog("SendMail Process Started", LogMessageType.Info, "Ship Export");
                     SendMail();
+                    TccLog.UpdateLog("SendMail Process Completed", LogMessageType.Info, "Ship Export");
                     if (isMailSendSuccessful)
                     {
+                        TccLog.UpdateLog("Archive Process Started", LogMessageType.Info, "Ship Export");
                         ArchiveZipFiles();
+                        TccLog.UpdateLog("Archive Process Completed", LogMessageType.Info, "Ship Export");
                     }
                 }
             }
             else
             {
                 isMailSendSuccessful = false;
+                TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Ship Export");
                 ExportData();
+                TccLog.UpdateLog("Export Process Completed", LogMessageType.Info, "Ship Export");
+                TccLog.UpdateLog("Zip Process Started", LogMessageType.Info, "Ship Export");
                 CreateZip();
+                TccLog.UpdateLog("Zip Process Completed", LogMessageType.Info, "Ship Export");
                 TccLog.UpdateLog("Send Mail Process Started from Else", LogMessageType.Info, "Export");
                 SendMail();
+                TccLog.UpdateLog("SendMail Process Completed", LogMessageType.Info, "Ship Export");
                 if (isMailSendSuccessful)
                 {
+                    TccLog.UpdateLog("Archive Process Started", LogMessageType.Info, "Ship Export");
                     ArchiveZipFiles();
+                    TccLog.UpdateLog("Archive Process Completed", LogMessageType.Info, "Ship Export");
                 }
             }
 
@@ -76,6 +92,8 @@ namespace TCCCMS.Ship.ExportData
 
                 logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in ZipDirectoryContainsZipFiles.");
+                TccLog.UpdateLog("Directory not found", LogMessageType.Error, "Ship Export");
+                TccLog.UpdateLog("Export process terminated unsuccessfully in ZipDirectoryContainsZipFiles", LogMessageType.Info, "Ship Export");
                 return false;
                 //Environment.Exit(0);
             }
@@ -136,7 +154,8 @@ namespace TCCCMS.Ship.ExportData
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Directory not found Ship Export");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export process terminated unsuccessfully in Admin Export-ArchiveZipFiles");
                 logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in ArchiveZipFiles.");
                 Environment.Exit(0);
@@ -154,7 +173,7 @@ namespace TCCCMS.Ship.ExportData
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-ZipDirectoryContainsZipFiles");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Export-ZipDirectoryContainsZipFiles");
                 logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in ZipDirectoryContainsZipFiles.");
                 return false;
@@ -240,7 +259,7 @@ namespace TCCCMS.Ship.ExportData
         {
             try
             {
-                TccLog.UpdateLog("Uploaded File Zip Creation Started", LogMessageType.Info, "Export-CreateZip");
+                TccLog.UpdateLog("Uploaded File Zip Creation Started", LogMessageType.Info, "Ship Export-CreateZip");
                 logger.Info("Uploaded File Zip Creation Started.- {0}", DateTime.Now.ToString());
 
                 //string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
