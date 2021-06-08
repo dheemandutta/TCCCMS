@@ -110,7 +110,7 @@ namespace TCCCMS.Admin.ImportData
                     }
                     catch (Exception ex)
                     {
-                        TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import-StartImport2");
+                        TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import-StartImport");
                         logger.Error("Could not unzip file {0}", extractPath);
                         logger.Info("Import process terminated unsuccessfully.  - {0}", DateTime.Now.ToString());
                         //Environment.Exit(0);
