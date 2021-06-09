@@ -58,10 +58,10 @@ function SetUpGrid() {
                     console.log(row.Id);
 
                     if (data == '1') {
-                        return '<a style="background-color: #7db700;">Resolved</a>';
+                        return '<a style="background-color: #7db700; border-radius: 5px;">Resolved</a>';
                     }
                     else if (data == '0') {
-                        return '<a style="background-color: #e90000;">Pending</a>';
+                        return '<a style="background-color: #e90000; border-radius: 5px;">Pending</a>';
 
                     }
                 }
