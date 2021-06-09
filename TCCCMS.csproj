@@ -1109,6 +1109,7 @@
     <Content Include="Content\plugin\datepicker\css\pickmeup.scss" />
     <Content Include="Content\plugin\datepicker\js\jquery.pickmeup.twitter-bootstrap.coffee" />
     <Content Include="Content\plugin\datepicker\js\jquery.pickmeup.uikit.coffee" />
+    <Content Include="Scripts\Ticket.js" />
     <Content Include="SQL Script\04-04-2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29_II.sql" />
     <Content Include="SQL Script\04-04-2021_Full_Schema_Of_TCCCMSDB_II.sql" />
     <Content Include="SQL Script\06-04-2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29.sql" />
@@ -2374,6 +2375,7 @@
     <Content Include="Views\Shared\_pvFormPreviewModalVol8.cshtml" />
     <Content Include="Views\Shared\_pvRevisionViewers.cshtml" />
     <Content Include="Views\CompanyPolicyManual\RevisiedPages.cshtml" />
+    <Content Include="Views\Ticket\ViewSupportTicket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

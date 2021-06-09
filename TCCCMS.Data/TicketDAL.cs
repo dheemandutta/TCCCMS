@@ -38,5 +38,46 @@ namespace TCCCMS.Data
 
             return tktNumber;
         }
+
+
+        public List<Ticket> GetAllTicketPageWise(int pageIndex, ref int recordCount, int length/*, int VesselID*/)
+        {
+            List<Ticket> pOList = new List<Ticket>();
+            List<Ticket> equipmentsPO = new List<Ticket>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("stpGetAllTicketPageWise", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PageIndex", pageIndex);
+                    cmd.Parameters.AddWithValue("@PageSize", length);
+                    cmd.Parameters.Add("@RecordCount", SqlDbType.Int, 4);
+                    cmd.Parameters["@RecordCount"].Direction = ParameterDirection.Output;
+                    //cmd.Parameters.AddWithValue("@VesselID", VesselID);
+                    con.Open();
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    //prodPOList = Common.CommonDAL.ConvertDataTable<ProductPOCO>(ds.Tables[0]);
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        pOList.Add(new Ticket
+                        {
+                            //Id = Convert.ToInt32(dr["Id"]),
+                            TicketNumber = Convert.ToString(dr["TicketNumber"]),
+                            Error = Convert.ToString(dr["Error"]),
+                            Description = Convert.ToString(dr["Description"]),
+                            IsSolved = Convert.ToInt32(dr["IsSolved"])
+                        });
+                    }
+                    recordCount = Convert.ToInt32(cmd.Parameters["@RecordCount"].Value);
+                    con.Close();
+                }
+            }
+            return pOList;
+        }
     }
 }

@@ -123,14 +123,14 @@ namespace TCCCMS.Admin.ExportData
             //}
         }
 
-        private static string GetShipEmail(int vesselId)
+        private static string GetShipEmail(int shipId)
         {
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("GetShipEmail", con);
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@ShipId", vesselId);
+            cmd.Parameters.AddWithValue("@ShipId", shipId);
 
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -592,7 +592,11 @@ namespace TCCCMS.Admin.ExportData
             con.Close();
 
             string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
-            CreateUploadedFileZip("FILLUPUPLOADEDFILE", xmlFile);
+            if(File.Exists(xmlFile))
+            {
+                CreateUploadedFileZip("FILLUPUPLOADEDFILE", xmlFile);
+            }
+            
         }
 
         public static void FillupFormApproverMapper()
@@ -729,12 +733,12 @@ namespace TCCCMS.Admin.ExportData
                         smtp.Port = int.Parse(GetConfigData("port"));
 
                         //smtp.Credentials = new System.Net.NetworkCredential(GetConfigData("mailfrom").Trim(), GetConfigData("frompwd").Trim());
-                        smtp.Credentials = new System.Net.NetworkCredential(adminEmail, adminEmailpwd);
-                        //smtp.Credentials = new System.Net.NetworkCredential("cableman24x7@gmail.com", "cableman24x712345");
+                        //smtp.Credentials = new System.Net.NetworkCredential(adminEmail, adminEmailpwd);
+                        smtp.Credentials = new System.Net.NetworkCredential("cableman24x7@gmail.com", "cableman24x712345");
 
                         smtp.Send(mail);
                         logger.Info("Mail send Successfully to the Vessel_" + vesselIMO[0].ToString() + ". - {0}", DateTime.Now.ToString());
-                        TccLog.UpdateLog("Mail Sent Successfully", LogMessageType.Info, "Admin Export");
+                        TccLog.UpdateLog("Mail Sent Successfully to the Ship_" + vesselIMO[0].ToString(), LogMessageType.Info, "Admin Export - SendMail");
                         isMailSendSuccessful = true;
                     }
 
