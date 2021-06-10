@@ -109,5 +109,11 @@
     </None>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TCCCMS.CryptoUtility\TCCCMS.CryptoUtility.csproj">
+      <Project>{e1cfd43b-4313-4b62-a7a2-0fc56d129630}</Project>
+      <Name>TCCCMS.CryptoUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

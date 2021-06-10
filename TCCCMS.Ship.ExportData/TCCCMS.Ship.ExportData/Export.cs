@@ -15,6 +15,7 @@ using Ionic.Zip;
 using Quartz;
 using System.Threading;
 using TCCCMS.LOG;
+using TCCCMS.CryptoUtility;
 
 namespace TCCCMS.Ship.ExportData
 {
@@ -397,7 +398,8 @@ namespace TCCCMS.Ship.ExportData
 
 
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
-                CreateUploadedFileZip("TICKET", xmlFile);
+                if (File.Exists(xmlFile))
+                    CreateUploadedFileZip("TICKET", xmlFile);
             }
             catch (Exception ex)
             {
@@ -426,7 +428,8 @@ namespace TCCCMS.Ship.ExportData
                 }
                 con.Close();
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
-                CreateUploadedFileZip("FILLUPUPLOADEDFILE", xmlFile);
+                if (File.Exists(xmlFile))
+                    CreateUploadedFileZip("FILLUPUPLOADEDFILE", xmlFile);
             }
             catch (Exception ex)
             {
@@ -496,7 +499,9 @@ namespace TCCCMS.Ship.ExportData
         public static void SendMail()
         {
 
-            
+            string shipEmail = GetConfigData("shipemail").Trim();
+            string shipEmailpwd = GetConfigData("shipemailpwd").Trim();
+            //string shipEmailpwd = EncodeDecode.DecryptString(GetConfigData("shipemailpwd"));
             try
             {
                 using (MailMessage mail = new MailMessage())
@@ -523,7 +528,10 @@ namespace TCCCMS.Ship.ExportData
                     SmtpClient smtp = new SmtpClient(GetConfigData("smtp"));
                     smtp.EnableSsl = true;
                     smtp.Port = int.Parse(GetConfigData("port"));
+                    //smtp.Credentials = new System.Net.NetworkCredential(shipEmail, shipEmailpwd);
+
                     smtp.Credentials = new System.Net.NetworkCredential(GetConfigData("mailfrom").Trim(), GetConfigData("frompwd").Trim());
+                    //smtp.Credentials = new System.Net.NetworkCredential(GetConfigData("mailfrom").Trim(), EncodeDecode.DecryptString(GetConfigData("frompwd")));
 
                     smtp.Send(mail);
                     TccLog.UpdateLog("Send Mail Successfull", LogMessageType.Info, "Export");

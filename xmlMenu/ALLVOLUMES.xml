@@ -77,6 +77,7 @@
 		<volume id="3" name="Volume III" controllername="CompanyResponsibilityAndAuthorityManual">
 			
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOOJD">Second Officer Job Description - TO BE DELETED</filename> -->
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Flow Chart</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ShoreOrganisation">Section 1 - Shore Organisation</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOC">Section 1 Annex 1 - Shore Organisation Chart</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SPR">Section 2 - Shore Personnel Recruitment</filename>
@@ -107,6 +108,7 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MedicalExamination">Section 27 - Medical Examination</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RecruitmentOfSeafarer">Section 28 - Recruitment of Seafarer</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TRM">Section 29 - Travel Risk Management</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WSGM">Section 30 - Women Seafarers General Matters</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="">Senior Second Officer Job Description</filename>
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. III Manual</filename> -->
 		

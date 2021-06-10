@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Quartz;
 using Ionic.Zip;
 using TCCCMS.LOG;
-
+using TCCCMS.CryptoUtility;
 using System.Xml;
 
 namespace TCCCMS.Ship.ImportData
@@ -83,7 +83,7 @@ namespace TCCCMS.Ship.ImportData
                     try
                     {
                         zip1.ExtractAll(extractPath + "\\", ExtractExistingFileAction.DoNotOverwrite);
-                        TccLog.UpdateLog("Unzip Complete", LogMessageType.Info, "Ship  Import");
+                        TccLog.UpdateLog("Unzip Complete", LogMessageType.Info, "Ship  Import - StartImport");
                     }
                     catch (Exception ex)
                     {
@@ -108,6 +108,8 @@ namespace TCCCMS.Ship.ImportData
                 //Update last stnc date for IMO
                 //UpdateLastSyncDate(int.Parse(vesselIMONumber[0].ToString()));
                 //logger.Info("Update Sync Date Complete. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Read Command  Started", LogMessageType.Info, "Ship Import- StartImport");
+                ReadCommand();
 
                 //Delete extracted files
                 string[] extractedFiles = Directory.GetFiles(extractPath + "\\");
@@ -209,7 +211,7 @@ namespace TCCCMS.Ship.ImportData
 
             try
             {
-                commandFile = Directory.GetFiles(temRevPath, "commands.xml").FirstOrDefault();
+                commandFile = Directory.GetFiles(temRevPath, "command.xml").FirstOrDefault();
 
             }
             catch(Exception ex)
@@ -255,31 +257,48 @@ namespace TCCCMS.Ship.ImportData
                                                 if (operation == "")
                                                 {
                                                     if (File.Exists(sourceFile))
-                                                        File.Copy(sourceFile, destinationFile);
+                                                    {
+                                                        File.Copy(sourceFile, destinationFile, true);
+                                                        TccLog.UpdateLog("PDF Copied", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                    }
+                                                        
                                                 }
                                                 else if (operation == "remove")
                                                 {
                                                     if (File.Exists(destinationFile))
+                                                    {
                                                         File.Delete(destinationFile);
+                                                        TccLog.UpdateLog("PDF Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                    }
+                                                       
                                                 }
                                                 break;
                                             case "XLS":
                                                 if (operation == "")
                                                 {
                                                     if (File.Exists(sourceFile))
-                                                        File.Copy(sourceFile, destinationFile);
+                                                    {
+                                                        File.Copy(sourceFile, destinationFile, true);
+                                                        TccLog.UpdateLog("XLS Copied", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                    }
+                                                        
                                                 }
                                                 else if (operation == "remove")
                                                 {
                                                     if (File.Exists(destinationFile))
                                                         File.Delete(destinationFile);
+
                                                 }
                                                 break;
                                             case "DOC":
                                                 if (operation == "")
                                                 {
                                                     if (File.Exists(sourceFile))
-                                                        File.Copy(sourceFile, destinationFile);
+                                                    {
+                                                        File.Copy(sourceFile, destinationFile, true);
+                                                        TccLog.UpdateLog("DOC Copied", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                    }
+                                                        
                                                 }
                                                 else if (operation == "remove")
                                                 {
@@ -319,7 +338,13 @@ namespace TCCCMS.Ship.ImportData
                     }
                 }
             }
-           
+            string[] tempRevFiles = Directory.GetFiles(temRevPath + "\\");
+            foreach (string files in tempRevFiles)
+            {
+                File.Delete(files);
+            }
+            logger.Info("Temp Revision Files Deleted . - {0}", DateTime.Now.ToString());
+            TccLog.UpdateLog("Temporary Revision File Deletion Complete", LogMessageType.Info, "Ship Import -ReadCommand");
         }
 
         public static void ReadChildNode(XmlNode cNode)
@@ -351,31 +376,48 @@ namespace TCCCMS.Ship.ImportData
                             if (operation == "")
                             {
                                 if (File.Exists(sourceFile))
-                                    File.Copy(sourceFile, destinationFile);
+                                {
+                                    File.Copy(sourceFile, destinationFile, true);
+                                    TccLog.UpdateLog("PDF Copied", LogMessageType.Info, "Ship Import-ReadCommand");
+                                }
+
                             }
                             else if (operation == "remove")
                             {
                                 if (File.Exists(destinationFile))
+                                {
                                     File.Delete(destinationFile);
+                                    TccLog.UpdateLog("PDF Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
+                                }
+
                             }
                             break;
                         case "XLS":
                             if (operation == "")
                             {
                                 if (File.Exists(sourceFile))
-                                    File.Copy(sourceFile, destinationFile);
+                                {
+                                    File.Copy(sourceFile, destinationFile, true);
+                                    TccLog.UpdateLog("XLS Copied", LogMessageType.Info, "Ship Import-ReadCommand");
+                                }
+
                             }
                             else if (operation == "remove")
                             {
                                 if (File.Exists(destinationFile))
                                     File.Delete(destinationFile);
+
                             }
                             break;
                         case "DOC":
                             if (operation == "")
                             {
                                 if (File.Exists(sourceFile))
-                                    File.Copy(sourceFile, destinationFile);
+                                {
+                                    File.Copy(sourceFile, destinationFile, true);
+                                    TccLog.UpdateLog("DOC Copied", LogMessageType.Info, "Ship Import-ReadCommand");
+                                }
+
                             }
                             else if (operation == "remove")
                             {
@@ -435,11 +477,13 @@ namespace TCCCMS.Ship.ImportData
                 if (recordsAffected == 1)
                 {
                     //richTextBox1.AppendText("******" + fileName + " execute successfully" + "***********" + Environment.NewLine);
+                    TccLog.UpdateLog("******" + fileName + " execute successfully" + "***********", LogMessageType.Error, "Ship Import-ExecuteSql");
                 }
                 else
                 {
-                    string failureText = "#######" + fileName + " execution un-successfull" + "######################" + Environment.NewLine;
-                   // richTextBox1.AppendText(failureText, Color.Red);
+                    string failureText = "#######" + fileName + " execution un-successfull" + "######################";
+                    // richTextBox1.AppendText(failureText, Color.Red);
+                    TccLog.UpdateLog(failureText, LogMessageType.Error, "Ship Import-ExecuteSql");
                 }
 
                 con.Close();
@@ -480,7 +524,7 @@ namespace TCCCMS.Ship.ImportData
         public static void CopyUploadedFiles(string partName, string xmlFile)
         {
             logger.Info("Copy uploaded file Started. - {0}", DateTime.Now.ToString());
-            TccLog.UpdateLog("Copy uploaded file Started", LogMessageType.Info, "Admin Import");
+            TccLog.UpdateLog("Copy uploaded file Started", LogMessageType.Info, "Ship Import");
 
             string sourceFilePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
 
@@ -491,48 +535,58 @@ namespace TCCCMS.Ship.ImportData
 
 
             //----------------------------------------------------------------
-            foreach (DataRow row in dataSet.Tables[0].Rows)
+            try
             {
-                //string destinationFilePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
-                string destinationFilePath = ConfigurationManager.AppSettings["rootPath"].ToString();
-                string tempSourcePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
-                string uploadedFileName = string.Empty;
-                string relPath = string.Empty;
-                string filePath = string.Empty;
-                if (partName == "TICKET")
+                foreach (DataRow row in dataSet.Tables[0].Rows)
                 {
-                    filePath = row["FilePath"].ToString();
-                    uploadedFileName = Path.GetFileName(filePath);
-                    // destinationFilePath = destinationFilePath + "\\TicketFiles";
+                    //string destinationFilePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
+                    string destinationFilePath = ConfigurationManager.AppSettings["rootPath"].ToString();
+                    string tempSourcePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
+                    string uploadedFileName = string.Empty;
+                    string relPath = string.Empty;
+                    string filePath = string.Empty;
+                    if (partName == "TICKET")
+                    {
+                        filePath = row["FilePath"].ToString();
+                        uploadedFileName = Path.GetFileName(filePath);
+                        // destinationFilePath = destinationFilePath + "\\TicketFiles";
+
+                    }
+                    else
+                    {
+                        filePath = row["FormsPath"].ToString();
+                        uploadedFileName = row["FormsName"].ToString();
+                        //destinationFilePath = destinationFilePath + "\\UploadFilledUpFormForApproval";
+                    }
+
+                    relPath = Path.GetDirectoryName(filePath);
+                    relPath = relPath.Replace("~", "").Replace("/", "");
+
+                    destinationFilePath = destinationFilePath + relPath;
+                    tempSourcePath = Path.Combine(tempSourcePath, uploadedFileName);
+
+                    logger.Info(destinationFilePath + " - {0}", DateTime.Now.ToString());
+                    TccLog.UpdateLog(destinationFilePath, LogMessageType.Info, "Ship Import- CopyUploadedFiles");
+                    logger.Info(tempSourcePath + ". - {0}", DateTime.Now.ToString());
+                    TccLog.UpdateLog(tempSourcePath, LogMessageType.Info, "Ship Import - CopyUploadedFiles");
+
+                    if (File.Exists(tempSourcePath))
+                        File.Copy(tempSourcePath, Path.Combine(destinationFilePath, uploadedFileName), true);
+
+
 
                 }
-                else
-                {
-                    filePath = row["FormsPath"].ToString();
-                    uploadedFileName = row["FormsName"].ToString();
-                    //destinationFilePath = destinationFilePath + "\\UploadFilledUpFormForApproval";
-                }
 
-                relPath = Path.GetDirectoryName(filePath);
-                relPath = relPath.Replace("~", "").Replace("/", "");
-
-                destinationFilePath = destinationFilePath + relPath;
-                tempSourcePath = Path.Combine(tempSourcePath, uploadedFileName);
-
-                logger.Info(destinationFilePath + " - {0}", DateTime.Now.ToString());
-                TccLog.UpdateLog(destinationFilePath, LogMessageType.Info, "Admin Import");
-                logger.Info(tempSourcePath + ". - {0}", DateTime.Now.ToString());
-                TccLog.UpdateLog(tempSourcePath, LogMessageType.Info, "Admin Import");
-
-                if (File.Exists(tempSourcePath))
-                    File.Copy(tempSourcePath, Path.Combine(destinationFilePath, uploadedFileName));
-
-
-
+                isMailReadSuccessful = false;
+                //System.IO.File.Move(sourceFilePath, destinationFilePath);
             }
-
-            isMailReadSuccessful = false;
-            //System.IO.File.Move(sourceFilePath, destinationFilePath);
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Import- CopyUploadedFiles");
+                logger.Error(ex.Message);
+                logger.Info("Import process terminated unsuccessfully in CopyUploadedFiles. - {0}", DateTime.Now.ToString());
+            }
+            
         }
 
         /// <summary>
@@ -664,7 +718,9 @@ namespace TCCCMS.Ship.ImportData
 
                         if (row["IsSolved"] != DBNull.Value)
                         {
-                            cmd.Parameters.AddWithValue("@IsSolved", Boolean.Parse(row["IsSolved"].ToString()));
+                            //string s = row["IsSolved"].ToString();
+
+                            cmd.Parameters.AddWithValue("@IsSolved", int.Parse(row["IsSolved"].ToString()));
                         }
                         else
                         {
@@ -690,7 +746,7 @@ namespace TCCCMS.Ship.ImportData
                         }
 
 
-                        cmd.ExecuteNonQuery();
+                       int x= cmd.ExecuteNonQuery();
                         cmd.Parameters.Clear();
                     }
 
@@ -726,7 +782,7 @@ namespace TCCCMS.Ship.ImportData
                     cmd.Parameters.AddWithValue("@Id", int.Parse(row["Id"].ToString()));
                     cmd.Parameters.AddWithValue("@RevisionNo", row["RevisionNo"].ToString());
                     cmd.Parameters.AddWithValue("@RevisionDate", row["RevisionDate"].ToString());
-                    cmd.Parameters.AddWithValue("@CreatedAt", row["CreatedAt"].ToString());
+                    //cmd.Parameters.AddWithValue("@CreatedAt", row["CreatedAt"].ToString());
                     if (row["CreatedAt"] != DBNull.Value)
                     {
                         cmd.Parameters.AddWithValue("@CreatedAt", row["CreatedAt"].ToString());
@@ -778,6 +834,7 @@ namespace TCCCMS.Ship.ImportData
                     cmd.Parameters.AddWithValue("@RevisionHistoryId", int.Parse(row["RevisionHistoryId"].ToString()));
                     cmd.Parameters.AddWithValue("@Chapter", row["Chapter"].ToString());
                     cmd.Parameters.AddWithValue("@Section", row["Section"].ToString());
+                    cmd.Parameters.AddWithValue("@ChangeComment", row["ChangeComment"].ToString());
                     cmd.Parameters.AddWithValue("@ModificationDate", row["ModificationDate"].ToString());
                     cmd.Parameters.AddWithValue("@HeaderId", int.Parse(row["HeaderId"].ToString()));
 
@@ -787,8 +844,8 @@ namespace TCCCMS.Ship.ImportData
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-CrewImport");
-                logger.Error(ex, "Crew Import");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Import-RevisionDetails");
+                logger.Error(ex, "Revision  Import");
                 //throw;
             }
         }
@@ -817,8 +874,15 @@ namespace TCCCMS.Ship.ImportData
                     if (ShipId == int.Parse(row["ShipId"].ToString()))
                     {
                         cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
-                        cmd.Parameters.AddWithValue("@IsApprove", Boolean.Parse(row["IsApprove"].ToString()));
-                        
+                        //cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
+                        if (row["IsApprove"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@IsApprove", DBNull.Value);
+                        }
                         uploadedFileName = row["FormsName"].ToString();
                         relativePath = row["FormsPath"].ToString();
 
@@ -835,11 +899,13 @@ namespace TCCCMS.Ship.ImportData
 
                         cmd.ExecuteNonQuery();
                         cmd.Parameters.Clear();
-
-                        CopyUploadedFiles("FILLUPUPLOADEDFILE", xmlFile);
+                        
                     }
 
                 }
+
+                if (File.Exists(xmlFile))
+                    CopyUploadedFiles("FILLUPUPLOADEDFILE", xmlFile);
             }
             catch (Exception ex)
             {
@@ -872,7 +938,15 @@ namespace TCCCMS.Ship.ImportData
                     {
                         cmd.Parameters.AddWithValue("@UploadedFormName", row["UploadedFormName"].ToString());
                         cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
-                        cmd.Parameters.AddWithValue("@IsApprove", Boolean.Parse(row["IsApprove"].ToString()));
+                        //cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
+                        if (row["IsApprove"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@IsApprove", DBNull.Value);
+                        }
                         if (row["ApprovedOn"] != DBNull.Value)
                         {
                             cmd.Parameters.AddWithValue("@ApprovedOn", DateTime.Parse(row["ApprovedOn"].ToString()));
@@ -911,6 +985,7 @@ namespace TCCCMS.Ship.ImportData
                 {
                     MailId = GetConfigData("shipemail"),
                     MailPassword = GetConfigData("shipemailpwd"),
+                    // MailPassword = EncodeDecode.DecryptString(GetConfigData("shipemailpwd")),
                     SubjectLine = GetConfigData("tccAsubject"),
                     MailServerDomain = GetConfigData("imappopServer"),
                     Port = int.Parse(GetConfigData("imappopport")),
