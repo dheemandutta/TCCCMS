@@ -87,7 +87,7 @@
     <Reference Include="System.Xml" />
     <Reference Include="TCCCMS.LOG, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\TCCCMS.LOG.dll</HintPath>
+      <HintPath>..\..\TCCCMS.LOG\bin\Debug\TCCCMS.LOG.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

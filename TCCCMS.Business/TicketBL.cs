@@ -18,6 +18,11 @@ namespace TCCCMS.Business
             return ticketDal.SaveTicket(ticket, userType);
         
         }
-        
+
+        public List<Ticket> GetAllTicketPageWise(int pageIndex, ref int recordCount, int length/*, int VesselID*/)
+        {
+            TicketDAL dAL = new TicketDAL();
+            return dAL.GetAllTicketPageWise(pageIndex, ref recordCount, length/*, VesselID*/);
+        }
     }
 }

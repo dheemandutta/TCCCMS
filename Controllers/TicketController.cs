@@ -23,6 +23,11 @@ namespace TCCCMS.Controllers
             return View();
         }
 
+        public ActionResult ViewSupportTicket()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult SendTicket( string error, string description, List<HttpPostedFileBase> fileData)
         {
@@ -129,5 +134,54 @@ namespace TCCCMS.Controllers
             }
         }
 
+
+        public JsonResult LoadData()
+        {
+            int draw, start, length;
+            int pageIndex = 0;
+
+            if (null != Request.Form.GetValues("draw"))
+            {
+                draw = int.Parse(Request.Form.GetValues("draw").FirstOrDefault().ToString());
+                start = int.Parse(Request.Form.GetValues("start").FirstOrDefault().ToString());
+                length = int.Parse(Request.Form.GetValues("length").FirstOrDefault().ToString());
+            }
+            else
+            {
+                draw = 1;
+                start = 0;
+                length = 500;
+            }
+
+            if (start == 0)
+            {
+                pageIndex = 1;
+            }
+            else
+            {
+                pageIndex = (start / length) + 1;
+            }
+
+            TicketBL bL = new TicketBL(); 
+            int totalrecords = 0;
+
+            List<Ticket> pocoList = new List<Ticket>();
+            pocoList = bL.GetAllTicketPageWise(pageIndex, ref totalrecords, length);
+            List<Ticket> pList = new List<Ticket>();
+            foreach (Ticket pC in pocoList)
+            {
+                Ticket pOCO = new Ticket();
+                //pOCO.Id = pC.Id;
+                pOCO.TicketNumber = pC.TicketNumber;
+                pOCO.Error = pC.Error;
+                pOCO.Description = pC.Description;
+                pOCO.IsSolved = pC.IsSolved;
+
+                pList.Add(pOCO);
+            }
+
+            var data = pList;
+            return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
