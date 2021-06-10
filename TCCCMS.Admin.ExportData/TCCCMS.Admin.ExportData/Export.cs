@@ -15,6 +15,7 @@ using Ionic.Zip;
 using Quartz;
 using System.Threading;
 using TCCCMS.LOG;
+using TCCCMS.CryptoUtility;
 
 namespace TCCCMS.Admin.ExportData
 {
@@ -695,6 +696,7 @@ namespace TCCCMS.Admin.ExportData
 
             string adminEmail = GetConfigData("admincenteremail").Trim();
             string adminEmailpwd = GetConfigData("admincenteremailpwd").Trim();
+            //string adminEmailpwd = EncodeDecode.DecryptString(GetConfigData("admincenteremailpwd"));
 
             foreach (string sourceFile in sourceFiles)
             {

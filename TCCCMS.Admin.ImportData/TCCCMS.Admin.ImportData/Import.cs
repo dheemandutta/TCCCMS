@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using Quartz;
 using Ionic.Zip;
 using TCCCMS.LOG;
+using TCCCMS.CryptoUtility;
 
 namespace TCCCMS.Admin.ImportData
 {
@@ -486,7 +487,7 @@ namespace TCCCMS.Admin.ImportData
 
                     if (row["IsSolved"] != DBNull.Value)
                     {
-                        cmd.Parameters.AddWithValue("@IsSolved", Boolean.Parse(row["IsSolved"].ToString()));
+                        cmd.Parameters.AddWithValue("@IsSolved", int.Parse(row["IsSolved"].ToString()));
                     }
                     else
                     {
@@ -694,6 +695,8 @@ namespace TCCCMS.Admin.ImportData
                 {
                     MailId = GetConfigData("admincenteremail"),
                     MailPassword = GetConfigData("admincenteremailpwd"),
+
+                   // MailPassword = EncodeDecode.DecryptString(GetConfigData("admincenteremailpwd")),
 
                     //SubjectLine         = "DATASYNCFILE",
                     SubjectLine = GetConfigData("tccSsubject"),

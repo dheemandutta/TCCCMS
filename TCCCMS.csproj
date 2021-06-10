@@ -2403,6 +2403,10 @@
       <Project>{5cf372a0-8349-4f49-8543-1ffb361d6586}</Project>
       <Name>TCCCMS.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="TCCCMS.CryptoUtility\TCCCMS.CryptoUtility.csproj">
+      <Project>{e1cfd43b-4313-4b62-a7a2-0fc56d129630}</Project>
+      <Name>TCCCMS.CryptoUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="TCCCMS.Models\TCCCMS.Models.csproj">
       <Project>{845b4b80-787d-4951-8c1f-e4179426b4ab}</Project>
       <Name>TCCCMS.Models</Name>
