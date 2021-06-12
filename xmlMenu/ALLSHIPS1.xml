@@ -642,7 +642,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2SCD">Section 3 - Steps to control discharge</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS4NLC">Section 4 - National and Local Coordination</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS5AI">Section 5 - Additional information</filename>
-				<foldername description="" actionname="" name="Appendix">
+				<foldername description="" actionname="" name="Appendices">
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPAppendices">Appendices</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 - Contact Point 31Oct20 (need to be updated)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPA1LNOCP">Appendix 1 - List of National Operational Contact Point</filename>
