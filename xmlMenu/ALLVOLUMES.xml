@@ -263,6 +263,13 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LSAI">Chapter 1 Life Saving Appliances Inspection</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FFAI">Chapter 2 Fire Fighting Appliances Inspection</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ISMIA">Chapter 3 ISM Internal Audit</filename>
+				<foldername actionname="" description="" name="Chapter 3 Annex">
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 1 Walk About Plan Template</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 2 Interview Record</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 3 Vessel Condition Report</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 4 Remote Internal Audit Report - ISM-MLC-EMS</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 5 Remote Internal Audit Report - ISPS</filename>
+				</foldername>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SafetyMeeting">Chapter 4 Safety Meeting</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SIF">Chapter 5 Safety Induction and Familiarisation</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SITOA">Chapter 6 Ship Inspection  Tanker Opers Audit</filename>

@@ -72,7 +72,18 @@
             <div class="search">
                 <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
                 <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
-
+                <select id="drpVolume" class="form-control form-control-sm mr-3 w-25" style="margin-left:5px;">
+                    <option value="-1" selected>Volumes</option>
+                    <option value="0">Volume 0</option>
+                    <option value="1">Volume 1</option>
+                    <option value="2">Volume 2</option>
+                    <option value="3">Volume 3</option>
+                    <option value="4">Volume 4</option>
+                    <option value="5">Volume 5</option>
+                    <option value="6">Volume 6</option>
+                    <option value="7">Volume 7</option>
+                    <option value="8">Volume 8</option>
+                </select>
             </div>
         </div>
     </div>
@@ -142,6 +153,21 @@
                     $("#lnkAllSearch").attr("href", $("#lnkAllSearch").attr("href") + "?currentPage=1&text=" + $(this).val());
                 }
 
+            });
+            $('#txtAllSearctText').keypress(function (event) {
+                var keycode = (event.keycode ? event.keyCode : event.which);
+                if (keycode == '13') {
+                     if ($('#txtAllSearctText').val() == '') {
+                        //alert('You cannot search with a blank string');
+                        //$('#searchAlertModal').toggleClass('hidden');
+                        $('#searchAlertModal').modal('show');
+                    }
+                    else {
+                         //window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val();
+                         window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() + '&vol=' + $("#drpVolume option:selected").val();
+                    }
+                }
+
             })
         });
         $(document).ready(function () {
@@ -163,7 +189,8 @@
                     //alert('You cannot search with a blank string');
                 }
                 else {
-                    window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() ;
+                    //window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val();
+                    window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() + '&vol=' + $("#drpVolume option:selected").val();
                 }
             });
         });
