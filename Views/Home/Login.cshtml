@@ -22,6 +22,7 @@
     <title>Login</title>
     <link href="~/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/responsive.css" rel="stylesheet">
     <link href="~/css/Login.css" rel="stylesheet" />
     <script src="~/js/bootstrap.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
@@ -61,7 +62,7 @@
                     <div class="row">
 
 
-                        <div class="logo col-sm-4 col-xs-12">
+                        <div class="logo col-lg-6 col-md-12 col-12">
                             <div style="display:contents;">
 
                             </div>
@@ -72,13 +73,13 @@
                             <h6 style="font-family: Lucida Calligraphy; font-weight:bold;">DIGITIZED SMS MANUALS</h6>
                             <div class="clearfix"></div>
                         </div>
-                        <div id="login" class="col-sm-8 col-xs-12">
+                        <div id="login" class="col-lg-6 col-md-12 col-12">
 
-                            <div style="background-color:#eee;text-align:left;  width:400px; padding:20px;">
+                            <div style="background-color:#eee;text-align:left; padding:20px;" class="rightbox">
                                 <div style="background-color:#ffffff; border-radius:25px; padding:15px;">
                                     <form>
-                                        <div >
-                                            <div style="display:contents">
+                                        <div>
+                                            <div style="display:contents" class="mobilbottom">
                                                 <span class="logo"><img src="/images/flagimg2.png" /></span>
                                                 <span style="display:inline;" class="sitxt">Sign In</span>
 
@@ -87,7 +88,7 @@
                                         </div>
                                         <div class="clearfix"></div><div class="clearfix"></div>
                                         <em id="errm" hidden style="text-emphasis-color:red; font-size:smaller;">** Invalid User Code or Password</em>
-                                        <div class="form-group" >
+                                        <div class="form-group">
                                             <label>User Code</label>
                                             @Html.TextBoxFor(a => a.UserCode, new { @class = "form-control", @style = "border-radius:25px" })
                                             @Html.ValidationMessageFor(a => a.UserCode)

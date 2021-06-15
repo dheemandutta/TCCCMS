@@ -31,6 +31,19 @@
                 overflow: hidden;
             }
         </style>*@
+    <style>
+        .no:hover img:last-child {
+            display: inline-block;
+            transition: .5s ease-in-out;
+        }
+
+        .no img:last-child {
+            display: none;
+            margin: 0 auto;
+            transition: .5s ease-in-out;
+        }
+
+    </style>
 
 }
 <h2>@*Common To All Manual*@</h2>
@@ -63,28 +76,29 @@
             <div class="col-lg-2 col-md-2 col-6">
                 <div class="icon_box dropdown">
                     <span class="dropbtn">
-                        <img src="~/images/ship_icon.png">
+                        <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+                        <img src="~/images/icons/2x/Vessel_Hover@2x.png">
                     </span>
 
                     @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
-                            @Html.Action("ShipMenuLayout", "Dashboard")
-                        </div>*@
+            @Html.Action("ShipMenuLayout", "Dashboard")
+        </div>*@
 
-                    @if (Session["Role"].ToString() == "ShipUser")
-                    {
-                        @*<a href="#">SMS Manuals</a>*@
+                    <!--@if (Session["Role"].ToString() == "ShipUser")
+    {
+        <a href="#">SMS Manuals</a>
 
-                        <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
-                            Ship Specific Manuals & Plans
+        <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
+            Ship Specific Manuals & Plans
 
-                        </a>
+        </a>
 
-                    }
-                    else
-                    {
-                        @Html.Action("ShipMenuLayout", "Dashboard")
-                        <a href="#">Ship Specific Manuals & Plans</a>
-                    }
+    }
+    else
+    {
+        @Html.Action("ShipMenuLayout", "Dashboard")
+        <a href="#">Ship Specific Manuals & Plans</a>
+    }-->
 
                 </div>
             </div>
@@ -100,27 +114,28 @@
                 <a href="@Url.Action("Index", "CommonToAllManual")">
                     <div class="icon_box dropdown">
                         <span class="dropbtn">
-                            <img src="~/images/job.png">
+                            <img src="~/images/icons/2x/JobDescription_Normal@2x.png">
+                            <img src="~/images/icons/2x/JobDescription_Hover@2x.png">
                         </span>
                         <div class="dropdown-content">
                             @*<ul>
-                                    <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 1</a></li>
 
-                                    <li class="dropmenuright">
-                                        <a href="#">Link 2</a>
-                                        <ul class="dropdown-rightcontent">
-                                            <li><a href="#">Link 2.1</a></li>
-                                            <li>
-                                                <a href="#">Link 2.2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
+                <li class="dropmenuright">
+                    <a href="#">Link 2</a>
+                    <ul class="dropdown-rightcontent">
+                        <li><a href="#">Link 2.1</a></li>
+                        <li>
+                            <a href="#">Link 2.2</a>
+                        </li>
+                    </ul>
+                </li>
 
-                                    <li><a href="#">Link 3</a></li>
-                                </ul>*@
+                <li><a href="#">Link 3</a></li>
+            </ul>*@
                         </div>
 
-                        Common Manuals & Plans
+                        <!-- Common Manuals & Plans-->
 
 
                     </div>
@@ -137,27 +152,28 @@
                 <a href="@Url.Action("Index", "ReferenceMaterials")">
                     <div class="icon_box dropdown">
                         <span class="dropbtn">
-                            <img src="~/images/dcu_icon.png">
+                            <img src="~/images/icons/2x/ReferenceDoc_Normal@2x.png" />
+                            <img src="~/images/icons/2x/ReferenceDoc_Hover@2x.png" />
                         </span>
                         <div class="dropdown-content">
                             @*<ul>
-                                    <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 1</a></li>
 
-                                    <li class="dropmenuright">
-                                        <a href="#">Link 2</a>
-                                        <ul class="dropdown-rightcontent">
-                                            <li><a href="#">Link 2.1</a></li>
-                                            <li>
-                                                <a href="#">Link 2.2</a>
-                                            </li>
-                                        </ul>
-                                    </li>
+                <li class="dropmenuright">
+                    <a href="#">Link 2</a>
+                    <ul class="dropdown-rightcontent">
+                        <li><a href="#">Link 2.1</a></li>
+                        <li>
+                            <a href="#">Link 2.2</a>
+                        </li>
+                    </ul>
+                </li>
 
-                                    <li><a href="#">Link 3</a></li>
-                                </ul>*@
+                <li><a href="#">Link 3</a></li>
+            </ul>*@
                         </div>
 
-                        Reference Material
+                        <!-- Reference Material-->
 
 
                     </div>
@@ -174,11 +190,12 @@
                 <a href="@Url.Action("RevisionDetails", "RevisionHistory")">
                     <div class="icon_box dropdown">
                         <span class="dropbtn">
-                            <img src="~/images/search_icon.png">
+                            <img src="~/images/icons/2x/Rivision_Normal@2x.png">
+                            <img src="~/images/icons/2x/Rivision_Hover@2x.png">
                         </span>
                         <div class="dropdown-content">
                         </div>
-                        Revisions
+                        <!-- Revisions-->
                     </div>
                 </a>
             </div>
@@ -232,36 +249,39 @@
             <div class="col-lg-4 col-md-5 col-12">
                 <div class="left_bo dropdown">
                     <span class="one_part dropbtn">
-                        <img src="~/images/board.png">
-                        <a href="#">Notice Board</a>
-                    </span>
-                    @*<div class="dropdown-content">
+                        <span class="dropbtn">
+                            <img src="~/images/icons/2x/Icon_Notice_Normal@2x.png">
+                            <img src="~/images/icons/2x/Icon_Notice_Hover@2x.png">
+                            </span>
+                            <a href="#">Notice Board</a>
+                        </span>
+                        @*<div class="dropdown-content">
+            <ul>
+                <li><a href="#">Link 1</a></li>
+
+                <li class="dropmenuright">
+                    <a href="#">Link 2</a>
+                    <ul class="dropdown-rightcontent">
+                        <li><a href="#">Link 2.1</a></li>
+                        <li>
+                            <a href="#">Link 2.2</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="#">Link 3</a></li>
+            </ul>
+        </div>*@
+
+                        <div class="two_part">
                             <ul>
-                                <li><a href="#">Link 1</a></li>
-
-                                <li class="dropmenuright">
-                                    <a href="#">Link 2</a>
-                                    <ul class="dropdown-rightcontent">
-                                        <li><a href="#">Link 2.1</a></li>
-                                        <li>
-                                            <a href="#">Link 2.2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li><a href="#">Link 3</a></li>
+                                <li><a href="#" class="imgicon"><img src="~/images/icons/1x/Icon_Notice_Normal.png"><img src="~/images/icons/1x/Icon_Notice_Hover.png">Notice</a></li>
+                                <li><a href="#" class="imgicon"><img src="~/images/icons/1x/Icon_Advisory_Normal.png"><img src="~/images/icons/1x/Icon_Advisory_Hover.png">Advisory</a></li>
+                                <li><a href="#" class="imgicon"><img src="~/images/icons/1x/Icon_campaign_Normal.png"><img src="~/images/icons/1x/Icon_campaign_Hover.png">Campaign</a></li>
                             </ul>
-                        </div>*@
+                        </div>
 
-                    <div class="two_part">
-                        <ul>
-                            <li><a href="#"><img src="~/images/1.png">Notice</a></li>
-                            <li><a href="#"><img src="~/images/2.png">Advisory</a></li>
-                            <li><a href="#"><img src="~/images/3.png">Campaign</a></li>
-                        </ul>
-                    </div>
-
-                </div>
+</div>
             </div>
 
 
