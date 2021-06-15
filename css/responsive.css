@@ -1,19 +1,210 @@
 @media only screen and (min-width:200px) and (max-width:767px) {
+    .sidebar {
+        position: absolute;
+        top: 0;
+        display: none;
+    }
 
+    .icon_box {
+        width: 100% !important;
+    }
+
+    .sidebarf {
+        display: block;
+        width: 100%;
+    }
+
+    .admin .dropdown-content {
+        right: 0;
+    }
+
+    .left_bo {
+        background-size: cover;
+        padding: 7px 0px 7px 19px;
+        margin: 10px;
+    }
+
+    header .col-lg-8 {
+        display: none;
+    }
+
+    #login, .logo {
+        width: 100% !important;
+    }
+
+    #login {
+        /* border-right: 1px solid #fff; */
+        border-left: 0px solid #eee4e4 !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+
+    .main .container {
+        left: 0;
+        position: relative;
+        top: 0;
+        transform: translate(-0%, -0%);
+    }
+
+    #login form input[type="text"], input[type="password"] {
+        width: 100% !important;
+    }
+
+    .mobilbottom {
+        margin-bottom: 20px;
+        display: inline-block !important;
+    }
+
+    .rightbox {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+
+    .breadcrumbs .search {
+        width: 100%;
+        margin: 0px 0px 0 0px;
+        border-top: 1px solid #e9e7e7;
+        padding: 12px 0px 0 12px;
+    }
+
+    .w-25 {
+        width: 100% !important;
+    }
+
+    .steps_content {
+        padding: 0 1rem 0 1rem;
+        font-size: 11px;
+    }
+
+    .menu_icon {
+        text-align: right;
+    }
+
+    .admin {
+        float: right;
+    }
+
+    .steps {
+        padding: 0 0 15px 0;
+    }
+
+    .one_part {
+        width: 32%;
+    }
+
+    .ta {
+        font-size: 21px;
+        word-break: break-all;
+    }
 }
 
-@media only screen and (min-width:200px) and (max-width:319px) {}
+@media only screen and (min-width:200px) and (max-width:319px) {
+}
 
-@media only screen and (min-width:320px) and (max-width:479px) {}
+@media only screen and (min-width:320px) and (max-width:479px) {
+}
 
-@media only screen and (min-width:480px) and (max-width:767px) {}
+@media only screen and (min-width:480px) and (max-width:767px) {
+}
 
 @media only screen and (min-width:768px) and (max-width:991px) {
+    #login {
+        /* border-right: 1px solid #fff; */
+        border-left: 0px solid #eee4e4 !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
 
+    .main .container {
+        left: 0;
+        position: relative;
+        top: 0;
+        transform: translate(-0%, -0%);
+    }
+
+    #login form input[type="text"], input[type="password"] {
+        width: 100% !important;
+    }
+
+    .mobilbottom {
+        margin-bottom: 20px;
+        display: inline-block !important;
+    }
+
+    .rightbox {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+
+    .icon_box {
+        width: 100% !important;
+    }
+
+    .one_part {
+        width: 32%;
+    }
+
+    .sidebar {
+        width: 254px;
+    }
+
+    .two_part ul li a {
+        color: #000;
+        font-size: 12px;
+    }
+
+    .two_part {
+        width: 60%;
+    }
+    .ta {
+
+        font-size: 21px;
+    }
+    .two_part ul li a {
+        font-size: 9px;
+    }
+    .left_bo {
+        padding: 8px 7px;
+    }
+
+    .one_part {
+        text-align: center;
+        padding: 8px 0px 0 0;
+    }
+
+    .bnr_bottom_sec a {
+        font-size: 12px;
+        line-height: 16px;
+    }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
+    .two_part {
+        width: 60%;
+    }
 
- 
-}
-
+    .w-25 {
+        width: 68% !important;
+    }
+    .sidebar {
+        height: 151vh;
+    }
+    .ta {
+        font-size: 21px;
+    }
+    .left_bo {
+      
+        padding: 8px 7px;
+    }
+    .one_part {
+        text-align: center;
+        padding: 8px 0px 0 0;
+    }
+    .bnr_bottom_sec a {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .two_part ul li a {
+        font-size: 9px;
+    }
+    }

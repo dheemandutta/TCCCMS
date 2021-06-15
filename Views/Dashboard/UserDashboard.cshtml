@@ -4,9 +4,9 @@
 }
 
 <style>
-    #mySidebar {
+    /*  #mySidebar {
         width: 500px;
-    }
+    }*/
 </style>
 <div class="">
     <div class="banner_div">
@@ -52,31 +52,32 @@
     <div class="bnr_bottom_sec">
         <div class="row">
 
-            <div class="col-lg-2 col-md-2 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <div class="icon_box dropdown">
                     <span class="dropbtn">
-                        <img src="~/images/ship_icon.png">
+                        <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+                        <img src="~/images/icons/2x/Vessel_Hover@2x.png">
                     </span>
 
                     @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
             @Html.Action("ShipMenuLayout", "Dashboard")
         </div>*@
 
-                    @if (Session["Role"].ToString() == "ShipUser")
-                    {
-                        @*<a href="#">SMS Manuals</a>*@
+                    <!--@if (Session["Role"].ToString() == "ShipUser")
+    {
+       <a href="#">SMS Manuals</a>
 
-                        <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
-                            Ship Specific Manuals & Plans
-                    
-                        </a>
+        <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
+            Ship Specific Manuals & Plans
 
-                    }
-                    else
-                    {
-                        @Html.Action("ShipMenuLayout", "Dashboard")
-                        <a href="#">Ship Specific Manuals & Plans</a>
-                    }
+        </a>
+
+    }
+    else
+    {
+        @Html.Action("ShipMenuLayout", "Dashboard")
+        <a href="#">Ship Specific Manuals & Plans</a>
+    }---->
 
                 </div>
             </div>
@@ -88,11 +89,12 @@
         </div>
         </div>*@
 
-            <div class="col-lg-2 col-md-2 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <a href="@Url.Action("Index", "CommonToAllManual")">
                     <div class="icon_box dropdown">
                         <span class="dropbtn">
-                            <img src="~/images/job.png">
+                            <img src="~/images/icons/2x/JobDescription_Normal@2x.png">
+                            <img src="~/images/icons/2x/JobDescription_Hover@2x.png">
                         </span>
                         <div class="dropdown-content">
                             @*<ul>
@@ -112,7 +114,7 @@
                         </ul>*@
                         </div>
 
-                        Common Manuals & Plans
+                       <!-- Common Manuals & Plans-->
 
 
                     </div>
@@ -125,31 +127,32 @@
             <a href="#">Reference Documents</a>
         </div>
         </div>*@
-            <div class="col-lg-2 col-md-2 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <a href="@Url.Action("Index", "ReferenceMaterials")">
                     <div class="icon_box dropdown">
                         <span class="dropbtn">
-                            <img src="~/images/dcu_icon.png">
+                            <img src="~/images/icons/2x/ReferenceDoc_Normal@2x.png" />
+                            <img src="~/images/icons/2x/ReferenceDoc_Hover@2x.png" />
                         </span>
                         <div class="dropdown-content">
                             @*<ul>
-                            <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 1</a></li>
 
-                            <li class="dropmenuright">
-                                <a href="#">Link 2</a>
-                                <ul class="dropdown-rightcontent">
-                                    <li><a href="#">Link 2.1</a></li>
-                                    <li>
-                                        <a href="#">Link 2.2</a>
-                                    </li>
-                                </ul>
-                            </li>
+                <li class="dropmenuright">
+                    <a href="#">Link 2</a>
+                    <ul class="dropdown-rightcontent">
+                        <li><a href="#">Link 2.1</a></li>
+                        <li>
+                            <a href="#">Link 2.2</a>
+                        </li>
+                    </ul>
+                </li>
 
-                            <li><a href="#">Link 3</a></li>
-                        </ul>*@
+                <li><a href="#">Link 3</a></li>
+            </ul>*@
                         </div>
 
-                        Reference Material
+                        <!-- Reference Material-->
 
 
                     </div>
@@ -162,15 +165,16 @@
 
 
 
-            <div class="col-lg-2 col-md-2 col-6">
+            <div class="col-lg-2 col-md-3 col-6">
                 <a href="@Url.Action("RevisionDetails", "RevisionHistory")">
                     <div class="icon_box dropdown">
                         <span class="dropbtn">
-                            <img src="~/images/search_icon.png">
+                            <img src="~/images/icons/2x/Rivision_Normal@2x.png">
+                            <img src="~/images/icons/2x/Rivision_Hover@2x.png">
                         </span>
                         <div class="dropdown-content">
                         </div>
-                        Revisions
+                        <!-- Revisions-->
                     </div>
                 </a>
             </div>
@@ -221,10 +225,11 @@
 
 
 
-            <div class="col-lg-4 col-md-5 col-12">
+            <div class="col-lg-4 col-md-12 col-12">
                 <div class="left_bo dropdown">
                     <span class="one_part dropbtn">
-                        <img src="~/images/board.png">
+                        <img src="~/images/icons/2x/Icon_Notice_Normal@2x.png">
+                        <img src="~/images/icons/2x/Icon_Notice_Hover@2x.png">
                         @*<a href="#">Notice Board</a>*@
                         Notice Board
                     </span>
@@ -248,13 +253,13 @@
 
                     <div class="two_part">
                         <ul>
-                            <li><a href="/NoticeBoard/Notices"><img src="~/images/1.png">Notice</a></li>
-                            <li><a href="/NoticeBoard/Advisory"><img src="~/images/2.png">Advisory</a></li>
+                            <li><a href="/NoticeBoard/Notices" class="imgicon"><img src="~/images/icons/1x/Icon_Notice_Normal.png"><img src="~/images/icons/1x/Icon_Notice_Hover.png">Notice</a></li>
+                            <li><a href="/NoticeBoard/Advisory" class="imgicon"><img src="~/images/icons/1x/Icon_Advisory_Normal.png"><img src="~/images/icons/1x/Icon_Advisory_Hover.png">Advisory</a></li>
                             @*<li><a href="/NoticeBoard/SafetyCampaigns"><img src="~/images/3.png">Safety Campaigns</a></li>*@
-                            <li><a href="/NoticeBoard/SafetyCampaigns"><img src="~/images/3.png">Campaigns</a></li>
+                            <li><a href="/NoticeBoard/SafetyCampaigns" class="imgicon"><img src="~/images/icons/1x/Icon_campaign_Normal.png"><img src="~/images/icons/1x/Icon_campaign_Hover.png">Campaigns</a></li>
 
-                            <li><a href=""><img src="~/images/3.png">Safety Alert</a></li>
-                            <li><a href=""><img src="~/images/3.png">Circular</a></li>
+                            <li><a href="" class="imgicon"><<img src="~/images/icons/1x/Icon_Alert_Normal.png"><img src="~/images/icons/1x/Icon_Alert_Hover.png">Safety Alert</a></li>
+                            <li><a href="" class="imgicon"><img src="~/images/icons/1x/Icon_Circular_Normal.png"><img src="~/images/icons/1x/Icon_Circular_Hover.png">Circular</a></li>
                         </ul>
                     </div>
 
