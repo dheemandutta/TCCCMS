@@ -59,3 +59,32 @@ function GetSearchText() {
     });
 
 }
+
+function PrintHtml(data) {
+    var mywindow = window.open('', '', 'left=0,top=0,width=1600,height=1400');
+
+    var is_chrome = Boolean(mywindow.chrome);
+
+    mywindow.document.write('<html><head><title></title>');
+    mywindow.document.write('</head><body >');
+    mywindow.document.write($('#ParentBody').html());
+    mywindow.document.write('</body></html>');
+    mywindow.document.close(); // necessary for IE >= 10 and necessary before onload for chrome
+    is_chrome = false;
+    //alert(is_chrome);
+    if (is_chrome) {
+        mywindow.onload = function () { // wait until all resources loaded 
+            mywindow.focus(); // necessary for IE >= 10
+            mywindow.print();  // change window to mywindow
+            mywindow.close();// change window to mywindow
+        };
+    }
+    else {
+        mywindow.document.close(); // necessary for IE >= 10
+        mywindow.focus(); // necessary for IE >= 10
+        mywindow.print();
+        mywindow.close();
+    }
+
+    return true;
+}
