@@ -30,9 +30,21 @@
 }
 
 
-<div id="BodyHtml" class="searchdContent pad30 container">
-    @Html.Raw(Model.BodyHtml)
+<div class="container body-content">
+    <button type="button" class="button1 float-right" id="btnPrint" onclick="PrintHtml('');"><img src="/images/PrintLogo2.jpg" /></button>
+    @*<button type="button" class="button1 float-right" id="btnPrint"  onclick="PrintHtml('');">print</button>*@
+</div>
+<div id="ParentBody" class="container">
+    <div id="BodyHtml" class="searchdContent  container">
+        @Html.Raw(Model.BodyHtml)
 
+    </div>
+    <div class="container body-content">
+        <div style="text-align:center;font-size:8.5pt;">
+            <em>Uncontrolled when printed</em>
+        </div>
+
+    </div>
 </div>
 @Html.Partial("_pvFormPreviewModal")
 @*-----Below line for Linked Form Preview-----Added on 15th May 2021 --by BB- -*@

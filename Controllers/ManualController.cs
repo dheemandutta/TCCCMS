@@ -20,7 +20,7 @@ namespace TCCCMS.Controllers
         }
         //[HttpPost]
         //public ActionResult Index()
-        //{
+        //{---
         //    return View();
         //}
         public ActionResult SearchList(int currentPage = 1, string volNo = "-1", string text = null)
