@@ -75,33 +75,62 @@
 
             <div class="col-lg-2 col-md-2 col-6">
                 <div class="icon_box dropdown">
-                    <span class="dropbtn">
-                        <img src="~/images/icons/2x/Vessel_Normal@2x.png">
-                        <img src="~/images/icons/2x/Vessel_Hover@2x.png">
-                    </span>
+                    <div class="tooltip">
+                        @*<span class="dropbtn">
+                            <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+                            <img src="~/images/icons/2x/Vessel_Hover@2x.png">
+                        </span>*@
 
-                    @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
-            @Html.Action("ShipMenuLayout", "Dashboard")
-        </div>*@
 
-                    <!--@if (Session["Role"].ToString() == "ShipUser")
-    {
-        <a href="#">SMS Manuals</a>
+                        @if (Session["Role"].ToString() == "ShipUser")
+                        {
+                            @*<a href="#">SMS Manuals</a>*@
 
-        <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
-            Ship Specific Manuals & Plans
+                            <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
 
-        </a>
+                                @*Ship Specific Manuals & Plans*@
+                                <span class="dropbtn">
+                                    <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+                                    <img src="~/images/icons/2x/Vessel_Hover@2x.png">
+                                </span>
+                                <span class="tooltiptext">Ship Specific Manuals & Plans</span>
 
-    }
-    else
-    {
-        @Html.Action("ShipMenuLayout", "Dashboard")
-        <a href="#">Ship Specific Manuals & Plans</a>
-    }-->
+                            </a>
 
+                        }
+                        else
+                        {
+                            @Html.Action("ShipMenuLayout", "Dashboard")
+                            <span class="dropbtn">
+                                <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+                                <img src="~/images/icons/2x/Vessel_Hover@2x.png">
+                            </span>
+                            <a href="#"><span class="tooltiptext">Ship Specific Manuals & Plans</span></a>
+                        }
+                    </div>
+
+                        @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
+                @Html.Action("ShipMenuLayout", "Dashboard")
+            </div>*@
+
+                        @*@if (Session["Role"].ToString() == "ShipUser")
+                        {
+                            <a href="#">SMS Manuals</a>
+
+                            <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
+                                Ship Specific Manuals & Plans
+
+                            </a>
+
+                        }
+                        else
+                        {
+                            @Html.Action("ShipMenuLayout", "Dashboard")
+                            <a href="#">Ship Specific Manuals & Plans</a>
+                        }*@
+
+                    </div>
                 </div>
-            </div>
 
             @*<div class="col-lg-2 col-md-2 col-6">
                 <div class="icon_box">
@@ -113,10 +142,18 @@
             <div class="col-lg-2 col-md-2 col-6">
                 <a href="@Url.Action("Index", "CommonToAllManual")">
                     <div class="icon_box dropdown">
-                        <span class="dropbtn">
+                        @*<span class="dropbtn">
                             <img src="~/images/icons/2x/JobDescription_Normal@2x.png">
                             <img src="~/images/icons/2x/JobDescription_Hover@2x.png">
-                        </span>
+                        </span>*@
+                        <div class="tooltip">
+                            <span class="dropbtn">
+                                <img src="~/images/icons/2x/JobDescription_Normal@2x.png">
+                                <img src="~/images/icons/2x/JobDescription_Hover@2x.png">
+                            </span>
+                            <span class="tooltiptext">Common Manuals & Plans</span>
+                        </div>
+
                         <div class="dropdown-content">
                             @*<ul>
                 <li><a href="#">Link 1</a></li>
@@ -151,10 +188,19 @@
             <div class="col-lg-2 col-md-2 col-6">
                 <a href="@Url.Action("Index", "ReferenceMaterials")">
                     <div class="icon_box dropdown">
-                        <span class="dropbtn">
+                        @*<span class="dropbtn">
                             <img src="~/images/icons/2x/ReferenceDoc_Normal@2x.png" />
                             <img src="~/images/icons/2x/ReferenceDoc_Hover@2x.png" />
-                        </span>
+                        </span>*@
+                        @*-------------------------------------------*@
+                        <div class="tooltip">
+                            <span class="dropbtn">
+                                <img src="~/images/icons/2x/ReferenceDoc_Normal@2x.png" />
+                                <img src="~/images/icons/2x/ReferenceDoc_Hover@2x.png" />
+                            </span>
+                            <span class="tooltiptext">Reference Material</span>
+                        </div>
+                        @*-------------------------------------------*@
                         <div class="dropdown-content">
                             @*<ul>
                 <li><a href="#">Link 1</a></li>
@@ -189,10 +235,22 @@
             <div class="col-lg-2 col-md-2 col-6">
                 <a href="@Url.Action("RevisionDetails", "RevisionHistory")">
                     <div class="icon_box dropdown">
-                        <span class="dropbtn">
+                        @*<span class="dropbtn">
                             <img src="~/images/icons/2x/Rivision_Normal@2x.png">
                             <img src="~/images/icons/2x/Rivision_Hover@2x.png">
-                        </span>
+                        </span>*@
+
+                        @*---------------------------------------------------------------*@
+                        <div class="tooltip">
+                            <span class="dropbtn">
+                                <img src="~/images/icons/2x/Rivision_Normal@2x.png">
+                                <img src="~/images/icons/2x/Rivision_Hover@2x.png">
+
+                            </span>
+                            <span class="tooltiptext">Revisions</span>
+                        </div>
+                        @*---------------------------------------------------------------*@
+
                         <div class="dropdown-content">
                         </div>
                         <!-- Revisions-->
@@ -246,16 +304,24 @@
 
 
 
-            <div class="col-lg-4 col-md-5 col-12">
+            <div class="col-lg-4 col-md-12 col-12">
                 <div class="left_bo dropdown">
-                    <span class="one_part dropbtn">
+                    <span class="one_part ">
+                        <img src="~/images/board.png">
+                        Notice Board
+                    </span>
+                    @*---------------------------------------------*@
+
+                    @*<span class="one_part dropbtn">
                         <span class="dropbtn">
                             <img src="~/images/icons/2x/Icon_Notice_Normal@2x.png">
                             <img src="~/images/icons/2x/Icon_Notice_Hover@2x.png">
-                            </span>
-                            <a href="#">Notice Board</a>
                         </span>
-                        @*<div class="dropdown-content">
+                        <a href="#">Notice Board</a>
+                    </span>*@
+                    @*---------------------------------------------*@
+
+                    @*<div class="dropdown-content">
             <ul>
                 <li><a href="#">Link 1</a></li>
 
@@ -273,15 +339,18 @@
             </ul>
         </div>*@
 
-                        <div class="two_part">
-                            <ul>
-                                <li><a href="#" class="imgicon"><img src="~/images/icons/1x/Icon_Notice_Normal.png"><img src="~/images/icons/1x/Icon_Notice_Hover.png">Notice</a></li>
-                                <li><a href="#" class="imgicon"><img src="~/images/icons/1x/Icon_Advisory_Normal.png"><img src="~/images/icons/1x/Icon_Advisory_Hover.png">Advisory</a></li>
-                                <li><a href="#" class="imgicon"><img src="~/images/icons/1x/Icon_campaign_Normal.png"><img src="~/images/icons/1x/Icon_campaign_Hover.png">Campaign</a></li>
-                            </ul>
-                        </div>
+                    <div class="two_part">
+                        <ul>
+                            <li><a href="/NoticeBoard/Notices" class="imgicon"><img src="~/images/icons/1x/Icon_Notice_Normal.png"><img src="~/images/icons/1x/Icon_Notice_Hover.png">Notice</a></li>
+                            <li><a href="/NoticeBoard/Advisory" class="imgicon"><img src="~/images/icons/1x/Icon_Advisory_Normal.png"><img src="~/images/icons/1x/Icon_Advisory_Hover.png">Advisory</a></li>
+                            <li><a href="/NoticeBoard/SafetyCampaigns" class="imgicon"><img src="~/images/icons/1x/Icon_campaign_Normal.png"><img src="~/images/icons/1x/Icon_campaign_Hover.png">Campaign</a></li>
 
-</div>
+                            <li><a href="" class="imgicon"><img src="~/images/icons/1x/Icon_Alert_Normal.png"><img src="~/images/icons/1x/Icon_Alert_Hover.png">Safety Alert</a></li>
+                            <li><a href="" class="imgicon"><img src="~/images/icons/1x/Icon_Circular_Normal.png"><img src="~/images/icons/1x/Icon_Circular_Hover.png">Circular</a></li>
+                        </ul>
+                    </div>
+
+                </div>
             </div>
 
 
