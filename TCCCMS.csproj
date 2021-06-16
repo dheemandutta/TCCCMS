@@ -718,6 +718,8 @@
     <Content Include="images\icons\2x\ReferenceDoc_Normal%402x.png" />
     <Content Include="images\icons\2x\Rivision_Hover%402x.png" />
     <Content Include="images\icons\2x\Rivision_Normal%402x.png" />
+    <Content Include="images\icons\2x\sms_Hover%402x.png" />
+    <Content Include="images\icons\2x\sms_Normal%402x.png" />
     <Content Include="images\icons\2x\Vessel_Hover%402x.png" />
     <Content Include="images\icons\2x\Vessel_Normal%402x.png" />
     <Content Include="images\job.png" />
