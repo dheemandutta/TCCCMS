@@ -164,7 +164,15 @@ namespace TCCCMS
                 }
                 else
                 {
-                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                    if(controller == "NoticeBoard")
+                    {
+                        if(ShipId != null)
+                            breadcrumb2.Append("< a href = '/Dashboard/ShipDashboard/" + ShipId + "' >");
+                        else
+                        breadcrumb2.Append("< a href = '/Dashboard/UserDashboard' >");
+                    }
+                    else
+                        breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
                                               "Index",
                                               helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
                 }
