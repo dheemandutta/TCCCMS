@@ -55,34 +55,62 @@
             <div class="col-lg-2 col-md-3 col-6">
                 <div class="icon_box dropdown">
                     <div class="tooltip">
-                        <span class="dropbtn">
+                        @*<span class="dropbtn">
                             <img src="~/images/icons/2x/Vessel_Normal@2x.png">
                             <img src="~/images/icons/2x/Vessel_Hover@2x.png">
-                        </span>
-                        <span class="tooltiptext">Ship Specific Manuals & Plans</span>
+                        </span>*@
+                        @*<span class="tooltiptext">Ship Specific Manuals & Plans</span>*@ @*-----this line replace with below condition-----*@
+
+                        @*---------------New Changed/Added on 16th Jun  2021 ---BK-- below condition-------------*@
+                        @if (Session["Role"].ToString() == "ShipUser")
+                        {
+                            @*<a href="#">SMS Manuals</a>*@
+
+                            <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
+
+                                @*Ship Specific Manuals & Plans*@
+                                <span class="dropbtn">
+                                    <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+                                    <img src="~/images/icons/2x/Vessel_Hover@2x.png">
+                                </span>
+                                <span class="tooltiptext">Ship Specific Manuals & Plans</span>
+
+                            </a>
+
+                        }
+                        else
+                        {
+                            @Html.Action("ShipMenuLayout", "Dashboard")
+                            <span class="dropbtn">
+                                <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+                                <img src="~/images/icons/2x/Vessel_Hover@2x.png">
+                            </span>
+                            <a href="#"><span class="tooltiptext">Ship Specific Manuals & Plans</span></a>
+                        }
+
                     </div>
-                        @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
-                @Html.Action("ShipMenuLayout", "Dashboard")
-            </div>*@
+                    @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
+                            @Html.Action("ShipMenuLayout", "Dashboard")
+                        </div>*@
 
-                        <!--@if (Session["Role"].ToString() == "ShipUser")
-        {
-           <a href="#">SMS Manuals</a>
+                    @*@if (Session["Role"].ToString() == "ShipUser")
+                    {
+                        <a href="#">SMS Manuals</a>
 
-            <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
-                Ship Specific Manuals & Plans
+                        <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
+                            Ship Specific Manuals & Plans
 
-            </a>
+                        </a>
 
-        }
-        else
-        {
-            @Html.Action("ShipMenuLayout", "Dashboard")
-            <a href="#">Ship Specific Manuals & Plans</a>
-        }---->
+                    }
+                    else
+                    {
+                        @Html.Action("ShipMenuLayout", "Dashboard")
+                        <a href="#">Ship Specific Manuals & Plans</a>
+                    }*@
 
-                    </div>
                 </div>
+            </div>
 
             @*<div class="col-lg-2 col-md-2 col-6">
         <div class="icon_box">
@@ -103,26 +131,26 @@
                         </div>
                             <div class="dropdown-content">
                                 @*<ul>
-                    <li><a href="#">Link 1</a></li>
+                                    <li><a href="#">Link 1</a></li>
 
-                    <li class="dropmenuright">
-                        <a href="#">Link 2</a>
-                        <ul class="dropdown-rightcontent">
-                            <li><a href="#">Link 2.1</a></li>
-                            <li>
-                                <a href="#">Link 2.2</a>
-                            </li>
-                        </ul>
-                    </li>
+                                    <li class="dropmenuright">
+                                        <a href="#">Link 2</a>
+                                        <ul class="dropdown-rightcontent">
+                                            <li><a href="#">Link 2.1</a></li>
+                                            <li>
+                                                <a href="#">Link 2.2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
 
-                    <li><a href="#">Link 3</a></li>
-                </ul>*@
+                                    <li><a href="#">Link 3</a></li>
+                                </ul>*@
                             </div>
 
                             <!-- Common Manuals & Plans-->
 
 
-                        </div>
+                    </div>
 </a>
             </div>
 
@@ -241,27 +269,36 @@
                 <div class="left_bo dropdown">
                     <span class="one_part ">
                         <img src="~/images/board.png">
-                       
-                        @*<a href="#">Notice Board</a>*@
                         Notice Board
                     </span>
+
+                    @*---------------------------------------------*@
+
+                    @*<span class="one_part dropbtn">
+                        <span class="dropbtn">
+                            <img src="~/images/icons/2x/Icon_Notice_Normal@2x.png">
+                            <img src="~/images/icons/2x/Icon_Notice_Hover@2x.png">
+                        </span>
+                        <a href="#">Notice Board</a>
+                    </span>*@
+                    @*---------------------------------------------*@
                     @*<div class="dropdown-content">
-                        <ul>
-                            <li><a href="#">Link 1</a></li>
+            <ul>
+                <li><a href="#">Link 1</a></li>
 
-                            <li class="dropmenuright">
-                                <a href="#">Link 2</a>
-                                <ul class="dropdown-rightcontent">
-                                    <li><a href="#">Link 2.1</a></li>
-                                    <li>
-                                        <a href="#">Link 2.2</a>
-                                    </li>
-                                </ul>
-                            </li>
+                <li class="dropmenuright">
+                    <a href="#">Link 2</a>
+                    <ul class="dropdown-rightcontent">
+                        <li><a href="#">Link 2.1</a></li>
+                        <li>
+                            <a href="#">Link 2.2</a>
+                        </li>
+                    </ul>
+                </li>
 
-                            <li><a href="#">Link 3</a></li>
-                        </ul>
-                    </div>*@
+                <li><a href="#">Link 3</a></li>
+            </ul>
+        </div>*@
 
                     <div class="two_part">
                         <ul>

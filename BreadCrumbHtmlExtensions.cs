@@ -15,13 +15,13 @@ namespace TCCCMS
             string userType = HttpContext.Current.Session["UserType"].ToString();
             string UserRole = HttpContext.Current.Session["Role"].ToString();
             string ShipId = null;
-            if(HttpContext.Current.Session["ShipId"].ToString() != null)
-            {
-                ShipId = HttpContext.Current.Session["ShipId"].ToString();
-            }
-            else if(HttpContext.Current.Session["DashboardShipId"].ToString() != null)
+            if(HttpContext.Current.Session["DashboardShipId"].ToString() != null | HttpContext.Current.Session["DashboardShipId"].ToString() != "0")
             {
                 ShipId = HttpContext.Current.Session["DashboardShipId"].ToString();
+            }
+            else if (HttpContext.Current.Session["ShipId"].ToString() != null | HttpContext.Current.Session["ShipId"].ToString() != "0")
+            {
+                ShipId = HttpContext.Current.Session["ShipId"].ToString();
             }
 
             // optional condition: I didn't wanted it to show on home and account controller
@@ -164,7 +164,17 @@ namespace TCCCMS
                 }
                 else
                 {
-                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                    if(controller == "NoticeBoard")
+                    {
+                        if(ShipId != null | ShipId != "0")
+                            breadcrumb2.Append("<a href = \"/Dashboard/ShipDashboard/" + ShipId + "\">");
+                        else
+                            breadcrumb2.Append("<a href = '/Dashboard/UserDashboard'>");
+
+                        breadcrumb2.Append(controller + "</a>");
+                    }
+                    else
+                        breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
                                               "Index",
                                               helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
                 }
