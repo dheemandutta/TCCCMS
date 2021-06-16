@@ -208,3 +208,12 @@
         font-size: 9px;
     }
     }
+@media (min-width:1500px) and (max-width:1800px) {
+    .menu ul li {
+        margin: 0 0 11px 0;
+    }
+    .breadcrumbs .search {
+        float: right;
+        width: 31%;
+    }
+}

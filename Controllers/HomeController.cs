@@ -188,7 +188,7 @@ namespace TCCCMS.Controllers
                     //sb.Append("<li class='mainmenu'><a href='#'><span class='vul'>Volume <b>I</b> </span><span class='pgnam'>" + volName + "</span></a>");
                     //string s= "'@Url.Action('"
                     //sb.Append("<li class='mainmenu'><a href='@Url.Action('Index', '"+vol.ControllerName+"')'><span class='vul'>Volume <b>"+ partName + "</b> </span><span class='pgnam'>" + vol.Description + "</span></a>");
-                    sb.Append("<li class='mainmenu'><a href='/" + vol.ControllerName + "/Index'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam'>" + vol.Description + "</span></a>");
+                    sb.Append("<li class='mainmenu'><span class='tooltip'><a href='/" + vol.ControllerName + "/Index'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='tooltiptext'>" + vol.Description + "</span></a></span>");
                     sb.Append("\n");
 
                     #region Lines Commented

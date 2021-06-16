@@ -81,7 +81,9 @@
             padding: 0;
         }
 
-      
+        .sidebar {
+            width: 0;
+        }
 
   
     </style>
@@ -110,22 +112,30 @@
 
                 <div class="col-lg-2 col-md-2 col-6">
                     <div class="icon_box dropdown">
-                        <span class="dropbtn">
-                            <img src="~/images/ship_icon.png">
-                        </span>
-                        @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
+                        <div class="tooltip">
+                            <span class="dropbtn">
+                                <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+                                <img src="~/images/icons/2x/Vessel_Hover@2x.png">
+                            </span>
+                            <span class="tooltiptext"> Vessel Details</span>
+                        </div>
+                            @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
+                @Html.Action("ShipMenuLayout", "Dashboard")
+            </div>*@
                             @Html.Action("ShipMenuLayout", "Dashboard")
-                        </div>*@
-                        @Html.Action("ShipMenuLayout", "Dashboard")
-                    <h5> <a href="#">Vessel Details</a></h5>
+                           
+                        </div>
                     </div>
-                </div>
 
                 <div class="col-lg-2 col-md-2 col-6">
                     <div class="icon_box dropdown">
-                        <span class="dropbtn">
-                            <img src="/images/user_m.png">
-                        </span>
+                        <div class="tooltip">
+                            <span class="dropbtn">
+                                <img src="~/images/icons/2x/Icon_USerManagement_Normal@2x.png">
+                                <img src="~/images/icons/2x/Icon_USerManagement_Hover@2x.png">
+                            </span>
+                            <span class="tooltiptext"> User Management</span>
+                        </div>
                         @*<div class="dropdown-content" style="min-width: 300px;  top: -130px;">
                             <ul>
                                 @if (Session["Role"].ToString() == "SupportUser")
@@ -161,7 +171,7 @@
                         }
 
 
-                        <h5> User Management</h5>
+                        
 
                     </div>
                 </div>
@@ -169,24 +179,32 @@
                 <div class="col-lg-2 col-md-2 col-6">
                     <a href="@Url.Action("Index", "Ticket")">
                         <div class="icon_box dropdown">
-                            <span class="dropbtn">
-                                <img src="/images/ticket_icon.png">
-                            </span>
-                            <h5>Ticket</h5>
-                        </div>
-                    </a>
+                            <div class="tooltip">
+                                <span class="dropbtn">
+                                    <img src="~/images/icons/2x/Icon_Ticket_Normal@2x.png">
+                                    <img src="~/images/icons/2x/Icon_Ticket_Hover@2x.png">
+                                </span>
+                                <span class="tooltiptext">Ticket</span>
+                            </div>
+                            </div>
+</a>
                 </div>
 
                 <div class="col-lg-2 col-md-2 col-6">
                     <a href="">
+                       
                         <div class="icon_box dropdown">
-                            <span class="dropbtn">
-                                <img src="/images/Sync_icon.png">
-                            </span>
+                            <div class="tooltip">
+                                <span class="dropbtn">
+                                    <img src="~/images/icons/2x/Icon_Sync_Normal@2x.png">
+                                    <img src="~/images/icons/2x/Icon_Sync_Hover@2x.png">
+                                </span>
+                                <span class="tooltiptext">Sync</span>
+                            </div>
                             <div class="dropdown-content">
 
                             </div>
-                            <h5>Sync</h5>
+
                         </div>
                     </a>
                 </div>
@@ -196,12 +214,16 @@
                     <div class="col-lg-2 col-md-2 col-6">
                         <a href="">
                             <div class="icon_box dropdown">
-                                <span class="dropbtn">
-                                    <img src="/images/Update_icon.png">
-                                </span>
-                                <h5>Update Manual</h5>
-                            </div>
-                        </a>
+                                <div class="tooltip">
+                                    <span class="dropbtn">
+                                        <img src="~/images/icons/2x/Rivision_Normal@2x.png">
+                                        <img src="~/images/icons/2x/Rivision_Hover@2x.png">
+                                    </span>
+                                    <span class="tooltiptext">Update Manual</span>
+                                </div>
+                                   
+                                </div>
+</a>
                     </div>
                 }
 
@@ -210,16 +232,17 @@
                         <div class="col-lg-2 col-md-2 col-6">
                             <a href="">
                                 <div class="icon_box dropdown">
-                                    <span class="dropbtn">
-                                        <img src="/images/Template_icon.png">
-                                    </span>
-                                    <div class="dropdown-content">
-
+                                    <div class="tooltip">
+                                        <span class="dropbtn">
+                                            <img src="~/images/icons/2x/Icon_Template_Normal@2x.png">
+                                            <img src="~/images/icons/2x/Icon_Template_Hover@2x.png">
+                                        </span>
+                                        <span class="tooltiptext">Template</span>
                                     </div>
-                                    <h5>Template </h5>
-
+                                        <div class="dropdown-content">
+                                        </div>
                                 </div>
-                            </a>
+</a>
                         </div>
                     }
 

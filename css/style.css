@@ -583,7 +583,7 @@ header {
 .menu_icon a {
     color: #fff;
     font-size: 25px;
-    margin: 11px 0 0 0;
+    margin: 11px 0 12px 0;
     display: inline-block;
     text-align: right;
 }
@@ -1385,7 +1385,7 @@ header {
 }
 
 .logo img {
-    width: 100%;
+    width: 94%;
 }
 
 .admin .dropdown-content h3 span {
@@ -1984,6 +1984,7 @@ header {
 
 
 .menu_icon {
+    text-align: right;
 }
 
 /*---Ship-----*/
@@ -2060,16 +2061,16 @@ header {
         font-weight: 300;
         font-size: 13px;
         height: 51px;
+        text-align: left;
     }
 
         .menu ul li a span.vul {
             text-transform: uppercase;
             font-weight: 400;
             display: inline-block;
-            text-align: center;
             position: relative;
-            width: 25%;
-            padding: 7px 10px;
+            width: 100%;
+            /* padding: 7px 10px; */
         }
 
             .menu ul li a span.vul:before {
@@ -2084,7 +2085,7 @@ header {
             }
 
         .menu ul li a span b {
-            display: block;
+            display: inline-block;
         }
 
 .pgnam {
@@ -2823,6 +2824,7 @@ header {
 
 .admin {
     margin: 10px 0 0 0;
+    float: right;
 }
 
 .logo img {
@@ -2957,7 +2959,7 @@ header {
 }
 
 .sidebar {
-    width: 500px;
+    width: 395px;
 }
 
 .sidebarf {
@@ -2982,4 +2984,42 @@ header {
 
 .dropdown h5 a {
     font-size: 18px;
+}
+
+
+
+
+
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+    width: 100%;
+}
+
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 94%;
+        background-color: #404040;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 4px;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        height: auto;
+        bottom: -3px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
+
+.steps_content a:hover {
+    color: #000;
 }
