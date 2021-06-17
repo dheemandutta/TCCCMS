@@ -1937,7 +1937,7 @@ header {
 .steps_content {
     position: relative;
     z-index: 2;
-    padding: 0 2rem 0 1rem;
+    padding: 0 27px 0 21px;
 }
 
 .steps_animation .steps_item::before, .steps_animation .steps_item::after {
@@ -2003,7 +2003,7 @@ header {
 .menu_icon a {
     color: #e90000;
     font-size: 25px;
-    margin: 11px 0 0 0;
+    margin: 16px 8px 0px 0;
     display: inline-block;
     text-align: right;
 }
@@ -2028,6 +2028,7 @@ header {
 .full_body {
     display: flex;
     position: relative;
+    min-height: 426px;
 }
 
 .content_body {
@@ -2038,7 +2039,7 @@ header {
 
 .menu_panel {
     background: #404040;
-    padding: 15px 20px 15px;
+    padding: 15px 15px 15px;
     transition: .5s ease-in-out;
 }
 
@@ -2101,7 +2102,7 @@ header {
 }
 
 .bnr_bottom_sec {
-    padding: 30px 24px 0 3%;
+    padding: 30px 0px 0 0%;
 }
 
 .banner_div img {
@@ -2133,24 +2134,28 @@ header {
     .icon_box a {
         color: #000;
         font-size: 14px;
-        padding: 20px 10px;
+        padding: 0;
         display: block;
         line-height: 20px;
     }
 
 .left_bo {
     background: url(../images/back.png) no-repeat 0 0;
-    background-size: contain;
-    padding: 8px 20px;
+    background-size: cover;
+    padding: 24px 24px;
+    width: 94%;
+    margin-right: 19px;
 }
 
 .one_part {
     display: inline-block;
-    width: 34%;
+    width: 38%;
     text-align: center;
     padding: 25px 12px 0 0;
     vertical-align: top;
-    font-size: 14px;
+    font-size: 16px;
+    text-align: center;
+    margin: 0 auto;
 }
 
     .one_part a {
@@ -2164,7 +2169,7 @@ header {
 
 .two_part {
     display: inline-block;
-    width: 56%;
+    width: 58%;
     padding-left: 10px;
 }
 
@@ -2175,7 +2180,7 @@ header {
 
         .two_part ul li a {
             color: #000;
-            font-size: 14px;
+            font-size: 16px;
         }
 
             .two_part ul li a img {
@@ -2319,7 +2324,7 @@ header {
     width: 0;
     position: relative;
     z-index: 99999;
-    top: 0;
+    top: 19px;
     left: 0;
     background-color: #404040;
     /*overflow-x: hidden;*/
@@ -2370,7 +2375,7 @@ header {
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {
-        padding-top: 15px;
+        /* padding-top: 15px; */
         /* z-index: 999; */
     }
 
@@ -2823,7 +2828,7 @@ header {
 }
 
 .admin {
-    margin: 10px 0 0 0;
+    margin: 13px 0 0 0;
     float: right;
 }
 
@@ -2839,6 +2844,7 @@ header {
 
 .icon_box {
     width: 81%;
+    margin-top: 46px;
 }
 
     .icon_box h5 {
@@ -2874,7 +2880,7 @@ header {
 }
 
 .shipmenu .menu ul li a {
-    height: 34px;
+    height: 36px;
 }
 
 .shipmenu .pgnam {
@@ -2959,13 +2965,24 @@ header {
 }
 
 .sidebar {
-    width: 395px;
+    width: 0;
+    opacity: 0;
 }
+
+    .sidebar .menu_panel {
+        display: none;
+    }
 
 .sidebarf {
-    width: 0;
+    width: 395px;
+    opacity: 1;
+    /* margin-top: 19px; */
+    padding: 0;
 }
 
+    .sidebarf .menu_panel {
+        display: block;
+    }
 
 .imgicon img:last-child {
     display: none;
