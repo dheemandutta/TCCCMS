@@ -7,6 +7,7 @@
 
     .icon_box {
         width: 100% !important;
+        margin-top: 0;
     }
 
     .sidebarf {
@@ -156,13 +157,15 @@
     .two_part {
         width: 60%;
     }
-    .ta {
 
+    .ta {
         font-size: 21px;
     }
+
     .two_part ul li a {
         font-size: 9px;
     }
+
     .left_bo {
         padding: 8px 7px;
     }
@@ -186,34 +189,41 @@
     .w-25 {
         width: 68% !important;
     }
+
     .sidebar {
         height: 151vh;
     }
+
     .ta {
         font-size: 21px;
     }
+
     .left_bo {
-      
         padding: 8px 7px;
     }
+
     .one_part {
         text-align: center;
         padding: 8px 0px 0 0;
     }
+
     .bnr_bottom_sec a {
         font-size: 12px;
         line-height: 16px;
     }
+
     .two_part ul li a {
         font-size: 9px;
     }
-    }
+}
+
 @media (min-width:1500px) and (max-width:1800px) {
     .menu ul li {
-        margin: 0 0 11px 0;
+        margin: 0 0 14px 0;
     }
+
     .breadcrumbs .search {
         float: right;
-        width: 31%;
+        width: 30%;
     }
 }
