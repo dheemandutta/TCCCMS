@@ -2003,7 +2003,7 @@ header {
 .menu_icon a {
     color: #e90000;
     font-size: 25px;
-    margin: 16px 8px 0px 0;
+    margin: 17px 0px 0px 0;
     display: inline-block;
     text-align: right;
 }
@@ -2891,7 +2891,7 @@ header {
 }
 
 .shipmenu .menu ul li {
-    margin: 0 0 7px 0;
+    margin: 0 0 10px 0;
 }
 
 .ship_sec {
