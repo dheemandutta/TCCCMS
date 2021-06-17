@@ -741,8 +741,26 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. KWEX BWMP (ABS Approved)">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPDR">BWMP direct revison on SP (KWEX)</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX BWMP - Appendix 7 with ABS endorsement 12May18</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPDR">BWMP direct revison on SP (KWEX)</filename> -->
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX BWMP - Appendix 7 with ABS endorsement 12May18</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK Excelsus BWMP - ABS approved 25Jul16</filename>
+				<foldername description="Appendix 1" actionname="" name="Appendix 1">
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (a) General Arrangement</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (b) Capacity Plan</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (c-i) Piping Diagram</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (c-ii) Piping Diagram</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (d) Schematic Diagram of Sounding Pipe</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (e) Manhole arrangements</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (f) BTWS Documents _ Plans</filename>
+
+				</foldername>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 2. Summary Form of Typical Ballast Water Exchange</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 3 Assessment Criteria for Sequential Method</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 4. Blank Forms</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 5. List of Reference Documents</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 6. National or Local Quarantine Requirement</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 7. Contingency Measures for Ballast Water Management System with ABS endorsement</filename>
+				
 			</foldername>
 			<foldername description="VOC Management Plan" actionname="VOC" name="6. VOC">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCRC">Revision content on VOC cover (KWEX,CSVA,CSVL,CSEN only)</filename>
