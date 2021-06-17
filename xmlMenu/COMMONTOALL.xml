@@ -2,26 +2,30 @@
 	<commontoalls>
 		<commontoall id="0" name="Common to All" controllername="CommonToAllManual">
 			<foldername actionname="PPM" description="Procurement Policy Manual" name="7. Procurement Policy Manual">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMMB">Main Body</filename> 
-				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix A - Manual PO log Sheet</filename>  -->
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Manual PO log Sheet</filename> 
-				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix B - Advance Payment Request Form</filename>  -->
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - Advance Payment Request Form</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMRNV">Appendix C - Request for New Vendor</filename> 
-				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix D - Vendor Evaluation Form</filename>  -->
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix D - Vendor Evaluation Form</filename> 
-				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix E - Suspension _ Blacklisting Supplier Form</filename>  -->
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix E - Suspension _ Blacklisting Supplier Form</filename> 
-				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix F - List of Approved Suppliers</filename>  -->
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix F - List of Approved Suppliers</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMRWFC">Appendix G - Procurement Work flow Chart</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMCSSPFC">Appendix H - Consumable Stores and Spare Parts Flow Chart</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMEAPOI">Appendix I - Electronic Approval of Purchase Order and Invoice</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMSSCSP">Appendix J - Service _ Supply Contract Signature Protocol</filename> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMOSAC">Appendix K - On-Site Audit Checklist</filename> 
-				
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMContents">PPM Contents</filename>  -->
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPM">Procurement Policy Manual</filename>  -->
+				<!-- *********************Manin Body Change to Policy Manual**************************** -->
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMMB">Main Body</filename>  -->
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMMB">Main Policy</filename> 
+				<foldername actionname="" description="Appendices" name="Appendices">
+					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix A - Manual PO log Sheet</filename>  -->
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Manual PO log Sheet</filename> 
+					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix B - Advance Payment Request Form</filename>  -->
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix B - Advance Payment Request Form</filename> 
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMRNV">Appendix C - Request for New Vendor</filename> 
+					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix D - Vendor Evaluation Form</filename>  -->
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix D - Vendor Evaluation Form</filename> 
+					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix E - Suspension _ Blacklisting Supplier Form</filename>  -->
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix E - Suspension _ Blacklisting Supplier Form</filename> 
+					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix F - List of Approved Suppliers</filename>  -->
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix F - List of Approved Suppliers</filename> 
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMRWFC">Appendix G - Procurement Work flow Chart</filename> 
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMCSSPFC">Appendix H - Consumable Stores and Spare Parts Flow Chart</filename> 
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMEAPOI">Appendix I - Electronic Approval of Purchase Order and Invoice</filename> 
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMSSCSP">Appendix J - Service _ Supply Contract Signature Protocol</filename> 
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMOSAC">Appendix K - On-Site Audit Checklist</filename> 
+					
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMContents">PPM Contents</filename>  -->
+					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPM">Procurement Policy Manual</filename>  -->
+				</foldername>
 			</foldername>
 			
 			<foldername actionname="CGS" description="TCC Cyber Guidance (Shipboard)" name="8. TCC Cyber Guidance (Shipboard)">

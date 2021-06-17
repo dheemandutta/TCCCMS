@@ -119,17 +119,16 @@
                         @*<span class="dropbtn">
                             <img src="~/images/icons/2x/Rivision_Normal@2x.png">
                             <img src="~/images/icons/2x/Rivision_Hover@2x.png">
-
                         </span>*@
                         @*<span class="tooltiptext">SMS Manuals</span>*@ @*-----this line replace with below condition-----*@
 
-                        @*---------------New Changed/Added on 16th Jun  2021 ---BK-- below condition-------------*@
-                        @if (Session["Role"].ToString() == "ShipUser" || Session["Role"].ToString() == "ShipAdmin")
+                        @*-----A----------New Changed/Added on 16th Jun  2021 ---BK-- below condition-------------*@
+                        @* @if (Session["Role"].ToString() == "ShipUser" || Session["Role"].ToString() == "ShipAdmin")
                         {
 
 
                             <a href='@Url.Action("UserDashboard", "Dashboard")'>
-                                @*SMS Manuals*@
+                                SMS Manuals
                                 <span class="dropbtn">
                                     <img src="~/images/icons/2x/sms_Normal@2x.png">
                                     <img src="~/images/icons/2x/sms_Hover@2x.png">
@@ -147,7 +146,20 @@
                                 <img src="~/images/icons/2x/Vessel_Hover@2x.png">
                             </span>
                             <a href="#"><span class="tooltiptext">Ship Specific Manuals & Plans</span></a>
-                        }
+                        }*@
+
+                        @*-----B----------New Changed/Added on 17th Jun  2021 ---BK-- below condition-------------*@
+
+                        <a href='@Url.Action("UserDashboard", "Dashboard")'>
+                            @*SMS Manuals*@
+                            <span class="dropbtn">
+                                <img src="~/images/icons/2x/sms_Normal@2x.png">
+                                <img src="~/images/icons/2x/sms_Hover@2x.png">
+
+                            </span>
+                            <span class="tooltiptext">SMS Manuals</span>
+                        </a>
+
                     </div>
 
 
