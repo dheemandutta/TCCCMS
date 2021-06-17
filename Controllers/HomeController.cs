@@ -352,7 +352,7 @@ namespace TCCCMS.Controllers
                                     sb.Append("\n");
                                     sb.Append("<li class='mainmenu'><a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
                                     sb.Append("<span class='pgnam'>"+filename + "</span></a>");
-                                    sb.Append("</br>");
+                                    //sb.Append("</br>");
 
                                 }
 

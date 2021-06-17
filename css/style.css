@@ -3040,3 +3040,4 @@ header {
 .steps_content a:hover {
     color: #000;
 }
+.shipmenu .menu ul li:last-child{margin:0;}
