@@ -56,19 +56,16 @@
                 <div class="icon_box dropdown">
                     <div class="tooltip">
                         @*<span class="dropbtn">
-                            <img src="~/images/icons/2x/Vessel_Normal@2x.png">
-                            <img src="~/images/icons/2x/Vessel_Hover@2x.png">
-                        </span>*@
+            <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+            <img src="~/images/icons/2x/Vessel_Hover@2x.png">
+        </span>*@
                         @*<span class="tooltiptext">Ship Specific Manuals & Plans</span>*@ @*-----this line replace with below condition-----*@
 
-                        @*---------------New Changed/Added on 16th Jun  2021 ---BK-- below condition-------------*@
+                        @*------A---------New Changed/Added on 16th Jun  2021 ---BK-- below condition-------------*@
                         @if (Session["Role"].ToString() == "ShipUser")
                         {
-                            @*<a href="#">SMS Manuals</a>*@
-
                             <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
 
-                                @*Ship Specific Manuals & Plans*@
                                 <span class="dropbtn">
                                     <img src="~/images/icons/2x/Vessel_Normal@2x.png">
                                     <img src="~/images/icons/2x/Vessel_Hover@2x.png">
@@ -87,6 +84,8 @@
                             </span>
                             <a href="#"><span class="tooltiptext">Ship Specific Manuals & Plans</span></a>
                         }
+
+                       
 
                     </div>
                     @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
