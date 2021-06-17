@@ -2143,8 +2143,11 @@ header {
     background: url(../images/back.png) no-repeat 0 0;
     background-size: cover;
     padding: 24px 24px;
-    width: 94%;
+    width: 100%;
+    border: 1px solid #eee;
     margin-right: 19px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 12px rgb(0 0 0 / 14%);
 }
 
 .one_part {
@@ -2170,7 +2173,7 @@ header {
 .two_part {
     display: inline-block;
     width: 58%;
-    padding-left: 10px;
+    padding-left: 36px;
 }
 
     .two_part ul li {
@@ -2844,7 +2847,7 @@ header {
 
 .icon_box {
     width: 81%;
-    margin-top: 46px;
+    margin-top: 53px;
 }
 
     .icon_box h5 {
@@ -3040,4 +3043,12 @@ header {
 .steps_content a:hover {
     color: #000;
 }
-.shipmenu .menu ul li:last-child{margin:0;}
+
+.shipmenu .menu ul li:last-child {
+    margin: 0;
+}
+
+.one_part img {
+    display: block;
+    margin: 0 auto;
+}
