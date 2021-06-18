@@ -353,7 +353,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMMControl">MM Manual Control</filename>  -->
 			</foldername>
 			
-			<foldername actionname="CEM" description="CEM" name="24. CEM">
+			<foldername actionname="CEM" description="Carbon Emissions Monitoring Manual" name="24. CEM">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CEMEUMRVP">Section A - EU MRV Procedure</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex 1 - EU MRV Regulation</filename> 
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex 5 - Verifier Accreditation</filename> 
