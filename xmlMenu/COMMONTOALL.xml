@@ -4,7 +4,7 @@
 			<foldername actionname="PPM" description="Procurement Policy Manual" name="7. Procurement Policy Manual">
 				<!-- *********************Manin Body Change to Policy Manual**************************** -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMMB">Main Body</filename>  -->
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMMB">Main Policy</filename> 
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PPMMB">Main Document</filename> 
 				<foldername actionname="" description="Appendices" name="Appendices">
 					<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Appendix A - Manual PO log Sheet</filename>  -->
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Manual PO log Sheet</filename> 
