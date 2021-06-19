@@ -1878,7 +1878,7 @@ input::-moz-focus-inner {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1170px;
+        max-width: 1194px;
     }
 }
 
@@ -1958,7 +1958,7 @@ header {
     border-right: none;
     padding: 6px;
     height: 33px;
-    border-radius: 5px 0 0 5px;
+    border-radius: 0;
     outline: none;
     color: #e90000;
     font-size: 13px;
@@ -1984,7 +1984,8 @@ header {
 
 
 .menu_icon {
-    text-align: right;
+    vertical-align: super;
+    display: inline-block;
 }
 
 /*---Ship-----*/
@@ -2003,9 +2004,10 @@ header {
 .menu_icon a {
     color: #e90000;
     font-size: 25px;
-    margin: 17px 0px 0px 0;
+    margin: 2px 14px 7px 0;
     display: inline-block;
-    text-align: right;
+    vertical-align: text-top;
+    line-height: 28px;
 }
 
     .menu_icon a img {
@@ -2128,7 +2130,8 @@ header {
         display: block;
         margin: 0 auto;
         /* padding: 22px 0; */
-        width: 100%;
+        width: 1;
+        height: 180px;
     }
 
     .icon_box a {
@@ -2142,7 +2145,7 @@ header {
 .left_bo {
     background: url(../images/back.png) no-repeat 0 0;
     background-size: cover;
-    padding: 24px 24px;
+    padding: 11px 25px;
     width: 100%;
     border: 1px solid #eee;
     margin-right: 19px;
@@ -2183,7 +2186,7 @@ header {
 
         .two_part ul li a {
             color: #000;
-            font-size: 16px;
+            font-size: 14px;
         }
 
             .two_part ul li a img {
@@ -2800,12 +2803,15 @@ header {
         background: #777777;
         padding: 4px 13px;
         border: 1px solid #777777;
+        border-radius: 0;
     }
 
 
 .admin .dropdown-content {
     top: 40px;
     padding: 14px;
+    right: 0;
+    text-align: center;
     z-index: 9999999;
 }
 
@@ -2822,21 +2828,24 @@ header {
     }
 
 .admin .button.log {
+    height: 37px;
     background: #e90000;
     border: 0;
     border: 2px solid #fff;
-    padding: 6px;
+    padding: 0px;
     border-radius: 22px;
-    text-align: right;
+    text-align: center;
+    width: 37px;
 }
 
 .admin {
-    margin: 13px 0 0 0;
-    float: right;
+    margin: 15px 0 0 0;
+    /* float: right; */
 }
 
 .logo img {
     width: 100%;
+    padding-left: 14px;
 }
 
 .admin .dropdown-content h3 span {
@@ -2846,8 +2855,8 @@ header {
 }
 
 .icon_box {
-    width: 81%;
-    margin-top: 53px;
+    width: 100%;
+    margin-top: -14px;
 }
 
     .icon_box h5 {
@@ -2939,6 +2948,7 @@ header {
 
 .bnr_bottom_sec a {
     color: #000;
+    /* width: 100%; */
 }
 
 .texthighlight {
@@ -2977,7 +2987,7 @@ header {
     }
 
 .sidebarf {
-    width: 395px;
+    width: 430px;
     opacity: 1;
     /* margin-top: 19px; */
     padding: 0;
@@ -3020,25 +3030,55 @@ header {
 
     .tooltip .tooltiptext {
         visibility: hidden;
-        width: 94%;
-        background-color: #404040;
+        width: 87%;
+        background-color: rgb(233 0 0 / 75%);
         color: #fff;
         text-align: center;
         border-radius: 6px;
-        padding: 5px 4px;
+        padding: 8px 4px;
+        /* Position the tooltip */
+        position: absolute;
+        z-index: 1;
+        height: auto;
+        top: 138px;
+        left: 8px;
+        right: 0;
+        margin: 0 auto;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 20px;
+    }
+
+.volume .mainmenu .tooltip {
+    position: relative;
+    display: inline-block;
+    opacity: 1;
+    width: 100%;
+}
+
+    .volume .mainmenu .tooltip .tooltiptext {
+        width: 229px;
+        background-color: rgb(233 0 0 / 82%);
+        color: #fff;
+        text-align: center;
+        border-radius: 0;
+        padding: 8px 8px;
         /* Position the tooltip */
         position: absolute;
         z-index: 1;
         height: auto;
         bottom: -3px;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+        left: -452px;
+        font-weight: 600;
+        /* margin: 0 auto; */
+        font-size: 16px;
+        top: 0;
+        line-height: initial;
     }
 
-    .tooltip:hover .tooltiptext {
-        visibility: visible;
-    }
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
 
 .steps_content a:hover {
     color: #000;
@@ -3048,7 +3088,30 @@ header {
     margin: 0;
 }
 
+.topright {
+    text-align: right;
+}
+
 .one_part img {
     display: block;
     margin: 0 auto;
+}
+
+.topright li {
+    display: inline-block;
+    padding: 0 0px 0 15px;
+}
+
+.volume.sidebarf {
+    width: 300px;
+}
+
+.mr-3, .mx-3 {
+    margin-right: 0rem !important;
+    border-radius: 0;
+    height: 33px;
+}
+
+.container.volumeleftbody {
+    max-width: 1198px;
 }

@@ -353,7 +353,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMMControl">MM Manual Control</filename>  -->
 			</foldername>
 			
-			<foldername actionname="CEM" description="CEM" name="24. CEM">
+			<foldername actionname="CEM" description="Carbon Emissions Monitoring Manual" name="24. CEM">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CEMEUMRVP">Section A - EU MRV Procedure</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex 1 - EU MRV Regulation</filename> 
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex 5 - Verifier Accreditation</filename> 
@@ -368,7 +368,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CEMMCover">CEM Manual Cover</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CEMMR">CEM Manual Revision</filename>  --> 
 			</foldername>
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CALIFORNIA CONTIGENCY PLAN</filename> 
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Contingency Plan</filename> 
 			<!-- <foldername actionname="" description="CALIFORNIA CONTIGENCY PLAN" name="29. CALIFORNIA CONTIGENCY PLAN"> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Contigency Plan</filename>  -->
 				<!-- <foldername actionname="" description="" name="29. CALIFORNIA CONTIGENCY PLAN"> -->
