@@ -2322,7 +2322,7 @@ header {
             }
 
 .full_body .container.body-content {
-    padding: 0;
+    padding: 19px;
 }
 
 .sidebar {
@@ -2330,7 +2330,7 @@ header {
     width: 0;
     position: relative;
     z-index: 99999;
-    top: 0;
+    top: 19px;
     left: 0;
     background-color: #404040;
     /*overflow-x: hidden;*/
@@ -2987,7 +2987,7 @@ header {
     }
 
 .sidebarf {
-    width: 361px;
+    width: 430px;
     opacity: 1;
     /* margin-top: 19px; */
     padding: 0;
