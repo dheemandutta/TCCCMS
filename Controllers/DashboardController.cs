@@ -246,14 +246,18 @@ namespace TCCCMS.Controllers
                    
                     if (UserRole == "OfficeAdmin" || UserRole == "ShipAdmin")
                     {
-                        if (shipId == sNo)
+                        if (userType == "1")
                         {
-                            //----------------Added on 19th jun 2021-----------------------------------------------------------------------------
-                            if (sNo == "1") //this if/else condition was applied due to difference in actionname in xml if resolved in xml then no need below condition
-                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP'> " + sName + "</a>");
-                            else
-                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP'> " + sName + "</a>");
-                            sb.Append("</li>");///----End--------li1
+                            if (shipId == sNo)
+                            {
+                                //----------------Added on 19th jun 2021-----------------------------------------------------------------------------
+                                if (sNo == "1") //this if/else condition was applied due to difference in actionname in xml if resolved in xml then no need below condition
+                                    sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP'> " + sName + "</a>");
+                                else
+                                    sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP'> " + sName + "</a>");
+                                sb.Append("</li>");///----End--------li1
+                            }
+
                         }
                         else
                         {

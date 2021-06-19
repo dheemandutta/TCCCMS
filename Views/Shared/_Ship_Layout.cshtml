@@ -48,13 +48,17 @@
                                     <a href="@Url.Action("Login", "Home")">Log Off</a>
                                 </div>
                             </div>
-                            </li>
-                        <li>
-                            <div class="menu_icon" onclick="openNav()">
-                                <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                            </div>
                         </li>
-                        </ul>
+                        @*=========below IF condition added on 19th jun 2021 because ShipAdmin and OfficeAdmin has no right to access other manuals===========*@
+                        @if (Session["Role"].ToString() == "ShipUser" || Session["Role"].ToString() == "OfficeUser")
+                        {
+                            <li>
+                                <div class="menu_icon" onclick="openNav()">
+                                    <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                                </div>
+                            </li>
+                        }
+                    </ul>
 
                             @*<div>
                     <button type="button" class="btn btn-warning">Log Off</button>
@@ -69,44 +73,48 @@
             <!-- #region Breadcrumb -->
             @Html.Raw(Html.BuildBreadcrumbNavigation())
             <!-- #endregion -->
+            @*=========below IF condition added on 19th jun 2021 because ShipAdmin and OfficeAdmin has no right to access other manuals===========*@
+            @if (Session["Role"].ToString() == "ShipUser" || Session["Role"].ToString() == "OfficeUser")
+            {
+                <div class="search">
+                    <select id="drpVolume" class="form-control form-control-sm mr-3 w-25" style="margin-left:5px;">
+                        <option value="-1" selected>Volumes</option>
+                        <option value="0">Volume 0</option>
+                        <option value="1">Volume 1</option>
+                        <option value="2">Volume 2</option>
+                        <option value="3">Volume 3</option>
+                        <option value="4">Volume 4</option>
+                        <option value="5">Volume 5</option>
+                        <option value="6">Volume 6</option>
+                        <option value="7">Volume 7</option>
+                        <option value="8">Volume 8</option>
+                    </select>
+                    <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
+                    <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
 
-            <div class="search">
-                <select id="drpVolume" class="form-control form-control-sm mr-3 w-25" style="margin-left:5px;">
-                    <option value="-1" selected>Volumes</option>
-                    <option value="0">Volume 0</option>
-                    <option value="1">Volume 1</option>
-                    <option value="2">Volume 2</option>
-                    <option value="3">Volume 3</option>
-                    <option value="4">Volume 4</option>
-                    <option value="5">Volume 5</option>
-                    <option value="6">Volume 6</option>
-                    <option value="7">Volume 7</option>
-                    <option value="8">Volume 8</option>
-                </select>
-                <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
-                <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
+                </div>
+            }
 
-            </div>
             @**************Added on 19th jun 2021************************@
             @*<div class="search">
-                <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
-                <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
-                <select id="drpVolume" class="form-control form-control-sm mr-3 w-25" style="margin-left:5px;">
-                    <option value="-1" selected>Category</option>
-                    <option value="SOPEP">SOPEP</option>
-                    <option value="STS">STS Transfer Operation Plan</option>
-                    <option value="BWMP">Ballast Water Management Plan</option>
-                    <option value="VOC">VOC Management Plan</option>
-                    <option value="LMP">MSMP and LMP</option>
-                    <option value="PRPW">"Procedure for Recovery of Person from Water</option>
-                    <option value="BMP">Biofouling Management Plan</option>
-                    <option value="CWBMP">Canada Ballast Water Management Plan</option>
-                    <option value="GMP">Garbage Management Plan</option>
-                    <option value="ETA">Emergency Towing Arrangement</option>
-                    <option value="SEEMP1">SEEM Part I</option>
-                    <option value="SEEMP2">SEEM Part II</option>
-                </select>
-            </div>*@
+            <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
+            <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
+            <select id="drpVolume" class="form-control form-control-sm mr-3 w-25" style="margin-left:5px;">
+                <option value="-1" selected>Category</option>
+                <option value="SOPEP">SOPEP</option>
+                <option value="STS">STS Transfer Operation Plan</option>
+                <option value="BWMP">Ballast Water Management Plan</option>
+                <option value="VOC">VOC Management Plan</option>
+                <option value="LMP">MSMP and LMP</option>
+                <option value="PRPW">"Procedure for Recovery of Person from Water</option>
+                <option value="BMP">Biofouling Management Plan</option>
+                <option value="CWBMP">Canada Ballast Water Management Plan</option>
+                <option value="GMP">Garbage Management Plan</option>
+                <option value="ETA">Emergency Towing Arrangement</option>
+                <option value="SEEMP1">SEEM Part I</option>
+                <option value="SEEMP2">SEEM Part II</option>
+            </select>
+        </div>*@
 
         </div>
     </div>
