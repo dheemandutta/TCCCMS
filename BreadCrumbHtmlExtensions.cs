@@ -107,10 +107,26 @@ namespace TCCCMS
                     //                          "UserDashboard",
                     //                          helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
                     //}
+                    
+                    //--------------------------Commented on 19th Jun 2021---------------------------------------------------
+                    //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                    //                          "UserDashboard",
+                    //                          helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
 
-                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
-                                              "UserDashboard",
-                                              helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+
+                    //----------------------Changed on 19th Jun 2021--------------------------------------------------------
+                    if (UserRole == "OfficeUser")
+                    {
+                        breadcrumb2.Append(helper.ActionLink("Office",
+                                                  "UserDashboard",
+                                                  helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+                    }
+                    else if (UserRole == "ShipUser")
+                    {
+                        breadcrumb2.Append(helper.ActionLink("Ship",
+                                                  "UserDashboard",
+                                                  helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+                    }
 
 
                 }
@@ -135,9 +151,25 @@ namespace TCCCMS
                     //                                                   helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
                     //}
 
-                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
-                                                                      "AdminDashboard",
-                                                                      helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+
+                    //--------------------------Commented on 19th Jun 2021---------------------------------------------------
+                    //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                    //                                                  "AdminDashboard",
+                    //                                                  helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+
+                    //----------------------Changed on 19th Jun 2021--------------------------------------------------------
+                    if (UserRole == "OfficeAdmin")
+                    {
+                        breadcrumb2.Append(helper.ActionLink("Office",
+                                                  "AdminDashboard",
+                                                  helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+                    }
+                    else if (UserRole == "ShipAdmin")
+                    {
+                        breadcrumb2.Append(helper.ActionLink("Ship",
+                                                  "AdminDashboard",
+                                                  helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+                    }
 
                 }
                 
@@ -151,14 +183,33 @@ namespace TCCCMS
 
                 if (controller == "ShipKHKVision" || controller == "ShipKWKExcelsus" || controller == "ShipCSKVanguard" || controller == "ShipCSKValiant" || controller == "ShipCSKEndeavour" || controller == "ShipKHKEmpress" || controller == "ShipKHKMajesty")
                 {
-                    breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                    //// -A- commented on 19th jun 2021 @BK and add B----------------------------------------
+                    //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                    //                                 "ShipDashboard",
+                    //                                 "Dashboard"));
+
+                    
+                    ////--B---Added on 19th jun 2021 @BK because Admin user can not see other manuals(ship/vol)
+                    if (UserRole == "OfficeAdmin" || UserRole == "ShipAdmin")
+                    {
+                        breadcrumb2.Append(helper.ViewContext.RouteData.Values["controller"].ToString());
+                    }
+                    else
+                    {
+                        breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
                                                      "ShipDashboard",
                                                      "Dashboard"));
+                    }
 
+
+
+
+                    ////----Test1---------------
                     //breadcrumb2.Append(helper.ActionLink("Bingshu",
                     //                                 "ShipDashboard",
                     //                                 "Dashboard"));
 
+                    ////----Test1---------------
                     //breadcrumb2.Append("< a href = '/Dashboard/ShipDashboard/" + ShipId + "' >");
                     //breadcrumb2.Append(controller + "</ a >");
                 }

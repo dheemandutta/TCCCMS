@@ -30,13 +30,14 @@ namespace TCCCMS.Controllers
             ManualViewModel fsvm = new ManualViewModel();
             List<Manual> manuals = new List<Manual>();
             int shipId = 0;
+            string category = null;//Added on 19th Jun 2021
 
             if(Session["ShipId"] !=null)
             {
                 shipId = int.Parse(Session["ShipId"].ToString());
             }
 
-                if (Request.QueryString["s"] != null)
+            if (Request.QueryString["s"] != null)
             {
                 text = Request.QueryString["s"].ToString().Trim();
             }
@@ -44,6 +45,11 @@ namespace TCCCMS.Controllers
             if(Request.QueryString["vol"] != null)
             {
                 volNo = Request.QueryString["vol"].ToString();
+            }
+
+            if (Request.QueryString["cat"] != null)
+            {
+                category = Request.QueryString["cat"].ToString();
             }
 
 
@@ -74,7 +80,7 @@ namespace TCCCMS.Controllers
                 searchText = text;
                 fsvm.SearchText = text;
 
-                manuals = manualBL.SearchManuals(currentPage, ref totalrecords, pgn.PageSize, Convert.ToInt32(volNo), searchText, shipId);
+                manuals = manualBL.SearchManuals(currentPage, ref totalrecords, pgn.PageSize, Convert.ToInt32(volNo), searchText, shipId, category);
                 pgn.Count = manuals.Count();
                 fsvm.ManualList = manuals.Skip((pgn.CurrentPage - 1) * pgn.PageSize).Take(pgn.PageSize).ToList();
                 fsvm.VolumeId = Convert.ToInt32(volNo);

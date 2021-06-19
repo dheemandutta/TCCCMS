@@ -17,8 +17,19 @@ namespace TCCCMS.Data
     {
         string connectionString = ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString;
         //SqlConnection con ;
-
-        public List<Manual> SearchManuals(int pageIndex, ref int totalCount, int pageSize, int volumeId,string serachText,int shipId)
+        /// <summary>
+        /// 'category' Added on 19th jun 2021 @BK
+        /// for category wise search
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="totalCount"></param>
+        /// <param name="pageSize"></param>
+        /// <param name="volumeId"></param>
+        /// <param name="serachText"></param>
+        /// <param name="shipId"></param>
+        /// <param name="category"></param>
+        /// <returns></returns>
+        public List<Manual> SearchManuals(int pageIndex, ref int totalCount, int pageSize, int volumeId,string serachText,int shipId,string category)
         {
             List<Manual> manualsList = new List<Manual>();
 

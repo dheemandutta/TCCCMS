@@ -63,7 +63,7 @@ namespace TCCCMS.Controllers
         public ActionResult ShipMenuLayout()
         {
             Menu menu = new Menu();
-            menu.Menulist = GenerateShipWiseMenu();
+            menu.Menulist = GenerateShipWiseMenu2();
             return PartialView("_ShipWise_Menu_Layout", menu);
         }
 
@@ -114,7 +114,16 @@ namespace TCCCMS.Controllers
                         if (shipId == sNo)
                         {
                             //sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Index'> " + sName + "</a>");///------------li1
-                            sb.Append("<li class='dropmenuright' ><a href='/Dashboard/ShipDashboard/" + sNo + "'> " + sName + "</a>");
+                            //-----------------------Commented on 19th Jun 2021----------------------------------------------------
+                            //sb.Append("<li class='dropmenuright' ><a href='/Dashboard/ShipDashboard/" + sNo + "'> " + sName + "</a>");
+                            //sb.Append("</li>");///----End--------li1
+
+                            
+                            //----------------Added on 19th jun 2021-----------------------------------------------------------------------------
+                            if(sNo == "1") //this if/else condition was applied due to difference in actionname in xml if resolved in xml then no need below condition
+                                sb.Append("<li class='dropmenuright' ><a href='/"+ ctrlName + "/Pages?actionName=STSP2SP'> " + sName + "</a>");
+                            else
+                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP'> " + sName + "</a>");
                             sb.Append("</li>");///----End--------li1
                         }
 
@@ -122,10 +131,17 @@ namespace TCCCMS.Controllers
                     else
                     {
 
-                    
+
                         //sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Index'> " + sName + "</a>");///------------li1
 
-                        sb.Append("<li class='dropmenuright' ><a href='/Dashboard/ShipDashboard/"+ sNo + "'> " + sName + "</a>");
+                        //-----------------------Commented on 19th Jun 2021----------------------------------------------------
+                        //sb.Append("<li class='dropmenuright' ><a href='/Dashboard/ShipDashboard/"+ sNo + "'> " + sName + "</a>");
+
+                        //----------------Added on 19th jun 2021-----------------------------------------------------------------------------
+                        if (sNo == "1") //this if/else condition was applied due to difference in actionname in xml if resolved in xml then no need below condition
+                            sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP'> " + sName + "</a>");
+                        else
+                            sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP'> " + sName + "</a>");
 
                         #region Line Commented on 23rd Feb 2021
                         //sb.Append("\n");
@@ -191,6 +207,95 @@ namespace TCCCMS.Controllers
             }
             return sb.ToString();
         }
+
+        public string GenerateShipWiseMenu2()
+        {
+            string userType = Session["UserType"].ToString();
+            string UserRole = Session["Role"].ToString();
+            string shipId = Session["ShipId"].ToString();
+            ManualBL manuBl = new ManualBL();
+
+
+            //string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS.xml");//Commented on 30th Apr 2021
+            string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(xPath);
+            StringBuilder sb = new StringBuilder();
+            foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
+            {
+                if (userType == "1")
+                {
+                    sb.Append("<div class='dropdown-content' style='min-width: 300px; top: -45px; '>");
+                }
+                else
+                {
+                    sb.Append("<div class='dropdown-content' style='min-width: 300px; top: -300px; '>");
+
+                }
+                sb.Append("\n");
+                sb.Append("<ul>");//---ul1
+                foreach (XmlNode ship in node)
+                {
+                    Volume vol = new Volume();
+                    string sName = ship.Attributes["name"].Value.ToString();
+                    string ctrlName = ship.Attributes["controllername"].Value.ToString();
+                    string partName = sName.Split(' ').Last();
+                    string sNo = ship.Attributes["shipnumber"].Value.ToString();
+                    //vol = manuBl.GetVolumeById(sNo);
+                    sb.Append("\n");
+                   
+                    if (UserRole == "OfficeAdmin" || UserRole == "ShipAdmin")
+                    {
+                        if (shipId == sNo)
+                        {
+                            //----------------Added on 19th jun 2021-----------------------------------------------------------------------------
+                            if (sNo == "1") //this if/else condition was applied due to difference in actionname in xml if resolved in xml then no need below condition
+                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP'> " + sName + "</a>");
+                            else
+                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP'> " + sName + "</a>");
+                            sb.Append("</li>");///----End--------li1
+                        }
+                        else
+                        {
+                            //----------------Added on 19th jun 2021-----------------------------------------------------------------------------
+                            if (sNo == "1") //this if/else condition was applied due to difference in actionname in xml if resolved in xml then no need below condition
+                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP'> " + sName + "</a>");
+                            else
+                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP'> " + sName + "</a>");
+
+                            sb.Append("</li>");///----End--------li1
+                        }
+
+                    }
+                    else
+                    {
+                        if (shipId == sNo && userType == "1")
+                        {
+
+                            sb.Append("<li class='dropmenuright' ><a href='/Dashboard/ShipDashboard/" + sNo + "'> " + sName + "</a>");
+                            sb.Append("</li>");///----End--------li1
+
+                        }
+                        else
+                        {
+                            sb.Append("<li class='dropmenuright' ><a href='/Dashboard/ShipDashboard/" + sNo + "'> " + sName + "</a>");
+                            sb.Append("</li>");///----End--------li1
+                        }
+
+                    }
+
+
+                }
+                sb.Append("\n");
+                sb.Append("</ul>");//--End--ul1
+                sb.Append("\n");
+                sb.Append("</div>");
+                //WriteToText(sb);
+
+            }
+            return sb.ToString();
+        }
+
 
         public string GetChild(XmlNode node, ref int l)
         {
