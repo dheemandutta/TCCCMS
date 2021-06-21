@@ -32,9 +32,13 @@ namespace TCCCMS.Controllers
             int shipId = 0;
             string category = null;//Added on 19th Jun 2021
 
-            if(Session["ShipId"] !=null)
+            if(Session["ShipId"] !=null && Session["ShipId"].ToString() != "0")
             {
                 shipId = int.Parse(Session["ShipId"].ToString());
+            }
+            else if(Session["DashboardShipId"].ToString() != null)
+            {
+                shipId = int.Parse(Session["DashboardShipId"].ToString());
             }
 
             if (Request.QueryString["s"] != null)
@@ -45,7 +49,16 @@ namespace TCCCMS.Controllers
             if(Request.QueryString["vol"] != null)
             {
                 volNo = Request.QueryString["vol"].ToString();
+                if(volNo != "-1")//Added on 21st Jun 2021
+                {
+                    shipId = 0;
+                }
             }
+            else if (volNo != "-1")//Added on 21st Jun 2021
+            {
+                shipId = 0;
+            }
+
 
             if (Request.QueryString["cat"] != null)
             {
