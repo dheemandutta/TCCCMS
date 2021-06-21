@@ -185,19 +185,21 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap10">Chapter 10 Training Programme</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap11">Chapter 11 Record Keeping</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap12">Chapter 12 Designated Person</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOChap13">Chapter 13 Appendix</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13GAP">Chapter 13.1 GA Plan</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13CS">Chapter 13.2 Cargo System</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13BS">Chapter 13.3 Ballast System</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13CTVIGS">Chapter 13.4 Cargo tank vent and Inert Gas system</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13CTCS">Chapter 13.5 COW and Tank cleaning system</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap13SCM">Chapter 13.6 Specification for COW machine</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13VEHHAS">Chapter 13.7 Vapour Emission and High high alarm system</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13EEBI">Chapter 13.8 Electric earth bonding installation</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13VC">Chapter 13.9.1 Vapour Connection </filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13VC2">Chapter 13.9.2 Vapour Connection </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap13MR">Chapter 13.10 Marpol Annex VI Regulation 15</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13MEPC">Chapter 13.11 - MEPC 185(59)</filename>
+        <foldername description="" actionname="" name="Appendix">
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOChap13">Chapter 13 Appendix</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13GAP">Chapter 13.1 GA Plan</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13CS">Chapter 13.2 Cargo System</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13BS">Chapter 13.3 Ballast System</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13CTVIGS">Chapter 13.4 Cargo tank vent and Inert Gas system</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13CTCS">Chapter 13.5 COW and Tank cleaning system</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap13SCM">Chapter 13.6 Specification for COW machine</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13VEHHAS">Chapter 13.7 Vapour Emission and High high alarm system</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13EEBI">Chapter 13.8 Electric earth bonding installation</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13VC">Chapter 13.9.1 Vapour Connection </filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13VC2">Chapter 13.9.2 Vapour Connection </filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap13MR">Chapter 13.10 Marpol Annex VI Regulation 15</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13MEPC">Chapter 13.11 - MEPC 185(59)</filename>
+        </foldername>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOChap14">Chapter 14 Reference</filename>
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCCover">Cover - KHK Vision </filename> -->
 				
@@ -364,7 +366,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (KHKV)</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
+			<foldername description="Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS2PO">Section 2 - Principles of Operation</filename>
@@ -431,7 +433,7 @@
 				</foldername>
 			
 			</foldername>
-			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">KHKV Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPMC">Manual Cover</filename> -->
@@ -888,7 +890,7 @@
 					
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
+			<foldername description="Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
 				
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
@@ -977,7 +979,7 @@
 			
 			
 			</foldername>
-			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management" actionname="CWBMP" name="19. CWBMP">
 				
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">KWEX Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
@@ -1405,7 +1407,7 @@
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (Alframax)</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
+			<foldername description="Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
 				
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
@@ -1495,7 +1497,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMC">Manual Control</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMR">Manual Revisions - for all ships</filename> -->
 			</foldername>
-			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">CSVA Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
@@ -1914,7 +1916,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (Alframax)</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
+			<foldername description="Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
 				
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
@@ -2005,7 +2007,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMC">Manual Control</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMR">Manual Revisions - for all ships</filename> -->
 			</foldername>
-			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">CSVL Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
@@ -2435,7 +2437,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (Alframax)</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
+			<foldername description="Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS2PO">Section 2 - Principles of Operation</filename>
@@ -2527,7 +2529,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMC">Manual Control</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMR">Manual Revisions - for all ships</filename> -->
 			</foldername>
-			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">CSEN Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
@@ -2971,7 +2973,7 @@
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPSPMC">Manual Control - KHMA 07</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">	
+			<foldername description="Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">	
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS2PO">Section 2 - Principles of Operation</filename>
@@ -3069,7 +3071,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMC">Manual Control</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BMPMR">Manual Revisions - for all ships</filename> -->
 			</foldername>
-			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">KHEM Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
@@ -3548,7 +3550,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPS2">Section 2 Part A - LMP (KHEM and KHMA)</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="Procedure for Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
+			<foldername description="Recovery of Person from Water" actionname="PRPW" name="14. Plans recover persons water">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS1Introduction">Section 1 - Introduction</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRPWS2PO">Section 2 - Principles of Operation</filename>
@@ -3644,7 +3646,7 @@
 			
 			
 			</foldername>
-			<foldername description="Canada Ballast Water Management Plan" actionname="CWBMP" name="19. CWBMP">
+			<foldername description="Canada Ballast Water Management" actionname="CWBMP" name="19. CWBMP">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMPVP">KHEM Vessel Particular</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWBMP">Canada Water Ballast Management Plan</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix A - Canada Ballast Water Reporting form</filename>
