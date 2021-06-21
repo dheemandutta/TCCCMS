@@ -204,8 +204,7 @@
 
     .one_part {
         text-align: center;
-        padding: 29px 18px 0 0;
-        font-size: 13px;
+        padding: 8px 0px 0 0;
     }
 
     .bnr_bottom_sec a {
@@ -214,7 +213,7 @@
     }
 
     .two_part ul li a {
-        font-size: 10px;
+        font-size: 9px;
     }
 }
 
