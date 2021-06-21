@@ -45,6 +45,7 @@ namespace TCCCMS.Data
                     cmd.Parameters.AddWithValue("@VolumeId", volumeId);
                     cmd.Parameters.AddWithValue("@SearchText", serachText);
                     cmd.Parameters.AddWithValue("@ShipId", shipId);
+                    cmd.Parameters.AddWithValue("@Category", category);
                     con.Open();
 
                     DataSet ds = new DataSet();

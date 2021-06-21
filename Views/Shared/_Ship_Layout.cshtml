@@ -76,9 +76,9 @@
             @*=========below IF condition added on 19th jun 2021 because ShipAdmin and OfficeAdmin has no right to access other manuals===========*@
             @if (Session["Role"].ToString() == "ShipUser" || Session["Role"].ToString() == "OfficeUser")
             {
-                <div class="search">
+                @*<div class="search">
                     <select id="drpVolume" class="form-control form-control-sm mr-3 w-25" style="margin-left:5px;">
-                        <option value="-1" selected>Volumes</option>
+                        <option value="-1" selected>Select</option>
                         <option value="0">Volume 0</option>
                         <option value="1">Volume 1</option>
                         <option value="2">Volume 2</option>
@@ -92,29 +92,33 @@
                     <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
                     <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
 
+                </div>*@
+
+                @**************Added on 19th jun 2021************************@
+                <div class="search">
+                    @*<input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
+                <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>*@
+                    <select id="drpVolume" class="form-control form-control-sm mr-3 w-25" style="margin-left:5px;">
+                        <option value="-1" selected>Category</option>
+                        <option value="SOPEP">SOPEP</option>
+                        <option value="STS">STS Transfer Operation Plan</option>
+                        <option value="BWMP">Ballast Water Management Plan</option>
+                        <option value="VOC">VOC Management Plan</option>
+                        <option value="LMP">MSMP and LMP</option>
+                        <option value="PRPW">"Procedure for Recovery of Person from Water</option>
+                        <option value="BMP">Biofouling Management Plan</option>
+                        <option value="CWBMP">Canada Ballast Water Management Plan</option>
+                        <option value="GMP">Garbage Management Plan</option>
+                        <option value="ETA">Emergency Towing Arrangement</option>
+                        <option value="SEEMP1">SEEM Part I</option>
+                        <option value="SEEMP2">SEEM Part II</option>
+                    </select>
+                    <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
+                    <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
                 </div>
             }
 
-            @**************Added on 19th jun 2021************************@
-            @*<div class="search">
-            <input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
-            <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
-            <select id="drpVolume" class="form-control form-control-sm mr-3 w-25" style="margin-left:5px;">
-                <option value="-1" selected>Category</option>
-                <option value="SOPEP">SOPEP</option>
-                <option value="STS">STS Transfer Operation Plan</option>
-                <option value="BWMP">Ballast Water Management Plan</option>
-                <option value="VOC">VOC Management Plan</option>
-                <option value="LMP">MSMP and LMP</option>
-                <option value="PRPW">"Procedure for Recovery of Person from Water</option>
-                <option value="BMP">Biofouling Management Plan</option>
-                <option value="CWBMP">Canada Ballast Water Management Plan</option>
-                <option value="GMP">Garbage Management Plan</option>
-                <option value="ETA">Emergency Towing Arrangement</option>
-                <option value="SEEMP1">SEEM Part I</option>
-                <option value="SEEMP2">SEEM Part II</option>
-            </select>
-        </div>*@
+
 
         </div>
     </div>
@@ -201,7 +205,8 @@
                     }
                     else {
                          //window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val();
-                         window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() + '&vol=' + $("#drpVolume option:selected").val();
+                         //window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() + '&vol=' + $("#drpVolume option:selected").val();
+                         window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() + '&cat=' + $("#drpVolume option:selected").val();
                     }
                 }
 
@@ -227,7 +232,8 @@
                 }
                 else {
                     //window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val();
-                    window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() + '&vol=' + $("#drpVolume option:selected").val();
+                    //window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() + '&vol=' + $("#drpVolume option:selected").val();
+                    window.location.href = '@Url.Action("SearchList","Manual")?s=' + $('#txtAllSearctText').val() + '&cat=' + $("#drpVolume option:selected").val();
                 }
             });
         });
