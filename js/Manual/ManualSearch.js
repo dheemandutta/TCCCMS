@@ -23,9 +23,22 @@ function replaceText(searchword) {
     var repstr = "<span class='highlight'>" + searchword + "</span>";
 
     if (searchword != "") {
-        $('.searchdContent').each(function () {
-            $(this).html($(this).html().replace(custfilter, repstr));
-        })
+        
+        if ($('.searchdContent .card-body').length > 0) {
+            $('.card-body').each(function () {
+                //var x = $(this).html($(this).html());
+                //console.log(x);
+                $(this).html($(this).html().replace(custfilter, repstr));
+            })
+        }
+        else {
+            $('.searchdContent').each(function () {
+                //var x = $(this).html($(this).html());
+                //console.log(x);
+                $(this).html($(this).html().replace(custfilter, repstr));
+            })
+        }
+        
     }
 }
 
