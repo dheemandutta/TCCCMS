@@ -25,6 +25,7 @@ namespace TCCCMS.Controllers
         //}
         public ActionResult SearchList(int currentPage = 1, string volNo = "-1", string text = null)
         {
+            Session["IsSearched"] = "1";
             ManualBL manualBL = new ManualBL();
             int totalrecords = 0;
             ManualViewModel fsvm = new ManualViewModel();
@@ -111,7 +112,7 @@ namespace TCCCMS.Controllers
         public JsonResult GetSearchText()
         {
             string text = "";
-            if (TempData["SearchText"] != null)
+            if (TempData["SearchText"] != null && Session["IsSearched"].ToString() == "1")
             {
                 text = TempData["SearchText"].ToString();
                 TempData.Keep("SearchText");

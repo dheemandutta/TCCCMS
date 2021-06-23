@@ -22,6 +22,7 @@ namespace TCCCMS.Controllers
         // GET: ShipKHKEmpress
         public ActionResult Index()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             //string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS.xml");

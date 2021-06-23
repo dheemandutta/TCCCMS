@@ -1,4 +1,9 @@
 ﻿@{
     Layout = "~/Views/Shared/New_Layout.cshtml";
 }
+@{ 
+    string CurrentName = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"]);
+
+    string s = CurrentName;
+    }
 

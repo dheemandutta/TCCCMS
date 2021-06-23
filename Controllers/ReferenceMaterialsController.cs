@@ -19,7 +19,7 @@ namespace TCCCMS.Controllers
         // GET: ReferenceMaterials
         public ActionResult Index()
         {
-
+            Session["IsSearched"] = "0";
             Manual file = new Manual();
             string xPath = Server.MapPath("~/xmlMenu/" + "REFERENCEMATERIALS.xml");
             file.ManualBodyHtml = manualBL.GenerateBodyContentHtml(xPath, 0);
