@@ -639,30 +639,18 @@
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2MR">Manual Revisions</filename> -->
 				<!-- </foldername> -->
 			
-			</foldername>
-      
-      
+			</foldername>         
 			<!-- <foldername description="" actionname="" name="29. KHK VISION  -California Response Manual"> -->
-				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">29. KHK Vision - California Response Manual</filename> -->
+			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">29. KHK Vision - California Response Manual</filename> -->
 			<!-- </foldername> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM">29. KHK Vision - California Response Manual</filename> -->
-			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM2">29. KHK Vision - California Response Manual</filename> -->
-      
-      
-      
-      
-      
+			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM2">29. KHK Vision - California Response Manual</filename> -->   
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
       <foldername description="California Response Manual" actionname="CRM" name="29. California Response Manual">
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Plan</filename>
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement Plan</filename>
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
-      </foldername>
-      
-      
-      
-      
-      
+      </foldername>   
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">will be changed KHK Vision NOI 2013 14Jun17</filename> -->
 		</ship>
 		
@@ -776,16 +764,20 @@
 			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. KWEX BWMP (ABS Approved)">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="BWMPDR">BWMP direct revison on SP (KWEX)</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWEX BWMP - Appendix 7 with ABS endorsement 12May18</filename> -->
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK Excelsus BWMP - ABS approved 25Jul16</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK Excelsus BWMP -  Main Document ABS approved 25Jul16</filename>
 				<foldername description="Appendix 1" actionname="" name="Appendix 1">
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (a) General Arrangement</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (b) Capacity Plan</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (c-i) Piping Diagram</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (c-ii) Piping Diagram</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (d) Schematic Diagram of Sounding Pipe</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (e) Manhole arrangements</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 1 (f) BTWS Documents _ Plans</filename>
-
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">1. KWEX  BWMP  General Arrangement</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2. KWEX  BWMP  Capacity Plan</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3a. KWEX  BWMP  Cargo and Ballast  Piping Diagram</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3b.KWEX  BWMP  Ballast and Sea Water Piping Diagram</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">4.KWEX  BWMP  Schematic Diagram of Sounding Pipe</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">5.KWEX  BWMP Manhole arrangements</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">6. KWEX BTWS - Arrangement</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">7. KWEX BTWS piping and Instruments</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">8. KWEX BTWS - Sampling Point Arrangement</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">9. KWEX  BTWS - Test Certificate</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">10 KWEX BTWS  NEI Instrument Documents _ Plans-3</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">11. KWEX BTWS - Operational Manual</filename>         
 				</foldername>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 2. Summary Form of Typical Ballast Water Exchange</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 3 Assessment Criteria for Sequential Method</filename>
@@ -796,9 +788,29 @@
 				
 			</foldername>
 			<foldername description="VOC Management Plan" actionname="VOC" name="6. VOC">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCRC">Revision content on VOC cover (KWEX,CSVA,CSVL,CSEN only)</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_9728411</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-address update (ABS endorsed 19Dec17)</filename>
+				<!--<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCRC">Revision content on VOC cover (KWEX,CSVA,CSVL,CSEN only)</filename>-->
+        <!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_9728411</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-address update (ABS endorsed 19Dec17)</filename>-->
+        <foldername description="" actionname="" name="1. VOC - KWK Excelsus VOC Management Plan">
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_  VOC Management Plan</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_ General Arrangement Plan</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_Capacity Plan</filename>
+        </foldername>
+        <foldername description="" actionname="" name="2. Finished Plan  Cargo And Ballast Pipping Diaigram">
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Cargo And Ballast Pipping Diagram</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan Cargo And Ballast Pipping</filename>
+        </foldername>
+        <foldername description="" actionname="" name="3. Finished Plan  Vent Piping Diagram">
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus Vent Piping Diagram</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan  Vent Piping</filename>
+        </foldername>
+        <foldername description="" actionname="" name="4. Finished Plan Tank Cleaning Piping Diagram">
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus Tank Cleaning Piping Diagram</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan Tank Cleaning Piping Diagram</filename>
+        </foldername>
+        <foldername description="" actionname="" name="5. Finished Plan Vapour Control System">
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan  Vapour Control System</filename>
+        </foldername>     
 			</foldername>
 			<foldername description="MSMP and LMP" actionname="MSMPLMP" name="13. MSMP_LMP">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename> -->
@@ -1202,8 +1214,13 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">21. KWEX ETA 14Jul16</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. KWK EXCELSUS_VGP Rev02</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KWK Excelsus NOI 2013 09Mar20</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
-		</ship>
+      
+			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
+      <foldername description="California Response Manual" actionname="CRM" name="29. KWK EXCELSUS - California Response Manual">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS - California Response Manual</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS - General Arrangement Plan</filename>
+      </foldername>
+    </ship>
 		
 		<ship shipnumber="3" name="CSK Vanguard" controllername="ShipCSKVanguard">
 			<foldername description="SOPEP" actionname="SOPEP" name="3. SOPEP">

@@ -2439,6 +2439,7 @@
     <Content Include="Views\Ticket\ViewSupportTicket.cshtml" />
     <Content Include="Views\Shared\_C2A_Layout.cshtml" />
     <Content Include="Views\ShipKHKVision\CRM.cshtml" />
+    <Content Include="Views\ShipKWKExcelsus\CRM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
