@@ -173,6 +173,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="BWMPKHKV">BWMP in PDF Format</filename>
 			</foldername>
 			<foldername description="VOC Management Plan" actionname="VOC" name="6. KHKV VOC">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Vision VOC</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap1">Chapter 1 Objectives</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap2">Chapter 2 General Information</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap3">Chapter 3 Cargo Tanks and Equipments</filename>
@@ -182,8 +183,18 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap7">Chapter 7 Overfill Alarm Time Calculation</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap8">Chapter 8 Isometric Drawing for Vapour Line</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap9">Chapter 9 Emergency Procedure</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap10">Chapter 10 Training Programme</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap11">Chapter 11 Record Keeping</filename>
+        
+        <foldername description="" actionname="" name="Chapter 10 Training Programme">
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap10">Chapter 10 Training Procedure</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="10.4 Record of crew attended this training">10.4 Record of crew attended this training</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="10.4 Voc Management Training Record">10.4 Voc Management Training Record</filename>
+        </foldername>
+
+        <foldername description="" actionname="" name="Chapter 11 Record Keeping">
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap11">Chapter 11 Record Keeping</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="11 Gas - Vapour Release Record">11 Gas - Vapour Release Record</filename>
+        </foldername>
+        
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap12">Chapter 12 Designated Person</filename>
         <foldername description="" actionname="" name="Appendix">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOChap13">Chapter 13 Appendix</filename>
@@ -204,7 +215,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCCover">Cover - KHK Vision </filename> -->
 				
 				
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">ONE PDF-VOC-KHKV-15Oct20</filename>
+				
 			</foldername>
 			<foldername description="MSMP and LMP" actionname="MSMPLMP" name="13. MSMP_LMP">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename> -->
@@ -512,7 +523,10 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETATP">Section 4 - Towing patterns</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAOrganization">Section 5 - Organization</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAPTO">Section 6 - Preparation for the towing operation</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETATI">Section 7 - Table of Information</filename>
+        
+				<!--<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETATI">Section 7 - Table of Information</filename>-->
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="Section 7 - Table of Information">Section 7 - Table of Information</filename>
+        
 				<foldername description="" actionname="" name="Appendix">
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MSC.1 Circ 1255</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MSC.1 Circ.1175</filename>
@@ -626,12 +640,29 @@
 				<!-- </foldername> -->
 			
 			</foldername>
+      
+      
 			<!-- <foldername description="" actionname="" name="29. KHK VISION  -California Response Manual"> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">29. KHK Vision - California Response Manual</filename> -->
 			<!-- </foldername> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM">29. KHK Vision - California Response Manual</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM2">29. KHK Vision - California Response Manual</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+      
+      
+      
+      
+      
+			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
+      <foldername description="California Response Manual" actionname="CRM" name="29. California Response Manual">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Plan</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement Plan</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
+      </foldername>
+      
+      
+      
+      
+      
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">will be changed KHK Vision NOI 2013 14Jun17</filename> -->
 		</ship>
 		
