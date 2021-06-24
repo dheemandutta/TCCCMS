@@ -20,6 +20,7 @@ namespace TCCCMS.Controllers
         // GET: CommonToAllManual
         public ActionResult Index()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             Manual file = new Manual();
             string xPath = Server.MapPath("~/xmlMenu/" + "COMMONTOALL.xml");
@@ -36,6 +37,7 @@ namespace TCCCMS.Controllers
         //}
         public ActionResult Pages(string actionName, string formName = "", string relformPath = "")
         {
+            
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
             ShipManual file = new ShipManual();
             //file = manualBL.GetCommonToAllManual(controllerName, actionName);
@@ -158,6 +160,7 @@ namespace TCCCMS.Controllers
         
         public ActionResult PPM()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -166,6 +169,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult CGS()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -174,6 +178,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult GCGS()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -182,6 +187,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult OMPCOV()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -190,6 +196,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult TOM()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -198,6 +205,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult PCMP()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -206,6 +214,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult EMS()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -214,6 +223,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult Manning()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -222,6 +232,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult CEM()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);

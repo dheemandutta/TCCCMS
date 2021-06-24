@@ -21,6 +21,7 @@ namespace TCCCMS.Controllers
         // GET: FormsAndChecklists
         public ActionResult Index()
         {
+            Session["IsSearched"] = "0";
             Manual file = new Manual();
             string xPath = Server.MapPath("~/xmlMenu/" + "ALLVOLUMES.xml");
             file.ManualBodyHtml = manualBL.GenerateBodyContentHtml(xPath, 8);
