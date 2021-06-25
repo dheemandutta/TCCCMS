@@ -2440,6 +2440,7 @@
     <Content Include="Views\Shared\_C2A_Layout.cshtml" />
     <Content Include="Views\ShipKHKVision\CRM.cshtml" />
     <Content Include="Views\ShipKWKExcelsus\CRM.cshtml" />
+    <Content Include="Views\ShipCSKVanguard\CRM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
