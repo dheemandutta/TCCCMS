@@ -1899,13 +1899,55 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. CSVL BWMP (ABS Approved)">
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - ABS approved 24Jul17</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL BWMP - Appendix 7 with ABS endorsement 29Jul18</filename>
+				<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - ABS approved 24Jul17</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL BWMP - Appendix 7 with ABS endorsement 29Jul18</filename>-->     
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - ABS approved 24Jul17</filename>
+				<foldername description="Appendix 1" actionname="" name="Appendix 1">
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BTWS -  Pipping Arrangement  BWTS</filename>       
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BTWS  - Sampling Point Arrangement</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BTWS - Arrangement of BWTS</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP -  General Arrengement Plan</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - Ballast Water and Sea Water Pipping Diagram</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - Capacity and Deadweight Scale</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - Manhole Arrangement for Ballast Tanks</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - Piping System for Ballast Water</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - Schematic Diagram of Sounding Pipe and Air Escape Pipe</filename>
+				</foldername>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - Appendix 2 - Summary Form Of Typical  Ballast</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - Appendix 3-Assessment Criteria for Sequential Method</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - Appendix 4 - Blank Forms</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - Appendix 5 - List of Reference Documents</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant BWMP - Appendix 6 - National or Local Quarantine Requirement</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSVL BWMP - Appendix 7 with ABS endorsement 29Jul18</filename>         
 			</foldername>
 			<foldername description="VOC Management Plan" actionname="VOC" name="6. VOC - CSK Valiant_9782613">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCRC">Revision content on VOC cover (KWEX,CSVA,CSVL,CSEN only)</filename>
+				<!--<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCRC">Revision content on VOC cover (KWEX,CSVA,CSVL,CSEN only)</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant_9782613</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-address update (ABS endorsed 09Dec17)</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-address update (ABS endorsed 09Dec17)</filename>-->
+         <foldername description="1. VOC - CSK Valiant  VOC Management Plan" actionname="" name="1. VOC - CSK Valiant  VOC Management Plan">
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant VOC Capacity Plan</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant VOC General Arrangement</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant VOC Capacity Plan</filename>
+        </foldername>
+        <foldername description="2. Finished Plan  Cargo And Ballast Pipping Diaigram" actionname="" name="2. Finished Plan  Cargo And Ballast Pipping Diaigram">
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant Cargo And Ballast Pipping Diaigram</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant - Finished Plan  Cargo And Ballast Pipping</filename>
+        </foldername>
+        <foldername description="3.Finished Plan  Vent Piping Diagram" actionname="" name="3.Finished Plan  Vent Piping Diagram">
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant  Vent Piping Diagram</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant Finished Plan  Vent Piping</filename>
+        </foldername>
+        <foldername description="4.Finished Plan Tank Cleaning Piping Diagram" actionname="" name="4.Finished Plan Tank Cleaning Piping Diagram">
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant - Finished Plan Tank Cleaning Piping</filename>
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant Tank Cleaning Piping Diagram</filename>
+        </foldername>
+        <foldername description="5.Finished Plan  Vapour Control System" actionname="" name="5.Finished Plan  Vapour Control System">
+          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - CSK Valiant- Finished Plan  Vapour Control System</filename>
+        </foldername>
+      
+      
+        
+        
 			</foldername>
 			<foldername description="MSMP and LMP" actionname="MSMPLMP" name="13. MSMP_LMP">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename> -->
@@ -2308,7 +2350,12 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">21. CSVA ETA 24Oct16</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. CSK VALIANT_VGP</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be chnaged CSK Valiant NOI 2013 14Jun17</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->      
+       <foldername description="California Response Manual" actionname="CRM" name="29. CSK VALIANT - California Response Manual">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
+      </foldername>     
 		</ship>
 		
 		<ship shipnumber="5" name="CSK Endeavour" controllername="ShipCSKEndeavour">
