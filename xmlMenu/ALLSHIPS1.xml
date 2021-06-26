@@ -3638,7 +3638,7 @@
 			</foldername>
 			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. KHMA BWMP (ABS Approved)">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Majesty BWMP - ABS approved 07May19</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA BWMP - Appendix 6 with ABS endorsement 23Oct19	</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHMA BWMP - Appendix 6 with ABS endorsement 23Oct19</filename>
 			</foldername>
 			<foldername description="VOC Management Plan" actionname="VOC" name="6. VOC - KHK Majesty 9830977">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KHK Majesty_9830977</filename>
@@ -4072,7 +4072,12 @@
 			<!-- </foldername> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. KHK MAJESTY_VGP</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KHK Majesty NOI 2013 12Apr19</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
+      <foldername description="California Response Manual" actionname="CRM" name="29. KHK MAJESTY - California Response Manual">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
+      </foldername>  
 		</ship>
 	</ships>
 </xml>

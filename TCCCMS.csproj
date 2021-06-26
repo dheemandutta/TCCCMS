@@ -2444,6 +2444,7 @@
     <Content Include="Views\ShipCSKValiant\CRM.cshtml" />
     <Content Include="Views\ShipCSKEndeavour\CRM.cshtml" />
     <Content Include="Views\ShipKHKEmpress\CRM.cshtml" />
+    <Content Include="Views\ShipKHKMajesty\CRM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
