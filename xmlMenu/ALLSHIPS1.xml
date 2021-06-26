@@ -3056,7 +3056,7 @@
 				<!-- </foldername> -->
 			</foldername>
 			<foldername description="Ballast Water Management Plan" actionname="BWMP" name="5. KHEM BWMP (ABS Approved)">
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHEM BWMP - Appendix 6 with ABS endorsement 09Mar19</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHEM BWMP - ABS approved 20Feb19</filename>
 				
 			</foldername>  
 			<foldername description="VOC Management Plan" actionname="VOC" name="6. VOC - KHK Empress 9830965">
@@ -3514,7 +3514,12 @@
 			</foldername>
 		    <!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. KHK EMPRESS_VGP Rev01</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KHK Empress NOI 2013 14Jul19</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->    
+       <foldername description="California Response Manual" actionname="CRM" name="29. KHK EMPRESS - California Response Manual">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
+      </foldername>
 		</ship>
 		
 		<ship shipnumber="7" name="KHK Majesty" controllername="ShipKHKMajesty">
