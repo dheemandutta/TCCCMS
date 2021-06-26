@@ -74,9 +74,10 @@ namespace TCCCMS.Controllers
             byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
             return File(fileBytes, manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
         }
-       
+
         public ActionResult SOPEP()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -85,6 +86,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult STS()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -93,6 +95,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult BWMP()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -101,6 +104,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult VOC()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -109,6 +113,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult MSMPLMP()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -117,6 +122,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult PRPW()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -125,6 +131,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult BMP()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -133,6 +140,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult CWBMP()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -141,6 +149,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult GMP()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -149,6 +158,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult ETA()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -157,6 +167,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult SEEMP1()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
@@ -165,6 +176,7 @@ namespace TCCCMS.Controllers
         }
         public ActionResult SEEMP2()
         {
+            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);

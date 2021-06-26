@@ -721,7 +721,8 @@ function LoadTab() {
     
     if (userType === 1) {
         selected_tab = 0;
-        $('#liTab2').prop('hidden', true);
+        //$('#liTab2').prop('hidden', true);
+        $('#liTab2').prop('hidden', false);
     }
     else if (userType === 2) {
         selected_tab = 1;
