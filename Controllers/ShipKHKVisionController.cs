@@ -258,6 +258,15 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        public ActionResult CRM()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "CRM");
+            return View(file);
+        }
+
         #region All (22+24+33+17+39)=()
 
         #region 3. SOPEP (1+21)=(22)

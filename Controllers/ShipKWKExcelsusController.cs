@@ -22,7 +22,6 @@ namespace TCCCMS.Controllers
         // GET: ShipKWKExcelsus
         public ActionResult Index()
         {
-            Session["IsSearched"] = "0";
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             //string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS.xml");
@@ -196,6 +195,14 @@ namespace TCCCMS.Controllers
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "SEEMP2");
+            return View(file);
+        }
+        public ActionResult CRM()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "CRM");
             return View(file);
         }
     }

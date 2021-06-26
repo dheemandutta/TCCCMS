@@ -182,5 +182,13 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "SEEMP2");
             return View(file);
         }
+        public ActionResult CRM()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "CRM");
+            return View(file);
+        }
     }
 }

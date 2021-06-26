@@ -2439,6 +2439,13 @@
     <Content Include="Views\CompanyPolicyManual\RevisiedPages.cshtml" />
     <Content Include="Views\Ticket\ViewSupportTicket.cshtml" />
     <Content Include="Views\Shared\_C2A_Layout.cshtml" />
+    <Content Include="Views\ShipKHKVision\CRM.cshtml" />
+    <Content Include="Views\ShipKWKExcelsus\CRM.cshtml" />
+    <Content Include="Views\ShipCSKVanguard\CRM.cshtml" />
+    <Content Include="Views\ShipCSKValiant\CRM.cshtml" />
+    <Content Include="Views\ShipCSKEndeavour\CRM.cshtml" />
+    <Content Include="Views\ShipKHKEmpress\CRM.cshtml" />
+    <Content Include="Views\ShipKHKMajesty\CRM.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
