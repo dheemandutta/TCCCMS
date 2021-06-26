@@ -10,13 +10,16 @@ using System.IO;
 using System.Xml;
 using System.Text;
 using System.Web.Routing;
+using System.Web.Caching;
+
+
 
 namespace TCCCMS.Controllers
 {
     public class HomeController : Controller
     {
-
-
+        private Cache _cache= new Cache();
+       
         public ActionResult Test2()
         {        
             return View();
@@ -89,6 +92,15 @@ namespace TCCCMS.Controllers
                     return Json(0, JsonRequestBehavior.AllowGet);
                 }
 
+
+                ////----------------------------------------------------------------------------------
+                ///
+                
+                //_cache.Insert("VolMenuData", Server.MapPath("~/xmlMenu/" + "ALLVOLUMES.xml"));
+                //_cache.Insert("ShipMenuData", Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml"));
+
+                
+                ///---------------------------------------------------------------------------------
 
 
 
@@ -169,7 +181,24 @@ namespace TCCCMS.Controllers
             
             string xPath = Server.MapPath( "~/xmlMenu/" + "ALLVOLUMES.xml");
             XmlDocument xDoc = new XmlDocument();
+            //if (_cache.Get("VolMenuData") != null)
+            //{
+            //    xDoc.Load(xPath);
+            //    //_cache.Insert("VolMenuData", xPath);
+            //    _cache.Insert("VolMenuData", xDoc, new CacheDependency(xPath));
+            //}
+            //else
+            //{
+            //    xDoc = (XmlDocument)_cache.Get("VolMenuData");
+            //}
+
+            //if ((XmlDocument)Cache["VolMenuData"])
+            //{
+
+            //}
+
             xDoc.Load(xPath);
+
             StringBuilder sb = new StringBuilder();
             foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
             {
@@ -316,6 +345,17 @@ namespace TCCCMS.Controllers
             string xPath = Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml");
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(xPath);
+
+            //if (_cache.Get("ShipMenuData") == null)
+            //{
+            //    xDoc.Load(xPath);
+            //    _cache.Insert("ShipMenuData", xDoc, new CacheDependency(xPath));
+            //}
+            //else
+            //{
+            //    xDoc = (XmlDocument)_cache.Get("ShipMenuData");
+            //}
+
             StringBuilder sb = new StringBuilder();
             foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
             {
@@ -414,5 +454,41 @@ namespace TCCCMS.Controllers
         //    return Json(recordaffected, JsonRequestBehavior.AllowGet);
 
         //}
+    }
+
+    public static class CacheHandler
+    {
+        public static void Add<T>(T objInfo, string key)
+        {
+            HttpContext.Current.Cache.Insert(key, objInfo, null, DateTime.Now.AddMinutes(1440), System.Web.Caching.Cache.NoSlidingExpiration);
+        }
+        public static void Clear(string key)
+        {
+            HttpContext.Current.Cache.Remove(key);
+        }
+        public static bool Exists(string key)
+        {
+            return HttpContext.Current.Cache[key] != null;
+        }
+        public static bool Get<T>(string key, out T value)
+        {
+            try
+            {
+                if (!Exists(key))
+                {
+                    value =
+                        default(T);
+                    return false;
+                }
+                value = (T)HttpContext.Current.Cache[key];
+            }
+            catch
+            {
+                value =
+                    default(T);
+                return false;
+            }
+            return true;
+        }
     }
 }

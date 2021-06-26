@@ -145,6 +145,7 @@
     <Compile Include="Controllers\RevisionHistoryController.cs" />
     <Compile Include="Controllers\RoleGroupController.cs" />
     <Compile Include="Controllers\RoleMasterController.cs" />
+    <Compile Include="Controllers\SearchDataModel.cs" />
     <Compile Include="Controllers\SendEmail.cs" />
     <Compile Include="Controllers\ShipboardOperattionController.cs" />
     <Compile Include="Controllers\ShipController.cs" />
