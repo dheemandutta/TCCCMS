@@ -19,5 +19,22 @@ namespace TCCCMS
         {
             return Regex.Replace(str, "[a-z][A-Z]", m => m.Value[0] + " " + char.ToLower(m.Value[1]));
         }
+
+        public static string CheckStringLenghtAndGetFirstFewCharecters(this string str, int len)
+        {
+            string text = str;
+
+            if (text.Length > len+4)
+            {
+                text = !String.IsNullOrWhiteSpace(text) && text.Length >= len
+                                ? text.Substring(0, len)
+                                : text;
+                text = text + " ...";
+            }
+            else
+                text = text.Substring(0);
+
+            return text;
+        }
     }
 }

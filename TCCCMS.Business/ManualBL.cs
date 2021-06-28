@@ -129,7 +129,7 @@ namespace TCCCMS.Business
                                     }
                                     else
                                     {
-                                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
+                                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >");//&fileName added on28th jun 2021
                                     }
                                     
                                     sb.Append(filename + "</a>");
@@ -263,7 +263,7 @@ namespace TCCCMS.Business
                         }
                         else
                         {
-                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
+                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >"); //&fileName added on28th jun 2021
                         }
                         sb.Append(filename + "</a>");
                         sb.Append("</br>");
@@ -576,6 +576,7 @@ namespace TCCCMS.Business
         }
 
         #endregion
+
 
         public Dictionary<string, string> GetMimeTypes()
         {

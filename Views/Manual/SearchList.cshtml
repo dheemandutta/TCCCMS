@@ -39,10 +39,11 @@
                     @*<a href='@(item.FilePath + "/"+ item.Name )'  >
                             <h5>@Html.DisplayFor(modelItem => item.Name)</h5>
                         </a>*@
-                    @*<a href="@Url.Action(item.ActionName,item.ControllerName)">
+                                    @*<a href="@Url.Action(item.ActionName,item.ControllerName)">
                             <h5>@Html.DisplayFor(modelItem => item.ManualFileName)</h5>
                         </a>*@
-                    <a href="@Url.Action("Pages", item.ControllerName, new { @actionName = item.ActionName })">
+                    @*var fname =item.ManualFileName.Split('.')[0];*@
+                    <a href="@Url.Action("Pages", item.ControllerName, new { @actionName = item.ActionName, @fileName= item.ManualFileName.Split('.')[0]})">
                         <h5>@Html.DisplayFor(modelItem => item.ManualFileName)</h5>
                     </a>
                 </div>
