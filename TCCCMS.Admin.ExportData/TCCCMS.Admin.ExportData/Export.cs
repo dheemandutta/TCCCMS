@@ -279,7 +279,6 @@ namespace TCCCMS.Admin.ExportData
 
                 //delete xml files 
                 string[] filePaths = Directory.GetFiles(path + "\\");
-
                 foreach (string filePath in filePaths)
                     File.Delete(filePath);
 
@@ -457,6 +456,8 @@ namespace TCCCMS.Admin.ExportData
                     TccLog.UpdateLog("Zip process started for Ship_" + shipId, LogMessageType.Info, "Admin Export");
                     CreateZip();
                     TccLog.UpdateLog("Zip process completed for Ship_" + shipId, LogMessageType.Info, "Admin Export");
+
+                    //UpdateExportedData();
                 }
 
                
@@ -825,6 +826,209 @@ namespace TCCCMS.Admin.ExportData
             }
 
             return ds;
+        }
+
+
+        public static void UpdateExportedData()
+        {
+            logger.Info("Import Process Started. - {0}", DateTime.Now.ToString());
+            TccLog.UpdateLog("Update Export Data Process Started", LogMessageType.Info, "UpdateExportedData");
+            try
+            {
+                UpdateTicket();
+                TccLog.UpdateLog("Update Ticket IsExport Succesfully", LogMessageType.Info, "Export-UpdateTicket");
+                UpdateRevisionHeader();
+                TccLog.UpdateLog("Update RevisionHeader IsExport Succesfully", LogMessageType.Info, "Export-UpdateRevisionHeader");
+                UpdateRevisionDetails();
+                TccLog.UpdateLog("Update RevisionDetails IsExport Succesfully", LogMessageType.Info, "Export-UpdateRevisionDetails");
+                UpdateFillupFormsUploaded();
+                TccLog.UpdateLog("Update FillupFormsUploaded IsExport Succesfully", LogMessageType.Info, "Export-UpdateFillupFormsUploaded");
+                UpdateFillupFormApproverMapper();
+                TccLog.UpdateLog("Update FillupFormApproverMapper IsExport Succesfully", LogMessageType.Info, "Export-UpdateFillupFormApproverMapper");
+
+                // delete all xml files
+                string[] xmlfilePaths = Directory.GetFiles(path + "\\");
+                foreach (string filePath in xmlfilePaths)
+                {
+                    File.Delete(filePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-ExportData");
+                logger.Error("Error in ExportData. - {0}", ex.Message + " :" + ex.InnerException);
+                logger.Info("Export process terminated unsuccessfully in ExportData.");
+                //Environment.Exit(0);
+            }
+        }
+        public static void UpdateTicket()
+        {
+            try
+            {
+                // Here your xml file
+                string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
+
+                DataSet dataSet = new DataSet();
+                dataSet.ReadXmlSchema(xmlFile);
+                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UpdateTicketExportInShip", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
+
+                    string uploadedFileName = string.Empty;
+                    string relativePath = string.Empty;
+                    string filePath = string.Empty;
+
+                    cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
+                   
+                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-UpdateTicket");
+                logger.Error(ex, "Ticket Import");
+                //throw;
+            }
+        }
+
+        public static void UpdateRevisionHeader()
+        {
+            try
+            {
+                // Here your xml file
+                string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlRevisionHeader"].ToString();
+
+                DataSet dataSet = new DataSet();
+                dataSet.ReadXmlSchema(xmlFile);
+                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UpdateRevisionHeaderExportInAdmin", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["Id"].ToString()));
+                    
+                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-UpdateRevisionHeader");
+                logger.Error(ex, "Crew Import");
+                //throw;
+            }
+        }
+
+        public static void UpdateRevisionDetails()
+        {
+            try
+            {
+                // Here your xml file
+                string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlRevisionHistory"].ToString();
+
+                DataSet dataSet = new DataSet();
+                dataSet.ReadXmlSchema(xmlFile);
+                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UpdateRevisionHistoryExportInAdmin", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    cmd.Parameters.AddWithValue("@RevisionHistoryId", int.Parse(row["RevisionHistoryId"].ToString()));
+                    cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["HeaderId"].ToString()));
+
+                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Export-UpdateRevisionDetails");
+                logger.Error(ex, "Admin Export-UpdateRevisionDetails");
+                //throw;
+            }
+        }
+
+        public static void UpdateFillupFormsUploaded()
+        {
+            try
+            {
+                // Here your xml file
+                string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
+                DataSet dataSet = new DataSet();
+                dataSet.ReadXmlSchema(xmlFile);
+                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UpdateFormsUploadExportInShip", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
+                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Export-UpdateFillupFormsUploaded");
+                logger.Error(ex, "Admin Export-UpdateFillupFormsUploaded");
+                //throw;
+            }
+        }
+
+        public static void UpdateFillupFormApproverMapper()
+        {
+            try
+            {
+                // Here your xml file
+                string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString();
+
+                DataSet dataSet = new DataSet();
+                dataSet.ReadXmlSchema(xmlFile);
+                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UpdateFormsUploadApproverMappingExportInShip", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                foreach (DataRow row in dataSet.Tables[0].Rows)
+                {
+                    cmd.Parameters.AddWithValue("@FormsName", row["UploadedFormName"].ToString());
+                    cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
+
+                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Export-UpdateFillupFormApproverMapper");
+                logger.Error(ex, "Admin Export-UpdateFillupFormApproverMapper");
+                //throw;
+            }
         }
     }
 

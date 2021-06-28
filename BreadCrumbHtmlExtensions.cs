@@ -69,27 +69,51 @@ namespace TCCCMS
             ///------------------------------------------------------------------------------
             //StringBuilder breadcrumb2 = new StringBuilder("<div class='steps_item'><span class='steps_content'>").Append(helper.ActionLink("Home", "Index", "Home").ToHtmlString()).Append("</span></div>");
             StringBuilder breadcrumb2 = new StringBuilder();
+
+            #region Home Part..
             breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
             if(UserRole == "OfficeUser" || UserRole == "ShipUser")
             {
                 breadcrumb2.Append(helper.ActionLink("Home", "UserDashboard", "Dashboard").ToHtmlString());
                 breadcrumb2.Append("</span></div>");
+
+                if (UserRole == "OfficeUser")
+                {
+                    breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
+                    breadcrumb2.Append(helper.ActionLink("Office",
+                                              "UserDashboard",
+                                              "Dashboard").ToHtmlString());
+                    breadcrumb2.Append("</span></div>");
+                }
+                else if (UserRole == "ShipUser")
+                {
+                    breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
+                    breadcrumb2.Append(helper.ActionLink("Ship",
+                                              "UserDashboard",
+                                              "Dashboard").ToHtmlString());
+                    breadcrumb2.Append("</span></div>");
+                }
+
             }
             else
             {
                 breadcrumb2.Append(helper.ActionLink("Home", "AdminDashboard", "Dashboard").ToHtmlString());
                 breadcrumb2.Append("</span></div>");
             }
-            
 
-           
-            breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
+            #endregion
+
+            #region Controller Part..
+
+           // breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
 
             string controller = helper.ViewContext.RouteData.Values["controller"].ToString();
             if (controller == "Dashboard")
             {
-                if(UserRole == "OfficeUser" || UserRole == "ShipUser")
+                //breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
+                if (UserRole == "OfficeUser" || UserRole == "ShipUser")
                 {
+                    //breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
                     //--- Titleize() makes all characters to lower case of a single word except First Chracter
                     //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
                     //                           "UserDashboard",
@@ -107,31 +131,32 @@ namespace TCCCMS
                     //                          "UserDashboard",
                     //                          helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
                     //}
-                    
+
                     //--------------------------Commented on 19th Jun 2021---------------------------------------------------
                     //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
                     //                          "UserDashboard",
                     //                          helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
 
 
-                    //----------------------Changed on 19th Jun 2021--------------------------------------------------------
-                    if (UserRole == "OfficeUser")
-                    {
-                        breadcrumb2.Append(helper.ActionLink("Office",
-                                                  "UserDashboard",
-                                                  helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
-                    }
-                    else if (UserRole == "ShipUser")
-                    {
-                        breadcrumb2.Append(helper.ActionLink("Ship",
-                                                  "UserDashboard",
-                                                  helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
-                    }
+                    //----------------------Changed on 19th Jun 2021--------------------------commented on 28th jun------------------------------
+                    //if (UserRole == "OfficeUser")
+                    //{
+                    //    breadcrumb2.Append(helper.ActionLink("Office",
+                    //                              "UserDashboard",
+                    //                              helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+                    //}
+                    //else if (UserRole == "ShipUser")
+                    //{
+                    //    breadcrumb2.Append(helper.ActionLink("Ship",
+                    //                              "UserDashboard",
+                    //                              helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+                    //}
 
-
+                    //breadcrumb2.Append("</span></div>");
                 }
                 else
                 {
+                    breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
                     //--- Titleize() makes all characters to lower case of a single word except First Chracter
                     //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
                     //                                               "AdminDashboard",
@@ -170,12 +195,16 @@ namespace TCCCMS
                                                   "AdminDashboard",
                                                   helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
                     }
-
+                    
+                    breadcrumb2.Append("</span></div>");
                 }
-                
+
+                //breadcrumb2.Append("</span></div>");
             }
             else
             {
+                breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
+
                 //--- Titleize() makes all characters to lower case of a single word except First Chracter
                 //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString().Titleize(),
                 //                               "Index",
@@ -236,24 +265,35 @@ namespace TCCCMS
                 //                              "Ship").ToHtmlString());
                 //-------------test end
 
+                breadcrumb2.Append("</span></div>");
             }
 
 
-            breadcrumb2.Append("</span></div>");
+            //breadcrumb2.Append("</span></div>");
 
+            #endregion
+
+            #region Action Part..
             if (helper.ViewContext.RouteData.Values["action"].ToString() != "Index")
             {
                 if(helper.ViewContext.RouteData.Values["action"].ToString() == "Pages")
                 {
+                    
+
                     //string manualFileAction = HttpContext.Current.Session["ManualFileActionName"].ToString();
                     breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
                     string s = helper.ViewContext.RouteData.Values["action"].ToString();
+                    string fAction = helper.ViewContext.HttpContext.Request.QueryString["actionName"];
+                    string fName = helper.ViewContext.HttpContext.Request.QueryString["fileName"];
                     //s = s + "?actionName=" + manualFileAction;
                     //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString().Titleize(),
                     //                                    s,
                     //                                    //helper.ViewContext.RouteData.Values["action"].ToString() + "?actionName=" + manualFileAction,
                     //                                    helper.ViewContext.RouteData.Values["controller"].ToString()));
-                    breadcrumb2.Append(helper.ViewContext.RouteData.Values["action"].ToString());
+                    
+                    //breadcrumb2.Append(helper.ViewContext.RouteData.Values["action"].ToString());
+
+                    breadcrumb2.Append(fName.CheckStringLenghtAndGetFirstFewCharecters(30));
 
                     breadcrumb2.Append("</span></div>");
                 }
@@ -270,6 +310,8 @@ namespace TCCCMS
                 }
                 
             }
+
+            #endregion
 
             //return breadcrumb.Append("</ol>").ToString();
             return breadcrumb2.ToString();
