@@ -278,9 +278,9 @@ namespace TCCCMS.Admin.ExportData
                 }
 
                 //delete xml files 
-                string[] filePaths = Directory.GetFiles(path + "\\");
-                foreach (string filePath in filePaths)
-                    File.Delete(filePath);
+                //string[] filePaths = Directory.GetFiles(path + "\\");
+                //foreach (string filePath in filePaths)
+                //    File.Delete(filePath);
 
 
             }
@@ -457,7 +457,8 @@ namespace TCCCMS.Admin.ExportData
                     CreateZip();
                     TccLog.UpdateLog("Zip process completed for Ship_" + shipId, LogMessageType.Info, "Admin Export");
 
-                    //UpdateExportedData();
+                    UpdateExportedData(shipId);
+                    TccLog.UpdateLog("Update Exported Data Completed --Ship_"+ shipId, LogMessageType.Info, "Admin Export");
                 }
 
                
@@ -829,22 +830,22 @@ namespace TCCCMS.Admin.ExportData
         }
 
 
-        public static void UpdateExportedData()
+        public static void UpdateExportedData(int aShipId)
         {
             logger.Info("Import Process Started. - {0}", DateTime.Now.ToString());
             TccLog.UpdateLog("Update Export Data Process Started", LogMessageType.Info, "UpdateExportedData");
             try
             {
                 UpdateTicket();
-                TccLog.UpdateLog("Update Ticket IsExport Succesfully", LogMessageType.Info, "Export-UpdateTicket");
-                UpdateRevisionHeader();
-                TccLog.UpdateLog("Update RevisionHeader IsExport Succesfully", LogMessageType.Info, "Export-UpdateRevisionHeader");
-                UpdateRevisionDetails();
-                TccLog.UpdateLog("Update RevisionDetails IsExport Succesfully", LogMessageType.Info, "Export-UpdateRevisionDetails");
+                TccLog.UpdateLog("Update Ticket IsExport Succesfully", LogMessageType.Info, "Admin Export-UpdateTicket");
+                UpdateRevisionHeader(aShipId);
+                TccLog.UpdateLog("Update RevisionHeader IsExport Succesfully", LogMessageType.Info, "Admin Export-UpdateRevisionHeader");
+                UpdateRevisionDetails(aShipId);
+                TccLog.UpdateLog("Update RevisionDetails IsExport Succesfully", LogMessageType.Info, "Admin Export-UpdateRevisionDetails");
                 UpdateFillupFormsUploaded();
-                TccLog.UpdateLog("Update FillupFormsUploaded IsExport Succesfully", LogMessageType.Info, "Export-UpdateFillupFormsUploaded");
+                TccLog.UpdateLog("Update FillupFormsUploaded IsExport Succesfully", LogMessageType.Info, "Admin Export-UpdateFillupFormsUploaded");
                 UpdateFillupFormApproverMapper();
-                TccLog.UpdateLog("Update FillupFormApproverMapper IsExport Succesfully", LogMessageType.Info, "Export-UpdateFillupFormApproverMapper");
+                TccLog.UpdateLog("Update FillupFormApproverMapper IsExport Succesfully", LogMessageType.Info, "Admin Export-UpdateFillupFormApproverMapper");
 
                 // delete all xml files
                 string[] xmlfilePaths = Directory.GetFiles(path + "\\");
@@ -855,7 +856,7 @@ namespace TCCCMS.Admin.ExportData
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-ExportData");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Export-UpdateFillupFormApproverMapper");
                 logger.Error("Error in ExportData. - {0}", ex.Message + " :" + ex.InnerException);
                 logger.Info("Export process terminated unsuccessfully in ExportData.");
                 //Environment.Exit(0);
@@ -900,7 +901,7 @@ namespace TCCCMS.Admin.ExportData
             }
         }
 
-        public static void UpdateRevisionHeader()
+        public static void UpdateRevisionHeader(int aShipId)
         {
             try
             {
@@ -919,7 +920,8 @@ namespace TCCCMS.Admin.ExportData
                 foreach (DataRow row in dataSet.Tables[0].Rows)
                 {
                     cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["Id"].ToString()));
-                    
+                    cmd.Parameters.AddWithValue("@ShipId", aShipId);
+
                     cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
                 }
@@ -932,7 +934,7 @@ namespace TCCCMS.Admin.ExportData
             }
         }
 
-        public static void UpdateRevisionDetails()
+        public static void UpdateRevisionDetails(int aShipId)
         {
             try
             {
@@ -952,6 +954,7 @@ namespace TCCCMS.Admin.ExportData
                 {
                     cmd.Parameters.AddWithValue("@RevisionHistoryId", int.Parse(row["RevisionHistoryId"].ToString()));
                     cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["HeaderId"].ToString()));
+                    cmd.Parameters.AddWithValue("@ShipId", aShipId);
 
                     cmd.ExecuteNonQuery();
                     cmd.Parameters.Clear();
