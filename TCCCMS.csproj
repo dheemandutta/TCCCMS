@@ -656,6 +656,7 @@
     <Content Include="images\3.png" />
     <Content Include="images\adminf.png" />
     <Content Include="images\back.png" />
+    <Content Include="images\bell.png" />
     <Content Include="images\board.png" />
     <Content Include="images\Collapsed - big.png" />
     <Content Include="images\Collapsed.png" />
@@ -733,6 +734,7 @@
     <Content Include="images\logo2 - Copy.png" />
     <Content Include="images\logo2.png" />
     <Content Include="images\PrintLogo2.jpg" />
+    <Content Include="images\questionmark.png" />
     <Content Include="images\search_icon.png" />
     <Content Include="images\ship.jpg" />
     <Content Include="images\ship.png" />
