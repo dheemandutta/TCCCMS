@@ -49,6 +49,17 @@
                     <ul class="topright">
                         <li>
                             <div class="dropdown admin">
+                                <button class="button log"><span><img src="~/images/bell.png" style="width:19px;" /></span></button>
+                                <div class="dropdown-content">
+                                    @*<h3>@Session["UserCode"].ToString() <span> @Session["Role"].ToString()</span></h3>
+                    <a href="@Url.Action("Login", "Home")">Log Off</a>*@
+                                </div>
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <div class="dropdown admin">
                                 <button class="button log"><span><img src="~/images/user.png" style="width:19px;" /></span></button>
                                 <div class="dropdown-content">
                                     <h3>@Session["UserCode"].ToString() <span> @Session["Role"].ToString()</span></h3>
@@ -56,7 +67,7 @@
                                 </div>
                             </div>
 
-                            </li>
+                        </li>
                         <li>
 
                             @if (Session["Role"].ToString() == "SupportUser")
@@ -66,7 +77,7 @@
                                 </div>
                             }
                         </li>
-                        </ul>
+                    </ul>
                 </div>
             </div>
         </div>
