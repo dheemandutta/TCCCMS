@@ -653,6 +653,7 @@ namespace TCCCMS.Admin.ExportData
             //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
             SqlCommand cmd = new SqlCommand("stpExportRevisionHeaderFromAdmin", con);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ShipId", shipId);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(ds);
@@ -671,6 +672,7 @@ namespace TCCCMS.Admin.ExportData
             //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
             SqlCommand cmd = new SqlCommand("stpExportRevisionHistoryFromAdmin", con);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@ShipId", shipId);
             DataSet ds = new DataSet();
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             da.Fill(ds);
