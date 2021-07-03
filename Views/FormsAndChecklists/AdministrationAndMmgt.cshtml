@@ -25,10 +25,17 @@
     <div class="page_padding">
         <div class="">
             <h2 class="ta_title">Administration And Management</h2>
+
+
+            <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:130px;" href='@Url.Action("UploadForm", "UserMaster")'><span>Waiting Approval</span></a>
+            <a type="button" class="btn btn-info btn-sm" style="background-color: #6AA84F; width: 130px;" href='@Url.Action("UploadForm", "UserMaster")'><span>Approved</span></a>
+            <div>&nbsp;</div>
+
+
             <div style="margin:0 auto" class="tablecontainer">
                 @*<p align="right">
-                        <a href="~/RevisionHistory/Index"> Revision History </a>
-                    </p>*@
+                <a href="~/RevisionHistory/Index"> Revision History </a>
+            </p>*@
                 <input type="hidden" id="hdnrole" />
                 <table id="DownloadableFromsTable" class="display" cellspacing="0">
                     <thead>
@@ -38,7 +45,7 @@
                             <th>Forms Upload</th>
                             <th>Version</th>
                             @*<th>Edit</th>
-                                <th>Delete</th>*@
+                        <th>Delete</th>*@
                         </tr>
                     </thead>
                 </table>
