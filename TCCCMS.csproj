@@ -131,6 +131,7 @@
     <Compile Include="Controllers\FormsAndChecklistsController.cs" />
     <Compile Include="Controllers\FormsController.cs" />
     <Compile Include="Controllers\GroupMasterController.cs" />
+    <Compile Include="Controllers\HelpController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
@@ -2448,6 +2449,7 @@
     <Content Include="Views\ShipCSKEndeavour\CRM.cshtml" />
     <Content Include="Views\ShipKHKEmpress\CRM.cshtml" />
     <Content Include="Views\ShipKHKMajesty\CRM.cshtml" />
+    <Content Include="Views\Help\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
