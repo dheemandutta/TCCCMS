@@ -98,6 +98,7 @@ namespace TCCCMS.Controllers
                 foreach (XmlNode ship in node)
                 {
                     Volume vol          = new Volume();
+                    //string filename     = ship.InnerText.ToString();
                     string sName        = ship.Attributes["name"].Value.ToString();
                     string ctrlName     = ship.Attributes["controllername"].Value.ToString();
                     string partName     = sName.Split(' ').Last();
@@ -121,9 +122,9 @@ namespace TCCCMS.Controllers
                             
                             //----------------Added on 19th jun 2021-----------------------------------------------------------------------------
                             if(sNo == "1") //this if/else condition was applied due to difference in actionname in xml if resolved in xml then no need below condition
-                                sb.Append("<li class='dropmenuright' ><a href='/"+ ctrlName + "/Pages?actionName=STSP2SP'> " + sName + "</a>");
+                                sb.Append("<li class='dropmenuright' ><a href='/"+ ctrlName + "/Pages?actionName=STSP2SP&fileName=Ship\'s Particulars' > " + sName + "</a>");
                             else
-                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP'> " + sName + "</a>");
+                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP&fileName=Ship\'s Particulars' > " + sName + "</a>");
                             sb.Append("</li>");///----End--------li1
                         }
 
@@ -139,9 +140,9 @@ namespace TCCCMS.Controllers
 
                         //----------------Added on 19th jun 2021-----------------------------------------------------------------------------
                         if (sNo == "1") //this if/else condition was applied due to difference in actionname in xml if resolved in xml then no need below condition
-                            sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP'> " + sName + "</a>");
+                            sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP&fileName=Ship\'s Particulars' > " + sName + "</a>");
                         else
-                            sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP'> " + sName + "</a>");
+                            sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP&fileName=Ship\'s Particulars' > " + sName + "</a>");
 
                         #region Line Commented on 23rd Feb 2021
                         //sb.Append("\n");
@@ -252,9 +253,9 @@ namespace TCCCMS.Controllers
                             {
                                 //----------------Added on 19th jun 2021-----------------------------------------------------------------------------
                                 if (sNo == "1") //this if/else condition was applied due to difference in actionname in xml if resolved in xml then no need below condition
-                                    sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP'> " + sName + "</a>");
+                                    sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP&fileName=Ship Particulars'> " + sName + "</a>");
                                 else
-                                    sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP'> " + sName + "</a>");
+                                    sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP&fileName=Ship Particulars'> " + sName + "</a>");
                                 sb.Append("</li>");///----End--------li1
                             }
 
@@ -263,9 +264,9 @@ namespace TCCCMS.Controllers
                         {
                             //----------------Added on 19th jun 2021-----------------------------------------------------------------------------
                             if (sNo == "1") //this if/else condition was applied due to difference in actionname in xml if resolved in xml then no need below condition
-                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP'> " + sName + "</a>");
+                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSP2SP&fileName=Ship Particulars'> " + sName + "</a>");
                             else
-                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP'> " + sName + "</a>");
+                                sb.Append("<li class='dropmenuright' ><a href='/" + ctrlName + "/Pages?actionName=STSSP&fileName=Ship Particulars'> " + sName + "</a>");
 
                             sb.Append("</li>");///----End--------li1
                         }
