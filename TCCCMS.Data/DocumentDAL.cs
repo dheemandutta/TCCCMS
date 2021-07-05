@@ -410,6 +410,8 @@ namespace TCCCMS.Data
                         approvedForm.FilledUpFormName   = Convert.ToString(dr["FormsName"]);
                         approvedForm.IsApproved         = Convert.ToInt32(dr["IsApprove"]);
                         approvedForm.ApprovedOn         = Convert.ToString(dr["ApprovedOn"]);
+                        approvedForm.UploadedUserId     = Convert.ToInt32(dr["CreatedBy"]);// added on 3rd Jul 2021 2BK
+                        approvedForm.UploadedUser       = Convert.ToString(dr["RankName"]) + "("+  Convert.ToString(dr["UserName"])+")";// added on 3rd Jul 2021 2BK
 
                         var approverRows = ds.Tables[1].Rows
                              .Cast<DataRow>()

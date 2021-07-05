@@ -103,11 +103,28 @@ namespace TCCCMS.Controllers
             return Json("", JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult FillupFormList()
+        /// <summary>
+        /// Modified on 3rd Jul 2021 @BK 
+        /// add argument 'qr'
+        /// </summary>
+        /// <param name="qr"></param>
+        /// <returns></returns>
+        public ActionResult FillupFormList(string qr = "2")
         {
             ApprovedFilledupFormAndApproverViewModel affaVM = new ApprovedFilledupFormAndApproverViewModel();
             DocumentBL documentBL = new DocumentBL();
-            affaVM = documentBL.GetApprovedFilledUpForms(Convert.ToInt32(Session["UserId"].ToString()));
+            affaVM = documentBL.GetApprovedFilledUpForms(Convert.ToInt32(Session["UserId"].ToString())); // UserId not in use from 3rd Jul 2021
+            
+            if(Convert.ToInt32(qr) != 2)// added on 03/07/2021 @BK
+            {
+                var res = affaVM.ApprovedFormList.Where(af => af.IsApproved == Convert.ToInt32(qr)).ToList();
+                affaVM.ApprovedFormList = res;
+            }
+            //else if(Convert.ToInt32(qr) == 1)
+            //{
+            //    var res = affaVM.ApprovedFormList.Where(af => af.IsApproved = 1);
+            //}
+            
             return View(affaVM);
         }
 

@@ -175,7 +175,29 @@ namespace TCCCMS.Controllers
             byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
             return File(fileBytes,manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
         }
-       
+        /// <summary>
+        /// added on 3rd Jul 2021 @BK
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public FileResult DownloadFilledupForm(string fileName)
+        {
+            ManualBL manualBl = new ManualBL();
+            string path = Server.MapPath("~/UploadFilledUpFormForApproval/");
+
+            //var filePath = Directory.GetFiles(path, "*.*")
+            //                        .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
+            //                                || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
+
+            var filePath = Directory.GetFiles(path, "*.*")
+                                    .Where(s => s.Contains(fileName)).First();
+
+            var ext = Path.GetExtension(filePath).ToLowerInvariant();
+
+            byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
+            return File(fileBytes, manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
+        }
+
         public ActionResult AdministrationAndMmgt()
         {
             return View();

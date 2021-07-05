@@ -46,15 +46,12 @@
                             <tbody>
                                 @foreach (var item in Model.ApprovedFormList)
                                 {
+                                    
                                     <tr>
                                         <td>@item.FilledUpFormName</td>
                                         @*<td style="border-left:solid 1px; border-right:solid 1px;"></td>*@
-                                        <td>
-                                            @if (item.IsApproved == 1)
-                                            {
-                                                @item.ApprovedOn
-                                            }
-                                        </td>
+                                        <td>@item.UploadedUser</td>
+
                                         <td>
                                             @if (item.IsApproved == 1)
                                             {
@@ -62,7 +59,7 @@
                                             }
                                             else
                                             {<label class="btn-sm" style="background-color: #e90000;">Approval Pending</label>}
-                                            
+
                                         </td>
                                         <td>
                                             @foreach (var approver in item.ApproverList)
@@ -79,13 +76,35 @@
                                                         else
                                                         {
                                                             <label class="btn-sml" style="background-color: #e90000;">Approval Pending By&nbsp;&nbsp;</label>
-                                                            <button class="btn btn-sml" style="background-color: #e90000; margin-left:5px;" onclick="SendMailForapproval(@approver.ApprovalId,@approver.ApproverUserId);">Send Mail&nbsp;</button>
+                                                            if (@item.UploadedUserId.ToString() == @Session["UserId"].ToString())
+                                                            {
+                                                                <button class="btn btn-sml" style="background-color: #e90000; margin-left:5px;" onclick="SendMailForapproval(@approver.ApprovalId,@approver.ApproverUserId);">Send Mail&nbsp;</button>
+                                                            }
+
                                                         }
                                                         <label style="font-size:10px;">&nbsp;&nbsp;@approver.ApproverUserName</label>
                                                     </div>
                                                 </div>
 
                                             }
+                                        </td>
+                                        <td>
+                                            @if (item.IsApproved == 1)
+                                            {
+                                                @item.ApprovedOn
+                                            }
+                                        </td>
+                                        <td>
+                                            @if (@item.UploadedUserId.ToString() == @Session["UserId"].ToString())
+                                            {
+                                                <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:130px; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>Download</span></a>
+                                            }
+                                            else
+                                            {
+                                               <span>----</span>
+                                            }
+
+
                                         </td>
                                     </tr>
 

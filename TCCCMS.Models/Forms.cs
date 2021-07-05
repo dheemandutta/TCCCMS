@@ -32,6 +32,9 @@ namespace TCCCMS.Models
         public int IsApproved { get; set; }
 
         public string ApprovedOn { get; set; }
+        public string UploadedUser { get; set; }
+        public int UploadedUserId { get; set; }
+
 
         public Ship Ship { get; set; }
 
