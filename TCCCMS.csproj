@@ -2464,6 +2464,7 @@
     <Folder Include="dmmyFolder\ZipFile\" />
     <Folder Include="Model\" />
     <Folder Include="NoticeBoardPDF\" />
+    <Folder Include="Views\CrewImport\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
