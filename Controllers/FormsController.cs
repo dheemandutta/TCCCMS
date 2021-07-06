@@ -134,6 +134,24 @@ namespace TCCCMS.Controllers
             return Json("", JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetFillupFormsListForNotification()
+        {
+            DocumentBL bL = new DocumentBL(); 
+            int totalrecords = 0;
+            string approverUserId = Session["UserId"].ToString();
+            List<Forms> pocoList = new List<Forms>();
+            List<Forms> frmList = new List<Forms>();
+            pocoList = bL.GetFillupFormsListForNotification(Convert.ToInt32(approverUserId));
+            totalrecords = pocoList.Count();
 
+            foreach(Forms frm in pocoList)
+            {
+                Forms f = new Forms();
+                f.FilledUpFormName = frm.FilledUpFormName.CheckStringLenghtAndGetFirstFewCharecters(25);
+                frmList.Add(f);
+            }
+            var data = frmList;
+            return Json(new {recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
+        }
     }
 }

@@ -27,6 +27,9 @@
                     <div class="ta_titlecargo">
                         <h2 class="">Cargo Operation</h2>
                         <a href="@Url.Action("CO031", "FormsAndChecklists")">CO031 - FORMS</a>
+                        <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:130px;" href='@Url.Action("FillupFormList", "Forms", new { @qr =0})'><span>Waiting Approval List</span></a>
+                        <a type="button" class="btn btn-info btn-sm" style="background-color: #6AA84F; width: 130px;" href='@Url.Action("FillupFormList", "Forms" ,new { @qr =1})'><span>Approved List</span></a>
+                        <div>&nbsp;</div>
                     </div>
                     <div style="margin:0 auto" class="tablecontainer">
                         @*<p align="right">

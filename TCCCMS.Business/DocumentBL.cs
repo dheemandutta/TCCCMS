@@ -87,6 +87,13 @@ namespace TCCCMS.Business
             return documentDal.GetApprovedFilledUpForms(userId);
         }
 
+        public List<Forms> GetFillupFormsListForNotification(int aApproverUserId)
+        {
+            DocumentDAL documentDal = new DocumentDAL();
+            return documentDal.GetFillupFormsListForNotification(aApproverUserId);
+        }
+
+
         #region DropDown
 
         public List<Forms> GetFormsByCategoryForDropdown(int categoryId)

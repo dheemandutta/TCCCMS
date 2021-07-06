@@ -445,7 +445,10 @@ namespace TCCCMS.Controllers
 
         #endregion
 
-
+        public JsonResult GetUserType()
+        {
+            return Json(Session["UserType"].ToString(), JsonRequestBehavior.AllowGet);
+        }
 
         //public ActionResult GetRoleByUserId(int UserId/*, ref string recordCount*/)
         //{
@@ -490,5 +493,7 @@ namespace TCCCMS.Controllers
             }
             return true;
         }
+    
+    
     }
 }

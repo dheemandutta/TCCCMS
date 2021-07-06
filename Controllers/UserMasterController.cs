@@ -22,7 +22,7 @@ namespace TCCCMS.Controllers
         {
             try
             {
-                if (Session["Role"].ToString() != "ShipAdmin" && Session["Role"].ToString() != "ShipUser")
+                if (Session["Role"].ToString() != "OfficeUser" && Session["Role"].ToString() != "ShipUser")
                 {
                     GetAllRanksForDrp();
                     GetAllShipForDrp();

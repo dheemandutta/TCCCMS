@@ -341,12 +341,13 @@ namespace TCCCMS.Data
                             ID                  = Convert.ToInt32(dr["ID"]),//--FilledUp Form Id
                             FilledUpFormName    = Convert.ToString(dr["FilledupFormName"]),
                             FilePath            = Convert.ToString(dr["FormsPath"]),
+                            IsApproved          = Convert.ToInt32(dr["IsApprove"]),
 
                             ShipId              = Convert.ToInt32(dr["ShipId"]),
                             Ship                = ship,
 
                             User                = user,
-                        }); ;
+                        });
                     }
                     con.Close();
                 }
@@ -440,6 +441,37 @@ namespace TCCCMS.Data
                    
             return AFFAVM;
 
+        }
+    
+        public List<Forms> GetFillupFormsListForNotification(int aApproverUserId)
+        {
+            List<Forms> filledupFormList = new List<Forms>();
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetAllUploadedFormsForNotification", con))
+                {   ///----------------
+                    con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ApproverUserId", aApproverUserId);
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        
+                        filledupFormList.Add(new Forms
+                        {
+                            FilledUpFormName = Convert.ToString(dr["UploadedFormName"]),
+
+                        }); ;
+                    }
+                    con.Close();
+                }
+            }
+
+                
+            return filledupFormList;
         }
     }
 }
