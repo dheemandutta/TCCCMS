@@ -13,10 +13,10 @@ namespace TCCCMS.Business
 {
     public class ImportBL
     {
-        public void ImportCrew(object dataTable, int vesselId)
+        public void ImportCrew(object dataTable/*, int vesselId*/)
         {
-            //ImportDAL crewImportDAL = new ImportDAL();
-            //crewImportDAL.ImportCrew(dataTable, vesselId);
+            ImportDAL crewImportDAL = new ImportDAL();
+            crewImportDAL.ImportCrew(dataTable/*, vesselId*/);
         }
     }
 }
