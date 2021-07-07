@@ -285,7 +285,9 @@ function loadData() {
 function CreateTableHeader(utyp) {
     
 /*    if (utyp === 2) {*/
-    $('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th><th>Approved/NotApproved</th>');
+    //below line commented on 6th Jul 2021 @BK for Amitabh sir Instruction
+    //$('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th><th>Approved/NotApproved</th>');
+    $('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th>');
         SetUpGridCompanyUser(2);
   /*  }*/
     //else if (utyp === 1) {
@@ -527,21 +529,22 @@ function SetUpGridCompanyUser() {
 
                     }
                 }
-            },
-            {
-                "data": "IsApprover", "width": "50px", "render": function (data, type, row) {
-
-                    console.log(row.UserId);
-
-                    if (data == '1') {
-                        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApprovedRoNotInUserMaster(' + row.UserId + ')">Not Approved</a>';
-                    }
-                    else if (data == '0') {
-                        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #7db700;" onclick="ApprovedRoNotInUserMaster(' + row.UserId + ')">Approved</a>';
-
-                    }
-                }
             }
+             //below row lines commented on 6th Jul 2021 @BK for Amitabh sir Instruction
+            //{
+            //    "data": "IsApprover", "width": "50px", "render": function (data, type, row) {
+
+            //        console.log(row.UserId);
+
+            //        if (data == '1') {
+            //            return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApprovedRoNotInUserMaster(' + row.UserId + ')">Not Approved</a>';
+            //        }
+            //        else if (data == '0') {
+            //            return '<a href="#" class="btn btn-info btn-sm" style="background-color: #7db700;" onclick="ApprovedRoNotInUserMaster(' + row.UserId + ')">Approved</a>';
+
+            //        }
+            //    }
+            //}
 
 
 
@@ -606,7 +609,7 @@ function ApprovedRoNotInUserMaster(UserId) {
 
 function UploadPermissionUserMaster(UserId) {
     var e = $('#UploadPermissionUserMaster').val();
-    var ans = confirm("Are you sure you want to delete this Record?");
+    var ans = confirm("Are you sure you want to change this Record?");
     if (ans) {
         // debugger;
         $.ajax({
@@ -711,6 +714,45 @@ function confirmPass() {
 var selected_tab = 0;
 var userType = 2;
 function LoadTab() {
+
+    $.ajax({//----added on 6th Jul 2021 @BK
+        url: "/Home/GetUserType",
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            //debugger;
+            userType = result;
+
+            //----added on 6th Jul 2021 @BK
+            if (userType === '1') {
+                selected_tab = 0;
+                //$('#liTab2').prop('hidden', true);
+                $('#liTab2').prop('hidden', true);
+            }
+            else if (userType === '2') {
+                selected_tab = 1;
+                $('#liTab2').prop('hidden', false);
+            }
+
+            var tabs = $("#tabs").tabs({
+                active: selected_tab,
+                //select: function (e, i) {
+                //    selected_tab = i.index;
+                //}
+            });
+            if (userType === '1') {
+                $('#liTab2').prop('disabled', true);
+            }
+            else {
+                $('#liTab2').prop('disabled', false);
+            }
+        },
+        error: function (errormessage) {
+            alert(errormessage.responseText);
+        }
+    });
+
     //var tab = $('#tab').val();
     //if (tab === "Edit") {
     //    selected_tab = 2;
@@ -718,29 +760,31 @@ function LoadTab() {
     //else if (tab === "Delete") {
     //    selected_tab = 3;
     //}
-    
-    if (userType === 1) {
-        selected_tab = 0;
-        //$('#liTab2').prop('hidden', true);
-        $('#liTab2').prop('hidden', false);
-    }
-    else if (userType === 2) {
-        selected_tab = 1;
-        $('#liTab2').prop('hidden', false);
-    }
 
-    var tabs = $("#tabs").tabs({
-        active: selected_tab,
-        //select: function (e, i) {
-        //    selected_tab = i.index;
-        //}
-    });
-    if (userType === 1) {
-        $('#liTab2').prop('disabled', true);
-    }
-    else {
-        $('#liTab2').prop('disabled', false);
-    }
+    //----Commented on 6th Jul 2021 @BK
+    //if (userType === '1') {
+    //    selected_tab = 1;
+    //    //$('#liTab2').prop('hidden', true);
+    //    $('#liTab2').prop('hidden', true);
+    //}
+    //else if (userType === '2') {
+    //    selected_tab = 0;
+    //    $('#liTab2').prop('hidden', false);
+    //}
+
+    //var tabs = $("#tabs").tabs({
+    //    active: selected_tab,
+    //    //select: function (e, i) {
+    //    //    selected_tab = i.index;
+    //    //}
+    //});
+    //if (userType === '1') {
+    //    $('#liTab2').prop('disabled', true);
+    //}
+    //else {
+    //    $('#liTab2').prop('disabled', false);
+    //}
+    //----End----Commented on 6th Jul 2021 @BK
 }
 
 $('#tabs').click('tabsselect', function (event, ui) {

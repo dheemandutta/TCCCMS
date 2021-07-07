@@ -161,7 +161,7 @@
                             </div>
                         }
 
-                        @if (Session["Role"].ToString() == "OfficeAdmin")
+                        @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "ShipAdmin")// ShipAdmin role condition added on 6th jul 2021 @BK for Amitabh Sir Instruction
                         {
                             <div class="dropdown-content" style="min-width: 200px;  top: -40px;">
                                 <ul>
