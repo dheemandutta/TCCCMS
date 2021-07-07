@@ -474,214 +474,274 @@ namespace TCCCMS.Admin.ExportData
 
         public static void Ticket()
         {
-            //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            //con.Open();
-            ////SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
-            //SqlCommand cmd = new SqlCommand("stpExportTicketFromAdmin", con);
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //DataSet ds = new DataSet();
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //da.Fill(ds);
-
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
-            //    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
-            //}
-            //con.Close();
-
-
-            //----------------------------------------way 2-----------------------------------------------------------------------------
-            //DataSet dsVessels = new DataSet();
-            //dsVessels = GetRegistrerdVessels();
-
-            //for (int i = 0; i < dsVessels.Tables[0].Rows.Count; i++)
-            //{
-            //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            //    con.Open();
-            //    // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
-            //    SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    cmd.Parameters.AddWithValue("@ShipId", int.Parse(dsVessels.Tables[0].Rows[i]["ShipId"].ToString()));
-            //    DataSet ds = new DataSet();
-            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //    da.Fill(ds);
-
-            //    if (ds.Tables[0].Rows.Count > 0)
-            //    {
-            //        //ds.WriteXml(path + "\\" + dsVessels.Tables[0].Rows[i]["ShipId"].ToString() + ".xml", XmlWriteMode.WriteSchema);
-            //        ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
-            //    }
-            //    con.Close();
-            //}
-
-            //-----------------------way 3------------------------------------
-
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
-            SqlCommand cmd = new SqlCommand("stpExportTicketFromAdmin", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ShipId", shipId);
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                //ds.WriteXml(path + "\\" + dsVessels.Tables[0].Rows[i]["ShipId"].ToString() + ".xml", XmlWriteMode.WriteSchema);
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
+                TccLog.UpdateLog("Ticket Export Started.", LogMessageType.Info, "Admin Export - Ticket");
+                logger.Info("Ticket Export Started. - {0}", DateTime.Now.ToString());
+                //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                //con.Open();
+                ////SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
+                //SqlCommand cmd = new SqlCommand("stpExportTicketFromAdmin", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //DataSet ds = new DataSet();
+                //SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //da.Fill(ds);
+
+                //if (ds.Tables[0].Rows.Count > 0)
+                //{
+                //    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
+                //}
+                //con.Close();
+
+
+                //----------------------------------------way 2-----------------------------------------------------------------------------
+                //DataSet dsVessels = new DataSet();
+                //dsVessels = GetRegistrerdVessels();
+
+                //for (int i = 0; i < dsVessels.Tables[0].Rows.Count; i++)
+                //{
+                //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                //    con.Open();
+                //    // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
+                //    SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
+                //    cmd.CommandType = CommandType.StoredProcedure;
+                //    cmd.Parameters.AddWithValue("@ShipId", int.Parse(dsVessels.Tables[0].Rows[i]["ShipId"].ToString()));
+                //    DataSet ds = new DataSet();
+                //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //    da.Fill(ds);
+
+                //    if (ds.Tables[0].Rows.Count > 0)
+                //    {
+                //        //ds.WriteXml(path + "\\" + dsVessels.Tables[0].Rows[i]["ShipId"].ToString() + ".xml", XmlWriteMode.WriteSchema);
+                //        ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
+                //    }
+                //    con.Close();
+                //}
+
+                //-----------------------way 3------------------------------------
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
+                SqlCommand cmd = new SqlCommand("stpExportTicketFromAdmin", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ShipId", shipId);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    //ds.WriteXml(path + "\\" + dsVessels.Tables[0].Rows[i]["ShipId"].ToString() + ".xml", XmlWriteMode.WriteSchema);
+                    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString(), XmlWriteMode.WriteSchema);
+                }
+                con.Close();
             }
-            con.Close();
+            catch(Exception ex)
+            {
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Export - Ticket");
+                logger.Error("Admin Export - Ticket. - {0}", DateTime.Now.ToString(), ex.Message + " :" + ex.Message);
+            }
+            
         }
 
         public static void FillupFormsUploaded()
         {
-            //----------------------------Way 1--------Not used--------------------------------------------------------------------------
-            //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            //con.Open();
-            ////SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
-            //SqlCommand cmd = new SqlCommand("stpExportFillupUoloadedFormsFromAdmin", con);
-            //cmd.CommandType = CommandType.StoredProcedure;
-            //DataSet ds = new DataSet();
-            //SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //da.Fill(ds);
-
-            //if (ds.Tables[0].Rows.Count > 0)
-            //{
-            //    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString(), XmlWriteMode.WriteSchema);
-            //}
-            //con.Close();
-
-            //------------------------------------------------Way 2---------- not used-----------------------------------------------------------
-            //DataSet dsVessels = new DataSet();
-            //dsVessels = GetRegistrerdVessels();
-
-            //for (int i = 0; i < dsVessels.Tables[0].Rows.Count; i++)
-            //{
-            //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            //    con.Open();
-            //    // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExportFillupUoloadedFormsFromAdmin"
-            //    SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    cmd.Parameters.AddWithValue("@ShipId", int.Parse(dsVessels.Tables[0].Rows[i]["ShipId"].ToString()));
-            //    DataSet ds = new DataSet();
-            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //    da.Fill(ds);
-
-            //    if (ds.Tables[0].Rows.Count > 0)
-            //    {
-            //        //ds.WriteXml(path + "\\" + dsVessels.Tables[0].Rows[i]["ShipId"].ToString() + ".xml", XmlWriteMode.WriteSchema);
-            //        ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString(), XmlWriteMode.WriteSchema);
-            //    }
-            //    con.Close();
-            //}
-
-            //-----------------------------------Way 3-------------------------------------------------------------------
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
-            SqlCommand cmd = new SqlCommand("stpExportFillupUoloadedFormsFromAdmin", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ShipId", shipId);
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                //ds.WriteXml(path + "\\" + dsVessels.Tables[0].Rows[i]["ShipId"].ToString() + ".xml", XmlWriteMode.WriteSchema);
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString(), XmlWriteMode.WriteSchema);
-            }
-            con.Close();
+                TccLog.UpdateLog("RevisionHeader Export Started.", LogMessageType.Info, "Admin Export - FillupFormsUploaded");
+                logger.Info("FillupFormsUploaded Export Started. - {0}", DateTime.Now.ToString());
 
-            string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
-            if(File.Exists(xmlFile))
-            {
-                CreateUploadedFileZip("FILLUPUPLOADEDFILE", xmlFile);
+                //----------------------------Way 1--------Not used--------------------------------------------------------------------------
+                //SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                //con.Open();
+                ////SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
+                //SqlCommand cmd = new SqlCommand("stpExportFillupUoloadedFormsFromAdmin", con);
+                //cmd.CommandType = CommandType.StoredProcedure;
+                //DataSet ds = new DataSet();
+                //SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //da.Fill(ds);
+
+                //if (ds.Tables[0].Rows.Count > 0)
+                //{
+                //    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString(), XmlWriteMode.WriteSchema);
+                //}
+                //con.Close();
+
+                //------------------------------------------------Way 2---------- not used-----------------------------------------------------------
+                //DataSet dsVessels = new DataSet();
+                //dsVessels = GetRegistrerdVessels();
+
+                //for (int i = 0; i < dsVessels.Tables[0].Rows.Count; i++)
+                //{
+                //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                //    con.Open();
+                //    // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExportFillupUoloadedFormsFromAdmin"
+                //    SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
+                //    cmd.CommandType = CommandType.StoredProcedure;
+                //    cmd.Parameters.AddWithValue("@ShipId", int.Parse(dsVessels.Tables[0].Rows[i]["ShipId"].ToString()));
+                //    DataSet ds = new DataSet();
+                //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //    da.Fill(ds);
+
+                //    if (ds.Tables[0].Rows.Count > 0)
+                //    {
+                //        //ds.WriteXml(path + "\\" + dsVessels.Tables[0].Rows[i]["ShipId"].ToString() + ".xml", XmlWriteMode.WriteSchema);
+                //        ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString(), XmlWriteMode.WriteSchema);
+                //    }
+                //    con.Close();
+                //}
+
+                //-----------------------------------Way 3-------------------------------------------------------------------
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
+                SqlCommand cmd = new SqlCommand("stpExportFillupUoloadedFormsFromAdmin", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ShipId", shipId);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    //ds.WriteXml(path + "\\" + dsVessels.Tables[0].Rows[i]["ShipId"].ToString() + ".xml", XmlWriteMode.WriteSchema);
+                    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString(), XmlWriteMode.WriteSchema);
+                }
+                con.Close();
+
+                string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
+                if (File.Exists(xmlFile))
+                {
+                    CreateUploadedFileZip("FILLUPUPLOADEDFILE", xmlFile);
+                }
             }
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Export - FillupFormsUploaded");
+                logger.Error("Admin Export - FillupFormsUploaded. - {0}", DateTime.Now.ToString(), ex.Message + " :" + ex.Message);
+            }
+
             
         }
 
         public static void FillupFormApproverMapper()
         {
-            //----------------------------Way 1---------------------------------------------------------------------------------
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblFormsUploadedApproverMapping", con);
-            SqlCommand cmd = new SqlCommand("stpExportFillupFormApproverFromAdmin", con);
-            cmd.Parameters.AddWithValue("@ShipId", shipId);
-            cmd.CommandType = CommandType.StoredProcedure;
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString(), XmlWriteMode.WriteSchema);
+                TccLog.UpdateLog("RevisionHeader Export Started.", LogMessageType.Info, "Admin Export - FillupFormApproverMapper");
+                logger.Info("FillupFormApproverMapper Export Started. - {0}", DateTime.Now.ToString());
+                //----------------------------Way 1---------------------------------------------------------------------------------
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                //SqlCommand cmd = new SqlCommand("stpExporttblFormsUploadedApproverMapping", con);
+                SqlCommand cmd = new SqlCommand("stpExportFillupFormApproverFromAdmin", con);
+                cmd.Parameters.AddWithValue("@ShipId", shipId);
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString(), XmlWriteMode.WriteSchema);
+                }
+                con.Close();
+
+                //---------------------------------Way 2 ---------Alternate Code---------------------------------------------------------------------------
+                //DataSet dsVessels = new DataSet();
+                //dsVessels = GetRegistrerdVessels();
+
+                //for (int i = 0; i < dsVessels.Tables[0].Rows.Count; i++)
+                //{
+                //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                //    con.Open();
+                //    // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
+                //    SqlCommand cmd = new SqlCommand("stpExportFillupFormApproverFromAdmin", con);
+                //    cmd.CommandType = CommandType.StoredProcedure;
+                //    cmd.Parameters.AddWithValue("@ShipId", int.Parse(dsVessels.Tables[0].Rows[i]["ShipId"].ToString()));
+                //    DataSet ds = new DataSet();
+                //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                //    da.Fill(ds);
+
+                //    if (ds.Tables[0].Rows.Count > 0)
+                //    {
+                //        //ds.WriteXml(path + "\\" + dsVessels.Tables[0].Rows[i]["ShipId"].ToString() + ".xml", XmlWriteMode.WriteSchema);
+                //        ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString(), XmlWriteMode.WriteSchema);
+                //    }
+                //    con.Close();
+                //}
             }
-            con.Close();
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Export - FillupFormApproverMapper");
+                logger.Error("Admin Export - FillupFormApproverMapper. - {0}", DateTime.Now.ToString(), ex.Message + " :" + ex.Message);
+            }
 
-            //---------------------------------Way 2 ---------Alternate Code---------------------------------------------------------------------------
-            //DataSet dsVessels = new DataSet();
-            //dsVessels = GetRegistrerdVessels();
-
-            //for (int i = 0; i < dsVessels.Tables[0].Rows.Count; i++)
-            //{
-            //    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            //    con.Open();
-            //    // Prasenjit // "r" is a Typo "stpExportCrewApprovalData" to "stpExpotrCrewApprovalData"
-            //    SqlCommand cmd = new SqlCommand("stpExportFillupFormApproverFromAdmin", con);
-            //    cmd.CommandType = CommandType.StoredProcedure;
-            //    cmd.Parameters.AddWithValue("@ShipId", int.Parse(dsVessels.Tables[0].Rows[i]["ShipId"].ToString()));
-            //    DataSet ds = new DataSet();
-            //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-            //    da.Fill(ds);
-
-            //    if (ds.Tables[0].Rows.Count > 0)
-            //    {
-            //        //ds.WriteXml(path + "\\" + dsVessels.Tables[0].Rows[i]["ShipId"].ToString() + ".xml", XmlWriteMode.WriteSchema);
-            //        ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString(), XmlWriteMode.WriteSchema);
-            //    }
-            //    con.Close();
-            //}
+            
         }
 
         public static void RevisionHeader()
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
-            SqlCommand cmd = new SqlCommand("stpExportRevisionHeaderFromAdmin", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ShipId", shipId);
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlRevisionHeader"].ToString(), XmlWriteMode.WriteSchema);
+                TccLog.UpdateLog("RevisionHeader Export Started.", LogMessageType.Info, "Admin Export - RevisionHeader");
+                logger.Info("RevisionHeader Export Started. - {0}", DateTime.Now.ToString());
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
+                SqlCommand cmd = new SqlCommand("stpExportRevisionHeaderFromAdmin", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ShipId", shipId);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlRevisionHeader"].ToString(), XmlWriteMode.WriteSchema);
+                }
+                con.Close();
             }
-            con.Close();
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Export - RevisionHeader");
+                logger.Error("Admin Export - RevisionHeader. - {0}", DateTime.Now.ToString(), ex.Message + " :" + ex.Message);
+            }
+
+            
         }
 
         public static void RevisionDetails()
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-            con.Open();
-            //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
-            SqlCommand cmd = new SqlCommand("stpExportRevisionHistoryFromAdmin", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@ShipId", shipId);
-            DataSet ds = new DataSet();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(ds);
-
-            if (ds.Tables[0].Rows.Count > 0)
+            try
             {
-                ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlRevisionHistory"].ToString(), XmlWriteMode.WriteSchema);
+                TccLog.UpdateLog("RevisionDetails Export Started.", LogMessageType.Info, "Admin Export - RevisionDetails");
+                logger.Info("RevisionDetails Export Started. - {0}", DateTime.Now.ToString());
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
+                SqlCommand cmd = new SqlCommand("stpExportRevisionHistoryFromAdmin", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@ShipId", shipId);
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlRevisionHistory"].ToString(), XmlWriteMode.WriteSchema);
+                }
+                con.Close();
             }
-            con.Close();
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Export - RevisionDetails");
+                logger.Error("Admin Export - RevisionDetails. - {0}", DateTime.Now.ToString(), ex.Message + " :" + ex.Message);
+            }
+            
         }
 
         #endregion
@@ -698,9 +758,14 @@ namespace TCCCMS.Admin.ExportData
             string sourceFilePath = zippath + "\\";
             string[] sourceFiles = Directory.GetFiles(sourceFilePath);
 
+            TccLog.UpdateLog("zip file path:" +sourceFilePath, LogMessageType.Info, "Admin Export - SendMail");
+            TccLog.UpdateLog("total zip files :" + sourceFiles.Count(), LogMessageType.Info, "Admin Export - SendMail");
+
             string adminEmail = GetConfigData("admincenteremail").Trim();
-            string adminEmailpwd = GetConfigData("admincenteremailpwd").Trim();
-            //string adminEmailpwd = EncodeDecode.DecryptString(GetConfigData("admincenteremailpwd"));
+            TccLog.UpdateLog("Get Admin Email ID Successfully", LogMessageType.Info, "Admin Export - SendMail");
+            //string adminEmailpwd = GetConfigData("admincenteremailpwd").Trim();
+            string adminEmailpwd = EncodeDecode.DecryptString(GetConfigData("admincenteremailpwd"));
+            TccLog.UpdateLog("Get Admin Email pwd Successfully", LogMessageType.Info, "Admin Export - SendMail");
 
             foreach (string sourceFile in sourceFiles)
             {
@@ -739,8 +804,8 @@ namespace TCCCMS.Admin.ExportData
                         smtp.Port = int.Parse(GetConfigData("port"));
 
                         //smtp.Credentials = new System.Net.NetworkCredential(GetConfigData("mailfrom").Trim(), GetConfigData("frompwd").Trim());
-                        //smtp.Credentials = new System.Net.NetworkCredential(adminEmail, adminEmailpwd);
-                        smtp.Credentials = new System.Net.NetworkCredential("cableman24x7@gmail.com", "cableman24x712345");
+                        smtp.Credentials = new System.Net.NetworkCredential(adminEmail, adminEmailpwd);
+                        //smtp.Credentials = new System.Net.NetworkCredential("cableman24x7@gmail.com", "cableman24x712345");
 
                         smtp.Send(mail);
                         logger.Info("Mail send Successfully to the Vessel_" + vesselIMO[0].ToString() + ". - {0}", DateTime.Now.ToString());
@@ -868,32 +933,37 @@ namespace TCCCMS.Admin.ExportData
         {
             try
             {
+                
                 // Here your xml file
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UpdateTicketExportInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    string uploadedFileName = string.Empty;
-                    string relativePath = string.Empty;
-                    string filePath = string.Empty;
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UpdateTicketExportInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
-                   
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                    
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
+
+                        string uploadedFileName = string.Empty;
+                        string relativePath = string.Empty;
+                        string filePath = string.Empty;
+
+                        cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+
+                    }
                 }
+                
             }
             catch (Exception ex)
             {
@@ -910,23 +980,28 @@ namespace TCCCMS.Admin.ExportData
                 // Here your xml file
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlRevisionHeader"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UpdateRevisionHeaderExportInAdmin", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["Id"].ToString()));
-                    cmd.Parameters.AddWithValue("@ShipId", aShipId);
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UpdateRevisionHeaderExportInAdmin", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["Id"].ToString()));
+                        cmd.Parameters.AddWithValue("@ShipId", aShipId);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
                 }
+
+                
             }
             catch (Exception ex)
             {
@@ -940,27 +1015,34 @@ namespace TCCCMS.Admin.ExportData
         {
             try
             {
+
+
                 // Here your xml file
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlRevisionHistory"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UpdateRevisionHistoryExportInAdmin", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    cmd.Parameters.AddWithValue("@RevisionHistoryId", int.Parse(row["RevisionHistoryId"].ToString()));
-                    cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["HeaderId"].ToString()));
-                    cmd.Parameters.AddWithValue("@ShipId", aShipId);
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UpdateRevisionHistoryExportInAdmin", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        cmd.Parameters.AddWithValue("@RevisionHistoryId", int.Parse(row["RevisionHistoryId"].ToString()));
+                        cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["HeaderId"].ToString()));
+                        cmd.Parameters.AddWithValue("@ShipId", aShipId);
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
                 }
+
+                
             }
             catch (Exception ex)
             {
@@ -976,22 +1058,28 @@ namespace TCCCMS.Admin.ExportData
             {
                 // Here your xml file
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UpdateFormsUploadExportInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if(File.Exists(xmlFile))
                 {
-                    cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UpdateFormsUploadExportInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+
+                    }
                 }
+
+                
 
             }
             catch (Exception ex)
@@ -1009,24 +1097,29 @@ namespace TCCCMS.Admin.ExportData
                 // Here your xml file
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UpdateFormsUploadApproverMappingExportInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if(File.Exists(xmlFile))
                 {
-                    cmd.Parameters.AddWithValue("@FormsName", row["UploadedFormName"].ToString());
-                    cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UpdateFormsUploadApproverMappingExportInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        cmd.Parameters.AddWithValue("@FormsName", row["UploadedFormName"].ToString());
+                        cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+
+                    }
                 }
+
+                
             }
             catch (Exception ex)
             {
