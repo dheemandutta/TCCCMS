@@ -48,11 +48,31 @@
                             <div class="dropdown admin">
                                 <button class="button log"><span><img src="~/images/questionmark.png" style="width:19px;" /></span></button>
                                 <div class="dropdown-content">
-                                      <a href='@Url.Action("Index", "Help")'>Help</a>
+                                    <a href='@Url.Action("Index", "Help")'>Help</a>
                                 </div>
                             </div>
                         </li>
-
+                        @*------Added on 7th Jul 2021 replaced from Admin Layout-------*@
+                        <li>
+                            <div class="dropdown admin notification">
+                                <button id="btnBell" class="button log">
+                                    <span><a href="~/Forms/FormsApprovalList"><img src="~/images/bell.png" style="width:19px;" /></a></span>
+                                </button>
+                                <sup id="notifyNumber" class="hidis"></sup>
+                                <div id="notifyContent" class="dropdown-content hidis">
+                                    @*<h3>@Session["UserCode"].ToString() <span> @Session["Role"].ToString()</span></h3>
+                                    <a href="@Url.Action("Login", "Home")">Log Off</a>*@
+                                                    @*<div class="scroll">
+                                        <ul>
+                                            <li>searchButton searchButton</li>
+                                            <li>searchButton searchButton</li>
+                                            <li>searchButton searchButton</li>
+                                        </ul>
+                                    </div>*@
+                                </div>
+                            </div>
+                        </li>
+                        @*----end--Added on 7th Jul 2021 replaced from Admin Layout-------*@
                         <li>
                             <div class="dropdown admin">
                                 <button class="button log"><span><img src="~/images/user.png" style="width:19px;" /></span></button>
@@ -178,8 +198,63 @@
 
     @*<script src="~/Scripts/jquery-3.5.1.min.js"></script>*@
     <script src="~/Scripts/bootstrap.min.js"></script>
-
+    <script src="~/js/jquery.slimscroll.js"></script>
     <script>
+        var notification = 0;
+        async function GetNotification() {// --Added on 7th Jul 2021
+            //event.preventDefault();
+            console.log('in Get Notifi');
+            var loadposturl = "/Forms/GetFillupFormsListForNotification";
+            setTimeout(() => {
+                $.ajax({
+                    url: "/Forms/GetFillupFormsListForNotification",
+                    type: "GET",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        console.log('in Get Notifi succ');
+                        //SetUpGrid(CategoryId);
+                        $('#notifyNumber').html(result.recordsTotal);
+                        notification = result.recordsTotal;
+
+                        console.log('ts=' + notification);
+                        var str = '<div class="scroll"><ul>';
+                        if (notification > 0) {
+                            console.log(result.data);
+                            $.each(result.data, function (i, item) {
+                                console.log(item.FilledUpFormName.trim());
+                                str = str + '<li>' + item.FilledUpFormName.trim() + '</li>'
+                            });
+
+                        }
+
+                        str = str + '</ul></div>'
+
+                        console.log(str);
+                        $('#notifyContent').html(str);
+
+                        if (notification === 0) {
+                            $('#btnBell').prop('disabled', true);
+                            console.log('tIF=' + notification);
+                            $('#notifyNumber').addClass('hidis');
+                            $('#notifyContent').addClass('hidis');
+                        }
+                        else if (notification > 0) {
+                            $('#btnBell').prop('disabled', false);
+                            $('#notifyNumber').removeClass('hidis');
+                            $('#notifyContent').removeClass('hidis');
+                        }
+                    },
+                    error: function (errormessage) {
+                        console.log('in Get Notifi err');
+                        console.log(errormessage.responseText);
+                    }
+                });
+            }, 1000);
+            // event.stopPropagation();
+
+        }
+
     /* function openNav() {
             document.getElementById("mySidebar").style.width = "500px";
             document.getElementById("main").style.marginLeft = "500px";
@@ -199,9 +274,19 @@
         */
 
         $(document).ready(function () {
+
+            GetNotification();
+
             $(".menu_icon").click(function () {
                 $(".sidebar").toggleClass("sidebarf");
             });
+        });
+
+        $('.scroll').slimscroll({
+            size: '6px',
+            height: '200px',
+            opacity: '1',
+            background: '#000',
         });
     </script>
 
