@@ -25,12 +25,12 @@
     <header>
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-2 col-md-3 col-7">
+                <div class="col-lg-2 col-md-2 col-7">
                     <div class="logo">
                         <a href="#"><img src="~/images/logo.png"></a>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-5 col-12">
+                <div class="col-lg-8 col-md-8 col-12">
                     <div class="search">
                         @*<input type="text" class="searchTerm" placeholder="Search....">
                             <button type="submit" class="searchButton">
@@ -38,29 +38,24 @@
                             </button>*@
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 col-5">
+                <div class="col-lg-2 col-md-2 col-5">
 
                     @*@if (Session["UserName"] != null)
-                        {
-                            <div>
-                                <a id="lnkLogOut" class="btn btn-warning" href="@Url.Action("Login", "Home")"> Log Out</a>
-                            </div>
-                        }*@
-                    <ul class="topright adminlay">
+        {
+            <div>
+                <a id="lnkLogOut" class="btn btn-warning" href="@Url.Action("Login", "Home")"> Log Out</a>
+            </div>
+        }*@
+                    <ul class="topright">
                         <li>
                             <div class="dropdown admin notification">
-                                <button class="button log"><span><img src="~/images/bell.png" style="width:19px;" /></span></button>
-                                <sup class="hidis">1</sup>
-                                <div class="dropdown-content hidis">
+
+                                <button class="button log"><span><a href="~/Forms/FormsApprovalList"><img src="~/images/bell.png" style="width:19px;" /></a></span></button>
+                                <sup id="notifyNumber" class="hidis">1</sup>
+                                <div id="notifyContent" class="dropdown-content hidis">
+								@*bin*@
                                     @*<h3>@Session["UserCode"].ToString() <span> @Session["Role"].ToString()</span></h3>
-                                        <a href="@Url.Action("Login", "Home")">Log Off</a>*@
-                                    <div class="scroll">
-                                        <ul>
-                                            <li>searchButton searchButton</li>
-                                            <li>searchButton searchButton</li>
-                                            <li>searchButton searchButton</li>
-                                        </ul>
-                                    </div>
+                    <a href="@Url.Action("Login", "Home")">Log Off</a>*@
                                 </div>
                             </div>
                         </li>
@@ -291,9 +286,62 @@
 
     @*<script src="~/Scripts/jquery-3.5.1.min.js"></script>*@
     <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/js/jquery.slimscroll.js"></script>
 
     <script>
+
+        async function GetNotification() {
+            //event.preventDefault();
+            console.log('in Get Notifi');
+            var loadposturl = "/Forms/GetFillupFormsListForNotification";
+            setTimeout(() => {
+                $.ajax({
+                    url: "/Forms/GetFillupFormsListForNotification",
+                    type: "GET",
+                    contentType: "application/json;charset=utf-8",
+                    dataType: "json",
+                    success: function (result) {
+                        console.log('in Get Notifi succ');
+                        //SetUpGrid(CategoryId);
+                        $('#notifyNumber').html(result.recordsTotal);
+                        notification = result.recordsTotal;
+
+                        console.log('ts=' + notification);
+                        var str = '<ul>';
+                        if (notification > 0) {
+                            console.log(result.data);
+                            $.each(result.data, function (i, item) {
+                                console.log(item.FilledUpFormName.trim());
+                                str = str + '<li>' + item.FilledUpFormName.trim() + '</li>'
+                            });
+
+                        }
+
+                        str = str + '</ul>'
+
+                        console.log(str);
+                        $('#notifyContent').html(str);
+
+                        if (notification === 0) {
+                            console.log('tIF=' + notification);
+                            $('#notifyNumber').addClass('hidis');
+                            $('#notifyContent').addClass('hidis');
+                        }
+                        else if (notification > 0) {
+
+                            $('#notifyNumber').removeClass('hidis');
+                            $('#notifyContent').removeClass('hidis');
+                        }
+                    },
+                    error: function (errormessage) {
+                        console.log('in Get Notifi err');
+                        console.log(errormessage.responseText);
+                    }
+                });
+            }, 1000);
+           // event.stopPropagation();
+            
+        }
+
         function openNav() {
             document.getElementById("mySidebar").style.width = "500px";
             document.getElementById("main").style.marginLeft = "500px";
@@ -307,11 +355,28 @@
 
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
-    @*<script src="~/Scripts/jquery-3.5.1.min.js"></script>*@
+@*<script src="~/Scripts/jquery-3.5.1.min.js"></script>*@
 
     <script>
-        $(document).ready(function () {
+		var notification =0;
+        $(document).ready(function (event) {
 
+            //event.preventDefault();
+            GetNotification();
+            console.log('t=' + notification);
+			//if(notification === 0)
+   //         {
+   //             console.log('tIF=' + notification);
+			//	$('#notifyNumber').addClass('hidis');
+			//	$('#notifyContent').addClass('hidis');
+			//}
+			//else if(notification > 0)
+   //         {
+
+			//	$('#notifyNumber').removeClass('hidis');
+			//	$('#notifyContent').removeClass('hidis');
+			//}
+            console.log('t0=' + notification);
             $('#menuicon').click(function () {
                 $('#menu_sec').toggleClass('hidden');
                 $('.content_body').toggleClass('wdth_chn');
@@ -320,14 +385,7 @@
             });
         });
     </script>
-    <script>
-        $('.scroll').slimscroll({
-            size: '6px',
-            height: '200px',
-            opacity: '1',
-            background: '#000', 
-        });
-    </script>
+
 </body>
 
 </html>

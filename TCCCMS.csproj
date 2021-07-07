@@ -768,6 +768,7 @@
     <Content Include="js\Approver\Approver.js" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.slimscroll.js" />
     <Content Include="js\Login\Login.js" />
     <Content Include="js\Manual\ManualSearch.js" />
     <Content Include="js\owl.carousel.js" />

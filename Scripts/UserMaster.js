@@ -562,7 +562,7 @@ function SetUpGridCompanyUser() {
 
 function DeleteUserMaster(UserId) {
     var e = $('#DeleteUserMaster').val();
-    var ans = confirm("Are you sure you want to delete this Record?");
+    var ans = confirm("Are you sure you want to change this Record?");
     if (ans) {
         // debugger;
         $.ajax({

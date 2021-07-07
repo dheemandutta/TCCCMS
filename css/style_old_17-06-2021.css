@@ -1878,7 +1878,7 @@ input::-moz-focus-inner {
 
 @media (min-width: 1200px) {
     .container {
-        max-width: 1194px;
+        max-width: 1170px;
     }
 }
 
@@ -1937,7 +1937,7 @@ header {
 .steps_content {
     position: relative;
     z-index: 2;
-    padding: 0 27px 0 21px;
+    padding: 0 2rem 0 1rem;
 }
 
 .steps_animation .steps_item::before, .steps_animation .steps_item::after {
@@ -1958,7 +1958,7 @@ header {
     border-right: none;
     padding: 6px;
     height: 33px;
-    border-radius: 0;
+    border-radius: 5px 0 0 5px;
     outline: none;
     color: #e90000;
     font-size: 13px;
@@ -1984,8 +1984,7 @@ header {
 
 
 .menu_icon {
-    vertical-align: super;
-    display: inline-block;
+    text-align: right;
 }
 
 /*---Ship-----*/
@@ -2004,10 +2003,9 @@ header {
 .menu_icon a {
     color: #e90000;
     font-size: 25px;
-    margin: 2px 14px 7px 0;
+    margin: 11px 0 0 0;
     display: inline-block;
-    vertical-align: text-top;
-    line-height: 28px;
+    text-align: right;
 }
 
     .menu_icon a img {
@@ -2030,7 +2028,6 @@ header {
 .full_body {
     display: flex;
     position: relative;
-    min-height: 426px;
 }
 
 .content_body {
@@ -2041,7 +2038,7 @@ header {
 
 .menu_panel {
     background: #404040;
-    padding: 15px 15px 15px;
+    padding: 15px 20px 15px;
     transition: .5s ease-in-out;
 }
 
@@ -2104,7 +2101,7 @@ header {
 }
 
 .bnr_bottom_sec {
-    padding: 30px 0px 0 0%;
+    padding: 30px 24px 0 3%;
 }
 
 .banner_div img {
@@ -2131,37 +2128,29 @@ header {
         margin: 0 auto;
         /* padding: 22px 0; */
         width: 100%;
-        height: 162px;
     }
 
     .icon_box a {
         color: #000;
         font-size: 14px;
-        padding: 0;
+        padding: 20px 10px;
         display: block;
         line-height: 20px;
     }
 
 .left_bo {
     background: url(../images/back.png) no-repeat 0 0;
-    background-size: cover;
-    padding: 6px 25px;
-    width: 100%;
-    border: 1px solid #eee;
-    margin-right: 19px;
-    border-radius: 6px;
-    box-shadow: 2px 2px 12px rgb(0 0 0 / 14%);
+    background-size: contain;
+    padding: 8px 20px;
 }
 
 .one_part {
     display: inline-block;
-    width: 38%;
+    width: 34%;
     text-align: center;
     padding: 25px 12px 0 0;
     vertical-align: top;
-    font-size: 16px;
-    text-align: center;
-    margin: 0 auto;
+    font-size: 14px;
 }
 
     .one_part a {
@@ -2175,12 +2164,12 @@ header {
 
 .two_part {
     display: inline-block;
-    width: 60%;
-    padding-left: 36px;
+    width: 56%;
+    padding-left: 10px;
 }
 
     .two_part ul li {
-        padding: 0 0 0px 0;
+        padding: 0 0 1px 0;
         list-style-type: none;
     }
 
@@ -2330,7 +2319,7 @@ header {
     width: 0;
     position: relative;
     z-index: 99999;
-    top: 19px;
+    top: 0;
     left: 0;
     background-color: #404040;
     /*overflow-x: hidden;*/
@@ -2381,7 +2370,7 @@ header {
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
     .sidebar {
-        /* padding-top: 15px; */
+        padding-top: 15px;
         /* z-index: 999; */
     }
 
@@ -2803,15 +2792,12 @@ header {
         background: #777777;
         padding: 4px 13px;
         border: 1px solid #777777;
-        border-radius: 0;
     }
 
 
 .admin .dropdown-content {
     top: 40px;
     padding: 14px;
-    right: 0;
-    text-align: center;
     z-index: 9999999;
 }
 
@@ -2828,24 +2814,21 @@ header {
     }
 
 .admin .button.log {
-    height: 37px;
     background: #e90000;
     border: 0;
     border: 2px solid #fff;
-    padding: 0px;
+    padding: 6px;
     border-radius: 22px;
-    text-align: center;
-    width: 37px;
+    text-align: right;
 }
 
 .admin {
-    margin: 15px 0 0 0;
-    /* float: right; */
+    margin: 10px 0 0 0;
+    float: right;
 }
 
 .logo img {
     width: 100%;
-    padding-left: 14px;
 }
 
 .admin .dropdown-content h3 span {
@@ -2855,8 +2838,7 @@ header {
 }
 
 .icon_box {
-    width: 100%;
-    margin-top: -14px;
+    width: 81%;
 }
 
     .icon_box h5 {
@@ -2892,7 +2874,7 @@ header {
 }
 
 .shipmenu .menu ul li a {
-    height: 36px;
+    height: 34px;
 }
 
 .shipmenu .pgnam {
@@ -2903,7 +2885,7 @@ header {
 }
 
 .shipmenu .menu ul li {
-    margin: 0 0 10px 0;
+    margin: 0 0 7px 0;
 }
 
 .ship_sec {
@@ -2948,7 +2930,6 @@ header {
 
 .bnr_bottom_sec a {
     color: #000;
-    width: 100%;
 }
 
 .texthighlight {
@@ -2978,24 +2959,13 @@ header {
 }
 
 .sidebar {
-    width: 0;
-    opacity: 0;
+    width: 395px;
 }
-
-    .sidebar .menu_panel {
-        display: none;
-    }
 
 .sidebarf {
-    width: 361px;
-    opacity: 1;
-    /* margin-top: 19px; */
-    padding: 0;
+    width: 0;
 }
 
-    .sidebarf .menu_panel {
-        display: block;
-    }
 
 .imgicon img:last-child {
     display: none;
@@ -3030,108 +3000,26 @@ header {
 
     .tooltip .tooltiptext {
         visibility: hidden;
-        width: 87%;
-        background-color: rgb(233 0 0 / 75%);
+        width: 94%;
+        background-color: #404040;
         color: #fff;
         text-align: center;
         border-radius: 6px;
-        padding: 8px 4px;
-        /* Position the tooltip */
-        position: absolute;
-        z-index: 1;
-        height: auto;
-        top: 138px;
-        left: 8px;
-        right: 0;
-        margin: 0 auto;
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 20px;
-    }
-
-.volume .mainmenu .tooltip {
-    position: relative;
-    display: inline-block;
-    opacity: 1;
-    width: 100%;
-}
-
-    .volume .mainmenu .tooltip .tooltiptext {
-        width: 229px;
-        background-color: rgb(233 0 0 / 82%);
-        color: #fff;
-        text-align: center;
-        border-radius: 0;
-        padding: 8px 8px;
+        padding: 5px 4px;
         /* Position the tooltip */
         position: absolute;
         z-index: 1;
         height: auto;
         bottom: -3px;
-        left: -452px;
-        font-weight: 600;
-        /* margin: 0 auto; */
-        font-size: 16px;
-        top: 0;
-        line-height: initial;
-        display: table;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
     }
 
-.tooltip:hover .tooltiptext {
-    visibility: visible;
-}
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+    }
 
 .steps_content a:hover {
     color: #000;
 }
-
-.shipmenu .menu ul li:last-child {
-    margin: 0;
-}
-
-.topright {
-    text-align: right;
-}
-
-.one_part img {
-    display: block;
-    margin: 0 auto;
-}
-
-.topright li {
-    display: inline-block;
-    padding: 0 0px 0 15px;
-}
-
-.volume.sidebarf {
-    width: 300px;
-}
-
-.mr-3, .mx-3 {
-    margin-right: 0rem !important;
-    border-radius: 0;
-    height: 33px;
-}
-
-.container.volumeleftbody {
-    max-width: 1198px;
-}
-.notification sup {
-    background: #239c0d;
-    color: #fff;
-    line-height: 20px;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: inline-block;
-    text-align: center;
-    top: -15px;
-    right: 16px;
-}
-
-/*.hidis{display:none !important;}*/
-.hidis ul{}
-    .hidis ul li {
-        font-size: 14px;
-        padding: 3px 0;
-    }

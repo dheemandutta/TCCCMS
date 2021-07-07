@@ -155,10 +155,10 @@ namespace TCCCMS.Data
 
                             //command.Parameters.AddWithValue("@VesselId", vesselId);
 
-                            if (!String.IsNullOrEmpty(gender))
-                                command.Parameters.AddWithValue("@Gender", gender);
-                            else
-                                command.Parameters.AddWithValue("@Gender", DBNull.Value);
+                            //if (!String.IsNullOrEmpty(gender))
+                            //    command.Parameters.AddWithValue("@Gender", gender);
+                            //else
+                            //    command.Parameters.AddWithValue("@Gender", DBNull.Value);
 
 
 
