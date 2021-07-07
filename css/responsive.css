@@ -22,7 +22,7 @@
     .left_bo {
         background-size: cover;
         padding: 7px 0px 7px 19px;
-        margin: 10px;
+        margin: 10px 0;
     }
 
     header .col-lg-8 {
@@ -97,6 +97,34 @@
         font-size: 21px;
         word-break: break-all;
     }
+
+    .volume.sidebarf {
+        height: 117vh;
+    }
+
+    .tooltiptext {
+        display: none !important;
+    }
+
+    .volumeleftbody h2 {
+        font-size: 22px;
+    }
+
+    .topright li {
+        padding: 0 0px 0 0px;
+    }
+
+    .menu_icon a {
+        margin: -10px 0px 0 0;
+    }
+
+    .icon_box img {
+        height: auto;
+    }
+
+    .volume .mainmenu .tooltip .tooltiptext {
+        display: none;
+    }
 }
 
 @media only screen and (min-width:200px) and (max-width:319px) {
@@ -109,6 +137,10 @@
 }
 
 @media only screen and (min-width:768px) and (max-width:991px) {
+    input, select, textarea {
+        max-width: 100% !important;
+    }
+
     #login {
         /* border-right: 1px solid #fff; */
         border-left: 0px solid #eee4e4 !important;
@@ -139,6 +171,7 @@
 
     .icon_box {
         width: 100% !important;
+        margin-top: 20px;
     }
 
     .one_part {
@@ -146,7 +179,8 @@
     }
 
     .sidebar {
-        width: 254px;
+        width: 300px;
+        position: absolute;
     }
 
     .two_part ul li a {
@@ -173,17 +207,98 @@
     .one_part {
         text-align: center;
         padding: 8px 0px 0 0;
+        font-size: 13px;
     }
 
     .bnr_bottom_sec a {
         font-size: 12px;
         line-height: 16px;
     }
+
+    .searchTerm {
+        width: 57%;
+    }
+
+    .breadcrumbs .search {
+        width: 53%;
+    }
+
+    .full_body {
+        display: block;
+    }
+
+    .volume.sidebarf {
+        position: absolute;
+    }
+
+    .logo img {
+        padding-left: 1px;
+    }
+
+    .icon_box img {
+        height: auto;
+    }
+
+    .two_part ul li {
+        line-height: 15px;
+    }
+
+    .steps_content {
+        padding: 0 11px 0 9px;
+        font-size: 12px;
+    }
+
+    .full_body .container.body-content {
+        max-width: 1198px;
+    }
+
+    .icon_box img {
+        height: auto !important;
+    }
+
+    .adminlay {
+        padding: 0 0px 0 3px;
+    }
+
+    .tooltip .tooltiptext {
+        /* visibility: hidden; */
+        width: 100%;
+        top: 88px;
+        font-size: 13px;
+    }
+
+    .tooltiptext {
+        display: none !important;
+    }
+
+    .volume.sidebarf {
+        height: 100vh;
+    }
 }
 
 @media (min-width:992px) and (max-width:1199px) {
+    .topright li {
+        padding: 0 0px 0 6px;
+    }
+
+    .sidebar {
+        position: absolute;
+    }
+
+    .logo img {
+        width: 152%;
+    }
+
+    .mr-3, .mx-3 {
+        height: 34px;
+    }
+
     .two_part {
         width: 60%;
+    }
+
+    .icon_box img {
+        height: auto !important;
     }
 
     .w-25 {
@@ -191,7 +306,7 @@
     }
 
     .sidebar {
-        height: 151vh;
+        height: 100vh;
     }
 
     .ta {
@@ -215,6 +330,11 @@
 
     .two_part ul li a {
         font-size: 10px;
+    }
+
+    .volume .mainmenu .tooltip .tooltiptext {
+        right: -452px;
+        left: 0;
     }
 }
 
