@@ -3130,8 +3130,18 @@ header {
 }
 
 .hidis{display:none !important;}
-/*.hidis ul{}
-    .hidis ul li {
-        font-size: 14px;
-        padding: 3px 0;
-    }*/
+.smallchar ul{}
+    .smallchar ul li {
+        font-size: 10px;
+        padding: 2px 0;
+    }
+
+
+
+
+
+
+/*by Prasenjit*/
+.spaceless {
+    margin-right: -20px;
+}

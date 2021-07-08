@@ -59,7 +59,7 @@
                                     <span><a href="~/Forms/FormsApprovalList"><img src="~/images/bell.png" style="width:19px;" /></a></span>
                                 </button>
                                 <sup id="notifyNumber" class="hidis"></sup>
-                                <div id="notifyContent" class="dropdown-content hidis">
+                                <div id="notifyContent" class="dropdown-content hidis smallchar">
                                     @*<h3>@Session["UserCode"].ToString() <span> @Session["Role"].ToString()</span></h3>
                                     <a href="@Url.Action("Login", "Home")">Log Off</a>*@
                                                     @*<div class="scroll">
@@ -243,7 +243,8 @@
                             $('#btnBell').prop('disabled', false);
                             $('#notifyNumber').removeClass('hidis');
                             $('#notifyContent').removeClass('hidis');
-                            //$("#notifyContent").css("margin-right","-24px");
+                            /*$("#notifyContent").css({"margin-right": "-24px"});*/
+                            $("#notifyNumber").addClass('spaceless');                  /*by Prasenjit*/
                         }
                     },
                     error: function (errormessage) {
