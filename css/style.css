@@ -3129,9 +3129,19 @@ header {
     right: 16px;
 }
 
-/*.hidis{display:none !important;}*/
-.hidis ul{}
-    .hidis ul li {
-        font-size: 14px;
-        padding: 3px 0;
+.hidis{display:none !important;}
+.smallchar ul{}
+    .smallchar ul li {
+        font-size: 10px;
+        padding: 2px 0;
     }
+
+
+
+
+
+
+/*by Prasenjit*/
+.spaceless {
+    margin-right: -20px;
+}
