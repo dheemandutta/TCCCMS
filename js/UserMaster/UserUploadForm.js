@@ -137,8 +137,10 @@ function UploadFilledUpFormNew() {
             data: fileData,
             //data: { categoryId: y},
             success: function (result) {
-                //alert(result);
+                alert(result);
+                $('#fileUpload').val('');
                 //ClearFields();
+                $('#filledUpFormModal').modal('hide');
                 toastr.options = {
                     "closeButton": false,
                     "debug": false,
