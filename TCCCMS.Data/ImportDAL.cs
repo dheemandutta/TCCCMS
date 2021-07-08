@@ -22,39 +22,34 @@ namespace TCCCMS.Data
 
 
 
-            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RestHourDBConnectionString"].ConnectionString))
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
 
             {
 
                 con.Open();
-                SqlCommand command = new SqlCommand("stpImportCrew", con);
+                SqlCommand command  = new SqlCommand("stpImportCrew", con);
                 command.CommandType = CommandType.StoredProcedure;
 
                 for (int r = 0; r < dTable.Rows.Count; r++)
                 {
-                        command.Parameters.Clear();
-                        string CrewName = dTable.Rows[r][2].ToString();
-                        string Rank = dTable.Rows[r][3].ToString();
-                        string ShipNumber = dTable.Rows[r][4].ToString();
-                        string Email = dTable.Rows[r][5].ToString();
+                    command.Parameters.Clear();
+                    string CrewName = dTable.Rows[r][2].ToString();
+                    string Rank     = dTable.Rows[r][3].ToString();
+                    int ShipNumber  = Convert.ToInt32(dTable.Rows[r][4].ToString());
+                    string Email    = dTable.Rows[r][5].ToString();
 
 
                     command.Parameters.AddWithValue("@UserName", CrewName);
-                    command.Parameters.AddWithValue("@Rank", Rank);
-                    command.Parameters.AddWithValue("@ShipId", ShipNumber);
+                    command.Parameters.AddWithValue("@RankName", Rank);
+                    command.Parameters.AddWithValue("@ShipNo", ShipNumber);
                     command.Parameters.AddWithValue("@Email", Email);
 
-
-                    //if (!String.IsNullOrEmpty(department))
-                    //    command.Parameters.AddWithValue("@Department", department);
-                    //else
-                    //    command.Parameters.AddWithValue("@Department", DBNull.Value);
 
                     int i = command.ExecuteNonQuery();
                                 
                 }
-                //command.Parameters.Add(new SqlParameter("@XMLDoc", SqlDbType.VarChar));
-                //command.Parameters[0].Value = strXMl; //passing the string form of XML generated above
+
+                con.Close();
             }
         }
     }
