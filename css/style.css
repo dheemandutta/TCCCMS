@@ -3129,9 +3129,9 @@ header {
     right: 16px;
 }
 
-/*.hidis{display:none !important;}*/
-.hidis ul{}
+.hidis{display:none !important;}
+/*.hidis ul{}
     .hidis ul li {
         font-size: 14px;
         padding: 3px 0;
-    }
+    }*/
