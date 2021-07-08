@@ -273,19 +273,22 @@ namespace TCCCMS.Ship.ExportData
 
                 //string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
                 string tmpPath = Path.Combine(Path.GetDirectoryName(path), "temp");
-                
 
+                TccLog.UpdateLog("tem path : " + tmpPath, LogMessageType.Info, "Ship Export-CreateZip");
+                TccLog.UpdateLog("xml : " + xmlFile, LogMessageType.Info, "Ship Export-CreateZip");
                 DataSet dataSet = new DataSet();
                 dataSet.ReadXmlSchema(xmlFile);
                 dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
                 foreach (DataRow row in dataSet.Tables[0].Rows)
                 {
-                    string sourcePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
+                    //string sourcePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
+                    string sourcePath = ConfigurationManager.AppSettings["iisPath"].ToString();
                     string uploadedFileName = string.Empty;
                     string relPath = string.Empty;
                     string filePath = string.Empty;
-                    if(partName == "TICKET")
+                    TccLog.UpdateLog(sourcePath, LogMessageType.Error, "Export-CreateUploadedZipFile- foreach");
+                    if (partName == "TICKET")
                     {
                         filePath = row["FilePath"].ToString();
                         uploadedFileName = Path.GetFileName(filePath);
@@ -295,54 +298,76 @@ namespace TCCCMS.Ship.ExportData
                         filePath = row["FormsPath"].ToString();
                         uploadedFileName = row["FormsName"].ToString();
                     }
-                    
+
                     relPath = Path.GetDirectoryName(filePath);
-                    relPath = relPath.Replace("~", "").Replace("/","");
+                    relPath = relPath.Replace("~", "").Replace("/", "");
 
                     //sourcePath = Path.Combine(sourcePath, relPath);
                     sourcePath = sourcePath + relPath;
                     sourcePath = Path.Combine(sourcePath, uploadedFileName);
-                    if(File.Exists(sourcePath))
+
+                    TccLog.UpdateLog("Source: "+sourcePath, LogMessageType.Error, "Export-CreateUploadedZipFile- foreach");
+                    TccLog.UpdateLog("Temp Destination: "+ Path.Combine(tmpPath, uploadedFileName), LogMessageType.Error, "Export-CreateUploadedZipFile- foreach");
+
+                    if (File.Exists(sourcePath))
+                    {
                         File.Copy(sourcePath, Path.Combine(tmpPath, uploadedFileName));
+                        TccLog.UpdateLog("File copied from IIS to Temp", LogMessageType.Error, "Export-CreateUploadedZipFile- foreach");
+                    }
+                    else
+                    {
+                        TccLog.UpdateLog("File not copied from IIS to Temp", LogMessageType.Error, "Export-CreateUploadedZipFile- foreach");
+                    }
+                       
 
 
 
                 }
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
-                con.Open();
-                SqlCommand cmd = new SqlCommand("GetShipDetailsById", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@ShipId", ShipId);
-                DataSet ds = new DataSet();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(ds);
-                //string fileName = ds.Tables[0].Rows[0]["IMONumber"].ToString();
-                string zipName = ds.Tables[0].Rows[0]["ID"].ToString();
-                //zipName = zipName + "_TICKET_" + DateTime.Now.ToString("MMddyyyyhhmm");
-                zipName = zipName + "_"+ partName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
-                zipName = zipName + ".zip";
-
-                using (ZipFile zip = new ZipFile())
+                //if (File.Exists(tmpPath))
+                if (Directory.GetFiles(tmpPath,"*.*").Length > 0)
                 {
-                    zip.AddDirectory(tmpPath + "\\");
-                    zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
 
-                    zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
-                    zip.Save(path + "\\" + zipName);//---Create Zip of Uploaded file in 'xml' folder. ---
-                    // SegmentsCreated = zip.NumberOfSegmentsForMostRecentSave;
+                    TccLog.UpdateLog("Ship NO:- " + ShipId, LogMessageType.Error, "Export-CreateUploadedZipFile- foreach");
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("GetShipDetailsById", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ShipId", ShipId);
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    //string fileName = ds.Tables[0].Rows[0]["IMONumber"].ToString();
+                    string zipName = ds.Tables[0].Rows[0]["ID"].ToString();
+                    //zipName = zipName + "_TICKET_" + DateTime.Now.ToString("MMddyyyyhhmm");
+                    zipName = zipName + "_" + partName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
+                    zipName = zipName + ".zip";
+
+                    using (ZipFile zip = new ZipFile())
+                    {
+                        zip.AddDirectory(tmpPath + "\\");
+                        zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
+
+                        zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
+                        zip.Save(path + "\\" + zipName);//---Create Zip of Uploaded file in 'xml' folder. ---
+                                                        // SegmentsCreated = zip.NumberOfSegmentsForMostRecentSave;
+                    }
+
+                    //delete xml files 
+                    string[] filePaths = Directory.GetFiles(tmpPath + "\\");
+
+                    foreach (string filePath in filePaths)
+
+                        File.Delete(filePath);
+
+
+                    ///------------------------------------------------
+                }
+                else
+                {
+                    TccLog.UpdateLog("file not exist in temp path : " + tmpPath, LogMessageType.Info, "Ship Export-CreateZip");
                 }
 
-                //delete xml files 
-                string[] filePaths = Directory.GetFiles(tmpPath + "\\");
-
-                foreach (string filePath in filePaths)
-
-                    File.Delete(filePath);
-
-
-                ///------------------------------------------------
 
             }
             catch (Exception ex)
@@ -358,7 +383,7 @@ namespace TCCCMS.Ship.ExportData
         #region Export Data From DB
         public static void ExportData()
         {
-            logger.Info("Import Process Started. - {0}", DateTime.Now.ToString());
+            logger.Info("Export Process Started. - {0}", DateTime.Now.ToString());
             TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Export");
             try
             {
@@ -389,6 +414,9 @@ namespace TCCCMS.Ship.ExportData
 
             try
             {
+                logger.Info("Export Ticket Process Started. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Export Ticket Process Started", LogMessageType.Info, "ShipExport - Ticket");
+
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
                 con.Open();
                 //SqlCommand cmd = new SqlCommand("stpExporttblTicketFromShip", con);
@@ -421,6 +449,9 @@ namespace TCCCMS.Ship.ExportData
         {
             try
             {
+                logger.Info("Export FillupFormsUploaded Process Started. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Export FillupFormsUploaded Process Started", LogMessageType.Info, "ShipExport - FillupFormsUploaded");
+
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
                 con.Open();
                 //SqlCommand cmd = new SqlCommand("stpExporttblFormUploaded", con);
@@ -450,6 +481,9 @@ namespace TCCCMS.Ship.ExportData
         {
             try
             {
+                logger.Info("Export FillupFormApproverMapper Process Started. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Export FillupFormApproverMapper Process Started", LogMessageType.Info, "ShipExport - FillupFormApproverMapper");
+
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
                 con.Open();
                 //SqlCommand cmd = new SqlCommand("stpExporttblFormsUploadedApproverMapping", con);
@@ -476,6 +510,9 @@ namespace TCCCMS.Ship.ExportData
         {
             try
             {
+                logger.Info("Export RevisionViewer Process Started. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Export RevisionViewer Process Started", LogMessageType.Info, "ShipExport - RevisionViewer");
+
                 SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
                 con.Open();
                 //SqlCommand cmd = new SqlCommand("stpExporttblRevisionViewerFromShip", con);
@@ -510,16 +547,21 @@ namespace TCCCMS.Ship.ExportData
             string shipEmail = GetConfigData("shipemail").Trim();
             string shipEmailpwd = GetConfigData("shipemailpwd").Trim();
             //string shipEmailpwd = EncodeDecode.DecryptString(GetConfigData("shipemailpwd"));
+
+            TccLog.UpdateLog("Got Ship email/pwd", LogMessageType.Info, "ShipExport - SendMail");
+
             try
             {
                 using (MailMessage mail = new MailMessage())
                 {
                     mail.Subject = GetConfigData("tccSsubject");
-                    mail.From = new MailAddress(GetConfigData("mailfrom"));
-                    mail.To.Add(GetConfigData("mailto"));
+                    //mail.From = new MailAddress(GetConfigData("mailfrom"));
+                    //mail.To.Add(GetConfigData("mailto"));
 
                     //mail.From = new MailAddress(GetConfigData("shipemail"));
-                    //mail.To.Add(GetConfigData("admincenteremail"));
+
+                    mail.From = new MailAddress(shipEmail);
+                    mail.To.Add(GetConfigData("admincenteremail"));
 
                     if (ZipDirectoryContainsZipFiles())
                     {
@@ -534,15 +576,17 @@ namespace TCCCMS.Ship.ExportData
                     }
 
                     SmtpClient smtp = new SmtpClient(GetConfigData("smtp"));
-                    smtp.EnableSsl = true;
+                    //smtp.EnableSsl = true;
+                    smtp.EnableSsl = false;
                     smtp.Port = int.Parse(GetConfigData("port"));
-                    //smtp.Credentials = new System.Net.NetworkCredential(shipEmail, shipEmailpwd);
+                    smtp.Credentials = new System.Net.NetworkCredential(shipEmail, shipEmailpwd);
 
-                    smtp.Credentials = new System.Net.NetworkCredential(GetConfigData("mailfrom").Trim(), GetConfigData("frompwd").Trim());
+                    //smtp.Credentials = new System.Net.NetworkCredential(GetConfigData("mailfrom").Trim(), GetConfigData("frompwd").Trim());
                     //smtp.Credentials = new System.Net.NetworkCredential(GetConfigData("mailfrom").Trim(), EncodeDecode.DecryptString(GetConfigData("frompwd")));
 
+                    TccLog.UpdateLog("Sending Mail", LogMessageType.Info, "ShipExport - SendMail");
                     smtp.Send(mail);
-                    TccLog.UpdateLog("Send Mail Successfull", LogMessageType.Info, "Export");
+                    TccLog.UpdateLog("Send Mail Successfull", LogMessageType.Info, "Export - SendMail");
                     isMailSendSuccessful = true;
                 }
             }
@@ -565,7 +609,7 @@ namespace TCCCMS.Ship.ExportData
 
         public static void UpdateExportedData()
         {
-            logger.Info("Import Process Started. - {0}", DateTime.Now.ToString());
+            logger.Info("Update Export Data Process Started. - {0}", DateTime.Now.ToString());
             TccLog.UpdateLog("Update Export Data Process Started", LogMessageType.Info, "UpdateExportedData");
             try
             {
@@ -600,31 +644,34 @@ namespace TCCCMS.Ship.ExportData
                 // Here your xml file
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
                 int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
-
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UpdateTicketExportInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    if (ShipId == int.Parse(row["ShipId"].ToString()))
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UpdateTicketExportInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
                     {
-                        cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
+                        //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
+
+                        if (ShipId == int.Parse(row["ShipId"].ToString()))
+                        {
+                            cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
 
 
-                        int x = cmd.ExecuteNonQuery();
-                        cmd.Parameters.Clear();
+                            int x = cmd.ExecuteNonQuery();
+                            cmd.Parameters.Clear();
+                        }
+
+
                     }
-
-
                 }
+                    
 
                 
             }
@@ -643,28 +690,33 @@ namespace TCCCMS.Ship.ExportData
                 // Here your xml file
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlRevisionViewer"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UpdateRevisionViewerExportInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["RevisionId"].ToString()));
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    cmd.Parameters.AddWithValue("@UserId", int.Parse(row["UserId"].ToString()));
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UpdateRevisionViewerExportInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
-                    
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["RevisionId"].ToString()));
+
+                        cmd.Parameters.AddWithValue("@UserId", int.Parse(row["UserId"].ToString()));
+
+                        cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
 
 
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
                 }
+
+                   
 
                 
             }
@@ -683,26 +735,30 @@ namespace TCCCMS.Ship.ExportData
                 // Here your xml file
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UpdateFormsUploadExportInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    string uploadedFileName = string.Empty;
-                    string relativePath = string.Empty;
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
-                   
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                   
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UpdateFormsUploadExportInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        string uploadedFileName = string.Empty;
+                        string relativePath = string.Empty;
+
+                        cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+
+                    }
                 }
+ 
                 
             }
             catch (Exception ex)
@@ -720,24 +776,27 @@ namespace TCCCMS.Ship.ExportData
                 // Here your xml file
                 string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("UpdateFormsUploadApproverMappingExportInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    cmd.Parameters.AddWithValue("@FormsName", row["UploadedFormName"].ToString());
-                    cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
-                    
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UpdateFormsUploadApproverMappingExportInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        cmd.Parameters.AddWithValue("@FormsName", row["UploadedFormName"].ToString());
+                        cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                    }
                 }
-                
+
             }
             catch (Exception ex)
             {
