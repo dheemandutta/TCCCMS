@@ -983,15 +983,15 @@ namespace TCCCMS.Ship.ImportData
                 //Creating Mail configuration 
                 MailServiceConfiguration serviceconf = new MailServiceConfiguration
                 {
-                    MailId = GetConfigData("shipemail"),
-                    MailPassword = GetConfigData("shipemailpwd"),
-                    // MailPassword = EncodeDecode.DecryptString(GetConfigData("shipemailpwd")),
-                    SubjectLine = GetConfigData("tccAsubject"),
-                    MailServerDomain = GetConfigData("imappopServer"),
-                    Port = int.Parse(GetConfigData("imappopport")),
-                    MailServerType = mTyp,
+                    MailId              = GetConfigData("shipemail"),
+                    //MailPassword = GetConfigData("shipemailpwd"),
+                    MailPassword        = EncodeDecode.DecryptString(GetConfigData("shipemailpwd")),
+                    SubjectLine         = GetConfigData("tccAsubject"),
+                    MailServerDomain    = GetConfigData("imappopServer"),
+                    Port                = int.Parse(GetConfigData("imappopport")),
+                    MailServerType      = mTyp,
 
-                    AttachmentPath = zipPath,
+                    AttachmentPath      = zipPath,
 
                     ///---------------------------
                     //MailId              = "cableman24x7@gmail.com",

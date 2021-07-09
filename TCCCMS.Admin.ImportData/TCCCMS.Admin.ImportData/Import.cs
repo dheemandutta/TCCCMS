@@ -687,16 +687,16 @@ namespace TCCCMS.Admin.ImportData
             MailOps mailops = null;
             try
             {
-                TccLog.UpdateLog("Import Zip from Mailbox Started.", LogMessageType.Info, "Admin Import");
+                TccLog.UpdateLog("Import Zip from Mailbox Started.", LogMessageType.Info, "Admin Import-ImportMail");
                 logger.Info("Import Zip from Mailbox Started. - {0}", DateTime.Now.ToString());
                 string mTyp = GetConfigData("protocol");
                 //Creating Mail configuration 
                 MailServiceConfiguration serviceconf = new MailServiceConfiguration
                 {
                     MailId = GetConfigData("admincenteremail"),
-                    MailPassword = GetConfigData("admincenteremailpwd"),
+                    //MailPassword = GetConfigData("admincenteremailpwd"),
 
-                   // MailPassword = EncodeDecode.DecryptString(GetConfigData("admincenteremailpwd")),
+                    MailPassword = EncodeDecode.DecryptString(GetConfigData("admincenteremailpwd")),
 
                     //SubjectLine         = "DATASYNCFILE",
                     SubjectLine = GetConfigData("tccSsubject"),
@@ -718,16 +718,18 @@ namespace TCCCMS.Admin.ImportData
                     //MailServerType      = MailType.IMAP
                     //---------------------------------
                 };
-
+                TccLog.UpdateLog("Seivice Cofig created.", LogMessageType.Info, "Admin Import- ImportMail");
                 mailops = new MailOps
                 {
                     MailServerType = serviceconf.MailServerType
                 };
+
+                TccLog.UpdateLog("Signing in the Email.", LogMessageType.Info, "Admin Import- ImportMail");
                 //mailops.Connect(serviceconf.MailId, Security.DecryptString(serviceconf.MailPassword), serviceconf.MailServerDomain, serviceconf.Port);
                 mailops.Connect(serviceconf.MailId, serviceconf.MailPassword, serviceconf.MailServerDomain, serviceconf.Port);
-                TccLog.UpdateLog("Connect Sucessfull.", LogMessageType.Info, "Admin Import");
+                TccLog.UpdateLog("Connect Sucessfull.", LogMessageType.Info, "Admin Import- ImportMail");
                 mailops.DownloadAllNewMails(serviceconf.SubjectLine, serviceconf.AttachmentPath);
-                TccLog.UpdateLog("Download Sucessfull", LogMessageType.Info, "Admin Import");
+                TccLog.UpdateLog("Download Sucessfull", LogMessageType.Info, "Admin Import - ImportMail");
 
                 isMailReadSuccessful = true;
                 logger.Info("Import Zip from Mailbox process Successfully Completed. - {0}", DateTime.Now.ToString());

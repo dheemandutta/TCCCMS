@@ -55,13 +55,24 @@ namespace TCCCMS.Admin.ImportData
                 }
                 else if (MailServerType == MailType.IMAP)
                 {
-                    imap_Client = new ImapClient(new ProtocolLogger("imap.log"));
-                    imap_Client.Connect(mailDomain, port, true);
-                    imap_Client.AuthenticationMechanisms.Remove("XOAUTH2");
-                    imap_Client.AuthenticationMechanisms.Remove("NTLM");
-                    imap_Client.AuthenticationMechanisms.Remove("PLAIN");
-                    imap_Client.Authenticate(userId, password);
+                    try
+                    {
+                        TccLog.UpdateLog("Connecting IMAP Client", LogMessageType.Info, "Admin Import - Connect");
+                        imap_Client = new ImapClient(new ProtocolLogger("imap.log"));
+                        imap_Client.Connect(mailDomain, port, true);
+                        imap_Client.AuthenticationMechanisms.Remove("XOAUTH2");
+                        imap_Client.AuthenticationMechanisms.Remove("NTLM");
+                        imap_Client.AuthenticationMechanisms.Remove("PLAIN");
+                        imap_Client.Authenticate(userId, password);
+                        TccLog.UpdateLog("IMAP Client Connected", LogMessageType.Info, "Admin Import - Connect");
 
+                    }
+                    catch (Exception ex)
+                    {
+                        LogHelper.Log(LogTarget.EventLog, ex.Message);
+                        TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import - Connect(IMAP)");
+                    }
+                    
 
                 }
                 else
@@ -73,6 +84,7 @@ namespace TCCCMS.Admin.ImportData
             catch (Exception ex)
             {
                 LogHelper.Log(LogTarget.EventLog, ex.Message);
+                TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import - Connect");
             }
 
         }
@@ -81,9 +93,10 @@ namespace TCCCMS.Admin.ImportData
 
             try
             {
+                TccLog.UpdateLog("Start Downloading", LogMessageType.Info, "Admin Import - DownloadAllNewMails");
                 if (MailServerType == MailType.POP3)
                 {
-
+                    TccLog.UpdateLog("Start Downloading in POP3", LogMessageType.Info, "Admin Import - DownloadAllNewMails");
                     for (int i = 0; i < pop_Client.Count; i++)
                     {
                         MimeMessage message = pop_Client.GetMessage(i);
@@ -121,13 +134,16 @@ namespace TCCCMS.Admin.ImportData
                 {
                     try
                     {
+                        TccLog.UpdateLog("Start Downloading in IMAP", LogMessageType.Info, "Admin Import - DownloadAllNewMails");
                         IList<UniqueId> uids = null;
                         var inbox = imap_Client.Inbox;
+                        TccLog.UpdateLog("Checking Inbox null  in IMAP", LogMessageType.Info, "Admin Import - DownloadAllNewMails");
                         if (inbox != null)
                         {
                             inbox.Open(FolderAccess.ReadWrite);
                             uids = inbox.Search(SearchQuery.NotSeen);
                         }
+                        TccLog.UpdateLog("Checked Inbox in IMAP", LogMessageType.Info, "Admin Import - DownloadAllNewMails");
                         if (uids != null)
                         {
                             foreach (UniqueId uid in uids)

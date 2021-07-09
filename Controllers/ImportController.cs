@@ -71,7 +71,7 @@ namespace TCCCMS.Controllers
                             ConfigureDataTable = _ => new ExcelDataTableConfiguration
                             {
                                 UseHeaderRow = false,// Use first row is ColumnName here :D
-                                FilterRow = rowHeader => rowHeader.Depth >= 10
+                                FilterRow = rowHeader => rowHeader.Depth >= 2
                             }
                         });
 
