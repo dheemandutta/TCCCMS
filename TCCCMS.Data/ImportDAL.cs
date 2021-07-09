@@ -32,21 +32,28 @@ namespace TCCCMS.Data
 
                 for (int r = 0; r < dTable.Rows.Count; r++)
                 {
-                    command.Parameters.Clear();
-                    string CrewName = dTable.Rows[r][2].ToString();
-                    string Rank     = dTable.Rows[r][3].ToString();
-                    int ShipNumber  = Convert.ToInt32(dTable.Rows[r][4].ToString());
-                    string Email    = dTable.Rows[r][5].ToString();
+
+                    if (dTable.Rows[r][1].ToString() != String.Empty || dTable.Rows[r][2].ToString() != String.Empty || dTable.Rows[r][3].ToString() != String.Empty)
+                    {
+
+                        command.Parameters.Clear();
+                        string CrewName = dTable.Rows[r][1].ToString();
+                        string Rank = dTable.Rows[r][2].ToString();
+                        //int ShipNumber  = Convert.ToInt32(dTable.Rows[r][3].ToString());
+                        string ShipNumber = dTable.Rows[r][3].ToString();
+                        string Email = dTable.Rows[r][4].ToString();
 
 
-                    command.Parameters.AddWithValue("@UserName", CrewName);
-                    command.Parameters.AddWithValue("@RankName", Rank);
-                    command.Parameters.AddWithValue("@ShipNo", ShipNumber);
-                    command.Parameters.AddWithValue("@Email", Email);
+                        command.Parameters.AddWithValue("@UserName", CrewName);
+                        command.Parameters.AddWithValue("@RankName", Rank);
+                        command.Parameters.AddWithValue("@ShipNo", ShipNumber);
+                        if (!string.IsNullOrEmpty(Email))
+                        command.Parameters.AddWithValue("@Email", Email);
+                        else
+                            command.Parameters.AddWithValue("@Email", DBNull.Value);
 
-
-                    int i = command.ExecuteNonQuery();
-                                
+                        int i = command.ExecuteNonQuery();
+                    }          
                 }
 
                 con.Close();
