@@ -311,7 +311,8 @@ namespace TCCCMS.Admin.ExportData
 
                 foreach (DataRow row in dataSet.Tables[0].Rows)
                 {
-                    string sourcePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
+                    //string sourcePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
+                    string sourcePath = ConfigurationManager.AppSettings["iisPath"].ToString();
                     string uploadedFileName = string.Empty;
                     string relPath = string.Empty;
                     string filePath = string.Empty;
@@ -332,9 +333,19 @@ namespace TCCCMS.Admin.ExportData
                     //sourcePath = Path.Combine(sourcePath, relPath);
                     sourcePath = sourcePath + relPath;
                     sourcePath = Path.Combine(sourcePath, uploadedFileName);
-                    if (File.Exists(sourcePath))
-                        File.Copy(sourcePath, Path.Combine(tmpPath, uploadedFileName));
+                    
+                    TccLog.UpdateLog("Source: " + sourcePath, LogMessageType.Error, "Export-CreateUploadedZipFile- foreach");
+                    TccLog.UpdateLog("Temp Destination: " + Path.Combine(tmpPath, uploadedFileName), LogMessageType.Error, "Admin Export-CreateUploadedZipFile- foreach");
 
+                    if (File.Exists(sourcePath))
+                    {
+                        File.Copy(sourcePath, Path.Combine(tmpPath, uploadedFileName));
+                        TccLog.UpdateLog("File copied from IIS to Temp", LogMessageType.Error, "Admin Export-CreateUploadedZipFile- foreach");
+                    }
+                    else
+                    {
+                        TccLog.UpdateLog("File not copied from IIS to Temp", LogMessageType.Error, "Admin Export-CreateUploadedZipFile- foreach");
+                    }
 
 
                 }
