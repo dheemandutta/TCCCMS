@@ -646,7 +646,7 @@ function GetUserByUserId(UserId) {
         dataType: "json",
         success: function (result) {
             $('#UserId').val(result.UserId);
-            if (userType === 1) {
+            if (userType === '1') {
                 //debugger;
                
                 $('#UserName').val(result.UserName);
@@ -663,7 +663,7 @@ function GetUserByUserId(UserId) {
 
                 $('#IsAdmin').val(result.IsAdmin);
             }
-            else if (userType === 2) {
+            else if (userType === '2') {
                 $('#cUserName').val(result.UserName);
                 $('#cUserCode').val(result.UserCode);
                 $('#cPassword').val(result.Password);
@@ -673,7 +673,7 @@ function GetUserByUserId(UserId) {
                 //$('#ModifiedBy').val(result.ModifiedBy);
                 $('#cGender').val(result.Gender);
 
-                $('#cIsAdmin').val(result.IsAdmin);
+                $('#cIsAdmin').val(result.IsAdmin);              
             }
             LoadTab();
 
