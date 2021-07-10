@@ -646,7 +646,8 @@ function GetUserByUserId(UserId) {
         dataType: "json",
         success: function (result) {
             $('#UserId').val(result.UserId);
-            if (userType === 1) {
+            LoadTab();
+            if (userType === '1') {
                 //debugger;
                
                 $('#UserName').val(result.UserName);
@@ -663,7 +664,7 @@ function GetUserByUserId(UserId) {
 
                 $('#IsAdmin').val(result.IsAdmin);
             }
-            else if (userType === 2) {
+            else if (userType === '2') {
                 $('#cUserName').val(result.UserName);
                 $('#cUserCode').val(result.UserCode);
                 $('#cPassword').val(result.Password);
@@ -675,7 +676,7 @@ function GetUserByUserId(UserId) {
 
                 $('#cIsAdmin').val(result.IsAdmin);
             }
-            LoadTab();
+            //LoadTab();
 
             $('#myModal').modal('show');
             $('#btnUpdate').show();
@@ -712,7 +713,7 @@ function confirmPass() {
 
 ///---------------Tabs---------------------
 var selected_tab = 0;
-var userType = 2;
+var userType = "2";
 function LoadTab() {
 
     $.ajax({//----added on 6th Jul 2021 @BK

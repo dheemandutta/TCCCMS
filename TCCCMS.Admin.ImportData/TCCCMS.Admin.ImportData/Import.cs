@@ -213,6 +213,7 @@ namespace TCCCMS.Admin.ImportData
 
         public static void ArchiveZipFiles(string f)
         {
+            TccLog.UpdateLog("Start Archiving", LogMessageType.Info, "Admin Import -ExecuteSql");
             string sourceFilePath = zipPath + "\\";
             string destinationFilePath = zipArchivePath + "\\";
 
@@ -250,54 +251,79 @@ namespace TCCCMS.Admin.ImportData
 
             string sourceFilePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
 
-            DataSet dataSet = new DataSet();
-            dataSet.ReadXmlSchema(xmlFile);
-            dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-            string[] sourceFiles = Directory.GetFiles(sourceFilePath);
+           
 
-
-            //----------------------------------------------------------------
-            foreach (DataRow row in dataSet.Tables[0].Rows)
+            try
             {
-                string destinationFilePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
-                string tempSourcePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
-                string uploadedFileName = string.Empty;
-                string relPath = string.Empty;
-                string filePath = string.Empty;
-                if (partName == "TICKET")
+                if (File.Exists(xmlFile))
                 {
-                    filePath = row["FilePath"].ToString();
-                    uploadedFileName = Path.GetFileName(filePath);
-                   // destinationFilePath = destinationFilePath + "\\TicketFiles";
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+                    string[] sourceFiles = Directory.GetFiles(sourceFilePath);
+                    //----------------------------------------------------------------
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        //string destinationFilePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
+                        string destinationFilePath = ConfigurationManager.AppSettings["iisPath"].ToString();
+                        string tempSourcePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
+                        string uploadedFileName = string.Empty;
+                        string relPath = string.Empty;
+                        string filePath = string.Empty;
+                        if (partName == "TICKET")
+                        {
+                            filePath = row["FilePath"].ToString();
+                            uploadedFileName = Path.GetFileName(filePath);
+                            // destinationFilePath = destinationFilePath + "\\TicketFiles";
 
+                        }
+                        else
+                        {
+                            filePath = row["FormsPath"].ToString();
+                            uploadedFileName = row["FormsName"].ToString();
+                            //destinationFilePath = destinationFilePath + "\\UploadFilledUpFormForApproval";
+                        }
+
+                        relPath = Path.GetDirectoryName(filePath);
+                        relPath = relPath.Replace("~", "").Replace("/", "");
+
+                        destinationFilePath = destinationFilePath + relPath;
+                        tempSourcePath = Path.Combine(tempSourcePath, uploadedFileName);
+
+                        logger.Info(destinationFilePath + " - {0}", DateTime.Now.ToString());
+                        TccLog.UpdateLog(destinationFilePath, LogMessageType.Info, "Admin Import- CopyUploadedFiles");
+                        logger.Info(tempSourcePath + ". - {0}", DateTime.Now.ToString());
+                        TccLog.UpdateLog(tempSourcePath, LogMessageType.Info, "Admin Import- CopyUploadedFiles");
+
+                        if (File.Exists(tempSourcePath))
+                        {
+                            File.Copy(tempSourcePath, Path.Combine(destinationFilePath, uploadedFileName), true);
+                            TccLog.UpdateLog("File copied from Temp to IIS", LogMessageType.Error, "Asmin Export-CreateUploadedZipFile- foreach");
+                        }
+                        else
+                        {
+                            TccLog.UpdateLog("File not copied from Temp to IIS", LogMessageType.Error, "Admin Export-CreateUploadedZipFile- foreach");
+                        }
+
+                    }
+
+                    isMailReadSuccessful = false;
+                    //System.IO.File.Move(sourceFilePath, destinationFilePath);
                 }
                 else
                 {
-                    filePath = row["FormsPath"].ToString();
-                    uploadedFileName = row["FormsName"].ToString();
-                    //destinationFilePath = destinationFilePath + "\\UploadFilledUpFormForApproval";
+                    TccLog.UpdateLog("Xml path: " + xmlFile, LogMessageType.Info, "Admin Import-CreateUploadedZipFile");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Admin Import-CreateUploadedZipFile");
                 }
-
-                relPath = Path.GetDirectoryName(filePath);
-                relPath = relPath.Replace("~", "").Replace("/", "");
-
-                destinationFilePath = destinationFilePath + relPath;
-                tempSourcePath = Path.Combine(tempSourcePath, uploadedFileName);
-
-                logger.Info(destinationFilePath +" - {0}", DateTime.Now.ToString());
-                TccLog.UpdateLog(destinationFilePath, LogMessageType.Info, "Admin Import");
-                logger.Info(tempSourcePath+ ". - {0}", DateTime.Now.ToString());
-                TccLog.UpdateLog(tempSourcePath, LogMessageType.Info, "Admin Import");
-
-                if (File.Exists(tempSourcePath))
-                    File.Copy(tempSourcePath, Path.Combine(destinationFilePath, uploadedFileName));
-
-
-
+            }
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-CreateUploadedZipFile");
+                logger.Error(ex, "Ticket Import");
+                //throw;
             }
 
-            isMailReadSuccessful = false;
-            //System.IO.File.Move(sourceFilePath, destinationFilePath);
+
         }
 
         public static void CopyUploadedFiles2(string f, string relativePath)
@@ -354,6 +380,8 @@ namespace TCCCMS.Admin.ImportData
 
                 logger.Error("Directory not found. - {0}", ex.Message + " :" + ex.Message);
                 logger.Info("Import process terminated unsuccessfully in ZipDirectoryContainsZipFiles.");
+                TccLog.UpdateLog("Directory not found. - {0} ;"+ ex.Message + " :" + ex.Message, LogMessageType.Error, "Admin Import");
+                TccLog.UpdateLog("Import process terminated unsuccessfully in ZipDirectoryContainsZipFiles.", LogMessageType.Info, "Admin Import");
                 return false;
                 //Environment.Exit(0);
             }
@@ -367,16 +395,16 @@ namespace TCCCMS.Admin.ImportData
                 
                 Ticket();
                 logger.Info("Ticket Import Complete. - {0}", DateTime.Now.ToString());
-                TccLog.UpdateLog("Ticket Import Complete", LogMessageType.Info, "Admin Import");
+                TccLog.UpdateLog("Ticket Import Complete", LogMessageType.Info, "Admin Import-ImportData");
                 RevisionViewer();
                 logger.Info("Revision Viewers Import Complete. - {0}", DateTime.Now.ToString());
-                TccLog.UpdateLog("Revision Viewers Import Complete", LogMessageType.Info, "Admin Import");
+                TccLog.UpdateLog("Revision Viewers Import Complete", LogMessageType.Info, "Admin Import-ImportData");
                 FillupFormsUploaded();
                 logger.Info("Fillup Forms  Import Complete. - {0}", DateTime.Now.ToString());
-                TccLog.UpdateLog("Fillup Forms  Import Complete", LogMessageType.Info, "Admin Import");
+                TccLog.UpdateLog("Fillup Forms  Import Complete", LogMessageType.Info, "Admin Import-ImportData");
                 FillupFormApproverMapper();
                 logger.Info("Fillup Form Approver Mapper Import Complete. - {0}", DateTime.Now.ToString());
-                TccLog.UpdateLog("Fillup Form Approver Mapper Import Complete", LogMessageType.Info, "Admin Import");
+                TccLog.UpdateLog("Fillup Form Approver Mapper Import Complete", LogMessageType.Info, "Admin Import-ImportData");
 
             }
             catch (Exception ex)
@@ -442,94 +470,107 @@ namespace TCCCMS.Admin.ImportData
         {
             try
             {
+                TccLog.UpdateLog("Importing Ticket", LogMessageType.Info, "Admin Import-Ticket");
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("stpImportTicketInAdmin", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    string uploadedFileName = string.Empty;
-                    string relativePath = string.Empty;
-                    string filePath = string.Empty;
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("stpImportTicketInAdmin", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
-                    cmd.Parameters.AddWithValue("@Error", row["Error"].ToString());
-                    if (row["Description"] != DBNull.Value)
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
                     {
-                        cmd.Parameters.AddWithValue("@Description", row["Description"].ToString());
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@Description", DBNull.Value);
-                    }
+                        //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
 
-                    cmd.Parameters.AddWithValue("@FilePath", row["FilePath"].ToString());
-                    filePath = row["FilePath"].ToString();
+                        string uploadedFileName = string.Empty;
+                        string relativePath = string.Empty;
+                        string filePath = string.Empty;
+                        string ticketNumber = row["TicketNumber"].ToString();
+                        cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
+                        cmd.Parameters.AddWithValue("@Error", row["Error"].ToString());
+                        if (row["Description"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@Description", row["Description"].ToString());
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@Description", DBNull.Value);
+                        }
 
-                    if (row["Email"] != DBNull.Value)
-                    {
-                        cmd.Parameters.AddWithValue("@Email", row["Email"].ToString());
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@Email", DBNull.Value);
-                    }
+                        cmd.Parameters.AddWithValue("@FilePath", row["FilePath"].ToString());
+                        filePath = row["FilePath"].ToString();
 
-                    if (row["IsSolved"] != DBNull.Value)
-                    {
-                        cmd.Parameters.AddWithValue("@IsSolved", int.Parse(row["IsSolved"].ToString()));
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@IsSolved", DBNull.Value);
-                    }
+                        if (row["Email"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@Email", row["Email"].ToString());
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@Email", DBNull.Value);
+                        }
 
-                    if (row["CreatedAt"] != DBNull.Value)
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Parse(row["CreatedAt"].ToString()));
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedAt", DBNull.Value);
-                    }
+                        if (row["IsSolved"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@IsSolved", int.Parse(row["IsSolved"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@IsSolved", DBNull.Value);
+                        }
 
-                    if (row["CreatedBy"] != DBNull.Value)
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedBy", int.Parse(row["CreatedBy"].ToString()));
+                        if (row["CreatedAt"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Parse(row["CreatedAt"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedAt", DBNull.Value);
+                        }
+
+                        if (row["CreatedBy"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedBy", int.Parse(row["CreatedBy"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedBy", DBNull.Value);
+                        }
+
+                        cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
+
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                        TccLog.UpdateLog(ticketNumber + " is imported into DB Successfully", LogMessageType.Info, "Admin Import-Ticket- Forceach");
+                        //if (!String.IsNullOrEmpty(filePath))
+                        //{
+                        //    uploadedFileName = Path.GetFileName(filePath);
+                        //    relativePath = Path.GetDirectoryName(filePath);
+                        //    relativePath = relativePath.Replace("\\", "/") + "/";
+                        //    CopyUploadedFiles(uploadedFileName, relativePath);
+                        //}
+                        //CopyUploadedFiles("TICKET", xmlFile);
+                        // CopyUploadedFiles(row["FilePath"].ToString());
                     }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedBy", DBNull.Value);
-                    }
-
-                    cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
-
-
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                    //if (!String.IsNullOrEmpty(filePath))
-                    //{
-                    //    uploadedFileName = Path.GetFileName(filePath);
-                    //    relativePath = Path.GetDirectoryName(filePath);
-                    //    relativePath = relativePath.Replace("\\", "/") + "/";
-                    //    CopyUploadedFiles(uploadedFileName, relativePath);
-                    //}
                     CopyUploadedFiles("TICKET", xmlFile);
-                    // CopyUploadedFiles(row["FilePath"].ToString());
+
+                }
+                else
+                {
+                    TccLog.UpdateLog("Xml path: " + xmlFile, LogMessageType.Info, "Admin Import-Ticket");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Admin Import-Ticket");
                 }
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-Ticket");
                 logger.Error(ex, "Ticket Import");
                 //throw;
             }
@@ -539,42 +580,53 @@ namespace TCCCMS.Admin.ImportData
         {
             try
             {
+                TccLog.UpdateLog("Importing RevisionViewer", LogMessageType.Info, "Admin Import-RevisionViewer");
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlRevisionViewer"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("stpImportRevisionViewerInAdmin", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["RevisionId"].ToString()));
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    cmd.Parameters.AddWithValue("@UserId", int.Parse(row["UserId"].ToString()));
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("stpImportRevisionViewerInAdmin", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
-                    if (row["CreatedAt"] != DBNull.Value)
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
                     {
-                        cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Parse(row["CreatedAt"].ToString()));
+                        cmd.Parameters.AddWithValue("@RevisionId", int.Parse(row["RevisionId"].ToString()));
+
+                        cmd.Parameters.AddWithValue("@UserId", int.Parse(row["UserId"].ToString()));
+
+                        cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
+                        if (row["CreatedAt"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedAt", DateTime.Parse(row["CreatedAt"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedAt", DBNull.Value);
+                        }
+
+
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                        TccLog.UpdateLog("Viewer User_"+ int.Parse(row["UserId"].ToString())+"-Ship_"+ int.Parse(row["ShipId"].ToString()) + " is imported into DB Successfully", LogMessageType.Info, "Admin Import-RevisionViewer- Forceach");
                     }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedAt", DBNull.Value);
-                    }
-
-
-
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                }
+                else
+                {
+                    TccLog.UpdateLog("Xml path: " + xmlFile, LogMessageType.Info, "Admin Import-RevisionViewer");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Admin Import-RevisionViewer");
                 }
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-RevisionViewer");
                 logger.Error(ex, "Crew Import");
                 //throw;
             }
@@ -584,53 +636,66 @@ namespace TCCCMS.Admin.ImportData
         {
             try
             {
+                TccLog.UpdateLog("Importing RevisionViewer", LogMessageType.Info, "Admin Import-FillupFormsUploaded");
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("stpImportFillupUoloadedFormsInAdmin", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    string uploadedFileName = string.Empty;
-                    string relativePath = string.Empty;
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    cmd.Parameters.AddWithValue("@FormId", int.Parse(row["FormId"].ToString()));
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("stpImportFillupUoloadedFormsInAdmin", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
-                    cmd.Parameters.AddWithValue("@FormsPath", row["FormsPath"].ToString());
-                    cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
-                    uploadedFileName = row["FormsName"].ToString();
-                    relativePath = row["FormsPath"].ToString();
-                    if (row["CreatedOn"] != DBNull.Value)
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
                     {
-                        cmd.Parameters.AddWithValue("@CreatedOn", DateTime.Parse(row["CreatedOn"].ToString()));
+                        string uploadedFileName = string.Empty;
+                        string relativePath = string.Empty;
+                        string formName = row["FormsName"].ToString();
+                        cmd.Parameters.AddWithValue("@FormId", int.Parse(row["FormId"].ToString()));
+
+                        cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
+                        cmd.Parameters.AddWithValue("@FormsPath", row["FormsPath"].ToString());
+                        cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
+                        uploadedFileName = row["FormsName"].ToString();
+                        relativePath = row["FormsPath"].ToString();
+                        if (row["CreatedOn"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedOn", DateTime.Parse(row["CreatedOn"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedOn", DBNull.Value);
+                        }
+                        cmd.Parameters.AddWithValue("@CreatedBy", int.Parse(row["CreatedBy"].ToString()));
+
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+
+                        TccLog.UpdateLog("Form name " + formName + " is imported into DB Successfully", LogMessageType.Info, "Admin Import-FillupFormsUploaded- Forceach");
+                        //if(!String.IsNullOrEmpty(uploadedFileName) && !String.IsNullOrEmpty(relativePath))
+                        //{
+                        //    CopyUploadedFiles(uploadedFileName, relativePath);
+                        //}
+
+                        //CopyUploadedFiles("FILLUPUPLOADEDFILE", xmlFile);
                     }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedOn", DBNull.Value);
-                    }
-                    cmd.Parameters.AddWithValue("@CreatedBy", int.Parse(row["CreatedBy"].ToString()));
-
-
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
-                    //if(!String.IsNullOrEmpty(uploadedFileName) && !String.IsNullOrEmpty(relativePath))
-                    //{
-                    //    CopyUploadedFiles(uploadedFileName, relativePath);
-                    //}
-
                     CopyUploadedFiles("FILLUPUPLOADEDFILE", xmlFile);
+                }
+                else
+                {
+                    TccLog.UpdateLog("Xml path: " + xmlFile, LogMessageType.Info, "Admin Import-FillupFormsUploaded");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Admin Import-FillupFormsUploaded");
                 }
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-FillupFormsUploaded");
                 logger.Error(ex, "FillupFormsUploaded Import");
                 //throw;
             }
@@ -640,39 +705,52 @@ namespace TCCCMS.Admin.ImportData
         {
             try
             {
+                TccLog.UpdateLog("Importing FillupFormApproverMapper", LogMessageType.Info, "Ship Import-FillupFormApproverMapper");
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("stpImportFillupFormApproverInAdmin", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    cmd.Parameters.AddWithValue("@UploadedFormName", row["UploadedFormName"].ToString());
-                    cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
-                    if (row["CreatedOn"] != DBNull.Value)
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("stpImportFillupFormApproverInAdmin", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
                     {
-                        cmd.Parameters.AddWithValue("@CreatedOn", DateTime.Parse(row["CreatedOn"].ToString()));
+                        string formName = row["UploadedFormName"].ToString();
+                        cmd.Parameters.AddWithValue("@UploadedFormName", row["UploadedFormName"].ToString());
+                        cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
+                        if (row["CreatedOn"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedOn", DateTime.Parse(row["CreatedOn"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedOn", DBNull.Value);
+                        }
+
+
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+
+                        TccLog.UpdateLog("Form name " + formName + " is imported into DB Successfully", LogMessageType.Info, "Admin Import-FillupFormApproverMapper- Forceach");
                     }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedOn", DBNull.Value);
-                    }
-
-
-
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                }
+                else
+                {
+                    TccLog.UpdateLog("Xml path: " + xmlFile, LogMessageType.Info, "Admin Import-FillupFormApproverMapper");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Admin Import-FillupFormApproverMapper");
                 }
             }
             catch (Exception ex)
             {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-FillupFormApproverMapper");
                 logger.Error(ex, "FillupFormApproverMapper Import");
                 //throw;
             }

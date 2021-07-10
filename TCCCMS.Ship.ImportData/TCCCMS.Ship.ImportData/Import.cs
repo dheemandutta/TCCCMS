@@ -259,6 +259,8 @@ namespace TCCCMS.Ship.ImportData
                                                     if (File.Exists(sourceFile))
                                                     {
                                                         File.Copy(sourceFile, destinationFile, true);
+                                                        TccLog.UpdateLog("Source: "+ sourceFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        TccLog.UpdateLog("Destination: "+ destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
                                                         TccLog.UpdateLog("PDF Copied", LogMessageType.Info, "Ship Import-ReadCommand");
                                                     }
                                                         
@@ -268,6 +270,7 @@ namespace TCCCMS.Ship.ImportData
                                                     if (File.Exists(destinationFile))
                                                     {
                                                         File.Delete(destinationFile);
+                                                        TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
                                                         TccLog.UpdateLog("PDF Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
                                                     }
                                                        
@@ -279,6 +282,8 @@ namespace TCCCMS.Ship.ImportData
                                                     if (File.Exists(sourceFile))
                                                     {
                                                         File.Copy(sourceFile, destinationFile, true);
+                                                        TccLog.UpdateLog("Source: " + sourceFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
                                                         TccLog.UpdateLog("XLS Copied", LogMessageType.Info, "Ship Import-ReadCommand");
                                                     }
                                                         
@@ -286,7 +291,12 @@ namespace TCCCMS.Ship.ImportData
                                                 else if (operation == "remove")
                                                 {
                                                     if (File.Exists(destinationFile))
+                                                    {
+
                                                         File.Delete(destinationFile);
+                                                        TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        TccLog.UpdateLog("XLS Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                    }
 
                                                 }
                                                 break;
@@ -296,6 +306,8 @@ namespace TCCCMS.Ship.ImportData
                                                     if (File.Exists(sourceFile))
                                                     {
                                                         File.Copy(sourceFile, destinationFile, true);
+                                                        TccLog.UpdateLog("Source: " + sourceFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
                                                         TccLog.UpdateLog("DOC Copied", LogMessageType.Info, "Ship Import-ReadCommand");
                                                     }
                                                         
@@ -303,7 +315,12 @@ namespace TCCCMS.Ship.ImportData
                                                 else if (operation == "remove")
                                                 {
                                                     if (File.Exists(destinationFile))
+                                                    {
+
                                                         File.Delete(destinationFile);
+                                                        TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        TccLog.UpdateLog("XLS Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                    }
                                                 }
                                                 break;
 
@@ -378,7 +395,9 @@ namespace TCCCMS.Ship.ImportData
                                 if (File.Exists(sourceFile))
                                 {
                                     File.Copy(sourceFile, destinationFile, true);
-                                    TccLog.UpdateLog("PDF Copied", LogMessageType.Info, "Ship Import-ReadCommand");
+                                    TccLog.UpdateLog("Source: " + sourceFile, LogMessageType.Info, "Ship Import-ReadCommand-Child");
+                                    TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand-Child");
+                                    TccLog.UpdateLog("PDF Copied", LogMessageType.Info, "Ship Import-ReadCommand-Child");
                                 }
 
                             }
@@ -387,6 +406,7 @@ namespace TCCCMS.Ship.ImportData
                                 if (File.Exists(destinationFile))
                                 {
                                     File.Delete(destinationFile);
+                                    TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand-Child");
                                     TccLog.UpdateLog("PDF Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
                                 }
 
@@ -398,6 +418,8 @@ namespace TCCCMS.Ship.ImportData
                                 if (File.Exists(sourceFile))
                                 {
                                     File.Copy(sourceFile, destinationFile, true);
+                                    TccLog.UpdateLog("Source: " + sourceFile, LogMessageType.Info, "Ship Import-ReadCommand-Child");
+                                    TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand-Child");
                                     TccLog.UpdateLog("XLS Copied", LogMessageType.Info, "Ship Import-ReadCommand");
                                 }
 
@@ -405,7 +427,13 @@ namespace TCCCMS.Ship.ImportData
                             else if (operation == "remove")
                             {
                                 if (File.Exists(destinationFile))
+                                {
+                                    
                                     File.Delete(destinationFile);
+                                    TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand-Child");
+                                    TccLog.UpdateLog("XLS Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
+                                }
+                                    
 
                             }
                             break;
@@ -415,6 +443,8 @@ namespace TCCCMS.Ship.ImportData
                                 if (File.Exists(sourceFile))
                                 {
                                     File.Copy(sourceFile, destinationFile, true);
+                                    TccLog.UpdateLog("Source: " + sourceFile, LogMessageType.Info, "Ship Import-ReadCommand-Child");
+                                    TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand-Child");
                                     TccLog.UpdateLog("DOC Copied", LogMessageType.Info, "Ship Import-ReadCommand");
                                 }
 
@@ -422,7 +452,12 @@ namespace TCCCMS.Ship.ImportData
                             else if (operation == "remove")
                             {
                                 if (File.Exists(destinationFile))
+                                {
+
                                     File.Delete(destinationFile);
+                                    TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand-Child");
+                                    TccLog.UpdateLog("DOC Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
+                                }
                             }
                             break;
 
@@ -432,6 +467,7 @@ namespace TCCCMS.Ship.ImportData
         }
         public static void ExecuteSql(FileInfo file)
         {
+            TccLog.UpdateLog("Start Executing SQL", LogMessageType.Info, "Ship Import -ExecuteSql");
             string connectionString = ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString;
             string sql              = String.Empty;
             string fileName         = String.Empty;
@@ -491,6 +527,7 @@ namespace TCCCMS.Ship.ImportData
         }
         public static void ArchiveZipFiles(string f)
         {
+            TccLog.UpdateLog("Start Archiving", LogMessageType.Info, "Ship Import -ExecuteSql");
             string sourceFilePath = zipPath + "\\";
             string destinationFilePath = zipArchivePath + "\\";
 
@@ -540,7 +577,7 @@ namespace TCCCMS.Ship.ImportData
                 foreach (DataRow row in dataSet.Tables[0].Rows)
                 {
                     //string destinationFilePath = @"C:\\inetpub\\wwwroot\\TCCCMS";
-                    string destinationFilePath = ConfigurationManager.AppSettings["rootPath"].ToString();
+                    string destinationFilePath = ConfigurationManager.AppSettings["iisPath"].ToString();
                     string tempSourcePath = Path.Combine(Path.GetDirectoryName(extractPath), "temp");
                     string uploadedFileName = string.Empty;
                     string relPath = string.Empty;
@@ -571,9 +608,14 @@ namespace TCCCMS.Ship.ImportData
                     TccLog.UpdateLog(tempSourcePath, LogMessageType.Info, "Ship Import - CopyUploadedFiles");
 
                     if (File.Exists(tempSourcePath))
+                    {
                         File.Copy(tempSourcePath, Path.Combine(destinationFilePath, uploadedFileName), true);
-
-
+                        TccLog.UpdateLog("File copied from Temp to IIS", LogMessageType.Error, "Ship Export-CreateUploadedZipFile- foreach");
+                    }
+                    else
+                    {
+                        TccLog.UpdateLog("File not copied from Temp to IIS", LogMessageType.Error, "Ship Export-CreateUploadedZipFile- foreach");
+                    }
 
                 }
 
@@ -688,74 +730,79 @@ namespace TCCCMS.Ship.ImportData
 
         }
 
-
-
         public static void Ticket()
         {
             try
             {
+                TccLog.UpdateLog("Importing Ticket", LogMessageType.Info, "Ship Import-Ticket");
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlTicket"].ToString();
                 int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
-
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("stpImportTicketInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    if(ShipId== int.Parse(row["ShipId"].ToString()))
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("stpImportTicketInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
                     {
-                        cmd.Parameters.AddWithValue("@TicketNumber", row["TicketNumber"].ToString());
+                        //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
+                        string ticketNumber = row["TicketNumber"].ToString();
+                        if (ShipId == int.Parse(row["ShipId"].ToString()))
+                        {
+                            cmd.Parameters.AddWithValue("@TicketNumber", ticketNumber);
+                            if (row["IsSolved"] != DBNull.Value)
+                            {
+                                //string s = row["IsSolved"].ToString();
+
+                                cmd.Parameters.AddWithValue("@IsSolved", int.Parse(row["IsSolved"].ToString()));
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@IsSolved", DBNull.Value);
+                            }
+
+                            cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
+                            if (row["UpdatedBy"] != DBNull.Value)
+                            {
+                                cmd.Parameters.AddWithValue("@UpdatedBy", int.Parse(row["UpdatedBy"].ToString()));
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@UpdatedBy", DBNull.Value);
+                            }
+                            if (row["UpdatedAt"] != DBNull.Value)
+                            {
+                                cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Parse(row["UpdatedAt"].ToString()));
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@UpdatedAt", DBNull.Value);
+                            }
+                            int x = cmd.ExecuteNonQuery();
+                            cmd.Parameters.Clear();
+
+                            TccLog.UpdateLog(ticketNumber+ " is imported into DB Successfully", LogMessageType.Info, "Ship Import-Ticket- Forceach");
+                        }
 
 
-                        if (row["IsSolved"] != DBNull.Value)
-                        {
-                            //string s = row["IsSolved"].ToString();
-
-                            cmd.Parameters.AddWithValue("@IsSolved", int.Parse(row["IsSolved"].ToString()));
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@IsSolved", DBNull.Value);
-                        }
-
-                        cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
-                        if (row["UpdatedBy"] != DBNull.Value)
-                        {
-                            cmd.Parameters.AddWithValue("@UpdatedBy", int.Parse(row["UpdatedBy"].ToString()));
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@UpdatedBy", DBNull.Value);
-                        }
-                        if (row["UpdatedAt"] != DBNull.Value)
-                        {
-                            cmd.Parameters.AddWithValue("@UpdatedAt", DateTime.Parse(row["UpdatedAt"].ToString()));
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@UpdatedAt", DBNull.Value);
-                        }
-
-
-                       int x= cmd.ExecuteNonQuery();
-                        cmd.Parameters.Clear();
                     }
-
-                    
                 }
+                else
+                {
+                    TccLog.UpdateLog("Xml path: "+ xmlFile, LogMessageType.Info, "Ship Import-Ticket");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Ship Import-Ticket");
+                }
+                
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-Ticket");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Import-Ticket");
                 logger.Error(ex, "Ticket Import");
                 //throw;
             }
@@ -765,44 +812,54 @@ namespace TCCCMS.Ship.ImportData
         {
             try
             {
+                TccLog.UpdateLog("Importing RevisionHeader", LogMessageType.Info, "Ship Import-RevisionHeader");
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlRevisionHeader"].ToString();
-
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("stpImportRevisionHeaderInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    cmd.Parameters.AddWithValue("@Id", int.Parse(row["Id"].ToString()));
-                    cmd.Parameters.AddWithValue("@RevisionNo", row["RevisionNo"].ToString());
-                    cmd.Parameters.AddWithValue("@RevisionDate", row["RevisionDate"].ToString());
-                    //cmd.Parameters.AddWithValue("@CreatedAt", row["CreatedAt"].ToString());
-                    if (row["CreatedAt"] != DBNull.Value)
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedAt", row["CreatedAt"].ToString());
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedAt", DBNull.Value);
-                    }
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    if (row["CreatedBy"] != DBNull.Value)
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedBy", int.Parse(row["CreatedBy"].ToString()));
-                    }
-                    else
-                    {
-                        cmd.Parameters.AddWithValue("@CreatedBy", DBNull.Value);
-                    }
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("stpImportRevisionHeaderInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        string revisionNo = row["RevisionNo"].ToString();
+                        cmd.Parameters.AddWithValue("@Id", int.Parse(row["Id"].ToString()));
+                        cmd.Parameters.AddWithValue("@RevisionNo", revisionNo);
+                        cmd.Parameters.AddWithValue("@RevisionDate", row["RevisionDate"].ToString());
+                        //cmd.Parameters.AddWithValue("@CreatedAt", row["CreatedAt"].ToString());
+                        if (row["CreatedAt"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedAt", row["CreatedAt"].ToString());
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedAt", DBNull.Value);
+                        }
+
+                        if (row["CreatedBy"] != DBNull.Value)
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedBy", int.Parse(row["CreatedBy"].ToString()));
+                        }
+                        else
+                        {
+                            cmd.Parameters.AddWithValue("@CreatedBy", DBNull.Value);
+                        }
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                        TccLog.UpdateLog("Revision No " + revisionNo + " is imported into DB Successfully", LogMessageType.Info, "Ship Import-RevisionHeader- Forceach");
+                    }
+                }
+                else
+                {
+                    TccLog.UpdateLog("Xml path: " + xmlFile, LogMessageType.Info, "Ship Import-RevisionHeader");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Ship Import-RevisionHeader");
                 }
             }
             catch (Exception ex)
@@ -817,29 +874,40 @@ namespace TCCCMS.Ship.ImportData
         {
             try
             {
+                TccLog.UpdateLog("Importing RevisionDetails", LogMessageType.Info, "Ship Import-RevisionDetails");
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlRevisionHistory"].ToString();
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("stpImportRevisionHistoryInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    cmd.Parameters.AddWithValue("@RevisionHistoryId", int.Parse(row["RevisionHistoryId"].ToString()));
-                    cmd.Parameters.AddWithValue("@Chapter", row["Chapter"].ToString());
-                    cmd.Parameters.AddWithValue("@Section", row["Section"].ToString());
-                    cmd.Parameters.AddWithValue("@ChangeComment", row["ChangeComment"].ToString());
-                    cmd.Parameters.AddWithValue("@ModificationDate", row["ModificationDate"].ToString());
-                    cmd.Parameters.AddWithValue("@HeaderId", int.Parse(row["HeaderId"].ToString()));
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
 
-                    cmd.ExecuteNonQuery();
-                    cmd.Parameters.Clear();
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("stpImportRevisionHistoryInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        string chapter = row["Chapter"].ToString();
+                        cmd.Parameters.AddWithValue("@RevisionHistoryId", int.Parse(row["RevisionHistoryId"].ToString()));
+                        cmd.Parameters.AddWithValue("@Chapter", chapter);
+                        cmd.Parameters.AddWithValue("@Section", row["Section"].ToString());
+                        cmd.Parameters.AddWithValue("@ChangeComment", row["ChangeComment"].ToString());
+                        cmd.Parameters.AddWithValue("@ModificationDate", row["ModificationDate"].ToString());
+                        cmd.Parameters.AddWithValue("@HeaderId", int.Parse(row["HeaderId"].ToString()));
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                        TccLog.UpdateLog("Chapter name " + chapter + " is imported into DB Successfully", LogMessageType.Info, "Ship Import-RevisionDetails- Forceach");
+                    }
+                }
+                else
+                {
+                    TccLog.UpdateLog("Xml path: " + xmlFile, LogMessageType.Info, "Ship Import-RevisionDetails");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Ship Import-RevisionDetails");
                 }
             }
             catch (Exception ex)
@@ -854,62 +922,77 @@ namespace TCCCMS.Ship.ImportData
         {
             try
             {
+                TccLog.UpdateLog("Importing FillupFormsUploaded", LogMessageType.Info, "Ship Import-FillupFormsUploaded");
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlFillupFormUpload"].ToString();
                 int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("stpImportFillupUoloadedFormsInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
-                {
-                    string uploadedFileName = string.Empty;
-                    string relativePath = string.Empty;
-
-                    if (ShipId == int.Parse(row["ShipId"].ToString()))
-                    {
-                        cmd.Parameters.AddWithValue("@FormsName", row["FormsName"].ToString());
-                        //cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
-                        if (row["IsApprove"] != DBNull.Value)
-                        {
-                            cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@IsApprove", DBNull.Value);
-                        }
-                        uploadedFileName = row["FormsName"].ToString();
-                        relativePath = row["FormsPath"].ToString();
-
-                        if (row["ApprovedOn"] != DBNull.Value)
-                        {
-                            cmd.Parameters.AddWithValue("@ApprovedOn", DateTime.Parse(row["ApprovedOn"].ToString()));
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@ApprovedOn", DBNull.Value);
-                        }
-
-
-
-                        cmd.ExecuteNonQuery();
-                        cmd.Parameters.Clear();
-                        
-                    }
-
-                }
 
                 if (File.Exists(xmlFile))
+                {
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("stpImportFillupUoloadedFormsInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        string uploadedFileName = string.Empty;
+                        string relativePath = string.Empty;
+
+                        if (ShipId == int.Parse(row["ShipId"].ToString()))
+                        {
+                            string formName = row["FormsName"].ToString();
+                            cmd.Parameters.AddWithValue("@FormsName", formName);
+                            //cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
+                            if (row["IsApprove"] != DBNull.Value)
+                            {
+                                cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@IsApprove", DBNull.Value);
+                            }
+                            uploadedFileName = row["FormsName"].ToString();
+                            relativePath = row["FormsPath"].ToString();
+
+                            if (row["ApprovedOn"] != DBNull.Value)
+                            {
+                                cmd.Parameters.AddWithValue("@ApprovedOn", DateTime.Parse(row["ApprovedOn"].ToString()));
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@ApprovedOn", DBNull.Value);
+                            }
+
+
+
+                            cmd.ExecuteNonQuery();
+                            cmd.Parameters.Clear();
+
+                            TccLog.UpdateLog("Form name " + formName + " is imported into DB Successfully", LogMessageType.Info, "Ship Import-FillupFormsUploaded- Forceach");
+
+                        }
+
+                    }
+
                     CopyUploadedFiles("FILLUPUPLOADEDFILE", xmlFile);
+                }
+                else
+                {
+                    TccLog.UpdateLog("Xml path: " + xmlFile, LogMessageType.Info, "Ship Import-FillupFormsUploaded");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Ship Import-FillupFormsUploaded");
+                }
+
+                //if (File.Exists(xmlFile))
+                //    CopyUploadedFiles("FILLUPUPLOADEDFILE", xmlFile);
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-FilupFormsUploaded");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Import-FilupFormsUploaded");
                 logger.Error(ex, "FillupFormsUploaded Import");
                 //throw;
             }
@@ -919,52 +1002,65 @@ namespace TCCCMS.Ship.ImportData
         {
             try
             {
+                TccLog.UpdateLog("Importing FillupFormApproverMapper", LogMessageType.Info, "Ship Import-FillupFormApproverMapper");
                 // Here your xml file
                 string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlApprovedFillupForm"].ToString();
                 int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
 
-                DataSet dataSet = new DataSet();
-                dataSet.ReadXmlSchema(xmlFile);
-                dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
-
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
-                con.Open();
-                SqlCommand cmd = new SqlCommand("stpImportApprovedFillupFormApproverInShip", con);
-                cmd.CommandType = CommandType.StoredProcedure;
-
-                foreach (DataRow row in dataSet.Tables[0].Rows)
+                if (File.Exists(xmlFile))
                 {
-                    if (ShipId == int.Parse(row["ShipId"].ToString()))
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("stpImportApprovedFillupFormApproverInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
                     {
-                        cmd.Parameters.AddWithValue("@UploadedFormName", row["UploadedFormName"].ToString());
-                        cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
-                        //cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
-                        if (row["IsApprove"] != DBNull.Value)
+                        if (ShipId == int.Parse(row["ShipId"].ToString()))
                         {
-                            cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@IsApprove", DBNull.Value);
-                        }
-                        if (row["ApprovedOn"] != DBNull.Value)
-                        {
-                            cmd.Parameters.AddWithValue("@ApprovedOn", DateTime.Parse(row["ApprovedOn"].ToString()));
-                        }
-                        else
-                        {
-                            cmd.Parameters.AddWithValue("@ApprovedOn", DBNull.Value);
+                            string formName = row["UploadedFormName"].ToString();
+                            cmd.Parameters.AddWithValue("@UploadedFormName", formName);
+                            cmd.Parameters.AddWithValue("@ApproverUserId", int.Parse(row["ApproverUserId"].ToString()));
+                            //cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
+                            if (row["IsApprove"] != DBNull.Value)
+                            {
+                                cmd.Parameters.AddWithValue("@IsApprove", int.Parse(row["IsApprove"].ToString()));
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@IsApprove", DBNull.Value);
+                            }
+                            if (row["ApprovedOn"] != DBNull.Value)
+                            {
+                                cmd.Parameters.AddWithValue("@ApprovedOn", DateTime.Parse(row["ApprovedOn"].ToString()));
+                            }
+                            else
+                            {
+                                cmd.Parameters.AddWithValue("@ApprovedOn", DBNull.Value);
+                            }
+
+                            cmd.ExecuteNonQuery();
+                            cmd.Parameters.Clear();
+                            TccLog.UpdateLog("Form name " + formName + " is imported into DB Successfully", LogMessageType.Info, "Ship Import-FillupFormApproverMapper- Forceach");
+
                         }
 
-                        cmd.ExecuteNonQuery();
-                        cmd.Parameters.Clear();
                     }
-                       
+
+                }
+                else
+                {
+                    TccLog.UpdateLog("Xml path: " + xmlFile, LogMessageType.Info, "Ship Import-FillupFormApproverMapper");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Ship Import-FillupFormApproverMapper");
                 }
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Import-FillupFormApproverMapper");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Import-FillupFormApproverMapper");
                 logger.Error(ex, "FillupFormApproverMapper Import");
                 //throw;
             }
@@ -1004,14 +1100,17 @@ namespace TCCCMS.Ship.ImportData
                     //MailServerType      = MailType.IMAP
                     //---------------------------------
                 };
-
+                TccLog.UpdateLog("Seivice Cofig created.", LogMessageType.Info, "Ship Import- ImportMail");
                 MailOps mailops = new MailOps
                 {
                     MailServerType = serviceconf.MailServerType
                 };
+                TccLog.UpdateLog("Signing in the Email.", LogMessageType.Info, "Ship Import- ImportMail");
                 //mailops.Connect(serviceconf.MailId, Security.DecryptString(serviceconf.MailPassword), serviceconf.MailServerDomain, serviceconf.Port);
                 mailops.Connect(serviceconf.MailId, serviceconf.MailPassword, serviceconf.MailServerDomain, serviceconf.Port);
+                TccLog.UpdateLog("Connect Sucessfull.", LogMessageType.Info, "Ship Import- ImportMail");
                 mailops.DownloadAllNewMails(serviceconf.SubjectLine, serviceconf.AttachmentPath);
+                TccLog.UpdateLog("Download Sucessfull", LogMessageType.Info, "Ship Import - ImportMail");
 
                 isMailReadSuccessful = true;
                 logger.Info("Import Zip from Mailbox process Successfully Completed. - {0}", DateTime.Now.ToString());
