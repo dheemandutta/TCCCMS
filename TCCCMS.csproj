@@ -2470,6 +2470,7 @@
     <Content Include="Views\ShipKHKEmpress\CRM.cshtml" />
     <Content Include="Views\ShipKHKMajesty\CRM.cshtml" />
     <Content Include="Views\Help\Index.cshtml" />
+    <Content Include="Views\Home\ChangePassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
