@@ -163,9 +163,6 @@ namespace TCCCMS.Data
         }
 
 
-
-
-
         public List<GroupUser> GetAllUser()
         {
             List<GroupUser> prodPOList = new List<GroupUser>();
@@ -782,5 +779,28 @@ namespace TCCCMS.Data
             return ds.Tables[0].Rows[0]["RoleName"].ToString();
         }
 
+
+        public int ChangePassword(UserMasterPOCO pOCO)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("ChangePassword", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            if (pOCO.UserId > 0)
+            {
+                cmd.Parameters.AddWithValue("@UserId", pOCO.UserId);
+            }
+            cmd.Parameters.AddWithValue("@Password", pOCO.Password.ToString());
+            cmd.Parameters.AddWithValue("@NewPassword", pOCO.NewPassword.ToString());
+            cmd.Parameters.Add("@IsValid", SqlDbType.Int, 0);
+            cmd.Parameters["@IsValid"].Direction = ParameterDirection.Output;
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+            int isValid = Convert.ToInt32(cmd.Parameters["@IsValid"].Value);
+            con.Close();
+
+            return isValid;
+        }
     }
 }
