@@ -660,6 +660,13 @@ function GetUserByUserId(UserId) {
                 $('#VesselIMO').val(result.VesselIMO);
                 $('#RankId').val(result.RankId);
                 $('#ShipId').val(result.ShipId);
+                $('#drpUserRole').val(result.RoleId);
+                var x = '\'' + result.RoleId + '\'';
+                if (result.UserId > 0 || result.UserId !== '0' || result.UserId !== 'undefine') {
+                    $('#UserCode').prop('disabled', true);
+                    $('#drpUserRole').prop('disabled', true);
+                    $('#ShipId').prop('disabled', true);
+                }
 
                 $('#IsAdmin').val(result.IsAdmin);
             }

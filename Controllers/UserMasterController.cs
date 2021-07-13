@@ -206,6 +206,7 @@ namespace TCCCMS.Controllers
 
             //dept.UserCode = pOCOList.UserCode;
             dept.IsAdmin = pOCOList.IsAdmin;
+            dept.RoleId = pOCOList.RoleId;
 
             var data = dept;
 

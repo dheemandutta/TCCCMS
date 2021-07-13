@@ -349,6 +349,10 @@ namespace TCCCMS.Data
                     {
                         pPOCOPC.ShipId = Convert.ToInt32(item["ShipId"].ToString());
                     }
+                    if (item["RoleId"] != null)
+                    {
+                        pPOCOPC.RoleId = Convert.ToInt32(item["RoleId"].ToString());
+                    }
 
 
 

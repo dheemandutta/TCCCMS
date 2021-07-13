@@ -37,6 +37,11 @@ namespace TCCCMS.Models
         public RankPOCO Rank { get; set; } //--Added on 20th JAN 2021 @BK
         public Ship Ship { get; set; }//--Added on 20th JAN 2021 @BK
 
+        //--Below 3 Properties Added on 13th Jul 2021 @BK
+        public RoleGroup RoleGroup { get; set; }
+        public int RoleId { get; set; }
+        public string RoleName { get; set; }//May not reqiured @BK
+
         public int UploadPermission { get; set; }
 
         public int RoleType { get; set; }
