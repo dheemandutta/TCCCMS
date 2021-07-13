@@ -22,12 +22,13 @@ namespace TCCCMS.Controllers
 
         public ActionResult ChangePassword()
         {
+            UserMasterPOCO userMaster = new UserMasterPOCO();
             try
             {
                 if (Session["Role"].ToString() == "OfficeUser" || Session["Role"].ToString() == "ShipUser")
                 {
-                   
-                    return View();
+                    userMaster.hasChange = 0;
+                    return View(userMaster);
                 }
                 else
                     return RedirectToAction("Login", "Home");
@@ -55,8 +56,8 @@ namespace TCCCMS.Controllers
                 if(isValid == 0)
                 {
                     //return Json(isValid, JsonRequestBehavior.AllowGet);
-
-                    return View();
+                    aUserMaster.hasChange = 2;
+                    return View(aUserMaster);
                 }
                 else
                 {
