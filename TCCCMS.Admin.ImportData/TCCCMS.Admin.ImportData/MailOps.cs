@@ -191,6 +191,7 @@ namespace TCCCMS.Admin.ImportData
             catch (Exception ex)
             {
                 LogHelper.Log(LogTarget.EventLog, ex.Message);
+				TccLog.UpdateLog(ex.Message, LogMessageType.Error, "Admin Import - DownloadAllNewMails");
             }
             finally
             {

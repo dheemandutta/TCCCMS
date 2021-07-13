@@ -298,11 +298,11 @@ namespace TCCCMS.Admin.ImportData
                         if (File.Exists(tempSourcePath))
                         {
                             File.Copy(tempSourcePath, Path.Combine(destinationFilePath, uploadedFileName), true);
-                            TccLog.UpdateLog("File copied from Temp to IIS", LogMessageType.Error, "Asmin Export-CreateUploadedZipFile- foreach");
+                            TccLog.UpdateLog("File copied from Temp to IIS", LogMessageType.Error, "Asmin Export-CopyUploadedFiles- foreach");
                         }
                         else
                         {
-                            TccLog.UpdateLog("File not copied from Temp to IIS", LogMessageType.Error, "Admin Export-CreateUploadedZipFile- foreach");
+                            TccLog.UpdateLog("File not copied from Temp to IIS", LogMessageType.Error, "Admin Export-CopyUploadedFiles- foreach");
                         }
 
                     }

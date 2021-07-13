@@ -576,8 +576,8 @@ namespace TCCCMS.Ship.ExportData
                     }
 
                     SmtpClient smtp = new SmtpClient(GetConfigData("smtp"));
-                    //smtp.EnableSsl = true;
-                    smtp.EnableSsl = false;
+                    smtp.EnableSsl = true;
+                    //smtp.EnableSsl = false;
                     smtp.Port = int.Parse(GetConfigData("port"));
                     smtp.Credentials = new System.Net.NetworkCredential(shipEmail, shipEmailpwd);
 
