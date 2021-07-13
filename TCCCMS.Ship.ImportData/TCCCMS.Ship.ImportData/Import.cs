@@ -1075,6 +1075,7 @@ namespace TCCCMS.Ship.ImportData
             try
             {
                 logger.Info("Import Zip from Mailbox Started. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Import Zip from Mailbox Started.", LogMessageType.Info, "Ship Import- ImportMail");
                 string mTyp = GetConfigData("protocol");
                 //Creating Mail configuration 
                 MailServiceConfiguration serviceconf = new MailServiceConfiguration
