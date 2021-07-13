@@ -19,7 +19,12 @@ namespace TCCCMS.Controllers
     public class HomeController : Controller
     {
         private Cache _cache= new Cache();
-       
+
+        public ActionResult ChangePassword()
+        {
+            return View();
+        }
+
         public ActionResult Test2()
         {        
             return View();

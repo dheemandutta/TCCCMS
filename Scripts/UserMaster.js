@@ -646,7 +646,6 @@ function GetUserByUserId(UserId) {
         dataType: "json",
         success: function (result) {
             $('#UserId').val(result.UserId);
-            LoadTab();
             if (userType === '1') {
                 //debugger;
                
@@ -674,9 +673,9 @@ function GetUserByUserId(UserId) {
                 //$('#ModifiedBy').val(result.ModifiedBy);
                 $('#cGender').val(result.Gender);
 
-                $('#cIsAdmin').val(result.IsAdmin);
+                $('#cIsAdmin').val(result.IsAdmin);              
             }
-            //LoadTab();
+            LoadTab();
 
             $('#myModal').modal('show');
             $('#btnUpdate').show();
@@ -713,7 +712,7 @@ function confirmPass() {
 
 ///---------------Tabs---------------------
 var selected_tab = 0;
-var userType = "2";
+var userType = 2;
 function LoadTab() {
 
     $.ajax({//----added on 6th Jul 2021 @BK

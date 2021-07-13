@@ -613,7 +613,7 @@ namespace TCCCMS.Admin.ImportData
 
 
 
-                        cmd.ExecuteNonQuery();
+                        int x = cmd.ExecuteNonQuery();
                         cmd.Parameters.Clear();
                         TccLog.UpdateLog("Viewer User_"+ int.Parse(row["UserId"].ToString())+"-Ship_"+ int.Parse(row["ShipId"].ToString()) + " is imported into DB Successfully", LogMessageType.Info, "Admin Import-RevisionViewer- Forceach");
                     }
@@ -772,9 +772,9 @@ namespace TCCCMS.Admin.ImportData
                 MailServiceConfiguration serviceconf = new MailServiceConfiguration
                 {
                     MailId = GetConfigData("admincenteremail"),
-                    //MailPassword = GetConfigData("admincenteremailpwd"),
+                    MailPassword = GetConfigData("admincenteremailpwd"),
 
-                    MailPassword = EncodeDecode.DecryptString(GetConfigData("admincenteremailpwd")),
+                    //MailPassword = EncodeDecode.DecryptString(GetConfigData("admincenteremailpwd")),
 
                     //SubjectLine         = "DATASYNCFILE",
                     SubjectLine = GetConfigData("tccSsubject"),
