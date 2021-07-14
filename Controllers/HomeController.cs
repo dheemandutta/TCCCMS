@@ -22,7 +22,55 @@ namespace TCCCMS.Controllers
 
         public ActionResult ChangePassword()
         {
-            return View();
+            UserMasterPOCO userMaster = new UserMasterPOCO();
+            try
+            {
+                if (Session["Role"].ToString() == "OfficeUser" || Session["Role"].ToString() == "ShipUser")
+                {
+                    userMaster.hasChange = 0;
+                    return View(userMaster);
+                }
+                else
+                    return RedirectToAction("Login", "Home");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
+        }
+
+        [HttpPost]
+        public ActionResult ChangePassword(UserMasterPOCO aUserMaster)
+        {
+            try
+            {
+                UserMasterBL umBL = new UserMasterBL();
+                int isValid = 0;
+                if(aUserMaster.UserId ==0)
+                {
+                    aUserMaster.UserId = int.Parse(Session["UserId"].ToString());
+                }
+                isValid = umBL.ChangePassword(aUserMaster);
+
+                if(isValid == 0)
+                {
+                    //return Json(isValid, JsonRequestBehavior.AllowGet);
+                    aUserMaster.hasChange = 2;
+                    return View(aUserMaster);
+                }
+                else
+                {
+                    //return RedirectToAction("Login", "Home");
+                    return new RedirectToRouteResult(new RouteValueDictionary(
+                    new { action = "Login", controller = "Home" }));
+                }
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
         }
 
         public ActionResult Test2()

@@ -102,6 +102,17 @@ namespace TCCCMS.Business
             UserMasterDAL dAL = new UserMasterDAL();
             return dAL.GetRoleByUserId(UserId/*, ref oUTPUT*/);
         }
+        /// <summary>
+        /// Added on 13th Jul 2021 @BK
+        /// </summary>
+        /// <param name="pOCO"></param>
+        /// <returns></returns>
+        public int ChangePassword(UserMasterPOCO aUserMaster)
+        {
+            UserMasterDAL umDAL = new UserMasterDAL();
+            return umDAL.ChangePassword(aUserMaster);
+        }
+
 
     }
 }

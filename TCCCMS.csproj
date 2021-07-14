@@ -1191,6 +1191,7 @@
     <Content Include="Content\plugin\datepicker\css\pickmeup.scss" />
     <Content Include="Content\plugin\datepicker\js\jquery.pickmeup.twitter-bootstrap.coffee" />
     <Content Include="Content\plugin\datepicker\js\jquery.pickmeup.uikit.coffee" />
+    <Content Include="Scripts\ChangePassword.js" />
     <Content Include="Scripts\Ticket.js" />
     <Content Include="SQL Script\04-04-2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29_II.sql" />
     <Content Include="SQL Script\04-04-2021_Full_Schema_Of_TCCCMSDB_II.sql" />
