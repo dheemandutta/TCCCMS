@@ -56,7 +56,11 @@
                         <li>
                             <div class="dropdown admin notification">
                                 <button id="btnBell" class="button log">
-                                    <span><a href="~/Forms/FormsApprovalList"><img src="~/images/bell.png" style="width:19px;" /></a></span>
+                                    <span>
+                                        <a id="aBellBlank"><img id="imgBell" src="~/images/bell.png" style="width:19px;" /></a>
+                                        <a id="aBell" href="~/Forms/FormsApprovalList"><img id="imgBell" src="~/images/bell.png" style="width:19px;" /></a>
+                                    </span>
+                                    @*<span><img src="~/images/bell.png" style="width:19px;" /></span>*@
                                 </button>
                                 <sup id="notifyNumber" class="hidis"></sup>
                                 <div id="notifyContent" class="dropdown-content hidis smallchar">
@@ -78,7 +82,7 @@
                                 <button class="button log"><span><img src="~/images/user.png" style="width:19px;" /></span></button>
                                 <div class="dropdown-content">
                                     <h3>@Session["UserCode"].ToString() <span> @Session["Role"].ToString()</span></h3>
-                                    <a style="font-size: 10px; color: Highlight;" href="@Url.Action("ChangePassword", "Home")">Change Password</a>
+                                    <a  style="font-size: 10px; color: Highlight;" href="@Url.Action("ChangePassword", "Home")">Change Password</a>
                                     <a href="@Url.Action("Login", "Home")">Log Off</a>
                                 </div>
                             </div>
@@ -235,13 +239,27 @@
                         $('#notifyContent').html(str);
 
                         if (notification === 0) {
+                            $('#btnBell').off('click');
                             $('#btnBell').prop('disabled', true);
+                            $('#aBellBlank').removeClass('hidis');
+                            $('#aBell').addClass('hidis');
+                            $('#imgBell').prop('disabled', true);
+                            /*$('#btnBell').html('<span><img src="~/images/bell.png" style="width:19px;" /></span>');*/
                             console.log('tIF=' + notification);
                             $('#notifyNumber').addClass('hidis');
                             $('#notifyContent').addClass('hidis');
                         }
                         else if (notification > 0) {
+                            //$('#btnBell').html('');
                             $('#btnBell').prop('disabled', false);
+                            //$('#aBell').attr('disabled', 'disabled');
+                            //$('#aBell').attr('href', '~/Forms/FormsApprovalList');
+                            $('#aBellBlank').addClass('hidis');
+                            $('#aBell').removeClass('hidis');
+                            //$('#btnBell , span').prop('disabled', false);
+                            //var at = $('#btnBell').children('img');
+                            //at.attr('disabled', 'disabled');
+                           // $('#btnBell').html('<span><a href="Forms/FormsApprovalList"><img src="images/bell.png" style="width:19px;" /></a></span>');
                             $('#notifyNumber').removeClass('hidis');
                             $('#notifyContent').removeClass('hidis');
                             /*$("#notifyContent").css({"margin-right": "-24px"});*/
