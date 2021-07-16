@@ -274,7 +274,7 @@ namespace TCCCMS.Controllers
                     if (volumeId == "0" && menu0Enabled == "false")
                     {
                         //menu 0 has no click at Hong Kong Office
-                        sb.Append("<li class='mainmenu'><span class='tooltip'><a href=''><span class='vul'>Volume <b>" + partName + "</b> </span><span class='tooltiptext'>" + vol.Description + "</span></a></span>");
+                        sb.Append("<li class='mainmenu'><span class='tooltip'><a><span class='vul'>Volume <b>" + partName + "</b> </span><span class='tooltiptext'>" + vol.Description + "</span></a></span>");
                     }
                     else
                     {
