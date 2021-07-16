@@ -56,7 +56,8 @@
                         <li>
                             <div class="dropdown admin notification">
                                 <button id="btnBell" class="button log">
-                                    <span><a href="~/Forms/FormsApprovalList"><img src="~/images/bell.png" style="width:19px;" /></a></span>
+                                    @*<span><a href="~/Forms/FormsApprovalList"><img src="~/images/bell.png" style="width:19px;" /></a></span>*@
+                                    <span><img src="~/images/bell.png" style="width:19px;" /></span>
                                 </button>
                                 <sup id="notifyNumber" class="hidis"></sup>
                                 <div id="notifyContent" class="dropdown-content hidis smallchar">
@@ -236,12 +237,15 @@
 
                         if (notification === 0) {
                             $('#btnBell').prop('disabled', true);
+                            //$('#btnBell').html('<span><img src=\"~/images/bell.png\" style=\"width:19px;\" /></span>');
                             console.log('tIF=' + notification);
                             $('#notifyNumber').addClass('hidis');
                             $('#notifyContent').addClass('hidis');
                         }
                         else if (notification > 0) {
+                            $('#btnBell').html('');
                             $('#btnBell').prop('disabled', false);
+                            $('#btnBell').html('<span><a href=\"~/Forms/FormsApprovalList\"><img src=\"~/images/bell.png\" style=\"width:19px;\" /></a></span>');
                             $('#notifyNumber').removeClass('hidis');
                             $('#notifyContent').removeClass('hidis');
                             /*$("#notifyContent").css({"margin-right": "-24px"});*/
