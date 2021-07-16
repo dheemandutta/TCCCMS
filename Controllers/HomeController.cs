@@ -11,8 +11,7 @@ using System.Xml;
 using System.Text;
 using System.Web.Routing;
 using System.Web.Caching;
-
-
+using System.Configuration;
 
 namespace TCCCMS.Controllers
 {
@@ -231,7 +230,8 @@ namespace TCCCMS.Controllers
         {
             ManualBL manuBl = new ManualBL();
 
-            
+           
+            string menu0Enabled = ConfigurationManager.AppSettings["menu0Enabled"].ToString();
             string xPath = Server.MapPath( "~/xmlMenu/" + "ALLVOLUMES.xml");
             XmlDocument xDoc = new XmlDocument();
             //if (_cache.Get("VolMenuData") != null)
@@ -270,7 +270,16 @@ namespace TCCCMS.Controllers
                     //sb.Append("<li class='mainmenu'><a href='#'><span class='vul'>Volume <b>I</b> </span><span class='pgnam'>" + volName + "</span></a>");
                     //string s= "'@Url.Action('"
                     //sb.Append("<li class='mainmenu'><a href='@Url.Action('Index', '"+vol.ControllerName+"')'><span class='vul'>Volume <b>"+ partName + "</b> </span><span class='pgnam'>" + vol.Description + "</span></a>");
-                    sb.Append("<li class='mainmenu'><span class='tooltip'><a href='/" + vol.ControllerName + "/Index'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='tooltiptext'>" + vol.Description + "</span></a></span>");
+                    //sb.Append("<li class='mainmenu'><span class='tooltip'><a href='/" + vol.ControllerName + "/Index'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='tooltiptext'>" + vol.Description + "</span></a></span>");
+                    if (volumeId == "0" && menu0Enabled == "false")
+                    {
+                        //menu 0 has no click at Hong Kong Office
+                        sb.Append("<li class='mainmenu'><span class='tooltip'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='tooltiptext'>" + vol.Description + "</span></span>");
+                    }
+                    else
+                    {
+                        sb.Append("<li class='mainmenu'><span class='tooltip'><a href='/" + vol.ControllerName + "/Index'><span class='vul'>Volume <b>" + partName + "</b> </span><span class='tooltiptext'>" + vol.Description + "</span></a></span>");
+                    }
                     sb.Append("\n");
 
                     #region Lines Commented
