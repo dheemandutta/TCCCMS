@@ -18,28 +18,35 @@ function replaceText(searchword) {
     $(".searchdContent").find(".highlight").removeClass("highlight");
 
     //var searchword = $("#searchtxt").val();
+    if (searchword.length > 0) {
 
-    var custfilter = new RegExp(searchword, "ig");
-    var repstr = "<span class='highlight'>" + searchword + "</span>";
+        $.each(searchword, function (index, value) {
+            var sword = value;
+            var custfilter = new RegExp(sword, "ig");
+            var repstr = "<span class='highlight'>" + sword + "</span>";
 
-    if (searchword != "") {
-        
-        if ($('.searchdContent .card-body').length > 0) {
-            $('.card-body').each(function () {
-                //var x = $(this).html($(this).html());
-                //console.log(x);
-                $(this).html($(this).html().replace(custfilter, repstr));
-            })
-        }
-        else {
-            $('.searchdContent').each(function () {
-                //var x = $(this).html($(this).html());
-                //console.log(x);
-                $(this).html($(this).html().replace(custfilter, repstr));
-            })
-        }
+            if (sword != "") {
+
+                if ($('.searchdContent .card-body').length > 0) {
+                    $('.card-body').each(function () {
+                        //var x = $(this).html($(this).html());
+                        //console.log(x);
+                        $(this).html($(this).html().replace(custfilter, repstr));
+                    })
+                }
+                else {
+                    $('.searchdContent').each(function () {
+                        //var x = $(this).html($(this).html());
+                        //console.log(x);
+                        $(this).html($(this).html().replace(custfilter, repstr));
+                    })
+                }
+
+            }
+        })
         
     }
+    
 }
 
 function GetSearchText() {
