@@ -384,17 +384,19 @@ namespace TCCCMS.Ship.ExportData
         public static void ExportData()
         {
             logger.Info("Export Process Started. - {0}", DateTime.Now.ToString());
-            TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Export");
+            TccLog.UpdateLog("Export Process Started", LogMessageType.Info, "Ship Export - ExportData");
             try
             {
+                ShipUser();
+                TccLog.UpdateLog("ShipUser Process Complete", LogMessageType.Info, "Ship Export - ExportData");
                 FillupFormsUploaded();
-                TccLog.UpdateLog("FillUpFormsUploaded Complete", LogMessageType.Info, "Export");
+                TccLog.UpdateLog("FillUpFormsUploaded Complete", LogMessageType.Info, "Ship Export - ExportData");
                 FillupFormApproverMapper();
-                TccLog.UpdateLog("FillUpFormApproverMapper Process Complete", LogMessageType.Info, "Export");
+                TccLog.UpdateLog("FillUpFormApproverMapper Process Complete", LogMessageType.Info, "Ship Export - ExportData");
                 Ticket();
-                TccLog.UpdateLog("Ticket Process Complete", LogMessageType.Info, "Export");
+                TccLog.UpdateLog("Ticket Process Complete", LogMessageType.Info, "Ship Export - ExportData");
                 RevisionViewer();
-                TccLog.UpdateLog("Revision Viewer Process Complete", LogMessageType.Info, "Export");
+                TccLog.UpdateLog("Revision Viewer Process Complete", LogMessageType.Info, "Ship Export - ExportData");
 
             }
             catch (Exception ex)
@@ -405,7 +407,40 @@ namespace TCCCMS.Ship.ExportData
                 //Environment.Exit(0);
             }
         }
+        public static void ShipUser()
+        {
+            
 
+            try
+            {
+                logger.Info("Export ShipUser Process Started. - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Export ShipUser Process Started", LogMessageType.Info, "Ship Export - ShipUser");
+
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                con.Open();
+                //SqlCommand cmd = new SqlCommand("stpExporttblShipUserFromShip", con);
+                SqlCommand cmd = new SqlCommand("stpExportShipUserFromShip", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                DataSet ds = new DataSet();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(ds);
+
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    ds.WriteXml(path + "\\" + ConfigurationManager.AppSettings["xmlShipUser"].ToString(), XmlWriteMode.WriteSchema);
+                }
+                con.Close();
+
+
+                
+            }
+            catch (Exception ex)
+            {
+
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Export-ShipUser");
+            }
+
+        }
         public static void Ticket()
         {
             string uploadedFileName = string.Empty;
