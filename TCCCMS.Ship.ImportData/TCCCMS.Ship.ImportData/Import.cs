@@ -1081,8 +1081,8 @@ namespace TCCCMS.Ship.ImportData
                 MailServiceConfiguration serviceconf = new MailServiceConfiguration
                 {
                     MailId              = GetConfigData("shipemail"),
-                    //MailPassword = GetConfigData("shipemailpwd"),
-                    MailPassword        = EncodeDecode.DecryptString(GetConfigData("shipemailpwd")),
+                    MailPassword = GetConfigData("shipemailpwd"),
+                    //MailPassword        = EncodeDecode.DecryptString(GetConfigData("shipemailpwd")),
                     SubjectLine         = GetConfigData("tccAsubject"),
                     MailServerDomain    = GetConfigData("imappopServer"),
                     Port                = int.Parse(GetConfigData("imappopport")),

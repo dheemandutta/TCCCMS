@@ -774,8 +774,8 @@ namespace TCCCMS.Admin.ExportData
 
             string adminEmail = GetConfigData("admincenteremail").Trim();
             TccLog.UpdateLog("Get Admin Email ID Successfully", LogMessageType.Info, "Admin Export - SendMail");
-            //string adminEmailpwd = GetConfigData("admincenteremailpwd").Trim();
-            string adminEmailpwd = EncodeDecode.DecryptString(GetConfigData("admincenteremailpwd"));
+            string adminEmailpwd = GetConfigData("admincenteremailpwd").Trim();
+            //string adminEmailpwd = EncodeDecode.DecryptString(GetConfigData("admincenteremailpwd"));
             TccLog.UpdateLog("Get Admin Email pwd Successfully", LogMessageType.Info, "Admin Export - SendMail");
 
             foreach (string sourceFile in sourceFiles)

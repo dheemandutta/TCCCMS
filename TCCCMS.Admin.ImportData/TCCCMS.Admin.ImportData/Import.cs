@@ -386,13 +386,17 @@ namespace TCCCMS.Admin.ImportData
                 //Environment.Exit(0);
             }
         }
+        
         /// <summary>
+        /// Modify 16th Jul 2021 @BK
+        /// </summary>
         public static void ImportData()
         {
             try
             {
 
-                
+                ShipUser();//Added 16th Jul 2021 @BK
+                logger.Info("ShipUser Import Complete. - {0}", DateTime.Now.ToString());
                 Ticket();
                 logger.Info("Ticket Import Complete. - {0}", DateTime.Now.ToString());
                 TccLog.UpdateLog("Ticket Import Complete", LogMessageType.Info, "Admin Import-ImportData");
@@ -427,7 +431,7 @@ namespace TCCCMS.Admin.ImportData
 
         public static int CheckValidIMO(int IMONumber)
         {
-            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RestHourDBConnectionString"].ConnectionString);
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
             con.Open();
             SqlCommand cmd = new SqlCommand("stpGetShipByIMONumber", con);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -443,7 +447,7 @@ namespace TCCCMS.Admin.ImportData
         {
             try
             {
-                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["RestHourDBConnectionString"].ConnectionString);
+                SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
                 con.Open();
                 SqlCommand cmd = new SqlCommand("stpUpdateShipByLastSyncDate", con);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -464,7 +468,113 @@ namespace TCCCMS.Admin.ImportData
 
         }
 
+        /// <summary>
+        /// Added 16th Jul 2021 @BK
+        /// </summary>
+        public static void ShipUser()
+        {
+            try
+            {
+                TccLog.UpdateLog("Importing ShipUser", LogMessageType.Info, "Admin Import-ShipUser");
+                // Here your xml file
+                string xmlFile = extractPath + "\\" + ConfigurationManager.AppSettings["xmlShipUser"].ToString();
 
+                if (File.Exists(xmlFile))
+                {
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("stpImportShipUserInAdmin", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        cmd.Parameters.Clear();
+                        string CrewName = row["UserName"].ToString();
+                        int Rank = int.Parse(row["RankId"].ToString());
+                        string ShipNumber = row["ShipId"].ToString();
+                        string Email = row["Email"].ToString();
+
+
+                        cmd.Parameters.AddWithValue("@UserId", row["UserId"].ToString());
+                        cmd.Parameters.AddWithValue("@UserName", CrewName);
+                        cmd.Parameters.AddWithValue("@Password", row["Password"].ToString());
+                        if (!string.IsNullOrEmpty(row["CreatedOn"].ToString()))
+                            cmd.Parameters.AddWithValue("@CreatedOn", row["CreatedOn"].ToString());
+                        else
+                            cmd.Parameters.AddWithValue("@CreatedOn", DBNull.Value);
+
+                        cmd.Parameters.AddWithValue("@IsActive", row["IsActive"].ToString());
+                        if (!string.IsNullOrEmpty(Email))
+                            cmd.Parameters.AddWithValue("@Email", Email);
+                        else
+                            cmd.Parameters.AddWithValue("@Email", DBNull.Value);
+
+                        if (!string.IsNullOrEmpty(row["CreatedBy"].ToString()))
+                            cmd.Parameters.AddWithValue("@CreatedBy", row["CreatedBy"].ToString());
+                        else
+                            cmd.Parameters.AddWithValue("@CreatedBy", DBNull.Value);
+                        if (!string.IsNullOrEmpty(row["ModifiedBy"].ToString()))
+                            cmd.Parameters.AddWithValue("@ModifiedBy", row["ModifiedBy"].ToString());
+                        else
+                            cmd.Parameters.AddWithValue("@ModifiedBy", DBNull.Value);
+                        cmd.Parameters.AddWithValue("@Gender", row["Gender"].ToString());
+                        if (!string.IsNullOrEmpty(row["VesselIMO"].ToString()))
+                            cmd.Parameters.AddWithValue("@VesselIMO", row["VesselIMO"].ToString());
+                        else
+                            cmd.Parameters.AddWithValue("@VesselIMO", DBNull.Value);
+
+                        cmd.Parameters.AddWithValue("@RankId", Rank);
+                        cmd.Parameters.AddWithValue("@ShipNo", ShipNumber);
+                        cmd.Parameters.AddWithValue("@UserCode", row["UserCode"].ToString());
+                        cmd.Parameters.AddWithValue("@UserType", row["UserType"].ToString());
+
+                        if (!string.IsNullOrEmpty(row["UploadPermission"].ToString()))
+                            cmd.Parameters.AddWithValue("@UploadPermission", row["UploadPermission"].ToString());
+                        else
+                            cmd.Parameters.AddWithValue("@UploadPermission", DBNull.Value);
+
+                        if (!string.IsNullOrEmpty(row["JoinDate"].ToString()))
+                            cmd.Parameters.AddWithValue("@JoinDate", row["JoinDate"].ToString());
+                        else
+                            cmd.Parameters.AddWithValue("@JoinDate", DBNull.Value);
+                        if (!string.IsNullOrEmpty(row["ReleaseDate"].ToString()))
+                            cmd.Parameters.AddWithValue("@ReleaseDate", row["ReleaseDate"].ToString());
+                        else
+                            cmd.Parameters.AddWithValue("@ReleaseDate", DBNull.Value);
+
+                        cmd.Parameters.AddWithValue("@IsAdmin", row["IsAdmin"].ToString());
+                        cmd.Parameters.AddWithValue("@IsApprover", row["IsApprover"].ToString());
+
+
+                        cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+                        TccLog.UpdateLog(CrewName + " is imported into DB Successfully", LogMessageType.Info, "Admin Import-ShipUser- Forceach");
+                        
+                    }
+                    
+
+                }
+                else
+                {
+                    TccLog.UpdateLog("Xml path: " + xmlFile, LogMessageType.Info, "Admin Import-ShipUser");
+                    TccLog.UpdateLog("XML not Found", LogMessageType.Info, "Admin Import-ShipUser");
+                }
+            }
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Admin Import-ShipUser");
+                logger.Error(ex, "ShipUser Import");
+                //throw;
+            }
+        }
+
+        /// <summary>
+        /// Modify on 16th Jul 2021 
+        /// </summary>
 
         public static void Ticket()
         {
@@ -544,6 +654,7 @@ namespace TCCCMS.Admin.ImportData
                         }
 
                         cmd.Parameters.AddWithValue("@ShipId", int.Parse(row["ShipId"].ToString()));
+                        cmd.Parameters.AddWithValue("@ShipUserId", int.Parse(row["ShipUserId"].ToString())); //added on 16th Jul 2021 @bk
 
 
                         cmd.ExecuteNonQuery();
@@ -576,6 +687,9 @@ namespace TCCCMS.Admin.ImportData
             }
         }
 
+        /// <summary>
+        /// Modify on 16th Jul 2021 
+        /// </summary>
         public static void RevisionViewer()
         {
             try
@@ -610,6 +724,7 @@ namespace TCCCMS.Admin.ImportData
                         {
                             cmd.Parameters.AddWithValue("@CreatedAt", DBNull.Value);
                         }
+                        cmd.Parameters.AddWithValue("@ShipUserId", int.Parse(row["ShipUserId"].ToString())); //added on 16th Jul 2021 @bk
 
 
 
@@ -632,6 +747,9 @@ namespace TCCCMS.Admin.ImportData
             }
         }
 
+        /// <summary>
+        /// Modify on 16th Jul 2021 
+        /// </summary>
         public static void FillupFormsUploaded()
         {
             try
@@ -672,6 +790,7 @@ namespace TCCCMS.Admin.ImportData
                             cmd.Parameters.AddWithValue("@CreatedOn", DBNull.Value);
                         }
                         cmd.Parameters.AddWithValue("@CreatedBy", int.Parse(row["CreatedBy"].ToString()));
+                        cmd.Parameters.AddWithValue("@ShipUserId", int.Parse(row["ShipUserId"].ToString())); //added on 16th Jul 2021 @bk
 
 
                         cmd.ExecuteNonQuery();
