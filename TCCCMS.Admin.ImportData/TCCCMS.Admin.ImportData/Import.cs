@@ -494,7 +494,7 @@ namespace TCCCMS.Admin.ImportData
                     {
                         cmd.Parameters.Clear();
                         string CrewName = row["UserName"].ToString();
-                        int Rank = int.Parse(row["RankId"].ToString());
+                        //int Rank = int.Parse(row["RankId"].ToString());
                         string ShipNumber = row["ShipId"].ToString();
                         string Email = row["Email"].ToString();
 
@@ -527,8 +527,13 @@ namespace TCCCMS.Admin.ImportData
                         else
                             cmd.Parameters.AddWithValue("@VesselIMO", DBNull.Value);
 
-                        cmd.Parameters.AddWithValue("@RankId", Rank);
-                        cmd.Parameters.AddWithValue("@ShipNo", ShipNumber);
+                        if (!string.IsNullOrEmpty(row["RankID"].ToString()))
+                            cmd.Parameters.AddWithValue("@RankID", row["RankID"].ToString());
+                        else
+                            cmd.Parameters.AddWithValue("@RankID", DBNull.Value);
+                        //cmd.Parameters.AddWithValue("@RankId", Rank);
+
+                        cmd.Parameters.AddWithValue("@ShipId", ShipNumber);
                         cmd.Parameters.AddWithValue("@UserCode", row["UserCode"].ToString());
                         cmd.Parameters.AddWithValue("@UserType", row["UserType"].ToString());
 
@@ -551,7 +556,7 @@ namespace TCCCMS.Admin.ImportData
 
 
                         cmd.ExecuteNonQuery();
-                        cmd.Parameters.Clear();
+                        //cmd.Parameters.Clear();
                         TccLog.UpdateLog(CrewName + " is imported into DB Successfully", LogMessageType.Info, "Admin Import-ShipUser- Forceach");
                         
                     }
