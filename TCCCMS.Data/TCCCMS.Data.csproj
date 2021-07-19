@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApproverMasterDAL.cs" />
+    <Compile Include="ApproverSignDAL.cs" />
     <Compile Include="DocumentDAL.cs" />
     <Compile Include="DownloadableFromsDAL.cs" />
     <Compile Include="GroupMasterDAL.cs" />
