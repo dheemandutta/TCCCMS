@@ -28,6 +28,17 @@ namespace TCCCMS.Models
         public RankPOCO Rank { get; set; }
         public UserMasterPOCO User { get; set; }
 
+
+
+
+
+        public int Id { get; set; }//--Approver Id
+        public int ApproverUserId { get; set; }//--Approver Level id
+        public string SignImagePath { get; set; }
+        public string Name { get; set; }
+        public string Position { get; set; }
+        public string CreatedOn1 { get; set; }
+        public string ModifiedOn1 { get; set; }
     }
 
     public class ApproverLevel

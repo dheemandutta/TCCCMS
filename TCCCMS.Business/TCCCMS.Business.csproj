@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApproverMasterBL.cs" />
+    <Compile Include="ApproverSignBL.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="DocumentBL.cs" />
     <Compile Include="DownloadableFromsBL.cs" />
