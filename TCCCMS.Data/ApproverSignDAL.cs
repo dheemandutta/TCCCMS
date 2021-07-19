@@ -43,7 +43,7 @@ namespace TCCCMS.Data
             return recordsAffected;
         }
 
-        public ApproverMaster GetAllApproverSign(/*int ApproverUserIdId*/)
+        public ApproverMaster GetAllApproverSign(int ApproverUserId, string uploadedFormName = null)
         {
             ApproverMaster prodPOList = new ApproverMaster();
             ApproverMaster prodPO = new ApproverMaster();
@@ -53,7 +53,9 @@ namespace TCCCMS.Data
                 using (SqlCommand cmd = new SqlCommand("GetAllApproverSign", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    //cmd.Parameters.AddWithValue("@ApproverUserId", ApproverUserId);
+                    cmd.Parameters.AddWithValue("@ApproverUserId", ApproverUserId);
+                    cmd.Parameters.AddWithValue("@UploadedFormName", uploadedFormName);
+
                     con.Open();
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -97,6 +99,7 @@ namespace TCCCMS.Data
 
                     //pcList.Add(pPOCOPC);
                 }
+                pPOCOPC.ApprovedCount = Convert.ToInt32(ds.Tables[1].Rows[0]["ApprovedCount"].ToString());
             }
             return pPOCOPC;
         }

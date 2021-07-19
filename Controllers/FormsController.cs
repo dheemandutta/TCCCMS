@@ -181,23 +181,31 @@ namespace TCCCMS.Controllers
             {
                 //ComponentInfo.SetLicense("FREE-LIMITED-KEY");
                 ComponentInfo.SetLicense("DN-2021Jan04-gSb72AQqrg9T4PQnvYNDgVtyd4tD3W3oBds51kfYp7zSsuFpxRw1a5Cxr49JiCLbMf2JCIKuinkUhgiQmuOz5yMoWdA==A");
-                string tempPath = Path.Combine(relPath, "Temp/");
-                string signPath = @"E:\WFH\TCC\WordModify\logo.png";
-                string docPath = Path.Combine(tempPath, uploadedFormName);
-                string sdocPath = Path.Combine(relPath, uploadedFormName);
 
-                int numberOfItems = 4;
+                string tempPath         = Path.Combine(relPath, "Temp/");
+                //string signPath = @"E:\WFH\TCC\WordModify\logo.png";
+                string docPath          = Path.Combine(tempPath, uploadedFormName);
+                string sdocPath         = Path.Combine(relPath, uploadedFormName);
 
-                DocumentModel document = DocumentModel.Load(uploadedFormName);
+                ApproverMaster approver = new ApproverMaster();
+                ApproverSignBL aSignBL  = new ApproverSignBL();
+                approver                = aSignBL.GetAllApproverSign(approverUserId, uploadedFormName);
+
+                string signPath         = approver.SignImagePath;
+                string approverName     = approver.Name;
+                string designation      = approver.Position;
+                int approverPossition   = approver.ApprovedCount;
+
+                int numberOfItems       = 4;// 
+
+                DocumentModel document  = DocumentModel.Load(uploadedFormName);
 
                 // Template document contains 4 tables, each contains some set of information.
-                Table[] tables = document.GetChildElements(true, ElementType.Table).Cast<Table>().ToArray();
+                Table[] tables          = document.GetChildElements(true, ElementType.Table).Cast<Table>().ToArray();
 
-                int tableCount = tables.Count();
+                int tableCount          = tables.Count();
 
-                int approverPossition = 3;
-
-                Table signatureTable = tables[tableCount - 1];
+                Table signatureTable    = tables[tableCount - 1];
 
                 for (int rowIndex = 0; rowIndex <= numberOfItems; rowIndex++)
                 {
@@ -213,9 +221,9 @@ namespace TCCCMS.Controllers
                         paragraph.Inlines.Add(picture1);
 
                         signatureTable.Rows[rowIndex].Cells[1].Blocks.Add(new Paragraph(document,
-                                                                              new Run(document, "Name : Approver" + rowIndex),
+                                                                              new Run(document, "Name :" + approverName),
                                                                               new SpecialCharacter(document, SpecialCharacterType.LineBreak),
-                                                                              new Run(document, "Designation : xyz")
+                                                                              new Run(document, "Designation : " + designation)
                                                                           ));
                         signatureTable.Rows[rowIndex].Cells[2].Blocks.Add(paragraph);
                     }
