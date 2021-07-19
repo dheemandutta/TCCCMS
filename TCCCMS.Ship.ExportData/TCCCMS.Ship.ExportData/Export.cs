@@ -648,14 +648,16 @@ namespace TCCCMS.Ship.ExportData
             TccLog.UpdateLog("Update Export Data Process Started", LogMessageType.Info, "UpdateExportedData");
             try
             {
+                UpdateShipUser();
+                TccLog.UpdateLog("Update UpdateShipUser IsExport Succesfully", LogMessageType.Info, "Ship Export-UpdateShipUser");
                 UpdateTicket();
-                TccLog.UpdateLog("Update Ticket IsExport Succesfully", LogMessageType.Info, "Export-UpdateTicket");
+                TccLog.UpdateLog("Update Ticket IsExport Succesfully", LogMessageType.Info, "Ship Export-UpdateTicket");
                 UpdateRevisionViewer();
-                TccLog.UpdateLog("Update RevisionViewer IsExport Succesfully", LogMessageType.Info, "Export-UpdateRevisionViewer");
+                TccLog.UpdateLog("Update RevisionViewer IsExport Succesfully", LogMessageType.Info, "Ship Export-UpdateRevisionViewer");
                 UpdateFillupFormsUploaded();
-                TccLog.UpdateLog("Update FillupFormsUploaded IsExport Succesfully", LogMessageType.Info, "Export-UpdateFillupFormsUploaded");
+                TccLog.UpdateLog("Update FillupFormsUploaded IsExport Succesfully", LogMessageType.Info, "Ship Export-UpdateFillupFormsUploaded");
                 UpdateFillupFormApproverMapper();
-                TccLog.UpdateLog("Update FillupFormApproverMapper IsExport Succesfully", LogMessageType.Info, "Export-UpdateFillupFormApproverMapper");
+                TccLog.UpdateLog("Update FillupFormApproverMapper IsExport Succesfully", LogMessageType.Info, "Ship Export-UpdateFillupFormApproverMapper");
 
                 // delete all xml files
                 string[] xmlfilePaths = Directory.GetFiles(path + "\\");
@@ -666,10 +668,53 @@ namespace TCCCMS.Ship.ExportData
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-ExportData");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Export-ExportData");
                 logger.Error("Error in ExportData. - {0}", ex.Message + " :" + ex.InnerException);
-                logger.Info("Export process terminated unsuccessfully in ExportData.");
+                logger.Info("Ship Export process terminated unsuccessfully in ExportData.");
                 //Environment.Exit(0);
+            }
+        }
+
+        public static void UpdateShipUser()
+        {
+            try
+            {
+                // Here your xml file
+                string xmlFile = path + "\\" + ConfigurationManager.AppSettings["xmlShipUser"].ToString();
+                int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());
+                if (File.Exists(xmlFile))
+                {
+                    DataSet dataSet = new DataSet();
+                    dataSet.ReadXmlSchema(xmlFile);
+                    dataSet.ReadXml(xmlFile, XmlReadMode.ReadSchema);
+
+                    SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("UpdateShipUserExportInShip", con);
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    foreach (DataRow row in dataSet.Tables[0].Rows)
+                    {
+                        //cmd.Parameters.AddWithValue("@ID", int.Parse(row["ID"].ToString()));
+
+                        if (ShipId == int.Parse(row["ShipId"].ToString()))
+                        {
+                            cmd.Parameters.AddWithValue("@UserId", row["UserId"].ToString());
+                            cmd.Parameters.AddWithValue("@UserCode", row["UserCode"].ToString());
+                            int x = cmd.ExecuteNonQuery();
+                            cmd.Parameters.Clear();
+                        }
+                    }
+                }
+
+
+
+            }
+            catch (Exception ex)
+            {
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Export-UpdateShipUser");
+                logger.Error(ex, "Ticket Export");
+                //throw;
             }
         }
         public static void UpdateTicket()
@@ -712,7 +757,7 @@ namespace TCCCMS.Ship.ExportData
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-UpdateTicket");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Export-UpdateTicket");
                 logger.Error(ex, "Ticket Export");
                 //throw;
             }
@@ -757,7 +802,7 @@ namespace TCCCMS.Ship.ExportData
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-UpdateRevisionViewer");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Export-UpdateRevisionViewer");
                 logger.Error(ex, "Crew Import");
                 //throw;
             }
@@ -798,7 +843,7 @@ namespace TCCCMS.Ship.ExportData
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-UpdateFillupFormsUploaded");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Export-UpdateFillupFormsUploaded");
                 logger.Error(ex, "FillupFormsUploaded Export");
                 //throw;
             }
@@ -835,7 +880,7 @@ namespace TCCCMS.Ship.ExportData
             }
             catch (Exception ex)
             {
-                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Export-UpdateFillupFormApproverMapper");
+                TccLog.UpdateLog(ex.InnerException.Message, LogMessageType.Error, "Ship Export-UpdateFillupFormApproverMapper");
                 logger.Error(ex, "FillupFormApproverMapper Export");
                 //throw;
             }

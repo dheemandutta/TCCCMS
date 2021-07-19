@@ -12,6 +12,7 @@ using Quartz;
 using Ionic.Zip;
 using TCCCMS.LOG;
 using TCCCMS.CryptoUtility;
+using System.Globalization;
 
 namespace TCCCMS.Admin.ImportData
 {
@@ -29,14 +30,16 @@ namespace TCCCMS.Admin.ImportData
             if (isMailReadSuccessful)
             {
                 if (ZipDirectoryContainsFiles())
-                 {
+                {
 
                     StartImport();
                 }
 
             }
 
-            //throw new NotImplementedException();
+            ////throw new NotImplementedException();
+            ////for test
+            //ImportData();
         }
 
 
@@ -497,13 +500,21 @@ namespace TCCCMS.Admin.ImportData
                         int Rank = int.Parse(row["RankId"].ToString());
                         string ShipNumber = row["ShipId"].ToString();
                         string Email = row["Email"].ToString();
+                        CultureInfo culture = new CultureInfo("en-US");
+                        
+                       // cdt = DateTime.ParseExact(row["CreatedOn"].ToString(), "yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
 
+                        
 
                         cmd.Parameters.AddWithValue("@UserId", row["UserId"].ToString());
                         cmd.Parameters.AddWithValue("@UserName", CrewName);
                         cmd.Parameters.AddWithValue("@Password", row["Password"].ToString());
                         if (!string.IsNullOrEmpty(row["CreatedOn"].ToString()))
-                            cmd.Parameters.AddWithValue("@CreatedOn", row["CreatedOn"].ToString());
+                        {
+                            DateTime cdt = DateTime.Parse(row["CreatedOn"].ToString());
+                            string sdt = cdt.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                            cmd.Parameters.AddWithValue("@CreatedOn", sdt);
+                        }
                         else
                             cmd.Parameters.AddWithValue("@CreatedOn", DBNull.Value);
 
@@ -528,7 +539,7 @@ namespace TCCCMS.Admin.ImportData
                             cmd.Parameters.AddWithValue("@VesselIMO", DBNull.Value);
 
                         cmd.Parameters.AddWithValue("@RankId", Rank);
-                        cmd.Parameters.AddWithValue("@ShipNo", ShipNumber);
+                        cmd.Parameters.AddWithValue("@ShipId", ShipNumber);
                         cmd.Parameters.AddWithValue("@UserCode", row["UserCode"].ToString());
                         cmd.Parameters.AddWithValue("@UserType", row["UserType"].ToString());
 
@@ -538,15 +549,27 @@ namespace TCCCMS.Admin.ImportData
                             cmd.Parameters.AddWithValue("@UploadPermission", DBNull.Value);
 
                         if (!string.IsNullOrEmpty(row["JoinDate"].ToString()))
-                            cmd.Parameters.AddWithValue("@JoinDate", row["JoinDate"].ToString());
+                        {
+                            DateTime jdt = DateTime.Parse(row["JoinDate"].ToString());
+                            string sjdt = jdt.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                            cmd.Parameters.AddWithValue("@JoinDate", sjdt);
+                        }
                         else
                             cmd.Parameters.AddWithValue("@JoinDate", DBNull.Value);
                         if (!string.IsNullOrEmpty(row["ReleaseDate"].ToString()))
-                            cmd.Parameters.AddWithValue("@ReleaseDate", row["ReleaseDate"].ToString());
+                        {
+                            DateTime rdt = DateTime.Parse(row["ReleaseDate"].ToString());
+                            string srdt = rdt.ToString("yyyy-MM-dd HH:mm:ss", CultureInfo.InvariantCulture);
+                            cmd.Parameters.AddWithValue("@ReleaseDate", srdt);
+                        }
                         else
                             cmd.Parameters.AddWithValue("@ReleaseDate", DBNull.Value);
 
-                        cmd.Parameters.AddWithValue("@IsAdmin", row["IsAdmin"].ToString());
+                        if (!string.IsNullOrEmpty(row["IsAdmin"].ToString()))
+                            cmd.Parameters.AddWithValue("@IsAdmin", row["IsAdmin"].ToString());
+                        else
+                            cmd.Parameters.AddWithValue("@IsAdmin", DBNull.Value);
+                        //cmd.Parameters.AddWithValue("@IsAdmin", row["IsAdmin"].ToString());
                         cmd.Parameters.AddWithValue("@IsApprover", row["IsApprover"].ToString());
 
 

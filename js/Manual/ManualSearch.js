@@ -39,6 +39,15 @@ function replaceText(searchword) {
                         //var x = $(this).html($(this).html());
                         //console.log(x);
                         $(this).html($(this).html().replace(custfilter, repstr));
+						
+						//**End****** automatically expand  word containing accordion panel*************
+						var paren =  getStringParent(sword);
+						//console.log(paren);
+						var prv = paren.prev();
+						paren.prev().addClass("active");
+						paren.css("display","block");
+						//**End****** automatically expand  word containing accordion panel*************
+						
                     })
                 }
 
@@ -48,7 +57,9 @@ function replaceText(searchword) {
     }
     
 }
-
+function getStringParent(str) { 
+  return $(".panel:contains('"+ str +"')");
+}
 function GetSearchText() {
     $.ajax({
         //url: '@Url.Action("SearchPage", "Home")',
