@@ -1193,6 +1193,9 @@
     <Content Include="Content\plugin\datepicker\js\jquery.pickmeup.uikit.coffee" />
     <Content Include="Scripts\ChangePassword.js" />
     <Content Include="Scripts\Ticket.js" />
+    <Content Include="SignImages\Ship 2nd Off.png" />
+    <Content Include="SignImages\Ship Chief Off.png" />
+    <Content Include="SignImages\Ship Master.png" />
     <Content Include="SQL Script\04-04-2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29_II.sql" />
     <Content Include="SQL Script\04-04-2021_Full_Schema_Of_TCCCMSDB_II.sql" />
     <Content Include="SQL Script\06-04-2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29.sql" />
