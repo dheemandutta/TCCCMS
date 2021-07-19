@@ -296,15 +296,16 @@ function RemoveTempApprover(id) {
     SetUpTempApproverGrid();
 }
 
-function ApproveFilledUpForm(approverUserId,filledUpFormId) {
+function ApproveFilledUpForm(approverUserId,filledUpFormId,uploadedFormName) {
 
     var posturl = $('#urlApproveFilledUpForm').val();
     var   Forms = {
         ID: filledUpFormId,
-        ApproverUserId: approverUserId
+        ApproverUserId: approverUserId,
+        FilledUpFormName: uploadedFormName
     };
        
-
+    alert("Do You want to Approve this Form..?")
     $.ajax({
         url: posturl,
         data: JSON.stringify(Forms),
@@ -314,6 +315,7 @@ function ApproveFilledUpForm(approverUserId,filledUpFormId) {
 
         success: function (result) {
             loadData();
+            alert("Approved Successfully")
             toastr.options = {
                 "closeButton": false,
                 "debug": false,

@@ -6,6 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.IO;
+
+
+using GemBox.Document;
+using GemBox.Document.Tables;
 
 namespace TCCCMS.Controllers
 {
@@ -97,9 +102,22 @@ namespace TCCCMS.Controllers
 
         public JsonResult ApproveFilledUpForm(Forms form)
         {
+            string path = Server.MapPath("~/UploadFilledUpFormForApproval/");
+            string uploadedForm = form.FilledUpFormName;
             DocumentBL documentBl = new DocumentBL();
             int filledUpFormId = form.ID;
-           int x = documentBl.ApproveFilledUpForm(filledUpFormId, Convert.ToInt32(Session["UserId"].ToString()));
+            int x = documentBl.ApproveFilledUpForm(filledUpFormId, Convert.ToInt32(Session["UserId"].ToString()));
+            int y = AddSignatureInForm(path,uploadedForm, Convert.ToInt32(Session["UserId"].ToString()));
+
+            if (y == 1)
+            {
+                if(System.IO.File.Exists(Path.Combine(path+"Temp/", uploadedForm)))
+                {
+                    System.IO.File.Copy(Path.Combine(path + "Temp/", uploadedForm), Path.Combine(path, uploadedForm),true);
+
+                    System.IO.File.Delete(Path.Combine(path + "Temp/", uploadedForm));
+                }
+            }
             return Json("", JsonRequestBehavior.AllowGet);
         }
 
@@ -152,6 +170,67 @@ namespace TCCCMS.Controllers
             }
             var data = frmList;
             return Json(new {recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
+        }
+
+        public static int AddSignatureInForm(string relPath,string uploadedFormName,int approverUserId)
+        {
+
+            int x = 0;
+
+            try
+            {
+                //ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+                ComponentInfo.SetLicense("DN-2021Jan04-gSb72AQqrg9T4PQnvYNDgVtyd4tD3W3oBds51kfYp7zSsuFpxRw1a5Cxr49JiCLbMf2JCIKuinkUhgiQmuOz5yMoWdA==A");
+                string tempPath = Path.Combine(relPath, "Temp/");
+                string signPath = @"E:\WFH\TCC\WordModify\logo.png";
+                string docPath = Path.Combine(tempPath, uploadedFormName);
+                string sdocPath = Path.Combine(relPath, uploadedFormName);
+
+                int numberOfItems = 4;
+
+                DocumentModel document = DocumentModel.Load(uploadedFormName);
+
+                // Template document contains 4 tables, each contains some set of information.
+                Table[] tables = document.GetChildElements(true, ElementType.Table).Cast<Table>().ToArray();
+
+                int tableCount = tables.Count();
+
+                int approverPossition = 3;
+
+                Table signatureTable = tables[tableCount - 1];
+
+                for (int rowIndex = 0; rowIndex <= numberOfItems; rowIndex++)
+                {
+                    //DateTime date = DateTime.Today.AddDays(rowIndex - numberOfItems);
+                    //int hours = rowIndex % 3 + 6;
+                    //int unit = 35;
+                    //int price = hours * unit;
+                    if (rowIndex == approverPossition)
+                    {
+                        var paragraph = new Paragraph(document);
+
+                        Picture picture1 = new Picture(document, signPath, 100, 35, LengthUnit.Pixel);
+                        paragraph.Inlines.Add(picture1);
+
+                        signatureTable.Rows[rowIndex].Cells[1].Blocks.Add(new Paragraph(document,
+                                                                              new Run(document, "Name : Approver" + rowIndex),
+                                                                              new SpecialCharacter(document, SpecialCharacterType.LineBreak),
+                                                                              new Run(document, "Designation : xyz")
+                                                                          ));
+                        signatureTable.Rows[rowIndex].Cells[2].Blocks.Add(paragraph);
+                    }
+                }
+
+                document.Save(docPath);
+                x = 1;
+            }
+            catch (Exception ex)
+            {
+                x = 0;
+            }
+
+
+            return x;
         }
     }
 }
