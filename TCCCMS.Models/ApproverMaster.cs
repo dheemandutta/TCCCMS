@@ -13,6 +13,7 @@ namespace TCCCMS.Models
         public int ShipId { get; set; }
         public int RankId { get; set; }
         public int UserId { get; set; }//--Approver Id
+        public string UserName { get; set; }
         public int ApproverId { get; set; }//--Approver Level id
         public string ApproverDescription { get; set; }
         public string IsActive { get; set; }

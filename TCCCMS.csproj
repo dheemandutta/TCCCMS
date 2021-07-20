@@ -138,6 +138,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BreadCrumbHtmlExtensions.cs" />
     <Compile Include="Controllers\ApproverController.cs" />
+    <Compile Include="Controllers\ApproverSignController.cs" />
     <Compile Include="Controllers\CommonToAllManualController.cs" />
     <Compile Include="Controllers\CompanyPolicyManualController.cs" />
     <Compile Include="Controllers\CompanyProceduresManualController.cs" />
@@ -1195,6 +1196,7 @@
     <Content Include="Content\plugin\datepicker\css\pickmeup.scss" />
     <Content Include="Content\plugin\datepicker\js\jquery.pickmeup.twitter-bootstrap.coffee" />
     <Content Include="Content\plugin\datepicker\js\jquery.pickmeup.uikit.coffee" />
+    <Content Include="Scripts\ApproverSign.js" />
     <Content Include="Scripts\ChangePassword.js" />
     <Content Include="Scripts\Ticket.js" />
     <Content Include="SignImages\Ship 2nd Off.png" />
@@ -2479,6 +2481,7 @@
     <Content Include="Views\ShipKHKMajesty\CRM.cshtml" />
     <Content Include="Views\Help\Index.cshtml" />
     <Content Include="Views\Home\ChangePassword.cshtml" />
+    <Content Include="Views\ApproverSign\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

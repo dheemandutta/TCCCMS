@@ -24,9 +24,8 @@ namespace TCCCMS.Data
             cmd.Parameters.AddWithValue("@SignImagePath", pOCO.SignImagePath.ToString());
             cmd.Parameters.AddWithValue("@Name", pOCO.Name.ToString());
             cmd.Parameters.AddWithValue("@Position", pOCO.Position.ToString());
-            cmd.Parameters.AddWithValue("@CreatedOn", pOCO.CreatedOn1.ToString());
-            cmd.Parameters.AddWithValue("@ModifiedOn", pOCO.ModifiedOn1.ToString());
-            //cmd.Parameters.AddWithValue("@IsActive", pOCO.IsActive);
+            //cmd.Parameters.AddWithValue("@CreatedOn", pOCO.CreatedOn1.ToString());
+            //cmd.Parameters.AddWithValue("@ModifiedOn", pOCO.ModifiedOn1.ToString());
 
             if (pOCO.Id > 0)
             {
@@ -89,11 +88,11 @@ namespace TCCCMS.Data
                     if (item["Position"] != System.DBNull.Value)
                         pPOCOPC.Position = item["Position"].ToString();
 
-                    if (item["CreatedOn"] != System.DBNull.Value)
-                        pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
+                    //if (item["CreatedOn"] != System.DBNull.Value)
+                    //    pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
 
-                    if (item["ModifiedOn"] != System.DBNull.Value)
-                        pPOCOPC.ModifiedOn1 = item["ModifiedOn"].ToString();
+                    //if (item["ModifiedOn"] != System.DBNull.Value)
+                    //    pPOCOPC.ModifiedOn1 = item["ModifiedOn"].ToString();
 
                     //pcList.Add(pPOCOPC);
                 }
@@ -101,5 +100,28 @@ namespace TCCCMS.Data
             return pPOCOPC;
         }
 
+
+        //for ApproverSignUser drp
+        public List<ApproverMaster> GetAllUserForDrpApproverSign(/*int VesselID*/)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("usp_GetAllUserForDrpApproverSign", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            //cmd.Parameters.AddWithValue("@VesselID", VesselID);
+            DataSet ds = new DataSet();
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
+            DataTable myTable = ds.Tables[0];
+            List<ApproverMaster> ranksList = myTable.AsEnumerable().Select(m => new ApproverMaster()
+            {
+                UserId = m.Field<int>("UserId"),
+                UserName = m.Field<string>("UserName")
+
+            }).ToList();
+            con.Close();
+            return ranksList;
+
+        }
     }
 }
