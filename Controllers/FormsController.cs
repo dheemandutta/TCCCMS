@@ -109,7 +109,7 @@ namespace TCCCMS.Controllers
             int x = documentBl.ApproveFilledUpForm(filledUpFormId, Convert.ToInt32(Session["UserId"].ToString()), uploadedForm);
             int y = 0;
 
-            if(x == 1)
+            if(x > 0)
             {
                 y= AddSignatureInForm(path, uploadedForm, Convert.ToInt32(Session["UserId"].ToString()));
             }
