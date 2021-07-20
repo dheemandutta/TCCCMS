@@ -53,27 +53,27 @@ namespace TCCCMS.Controllers
             return Json(x, JsonRequestBehavior.AllowGet);
         }
 
-        public JsonResult GetAllApproverSign()
-        {
-            ApproverSignBL bL = new ApproverSignBL();
-            ApproverMaster pOCOList = new ApproverMaster();
+        //public JsonResult GetAllApproverSign()
+        //{
+        //    ApproverSignBL bL = new ApproverSignBL();
+        //    ApproverMaster pOCOList = new ApproverMaster();
 
-            pOCOList = bL.GetAllApproverSign();
+        //    pOCOList = bL.GetAllApproverSign();
 
-            ApproverMaster dept = new ApproverMaster();
+        //    ApproverMaster dept = new ApproverMaster();
 
-            dept.Id = pOCOList.Id;
-            dept.ApproverUserId = pOCOList.ApproverUserId;
-            dept.SignImagePath = pOCOList.SignImagePath;
-            dept.Name = pOCOList.Name;
-            dept.Position = pOCOList.Position;
-            dept.CreatedOn1 = pOCOList.CreatedOn1;
-            dept.ModifiedOn1 = pOCOList.ModifiedOn1;
+        //    dept.Id = pOCOList.Id;
+        //    dept.ApproverUserId = pOCOList.ApproverUserId;
+        //    dept.SignImagePath = pOCOList.SignImagePath;
+        //    dept.Name = pOCOList.Name;
+        //    dept.Position = pOCOList.Position;
+        //    dept.CreatedOn1 = pOCOList.CreatedOn1;
+        //    dept.ModifiedOn1 = pOCOList.ModifiedOn1;
 
-            var data = dept;
+        //    var data = dept;
 
-            return Json(data, JsonRequestBehavior.AllowGet);
-        }
+        //    return Json(data, JsonRequestBehavior.AllowGet);
+        //}
 
         //for User drp
         public void GetAllUserForDrpApproverSign()
