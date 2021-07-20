@@ -73,13 +73,13 @@ namespace TCCCMS.Business
             return documentDal.GetFilledupFormRequiredApprovalList(approverUserId);
         }
 
-        public int ApproveFilledUpForm(int filledUpFormId,int approverUserId)
+        public int ApproveFilledUpForm(int filledUpFormId,int approverUserId, string uploadedFormName)
         {
             DocumentDAL documentDal = new DocumentDAL();
 
 
 
-            return documentDal.ApproveFilledUpForm(filledUpFormId, approverUserId);
+            return documentDal.ApproveFilledUpForm(filledUpFormId, approverUserId, uploadedFormName);
         }
         public ApprovedFilledupFormAndApproverViewModel GetApprovedFilledUpForms(int userId)
         {

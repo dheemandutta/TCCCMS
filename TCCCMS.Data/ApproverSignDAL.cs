@@ -42,7 +42,7 @@ namespace TCCCMS.Data
             return recordsAffected;
         }
 
-        public ApproverMaster GetAllApproverSign(/*int ApproverUserIdId*/)
+        public ApproverMaster GetAllApproverSign(int ApproverUserId, string uploadedFormName = null)
         {
             ApproverMaster prodPOList = new ApproverMaster();
             ApproverMaster prodPO = new ApproverMaster();
@@ -52,7 +52,9 @@ namespace TCCCMS.Data
                 using (SqlCommand cmd = new SqlCommand("GetAllApproverSign", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
-                    //cmd.Parameters.AddWithValue("@ApproverUserId", ApproverUserId);
+                    cmd.Parameters.AddWithValue("@ApproverUserId", ApproverUserId);
+                    cmd.Parameters.AddWithValue("@UploadedFormName", uploadedFormName);
+
                     con.Open();
 
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -73,17 +75,17 @@ namespace TCCCMS.Data
                 {
                     //RankPOCO pPOCOPC = new RankPOCO();
 
-                    if (item["Id"] != null)
-                        pPOCOPC.Id = Convert.ToInt32(item["Id"].ToString());
+                    //if (item["Id"] != null)
+                    //    pPOCOPC.Id = Convert.ToInt32(item["Id"].ToString());
 
                     if (item["ApproverUserId"] != System.DBNull.Value)
                         pPOCOPC.ApproverUserId = Convert.ToInt32(item["ApproverUserId"].ToString());
 
+                    if (item["UserName"] != System.DBNull.Value)
+                        pPOCOPC.Name = item["UserName"].ToString();
+
                     if (item["SignImagePath"] != System.DBNull.Value)
                         pPOCOPC.SignImagePath = item["SignImagePath"].ToString();
-
-                    if (item["Name"] != System.DBNull.Value)
-                        pPOCOPC.Name = item["Name"].ToString();
 
                     if (item["Position"] != System.DBNull.Value)
                         pPOCOPC.Position = item["Position"].ToString();
@@ -96,6 +98,7 @@ namespace TCCCMS.Data
 
                     //pcList.Add(pPOCOPC);
                 }
+                pPOCOPC.ApprovedCount = Convert.ToInt32(ds.Tables[1].Rows[0]["ApprovedCount"].ToString());
             }
             return pPOCOPC;
         }

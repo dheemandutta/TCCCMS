@@ -19,10 +19,10 @@ namespace TCCCMS.Business
             return dAL.SaveApproverSign(pOCO);
         }
 
-        public ApproverMaster GetAllApproverSign(/*int ApproverUserIdId*/)
+        public ApproverMaster GetAllApproverSign(int ApproverUserId, string uploadedFormName = null)
         {
             ApproverSignDAL dAL = new ApproverSignDAL();
-            return dAL.GetAllApproverSign(/*ApproverUserIdId*/);
+            return dAL.GetAllApproverSign(ApproverUserId, uploadedFormName);
         }
 
         //for ApproverSignUser drp

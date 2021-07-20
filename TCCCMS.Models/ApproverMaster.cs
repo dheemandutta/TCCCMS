@@ -29,6 +29,9 @@ namespace TCCCMS.Models
         public RankPOCO Rank { get; set; }
         public UserMasterPOCO User { get; set; }
 
+        //Added on 19th Jul 2021 @BK 
+        public int ApprovedCount { get; set; }
+
 
 
 

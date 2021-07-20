@@ -296,15 +296,16 @@ function RemoveTempApprover(id) {
     SetUpTempApproverGrid();
 }
 
-function ApproveFilledUpForm(approverUserId,filledUpFormId) {
+function ApproveFilledUpForm(approverUserId,filledUpFormId,uploadedFormName) {
 
     var posturl = $('#urlApproveFilledUpForm').val();
     var   Forms = {
         ID: filledUpFormId,
-        ApproverUserId: approverUserId
+        ApproverUserId: approverUserId,
+        FilledUpFormName: uploadedFormName
     };
        
-
+    alert("Do You want to Approve this Form..?")
     $.ajax({
         url: posturl,
         data: JSON.stringify(Forms),
@@ -313,7 +314,9 @@ function ApproveFilledUpForm(approverUserId,filledUpFormId) {
         dataType: "json",
 
         success: function (result) {
-            loadData();
+            //loadData();
+            alert("Approved Successfully")
+            LoadFormsApprovalList()
             toastr.options = {
                 "closeButton": false,
                 "debug": false,
@@ -341,6 +344,29 @@ function ApproveFilledUpForm(approverUserId,filledUpFormId) {
         }
     });
     
+}
+
+function LoadFormsApprovalList() {
+
+    var geturl = $('#urlFormsApprovalList').val();
+    
+    
+    $.ajax({
+        url: geturl,
+        //data: JSON.stringify(Forms),
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+
+        success: function (result) {
+            
+            //clearTextBox();
+        },
+        error: function (errormessage) {
+            console.log(errormessage.responseText);
+        }
+    });
+
 }
 
 
