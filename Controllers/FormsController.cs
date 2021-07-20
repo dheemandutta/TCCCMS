@@ -102,20 +102,25 @@ namespace TCCCMS.Controllers
 
         public JsonResult ApproveFilledUpForm(Forms form)
         {
-            string path = Server.MapPath("~/UploadFilledUpFormForApproval/");
+            string path = Server.MapPath("~/UploadFilledUpFormForApproval");
             string uploadedForm = form.FilledUpFormName;
             DocumentBL documentBl = new DocumentBL();
             int filledUpFormId = form.ID;
-            int x = documentBl.ApproveFilledUpForm(filledUpFormId, Convert.ToInt32(Session["UserId"].ToString()));
-            int y = AddSignatureInForm(path,uploadedForm, Convert.ToInt32(Session["UserId"].ToString()));
+            int x = documentBl.ApproveFilledUpForm(filledUpFormId, Convert.ToInt32(Session["UserId"].ToString()), uploadedForm);
+            int y = 0;
+
+            if(x == 1)
+            {
+                y= AddSignatureInForm(path, uploadedForm, Convert.ToInt32(Session["UserId"].ToString()));
+            }
 
             if (y == 1)
             {
-                if(System.IO.File.Exists(Path.Combine(path+"Temp/", uploadedForm)))
+                if(System.IO.File.Exists(Path.Combine(path+"\\Temp\\", uploadedForm)))
                 {
-                    System.IO.File.Copy(Path.Combine(path + "Temp/", uploadedForm), Path.Combine(path, uploadedForm),true);
+                    System.IO.File.Copy(Path.Combine(path + "\\Temp\\", uploadedForm), Path.Combine(path, uploadedForm),true);
 
-                    System.IO.File.Delete(Path.Combine(path + "Temp/", uploadedForm));
+                    System.IO.File.Delete(Path.Combine(path + "\\Temp\\", uploadedForm));
                 }
             }
             return Json("", JsonRequestBehavior.AllowGet);
@@ -182,30 +187,37 @@ namespace TCCCMS.Controllers
                 //ComponentInfo.SetLicense("FREE-LIMITED-KEY");
                 ComponentInfo.SetLicense("DN-2021Jan04-gSb72AQqrg9T4PQnvYNDgVtyd4tD3W3oBds51kfYp7zSsuFpxRw1a5Cxr49JiCLbMf2JCIKuinkUhgiQmuOz5yMoWdA==A");
 
-                string tempPath         = Path.Combine(relPath, "Temp/");
+                //string tempPath         = Path.Combine(relPath, "\\Temp\\");
+                string tempPath = relPath+ "\\Temp\\";
+
                 //string signPath = @"E:\WFH\TCC\WordModify\logo.png";
-                string docPath          = Path.Combine(tempPath, uploadedFormName);
-                string sdocPath         = Path.Combine(relPath, uploadedFormName);
+                //string docPath          = Path.Combine(tempPath, uploadedFormName);
+                string docPath = tempPath + uploadedFormName;
+
+                //string sdocPath         = Path.Combine(relPath, "\\"+uploadedFormName);
+                string sdocPath = relPath + "\\" + uploadedFormName;
+
+                string root = Path.GetDirectoryName(relPath);
 
                 ApproverMaster approver = new ApproverMaster();
                 ApproverSignBL aSignBL  = new ApproverSignBL();
                 approver                = aSignBL.GetAllApproverSign(approverUserId, uploadedFormName);
 
-                string signPath         = approver.SignImagePath;
+                string signPath         = Path.Combine(root+"\\", approver.SignImagePath.Replace("/","\\"));
                 string approverName     = approver.Name;
                 string designation      = approver.Position;
                 int approverPossition   = approver.ApprovedCount;
 
                 int numberOfItems       = 4;// 
 
-                DocumentModel document  = DocumentModel.Load(uploadedFormName);
+                DocumentModel document  = DocumentModel.Load(sdocPath);
 
                 // Template document contains 4 tables, each contains some set of information.
                 Table[] tables          = document.GetChildElements(true, ElementType.Table).Cast<Table>().ToArray();
 
                 int tableCount          = tables.Count();
 
-                Table signatureTable    = tables[tableCount - 1];
+                Table signatureTable    = tables[tableCount - 2];
 
                 for (int rowIndex = 0; rowIndex <= numberOfItems; rowIndex++)
                 {

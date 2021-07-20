@@ -357,8 +357,14 @@ namespace TCCCMS.Data
             return filledupFormList;
 
         }
-
-        public int ApproveFilledUpForm(int filledUpFormId, int approverUserId)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="filledUpFormId"></param>
+        /// <param name="approverUserId">Commented on 20th Jul 2021 @BK</param>
+        /// <param name="uploadedFormName">Added on 20th Jul 2021 @BK</param>
+        /// <returns></returns>
+        public int ApproveFilledUpForm(int filledUpFormId, int approverUserId,string uploadedFormName)
         {
             int recorSaved = 0;
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -371,11 +377,16 @@ namespace TCCCMS.Data
                         con.Open();
                         cmd.CommandType = CommandType.StoredProcedure;
                         cmd.Parameters.AddWithValue("@ApproverUserId", approverUserId);
-                        cmd.Parameters.AddWithValue("@FilledUpFormId", filledUpFormId);
+                        cmd.Parameters.AddWithValue("@FilledUpFormId", filledUpFormId);//Commented on 20th Jul 2021 @BK
+                        cmd.Parameters.AddWithValue("@UploadedFormName", uploadedFormName);//Added on 20th Jul 2021 @BK
+                        cmd.Parameters.Add("@RowCount", SqlDbType.Int, 0);
+                        cmd.Parameters["@RowCount"].Direction = ParameterDirection.Output;
+
 
                         int x = cmd.ExecuteNonQuery();
+                        recorSaved = Convert.ToInt32(cmd.Parameters["@RowCount"].Value);
                         con.Close();
-                        recorSaved = x;
+                        //recorSaved = x;
                         return recorSaved;
                     }
                     catch (Exception expErr)

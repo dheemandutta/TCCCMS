@@ -76,26 +76,26 @@ namespace TCCCMS.Data
                 {
                     //RankPOCO pPOCOPC = new RankPOCO();
 
-                    if (item["Id"] != null)
-                        pPOCOPC.Id = Convert.ToInt32(item["Id"].ToString());
+                    //if (item["Id"] != null)
+                    //    pPOCOPC.Id = Convert.ToInt32(item["Id"].ToString());
 
                     if (item["ApproverUserId"] != System.DBNull.Value)
                         pPOCOPC.ApproverUserId = Convert.ToInt32(item["ApproverUserId"].ToString());
 
+                    if (item["UserName"] != System.DBNull.Value)
+                        pPOCOPC.Name = item["UserName"].ToString();
+
                     if (item["SignImagePath"] != System.DBNull.Value)
                         pPOCOPC.SignImagePath = item["SignImagePath"].ToString();
-
-                    if (item["Name"] != System.DBNull.Value)
-                        pPOCOPC.Name = item["Name"].ToString();
 
                     if (item["Position"] != System.DBNull.Value)
                         pPOCOPC.Position = item["Position"].ToString();
 
-                    if (item["CreatedOn"] != System.DBNull.Value)
-                        pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
+                    //if (item["CreatedOn"] != System.DBNull.Value)
+                    //    pPOCOPC.CreatedOn1 = item["CreatedOn"].ToString();
 
-                    if (item["ModifiedOn"] != System.DBNull.Value)
-                        pPOCOPC.ModifiedOn1 = item["ModifiedOn"].ToString();
+                    //if (item["ModifiedOn"] != System.DBNull.Value)
+                    //    pPOCOPC.ModifiedOn1 = item["ModifiedOn"].ToString();
 
                     //pcList.Add(pPOCOPC);
                 }

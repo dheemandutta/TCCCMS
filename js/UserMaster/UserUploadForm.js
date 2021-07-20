@@ -314,8 +314,9 @@ function ApproveFilledUpForm(approverUserId,filledUpFormId,uploadedFormName) {
         dataType: "json",
 
         success: function (result) {
-            loadData();
+            //loadData();
             alert("Approved Successfully")
+            LoadFormsApprovalList()
             toastr.options = {
                 "closeButton": false,
                 "debug": false,
@@ -343,6 +344,29 @@ function ApproveFilledUpForm(approverUserId,filledUpFormId,uploadedFormName) {
         }
     });
     
+}
+
+function LoadFormsApprovalList() {
+
+    var geturl = $('#urlFormsApprovalList').val();
+    
+    
+    $.ajax({
+        url: geturl,
+        //data: JSON.stringify(Forms),
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+
+        success: function (result) {
+            
+            //clearTextBox();
+        },
+        error: function (errormessage) {
+            console.log(errormessage.responseText);
+        }
+    });
+
 }
 
 
