@@ -24,5 +24,12 @@ namespace TCCCMS.Business
             ApproverSignDAL dAL = new ApproverSignDAL();
             return dAL.GetAllApproverSign(ApproverUserId, uploadedFormName);
         }
+
+        //for ApproverSignUser drp
+        public List<ApproverMaster> GetAllUserForDrpApproverSign(/*int VesselID*/)
+        {
+            ApproverSignDAL dAL = new ApproverSignDAL();
+            return dAL.GetAllUserForDrpApproverSign(/*VesselID*/);
+        }
     }
 }

@@ -110,7 +110,7 @@ namespace TCCCMS.Controllers
             int y = 0;
             WriteErrorToText("Approved in DB", "ApproveFilledUpForm");
 
-            if (x == 1)
+            if(x > 0)
             {
                 y= AddSignatureInForm(path, uploadedForm, Convert.ToInt32(Session["UserId"].ToString()));
             }

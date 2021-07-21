@@ -379,15 +379,15 @@ namespace TCCCMS.Data
                         cmd.Parameters.AddWithValue("@ApproverUserId", approverUserId);
                         cmd.Parameters.AddWithValue("@FilledUpFormId", filledUpFormId);//Commented on 20th Jul 2021 @BK
                         cmd.Parameters.AddWithValue("@UploadedFormName", uploadedFormName);//Added on 20th Jul 2021 @BK
-                        cmd.Parameters.Add("@RowCount", SqlDbType.Int, 0);
-                        cmd.Parameters["@RowCount"].Direction = ParameterDirection.Output;
+                       // cmd.Parameters.Add("@RowCount", SqlDbType.Int, 0);
+                        //cmd.Parameters["@RowCount"].Direction = ParameterDirection.Output;
 
 
                         int x = cmd.ExecuteNonQuery();
-                        recorSaved = Convert.ToInt32(cmd.Parameters["@RowCount"].Value);
+                       // recorSaved = Convert.ToInt32(cmd.Parameters["@RowCount"].Value);
                         con.Close();
                         //recorSaved = x;
-                        return recorSaved;
+                        return x;
                     }
                     catch (Exception expErr)
                     {
