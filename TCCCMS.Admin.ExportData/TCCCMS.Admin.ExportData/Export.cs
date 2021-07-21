@@ -263,24 +263,29 @@ namespace TCCCMS.Admin.ExportData
                 //da.Fill(ds);
                 //string fileName = ds.Tables[0].Rows[0]["IMONumber"].ToString();
                 //string fileName = ds.Tables[0].Rows[0]["ID"].ToString();
-                string fileName = shipId.ToString();
-                fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
-                fileName = fileName + ".zip";
+                if (Directory.GetFiles(path, ".").Length > 0) {                   // added on 21-07-2021
 
-                using (ZipFile zip = new ZipFile())
-                {
-                    zip.AddDirectory(path + "\\");
-                    zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
+                    string fileName = shipId.ToString();
+                    fileName = fileName + "_" + DateTime.Now.ToString("MMddyyyyhhmm");
+                    fileName = fileName + ".zip";
 
-                    zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
-                    zip.Save(zippath + "\\" + fileName);
-                    // SegmentsCreated = zip.NumberOfSegmentsForMostRecentSave;
+                    using (ZipFile zip = new ZipFile())
+                    {
+                        zip.AddDirectory(path + "\\");
+                        zip.Comment = "This zip was created at " + System.DateTime.Now.ToString("G");
+
+                        zip.MaxOutputSegmentSize = int.Parse(ConfigurationManager.AppSettings["OutputSize"].ToString());
+                        zip.Save(zippath + "\\" + fileName);
+                        // SegmentsCreated = zip.NumberOfSegmentsForMostRecentSave;
+                    }
+
+                    //delete xml files 
+                    //string[] filePaths = Directory.GetFiles(path + "\\");
+                    //foreach (string filePath in filePaths)
+                    //    File.Delete(filePath);
+
                 }
 
-                //delete xml files 
-                //string[] filePaths = Directory.GetFiles(path + "\\");
-                //foreach (string filePath in filePaths)
-                //    File.Delete(filePath);
 
 
             }

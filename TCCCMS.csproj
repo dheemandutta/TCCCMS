@@ -853,6 +853,7 @@
     <Content Include="SQL Script\04-04-2021_Full_Schema_Of_TCCCMSDB_II.sql" />
     <Content Include="SQL Script\06-04-2021_Full_Data_Of_TCCCMSDB%28Without4bigTables%29.sql" />
     <Content Include="SQL Script\06-04-2021_Full_Schema_Of_TCCCMSDB.sql" />
+    <Content Include="UpdateRevisions\test.txt" />
     <Content Include="UploadFilledUpFormForApproval\Temp\Test.txt" />
     <Content Include="xmlMenu\ALLSHIPS1.xml" />
     <Content Include="xmlMenu\COMMONTOALL.xml" />
