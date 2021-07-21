@@ -108,6 +108,7 @@ namespace TCCCMS.Controllers
             int filledUpFormId = form.ID;
             int x = documentBl.ApproveFilledUpForm(filledUpFormId, Convert.ToInt32(Session["UserId"].ToString()), uploadedForm);
             int y = 0;
+            WriteErrorToText("Approved in DB", "ApproveFilledUpForm");
 
             if(x > 0)
             {
@@ -116,7 +117,8 @@ namespace TCCCMS.Controllers
 
             if (y == 1)
             {
-                if(System.IO.File.Exists(Path.Combine(path+"\\Temp\\", uploadedForm)))
+                WriteErrorToText("Sign added in form", "ApproveFilledUpForm");
+                if (System.IO.File.Exists(Path.Combine(path+"\\Temp\\", uploadedForm)))
                 {
                     System.IO.File.Copy(Path.Combine(path + "\\Temp\\", uploadedForm), Path.Combine(path, uploadedForm),true);
 
@@ -251,6 +253,51 @@ namespace TCCCMS.Controllers
 
 
             return x;
+        }
+
+        public void WriteErrorToText(string subName, string fileName)
+        {
+            string contentRootPath = Server.MapPath("~/Log/");
+            var line = Environment.NewLine + Environment.NewLine;
+
+            try
+            {
+                string filepath = contentRootPath;  //Text File Path
+
+                if (!Directory.Exists(filepath))
+                {
+                    Directory.CreateDirectory(filepath);
+
+                }
+                //filepath = filepath + DateTime.Today.ToString("dd-MM-yy") + ".txt";   //Text File Name
+                filepath = filepath + subName + "_" + DateTime.Today.ToString("dd-MM-yy") + ".txt";   //Text File Name
+                if (!System.IO.File.Exists(filepath))
+                {
+
+
+                    System.IO.File.Create(filepath).Dispose();
+
+                }
+                using (StreamWriter sw = System.IO.File.AppendText(filepath))
+                {
+                    sw.WriteLine("-----------Exception Details on " + " " + DateTime.Now.ToString() + "-----------------");
+                    sw.WriteLine("-------------------------------------------------------------------------------------");
+                    //sw.WriteLine(line);
+                    sw.WriteLine("File Name : " + fileName);
+                    //sw.WriteLine("Path : " + filePath);
+                    sw.WriteLine("--------------------------------*End*------------------------------------------");
+                    sw.WriteLine(line);
+                    sw.Flush();
+                    sw.Close();
+
+                }
+
+            }
+            catch (Exception e)
+            {
+                e.ToString();
+
+            }
         }
     }
 }

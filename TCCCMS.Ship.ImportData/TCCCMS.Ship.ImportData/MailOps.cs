@@ -60,7 +60,8 @@ namespace TCCCMS.Ship.ImportData
                     try
                     {
                         TccLog.UpdateLog("Connecting IMAP Client", LogMessageType.Info, "Ship Import - Connect");
-                        imap_Client = new ImapClient(new ProtocolLogger("imap.log"));
+                        //imap_Client = new ImapClient(new ProtocolLogger("imap.log"));
+                        imap_Client = new ImapClient();
 
                         //Added blew 3lines on  12th Jul 2021
                         imap_Client.ServerCertificateValidationCallback = (s, c, h, e) => true;
