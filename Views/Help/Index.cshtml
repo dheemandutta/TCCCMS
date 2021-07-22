@@ -7,10 +7,10 @@
 
 @*@model TCCCMS.Models.ShipManual*@
 @*@{
-   
-    ViewBag.Title = Model.BodyHeader;
-    Layout = "~/Views/Shared/_Ship_Layout.cshtml";
-}*@
+
+        ViewBag.Title = Model.BodyHeader;
+        Layout = "~/Views/Shared/_Ship_Layout.cshtml";
+    }*@
 @section Styles{
     <link href="~/Scripts/highlight/css/default.css" rel="stylesheet" />
 
@@ -28,15 +28,15 @@
 <body>
     <div class="">
         @*<div class="head_title">
-            <h1 class="ta">@Model.PdfName</h1>
-        </div>*@
+                <h1 class="ta">@Model.PdfName</h1>
+            </div>*@
 
         <div class="card backtt">
             <div class="">
-                <embed src="~/Help/TCC User Help.pdf" width="100%" height="500px;" />
-
+                @*<embed src="~/Help/TCC User Help.pdf" width="100%" height="500px;" />*@
+                <p><a href="~/Help/OfficeHelp/Access different Volumes.pdf">Access different Volumes</a></p>
+                <p><a href="~/Help/OfficeHelp/Access different Volumes.pdf">Access different Volumes</a></p>
             </div>
-            @*<button type="button" class="buttonpop" id="" style="width: 100px;">Update</button>*@
         </div>
 
     </div>

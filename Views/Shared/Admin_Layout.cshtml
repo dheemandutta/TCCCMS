@@ -47,6 +47,23 @@
                             </div>
                         }*@
                     <ul class="topright adminlay">
+                         <li>
+                            <div class="dropdown admin">
+                                <button class="button log"><span><img src="~/images/questionmark.png" style="width:19px;" /></span></button>
+                                <div class="dropdown-content">
+                                    @if (Session["Role"].ToString() == "OfficeAdmin")
+                                    {
+                                        <a href='@Url.Action("HelpOfficeAdmin", "Help")'>Office Admin Help</a>
+                                    }
+                                    @if (Session["Role"].ToString() == "ShipAdmin")
+                                    {
+                                        <a href='@Url.Action("HelpVesselAdmin", "Help")'>Vessel Admin Help</a>
+                                    }
+
+                                    
+                                </div>
+                            </div>
+                        </li>
                         <li>
                             <div class="dropdown admin notification">
                                 <button id="btnBell" class="button log">

@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "HelpVesselUser";
+    Layout = "~/Views/Shared/New_Layout.cshtml";
+}
+
+<h2>Vessel User Help</h2>
+
+
+
+@*@model TCCCMS.Models.ShipManual*@
+@*@{
+
+        ViewBag.Title = Model.BodyHeader;
+        Layout = "~/Views/Shared/_Ship_Layout.cshtml";
+    }*@
+@section Styles{
+    <link href="~/Scripts/highlight/css/default.css" rel="stylesheet" />
+
+    <style>
+        .buttonpop {
+            margin: 20px 0;
+        }
+
+        .backtt {
+            text-align: right;
+        }
+    </style>
+}
+
+<body>
+    <div class="">
+        @*<div class="head_title">
+                <h1 class="ta">@Model.PdfName</h1>
+            </div>*@
+
+        <div class="">
+            <div style="line-height: 0.5;">
+                @*<embed src="~/Help/TCC User Help.pdf" width="100%" height="500px;" />*@
+                <p><a href="~/Help/VesselHelp/Login.pdf">Login</a></p>
+                <p><a href="~/Help/VesselHelp/Forgot  Password.pdf">Forgot Password</a></p>
+                <p><a href="~/Help/VesselHelp/Symbols.pdf">Symbols</a></p>
+                <p><a href="~/Help/VesselHelp/Raise a Ticket.pdf">Raise a Ticket</a></p>
+                <p><a href="~/Help/VesselHelp/Add Users.pdf">Add Users</a></p>
+                <p><a href="~/Help/VesselHelp/Inactivate a user.pdf">Inactivate a user</a></p>
+                <p><a href="~/Help/VesselHelp/Sync Data between Ship and Shore.pdf">Sync Data between Ship and Shore</a></p>
+                <p><a href="~/Help/VesselHelp/User Dashboard (Vessel).pdf">User Dashboard (Vessel)</a></p>
+                <p><a href="~/Help/VesselHelp/Help Feature.pdf">Help Feature</a></p>
+                <p><a href="~/Help/VesselHelp/Notification.pdf">Notification</a></p>
+                <p><a href="~/Help/VesselHelp/Change Password.pdf">Change Password</a></p>
+                <p><a href="~/Help/VesselHelp/Log Off.pdf">Log Off</a></p>
+                <p><a href="~/Help/VesselHelp/Hide - Unhide Feature.pdf">Hide - Unhide Feature</a></p>
+                <p><a href="~/Help/VesselHelp/Search Function.pdf">Search Function</a></p>
+                <p><a href="~/Help/VesselHelp/Ship Specific Manual and Plans.pdf">Ship Specific Manual and Plans</a></p>
+                <p><a href="~/Help/VesselHelp/Access Reference Material.pdf">Access Reference Material</a></p>
+                <p><a href="~/Help/VesselHelp/Revision Details.pdf">Revision Details</a></p>
+                <p><a href="~/Help/VesselHelp/Notice Board.pdf">Notice Board</a></p>
+                <p><a href="~/Help/VesselHelp/Common to all Manual.pdf">Common to all Manual</a></p>
+                <p><a href="~/Help/VesselHelp/Volumes.pdf">Volumes</a></p>
+                <p><a href="~/Help/VesselHelp/User Icon Function.pdf">User Icon Function</a></p>
+            </div>
+        </div>
+
+    </div>
+</body>
