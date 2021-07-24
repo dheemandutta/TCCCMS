@@ -48,8 +48,15 @@
                             <div class="dropdown admin">
                                 <button class="button log"><span><img src="~/images/questionmark.png" style="width:19px;" /></span></button>
                                 <div class="dropdown-content">
-                                    <a href='@Url.Action("Index", "Help")'>Help</a>
-                                </div>
+                                    @if (Session["Role"].ToString() == "OfficeUser")
+                                    {
+                                        <a href='@Url.Action("HelpOfficeUser", "Help")'>Office User Help</a>
+                                    }
+                                    @if (Session["Role"].ToString() == "ShipUser")
+                                    {
+                                        <a href='@Url.Action("HelpVesselUser", "Help")'>Vessel User Help</a>
+                                    }
+                                    </div>
                             </div>
                         </li>
                         @*------Added on 7th Jul 2021 replaced from Admin Layout-------*@

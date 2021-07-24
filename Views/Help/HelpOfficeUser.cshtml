@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "HelpOfficeUser";
+    Layout = "~/Views/Shared/New_Layout.cshtml";
+}
+
+<h2>Office User Help</h2>
+
+
+@*@model TCCCMS.Models.ShipManual*@
+@*@{
+
+        ViewBag.Title = Model.BodyHeader;
+        Layout = "~/Views/Shared/_Ship_Layout.cshtml";
+    }*@
+@section Styles{
+    <link href="~/Scripts/highlight/css/default.css" rel="stylesheet" />
+
+    <style>
+        .buttonpop {
+            margin: 20px 0;
+        }
+
+        .backtt {
+            text-align: right;
+        }
+    </style>
+}
+
+<body>
+    <div class="">
+        @*<div class="head_title">
+                <h1 class="ta">@Model.PdfName</h1>
+            </div>*@
+
+        <div class="">
+            <div style="line-height: 0.5;">
+                @*<embed src="~/Help/TCC User Help.pdf" width="100%" height="500px;" />*@
+                <p><a href="~/Help/OfficeHelp/Login.pdf">Login</a></p>
+                <p><a href="~/Help/OfficeHelp/Forgot  Password.pdf">Forgot Password</a></p>
+                <p><a href="~/Help/OfficeHelp/Symbols.pdf">Symbols</a></p>
+                <p><a href="~/Help/OfficeHelp/User Dashboard Icon.pdf">User Dashboard Icon</a></p>
+                <p><a href="~/Help/OfficeHelp/Help Feature.pdf">Help Feature</a></p>
+                <p><a href="~/Help/OfficeHelp/Notifications.pdf">Notifications</a></p>
+                <p><a href="~/Help/OfficeHelp/User Icon Functions.pdf">User Icon Functions</a></p>
+                <p><a href="~/Help/OfficeHelp/Use of Hide -Unhide Icon.pdf">Use of Hide -Unhide Icon</a></p>
+                <p><a href="~/Help/OfficeHelp/Search Function.pdf">Search Function</a></p>
+                <p><a href="~/Help/OfficeHelp/Access Ship Specific Manual.pdf">Access Ship Specific Manual</a></p>
+                <p><a href="~/Help/OfficeHelp/View Volume Menu.pdf">View Volume Menu</a></p>
+                <p><a href="~/Help/OfficeHelp/Access different Volumes.pdf">Access different Volumes</a></p>
+                <p><a href="~/Help/OfficeHelp/View Reference Material.pdf">View Reference Material</a></p>
+                <p><a href="~/Help/OfficeHelp/Revision Details.pdf">Revision Details</a></p>
+                <p><a href="~/Help/OfficeHelp/View Notice board and its content.pdf">View Notice board and its content</a></p>
+                <p><a href="~/Help/OfficeHelp/Raise a Ticket.pdf">Raise a Ticket</a></p>
+                <p><a href="~/Help/OfficeHelp/Add Users.pdf">Add Users</a></p>
+                <p><a href="~/Help/OfficeHelp/Inactivate a user.pdf">Inactivate a user</a></p>
+                <p><a href="~/Help/OfficeHelp/Sync Data between Ship and Shore.pdf">Sync Data between Ship and Shore</a></p>
+                <p><a href="~/Help/OfficeHelp/Log off.pdf">Log off</a></p>
+                <p><a href="~/Help/OfficeHelp/Change Password.pdf">Change Password</a></p>
+                <p><a href="~/Help/OfficeHelp/View Common to all Manual.pdf">View Common to all Manual</a></p>
+            </div>
+        </div>
+
+    </div>
+</body>
