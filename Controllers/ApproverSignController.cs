@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
+using System.IO;
+using System.Configuration;
 
 namespace TCCCMS.Controllers
 {
@@ -37,20 +39,63 @@ namespace TCCCMS.Controllers
         }
 
         [HttpPost]
-        public JsonResult SaveSign(string approverUserId, string signImagePath,string name,string position)
+        public JsonResult SaveSign(string crewId, string crewPosition)
         {
+            var key = "b14ca5898a4e4133bbce2ea2315a1916";
+            string fnameWithPath = string.Empty;
+
+            List<string> returnMsg = new List<string>();
+            string fileName = String.Empty; //Path.GetFileNameWithoutExtension(postedFile.FileName);
+            fileName = "SignImages" + "_" + crewId;
+
+            HttpFileCollectionBase files = Request.Files;
+            for (int i = 0; i < files.Count; i++)
+            {
+
+                HttpPostedFileBase file = files[i];
+                string fname;
+                string extn;
+
+                // Checking for Internet Explorer  
+                if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                {
+                    string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                    fname = testfiles[testfiles.Length - 1];
+                    extn = Path.GetExtension(fname);
+                }
+                else
+                {
+                    fname = file.FileName;
+                    extn = Path.GetExtension(file.FileName);
+                }
+                string path = Server.MapPath(ConfigurationManager.AppSettings["SignImagePath"].ToString());
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+                if (System.IO.File.Exists(path + fileName))
+                {
+                    System.IO.File.Delete(path + fileName);
+                }
+                fileName = fileName + ".zip"/*extn*/;
+                // Get the complete folder path and store the file inside it.  
+                fnameWithPath = Path.Combine(path, fileName);
+                file.SaveAs(fnameWithPath);
+                returnMsg.Add(fnameWithPath);
+            }
+
             ApproverSignBL bL = new ApproverSignBL();
             ApproverMaster pC = new ApproverMaster();
 
-            pC.ApproverUserId = Convert.ToInt32(approverUserId);
-            pC.SignImagePath = signImagePath;
-            pC.Name = name;
-            pC.Position = position;
+            pC.ApproverUserId = Convert.ToInt32(crewId);
+            pC.SignImagePath = AesOperation.EncryptString(key, fnameWithPath);
+            //pC.Name = name;
+            pC.Position = crewPosition;
             //pC.CreatedOn1 = pOCO.CreatedOn1;
             //pC.ModifiedOn1 = pOCO.ModifiedOn1;
 
             int x = bL.SaveApproverSign(pC);
-            return Json(x, JsonRequestBehavior.AllowGet);
+            return Json(returnMsg, JsonRequestBehavior.AllowGet);
         }
 
 
