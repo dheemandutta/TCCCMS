@@ -259,8 +259,10 @@ namespace TCCCMS.Controllers
                     string H = approvedDate.TimeOfDay.ToString();
                     string date = d + "th" + " " + m + " " + y + " " + H;
 
+
+
                     var cel = new TableCell(document) { ColumnSpan = 3 };
-                    var para = new Paragraph(document, date);
+                    var para = new Paragraph(document, "Approved: "+ date);
 
                     cel.CellFormat.VerticalAlignment = (VerticalAlignment)0;
                     cel.Blocks.Add(para);
