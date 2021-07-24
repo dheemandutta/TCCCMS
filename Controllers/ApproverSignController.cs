@@ -75,6 +75,7 @@ namespace TCCCMS.Controllers
                 }
                 if (System.IO.File.Exists(path + fileName))
                 {
+
                     System.IO.File.Delete(path + fileName);
                 }
                 fileName = fileName + ".zip"/*extn*/;
