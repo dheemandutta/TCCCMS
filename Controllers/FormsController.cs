@@ -616,34 +616,6 @@ namespace TCCCMS.Controllers
         }
 
 
-        public FileResult DownloadFillupForm(string fileName, string relformPath)
-        {
-            ManualBL manualBl = new ManualBL();
-            string path = Server.MapPath("~/ManualsPDF/" + relformPath + "/");
-            //var folderPath = Path.Combine(path, relformPath);
-            //var filePath = Path.Combine(path, fileName);
-            //var filePath = Directory.GetFiles(path, "*.doc?")
-            //                                            .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
-            //                                                    || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
-
-            var filePath = Directory.GetFiles(path, "*.*")
-                                                       .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
-                                                               || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
-            //var memory = new MemoryStream();
-            //using (var stream = new FileStream(filePath, FileMode.Open))
-            //{
-            //    stream.CopyToAsync(memory);
-            //    //memory.WriteTo(stream);
-            //}
-
-            //memory.Position = 0;
-            var ext = Path.GetExtension(filePath).ToLowerInvariant();
-            //return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
-
-            byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
-            return File(fileBytes, manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
-        }
-
 
         #region Utility Methods
         private string GetUniqueFileName(string fileName)
