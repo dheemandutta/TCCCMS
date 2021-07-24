@@ -128,6 +128,16 @@ namespace TCCCMS.Controllers
             return Json(approver, JsonRequestBehavior.AllowGet);
         }
 
+        public JsonResult GetApproverUserByApproverUserId(string userId)
+        {
+            ApproverMaster approver = new ApproverMaster();
+            ApproverMasterBL userBl = new ApproverMasterBL();
+            approver = userBl.GetApproverUserByApproverUserId(Convert.ToInt32(userId));
+            //approver.RankId = user.RankId;
+            //approver.User = user;
+            return Json(approver, JsonRequestBehavior.AllowGet);
+        }
+
         #region DropDown
         public void GetAllShipForDropDown()
         {
@@ -182,6 +192,49 @@ namespace TCCCMS.Controllers
             var data = userList.OrderBy(u => u.UserId).ToList();
 
             return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        /// <summary>
+        /// GetAllApproverUserPositionForDropDown get all user who are approver
+        /// used in upload fillup form in vol8
+        /// </summary>
+        /// Added on 23th jul 2021 @bk
+        /// <returns></returns>
+        
+        [HttpGet]
+        public JsonResult GetAllApproverUserPositionForDropDown()
+        {
+           
+            ApproverMasterBL approverBl = new ApproverMasterBL();
+            List<ApproverMaster> userList = new List<ApproverMaster>();
+            userList = approverBl.GetApproverUserForDopDown();
+            ViewBag.User = userList.OrderBy(u => u.UserId).Select(r =>
+                                              new SelectListItem()
+                                              {
+                                                  Text = r.Position,
+                                                  Value = r.UserId.ToString()
+                                              }).ToList();
+
+            var data = userList.OrderBy(u => u.UserId).ToList();
+
+            return Json(data, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetAppr()
+        {
+            ApproverMasterBL approverBl = new ApproverMasterBL();
+            List<ApproverMaster> userList = new List<ApproverMaster>();
+            userList = approverBl.GetApproverUserForDopDown();
+            ViewBag.User = userList.OrderBy(u => u.UserId).Select(r =>
+                                              new SelectListItem()
+                                              {
+                                                  Text = r.Position,
+                                                  Value = r.UserId.ToString()
+                                              }).ToList();
+
+            var data = userList.OrderBy(u => u.UserId).ToList();
+
+            return Json("Success Approver", JsonRequestBehavior.AllowGet);
         }
         #endregion
     }

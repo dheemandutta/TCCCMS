@@ -202,7 +202,7 @@ namespace TCCCMS.Ship.ImportData
         public static void ReadCommand()
         {
             string temRevPath = Path.Combine(Path.GetDirectoryName(extractPath), "TempRevision");
-            string destinationRootPath = ConfigurationManager.AppSettings["rootPath"].ToString();
+            string destinationRootPath = ConfigurationManager.AppSettings["iisPath"].ToString();
             string commandFile = string.Empty;
             string xPath = "";
             XmlDocument xDoc = new XmlDocument();
@@ -211,7 +211,157 @@ namespace TCCCMS.Ship.ImportData
 
             try
             {
-                commandFile = Directory.GetFiles(temRevPath, "command.xml").FirstOrDefault();
+                if(File.Exists(Path.Combine(temRevPath, "command.xml")))
+                {
+                    commandFile = Directory.GetFiles(temRevPath, "command.xml").FirstOrDefault();
+                }
+                else
+                {
+                    TccLog.UpdateLog("No Command Exists", LogMessageType.Info, "Ship Import-ReadCommand");
+                }
+                if (!String.IsNullOrEmpty(commandFile))
+                {
+                    xDoc.Load(commandFile);
+
+                    foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
+                    {
+                        if (node.Name == "ships")
+                        {
+                            foreach (XmlNode snode in node)
+                            {
+                                string nodeId = snode.Attributes["id"].Value.ToString();
+                                if (nodeId == shipId)
+                                {
+                                    foreach (XmlNode item in snode)
+                                    {
+                                        if (item.Name == "filename")
+                                        {
+                                            string filename = item.InnerText.ToString();
+                                            string type = item.Attributes["type"].Value.ToString();
+                                            string operation = item.Attributes["operation"].Value.ToString();
+                                            string path = item.Attributes["path"].Value.ToString();
+                                            string sourceFile = "";
+                                            string destinationFile = "";
+
+                                            sourceFile = Path.Combine(temRevPath, filename);
+                                            destinationFile = Path.Combine(destinationRootPath + path, filename);
+                                            switch (type)
+                                            {
+                                                case "SQL":
+                                                    DirectoryInfo d = new DirectoryInfo(temRevPath);
+                                                    FileInfo file = d.GetFiles(filename).FirstOrDefault();
+                                                    ExecuteSql(file);
+                                                    break;
+                                                case "PDF":
+                                                    if (operation == "")
+                                                    {
+                                                        if (File.Exists(sourceFile))
+                                                        {
+                                                            File.Copy(sourceFile, destinationFile, true);
+                                                            TccLog.UpdateLog("Source: " + sourceFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                            TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                            TccLog.UpdateLog("PDF Copied", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        }
+
+                                                    }
+                                                    else if (operation == "remove")
+                                                    {
+                                                        if (File.Exists(destinationFile))
+                                                        {
+                                                            File.Delete(destinationFile);
+                                                            TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                            TccLog.UpdateLog("PDF Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        }
+
+                                                    }
+                                                    break;
+                                                case "XLS":
+                                                    if (operation == "")
+                                                    {
+                                                        if (File.Exists(sourceFile))
+                                                        {
+                                                            File.Copy(sourceFile, destinationFile, true);
+                                                            TccLog.UpdateLog("Source: " + sourceFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                            TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                            TccLog.UpdateLog("XLS Copied", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        }
+
+                                                    }
+                                                    else if (operation == "remove")
+                                                    {
+                                                        if (File.Exists(destinationFile))
+                                                        {
+
+                                                            File.Delete(destinationFile);
+                                                            TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                            TccLog.UpdateLog("XLS Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        }
+
+                                                    }
+                                                    break;
+                                                case "DOC":
+                                                    if (operation == "")
+                                                    {
+                                                        if (File.Exists(sourceFile))
+                                                        {
+                                                            File.Copy(sourceFile, destinationFile, true);
+                                                            TccLog.UpdateLog("Source: " + sourceFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                            TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                            TccLog.UpdateLog("DOC Copied", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        }
+
+                                                    }
+                                                    else if (operation == "remove")
+                                                    {
+                                                        if (File.Exists(destinationFile))
+                                                        {
+
+                                                            File.Delete(destinationFile);
+                                                            TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
+                                                            TccLog.UpdateLog("XLS Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
+                                                        }
+                                                    }
+                                                    break;
+
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+
+                        }
+                        else if (node.Name == "others")
+                        {
+                            foreach (XmlNode onode in node)
+                            {
+                                string nodeName = onode.Name;
+                                switch (nodeName)
+                                {
+                                    case "volume":
+                                        string nodeId = node.Attributes["id"].Value.ToString();
+                                        ReadChildNode(onode);
+                                        break;
+                                    case "common2all":
+                                        ReadChildNode(onode);
+                                        break;
+                                    case "referencematerials":
+                                        ReadChildNode(onode);
+                                        break;
+                                }
+                            }
+
+                        }
+                    }
+                }
+                string[] tempRevFiles = Directory.GetFiles(temRevPath + "\\");
+                foreach (string files in tempRevFiles)
+                {
+                    File.Delete(files);
+                }
+                logger.Info("Temp Revision Files Deleted . - {0}", DateTime.Now.ToString());
+                TccLog.UpdateLog("Temporary Revision File Deletion Complete", LogMessageType.Info, "Ship Import -ReadCommand");
+
 
             }
             catch(Exception ex)
@@ -220,148 +370,7 @@ namespace TCCCMS.Ship.ImportData
                 logger.Error("Could not read file {0}", temRevPath);
                 logger.Info("Import process terminated unsuccessfully.  - {0}", DateTime.Now.ToString());
             }
-            if(!String.IsNullOrEmpty(commandFile))
-            {
-                xDoc.Load(commandFile);
-
-                foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
-                {
-                    if(node.Name == "ships")
-                    {
-                        foreach (XmlNode snode in node)
-                        {
-                            string nodeId = snode.Attributes["id"].Value.ToString();
-                            if (nodeId == shipId)
-                            {
-                                foreach (XmlNode item in snode)
-                                {
-                                    if (item.Name == "filename")
-                                    {
-                                        string filename = item.InnerText.ToString();
-                                        string type = item.Attributes["type"].Value.ToString();
-                                        string operation = item.Attributes["operation"].Value.ToString();
-                                        string path = item.Attributes["path"].Value.ToString();
-                                        string sourceFile = "";
-                                        string destinationFile = "";
-
-                                        sourceFile = Path.Combine(temRevPath, filename);
-                                        destinationFile = Path.Combine(destinationRootPath + path, filename);
-                                        switch (type)
-                                        {
-                                            case "SQL":
-                                                DirectoryInfo d = new DirectoryInfo(temRevPath);
-                                                FileInfo file = d.GetFiles(filename).FirstOrDefault();
-                                                ExecuteSql(file);
-                                                break;
-                                            case "PDF":
-                                                if (operation == "")
-                                                {
-                                                    if (File.Exists(sourceFile))
-                                                    {
-                                                        File.Copy(sourceFile, destinationFile, true);
-                                                        TccLog.UpdateLog("Source: "+ sourceFile, LogMessageType.Info, "Ship Import-ReadCommand");
-                                                        TccLog.UpdateLog("Destination: "+ destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
-                                                        TccLog.UpdateLog("PDF Copied", LogMessageType.Info, "Ship Import-ReadCommand");
-                                                    }
-                                                        
-                                                }
-                                                else if (operation == "remove")
-                                                {
-                                                    if (File.Exists(destinationFile))
-                                                    {
-                                                        File.Delete(destinationFile);
-                                                        TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
-                                                        TccLog.UpdateLog("PDF Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
-                                                    }
-                                                       
-                                                }
-                                                break;
-                                            case "XLS":
-                                                if (operation == "")
-                                                {
-                                                    if (File.Exists(sourceFile))
-                                                    {
-                                                        File.Copy(sourceFile, destinationFile, true);
-                                                        TccLog.UpdateLog("Source: " + sourceFile, LogMessageType.Info, "Ship Import-ReadCommand");
-                                                        TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
-                                                        TccLog.UpdateLog("XLS Copied", LogMessageType.Info, "Ship Import-ReadCommand");
-                                                    }
-                                                        
-                                                }
-                                                else if (operation == "remove")
-                                                {
-                                                    if (File.Exists(destinationFile))
-                                                    {
-
-                                                        File.Delete(destinationFile);
-                                                        TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
-                                                        TccLog.UpdateLog("XLS Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
-                                                    }
-
-                                                }
-                                                break;
-                                            case "DOC":
-                                                if (operation == "")
-                                                {
-                                                    if (File.Exists(sourceFile))
-                                                    {
-                                                        File.Copy(sourceFile, destinationFile, true);
-                                                        TccLog.UpdateLog("Source: " + sourceFile, LogMessageType.Info, "Ship Import-ReadCommand");
-                                                        TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
-                                                        TccLog.UpdateLog("DOC Copied", LogMessageType.Info, "Ship Import-ReadCommand");
-                                                    }
-                                                        
-                                                }
-                                                else if (operation == "remove")
-                                                {
-                                                    if (File.Exists(destinationFile))
-                                                    {
-
-                                                        File.Delete(destinationFile);
-                                                        TccLog.UpdateLog("Destination: " + destinationFile, LogMessageType.Info, "Ship Import-ReadCommand");
-                                                        TccLog.UpdateLog("XLS Deleted", LogMessageType.Info, "Ship Import-ReadCommand");
-                                                    }
-                                                }
-                                                break;
-
-                                        }
-                                    }
-                                }
-                            }
-
-                        }
-
-                    }
-                    else if(node.Name == "others")
-                    {
-                        foreach (XmlNode onode in node)
-                        {
-                            string nodeName = onode.Name;
-                            switch(nodeName)
-                            {
-                                case "volume":
-                                    string nodeId = node.Attributes["id"].Value.ToString();
-                                    ReadChildNode(onode);
-                                    break;
-                                case "common2all":
-                                    ReadChildNode(onode);
-                                    break;
-                                case "referencematerials":
-                                    ReadChildNode(onode);
-                                    break;
-                            }
-                        }
-
-                    }
-                }
-            }
-            string[] tempRevFiles = Directory.GetFiles(temRevPath + "\\");
-            foreach (string files in tempRevFiles)
-            {
-                File.Delete(files);
-            }
-            logger.Info("Temp Revision Files Deleted . - {0}", DateTime.Now.ToString());
-            TccLog.UpdateLog("Temporary Revision File Deletion Complete", LogMessageType.Info, "Ship Import -ReadCommand");
+            
         }
 
         public static void ReadChildNode(XmlNode cNode)

@@ -3145,3 +3145,7 @@ header {
 .spaceless {
     margin-right: -20px;
 }
+
+.displayNone{
+    display:none;
+}

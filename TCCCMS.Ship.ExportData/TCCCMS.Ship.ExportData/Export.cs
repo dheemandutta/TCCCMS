@@ -223,7 +223,7 @@ namespace TCCCMS.Ship.ExportData
                 //}
 
                 //------------------------------------------------------------------------------------------------------------
-                if (Directory.GetFiles(path, "*.*").Length > 0)
+                if (Directory.GetFiles(path, "*.*").Length > 0) //Added on 20th jul 2021 @BK
                 {
                     SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
                     int ShipId = int.Parse(ConfigurationManager.AppSettings["SHIPID"].ToString());

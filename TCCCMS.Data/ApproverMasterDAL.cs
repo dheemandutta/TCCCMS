@@ -123,6 +123,38 @@ namespace TCCCMS.Data
             return recordsAffected;
         }
 
+        /// <summary>
+        /// Added on 23th jul 2021 @BK
+        /// </summary>
+        /// <param name="UserId"></param>
+        /// <returns></returns>
+        public ApproverMaster GetApproverUserByApproverUserId(int UserId)
+        {
+           
+            ApproverMaster approver = new ApproverMaster();
+            DataSet ds = new DataSet();
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetApproverUserByUserId", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ApproverUserId", UserId);
+                    con.Open();
+
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    con.Close();
+
+                    approver.ApproverUserId = Convert.ToInt32(ds.Tables[0].Rows[0]["ApproverUserId"].ToString());
+                    approver.Position       = ds.Tables[0].Rows[0]["Position"].ToString();
+                    approver.Name           = ds.Tables[0].Rows[0]["Name"].ToString();
+                    approver.UserName       = ds.Tables[0].Rows[0]["UserName"].ToString();
+                }
+            }
+            return approver;
+        }
+
+
         #region --DropDown
         public List<UserMasterPOCO> GetApproverListByShipForDopDown(int shipId)
         {
@@ -188,6 +220,42 @@ namespace TCCCMS.Data
             approverLevelList.Add(new ApproverLevel { ID = -1, Description = "Please Select One" });
             return approverLevelList;
         }
+
+        /// <summary>
+        /// added on 23th jul 2021 @BK
+        /// </summary>
+        /// <returns></returns>
+        public List<ApproverMaster> GetApproverUserForDopDown()
+        {
+            List<ApproverMaster> approverUserList = new List<ApproverMaster>();
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetApproverUserListForDopDown", con))
+                {
+                    con.Open();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        approverUserList.Add(new ApproverMaster
+                        {
+                            UserId = Convert.ToInt32(dr["ApproverUserId"]),
+                            UserName = Convert.ToString(dr["UserName"]),
+                            Position= Convert.ToString(dr["Position"]),
+
+                        });
+                    }
+                    con.Close();
+                }
+            }
+            approverUserList.Add(new ApproverMaster { UserId = -1, UserName = "Select Approver",Position= "Select Approver" });
+            return approverUserList;
+        }
+
 
         #endregion
     }

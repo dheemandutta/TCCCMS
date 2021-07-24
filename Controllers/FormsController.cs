@@ -11,6 +11,8 @@ using System.IO;
 
 using GemBox.Document;
 using GemBox.Document.Tables;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace TCCCMS.Controllers
 {
@@ -242,6 +244,8 @@ namespace TCCCMS.Controllers
                         signatureTable.Rows[rowIndex].Cells[2].Blocks.Add(paragraph);
                     }
                 }
+                ////------Need append new row at end of the Signature Table to add final Approved Date
+                //code here
 
                 document.Save(docPath);
                 x = 1;
@@ -255,6 +259,63 @@ namespace TCCCMS.Controllers
             return x;
         }
 
+
+        public static int AppendSignatureTable(string relPath, string uploadedFormName,int approverCount)
+        {
+            int x = 0;
+            try
+            {
+                //ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+                ComponentInfo.SetLicense("DN-2021Jan04-gSb72AQqrg9T4PQnvYNDgVtyd4tD3W3oBds51kfYp7zSsuFpxRw1a5Cxr49JiCLbMf2JCIKuinkUhgiQmuOz5yMoWdA==A");
+
+                //string tempPath         = Path.Combine(relPath, "\\Temp\\");
+                string tempPath = relPath + "\\Temp\\";
+                string sigTableName = "Approvers Digital Signature";
+                string extn = ".docx";
+                if(approverCount > 0)
+                {
+                    sigTableName = sigTableName + approverCount + extn;
+
+                    string tblPath = tempPath + sigTableName;
+                    string sdocPath = relPath + "\\" + uploadedFormName;
+
+                    string appendedDocPath = tempPath + uploadedFormName;
+
+                    // Word files that will be combined into one file.
+                    string[] files ={
+                        sdocPath,
+                        tblPath
+                    };
+
+                    // Create destination document.
+                    var destination = new DocumentModel();
+
+                    // Merge multiple source documents by importing their content at the end.
+                    foreach (var file in files)
+                    {
+                        var source = DocumentModel.Load(file);
+                        destination.Content.End.InsertRange(source.Content);
+                    }
+
+                    // Save joined documents into one file.
+                    destination.Save(appendedDocPath);
+
+                    x = 1;
+                }
+                else
+                {
+                    x = 0;
+                }
+                
+
+            }
+            catch(Exception ex)
+            {
+                x = 0;
+            }
+
+            return x;
+        }
         public void WriteErrorToText(string subName, string fileName)
         {
             string contentRootPath = Server.MapPath("~/Log/");
@@ -299,5 +360,323 @@ namespace TCCCMS.Controllers
 
             }
         }
+
+        /// <summary>
+        /// UploadFilledUpForm is old because form approval logics
+        /// has changed.
+        /// changed after 7th APR 2021
+        /// </summary>
+        /// <param name="approvers"></param>
+        /// <returns></returns>
+        //[HttpPost]
+
+        //public ActionResult UploadFilledUpForm(string approvers = null)
+        //{
+        //    string catchMessage = "";
+        //    List<Forms> formList = new List<Forms>();
+        //    DocumentBL documentBL = new DocumentBL();
+        //    List<ApproverMaster> approvers1 = new List<ApproverMaster>();
+        //    //approvers1 = (List<ApproverMaster>)JsonConvert.DeserializeObject(approvers);
+        //    string s1 = JsonConvert.SerializeObject(approvers);
+        //    approvers1 = JsonConvert.DeserializeObject<List<ApproverMaster>>(approvers);
+        //    //string s = (string)JsonConvert.DeserializeObject(approvers);
+
+        //    if (Request.Files.Count == 1)
+        //    {
+        //        try
+        //        {
+        //            string relativePath = "~/UploadFilledUpFormForApproval/";
+        //            string path = Server.MapPath(relativePath);
+        //            if (!Directory.Exists(path))
+        //            {
+        //                Directory.CreateDirectory(path);
+        //            }
+        //            //  Get all files from Request object  
+        //            HttpFileCollectionBase files = Request.Files;
+
+        //            //---For Single form
+        //            Forms form = new Forms();
+
+        //            HttpPostedFileBase file = files[0];
+        //            string fname;
+
+        //            // Checking for Internet Explorer  
+        //            if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+        //            {
+        //                string[] testfiles = file.FileName.Split(new char[] { '\\' });
+        //                fname = testfiles[testfiles.Length - 1];
+        //            }
+        //            else
+        //            {
+        //                fname = file.FileName;
+        //            }
+        //            string uniqueFormName   = GetUniqueFileNameWithUserId(fname);
+        //            // Get the complete folder path and store the file inside it.  
+        //            string fnameWithPath    = Path.Combine(path, uniqueFormName);
+        //            file.SaveAs(fnameWithPath);
+
+        //            form.FormName           = fname;
+        //            form.FilledUpFormName   = uniqueFormName;
+        //            form.FilePath           = relativePath;
+        //            //form.ShipId             = Convert.ToInt32(shipId);
+        //            //form.Approvers          = approvers;
+        //            form.CreateedBy         = 1;//--- userId
+        //            //---End---For Single form
+        //            int count               = documentBL.SaveFilledUpForm(form, approvers1,ref catchMessage);
+        //            // Returns message that successfully uploaded  
+        //            return Json("File Uploaded Successfully!");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return Json("Error occurred. Error details: " + ex.Message);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return Json("No files selected.");
+        //    }
+        //}
+
+        /// <summary>
+        /// UploadFilledUpForm is New because form approval logics
+        /// in this method forms approved by Company user only who has to right to approve
+        /// </summary>
+        /// <returns></returns>
+        //[HttpPost]
+        //public JsonResult UploadFilledUpForm()
+        //{
+        //    string catchMessage = "";
+        //    List<Forms> formList = new List<Forms>();
+        //    DocumentBL documentBL = new DocumentBL();
+            
+        //    if (Request.Files.Count == 1)
+        //    {
+        //        try
+        //        {
+        //            string relativePath = "~/UploadFilledUpFormForApproval/";
+        //            string path = Server.MapPath(relativePath);
+        //            if (!Directory.Exists(path))
+        //            {
+        //                Directory.CreateDirectory(path);
+        //            }
+        //            //  Get all files from Request object  
+        //            HttpFileCollectionBase files = Request.Files;
+
+        //            //---For Single form
+        //            Forms form = new Forms();
+
+        //            HttpPostedFileBase file = files[0];
+        //            string fname;
+
+        //            // Checking for Internet Explorer  
+        //            if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+        //            {
+        //                string[] testfiles = file.FileName.Split(new char[] { '\\' });
+        //                fname = testfiles[testfiles.Length - 1];
+        //            }
+        //            else
+        //            {
+        //                fname = file.FileName;
+        //            }
+        //            string uniqueFormName = GetUniqueFileNameWithUserId(fname);
+        //            // Get the complete folder path and store the file inside it. 
+
+        //            fname = Path.GetFileNameWithoutExtension(fname);
+        //            string fnameWithPath = Path.Combine(path, uniqueFormName);
+        //            //file.SaveAs(fnameWithPath);
+
+        //            form.FormName = fname;
+        //            form.FilledUpFormName = uniqueFormName;
+        //            form.FilePath = relativePath;
+        //            //form.ShipId             = Convert.ToInt32(shipId);
+        //            form.ShipId = Convert.ToInt32(Session["ShipId"].ToString());
+        //            //form.Approvers          = approvers;
+        //            //form.CreateedBy = 1;//--- userId
+        //            form.CreateedBy = Convert.ToInt32(Session["UserId"].ToString());//--- userId
+        //            //---End---For Single form
+        //            int count = documentBL.SaveFilledUpForm(form, ref catchMessage);
+                    
+
+        //            // Returns message that successfully uploaded  
+        //            return Json("File Uploaded Successfully!");
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            return Json("Error occurred. Error details: " + ex.Message);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        return Json("No files selected.");
+        //    }
+        //}
+
+        /// <summary>
+        /// UploadFilledUpForm is New because form approval logics has changed again
+        /// in this method user select approvers and ther task 
+        /// (for Company user only who has to right to approve)
+        /// created on 23rd Jul 2021
+        /// </summary>
+        /// <param name="task"></param>
+        /// <param name="approvers"></param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult UploadFilledUpForm(string task, object approvers)
+        {
+            string catchMessage = "";
+            List<Forms> formList = new List<Forms>();
+            DocumentBL documentBL = new DocumentBL();
+            string[] result = Array.ConvertAll<object, string>((object[])approvers, x => x.ToString());
+
+            List<ApproverMaster> approverList = new List<ApproverMaster>();
+            //JObject json = JObject.Parse(result[0].Replace("[","").Replace("]","").ToString());
+            string orderedApprovers = "";
+            int approversCount = 0;
+            approverList = JsonConvert.DeserializeObject<List<ApproverMaster>>(result[0]);
+            approversCount = approverList.Count();
+            foreach (ApproverMaster a in approverList.OrderBy(a => a.SL))
+            {
+                orderedApprovers = orderedApprovers + a.ID.ToString();
+            }
+
+            if (Request.Files.Count == 1)
+            {
+                try
+                {
+                    string relativePath = "~/UploadFilledUpFormForApproval/";
+                    string path = Server.MapPath(relativePath);
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    //  Get all files from Request object  
+                    HttpFileCollectionBase files = Request.Files;
+
+                    //---For Single form
+                    Forms form = new Forms();
+
+                    HttpPostedFileBase file = files[0];
+                    string fname;
+
+                    // Checking for Internet Explorer  
+                    if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                    {
+                        string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                        fname = testfiles[testfiles.Length - 1];
+                    }
+                    else
+                    {
+                        fname = file.FileName;
+                    }
+                    string uniqueFormName = GetUniqueFileNameWithUserId(fname);
+                    // Get the complete folder path and store the file inside it. 
+
+                    fname = Path.GetFileNameWithoutExtension(fname);
+                    string fnameWithPath = Path.Combine(path, uniqueFormName);
+                    //file.SaveAs(fnameWithPath);
+
+                    form.FormName = fname;
+                    form.FilledUpFormName = uniqueFormName;
+                    form.FilePath = relativePath;
+                    //form.ShipId             = Convert.ToInt32(shipId);
+                    form.ShipId = Convert.ToInt32(Session["ShipId"].ToString());
+                    //form.Approvers          = approvers;
+                    //form.CreateedBy = 1;//--- userId
+                    form.CreateedBy = Convert.ToInt32(Session["UserId"].ToString());//--- userId
+                    //---End---For Single form
+                    int count = documentBL.SaveFilledUpForm(form, ref catchMessage);
+                    int y = 0;
+                    if (count == 1 && task == "A")
+                    {
+                        y = AppendSignatureTable(path, uniqueFormName, approversCount);
+                    }
+                    if (y == 1)
+                    {
+                        WriteErrorToText("Sign added in form", "ApproveFilledUpForm");
+                        if (System.IO.File.Exists(Path.Combine(path + "\\Temp\\", uniqueFormName)))
+                        {
+                            System.IO.File.Copy(Path.Combine(path + "\\Temp\\", uniqueFormName), Path.Combine(path, uniqueFormName), true);
+
+                            System.IO.File.Delete(Path.Combine(path + "\\Temp\\", uniqueFormName));
+                        }
+                    }
+
+                    // Returns message that successfully uploaded  
+                    return Json("File Uploaded Successfully!");
+                }
+                catch (Exception ex)
+                {
+                    return Json("Error occurred. Error details: " + ex.Message);
+                }
+            }
+            else
+            {
+                return Json("No files selected.");
+            }
+        }
+
+
+        public FileResult DownloadFillupForm(string fileName, string relformPath)
+        {
+            ManualBL manualBl = new ManualBL();
+            string path = Server.MapPath("~/ManualsPDF/" + relformPath + "/");
+            //var folderPath = Path.Combine(path, relformPath);
+            //var filePath = Path.Combine(path, fileName);
+            //var filePath = Directory.GetFiles(path, "*.doc?")
+            //                                            .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
+            //                                                    || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
+
+            var filePath = Directory.GetFiles(path, "*.*")
+                                                       .Where(s => s.Contains(fileName + ".doc") || s.Contains(fileName + ".DOC") || s.Contains(fileName + ".docx")
+                                                               || s.Contains(fileName + ".xls") || s.Contains(fileName + ".xlsx")).First();
+            //var memory = new MemoryStream();
+            //using (var stream = new FileStream(filePath, FileMode.Open))
+            //{
+            //    stream.CopyToAsync(memory);
+            //    //memory.WriteTo(stream);
+            //}
+
+            //memory.Position = 0;
+            var ext = Path.GetExtension(filePath).ToLowerInvariant();
+            //return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
+
+            byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
+            return File(fileBytes, manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
+        }
+
+
+        #region Utility Methods
+        private string GetUniqueFileName(string fileName)
+        {//Added on 8th jan 2021 @bk
+            fileName = Path.GetFileName(fileName);
+            return Path.GetFileNameWithoutExtension(fileName)
+                      + "_"
+                      + Guid.NewGuid().ToString().Substring(0, 4)
+                      + Path.GetExtension(fileName);
+        }
+        private string GetUniqueFileNameWithUserId(string fileName)
+        {
+            //string userId = "1";
+
+            string userId = Session["UserId"].ToString();
+            string shipId = Session["ShipId"].ToString();
+            var n = DateTime.Now;
+            fileName = Path.GetFileName(fileName);
+
+            return Path.GetFileNameWithoutExtension(fileName)
+                      + "_"
+                      + shipId
+                      + "-"
+                      + userId
+                      + "_"
+                      + string.Format("{0:00}{1:00}{2:00}{3:00}{4:00}{5:00}", n.Year - 2000, n.Month, n.Day, n.Hour, n.Minute, n.Second)
+                      + Path.GetExtension(fileName);
+            //----test
+            //fileName = Path.GetFileNameWithoutExtension(fileName);
+            //string s = string.Format(fileName + "_" + userId + "_{0:00}{1:00}{2:00}{3:00}{4:00}{5:00}", n.Year - 2000, n.Month, n.Day, n.Hour, n.Minute, n.Second);
+            //return s+ Path.GetExtension(fileName);
+        }
+        #endregion
+
     }
 }

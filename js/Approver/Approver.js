@@ -24,6 +24,7 @@ function clearTextBox() {
     $('#divTempApprover').addClass('displayNone');
 
 }
+
 function validate() {
     var isValid = true;
 
@@ -69,7 +70,7 @@ function validate() {
     return isValid;
 }
 
-function SetUpGrid() {
+function SetUpApproverGrid() {
     var loadposturl = $('#loaddata').val();
 
     //do not throw error
@@ -244,7 +245,7 @@ function SaveApprover() {
             $('#myModal').modal('hide');
             clearTextBox();
             
-            SetUpGrid();
+            SetUpApproverGrid();
         },
         error: function (errormessage) {
             console.log(errormessage.responseText);
@@ -280,6 +281,7 @@ function GetUserListByShipForDropdown(id) {
     //var vesselTypeId = type.value;
     var shipId = id;
     var x = $("#urlGetUserByShip").val();
+    
 
 
     $.ajax({
@@ -359,7 +361,7 @@ function DeleteApprover(id) {
                 }
                 else {
 
-                    SetUpGrid();
+                    SetUpApproverGrid();
                 }
             },
             error: function () {
@@ -446,6 +448,7 @@ function RemoveTempApprover(id) {
 
     SetUpTempApproverGrid();
 }
+
 
 
 

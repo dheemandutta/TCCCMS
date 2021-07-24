@@ -1,12 +1,14 @@
 ﻿<!-- Modal -->
+@Html.Hidden("urlApproverUserPosition", @Url.Action("GetAllApproverUserPositionForDropDown", "Approver"))
+@Html.Hidden("urlApproverUser", @Url.Action("GetApproverUserByApproverUserId", "Approver"))
 <div class="modal fade" id="filledUpFormModal" role="dialog">
-    <div class="modal-dialog ">
+    <div class="modal-dialog modal-lg ">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header" style="background-color: #e90000;">
                 <h4 class="modal-title colorWhite">Upload Filledup Form</h4>
-                <button type="button" class="close" data-dismiss="modal" onclick="ClearFields();">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" onclick="ClearFields2();">&times;</button>
             </div>
 
 
@@ -30,6 +32,67 @@
 
                                     </div>
                                 </div>
+
+                                <div class="col-sm-12 col-xs-12 marginTP10">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="form-group" id="taskRadio">
+                                               
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdReview" value="R" autocomplete="off" checked>
+                                                    <label class="form-check-label" for="rdReview">Review</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdApprove" value="A" autocomplete="off">
+                                                    <label class="form-check-label" for="rdApprove">Approve</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6 col-xs-12">
+                                            <div class="form-group">
+                                                @*<label for="Approver">Approver</label>*@
+                                                <select id="ddlApproverUser" name="ApproverUserList" class="form-control"></select>
+                                                @*<select>
+                                                    <option value="0">Select Approver</option>
+                                                    <option value="1">Marine Superintendent</option>
+                                                    <option value="2">Technical Superintendent</option>
+                                                    <option value="3">Fleet Manager</option>
+                                                    <option value="4">General Manager</option>
+                                                    <option value="5">Technical Manager</option>
+                                                    <option value="6">Director</option>
+                                                </select>*@
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div id="divTempApprover" class="col-sm-12 col-xs-12 marginTP10 marginLFT5 displayNone">
+                                    <div class="row">
+                                        <div class="card marginTP10 marginBTM10">
+                                            <div class="card-header">
+                                                <input type="hidden" id="hdnApproversCount" />
+                                                <label>Temp Approver List</label>
+                                            </div>
+                                            <div class="card-body">
+                                                <div style="margin:0 auto" class="tablecontainer">
+                                                    <table id="tempApproverTable" class="display" cellspacing="0">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>SL</th>
+                                                                <th>Designation</th>
+                                                                <th>Approver Name</th>
+                                                                <th>Delete</th>
+                                                            </tr>
+                                                        </thead>
+                                                    </table>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -41,8 +104,8 @@
 
 
             <div class="modal-footer" style="background-color:lightgray;">
-                <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return UploadFilledUpFormNew();">Upload</button>
-                <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal" onclick="ClearFields();">Close</button>
+                <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return UploadFilledUpFormWithApprovers();">Upload</button>
+                <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal" onclick="ClearFields2();">Close</button>
             </div>
         </div>
 

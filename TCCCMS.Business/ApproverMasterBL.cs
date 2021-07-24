@@ -50,6 +50,11 @@ namespace TCCCMS.Business
             return approverDal.DeleteApprover(approverMasterId);
         }
 
+        public ApproverMaster GetApproverUserByApproverUserId(int UserId)
+        {
+            ApproverMasterDAL dAL = new ApproverMasterDAL();
+            return dAL.GetApproverUserByApproverUserId(UserId);
+        }
 
 
         #region --DropDown--
@@ -83,6 +88,16 @@ namespace TCCCMS.Business
         {
             ApproverMasterDAL approverDal = new ApproverMasterDAL();
             return approverDal.GetApproverListByShipForDopDown(shipId);
+        }
+
+        /// <summary>
+        /// Added on 23th jul 2021 @bk
+        /// </summary>
+        /// <returns></returns>
+        public List<ApproverMaster> GetApproverUserForDopDown()
+        {
+            ApproverMasterDAL approverDal = new ApproverMasterDAL();
+            return approverDal.GetApproverUserForDopDown();
         }
 
         #endregion

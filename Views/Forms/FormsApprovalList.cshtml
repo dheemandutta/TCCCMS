@@ -37,19 +37,42 @@
                                         <td style="border-left:solid 1px; border-right:solid 1px;">@item.Ship.ShipName</td>
                                         <td>@item.FilledUpFormName</td>
                                         <td>
-                                            @if (item.IsApproved == 1)
+                                            @*========Condition======Added on 24th Jul 2021 ============*@
+                                            @if (item.ApproverTask == "A")
                                             {
-                                                <div class="form-group">
-                                                    <input type="button" value="Approved" class="btn btn-info btn-sm" style=" background-color: #228B22;" disabled />
-                                                    @*<input type="button" value="Approved" class="btn btn-info btn-sm" style=" background-color: #00FF00;" disabled />*@
-                                                </div>
+                                                @if (item.IsApproved == 1)
+                                                {
+                                                    <div class="form-group">
+                                                        <input type="button" value="Approved" class="btn btn-info btn-sm" style=" background-color: #228B22;" disabled />
+                                                        @*<input type="button" value="Approved" class="btn btn-info btn-sm" style=" background-color: #00FF00;" disabled />*@
+                                                    </div>
+                                                }
+                                                else if (item.IsApproved == 0)
+                                                {
+                                                    <div class="form-group">
+                                                        <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName')" />
+                                                    </div>
+                                                }
                                             }
-                                            else if (item.IsApproved == 0)
+                                            else if (item.ApproverTask == "A")
                                             {
-                                                <div class="form-group">
-                                                    <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName')" />
-                                                </div>
+                                                @if (item.IsApproved == 2)
+                                                {
+                                                    <div class="form-group">
+                                                        <input type="button" value="Reviewed" class="btn btn-info btn-sm" style=" background-color: #228B22;" disabled />
+                                                        @*<input type="button" value="Approved" class="btn btn-info btn-sm" style=" background-color: #00FF00;" disabled />*@
+                                                    </div>
+                                                }
+                                                else if (item.IsApproved == 0)
+                                                {
+                                                    <div class="form-group">
+                                                        <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:130px; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>Review</span></a>
+                                                        @*<input type="button" id="btnReview" value="Review" class="btn btn-info btn-sm" style="background-color: #e90000;" />*@
+                                                        <input type="button" id="btnUploadReview" value="Review" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="UploadReviewedFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName')" />
+                                                    </div>
+                                                }
                                             }
+
                                         </td>
                                     </tr>
 

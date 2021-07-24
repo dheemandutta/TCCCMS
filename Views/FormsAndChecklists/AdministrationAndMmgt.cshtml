@@ -10,6 +10,7 @@
 
 <script src="~/Scripts/DownloadableFroms.js"></script>
 <script src="~/js/UserMaster/UserUploadForm.js"></script>
+<script src="~/js/Approver/Approver.js"></script>
 <style>
     table.dataTable.no-footer {
         width: 100% !important;
@@ -17,7 +18,8 @@
 </style>
 
 @Html.Hidden("loaddata", @Url.Action("LoadData", "Forms"))
-@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpForm", "UserMaster"))
+@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpForm", "Forms"))
+
 
 
 <body>
@@ -34,8 +36,8 @@
 
             <div style="margin:0 auto" class="tablecontainer">
                 @*<p align="right">
-                <a href="~/RevisionHistory/Index"> Revision History </a>
-            </p>*@
+                        <a href="~/RevisionHistory/Index"> Revision History </a>
+                    </p>*@
                 <input type="hidden" id="hdnrole" />
                 <table id="DownloadableFromsTable" class="display" cellspacing="0">
                     <thead>
@@ -45,7 +47,7 @@
                             <th>Forms Upload</th>
                             <th>Version</th>
                             @*<th>Edit</th>
-                        <th>Delete</th>*@
+                                <th>Delete</th>*@
                         </tr>
                     </thead>
                 </table>
@@ -62,8 +64,28 @@
 </body>
 
 <script>
+
+    $('#ddlApproverUser').on('change', function () {
+        GetUserByApproverUserId(this.value);
+        //$('#ddRank').prop('disabled', true);
+    });
+    $('#taskRadio inlineRadioOptions').on('click', function (event) {
+        console.log($(this).find('input').val());
+        var val = $(this).val();
+        var s = $('#taskRadio input:radio:checked').val()
+        console.log('bin-'+ s);
+    });
+
+    $('#my-btns .btn').on('click', function (event) {
+        console.log($(this).find('input').val());
+        var val = $(this).find('input').val();
+        ///$('#output').html(val);
+        console.log('bin-' + val);
+    });
+
     $(document).ready(function () {
         //$('#example').DataTable();
         SetUpGrid('9');
+        GetApproverUsersPositionFroDropDown();
     });
 </script>
