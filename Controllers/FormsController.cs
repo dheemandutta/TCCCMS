@@ -212,7 +212,8 @@ namespace TCCCMS.Controllers
                 string designation      = approver.Position;
                 int approverPossition   = approver.ApprovedCount;
 
-                int numberOfItems       = 4;// 
+                //int numberOfItems       = 4;// Number of rows of the signature table
+                int numberOfItems       = approver.ApproversCount;// Added on 24th Jul 2021@BK
 
                 DocumentModel document  = DocumentModel.Load(sdocPath);
 
@@ -246,6 +247,25 @@ namespace TCCCMS.Controllers
                 }
                 ////------Need append new row at end of the Signature Table to add final Approved Date
                 //code here
+                if(approver.IsFinalApproved > 0)
+                {
+                    DateTime approvedDate = approver.FinalApprovedOn;
+                    string d = approvedDate.Day.ToString(); /*DateTime.Now.Day.ToString();*/
+                    string y = approvedDate.Year.ToString();
+                    string m = approvedDate.Month.ToString();
+                    string H = approvedDate.TimeOfDay.ToString();
+                    string date = d + "th" + " " + m + " " + y + " " + H;
+
+                    var cel = new TableCell(document) { ColumnSpan = 3 };
+                    var para = new Paragraph(document, date);
+
+                    cel.CellFormat.VerticalAlignment = (VerticalAlignment)0;
+                    cel.Blocks.Add(para);
+                    para.ParagraphFormat.Alignment = (GemBox.Document.HorizontalAlignment)3;
+
+                    signatureTable.Rows.Add(new TableRow(document, cel));
+                }
+
 
                 document.Save(docPath);
                 x = 1;
@@ -580,11 +600,12 @@ namespace TCCCMS.Controllers
                     form.FilePath = relativePath;
                     //form.ShipId             = Convert.ToInt32(shipId);
                     form.ShipId = Convert.ToInt32(Session["ShipId"].ToString());
-                    //form.Approvers          = approvers;
+                    form.Approvers          = orderedApprovers;//added on 24th Jul 2021 @BK
                     //form.CreateedBy = 1;//--- userId
                     form.CreateedBy = Convert.ToInt32(Session["UserId"].ToString());//--- userId
                     //---End---For Single form
-                    int count = documentBL.SaveFilledUpForm(form, ref catchMessage);
+                    //int count = documentBL.SaveFilledUpForm(form, ref catchMessage);
+                    int count = documentBL.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
                     int y = 0;
                     if (count == 1 && task == "A")
                     {
