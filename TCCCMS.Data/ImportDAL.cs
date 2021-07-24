@@ -13,7 +13,7 @@ namespace TCCCMS.Data
 {
     public class ImportDAL
     {
-        public void ImportCrew(object dataTable/*, int vesselId*/)
+        public void ImportCrew(object dataTable, string shipNumber)
         {
             DataTable dTable = (DataTable)dataTable;
             DataSet ds = new DataSet("CrewImport");
@@ -40,8 +40,8 @@ namespace TCCCMS.Data
                         string CrewName = dTable.Rows[r][1].ToString();
                         string Rank = dTable.Rows[r][2].ToString();
                         //int ShipNumber  = Convert.ToInt32(dTable.Rows[r][3].ToString());
-                        string ShipNumber = dTable.Rows[r][3].ToString();
-                        string Email = dTable.Rows[r][4].ToString();
+                        string ShipNumber = shipNumber;//dTable.Rows[r][3].ToString();
+                        string Email = dTable.Rows[r][3].ToString();
 
 
                         command.Parameters.AddWithValue("@UserName", CrewName);

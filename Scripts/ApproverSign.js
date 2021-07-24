@@ -158,3 +158,102 @@ function SaveSign() {
         }
     });
 }
+
+
+
+
+
+function loadData() {
+    var loadposturl = $('#loaddata').val();
+    $.ajax({
+        url: loadposturl,
+        type: "GET",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+        success: function (result) {
+            SetUpGrid();
+        },
+        error: function (errormessage) {
+            console.log(errormessage.responseText);
+        }
+    });
+}
+
+function SetUpGrid() {
+    var loadposturl = $('#loaddata').val();
+
+    //do not throw error
+    $.fn.dataTable.ext.errMode = 'none';
+
+    //check if datatable is already created then destroy iy and then create it
+    if ($.fn.dataTable.isDataTable('#ApproverSignTable')) {
+        table = $('#ApproverSignTable').DataTable();
+        table.destroy();
+    }
+
+    // alert('hh');
+    var table = $("#ApproverSignTable").DataTable({
+        "dom": 'Bfrtip',
+        "rowReorder": false,
+        "ordering": false,
+        "filter": false, // this is for disable filter (search box)
+
+        "ajax": {
+            "url": loadposturl,
+            "type": "POST",
+            "datatype": "json"
+        },
+        "columns": [
+            {
+                "data": "UserName", "name": "UserName", "autoWidth": true
+            },
+            //{
+            //    "data": "SignImagePath", "name": "SignImagePath", "autoWidth": true,
+            //    "render": function (data) {
+            //        //debugger;
+            //        return '<img src="' + data + '"height="50px" width="100px"/>';
+            //    }
+            //},
+
+            //{
+            //    "render": function (data, type, JsonResultRow, meta) {
+
+            //        //return '<img src="' + JsonResultRow.PicturePath +'">';
+            //        return '<img src="' + JsonResultRow.SignImagePath + '"width="100" height="80">';
+            //    }
+            //},
+
+            {
+                "data": "SignImagePath", "width": "150px", "render": function (data) {
+
+                    var str = '<img src="' + '~/' + data + '"height="50px" width="100px"/>';
+                    return str;
+                },
+            },
+
+
+
+            {
+                "data": "Name", "name": "Name", "autoWidth": true
+            },
+            {
+                "data": "Position", "name": "Position", "autoWidth": true
+            }
+
+            //,{
+            //    "data": "RankId", "width": "50px", "render": function (data) {
+            //        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetRankByRankId(' + data + ')">Edit</a>';
+            //    }
+            //},
+            //{
+            //    "data": "RankId", "width": "50px", "render": function (d) {
+            //        //debugger;
+            //        return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="DeleteRank(' + d + ')">Delete</a>';
+            //    }
+            //}
+
+        ],
+        "rowId": "Id",
+        "dom": "Bfrtip"
+    });
+}

@@ -19,6 +19,13 @@ namespace TCCCMS.Business
             return dAL.SaveApproverSign(pOCO);
         }
 
+        public List<ApproverMaster> GetAllApproverSignPageWise(int pageIndex, ref int totalCount, int pageSize)
+        {
+            ApproverSignDAL dAL = new ApproverSignDAL();
+            return dAL.GetAllApproverSignPageWise(pageIndex, ref totalCount, pageSize);
+        }
+
+
         public ApproverMaster GetAllApproverSign(int ApproverUserId, string uploadedFormName = null)
         {
             ApproverSignDAL dAL = new ApproverSignDAL();

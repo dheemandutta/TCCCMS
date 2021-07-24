@@ -42,6 +42,48 @@ namespace TCCCMS.Data
             return recordsAffected;
         }
 
+        public List<ApproverMaster> GetAllApproverSignPageWise(int pageIndex, ref int totalCount, int length/*, int VesselID*/)
+        {
+            List<ApproverMaster> pOList = new List<ApproverMaster>();
+            List<ApproverMaster> equipmentsPO = new List<ApproverMaster>();
+
+            using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("GetAllApproverSignPageWise", con))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@PageIndex", pageIndex);
+                    cmd.Parameters.AddWithValue("@PageSize", length);
+                    //cmd.Parameters.Add("@RecordCount", SqlDbType.Int, 4);
+                    //cmd.Parameters["@RecordCount"].Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("@TotalCount", SqlDbType.Int, 4);
+                    cmd.Parameters["@TotalCount"].Direction = ParameterDirection.Output;
+                    //cmd.Parameters.AddWithValue("@VesselID", VesselID);
+                    con.Open();
+
+                    DataSet ds = new DataSet();
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(ds);
+                    //prodPOList = Common.CommonDAL.ConvertDataTable<ProductPOCO>(ds.Tables[0]);
+
+                    foreach (DataRow dr in ds.Tables[0].Rows)
+                    {
+                        pOList.Add(new ApproverMaster
+                        {
+                            //Id = Convert.ToInt32(dr["Id"]),
+                            UserName = Convert.ToString(dr["UserName"]),
+                            SignImagePath = Convert.ToString(dr["SignImagePath"]),
+                            Name = Convert.ToString(dr["Name"]),
+                            Position = Convert.ToString(dr["Position"])
+                        });
+                    }
+                    totalCount = Convert.ToInt32(cmd.Parameters["@TotalCount"].Value);
+                    con.Close();
+                }
+            }
+            return pOList;
+        }
+
         public ApproverMaster GetAllApproverSign(int ApproverUserId, string uploadedFormName = null)
         {
             ApproverMaster prodPOList = new ApproverMaster();
