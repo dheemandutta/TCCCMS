@@ -64,6 +64,10 @@
 </body>
 
 <script>
+    $('#ddlApproverUser').on('change', function () {
+        GetUserByApproverUserId(this.value);
+        //$('#ddRank').prop('disabled', true);
+    });
     $(document).ready(function () {
         //$('#example').DataTable();
         SetUpGrid('12');

@@ -490,47 +490,47 @@ function UploadFilledUpFormWithApprovers() {
             ////fileData.append("approvers[ApproverUserId]", tmpApproverList[0].ID);
             ////fileData.append("approvers[Position]", tmpApproverList[0].Position);
 
-            //$.ajax({
-            //    url: url,
-            //    type: "POST",
-            //    datatype: "json",
-            //    //contentType: "application/json; charset=utf-8",
-            //    contentType: false, // Not to set any content header  
-            //    processData: false, // Not to process data  
-            //    data: fileData,
-            //    //data: { categoryId: y},
-            //    success: function (result) {
-            //        alert(result);
-            //        $('#fileUpload').val('');
-            //        //ClearFields();
-            //        ClearFields2();
-            //        $('#filledUpFormModal').modal('hide');
+            $.ajax({
+                url: url,
+                type: "POST",
+                datatype: "json",
+                //contentType: "application/json; charset=utf-8",
+                contentType: false, // Not to set any content header  
+                processData: false, // Not to process data  
+                data: fileData,
+                //data: { categoryId: y},
+                success: function (result) {
+                    alert(result);
+                    $('#fileUpload').val('');
+                    //ClearFields();
+                    ClearFields2();
+                    $('#filledUpFormModal').modal('hide');
 
-            //        toastr.options = {
-            //            "closeButton": false,
-            //            "debug": false,
-            //            "newestOnTop": false,
-            //            "progressBar": false,
-            //            "positionClass": "toast-bottom-full-width",
-            //            "preventDuplicates": false,
-            //            "onclick": null,
-            //            "showDuration": "300",
-            //            "hideDuration": "1000",
-            //            "timeOut": "5000",
-            //            "extendedTimeOut": "1000",
-            //            "showEasing": "swing",
-            //            "hideEasing": "linear",
-            //            "showMethod": "fadeIn",
-            //            "hideMethod": "fadeOut"
-            //        };
+                    toastr.options = {
+                        "closeButton": false,
+                        "debug": false,
+                        "newestOnTop": false,
+                        "progressBar": false,
+                        "positionClass": "toast-bottom-full-width",
+                        "preventDuplicates": false,
+                        "onclick": null,
+                        "showDuration": "300",
+                        "hideDuration": "1000",
+                        "timeOut": "5000",
+                        "extendedTimeOut": "1000",
+                        "showEasing": "swing",
+                        "hideEasing": "linear",
+                        "showMethod": "fadeIn",
+                        "hideMethod": "fadeOut"
+                    };
 
-            //        toastr.success("Form Updated Successfully");
-            //        $('#filledUpFormModal').modal('hide');
-            //    },
-            //    error: function (err) {
-            //        alert(err.statusText);
-            //    }
-            //});
+                    toastr.success("Form Updated Successfully");
+                    $('#filledUpFormModal').modal('hide');
+                },
+                error: function (err) {
+                    alert(err.statusText);
+                }
+            });
         }
         
     }

@@ -31,7 +31,9 @@ namespace TCCCMS.Models
 
         //Added on 19th Jul 2021 @BK 
         public int ApprovedCount { get; set; }
-
+        public int ApproversCount { get; set; }
+        public int IsFinalApproved { get; set; }
+        public DateTime FinalApprovedOn { get; set; }
 
 
 
