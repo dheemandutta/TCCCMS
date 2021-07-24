@@ -1,9 +1,36 @@
 ﻿@{
     Layout = "~/Views/Shared/New_Layout.cshtml";
 }
-@{ 
+@*@{ 
     string CurrentName = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"]);
 
     string s = CurrentName;
+    string action = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Action"]);
+
+    string userRole = HttpContext.Current.Session["Role"].ToString();
+    if(CurrentName == "Help")
+    {
+        if(action == "HelpOffice" && userRole == "OfficeAdmin" )
+        {
+            Layout = "~/Views/Shared/Admin_Layout.cshtml";
+        }
+        else if (action == "HelpOffice" && userRole == "OfficeUser")
+        {
+            Layout = "~/Views/Shared/Admin_Layout.cshtml";
+        }
+        else if (action == "HelpVessel" && userRole == "ShipAdmin")
+        {
+            Layout = "~/Views/Shared/Admin_Layout.cshtml";
+        }
+        else if (action == "HelpVessel" && userRole == "ShipUser")
+        {
+            Layout = "~/Views/Shared/Admin_Layout.cshtml";
+        }
     }
+    else
+    {
+        Layout = "~/Views/Shared/New_Layout.cshtml";
+    }
+
+    }*@
 

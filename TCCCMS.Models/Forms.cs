@@ -35,6 +35,8 @@ namespace TCCCMS.Models
         public string UploadedUser { get; set; }
         public int UploadedUserId { get; set; }
 
+        public string ApproverTask { get; set; }//added on 24th Jul 2021 @BK
+
 
         public Ship Ship { get; set; }
 

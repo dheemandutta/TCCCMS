@@ -43,6 +43,14 @@ namespace TCCCMS.Models
         public string Position { get; set; }
         public string CreatedOn1 { get; set; }
         public string ModifiedOn1 { get; set; }
+
+        public int SL { get; set; }
+
+        public enum ApproverTask
+        {
+            Approve,
+            Review 
+        }
     }
 
     public class ApproverLevel
