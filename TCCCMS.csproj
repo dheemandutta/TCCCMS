@@ -147,6 +147,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="BreadCrumbHtmlExtensions.cs" />
+    <Compile Include="Controllers\AesOperation.cs" />
     <Compile Include="Controllers\ApproverController.cs" />
     <Compile Include="Controllers\ApproverSignController.cs" />
     <Compile Include="Controllers\CommonToAllManualController.cs" />

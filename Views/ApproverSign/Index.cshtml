@@ -13,6 +13,7 @@
 @Html.Hidden("SaveApproverSign", @Url.Action("SaveApproverSign", "ApproverSign"))
 @Html.Hidden("loaddata", @Url.Action("LoadData", "ApproverSign"))
 
+@Html.Hidden("savedata", @Url.Action("SaveSign", "ApproverSign"))
 <div class="row">
     <div class="col-md-2">
     </div>
@@ -37,12 +38,12 @@
                                         @Html.DropDownListFor(model => model.UserId, (IEnumerable<SelectListItem>)ViewBag.Users, "Select", new { @class = "form-control", @id = "ApproverUserId" })
                                     </div>
                                 </div>
-                                <div class="col-sm-12 col-xs-12">
-                                    <div class="form-group">
-                                        <label for="Name">Name</label>
-                                        <input type="text" class="form-control" id="Name" placeholder="Name" />
-                                    </div>
-                                </div>
+                                @*<div class="col-sm-12 col-xs-12">
+                                        <div class="form-group">
+                                            <label for="Name">Name</label>
+                                            <input type="text" class="form-control" id="Name" placeholder="Name" />
+                                        </div>
+                                    </div>*@
                                 <div class="col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label for="Position">Position</label>
@@ -61,7 +62,7 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" onclick="SaveSign()">Add</button>
+                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" onclick="UploadFiles()">Add</button>
                     </div>
 
 
@@ -82,7 +83,7 @@
                                     <th>Name</th>
                                     <th>Position</th>
                                     @*<th>Edit</th>
-                        <th>Delete</th>*@
+                                        <th>Delete</th>*@
                                 </tr>
                             </thead>
                         </table>

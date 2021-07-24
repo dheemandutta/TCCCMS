@@ -22,7 +22,7 @@ namespace TCCCMS.Data
 
             cmd.Parameters.AddWithValue("@ApproverUserId", pOCO.ApproverUserId);
             cmd.Parameters.AddWithValue("@SignImagePath", pOCO.SignImagePath.ToString());
-            cmd.Parameters.AddWithValue("@Name", pOCO.Name.ToString());
+            cmd.Parameters.AddWithValue("@Name", DBNull.Value);
             cmd.Parameters.AddWithValue("@Position", pOCO.Position.ToString());
             //cmd.Parameters.AddWithValue("@CreatedOn", pOCO.CreatedOn1.ToString());
             //cmd.Parameters.AddWithValue("@ModifiedOn", pOCO.ModifiedOn1.ToString());
