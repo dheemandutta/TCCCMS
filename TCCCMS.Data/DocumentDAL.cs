@@ -484,5 +484,48 @@ namespace TCCCMS.Data
                 
             return filledupFormList;
         }
+
+
+
+
+
+        public int SaveFilledUpFormsForCompanyApproval(Forms form, ref string catchMessage)
+        {
+            int recorSaved = 0;
+
+            try
+            {
+                SqlConnection con = new SqlConnection(connectionString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand("SaveFilledUpFormsForCompanyApproval_New", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@Name", form.FilledUpFormName);
+                cmd.Parameters.AddWithValue("@Path", form.FilePath);
+                cmd.Parameters.AddWithValue("@ShipId", form.ShipId);
+                cmd.Parameters.AddWithValue("@OriginalForm", form.FormName);
+                cmd.Parameters.AddWithValue("@User", form.CreateedBy);
+                cmd.Parameters.AddWithValue("@Approvers", form.Approvers);
+                cmd.Parameters.AddWithValue("@Task", form.Task);
+                int x = cmd.ExecuteNonQuery();
+                con.Close();
+                //recorSaved = recorSaved + x;
+                recorSaved = x;
+
+
+
+                return recorSaved;
+            }
+            catch (Exception expErr)
+            {
+                recorSaved = 0;
+                catchMessage = expErr.Message;
+            }
+
+
+            return recorSaved;
+        }
+
+
     }
 }

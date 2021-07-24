@@ -4,76 +4,118 @@
 }
 
 
+<link href="~/DataTables/datatables.min.css" rel="stylesheet" />
 <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+<script src="~/DataTables/datatables.min.js"></script>
+
 <script src="~/Scripts/ApproverSign.js"></script>
 
 @Html.Hidden("SaveApproverSign", @Url.Action("SaveApproverSign", "ApproverSign"))
+@Html.Hidden("loaddata", @Url.Action("LoadData", "ApproverSign"))
 
+<div class="row">
+    <div class="col-md-2">
+    </div>
 
-    <div class="row">
-        <div class="col-md-2">
-        </div>
-
-        <div class="col-sm-8 col-xs-10  ">
-            <div class="row">
-                @*<form>*@
-                @*<div class="form-group">
+    <div class="col-sm-8 col-xs-10  ">
+        <div class="row">
+            @*<form>*@
+            @*<div class="form-group">
                     <input type="hidden" id="ID" />
                 </div>*@
-                <div class="row">
-                    <div class="card">
-                        <div class="card-header" style="background-color: #e90000;">
-                            <h4 class="modal-title colorWhite">Add Approver Sign</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="col-sm-12 col-xs-12">
-                                <div class="row">
-                                    <div class="col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <label for="ApproverUser">ApproverUser</label>
-                                            @Html.DropDownListFor(model => model.UserId, (IEnumerable<SelectListItem>)ViewBag.Users, "Select", new { @class = "form-control", @id = "ApproverUserId" })
-                                        </div>
+            <div class="row">
+                <div class="card">
+                    <div class="card-header" style="background-color: #e90000;">
+                        <h4 class="modal-title colorWhite">Add Approver Sign</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="ApproverUser">ApproverUser</label>
+                                        @Html.DropDownListFor(model => model.UserId, (IEnumerable<SelectListItem>)ViewBag.Users, "Select", new { @class = "form-control", @id = "ApproverUserId" })
                                     </div>
-                                    <div class="col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <label for="Name">Name</label>
-                                            <input type="text" class="form-control" id="Name" placeholder="Name" />
-                                        </div>
+                                </div>
+                                <div class="col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="Name">Name</label>
+                                        <input type="text" class="form-control" id="Name" placeholder="Name" />
                                     </div>
-                                    <div class="col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <label for="Position">Position</label>
-                                            <input type="text" class="form-control" id="Position" placeholder="Position" />
-                                        </div>
+                                </div>
+                                <div class="col-sm-12 col-xs-12">
+                                    <div class="form-group">
+                                        <label for="Position">Position</label>
+                                        <input type="text" class="form-control" id="Position" placeholder="Position" />
                                     </div>
-                                    <div>
-                                        <div class="form-group col-sm-12 col-xs-12">
-                                            <label for="SignImagePath">Upload Sign Image</label>
-                                            <input type="file" id="SignImagePath" multiple size="1" />
-                                            @*<input type="text" class="form-control" id="SignImagePath" placeholder="SignImagePath" />*@
-                                        </div>
+                                </div>
+                                <div>
+                                    <div class="form-group col-sm-12 col-xs-12">
+                                        <label for="SignImagePath">Upload Sign Image</label>
+                                        <input accept="image/*" type="file" id="SignImagePath" multiple size="1" />
+                                        <img id="blah" src="#" alt="your image" />
+                                        @*<input type="text" class="form-control" id="SignImagePath" placeholder="SignImagePath" />*@
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card-footer">
-                            <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" onclick="SaveSign()">Add</button>
-                        </div>
                     </div>
-                </div>
-                @*</form>*@
+                    <div class="card-footer">
+                        <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" onclick="SaveSign()">Add</button>
+                    </div>
 
+
+
+
+
+
+
+
+                    <div style="margin:0 auto" class="tablecontainer">
+                        @*<button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add ApproverSign</button><br /><br />*@
+                        <input type="hidden" id="hdnrole" />
+                        <table id="ApproverSignTable" class="display" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>User Name</th>
+                                    <th>Sign Image</th>
+                                    <th>Name</th>
+                                    <th>Position</th>
+                                    @*<th>Edit</th>
+                        <th>Delete</th>*@
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+
+
+                    <img src="~/SignImages/Ship Master.png" height="50px" width="100px">
+
+
+                </div>
             </div>
+            @*</form>*@
 
         </div>
+
     </div>
+</div>
 
 
 
 
-    <script>
-        $(document).ready(function () {
-            //$('#example').DataTable();
-            //SetUpGrid();
-        });
-    </script>
+<script>
+    $(document).ready(function () {
+        //$('#example').DataTable();
+        SetUpGrid();
+
+
+
+        SignImagePath.onchange = evt => {
+            const [file] = SignImagePath.files
+            if (file) {
+                blah.src = URL.createObjectURL(file)
+            }
+        }
+    });
+</script>

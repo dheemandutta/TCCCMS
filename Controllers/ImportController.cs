@@ -82,7 +82,7 @@ namespace TCCCMS.Controllers
                         }
                         // The result of each spreadsheet is in result.Tables
                     }
-                    crewImportBL.ImportCrew(dtData/*, int.Parse(Session["VesselID"].ToString())*/);        ////////////////////////////////////////
+                    crewImportBL.ImportCrew(dtData, ConfigurationManager.AppSettings["ShipNumber"]);       
                 }
             }
 

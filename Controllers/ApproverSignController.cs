@@ -53,6 +53,57 @@ namespace TCCCMS.Controllers
             return Json(x, JsonRequestBehavior.AllowGet);
         }
 
+
+        public JsonResult LoadData()
+        {
+            int draw, start, length;
+            int pageIndex = 0;
+
+            if (null != Request.Form.GetValues("draw"))
+            {
+                draw = int.Parse(Request.Form.GetValues("draw").FirstOrDefault().ToString());
+                start = int.Parse(Request.Form.GetValues("start").FirstOrDefault().ToString());
+                length = int.Parse(Request.Form.GetValues("length").FirstOrDefault().ToString());
+            }
+            else
+            {
+                draw = 1;
+                start = 0;
+                length = 500;
+            }
+
+            if (start == 0)
+            {
+                pageIndex = 1;
+            }
+            else
+            {
+                pageIndex = (start / length) + 1;
+            }
+
+            ApproverSignBL bL = new ApproverSignBL(); ///////////////////////////////////////////////////////////////////////////
+            int totalrecords = 0;
+
+            List<ApproverMaster> pocoList = new List<ApproverMaster>();
+            pocoList = bL.GetAllApproverSignPageWise(pageIndex, ref totalrecords, length/*, int.Parse(Session["VesselID"].ToString())*/);
+            List<ApproverMaster> pList = new List<ApproverMaster>();
+            foreach (ApproverMaster pC in pocoList)
+            {
+                ApproverMaster pOCO = new ApproverMaster();
+                //pOCO.Id = pC.Id;
+                pOCO.UserName = pC.UserName;
+                pOCO.SignImagePath = pC.SignImagePath;
+                pOCO.Name = pC.Name;
+                pOCO.Position = pC.Position;
+
+                pList.Add(pOCO);
+            }
+
+            var data = pList;
+            return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
+        }
+
+
         //public JsonResult GetAllApproverSign()
         //{
         //    ApproverSignBL bL = new ApproverSignBL();

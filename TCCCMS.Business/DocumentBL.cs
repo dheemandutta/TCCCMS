@@ -104,5 +104,16 @@ namespace TCCCMS.Business
         }
 
         #endregion
+
+
+
+        public int SaveFilledUpFormsForCompanyApproval(Forms form, ref string catchMessage)
+        {
+            DocumentDAL documentDal = new DocumentDAL();
+
+            return documentDal.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
+
+        }
+
     }
 }

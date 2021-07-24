@@ -54,5 +54,9 @@ namespace TCCCMS.Models
 
 
         public string ModifiedSection { get; set; }
+
+
+        public string Task { get; set; }
+
     }
 }
