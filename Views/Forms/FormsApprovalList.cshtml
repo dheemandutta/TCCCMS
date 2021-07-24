@@ -38,9 +38,9 @@
                                         <td>@item.FilledUpFormName</td>
                                         <td>
                                             @*========Condition======Added on 24th Jul 2021 ============*@
-                                            @if (item.ApproverTask == "A")
+                                            @if (item.Task == "A")
                                             {
-                                                @if (item.IsApproved == 1)
+                                                if (item.IsApproved == 1)
                                                 {
                                                     <div class="form-group">
                                                         <input type="button" value="Approved" class="btn btn-info btn-sm" style=" background-color: #228B22;" disabled />
@@ -54,9 +54,9 @@
                                                     </div>
                                                 }
                                             }
-                                            else if (item.ApproverTask == "A")
+                                            else if (item.Task == "R")
                                             {
-                                                @if (item.IsApproved == 2)
+                                                if (item.IsApproved == 2)
                                                 {
                                                     <div class="form-group">
                                                         <input type="button" value="Reviewed" class="btn btn-info btn-sm" style=" background-color: #228B22;" disabled />
@@ -96,6 +96,7 @@
         $(document).ready(function () {
             //$(':input[type="file"]').prop('disabled', true);
 
+            LoadFormsApprovalList();
         });
 
 
