@@ -778,6 +778,7 @@
     <Content Include="js\theme.js" />
     <Content Include="js\Ticket\RaiseTicket.js" />
     <Content Include="js\Upload\UploadDocument.js" />
+    <Content Include="js\UserMaster\Revision.js" />
     <Content Include="js\UserMaster\UserUploadForm.js" />
     <Content Include="js\wow.min.js" />
     <Content Include="packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll" />
