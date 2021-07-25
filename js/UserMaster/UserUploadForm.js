@@ -334,7 +334,9 @@ function ApproveFilledUpForm(approverUserId,filledUpFormId,uploadedFormName) {
         success: function (result) {
             //loadData();
             alert("Approved Successfully")
-            LoadFormsApprovalList()
+            LoadFormsApprovalList();
+            window.location = '/Forms/FormsApprovalList';
+
             toastr.options = {
                 "closeButton": false,
                 "debug": false,
@@ -446,6 +448,7 @@ function ClearFields2() {
 
 }
 function UploadFilledUpFormWithApprovers() {
+
 
     alert("All the fields are correct ..? \n Please Confirm..!");
     //$('#fileUpload').val('');

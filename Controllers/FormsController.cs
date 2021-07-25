@@ -183,6 +183,7 @@ namespace TCCCMS.Controllers
 
         public static int AddSignatureInForm(string relPath,string uploadedFormName,int approverUserId)
         {
+            var key = "b14ca5898a4e4133bbce2ea2315a1916";
 
             int x = 0;
 
@@ -207,12 +208,14 @@ namespace TCCCMS.Controllers
                 ApproverSignBL aSignBL  = new ApproverSignBL();
                 approver                = aSignBL.GetAllApproverSign(approverUserId, uploadedFormName);
 
-                string signPath         = Path.Combine(root+"\\", approver.SignImagePath.Replace("/","\\"));
+                string decryptSignPath = AesOperation.DecryptString(key, approver.SignImagePath.ToString());
+
+                string signPath         = Path.Combine(root+"\\", decryptSignPath.Replace("/","\\"));
                 string approverName     = approver.Name;
                 string designation      = approver.Position;
                 int approverPossition   = approver.ApprovedCount;
 
-                //int numberOfItems       = 4;// Number of rows of the signature table
+                //int numberOfItems       = 4;// Number of rows of the signature tablee
                 int numberOfItems       = approver.ApproversCount;// Added on 24th Jul 2021@BK
 
                 DocumentModel document  = DocumentModel.Load(sdocPath);
@@ -222,7 +225,7 @@ namespace TCCCMS.Controllers
 
                 int tableCount          = tables.Count();
 
-                Table signatureTable    = tables[tableCount - 2];
+                Table signatureTable    = tables[tableCount - 1];
 
                 for (int rowIndex = 0; rowIndex <= numberOfItems; rowIndex++)
                 {
@@ -256,8 +259,10 @@ namespace TCCCMS.Controllers
                     string H = approvedDate.TimeOfDay.ToString();
                     string date = d + "th" + " " + m + " " + y + " " + H;
 
+
+
                     var cel = new TableCell(document) { ColumnSpan = 3 };
-                    var para = new Paragraph(document, date);
+                    var para = new Paragraph(document, "Approved: "+ date);
 
                     cel.CellFormat.VerticalAlignment = (VerticalAlignment)0;
                     cel.Blocks.Add(para);
@@ -289,7 +294,7 @@ namespace TCCCMS.Controllers
                 ComponentInfo.SetLicense("DN-2021Jan04-gSb72AQqrg9T4PQnvYNDgVtyd4tD3W3oBds51kfYp7zSsuFpxRw1a5Cxr49JiCLbMf2JCIKuinkUhgiQmuOz5yMoWdA==A");
 
                 //string tempPath         = Path.Combine(relPath, "\\Temp\\");
-                string tempPath = relPath + "\\Temp\\";
+                string tempPath = relPath + "Temp\\";
                 string sigTableName = "Approvers Digital Signature";
                 string extn = ".docx";
                 if(approverCount > 0)
@@ -297,7 +302,7 @@ namespace TCCCMS.Controllers
                     sigTableName = sigTableName + approverCount + extn;
 
                     string tblPath = tempPath + sigTableName;
-                    string sdocPath = relPath + "\\" + uploadedFormName;
+                    string sdocPath = relPath + uploadedFormName;
 
                     string appendedDocPath = tempPath + uploadedFormName;
 
@@ -314,6 +319,7 @@ namespace TCCCMS.Controllers
                     foreach (var file in files)
                     {
                         var source = DocumentModel.Load(file);
+                        
                         destination.Content.End.InsertRange(source.Content);
                     }
 
@@ -554,10 +560,17 @@ namespace TCCCMS.Controllers
             int approversCount = 0;
             approverList = JsonConvert.DeserializeObject<List<ApproverMaster>>(result[0]);
             approversCount = approverList.Count();
+            int cnt = 1;
             foreach (ApproverMaster a in approverList.OrderBy(a => a.SL))
-            {
-                orderedApprovers = orderedApprovers + a.ID.ToString();
+            { 
+                if(cnt == 1)
+                    orderedApprovers = a.ID.ToString();
+                else if(cnt > 1)
+                    orderedApprovers = orderedApprovers+"," + a.ID.ToString();
+
+                cnt = cnt + 1;
             }
+            orderedApprovers = orderedApprovers + ",";
 
             if (Request.Files.Count == 1)
             {
@@ -593,21 +606,22 @@ namespace TCCCMS.Controllers
 
                     fname = Path.GetFileNameWithoutExtension(fname);
                     string fnameWithPath = Path.Combine(path, uniqueFormName);
-                    //file.SaveAs(fnameWithPath);
+                    file.SaveAs(fnameWithPath);
 
-                    form.FormName = fname;
-                    form.FilledUpFormName = uniqueFormName;
-                    form.FilePath = relativePath;
+                    form.FormName           = fname;
+                    form.FilledUpFormName   = uniqueFormName;
+                    form.FilePath           = relativePath;
                     //form.ShipId             = Convert.ToInt32(shipId);
-                    form.ShipId = Convert.ToInt32(Session["ShipId"].ToString());
+                    form.ShipId             = Convert.ToInt32(Session["ShipId"].ToString());
                     form.Approvers          = orderedApprovers;//added on 24th Jul 2021 @BK
+                    form.Task               = task;
                     //form.CreateedBy = 1;//--- userId
                     form.CreateedBy = Convert.ToInt32(Session["UserId"].ToString());//--- userId
                     //---End---For Single form
                     //int count = documentBL.SaveFilledUpForm(form, ref catchMessage);
                     int count = documentBL.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
                     int y = 0;
-                    if (count == 1 && task == "A")
+                    if (count > 0 && task == "A")
                     {
                         y = AppendSignatureTable(path, uniqueFormName, approversCount);
                     }

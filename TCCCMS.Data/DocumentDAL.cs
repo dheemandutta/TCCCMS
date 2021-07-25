@@ -347,6 +347,7 @@ namespace TCCCMS.Data
                             Ship                = ship,
 
                             User                = user,
+                            Task                = Convert.ToString(dr["Task"]),
                         });
                     }
                     con.Close();
