@@ -2178,6 +2178,13 @@
     <Content Include="Views\Help\HelpVesselAdmin.cshtml" />
     <Content Include="Views\Help\HelpOfficeUser.cshtml" />
     <Content Include="Views\Help\HelpVesselUser.cshtml" />
+    <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature.docx" />
+    <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature1.docx" />
+    <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature2.docx" />
+    <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature3.docx" />
+    <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature4.docx" />
+    <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature5.docx" />
+    <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature6.docx" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
