@@ -11,7 +11,8 @@
 
     $.ajax({
         type: "POST",
-        url: '@Url.Action("GetViewerByRevision", "RevisionHistory")',
+        /*url: '@Url.Action("GetViewerByRevision", "RevisionHistory")',*/
+        url: '/RevisionHistory/GetViewerByRevision',
         data: { Id: id },
         success: function (data) {
             if (data) {
@@ -28,7 +29,7 @@ function SaveRevisionViewer(id) {
 
     $.ajax({
         type: "POST",
-        url: '@Url.Action("SaveRevisionViewer", "RevisionHistory")',
+        url: '/RevisionHistory/SaveRevisionViewer',
         data: { revisionId: id },
         success: function (data) {
             if (data) {
