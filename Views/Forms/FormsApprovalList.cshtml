@@ -68,7 +68,7 @@
                                                     <div class="form-group">
                                                         <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:130px; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>Review</span></a>
                                                         @*<input type="button" id="btnReview" value="Review" class="btn btn-info btn-sm" style="background-color: #e90000;" />*@
-                                                        <input type="button" id="btnUploadReview" value="Review" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="UploadReviewedFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName')" />
+                                                        <input type="button" id="btnUploadReview" value="Upload" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="UploadReviewedFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName')" />
                                                     </div>
                                                 }
                                             }
