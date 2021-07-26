@@ -37,6 +37,8 @@ namespace TCCCMS.Models
 
         public string ApproverTask { get; set; }//added on 24th Jul 2021 @BK
 
+        public int IsPreviousApprove { get; set; } //added on 26th Jul 2021 @BK
+
 
         public Ship Ship { get; set; }
 
