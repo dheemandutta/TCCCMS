@@ -38,7 +38,7 @@ function replaceText(searchword) {
                     $('.searchdContent').each(function () {
                         //var x = $(this).html($(this).html());
                         //console.log(x);
-                        $(this).html($(this).html().replace(custfilter, repstr));
+                        $(this).html($(this).html().replace(custfilter, repstr)).not("img");
 						
 						//**End****** automatically expand  word containing accordion panel*************
 						var paren =  getStringParent(sword);

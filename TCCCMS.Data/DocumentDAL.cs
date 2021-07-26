@@ -348,6 +348,7 @@ namespace TCCCMS.Data
 
                             User                = user,
                             Task                = Convert.ToString(dr["Task"]),
+                            IsPreviousApprove   = Convert.ToInt32(dr["IsPreviousApprove"]),
                         });
                     }
                     con.Close();
