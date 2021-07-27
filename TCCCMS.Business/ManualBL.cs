@@ -19,7 +19,29 @@ namespace TCCCMS.Business
 
             ManualDAL manualDAL = new ManualDAL();
 
-            manualsList = manualDAL.SearchManuals(pageIndex, ref totalCount, pageSize, volumeId, searchText,shipId, category);
+            //string modifiedSearchTest = searchText.Replace(" ", " OR ");
+
+            string modifiedSearchTest = "";
+
+            string[] words = searchText.Split(' ');
+
+            int cnt = 0;
+            foreach(string word in words)
+            {
+                cnt = cnt + 1;
+                if(cnt == 1)
+                {
+                    modifiedSearchTest = word;
+                }
+                else if(cnt > 1)
+                {
+                    modifiedSearchTest = modifiedSearchTest + " OR " + word;
+                }
+
+            }
+
+            
+            manualsList = manualDAL.SearchManuals(pageIndex, ref totalCount, pageSize, volumeId, modifiedSearchTest, shipId, category);
 
             return manualsList;
         }

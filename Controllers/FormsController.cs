@@ -560,15 +560,16 @@ namespace TCCCMS.Controllers
             int approversCount = 0;
             approverList = JsonConvert.DeserializeObject<List<ApproverMaster>>(result[0]);
             approversCount = approverList.Count();
-            int cnt = 1;
+            int cnt = 0;
             foreach (ApproverMaster a in approverList.OrderBy(a => a.SL))
-            { 
-                if(cnt == 1)
+            {
+                cnt = cnt + 1;
+                if (cnt == 1)
                     orderedApprovers = a.ID.ToString();
                 else if(cnt > 1)
                     orderedApprovers = orderedApprovers+"," + a.ID.ToString();
 
-                cnt = cnt + 1;
+                
             }
             orderedApprovers = orderedApprovers + ",";
 
