@@ -24,6 +24,8 @@ function replaceText(searchword) {
             var sword = value;
             var custfilter = new RegExp(sword, "ig");
             var repstr = "<span class='highlight'>" + sword + "</span>";
+			
+			var  sr="";
 
             if (sword != "") {
 
@@ -35,20 +37,88 @@ function replaceText(searchword) {
                     })
                 }
                 else {
-                    $('.searchdContent').each(function () {
+                    $('.searchdContent').find("*").each(function () {
                         //var x = $(this).html($(this).html());
                         //console.log(x);
-                        $(this).html($(this).html().replace(custfilter, repstr)).not("img");
+                        // $(this).html($(this).html().replace(custfilter, repstr));
 						
-						//**End****** automatically expand  word containing accordion panel*************
-						var paren =  getStringParent(sword);
-						//console.log(paren);
-						var prv = paren.prev();
-						paren.prev().addClass("active");
-						paren.css("display","block");
-						//**End****** automatically expand  word containing accordion panel*************
+						// $(this).html($(this).html().replace(custfilter, repstr));
+						// //******** automatically expand  word containing accordion panel*************
+						// var paren =  getStringParent(sword);
+						// //console.log(paren);
+						// var prv = paren.prev();
+						// paren.prev().addClass("active");
+						// paren.css("display","block");
+						// //**End****** automatically expand  word containing accordion panel*************
+						
+						 var elm = this;
+						var chl = $(this).children;
+						
+						if($(this).find('img').length){
+							console.log('Image here');
+						}
+						else{
+							$(this).html($(this).html().replace(custfilter, repstr));
+							
+							/////******** automatically expand  word containing accordion panel*************
+							var paren =  getStringParent(sword);
+							//console.log(paren);
+							var prv = paren.prev();
+							paren.prev().addClass("active");
+							paren.css("display","block");
+							////**end****** automatically expand  word containing accordion panel*************
+						}
+						
+						
+						// if(elm.nodeName === "IMG")
+						// {
+							// var prn = elm.parents;
+							// sr = elm.src;
+							// console.log('in img');
+							// //console.log(sr);
+							// console.log(elm.nodeName);
+						// }
+						// else if(elm.nodeName === "P")
+						// {
+							// var chld = elm.children;
+							// if(chld === "img" || chld === "IMG"){
+								// console.log(chld);
+							// }
+							
+							// // if(elm.find('img').length){
+								// // console.log('Image here');
+							// // }
+							// ///console.log($(this).html());
+							// $(this).html($(this).html().replace(custfilter, repstr));
+							
+							// /////******** automatically expand  word containing accordion panel*************
+							// var paren =  getStringParent(sword);
+							// console.log(paren);
+							// var prv = paren.prev();
+							// paren.prev().addClass("active");
+							// paren.css("display","block");
+							// ////**end****** automatically expand  word containing accordion panel*************
+						// }
+						
 						
                     })
+					// $('.searchdContent').find('*').each(function () {
+                        
+						// var elm = this;
+						// if(elm.nodeName === "IMG")
+						// {
+							
+							// var prn = elm.parents;
+							///var sr2 = elm.src;
+							// console.log('in IMG');
+							///console.log(sr);
+							///console.log('in IMG');
+							//console.log(elm.parentNode);
+							// $(this).html($(this).html().replace(repstr, custfilter));
+						// }
+						
+						
+                    // })
                 }
 
             }
