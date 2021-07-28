@@ -629,11 +629,11 @@ namespace TCCCMS.Controllers
                     if (y == 1)
                     {
                         WriteErrorToText("Sign added in form", "ApproveFilledUpForm");
-                        if (System.IO.File.Exists(Path.Combine(path + "\\Temp\\", uniqueFormName)))
+                        if (System.IO.File.Exists(Path.Combine(path + "Temp\\", uniqueFormName)))
                         {
-                            System.IO.File.Copy(Path.Combine(path + "\\Temp\\", uniqueFormName), Path.Combine(path, uniqueFormName), true);
+                            System.IO.File.Copy(Path.Combine(path + "Temp\\", uniqueFormName), Path.Combine(path, uniqueFormName), true);
 
-                            System.IO.File.Delete(Path.Combine(path + "\\Temp\\", uniqueFormName));
+                            System.IO.File.Delete(Path.Combine(path + "Temp\\", uniqueFormName));
                         }
                     }
 
@@ -651,7 +651,82 @@ namespace TCCCMS.Controllers
             }
         }
 
+        [HttpPost]
+        public JsonResult UploadFilledUpReviewedForm(string task, object approvers)
+        {
+            string catchMessage = "";
+            List<Forms> formList = new List<Forms>();
+            DocumentBL documentBL = new DocumentBL();
+            
 
+            if (Request.Files.Count == 1)
+            {
+                try
+                {
+                    string relativePath = "~/UploadFilledUpFormForApproval";
+                    string path = Server.MapPath(relativePath);
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    //  Get all files from Request object  
+                    HttpFileCollectionBase files = Request.Files;
+
+                    //---For Single form
+                    Forms form = new Forms();
+
+                    HttpPostedFileBase file = files[0];
+                    string fname;
+
+                    // Checking for Internet Explorer  
+                    if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                    {
+                        string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                        fname = testfiles[testfiles.Length - 1];
+                    }
+                    else
+                    {
+                        fname = file.FileName;
+                    }
+                    //string uniqueFormName = GetUniqueFileNameWithUserId(fname);
+                    // Get the complete folder path and store the file inside it. 
+
+                    string fnameWithPath = Path.Combine(path + "\\Temp\\", fname);
+                    
+                    //fname = Path.GetFileNameWithoutExtension(fname);
+                    file.SaveAs(fnameWithPath);
+
+                    //---End---For Single form
+                    int x = documentBL.ReviewedFilledUpForm(Convert.ToInt32(Session["UserId"].ToString()), fname);
+                    //int y = 0;
+                    //if (count > 0 && task == "A")
+                    //{
+                    //    y = AppendSignatureTable(path, uniqueFormName, approversCount);
+                    //}
+                    if (x > 0 && task == "R")
+                    {
+                        WriteErrorToText("Reviewed form copied from Temp", "ReviewedFilledUpForm");
+                        if (System.IO.File.Exists(Path.Combine(path + "\\Temp\\", fname)))
+                        {
+                            System.IO.File.Copy(Path.Combine(path + "\\Temp\\", fname), Path.Combine(path+"\\", fname), true);
+
+                            System.IO.File.Delete(Path.Combine(path + "\\Temp\\", fname));
+                        }
+                    }
+
+                    // Returns message that successfully uploaded  
+                    return Json("File Uploaded Successfully!");
+                }
+                catch (Exception ex)
+                {
+                    return Json("Error occurred. Error details: " + ex.Message);
+                }
+            }
+            else
+            {
+                return Json("No files selected.");
+            }
+        }
 
         #region Utility Methods
         private string GetUniqueFileName(string fileName)
