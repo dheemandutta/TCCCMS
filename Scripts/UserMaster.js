@@ -287,7 +287,7 @@ function CreateTableHeader(utyp) {
 /*    if (utyp === 2) {*/
     //below line commented on 6th Jul 2021 @BK for Amitabh sir Instruction
     //$('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th><th>Approved/NotApproved</th>');
-    $('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th>');
+    $('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th><th> Allow Signature </th>');
         SetUpGridCompanyUser(2);
   /*  }*/
     //else if (utyp === 1) {
@@ -530,6 +530,40 @@ function SetUpGridCompanyUser() {
                     }
                 }
             }
+
+
+
+
+
+
+
+
+
+
+            /* for toggle*/
+              ,{
+                "data": "IsActive", "width": "50px", "render": function (data, type, row) {
+
+                    console.log(row.UserId);
+
+                      if (data == '1') {
+
+                          return '<label class="switch"><input type="checkbox" ><span class="slider round"></span></label>';   /*Toggle Switch off*/
+                    }
+                    else if (data == '0') {
+
+                          return '<label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>';   /*Toggle Switch on*/
+                    }
+                }
+            }
+
+
+
+
+
+
+
+
              //below row lines commented on 6th Jul 2021 @BK for Amitabh sir Instruction
             //{
             //    "data": "IsApprover", "width": "50px", "render": function (data, type, row) {
