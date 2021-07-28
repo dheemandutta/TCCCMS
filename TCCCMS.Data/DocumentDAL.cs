@@ -401,6 +401,44 @@ namespace TCCCMS.Data
 
             return recorSaved;
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="approverUserId"></param>
+        /// <param name="uploadedFormName"></param>
+        /// <returns></returns>
+        public int ReviewedFilledUpForm(int approverUserId, string uploadedFormName)
+        {
+            int recorSaved = 0;
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand("ApproveFilledupForm", con))
+                {
+                    try
+                    {
+
+                        con.Open();
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        cmd.Parameters.AddWithValue("@ApproverUserId", approverUserId);
+                        cmd.Parameters.AddWithValue("@UploadedFormName", uploadedFormName);//Added on 20th Jul 2021 @BK
+
+
+                        int x = cmd.ExecuteNonQuery();
+                        con.Close();
+                        return x;
+                    }
+                    catch (Exception expErr)
+                    {
+                        recorSaved = 0;
+
+                        // catchMessage = expErr.Message;
+                    }
+                }
+            }
+
+            return recorSaved;
+        }
+
 
         public ApprovedFilledupFormAndApproverViewModel GetApprovedFilledUpForms(int userId)
         {
