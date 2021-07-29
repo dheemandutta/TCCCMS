@@ -751,7 +751,10 @@
     <Content Include="images\logo.png" />
     <Content Include="images\logo2 - Copy.png" />
     <Content Include="images\logo2.png" />
+    <Content Include="images\PrintLogo2 - Copy %283%29.jpg" />
+    <Content Include="images\PrintLogo2 - Copy.jpg" />
     <Content Include="images\PrintLogo2.jpg" />
+    <Content Include="images\PrintLogo2_old %282%29.jpg" />
     <Content Include="images\questionmark.png" />
     <Content Include="images\search_icon.png" />
     <Content Include="images\ship.jpg" />
