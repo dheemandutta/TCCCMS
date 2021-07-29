@@ -58,7 +58,7 @@
                                                 <label class="btn-sm" style="background-color: #7db700;">Approved</label>
                                             }
                                             else
-                                            {<label class="btn-sm" style="background-color: #e90000;">Approval Pending</label>}
+                                            {<label class="btn-sm" style="background-color: #e90000;"> Pending</label>}
 
                                         </td>
                                         <td>
@@ -71,18 +71,18 @@
                                                         @*<label>@approver.ApproverUserName</label>*@
                                                         @if (@approver.IsApprove == 1)
                                                         {
-                                                            <label class="btn-sml" style="background-color: #7db700;">Approved By &nbsp;</label>
+                                                            <label class="btn-sm" style="background-color: #7db700;">Approved By &nbsp;</label>
                                                         }
                                                         else
                                                         {
-                                                            <label class="btn-sml" style="background-color: #e90000;">Approval Pending By&nbsp;&nbsp;</label>
+                                                            <label class="btn-sm" style="background-color: #e90000;">Pending By&nbsp;&nbsp;</label>
                                                             if (@item.UploadedUserId.ToString() == @Session["UserId"].ToString())
                                                             {
-                                                                <button class="btn btn-sml" style="background-color: #e90000; margin-left:5px;" onclick="SendMailForapproval(@approver.ApprovalId,@approver.ApproverUserId);">Send Mail&nbsp;</button>
+                                                                <button class="btn btn-sm" style="background-color: #e90000; margin-left:5px;" onclick="SendMailForapproval(@approver.ApprovalId,@approver.ApproverUserId);">Send Mail&nbsp;</button>
                                                             }
 
                                                         }
-                                                        <label style="font-size:10px;">&nbsp;&nbsp;@approver.ApproverUserName</label>
+                                                        <label style="">&nbsp;&nbsp;@approver.ApproverUserName</label>
                                                     </div>
                                                 </div>
 
