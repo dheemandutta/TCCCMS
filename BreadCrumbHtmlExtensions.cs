@@ -284,7 +284,7 @@ namespace TCCCMS
                     breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
                     string s = helper.ViewContext.RouteData.Values["action"].ToString();
                     string fAction = helper.ViewContext.HttpContext.Request.QueryString["actionName"];
-                    string fName = helper.ViewContext.HttpContext.Request.QueryString["fileName"];
+                    string fName = helper.ViewContext.HttpContext.Request.QueryString["fileName"]??  helper.ViewContext.HttpContext.Request.QueryString["formName"];// null coalescing  added on 29th jul 2021
                     //s = s + "?actionName=" + manualFileAction;
                     //breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["action"].ToString().Titleize(),
                     //                                    s,
