@@ -298,5 +298,15 @@ namespace TCCCMS.Controllers
         }
 
 
+
+
+        public ActionResult Deck()
+        {
+            return View();
+        }
+        public ActionResult Engine()
+        {
+            return View();
+        }
     }
 }
