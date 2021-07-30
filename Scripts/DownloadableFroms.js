@@ -9,6 +9,7 @@
         dataType: "json",
         success: function (result) {
             SetUpGrid(CategoryId);
+            SetUpGridNew(CategoryId);
         },
         error: function (errormessage) {
             console.log(errormessage.responseText);
@@ -161,4 +162,59 @@ function PreviewModal(path) {
         }
     });
 
+}
+
+
+
+
+
+function SetUpGridNew(CategoryId) {
+    var loadposturl = $('#loaddata').val();
+    //do not throw error
+    $.fn.dataTable.ext.errMode = 'none';
+    //check if datatable is already created then destroy iy and then create it
+    if ($.fn.dataTable.isDataTable('#DownloadableFromsTable')) {
+        table = $('#DownloadableFromsTable').DataTable();
+        table.destroy();
+    }
+    // alert('hh');
+    var table = $("#DownloadableFromsTable").DataTable({
+        /*"dom": 'Bfrtip',*/
+        "rowReorder": false,
+        "ordering": false,
+        "filter": false, // this is for disable filter (search box)
+        "ajax": {
+            "url": loadposturl,
+            "type": "POST",
+            "datatype": "json",
+            "data": { CategoryId: CategoryId }
+        },
+        "columns": [
+            {
+                "data": "FormName", "name": "FormName", "autoWidth": true
+            },
+            {
+                "data": "Path", "width": "150px", "render": function (data) {
+                    var str = '<div class="col-sm-12"><div class="row"> ';
+                  /*  str = str + '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="PreviewModal(\'' + data + '\')" >Preview</a>';*/
+                    str = str + '<a href="' + data + '" class="btn btn-info btn-sm" style="background-color: #e90000;" >Download</a>';
+                    return str;
+                },
+            },
+            {
+                "data": "IsUpload", "width": "50px", "render": function (data, row) {
+                    console.log(row.CategoryId);
+                    console.log(data);
+                    if (data == '1') {
+                        return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal" >Upload</button>';
+                    }
+                }
+            },
+            {
+                "data": "Version", "name": "Version", "autoWidth": true
+            }
+        ],
+        "rowId": "ID",
+        /*"dom": "Bfrtip"*/
+    });
 }

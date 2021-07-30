@@ -44,6 +44,20 @@
         </div>*@
     <div class="col-sm-12 col-xs-12">
         <h2 class="ta">Forms And Check Lists - Volume VIII</h2>
+
+
+
+
+        @*for JHA Forms*@
+        <button class="accordion active" style="margin-left:-25px;">JHA Forms (Vol IV)</button>
+        <div class="panel" style="margin-left:5px;">
+            <a href='@Url.Action("Deck", "FormsAndChecklists")'>Deck</a><br>
+            <a href='@Url.Action("Engine", "FormsAndChecklists")'>Engine</a><br>
+        </div>
+        <div>&nbsp;</div>
+
+
+
         @Html.Raw(Model.ManualBodyHtml)
 
         @*<div class="row">

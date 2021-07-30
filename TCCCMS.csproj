@@ -2189,6 +2189,8 @@
     <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature4.docx" />
     <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature5.docx" />
     <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature6.docx" />
+    <Content Include="Views\FormsAndChecklists\Deck.cshtml" />
+    <Content Include="Views\FormsAndChecklists\Engine.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
