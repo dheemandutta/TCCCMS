@@ -63,5 +63,7 @@ namespace TCCCMS.Models
         public string NewPassword { get; set; }//--Added on 20th JAN 2021 @BK
 
         public int hasChange {get;set;  }
+
+        public int IsAllowSign { get; set; }
     }
 }

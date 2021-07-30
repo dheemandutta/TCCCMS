@@ -17,8 +17,14 @@ namespace TCCCMS.Controllers
         // GET: ApproverSign
         public ActionResult Index()
         {
-            GetAllUserForDrpApproverSign();
-            return View();
+            if (Session["Role"].ToString() == "OfficeUser" && Session["IsApprover"].ToString() == "1" && Session["IsAllowSign"].ToString() == "0")
+            {
+               GetAllUserForDrpApproverSign();
+                return View();
+            }
+            else
+                return RedirectToAction("Login", "Home");
+
         }
 
         [HttpPost]

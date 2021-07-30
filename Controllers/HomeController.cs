@@ -124,11 +124,13 @@ namespace TCCCMS.Controllers
         [HttpPost]
         public ActionResult Login(UserMasterPOCO user)
         {
-            UserMasterBL userMasterBL = new UserMasterBL();
-            HomeBL homeBl = new HomeBL();
-            string lsReturnMessage = "0";
-            UserMasterPOCO lUser = new UserMasterPOCO();
-            lUser = homeBl.CheckUserLogin(user,ref lsReturnMessage);
+            UserMasterBL userMasterBL   = new UserMasterBL();
+            HomeBL homeBl               = new HomeBL();
+            string lsReturnMessage      = "0";
+            string lsApprover           = "0";// Added on 29th Jul 2021 @BK
+            string lsAllowSign          = "0";// Added on 29th Jul 2021 @BK
+            UserMasterPOCO lUser        = new UserMasterPOCO();
+            lUser                       = homeBl.CheckUserLogin(user,ref lsReturnMessage);
             if(lsReturnMessage == "1")
             {
 
@@ -157,12 +159,17 @@ namespace TCCCMS.Controllers
 
 
 
-                Session["UserId"]       = lUser.UserId.ToString();
-                Session["UserCode"]     = lUser.UserCode.ToString();
-                Session["UserName"]     = lUser.UserName.ToString();
-                Session["Email"]        = lUser.Email.ToString();
-                Session["ShipId"]       = lUser.ShipId.ToString();
-                Session["DashboardShipId"] = lUser.ShipId.ToString();
+                Session["UserId"]           = lUser.UserId.ToString();
+                Session["UserCode"]         = lUser.UserCode.ToString();
+                Session["UserName"]         = lUser.UserName.ToString();
+                Session["Email"]            = lUser.Email.ToString();
+                Session["ShipId"]           = lUser.ShipId.ToString();
+                Session["DashboardShipId"]  = lUser.ShipId.ToString();
+                Session["IsApprover"]       = lUser.IsApprover.ToString();//Added on 29th Jul 2021 @BK
+                lsApprover                  = lUser.IsApprover.ToString();//Added on 29th Jul 2021 @BK
+                Session["IsAllowSign"]      = lUser.IsAllowSign.ToString();//Added on 29th Jul 2021 @BK
+                lsAllowSign                 = lUser.IsAllowSign.ToString();//Added on 29th Jul 2021 @BK
+
                 if (!string.IsNullOrEmpty(lUser.ShipName))
                     Session["ShipName"] = lUser.ShipName.ToString();
                 else
@@ -181,8 +188,16 @@ namespace TCCCMS.Controllers
                 {
                     return RedirectToAction("AdminDashboard", "Dashboard");
                 }
+                else if(role == "OfficeUser")
+                {
+                    if(lsApprover == "1" && lsAllowSign == "0")
+                        return RedirectToAction("Index", "ApproverSign");
+                    else
+                        return RedirectToAction("UserDashboard", "Dashboard");
+                } 
                 else
-                return RedirectToAction("UserDashboard", "Dashboard");
+                    return RedirectToAction("UserDashboard", "Dashboard");
+
 
                 //return new RedirectToRouteResult(new RouteValueDictionary(
                 //new { action = "UserDashboard", controller = "Dashboard" }));

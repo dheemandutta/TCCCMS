@@ -103,6 +103,8 @@
 @Html.Hidden("urlGenerateCode", @Url.Action("GenerateUserCode", "UserMaster"))
 
 @Html.Hidden("ApprovedRoNotInUserMaster", @Url.Action("ApprovedRoNotInUserMaster", "UserMaster"))
+@Html.Hidden("AllowSignUploadUserMaster", @Url.Action("AllowSignatureUpload", "UserMaster"))
+
 
 <body>
     <div class="row">
@@ -460,5 +462,15 @@
             });
 
         });
+        $('#daytoggle').bootstrapToggle('disable');
+        $('#daytoggle').change(function () {
+            console.log('Toggle Status');
+
+            if ($(this).prop('checked') == true) {
+                //Code implement here
+            }
+
+        });
+
     </script>
 }

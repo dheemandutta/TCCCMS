@@ -60,6 +60,10 @@ namespace TCCCMS.Data
 
                         //lUser.IsAdmin       = Convert.ToInt32(ds.Tables[0].Rows[0]["IsAdmin"].ToString());
 
+                        lUser.IsApprover = Convert.ToInt32(ds.Tables[0].Rows[0]["IsApprover"].ToString());
+                        if (ds.Tables[0].Rows[0]["IsAllowSign"] != null)
+                            lUser.IsAllowSign = Convert.ToInt32(ds.Tables[0].Rows[0]["IsAllowSign"].ToString());
+
                         asReturnMessage = "1";
                     }
                     else

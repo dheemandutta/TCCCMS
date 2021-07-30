@@ -80,6 +80,12 @@ namespace TCCCMS.Business
             return userDal.GenerateUserCode(asUserType, asShipId, asRankId, asUserName);
         }
 
+        public int AllowSignatureUpload(int UserId)
+        {
+            UserMasterDAL dAL = new UserMasterDAL();
+            return dAL.AllowSignatureUpload(UserId);
+        }
+
         #region Dropdown
         //for Ranks drp
         public List<UserMasterPOCO> GetAllRanksForDrp(/*int VesselID*/)
