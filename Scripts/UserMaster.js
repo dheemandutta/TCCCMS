@@ -542,18 +542,22 @@ function SetUpGridCompanyUser() {
 
             /* for toggle*/
               ,{
-                "data": "IsActive", "width": "50px", "render": function (data, type, row) {
+                "data": "IsAllowSign", "width": "50px", "render": function (data, type, row) {
 
-                    console.log(row.UserId);
+                    console.log('Sing_'+row.UserId);
+                      if (row.IsApprover == '1') {
+                          if (data == '1') {
 
-                      if (data == '1') {
+                              return '<label class="switch" disabled ><input id="allowSign_' + row.UserId + '" type="checkbox" onchange="UpdateAllowSign(this,' + row.UserId + ',' + row.UserName  +')" ><span class="slider " ></span></label>';   /*Toggle Switch off*/
+                              //return '<input id="daytoggle" checked data-toggle="toggle" data-on="Time 1" data-off="Time 2" data-onstyle="success" data-offstyle="danger" type="checkbox">';
+                          }
+                          else if (data == '0') {
 
-                          return '<label class="switch"><input type="checkbox" ><span class="slider round"></span></label>';   /*Toggle Switch off*/
-                    }
-                    else if (data == '0') {
-
-                          return '<label class="switch"><input type="checkbox" checked><span class="slider round"></span></label>';   /*Toggle Switch on*/
-                    }
+                              return '<label class="switch"><input id="allowSign" type="checkbox" onchange="UpdateAllowSign(this,' + row.UserId + ',' + row.UserName +')"><span class="slider" ></span></label>';   /*Toggle Switch on*/
+                              // return '<input id="daytoggle" data-toggle="toggle" data-on="Time 1" data-off="Time 2" data-onstyle="success" data-offstyle="danger" type="checkbox">';
+                          }
+                      }
+                      
                 }
             }
 
@@ -940,6 +944,38 @@ function GetuUserCode() {
     }
 }
 //-------------End--Tabs----------------------
+
+function UpdateAllowSign(e, UserId,user) {
+    var url = $('#AllowSignUploadUserMaster').val();
+    var sigCheck = e;
+    //var uId = UserId;
+    if (sigCheck.checked) {
+        //console.log("checked id " + uId);
+
+       
+        var ans = confirm("Are you sure you want to Allow to Uoload Signature to this User?");
+        if (ans) {
+            // debugger;
+            $.ajax({
+                url: url,
+                data: JSON.stringify({ UserId: UserId }),
+                type: "POST",
+                contentType: "application/json;charset=UTF-8",
+                dataType: "json",
+                success: function (result) {
+                    alert(user +" has successfully allowed to upload signature");
+
+                    SetUpGridCompanyUser();
+
+                },
+                error: function () {
+                    alert(" cannot be deleted as this is already used");
+                }
+            });
+        }
+    }
+
+}
 
 
 

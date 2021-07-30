@@ -138,18 +138,18 @@ namespace TCCCMS.Data
                     {
                         pOList.Add(new UserMasterPOCO
                         {
-                            UserId = Convert.ToInt32(dr["UserId"]),
-                            UserName = Convert.ToString(dr["UserName"]),
-                            UserCode = Convert.ToString(dr["UserCode"]),
-                            CreatedOn1 = Convert.ToString(dr["CreatedOn"]),
-                            Email = Convert.ToString(dr["Email"]),
-                            CreatedBy = Convert.ToString(dr["CreatedBy"]),
-                            ModifiedBy = Convert.ToString(dr["ModifiedBy"]),
-                            Gender = Convert.ToString(dr["Gender"]),
-                            VesselIMO = Convert.ToString(dr["VesselIMO"]),
-                            IsActive = Convert.ToInt32(dr["IsActive"]),
-                            UploadPermission = Convert.ToInt32(dr["UploadPermission"]),
-                            //IsApprover = Convert.ToInt32(dr["IsApprover"])
+                            UserId              = Convert.ToInt32(dr["UserId"]),
+                            UserName            = Convert.ToString(dr["UserName"]),
+                            UserCode            = Convert.ToString(dr["UserCode"]),
+                            CreatedOn1          = Convert.ToString(dr["CreatedOn"]),
+                            Email               = Convert.ToString(dr["Email"]),
+                            CreatedBy           = Convert.ToString(dr["CreatedBy"]),
+                            ModifiedBy          = Convert.ToString(dr["ModifiedBy"]),
+                            Gender              = Convert.ToString(dr["Gender"]),
+                            VesselIMO           = Convert.ToString(dr["VesselIMO"]),
+                            IsActive            = Convert.ToInt32(dr["IsActive"]),
+                            UploadPermission    = Convert.ToInt32(dr["UploadPermission"]),
+                            IsApprover          = Convert.ToInt32(dr["IsApprover"])
 
                             //ShipName = Convert.ToString(dr["ShipName"]),
 
@@ -663,6 +663,21 @@ namespace TCCCMS.Data
 
             return code;
         }
+
+        public int AllowSignatureUpload(int UserId)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("ToggleAllowSignatureUploadUserMaster", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@UserId", UserId);
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+
+            con.Close();
+            return recordsAffected;
+        }
+
 
 
         #region DropDown

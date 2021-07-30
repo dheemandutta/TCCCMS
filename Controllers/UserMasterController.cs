@@ -260,6 +260,15 @@ namespace TCCCMS.Controllers
             return Json(code, JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult AllowSignatureUpload(int UserId)
+        {
+            UserMasterBL bL = new UserMasterBL();
+            int recordaffected = bL.AllowSignatureUpload(UserId);
+            return Json(recordaffected, JsonRequestBehavior.AllowGet);
+
+        }
+
+
         #region Upload Form
 
         [HttpGet]
