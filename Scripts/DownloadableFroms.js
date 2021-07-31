@@ -93,10 +93,12 @@ function SetUpGrid(CategoryId) {
 
 
             {
-                "data": "IsUpload", "width": "50px", "render": function (data, row) {
+                "data": "IsUpload", "width": "50px", "render": function (data,type, row) {
 
-                    console.log(row.CategoryId);
-                    console.log(data);
+                    //console.log(row.CategoryId);
+                    //console.log(data);
+                    console.log('k');
+                    console.log(row);
 
                     //if (data == '0') {
                     //    return '<a href="#" class="btn btn-info btn-sm" style="background-color: #e90000;" >Not Upload</a>';
@@ -106,7 +108,7 @@ function SetUpGrid(CategoryId) {
 
                     //}
                     if (data == '1') {
-                        return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal" >Upload</button>';
+                        return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal" onclick="SetHdnFormName(\'' + row.FormName +'\')"  >Upload</button>';
 
                     }
                 }
@@ -202,11 +204,11 @@ function SetUpGridNew(CategoryId) {
                 },
             },
             {
-                "data": "IsUpload", "width": "50px", "render": function (data, row) {
+                "data": "IsUpload", "width": "50px", "render": function (data,type, row) {
                     console.log(row.CategoryId);
                     console.log(data);
                     if (data == '1') {
-                        return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal" >Upload</button>';
+                        return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal"  onclick="SetHdnFormName(\'' + row.FormName +'\')"  >Upload</button>';
                     }
                 }
             },

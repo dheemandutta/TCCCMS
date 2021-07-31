@@ -288,6 +288,9 @@ function UploadFiles() {
                 processData: false, // Not to process data  
                 data: fileData,
                 success: function (result) {
+                    alert("Data Saved Successfully.");
+                    clearTextBox();
+                    window.location.href = '/Dashboard/UserDashboard';
                     //alert(result);
                     //$("#lblSuccMsg").text(result[1]);
                     //$("#hdnCrewHealthImagePath").val(result[0]);
@@ -301,3 +304,5 @@ function UploadFiles() {
             alert("FormData is not supported.");
         }
 }
+
+

@@ -52,7 +52,8 @@ namespace TCCCMS.Controllers
 
             List<string> returnMsg = new List<string>();
             string fileName = String.Empty; //Path.GetFileNameWithoutExtension(postedFile.FileName);
-            fileName = "SignImages" + "_" + crewId;
+            //fileName = "SignImages" + "_" + crewId;
+            fileName = "SignImages" + "_" + Session["UserId"].ToString();   // 31-07-2021
 
             HttpFileCollectionBase files = Request.Files;
             for (int i = 0; i < files.Count; i++)
@@ -94,7 +95,7 @@ namespace TCCCMS.Controllers
             ApproverSignBL bL = new ApproverSignBL();
             ApproverMaster pC = new ApproverMaster();
 
-            pC.ApproverUserId = Convert.ToInt32(crewId);
+            pC.ApproverUserId = Convert.ToInt32(int.Parse(Session["UserId"].ToString()));
             pC.SignImagePath = AesOperation.EncryptString(key, fnameWithPath);
             //pC.Name = name;
             pC.Position = crewPosition;
@@ -102,6 +103,7 @@ namespace TCCCMS.Controllers
             //pC.ModifiedOn1 = pOCO.ModifiedOn1;
 
             int x = bL.SaveApproverSign(pC);
+           
             return Json(returnMsg, JsonRequestBehavior.AllowGet);
         }
 

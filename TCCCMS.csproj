@@ -2191,6 +2191,7 @@
     <Content Include="UploadFilledUpFormForApproval\Temp\Approvers Digital Signature6.docx" />
     <Content Include="Views\FormsAndChecklists\Deck.cshtml" />
     <Content Include="Views\FormsAndChecklists\Engine.cshtml" />
+    <Content Include="Views\Shared\_pvReviewedFilledupFormUploadModal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
