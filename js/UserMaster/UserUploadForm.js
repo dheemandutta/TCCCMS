@@ -34,6 +34,20 @@ function validate() {
 
     return isValid;
 }
+function validateR() {
+    var isValid = true;
+
+    if ($("#fileUpload").get(0).files.length === 0) {
+        $('#fileUpload').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#fileUpload').css('border-color', 'lightgrey');
+    }
+    
+
+    return isValid;
+}
 
 function ClearFields() {
     $('#fileUpload').val('');
@@ -442,13 +456,14 @@ function ClearFields2() {
     $("#ddlApproverUser").prop('selectedIndex', -1);
 
     $('#ddlApproverUser').css('border-color', 'lightgrey');
-
+    $('#hdnOriginalFormName').val("");
     tmpApproverList = [];
     $('#divTempApprover').addClass('displayNone');
 
 }
 function UploadFilledUpFormWithApprovers() {
 
+    var originalForm = $('#hdnOriginalFormName').val();
 
     alert("All the fields are correct ..? \n Please Confirm..!");
     //$('#fileUpload').val('');
@@ -460,6 +475,7 @@ function UploadFilledUpFormWithApprovers() {
         if (validate()) {
             var fileUpload = $("#fileUpload").get(0);
             var files = fileUpload.files;
+            var uploadedFormName = '';
             //var files = $('#fileUpload')[0];
             // Create FormData object  
             var fileData = new FormData();
@@ -467,6 +483,10 @@ function UploadFilledUpFormWithApprovers() {
             // Looping over all files and add it to FormData object  
             for (var i = 0; i < files.length; i++) {
                 fileData.append(files[i].name, files[i]);
+
+                uploadedFormName = files[i].name;
+                //uploadedFormName = uploadedFormName.substr((uploadedFormName.firstIndexOf('.') + 1));
+                uploadedFormName = uploadedFormName.split('.').slice(0, -1).join('.');
             }
             //var e = {
             //    ApproverUserId: '9',
@@ -491,48 +511,53 @@ function UploadFilledUpFormWithApprovers() {
             //}
             ////fileData.append("approvers[ApproverUserId]", tmpApproverList[0].ID);
             ////fileData.append("approvers[Position]", tmpApproverList[0].Position);
+            if (uploadedFormName === originalForm) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    datatype: "json",
+                    //contentType: "application/json; charset=utf-8",
+                    contentType: false, // Not to set any content header  
+                    processData: false, // Not to process data  
+                    data: fileData,
+                    //data: { categoryId: y},
+                    success: function (result) {
+                        alert(result);
+                        $('#fileUpload').val('');
+                        //ClearFields();
+                        ClearFields2();
+                        $('#filledUpFormModal').modal('hide');
 
-            $.ajax({
-                url: url,
-                type: "POST",
-                datatype: "json",
-                //contentType: "application/json; charset=utf-8",
-                contentType: false, // Not to set any content header  
-                processData: false, // Not to process data  
-                data: fileData,
-                //data: { categoryId: y},
-                success: function (result) {
-                    alert(result);
-                    $('#fileUpload').val('');
-                    //ClearFields();
-                    ClearFields2();
-                    $('#filledUpFormModal').modal('hide');
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-bottom-full-width",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        };
 
-                    toastr.options = {
-                        "closeButton": false,
-                        "debug": false,
-                        "newestOnTop": false,
-                        "progressBar": false,
-                        "positionClass": "toast-bottom-full-width",
-                        "preventDuplicates": false,
-                        "onclick": null,
-                        "showDuration": "300",
-                        "hideDuration": "1000",
-                        "timeOut": "5000",
-                        "extendedTimeOut": "1000",
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    };
-
-                    toastr.success("Form Updated Successfully");
-                    $('#filledUpFormModal').modal('hide');
-                },
-                error: function (err) {
-                    alert(err.statusText);
-                }
-            });
+                        toastr.success("Form Updated Successfully");
+                        $('#filledUpFormModal').modal('hide');
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                    }
+                });
+            }
+            else {
+                alert('You are trying to upload another from..! \n Please Choose Exact form..!"')
+            }
+           
         }
         
     }
@@ -733,6 +758,104 @@ function RemoveTempApproverNew(id) {
 
     SetUpTempApproverGridNew();
 }
+
+
+
+function SetHdnFormName(frm) {
+    $('#hdnOriginalFormName').val(frm);
+}
+
+function UploadReviewedFilledUpForm() {
+    var originalForm = $('#hdnOriginalFormName').val();
+
+   // alert("All the fields are correct ..? \n Please Confirm..!");
+    //$('#fileUpload').val('');
+    var url = $('#urlReviewedFormsUpload').val();
+    //var url = "/UserMaster/UploadFilledUpForm";
+    //********--------------------------------------------------------------------------
+    //Checking whether FormData is available in browser  
+    if (window.FormData !== undefined) {
+        if (validateR()) {
+            var fileUpload = $("#fileUpload").get(0);
+            var files = fileUpload.files;
+            var uploadReviewedFormName = '';
+            //var files = $('#fileUpload')[0];
+            // Create FormData object  
+            var fileData = new FormData();
+
+            // Looping over all files and add it to FormData object  
+            for (var i = 0; i < files.length; i++) {
+                fileData.append(files[i].name, files[i]);
+
+                uploadReviewedFormName = files[i].name;
+                //uploadedFormName = uploadedFormName.substr((uploadedFormName.firstIndexOf('.') + 1));
+                //uploadReviewedFormName = uploadReviewedFormName.split('.').slice(0, -1).join('.');
+            }
+            
+            //var task = $("#taskRadio input[name='inlineRadioOptions']:checked").val();
+            var task = 'R';
+
+            // Adding one more key to FormData object 
+            //fileData.append('approvers', JSON.stringify(tmpApproverList));
+            fileData.append('task', task);
+            
+            if (uploadReviewedFormName === originalForm) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    datatype: "json",
+                    //contentType: "application/json; charset=utf-8",
+                    contentType: false, // Not to set any content header  
+                    processData: false, // Not to process data  
+                    data: fileData,
+                    //data: { categoryId: y},
+                    success: function (result) {
+                        alert(result);
+                        $('#fileUpload').val('');
+                        //ClearFields();
+                        //ClearFields2();
+                        $('#reviewedFilledUpFormModal').modal('hide');
+                        LoadFormsApprovalList();
+                        window.location = '/Forms/FormsApprovalList';
+
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-bottom-full-width",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        };
+
+                        toastr.success("Form Updated Successfully");
+                        $('#filledUpFormModal').modal('hide');
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                    }
+                });
+            }
+            else {
+                alert('You are trying to upload another from..! \n Please Choose Exact form..!"')
+            }
+
+        }
+
+    }
+    else {
+        alert("FormData is not supported.");
+    }
+}
+
 
 
 
