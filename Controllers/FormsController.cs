@@ -606,6 +606,7 @@ namespace TCCCMS.Controllers
                     // Get the complete folder path and store the file inside it. 
 
                     fname = Path.GetFileNameWithoutExtension(fname);
+                    var ext = Path.GetExtension(fname).ToLowerInvariant();
                     string fnameWithPath = Path.Combine(path, uniqueFormName);
                     file.SaveAs(fnameWithPath);
 
@@ -622,7 +623,7 @@ namespace TCCCMS.Controllers
                     //int count = documentBL.SaveFilledUpForm(form, ref catchMessage);
                     int count = documentBL.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
                     int y = 0;
-                    if (count > 0 && task == "A")
+                    if (count > 0 && task == "A" && (ext == "doc" || ext == "docx"))
                     {
                         y = AppendSignatureTable(path, uniqueFormName, approversCount);
                     }

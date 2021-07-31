@@ -548,12 +548,12 @@ function SetUpGridCompanyUser() {
                       if (row.IsApprover == '1') {
                           if (data == '1') {
 
-                              return '<label class="switch" disabled ><input id="allowSign_' + row.UserId + '" type="checkbox" onchange="UpdateAllowSign(this,' + row.UserId + ',' + row.UserName  +')" ><span class="slider " ></span></label>';   /*Toggle Switch off*/
+                              return '<label class="switch"><input id="allowSign_' + row.UserId + '" type="checkbox" onchange="UpdateAllowSign(this,' + row.UserId + ',\'' + row.UserName  +'\')" ><span class="slider " ></span></label>';   /*Toggle Switch off*/
                               //return '<input id="daytoggle" checked data-toggle="toggle" data-on="Time 1" data-off="Time 2" data-onstyle="success" data-offstyle="danger" type="checkbox">';
                           }
                           else if (data == '0') {
 
-                              return '<label class="switch"><input id="allowSign" type="checkbox" onchange="UpdateAllowSign(this,' + row.UserId + ',' + row.UserName +')"><span class="slider" ></span></label>';   /*Toggle Switch on*/
+                              return '<label class="switch"><input id="allowSign_' + row.UserId + '" type="checkbox" checked onchange="UpdateAllowSign(this,' + row.UserId + ',\'' + row.UserName +'\')"><span class="slider" ></span></label>';   /*Toggle Switch on*/
                               // return '<input id="daytoggle" data-toggle="toggle" data-on="Time 1" data-off="Time 2" data-onstyle="success" data-offstyle="danger" type="checkbox">';
                           }
                       }

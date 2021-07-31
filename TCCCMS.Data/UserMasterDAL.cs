@@ -149,7 +149,8 @@ namespace TCCCMS.Data
                             VesselIMO           = Convert.ToString(dr["VesselIMO"]),
                             IsActive            = Convert.ToInt32(dr["IsActive"]),
                             UploadPermission    = Convert.ToInt32(dr["UploadPermission"]),
-                            IsApprover          = Convert.ToInt32(dr["IsApprover"])
+                            IsApprover          = Convert.ToInt32(dr["IsApprover"]),
+                            IsAllowSign         = Convert.ToInt32(dr["IsAllowSign"] ?? 0)// Added on 31st  jul 2021
 
                             //ShipName = Convert.ToString(dr["ShipName"]),
 

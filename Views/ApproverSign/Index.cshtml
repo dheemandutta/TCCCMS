@@ -32,18 +32,12 @@
                     <div class="card-body">
                         <div class="col-sm-12 col-xs-12">
                             <div class="row">
-                                <div class="col-sm-12 col-xs-12">
+                                @*<div class="col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label for="ApproverUser">ApproverUser</label>
                                         @Html.DropDownListFor(model => model.UserId, (IEnumerable<SelectListItem>)ViewBag.Users, "Select", new { @class = "form-control", @id = "ApproverUserId" })
                                     </div>
-                                </div>
-                                @*<div class="col-sm-12 col-xs-12">
-                                        <div class="form-group">
-                                            <label for="Name">Name</label>
-                                            <input type="text" class="form-control" id="Name" placeholder="Name" />
-                                        </div>
-                                    </div>*@
+                                </div>*@
                                 <div class="col-sm-12 col-xs-12">
                                     <div class="form-group">
                                         <label for="Position">Position</label>
@@ -72,8 +66,7 @@
 
 
 
-                    <div style="margin:0 auto" class="tablecontainer">
-                        @*<button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#myModal" onclick="clearTextBox();">Add ApproverSign</button><br /><br />*@
+                    @*<div style="margin:0 auto" class="tablecontainer">
                         <input type="hidden" id="hdnrole" />
                         <table id="ApproverSignTable" class="display" cellspacing="0">
                             <thead>
@@ -82,17 +75,10 @@
                                     <th>Sign Image</th>
                                     <th>Name</th>
                                     <th>Position</th>
-                                    @*<th>Edit</th>
-                                        <th>Delete</th>*@
                                 </tr>
                             </thead>
                         </table>
-                    </div>
-
-
-                    <img src="~/SignImages/Ship Master.png" height="50px" width="100px">
-
-
+                    </div>*@
                 </div>
             </div>
             @*</form>*@
