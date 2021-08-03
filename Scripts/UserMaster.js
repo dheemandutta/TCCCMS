@@ -792,6 +792,16 @@ function LoadTab() {
             else {
                 $('#liTab2').prop('disabled', false);
             }
+            if (userType === '0') {
+                //$('#liTab2').prop('disabled', true);
+            }
+            else {
+                $('#drpUserRole').val('5');
+                $('#drpCompanyRole').val('2');
+                $('#drpUserRole').prop('disabled', true);
+                $('#drpCompanyRole').prop('disabled', true);
+            }
+
         },
         error: function (errormessage) {
             alert(errormessage.responseText);
