@@ -2204,6 +2204,7 @@
     <Content Include="Views\ShipKHKMajesty\VGP.cshtml" />
     <Content Include="Views\ShipKHKVision\VGP.cshtml" />
     <Content Include="Views\ShipKWKExcelsus\VGP.cshtml" />
+    <Content Include="Views\CommonToAllManual\VRP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
