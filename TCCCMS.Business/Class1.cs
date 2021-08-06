@@ -8,5 +8,6 @@ namespace TCCCMS.Business
 {
     public class Class1
     {
+
     }
 }
