@@ -41,11 +41,12 @@ namespace TCCCMS.Data
                     {
                         pOList.Add(new DownloadableFroms
                         {
-                            ID = Convert.ToInt32(dr["ID"]),
-                            FormName = Convert.ToString(dr["FormName"]),
-                            Path = Convert.ToString(dr["Path"]),
-                            IsUpload = Convert.ToString(dr["IsUpload"]),
-                            Version = Convert.ToString(dr["Version"])
+                            ID          = Convert.ToInt32(dr["ID"]),
+                            CategoryId  = Convert.ToInt32(dr["CategoryId"]),//Added on 5th Aug 2021 @BK
+                            FormName    = Convert.ToString(dr["FormName"]),
+                            Path        = Convert.ToString(dr["Path"]),
+                            IsUpload    = Convert.ToString(dr["IsUpload"]),
+                            Version     = Convert.ToString(dr["Version"])
                         });
                     }
                     recordCount = Convert.ToInt32(cmd.Parameters["@RecordCount"].Value);

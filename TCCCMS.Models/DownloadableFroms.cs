@@ -14,5 +14,7 @@ namespace TCCCMS.Models
         public string Version { get; set; }
 
         public string IsUpload { get; set; }
+
+        public int CategoryId { get; set; }
     }
 }

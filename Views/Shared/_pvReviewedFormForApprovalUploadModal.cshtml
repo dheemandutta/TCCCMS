@@ -1,14 +1,15 @@
 ﻿<!-- Modal -->
 @Html.Hidden("urlApproverUserPosition", @Url.Action("GetAllApproverUserPositionForDropDown", "Approver"))
 @Html.Hidden("urlApproverUser", @Url.Action("GetApproverUserByApproverUserId", "Approver"))
-<div class="modal fade" id="filledUpFormModal" role="dialog">
+@Html.Hidden("urlReviewedFormForApproval", @Url.Action("UploadFilledUpReviewedFormForApproval", "Forms"))
+<div class="modal fade" id="reviewedFilledUpFormModal" role="dialog">
     <div class="modal-dialog modal-lg ">
 
         <!-- Modal content-->
         <div class="modal-content">
             <div class="modal-header" style="background-color: #e90000;">
-                <h4 class="modal-title colorWhite">Upload Filledup Form</h4>
-                <button type="button" class="close" data-dismiss="modal" onclick="ClearFields2();">&times;</button>
+                <h4 class="modal-title colorWhite">Upload Reviewed Form For Approval</h4>
+                <button type="button" class="close" data-dismiss="modal" onclick="ClearFields3();">&times;</button>
             </div>
 
 
@@ -18,6 +19,7 @@
                     <input type="hidden" id="hdnFilledUpFormID" />
                     <input type="hidden" id="hdnOriginalFormName" value="" />
                     <input type="hidden" id="hdnFormsCategory" value="" />
+                    <input type="hidden" id="hdnTask" value="A" />
                 </div>
                 <div class="row">
                     <div class="col-sm-12 col-xs-12">
@@ -28,7 +30,9 @@
 
                                         <div class="col-sm-12 col-xs-12">
                                             <div class="form-group">
-                                                <input type="file" id="fileUpload" />
+                                                <label for="ReviewdForm">Reviewed Form : </label>
+                                                <label id="lblReviewedForm" for="ReviewdForm"></label>
+                                                <input id="txtReviewedForm" type="hidden" style="width:600px !important" value="" disabled />
                                             </div>
                                         </div>
 
@@ -37,32 +41,20 @@
 
                                 <div class="col-sm-12 col-xs-12 marginTP10">
                                     <div class="row">
-                                        <div class="col-sm-6 col-xs-12">
-                                            <div class="form-group" id="taskRadio">
-                                               
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdReview" value="R" autocomplete="off" checked>
-                                                    <label class="form-check-label" for="rdReview">Review</label>
-                                                </div>
-                                                <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="rdApprove" value="A" autocomplete="off">
-                                                    <label class="form-check-label" for="rdApprove">Approve</label>
-                                                </div>
-                                            </div>
-                                        </div>
+
                                         <div class="col-sm-6 col-xs-12">
                                             <div class="form-group">
                                                 @*<label for="Approver">Approver</label>*@
                                                 <select id="ddlApproverUser" name="ApproverUserList" class="form-control"></select>
                                                 @*<select>
-                                                    <option value="0">Select Approver</option>
-                                                    <option value="1">Marine Superintendent</option>
-                                                    <option value="2">Technical Superintendent</option>
-                                                    <option value="3">Fleet Manager</option>
-                                                    <option value="4">General Manager</option>
-                                                    <option value="5">Technical Manager</option>
-                                                    <option value="6">Director</option>
-                                                </select>*@
+                                                        <option value="0">Select Approver</option>
+                                                        <option value="1">Marine Superintendent</option>
+                                                        <option value="2">Technical Superintendent</option>
+                                                        <option value="3">Fleet Manager</option>
+                                                        <option value="4">General Manager</option>
+                                                        <option value="5">Technical Manager</option>
+                                                        <option value="6">Director</option>
+                                                    </select>*@
                                             </div>
                                         </div>
 
@@ -106,8 +98,8 @@
 
 
             <div class="modal-footer" style="background-color:lightgray;">
-                <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return UploadFilledUpFormWithApprovers();">Upload</button>
-                <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal" onclick="ClearFields2();">Close</button>
+                <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:138px;" id="btnAdd" onclick="return UploadReviewedFilledUpFormWithApprovers();">Upload</button>
+                <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" data-dismiss="modal" onclick="ClearFields3();">Close</button>
             </div>
         </div>
 

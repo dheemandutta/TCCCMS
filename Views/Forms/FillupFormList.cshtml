@@ -12,7 +12,7 @@
         padding: 2px;
         font-size: 10px;
         border-radius: 5px;
-        height:20px;
+        height: 20px;
     }
 </style>
 
@@ -30,9 +30,9 @@
                                 <tr>
                                     @* -----------------------------------old by Bingshu------------------------------- *@
                                     @*<th>Form Name</th>
-                                    <th>Approved On</th>
-                                    <th>Status </th>
-                                    <th></th>*@
+                                        <th>Approved On</th>
+                                        <th>Status </th>
+                                        <th></th>*@
 
                                     @* -----------------------------------old by Prasenjit------------------------------- *@
                                     <th>Form Name</th>
@@ -40,13 +40,13 @@
                                     <th>Status</th>
                                     <th></th>
                                     <th>ApprovedDate</th>
-                                    <th>Download</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var item in Model.ApprovedFormList)
                                 {
-                                    
+
                                     <tr>
                                         <td>@item.FilledUpFormName</td>
                                         @*<td style="border-left:solid 1px; border-right:solid 1px;"></td>*@
@@ -56,6 +56,10 @@
                                             @if (item.IsApproved == 1)
                                             {
                                                 <label class="btn-sm" style="background-color: #7db700;">Approved</label>
+                                            }
+                                            else if (item.IsApproved == 2)
+                                            {
+                                                <label class="btn-sm" style="background-color: #7db700;">Reviewed</label>
                                             }
                                             else
                                             {<label class="btn-sm" style="background-color: #e90000;"> Pending</label>}
@@ -72,6 +76,10 @@
                                                         @if (@approver.IsApprove == 1)
                                                         {
                                                             <label class="btn-sm" style="background-color: #7db700;">Approved By &nbsp;</label>
+                                                        }
+                                                        else if (@approver.IsApprove == 2)
+                                                        {
+                                                            <label class="btn-sm" style="background-color: #7db700;">Reviewed By &nbsp;</label>
                                                         }
                                                         else
                                                         {
@@ -97,11 +105,16 @@
                                         <td>
                                             @if (@item.UploadedUserId.ToString() == @Session["UserId"].ToString())
                                             {
-                                                <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:130px; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>Download</span></a>
+                                                <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:80px; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>Download</span></a>
                                             }
                                             else
                                             {
-                                               <span>----</span>
+                                                <span>----</span>
+                                            }
+                                            @if (@item.Task == "R")
+                                            {
+                                                @*<a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>Send For approval</span></a>*@
+                                                <input type="button" id="btnUploadReview" value="Upload" class="btn btn-info btn-sm" style="background-color: #e90000; " data-toggle="modal" data-target="#reviewedFilledUpFormModal" onclick="SetReviewedFormName('@item.FilledUpFormName','@item.CategoryId');"/>
                                             }
 
 
@@ -120,7 +133,7 @@
     </div>
 
 </div>
-
+@Html.Partial("_pvReviewedFormForApprovalUploadModal");
 
 @section Scripts{
     <script src="~/js/UserMaster/UserUploadForm.js"></script>
@@ -128,6 +141,7 @@
 
         $(document).ready(function () {
             //$(':input[type="file"]').prop('disabled', true);
+            GetApproverUsersPositionFroDropDown();
         });
 
 
