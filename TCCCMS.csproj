@@ -2197,6 +2197,13 @@
     <Content Include="Views\FormsAndChecklists\Engine.cshtml" />
     <Content Include="Views\Shared\_pvReviewedFilledupFormUploadModal.cshtml" />
     <Content Include="Views\Shared\_pvReviewedFormForApprovalUploadModal.cshtml" />
+    <Content Include="Views\ShipCSKEndeavour\VGP.cshtml" />
+    <Content Include="Views\ShipCSKValiant\VGP.cshtml" />
+    <Content Include="Views\ShipCSKVanguard\VGP.cshtml" />
+    <Content Include="Views\ShipKHKEmpress\VGP.cshtml" />
+    <Content Include="Views\ShipKHKMajesty\VGP.cshtml" />
+    <Content Include="Views\ShipKHKVision\VGP.cshtml" />
+    <Content Include="Views\ShipKWKExcelsus\VGP.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

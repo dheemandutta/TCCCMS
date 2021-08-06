@@ -1695,5 +1695,13 @@ namespace TCCCMS.Controllers
 
         #endregion
 
+        public ActionResult VGP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "VGP");
+            return View(file);
+        }
     }
 }

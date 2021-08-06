@@ -646,6 +646,10 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM">29. KHK Vision - California Response Manual</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM2">29. KHK Vision - California Response Manual</filename> -->   
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
+      <!--<foldername description="VGP" actionname="VGP" name="27. VGP">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Vision NOI 2003 22Feb21</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK VISION_VGP</filename>
+      </foldername>-->
       <foldername description="California Response Manual" actionname="CRM" name="29. California Response Manual">
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Plan</filename>
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement Plan</filename>
@@ -1216,6 +1220,10 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KWK Excelsus NOI 2013 09Mar20</filename> -->
       
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
+      <foldername description="VGP" actionname="VGP" name="27. VGP">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK Excelsus NOI 2003 22Feb21</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS_VGP</filename>
+      </foldername>
       <foldername description="California Response Manual" actionname="CRM" name="29. KWK EXCELSUS - California Response Manual">
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS - California Response Manual</filename>
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS - General Arrangement Plan</filename>
@@ -1782,6 +1790,10 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">21. CSVA ETA 24Oct16</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. CSK VANGUARD_VGP Rev01</filename> -->
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
+      <foldername description="VGP" actionname="VGP" name="27. VGP">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Vanguard NOI 2003 22Feb21</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK VANGUARD_VGP</filename>
+      </foldername>
       <foldername description="California Response Manual" actionname="CRM" name="29. CSK VANGUARD - California Response Manual">
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
@@ -2350,7 +2362,11 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">21. CSVA ETA 24Oct16</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. CSK VALIANT_VGP</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be chnaged CSK Valiant NOI 2013 14Jun17</filename> -->
-			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->      
+			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
+      <foldername description="VGP" actionname="VGP" name="27. VGP">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant NOI 2003 22Feb21</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK VALIANT_VGP</filename>
+      </foldername>
        <foldername description="California Response Manual" actionname="CRM" name="29. CSK VALIANT - California Response Manual">
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
@@ -2928,6 +2944,10 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27.  VGP WILL BE CHANGED  CSK Endeavour NOI 2013 15Aug17</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. CSK ENDEAVOUR_VGP </filename> -->
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
+      <foldername description="VGP" actionname="VGP" name="27. VGP">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Endeavour NOI 2003 22Feb21</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK ENDEAVOUR_VGP</filename>
+      </foldername>
       <foldername description="California Response Manual" actionname="CRM" name="29. CSK ENDEAVOUR - California Response Manual">
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
@@ -3514,7 +3534,11 @@
 			</foldername>
 		    <!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. KHK EMPRESS_VGP Rev01</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KHK Empress NOI 2013 14Jul19</filename> -->
-			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->    
+			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
+      <foldername description="VGP" actionname="VGP" name="27. VGP">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Empress NOI 2003 22Feb21</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK EMPRESS_VGP</filename>
+      </foldername>
        <foldername description="California Response Manual" actionname="CRM" name="29. KHK EMPRESS - California Response Manual">
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
@@ -4073,6 +4097,10 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. KHK MAJESTY_VGP</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KHK Majesty NOI 2013 12Apr19</filename> -->
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
+      <foldername description="VGP" actionname="VGP" name="27. VGP">
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Majesty NOI 2003 22Feb21</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK MAJESTY_VGP</filename>
+      </foldername>
       <foldername description="California Response Manual" actionname="CRM" name="29. KHK MAJESTY - California Response Manual">
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
