@@ -11,8 +11,10 @@ using System.IO;
 
 using GemBox.Document;
 using GemBox.Document.Tables;
+using GemBox.Spreadsheet;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Collections;
 
 namespace TCCCMS.Controllers
 {
@@ -81,6 +83,7 @@ namespace TCCCMS.Controllers
             {
                 DownloadableFroms pOCO = new DownloadableFroms();
                 pOCO.ID         = pC.ID;
+                pOCO.CategoryId = pC.CategoryId;// Added on 5th Aug 2021 @BK
                 pOCO.FormName   = pC.FormName;
                 pOCO.Path       = pC.Path;
                 pOCO.Version    = pC.Version;
@@ -104,17 +107,28 @@ namespace TCCCMS.Controllers
 
         public JsonResult ApproveFilledUpForm(Forms form)
         {
-            string path = Server.MapPath("~/UploadFilledUpFormForApproval");
-            string uploadedForm = form.FilledUpFormName;
-            DocumentBL documentBl = new DocumentBL();
-            int filledUpFormId = form.ID;
-            int x = documentBl.ApproveFilledUpForm(filledUpFormId, Convert.ToInt32(Session["UserId"].ToString()), uploadedForm);
+            string path             = Server.MapPath("~/UploadFilledUpFormForApproval");
+            string uploadedForm     = form.FilledUpFormName;
+            int filledUpFormId      = form.ID;
+            int formsCategory       = form.CategoryId;//Added on 5th Aug 2021 @BK
+            DocumentBL documentBl   = new DocumentBL();
+            int x                   = documentBl.ApproveFilledUpForm(filledUpFormId, Convert.ToInt32(Session["UserId"].ToString()), uploadedForm);
             int y = 0;
             WriteErrorToText("Approved in DB", "ApproveFilledUpForm");
 
             if(x > 0)
             {
-                y= AddSignatureInForm(path, uploadedForm, Convert.ToInt32(Session["UserId"].ToString()));
+                //Added below condition on 5th Aug 2021 @BK
+                if (formsCategory == 16 || formsCategory == 17)
+                {
+                    y = AddApproverOrReviewerSignatureInReviewedForm("A",path, uploadedForm, Convert.ToInt32(Session["UserId"].ToString()));
+                }
+                else
+                {
+                    y = AddSignatureInForm(path, uploadedForm, Convert.ToInt32(Session["UserId"].ToString()));
+                }
+
+                //y = AddSignatureInForm(path, uploadedForm, Convert.ToInt32(Session["UserId"].ToString())); //--commented on 5th Aug 2021 @BK
             }
 
             if (y == 1)
@@ -237,7 +251,7 @@ namespace TCCCMS.Controllers
                     {
                         var paragraph = new Paragraph(document);
 
-                        Picture picture1 = new Picture(document, signPath, 100, 35, LengthUnit.Pixel);
+                        Picture picture1 = new Picture(document, signPath, 100, 35, GemBox.Document.LengthUnit.Pixel);
                         paragraph.Inlines.Add(picture1);
 
                         signatureTable.Rows[rowIndex].Cells[1].Blocks.Add(new Paragraph(document,
@@ -609,7 +623,7 @@ namespace TCCCMS.Controllers
                     fname = Path.GetFileNameWithoutExtension(fname);
                     
                     string fnameWithPath = Path.Combine(path, uniqueFormName);
-                    file.SaveAs(fnameWithPath);
+                    file.SaveAs(fnameWithPath);// file save into the root directory
 
                     form.FormName           = fname;
                     form.FilledUpFormName   = uniqueFormName;
@@ -619,7 +633,7 @@ namespace TCCCMS.Controllers
                     form.Approvers          = orderedApprovers;//added on 24th Jul 2021 @BK
                     form.Task               = task;
                     //form.CreateedBy = 1;//--- userId
-                    form.CreateedBy = Convert.ToInt32(Session["UserId"].ToString());//--- userId
+                    form.CreateedBy         = Convert.ToInt32(Session["UserId"].ToString());//--- userId
                     //---End---For Single form
                     //int count = documentBL.SaveFilledUpForm(form, ref catchMessage);
                     int count = documentBL.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
@@ -700,11 +714,11 @@ namespace TCCCMS.Controllers
 
                     //---End---For Single form
                     int x = documentBL.ReviewedFilledUpForm(Convert.ToInt32(Session["UserId"].ToString()), fname);
-                    //int y = 0;
-                    //if (count > 0 && task == "A")
-                    //{
-                    //    y = AppendSignatureTable(path, uniqueFormName, approversCount);
-                    //}
+                    int y = 0;
+                    if (x > 0 && task == "R")
+                    {
+                        y = AddApproverOrReviewerSignatureInReviewedForm(task, path, fname, Convert.ToInt32(Session["UserId"].ToString()));
+                    }
                     if (x > 0 && task == "R")
                     {
                         WriteErrorToText("Reviewed form copied from Temp", "ReviewedFilledUpForm");
@@ -730,6 +744,231 @@ namespace TCCCMS.Controllers
             }
         }
 
+        /// <summary>
+        /// not used. may use in later
+        /// </summary>
+        /// <param name="relPath"></param>
+        /// <param name="uploadedFormName"></param>
+        /// <param name="approverUserId"></param>
+        /// <returns></returns>
+        public static int AddReviewerSignatureInReviewedForm(string relPath, string uploadedFormName, int approverUserId)
+        {
+            var key = "b14ca5898a4e4133bbce2ea2315a1916";
+
+            int x = 0;
+
+            try
+            {
+                SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+                //ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+                //ComponentInfo.SetLicense("DN-2021Jan04-gSb72AQqrg9T4PQnvYNDgVtyd4tD3W3oBds51kfYp7zSsuFpxRw1a5Cxr49JiCLbMf2JCIKuinkUhgiQmuOz5yMoWdA==A");
+
+                string tempPath = relPath + "\\Temp\\";
+                string docPath = tempPath + uploadedFormName;
+                string sdocPath = relPath + "\\" + uploadedFormName;
+
+                string root = Path.GetDirectoryName(relPath);
+
+                ApproverMaster approver = new ApproverMaster();
+                ApproverSignBL aSignBL  = new ApproverSignBL();
+                approver                = aSignBL.GetAllApproverSign(approverUserId, uploadedFormName);
+
+                string decryptSignPath = AesOperation.DecryptString(key, approver.SignImagePath.ToString());
+
+                string signPath         = Path.Combine(root + "\\", decryptSignPath.Replace("/", "\\"));
+                string approverName     = approver.Name;
+                string designation      = approver.Position;
+                int approverPossition   = approver.ApprovedCount;
+
+                //int numberOfItems       = 4;// Number of rows of the signature tablee
+                int numberOfItems       = approver.ApproversCount;
+
+                // Load an Excel template.
+                var workbook = ExcelFile.Load(sdocPath);
+
+                // Get template sheet.
+                var worksheet = workbook.Worksheets[0];
+
+                // Find cells with placeholder text and set their values.
+                int row, column;
+                
+                if (approverPossition == 1 && worksheet.Cells.FindText("SM/FM", out row, out column))
+                {
+                    
+                    worksheet.Cells[row, column + 3].Value = approverName;
+                    worksheet.Pictures.Add(signPath,
+                                             new AnchorCell(worksheet.Columns[column + 8], worksheet.Rows[row], 100000, 100000),
+                                             new AnchorCell(worksheet.Columns[column + 12], worksheet.Rows[row + 1], 50000, 50000)
+                                          ).Position.Mode = PositioningMode.Move;
+                }
+                else if (approverPossition == 2 && worksheet.Cells.FindText("By D/GM", out row, out column))
+                {
+
+                    worksheet.Cells[row, column + 3].Value = approverName;
+                    worksheet.Pictures.Add(signPath,
+                                             new AnchorCell(worksheet.Columns[column + 8], worksheet.Rows[row], 100000, 100000),
+                                             new AnchorCell(worksheet.Columns[column + 12], worksheet.Rows[row + 1], 50000, 50000)
+                                          ).Position.Mode = PositioningMode.Move;
+                }
+                workbook.Save(docPath);
+                x = 1;
+            }
+            catch (Exception ex)
+            {
+                x = 0;
+            }
+
+
+            return x;
+        }
+
+        public static int AddApproverOrReviewerSignatureInReviewedForm(string task,string relPath, string uploadedFormName, int approverUserId)
+        {
+            var key = "b14ca5898a4e4133bbce2ea2315a1916";
+
+            int x = 0;
+
+            try
+            {
+                SpreadsheetInfo.SetLicense("FREE-LIMITED-KEY");
+                //ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+                //ComponentInfo.SetLicense("DN-2021Jan04-gSb72AQqrg9T4PQnvYNDgVtyd4tD3W3oBds51kfYp7zSsuFpxRw1a5Cxr49JiCLbMf2JCIKuinkUhgiQmuOz5yMoWdA==A");
+
+                string tempPath = relPath + "\\Temp\\";
+                string docPath = tempPath + uploadedFormName;
+                string sdocPath = relPath + "\\" + uploadedFormName;
+
+                string root = Path.GetDirectoryName(relPath);
+
+                ApproverMaster approver = new ApproverMaster();
+                ApproverSignBL aSignBL = new ApproverSignBL();
+                approver = aSignBL.GetAllApproverSign(approverUserId, uploadedFormName);
+
+                string decryptSignPath = AesOperation.DecryptString(key, approver.SignImagePath.ToString());
+
+                string signPath = Path.Combine(root + "\\", decryptSignPath.Replace("/", "\\"));
+                string approverName = approver.Name;
+                string designation = approver.Position;
+                int approverPossition = approver.ApprovedCount;
+
+                //int numberOfItems       = 4;// Number of rows of the signature tablee
+                int numberOfItems = approver.ApproversCount;
+
+                // Load an Excel template.
+                var workbook = ExcelFile.Load(sdocPath);
+
+                // Get template sheet.
+                var worksheet = workbook.Worksheets[0];
+
+                // Find cells with placeholder text and set their values.
+                int row, column;
+                if(task == "R")
+                {
+                    if (approverPossition == 1 && worksheet.Cells.FindText("SM/FM", out row, out column))
+                    {
+
+                        worksheet.Cells[row, column + 3].Value = approverName;
+                        worksheet.Pictures.Add(signPath,
+                                                 new AnchorCell(worksheet.Columns[column + 8], worksheet.Rows[row], 100000, 100000),
+                                                 new AnchorCell(worksheet.Columns[column + 12], worksheet.Rows[row + 1], 50000, 50000)
+                                              ).Position.Mode = PositioningMode.Move;
+                    }
+                    else if (approverPossition == 2 && worksheet.Cells.FindText("By D/GM", out row, out column))
+                    {
+
+                        worksheet.Cells[row, column + 3].Value = approverName;
+                        worksheet.Pictures.Add(signPath,
+                                                 new AnchorCell(worksheet.Columns[column + 8], worksheet.Rows[row], 100000, 100000),
+                                                 new AnchorCell(worksheet.Columns[column + 12], worksheet.Rows[row + 1], 50000, 50000)
+                                              ).Position.Mode = PositioningMode.Move;
+                    }
+                }
+                else if (task == "A")
+                {
+                    if (worksheet.Cells.FindText("By GM", out row, out column))
+                    {
+
+                        worksheet.Cells[row, column + 4].Value = approverName;
+                        worksheet.Pictures.Add(signPath,
+                                                 new AnchorCell(worksheet.Columns[column + 8], worksheet.Rows[row], 100000, 100000),
+                                                 new AnchorCell(worksheet.Columns[column + 12], worksheet.Rows[row + 1], 50000, 50000)
+                                              ).Position.Mode = PositioningMode.Move;
+                    }
+                }
+
+                workbook.Save(docPath);
+                x = 1;
+            }
+            catch (Exception ex)
+            {
+                x = 0;
+            }
+
+
+            return x;
+        }
+
+        [HttpPost]
+        public JsonResult UploadFilledUpReviewedFormForApproval(string formName, object approvers)
+        {
+            try
+            {
+                string catchMessage = "";
+                string relativePath = "~/UploadFilledUpFormForApproval/";
+                string fname;
+                fname = formName.Split('_').First();
+                Forms form = new Forms();
+                DocumentBL documentBL = new DocumentBL();
+               // string[] result = Array.ConvertAll<object, string>((object[])approvers, x => x.ToString());
+                //string[] result = ((IEnumerable)approvers).Cast<object>()
+                //                 .Select(x => x.ToString())
+                //                 .ToArray();
+                List<ApproverMaster> approverList = new List<ApproverMaster>();
+                //JObject json = JObject.Parse(result[0].Replace("[","").Replace("]","").ToString());
+                string orderedApprovers = "";
+                int approversCount = 0;
+                //approverList = JsonConvert.DeserializeObject<List<ApproverMaster>>(result[0]);
+                approverList = JsonConvert.DeserializeObject<List<ApproverMaster>>(approvers.ToString());
+                approversCount = approverList.Count();
+                int cnt = 0;
+                foreach (ApproverMaster a in approverList.OrderBy(a => a.SL))
+                {
+                    cnt = cnt + 1;
+                    if (cnt == 1)
+                        orderedApprovers = a.ID.ToString();
+                    else if (cnt > 1)
+                        orderedApprovers = orderedApprovers + "," + a.ID.ToString();
+
+
+                }
+                orderedApprovers = orderedApprovers + ",";
+
+                form.FormName           = fname;
+                form.FilledUpFormName   = formName;
+                form.FilePath           = relativePath;
+                //form.ShipId             = Convert.ToInt32(shipId);
+                form.ShipId             = Convert.ToInt32(Session["ShipId"].ToString());
+                form.Approvers          = orderedApprovers;//added on 24th Jul 2021 @BK
+                form.Task               = "A";
+                //form.CreateedBy           = 1;//--- userId
+                form.CreateedBy         = Convert.ToInt32(Session["UserId"].ToString());//--- userId
+
+                int count = documentBL.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
+
+                // Returns message that successfully uploaded  
+                return Json("File Uploaded Successfully!");
+            }
+            catch (Exception ex)
+            {
+                return Json("Error occurred. Error details: " + ex.Message);
+            }
+        }
+
+
+        public JsonResult UploadFilledUpReviewedFormFor(string formName)
+        {
+            return Json("File Uploaded Successfully!");
+        }
         #region Utility Methods
         private string GetUniqueFileName(string fileName)
         {//Added on 8th jan 2021 @bk
@@ -764,4 +1003,6 @@ namespace TCCCMS.Controllers
         #endregion
 
     }
+
+    
 }

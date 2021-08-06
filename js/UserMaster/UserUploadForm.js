@@ -328,13 +328,14 @@ function RemoveTempApprover(id) {
     SetUpTempApproverGrid();
 }
 
-function ApproveFilledUpForm(approverUserId,filledUpFormId,uploadedFormName) {
+function ApproveFilledUpForm(approverUserId,filledUpFormId,uploadedFormName,catId) {
 
     var posturl = $('#urlApproveFilledUpForm').val();
     var   Forms = {
         ID: filledUpFormId,
         ApproverUserId: approverUserId,
-        FilledUpFormName: uploadedFormName
+        FilledUpFormName: uploadedFormName,
+        CategoryId: catId
     };
        
     alert("Do You want to Approve this Form..?")
@@ -453,12 +454,28 @@ function SendMailForapproval(fromId,userId) {
 //-------------------------New Upload/Approver Function------Created -on 23rd jul 2021-----approver selection logic has changed----------------------------------------------
 function ClearFields2() {
     $('#fileUpload').val('');
-    $("#ddlApproverUser").prop('selectedIndex', -1);
+    //$("#ddlApproverUser").prop('selectedIndex', -1);
+    $("#ddlApproverUser").val('-1');
 
     $('#ddlApproverUser').css('border-color', 'lightgrey');
     $('#hdnOriginalFormName').val("");
+    $('#hdnFormsCategory').val("");
     tmpApproverList = [];
     $('#divTempApprover').addClass('displayNone');
+
+}
+
+function ClearFields3() {
+    $("#ddlApproverUser").val('-1');
+
+    $('#ddlApproverUser').css('border-color', 'lightgrey');
+    $('#hdnOriginalFormName').val("");
+    $('#hdnFormsCategory').val("");
+    $('#txtReviewedForm').val("");
+    $('#lblReviewedForm').text("");
+    tmpApproverList = [];
+    $('#divTempApprover').addClass('displayNone');
+    SetUpTempApproverGridNew();
 
 }
 function UploadFilledUpFormWithApprovers() {
@@ -633,11 +650,16 @@ function AddTempApproverNew(user) {
     var b = $('#hdnApproversCount').val();
     var c = approversCount;
     var totalCount = eval(a + c);
+    var totalApproverOrReviewer = 0;
     b = b.replace(/"/g, '\\"')
     //var totalCount = a + b;
     var idx = 0
     //var rank = user.Rank;
     var exist = false;
+
+    var catId = $('#hdnFormsCategory').val();
+    var task = $('#taskRadio input:radio:checked').val()
+    var tsk = $('#hdnTask').val();/* for Reviewed from Approval*/
     //if (tmpApproverList.length === 0) {
     //    tmpApproverList.push({
     //        SL: idx,
@@ -648,7 +670,19 @@ function AddTempApproverNew(user) {
 
     //    });
     //}
-    if (totalCount < 6) {
+
+
+    //Below three condition added on 5th Aug 2021 Due to new logic for form Review and Approved reviewed form
+    if ((catId === '16' || catId === '17') && task === 'R')
+        totalApproverOrReviewer = 2;
+    else if ((catId === '16' || catId === '17') && task === 'A')
+        totalApproverOrReviewer = 1;
+    else if ((catId === '16' || catId === '17') && tsk === 'A')/* for Reviewed from Approval*/
+        totalApproverOrReviewer = 1;
+    else 
+        totalApproverOrReviewer = 6;
+
+    if (totalCount < totalApproverOrReviewer) {
         //tmpApproverList.r
         idx = tmpApproverList.length + 1;
 
@@ -761,11 +795,20 @@ function RemoveTempApproverNew(id) {
 
 
 
-function SetHdnFormName(frm) {
+function SetHdnFormName(frm,cat) {
     $('#hdnOriginalFormName').val(frm);
+    $('#hdnFormsCategory').val(cat);
+}
+
+function SetReviewedFormName(frm,cat) {
+    $('#txtReviewedForm').val(frm);
+    $('#lblReviewedForm').text(frm);
+    $('#hdnFormsCategory').val(cat);
 }
 
 function UploadReviewedFilledUpForm() {
+
+    //This function called when Approver/Reviewer Upload the reviewed form
     var originalForm = $('#hdnOriginalFormName').val();
 
    // alert("All the fields are correct ..? \n Please Confirm..!");
@@ -856,6 +899,99 @@ function UploadReviewedFilledUpForm() {
     }
 }
 
+
+function UploadReviewedFilledUpFormWithApprovers() {
+    //var url = $('#urlReviewedFormForApproval').val();
+    var url = "/Forms/UploadFilledUpReviewedFormForApproval";
+    if (tmpApproverList.length === 0) {
+
+        $('#ddlApproverUser').css('border-color', 'Red');
+
+    }
+    else {
+        var frm = $('#txtReviewedForm').val();
+
+        $.ajax({
+            url: url,
+            type: "POST",
+            datatype: "json",
+            contentType: "application/json; charset=utf-8",  
+           // processData: false, // Not to process data  
+            data: JSON.stringify({
+                formName: frm,
+               approvers: JSON.stringify(tmpApproverList)
+            }),
+            //data: { categoryId: y},
+            success: function (result) {
+                alert(result);
+                //$('#txtReviewedForm').val('');
+                //$('#lblReviewedForm').text('');
+                //tmpApproverList = [];
+                $('#reviewedFilledUpFormModal').modal('hide');
+
+                ClearFields3();
+
+                toastr.options = {
+                    "closeButton": false,
+                    "debug": false,
+                    "newestOnTop": false,
+                    "progressBar": false,
+                    "positionClass": "toast-bottom-full-width",
+                    "preventDuplicates": false,
+                    "onclick": null,
+                    "showDuration": "300",
+                    "hideDuration": "1000",
+                    "timeOut": "5000",
+                    "extendedTimeOut": "1000",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                };
+
+                toastr.success("Form Uploaded Successfully");
+                $('#reviewedFilledUpFormModal').modal('hide');
+            },
+            error: function (err) {
+                alert(err.statusText);
+                $('#reviewedFilledUpFormModal').modal('hide');
+
+                ClearFields3();
+            }
+        });
+    }
+
+    
+}
+
+function Test() {
+    //var url = $('#urlReviewedFormForApproval').val();
+    
+        var frm = $('#txtReviewedForm').val();
+
+    $.ajax({
+        url: '/Forms/UploadFilledUpReviewedFormFor',
+        data: JSON.stringify( {
+            formName: frm
+        }),
+        type: "POST",
+        contentType: "application/json;charset=utf-8",
+        dataType: "json",
+
+
+        success: function (result) {
+            //loadData();
+            //$('#myModal').modal('hide');
+            alert('Added Successfully');
+
+        },
+        error: function (errormessage) {
+            alert(errormessage);
+            console.log(errormessage.responseText);
+        }
+    });
+    
+}
 
 
 

@@ -284,11 +284,12 @@ namespace TCCCMS.Controllers
             foreach (DownloadableFroms pC in pocoList)
             {
                 DownloadableFroms pOCO = new DownloadableFroms();
-                pOCO.ID = pC.ID;
-                pOCO.FormName = pC.FormName;
-                pOCO.Path = pC.Path;
-                pOCO.IsUpload = pC.IsUpload;
-                pOCO.Version = pC.Version;
+                pOCO.ID         = pC.ID;
+                pOCO.CategoryId = pC.CategoryId;// Added on 5th Aug 2021 @BK
+                pOCO.FormName   = pC.FormName;
+                pOCO.Path       = pC.Path;
+                pOCO.IsUpload   = pC.IsUpload;
+                pOCO.Version    = pC.Version;
 
                 pList.Add(pOCO);
             }

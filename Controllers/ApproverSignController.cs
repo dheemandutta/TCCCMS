@@ -85,7 +85,8 @@ namespace TCCCMS.Controllers
 
                     System.IO.File.Delete(path + fileName);
                 }
-                fileName = fileName + ".zip"/*extn*/;
+                //fileName = fileName + ".zip"/*extn*/;
+                fileName = fileName + extn;
                 // Get the complete folder path and store the file inside it.  
                 fnameWithPath = Path.Combine(path, fileName);
                 file.SaveAs(fnameWithPath);

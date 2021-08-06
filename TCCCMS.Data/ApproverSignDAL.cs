@@ -140,7 +140,7 @@ namespace TCCCMS.Data
 
                     //pcList.Add(pPOCOPC);
                 }
-                pPOCOPC.ApprovedCount = Convert.ToInt32(ds.Tables[1].Rows[0]["ApprovedCount"].ToString());
+                pPOCOPC.ApprovedCount = Convert.ToInt32(ds.Tables[1].Rows[0]["ApprovedCount"].ToString());//Approver SL
                 pPOCOPC.ApproversCount = Convert.ToInt32(ds.Tables[2].Rows[0]["ApproversCount"].ToString());
                 if(Convert.ToInt32(ds.Tables[3].Rows[0]["IsApprove"].ToString()) >0)
                 {

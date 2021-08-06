@@ -108,7 +108,7 @@ function SetUpGrid(CategoryId) {
 
                     //}
                     if (data == '1') {
-                        return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal" onclick="SetHdnFormName(\'' + row.FormName +'\')"  >Upload</button>';
+                        return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal" onclick="SetHdnFormName(\'' + row.FormName + '\',\'' + row.CategoryId +'\')"  >Upload</button>';
 
                     }
                 }
@@ -208,7 +208,7 @@ function SetUpGridNew(CategoryId) {
                     console.log(row.CategoryId);
                     console.log(data);
                     if (data == '1') {
-                        return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal"  onclick="SetHdnFormName(\'' + row.FormName +'\')"  >Upload</button>';
+                        return '<button type="button" class="btn btn-info btn-sm" style="background-color: #7db700;" data-toggle="modal" data-target="#filledUpFormModal" onclick="SetHdnFormName(\'' + row.FormName + '\',\'' + row.CategoryId + '\')"  >Upload</button>';
                     }
                 }
             },
