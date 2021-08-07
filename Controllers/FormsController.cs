@@ -887,8 +887,8 @@ namespace TCCCMS.Controllers
                 {
                     if (worksheet.Cells.FindText("By GM", out row, out column))
                     {
-
-                        worksheet.Cells[row, column + 4].Value = approverName;
+                        DateTime dt = DateTime.Now;
+                        worksheet.Cells[row, column + 4].Value = approverName + "/ " +dt.ToString("dd/MM/yyyy");
                         worksheet.Pictures.Add(signPath,
                                                  new AnchorCell(worksheet.Columns[column + 8], worksheet.Rows[row], 100000, 100000),
                                                  new AnchorCell(worksheet.Columns[column + 12], worksheet.Rows[row + 1], 50000, 50000)

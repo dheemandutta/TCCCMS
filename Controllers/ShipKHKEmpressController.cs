@@ -190,5 +190,14 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "CRM");
             return View(file);
         }
+
+        public ActionResult VGP()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "VGP");
+            return View(file);
+        }
     }
 }
