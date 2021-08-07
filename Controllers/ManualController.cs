@@ -95,10 +95,16 @@ namespace TCCCMS.Controllers
                 fsvm.SearchText = text;
 
                 manuals = manualBL.SearchManuals(currentPage, ref totalrecords, pgn.PageSize, Convert.ToInt32(volNo), searchText, shipId, category);
+                
                 pgn.Count = manuals.Count();
-                fsvm.ManualList = manuals.Skip((pgn.CurrentPage - 1) * pgn.PageSize).Take(pgn.PageSize).ToList();
-                fsvm.VolumeId = Convert.ToInt32(volNo);
+                //fsvm.ManualList = manuals.Skip((pgn.CurrentPage - 1) * pgn.PageSize).Take(pgn.PageSize).ToList();
                 fsvm.Pagination = pgn;
+
+                fsvm.VolumeId = Convert.ToInt32(volNo);
+
+                var pager = new Pager(manuals.Count(), currentPage);
+                fsvm.ManualList = manuals.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize).ToList();
+                fsvm.Pager = pager;
                
             }
 
