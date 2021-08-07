@@ -279,6 +279,7 @@
     <Content Include="css\owl.carousel.css" />
     <Content Include="css\owl.theme.css" />
     <Content Include="css\owl.theme.default.css" />
+    <Content Include="css\Pager.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\stellarnav.css" />
     <Content Include="css\style.css" />
@@ -2197,6 +2198,7 @@
     <Content Include="Views\FormsAndChecklists\Engine.cshtml" />
     <Content Include="Views\Shared\_pvReviewedFilledupFormUploadModal.cshtml" />
     <Content Include="Views\Shared\_pvReviewedFormForApprovalUploadModal.cshtml" />
+    <Content Include="Views\Shared\_pvPager.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

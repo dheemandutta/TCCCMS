@@ -74,6 +74,7 @@
     <Compile Include="Manual.cs" />
     <Compile Include="ManualViewModel.cs" />
     <Compile Include="Menu.cs" />
+    <Compile Include="Pager.cs" />
     <Compile Include="Pagination.cs" />
     <Compile Include="PermissionRolePOCO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
