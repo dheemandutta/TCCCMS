@@ -1,0 +1,39 @@
+﻿@model TCCCMS.Models.ShipManual
+@{
+    //ViewBag.Title = Model.ShipName;
+    ViewBag.Title = "ItAndComm";
+    //Layout = "~/Views/Shared/New_Layout.cshtml";
+    Layout = "~/Views/Shared/_C2A_Layout.cshtml";
+}
+@section Styles{
+    <link href="~/css/TccAccordian.css" rel="stylesheet" />
+
+
+}
+<h2>TCC Group IT and Communication Policies</h2>
+
+
+@Html.Raw(Model.BodyHtml)
+
+
+
+
+@section Scripts{
+    <script type="text/javascript">
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+}

@@ -381,13 +381,6 @@
 			<!-- </foldername> -->
 
 
-
-
-
-
-
-
-
       <foldername actionname="VRP" description="Vessel Response Plan (VRP)" name="17. VRP">
         <foldername actionname="" description="Core" name="Core">
           <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VRP-Core</filename>
@@ -460,6 +453,41 @@
 
 
 
+
+
+
+
+
+
+      <foldername actionname="ItAndComm" description="TCC Group IT and Communication Policies" name="TCC Group IT and Communication Policies">
+        <foldername actionname="" description="19.1 TCCHK TCC Fleet IT Policy 01May21" name="19.1 TCCHK TCC Fleet IT Policy 01May21">
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C1OO">Chapter 1 - Objectives Overview</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C2OC">Chapter 2 - Organization Chart of TCC Group ISD</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C3AUPF">Chapter 3 - Acceptable Use Policy - Fleet IT</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C3ISSP">Chapter 4 - Information System Security Policy</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C5SSP">Chapter 5 - Software Security Policy</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C6HSP">Chapter 6 - Hardware Security Policy</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C7ISP">Chapter 7 - Internet Security Policy</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C8CP">Chapter 8 - Communication Policy</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C9DRP">Chapter 9 - Disaster Recovery Policy</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="AFBYODP">Appendix A - TCC Fleet BYOD Policy</filename>
+        </foldername>
+        <foldername actionname="" description="19.2 TCCHK TCC Office IT Policy 01May21" name="19.2 TCCHK TCC Office IT Policy 01May21">
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C1MSCQ">Chapter 1 - Management Statement of Commitment to Quality</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C2OISD">Chapter 2 - Organization of ISD</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C3SU">Chapter 3 - System Usage</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C4ITSP">Chapter 4 - Information Technology Security Policy</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C5SU">Chapter 5 - Software Usage</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C6HU">Chapter 6 - Hardware Usage</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C7IU">Chapter 7 - Internet Usage</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C8FSU">Chapter 8 - File Server Usage</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C9EU">Chapter 9 - Email Usage</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C10LANP">Chapter 10 - LAN Policy</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C11BCP">Chapter 11 - Business Continuity Plan</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C12SAP">Chapter 12 - Ship Attendance Policy</filename>
+          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="AFBYODPO">Appendix A - TCC Fleet BYOD Policy (Office)</filename>
+        </foldername>
+      </foldername>
 
 
     </commontoall>

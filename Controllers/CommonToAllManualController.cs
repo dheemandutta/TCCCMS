@@ -335,5 +335,15 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "VRP");
             return View(file);
         }
+
+        public ActionResult ItAndComm()
+        {
+            Session["IsSearched"] = "0";
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "ItAndComm");
+            return View(file);
+        }
     }
 }
