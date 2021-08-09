@@ -29,15 +29,15 @@
             <h2 class="ta_title">Administration And Management</h2>
 
 
-            <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:130px;" href='@Url.Action("FillupFormList", "Forms", new { @qr =0})'><span>Waiting Approval </span></a>
-            <a type="button" class="btn btn-info btn-sm" style="background-color: #6AA84F; width: 130px;" href='@Url.Action("FillupFormList", "Forms" ,new { @qr =1})'><span>Approved </span></a>
+            <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:130px;" href='@Url.Action("FillupFormList", "Forms", new { @qr =0, currentPage = 1})'><span>Waiting Approval </span></a>
+            <a type="button" class="btn btn-info btn-sm" style="background-color: #6AA84F; width: 130px;" href='@Url.Action("FillupFormList", "Forms" ,new { @qr =1, currentPage = 1})'><span>Approved </span></a>
             <div>&nbsp;</div>
 
 
             <div style="margin:0 auto" class="tablecontainer">
                 @*<p align="right">
-                        <a href="~/RevisionHistory/Index"> Revision History </a>
-                    </p>*@
+                <a href="~/RevisionHistory/Index"> Revision History </a>
+            </p>*@
                 <input type="hidden" id="hdnrole" />
                 <table id="DownloadableFromsTable" class="display" cellspacing="0">
                     <thead>
@@ -47,7 +47,7 @@
                             <th>Forms Upload</th>
                             <th>Version</th>
                             @*<th>Edit</th>
-                                <th>Delete</th>*@
+                        <th>Delete</th>*@
                         </tr>
                     </thead>
                 </table>

@@ -15,6 +15,10 @@ namespace TCCCMS.Models
         public List<UserMasterPOCO> ApproverUserList { get; set; }
         public List<FormsApproval> ApproverList { get; set; }
 
+
+        public Pager Pager { get; set; } //addedon 9th Aug 2021 @bk for pagination
+        public int IsApprove { get; set; }//addedon 9th Aug 2021 @bk for query string
+
     }
 
     public class FormsApproval
