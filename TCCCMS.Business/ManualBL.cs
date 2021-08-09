@@ -257,6 +257,7 @@ namespace TCCCMS.Business
 
         public string GetChild(XmlNode node, ref int l, string part, string ctrlName, ref string relativePath)
         {
+            //var sessionValue = HttpContext.Current.Session["ActiveDepartment"];
             ManualBL manuBl = new ManualBL();
             StringBuilder sb = new StringBuilder();
             foreach (XmlNode item in node)
@@ -315,6 +316,7 @@ namespace TCCCMS.Business
                 {
                     int x = 0;
                     string fName = item.Attributes["name"].Value.ToString();
+                    string fActionName = item.Attributes["actionname"].Value.ToString(); // Added on 7th Aug 2021 (for C2A) 
                     string fDesc = item.Attributes["description"].Value.ToString();
                     string relFilePath = "";
                     relFilePath = relativePath + "/" + fName;

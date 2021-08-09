@@ -332,8 +332,201 @@ namespace TCCCMS.Controllers
             ManualBL manualBL = new ManualBL();
             ShipManual file = new ShipManual();
             string xPath = Server.MapPath(xmlPath);
-            file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "VRP");
+            //file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "VRP");
+            file.BodyHtml = GenerateC2AFolderBodyContentHtml(xPath, "VRP");
             return View(file);
         }
+
+        #region Generare Part menu copy here 7th Aug 2021
+        public string GenerateC2AFolderBodyContentHtml(string aXmlPath, string folderAction)
+        {
+            ManualBL manuBl = new ManualBL();
+            string xPath = aXmlPath;
+            XmlDocument xDoc = new XmlDocument();
+            xDoc.Load(xPath);
+            StringBuilder sb = new StringBuilder();
+            foreach (XmlNode node in xDoc.DocumentElement.ChildNodes)
+            {
+
+                sb.Append("<div class='container'>");
+                foreach (XmlNode c2a in node)
+                {
+                    Volume vol = new Volume();
+                    string c2aName = c2a.Attributes["name"].Value.ToString();
+                    string ctrlName = c2a.Attributes["controllername"].Value.ToString();
+                    string partName = c2aName.Split(' ').Last();
+
+                    string mainNodeName = c2a.Attributes["name"].Value.ToString();
+                    string relaiveFilePath = c2aName;//---this for pdf preview link path
+
+
+                    sb.Append("\n"); sb.Append("<div>");
+                    sb.Append("\n");
+
+                    #region child accordian
+                    foreach (XmlNode item in c2a)
+                    {
+                        Manual manual = new Manual();
+                        int l = 1;
+
+
+                        if (item.Name == "foldername")
+                        {
+                            string actionName = item.Attributes["actionname"].Value.ToString();
+                            if (actionName == folderAction)
+                            {
+                                string fName = item.Attributes["name"].Value.ToString();
+                                string fDesc = item.Attributes["description"].Value.ToString();
+                                string relFilePath = "";
+                                relFilePath = relaiveFilePath + "/" + fName;
+
+                                sb.Append("\n");
+                                string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
+                                sb.Append(sChild);
+                                sb.Append("\n");
+                            }
+                        }
+
+
+
+                    }
+
+                    #endregion
+                    sb.Append("\n");
+                    sb.Append("</div>");
+
+
+
+
+                }
+                sb.Append("\n");
+                sb.Append("</div>");
+
+                //WriteToText(sb);
+
+            }
+            return sb.ToString();
+        }
+
+        public string GetChild(XmlNode node, ref int l, string part, string ctrlName, ref string relativePath)
+        {
+            //var sessionValue = HttpContext.Current.Session["ActiveDepartment"];
+            ManualBL manuBl = new ManualBL();
+            StringBuilder sb = new StringBuilder();
+            foreach (XmlNode item in node)
+            {
+                Manual manual = new Manual();
+                if (item.Name == "filename")
+                {
+
+                    string filename = item.InnerText.ToString();
+                    string actionName = item.Attributes["actionname"].Value.ToString();
+                    string type = item.Attributes["doctype"].Value.ToString();
+                    string isDownload = item.Attributes["isdownloadable"].Value.ToString();
+                    // manual = manuBl.GetActionNameByFileName(filename + ".html");
+                    if (type == "DOC" && actionName != "")
+                    {
+                        sb.Append("\n");
+                        //sb.Append("<li ><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
+                        //sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
+                        //sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
+                        ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
+                        //sb.Append("<a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' >");
+                        //sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
+                        if (isDownload == "YES")
+                        {
+                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relativePath + "' >");
+                        }
+                        else
+                        {
+                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >"); //&fileName added on28th jun 2021
+                        }
+                        sb.Append(filename + "</a>");
+                        sb.Append("</br>");
+                    }
+                    else if (type == "PDF")
+                    {
+                        sb.Append("\n");
+                        sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
+                        sb.Append(filename + "</a>");
+                        sb.Append("</br>");
+
+                    }
+                    else if (type == "XLS")
+                    {
+                        if (isDownload == "YES")
+                        {
+                            sb.Append("\n");
+                            sb.Append("<a href='/" + ctrlName + "/Pages?formName=" + filename + "&relformPath=" + relativePath + "' >");
+                            sb.Append(filename + "</a>");
+                            sb.Append("</br>");
+                        }
+                    }
+
+
+                }
+                else if (item.Name == "foldername")
+                {
+                    int x = 0;
+                    string fName = item.Attributes["name"].Value.ToString();
+                    string fActionName = item.Attributes["actionname"].Value.ToString(); // Added on 7th Aug 2021 (for C2A) 
+                    string fDesc = item.Attributes["description"].Value.ToString();
+                    string relFilePath = "";
+                    relFilePath = relativePath + "/" + fName;
+                    sb.Append("\n");
+                    if(fActionName != "" && fActionName== "OFFICE")
+                    {
+                        if(Session["UserType"].ToString() == "2")
+                        {
+                            if (fDesc != "")
+                            {
+                                sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fDesc + "</button>");
+                            }
+                            else
+                            {
+                                sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fName + "</button>");
+                            }
+
+                            sb.Append("\n");
+                            sb.Append("<div class='panel' style='margin-left:5px;'>");
+                            x = l + 1;
+                            string sChild = GetChild(item, ref x, part, ctrlName, ref relFilePath);
+                            sb.Append(sChild);
+                            sb.Append("\n");
+                            sb.Append("</div>");
+                            sb.Append("\n");
+                        }
+                        
+                    }
+                    else
+                    {
+                        if (fDesc != "")
+                        {
+                            sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fDesc + "</button>");
+                        }
+                        else
+                        {
+                            sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fName + "</button>");
+                        }
+
+                        sb.Append("\n");
+                        sb.Append("<div class='panel' style='margin-left:5px;'>");
+                        x = l + 1;
+                        string sChild = GetChild(item, ref x, part, ctrlName, ref relFilePath);
+                        sb.Append(sChild);
+                        sb.Append("\n");
+                        sb.Append("</div>");
+                        sb.Append("\n");
+                    }
+
+                    
+                }
+
+            }
+
+            return sb.ToString();
+        }
+
+        #endregion
     }
 }

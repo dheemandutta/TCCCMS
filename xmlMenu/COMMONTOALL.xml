@@ -393,7 +393,7 @@
           <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VRP-Core</filename>
         </foldername>
         <foldername actionname="" description="Appendices" name="Appendices">
-          <foldername actionname="" description="TCC (HK) VRP AIV_V Office Only" name="TCC (HK) VRP AIV_V Office Only">
+          <foldername actionname="OFFICE" description="TCC (HK) VRP AIV_V Office Only" name="TCC (HK) VRP AIV_V Office Only">
             <foldername actionname="" description="TCC (HK) SMFF Documents" name="TCC (HK) SMFF Documents">
               <foldername actionname="" description="Contract_Funding Agreement" name="Contract_Funding Agreement">
                 <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VRP-TCC (HK) SMFF Agreement</filename>
