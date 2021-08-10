@@ -91,10 +91,10 @@ namespace TCCCMS.Business
             return documentDal.ReviewedFilledUpForm(approverUserId, uploadedFormName);
         }
 
-        public ApprovedFilledupFormAndApproverViewModel GetApprovedFilledUpForms(int userId)
+        public ApprovedFilledupFormAndApproverViewModel GetApprovedFilledUpForms(int userId, int currentPage = 1)
         {
             DocumentDAL documentDal = new DocumentDAL();
-            return documentDal.GetApprovedFilledUpForms(userId);
+            return documentDal.GetApprovedFilledUpForms(userId, currentPage);
         }
 
         public List<Forms> GetFillupFormsListForNotification(int aApproverUserId)

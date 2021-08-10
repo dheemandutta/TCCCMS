@@ -441,7 +441,7 @@ namespace TCCCMS.Data
         }
 
 
-        public ApprovedFilledupFormAndApproverViewModel GetApprovedFilledUpForms(int userId)
+        public ApprovedFilledupFormAndApproverViewModel GetApprovedFilledUpForms(int userId, int currentPage = 1)
         {
             ApprovedFilledupFormAndApproverViewModel AFFAVM = new ApprovedFilledupFormAndApproverViewModel();
             using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString))
@@ -489,7 +489,10 @@ namespace TCCCMS.Data
 
                         approvedFormList.Add(approvedForm);
                     }
-                    AFFAVM.ApprovedFormList = approvedFormList;
+
+
+                    AFFAVM.ApprovedFormList = approvedFormList; 
+
                 }
             }
                    

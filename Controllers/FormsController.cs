@@ -96,13 +96,27 @@ namespace TCCCMS.Controllers
             return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
 
-
-        public ActionResult FormsApprovalList()
+        /// <summary>
+        /// Modified on 9th Aug 2021 @BK
+        /// </summary>
+        /// <param name="currentPage"> Added on 9th Aug 2021 @BK</param>
+        /// <returns></returns>
+        public ActionResult FormsApprovalList(int currentPage = 1)
         {
+            ApprovedFilledupFormAndApproverViewModel affaVM = new ApprovedFilledupFormAndApproverViewModel();
             List<Forms> formList = new List<Forms>();
             DocumentBL documentBL = new DocumentBL();
             formList = documentBL.GetFilledupFormRequiredApprovalList(Convert.ToInt32(Session["UserId"].ToString()));
-            return View(formList);
+
+            //*******************************Added on 9th Aug 2021 @BK****************************************//
+            var pager = new Pager(formList.Count(), currentPage);
+            affaVM.ApprovedFormList = formList.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize).ToList();
+            affaVM.ApprovedFormList = affaVM.ApprovedFormList.OrderBy(a => a.IsApproved).ToList();
+            affaVM.Pager = pager;
+            //**********End*********************Added on 9th Aug 2021 @BK****************************************//
+
+            //return View(formList);
+            return View(affaVM);
         }
 
         public JsonResult ApproveFilledUpForm(Forms form)
@@ -149,12 +163,13 @@ namespace TCCCMS.Controllers
         /// add argument 'qr'
         /// </summary>
         /// <param name="qr"></param>
+        /// <param name="currentPage">Added on 9th Aug 2021 @bk</param>
         /// <returns></returns>
-        public ActionResult FillupFormList(string qr = "2")
+        public ActionResult FillupFormList(int currentPage = 1, string qr = "2")
         {
             ApprovedFilledupFormAndApproverViewModel affaVM = new ApprovedFilledupFormAndApproverViewModel();
             DocumentBL documentBL = new DocumentBL();
-            affaVM = documentBL.GetApprovedFilledUpForms(Convert.ToInt32(Session["UserId"].ToString())); // UserId not in use from 3rd Jul 2021
+            affaVM = documentBL.GetApprovedFilledUpForms(Convert.ToInt32(Session["UserId"].ToString()), currentPage); // UserId not in use from 3rd Jul 2021
             
             if(Convert.ToInt32(qr) != 2)// added on 03/07/2021 @BK
             {
@@ -166,6 +181,13 @@ namespace TCCCMS.Controllers
             //    var res = affaVM.ApprovedFormList.Where(af => af.IsApproved = 1);
             //}
             
+            //****************Added on 9th Aug 2021 @bk**********************//
+            var pager = new Pager(affaVM.ApprovedFormList.Count(), currentPage);
+            affaVM.ApprovedFormList= affaVM.ApprovedFormList.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize).ToList();
+            affaVM.Pager=pager;
+            affaVM.IsApprove= Convert.ToInt32(qr);
+            //********End********Added on 9th Aug 2021 @bk**********************//
+
             return View(affaVM);
         }
 
