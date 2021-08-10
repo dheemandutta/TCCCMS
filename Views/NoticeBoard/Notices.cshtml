@@ -9,8 +9,12 @@
 
 
 }
-<h2>Notices</h2>
-
+@*<h2>Notices</h2>*@
+<div class="container body-content">
+    <h2>Notices</h2>
+    <button type="button" class="button1 float-right btn btn-info btn-sm" style="background-color: #e90000;" id="btnShow" onclick="ExpandAll(this);">Show All</button>
+    @*<button type="button" class="button1 float-right" id="btnPrint"  onclick="PrintHtml('');">print</button>*@
+</div>
 
 @Html.Raw(Model.BodyHtml)
 
@@ -32,6 +36,34 @@
                     panel.style.display = "block";
                 }
             });
+        }
+
+        function ExpandAll(e) {
+            var text = e.innerText;
+            console.log(text);
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+            if (text === "Show All") {
+                e.innerText = "Hide All";
+            }
+            else if (text === "Hide All") {
+                e.innerText = "Show All";
+            }
+            for (i = 0; i < acc.length; i++) {
+                //this.classList.toggle("active");
+                var btn = acc[i];
+                var panel = btn.nextElementSibling;
+                if (text === "Show All") {
+                    btn.classList.toggle("active");
+                    panel.style.display = "block";
+                }
+                else if (text === "Hide All") {
+                    btn.classList.toggle("active");
+                    panel.style.display = "none";
+                }
+                
+                
+            }
         }
     </script>
 

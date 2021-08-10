@@ -2,7 +2,7 @@
 @model TCCCMS.Models.ApprovedFilledupFormAndApproverViewModel
 @{
     ViewBag.Title = "FormsApprovalList";
-    Layout = "~/Views/Shared/Admin_Layout.cshtml";
+    //Layout = "~/Views/Shared/Admin_Layout.cshtml";
 }
 @Html.Hidden("urlApproveFilledUpForm", @Url.Action("ApproveFilledUpForm", "Forms"))
 @Html.Hidden("urlFormsApprovalList", @Url.Action("FormsApprovalList", "Forms"))
@@ -53,17 +53,19 @@
                                                 }
                                                 else if (item.IsApproved == 0)
                                                 {
-                                                    <div class="form-group">
-                                                        @if (item.IsPreviousApprove == 100 || item.IsPreviousApprove == 1)
-                                                        {
-                                                            <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId')" />
-                                                        }
-                                                        else if (item.IsPreviousApprove == 0)
-                                                        {
-                                                            <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId')" disabled />
-                                                        }
+                                        <div class="form-group">
+                                            @if (item.IsPreviousApprove == 100 || item.IsPreviousApprove == 1)
+                                            {
+                                                @*----------below a tag added on 10th Aug 2021 -----------*@
+                                                <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>View</span></a>
+                                                <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId')" />
+                                            }
+                                            else if (item.IsPreviousApprove == 0)
+                                            {
+                                                <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId')" disabled />
+                                            }
 
-                                                    </div>
+                                        </div>
                                                 }
                                             }
                                             else if (item.Task == "R")

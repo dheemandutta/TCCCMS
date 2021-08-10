@@ -67,14 +67,14 @@
                                         <td>
                                             @if (item.IsApproved == 1)
                                             {
-                                                <label class="btn-sm accordion" style="background-color: #7db700;">Approved</label>
+                                                <label class="btn-sm btn-info  accordion" style="background-color: #7db700;">Approved</label>
                                             }
                                             else if (item.IsApproved == 2)
                                             {
-                                                <label class="btn-sm accordion" style="background-color: #7db700;">Reviewed</label>
+                                                <label class="btn-sm  btn-info  accordion" style="background-color: #7db700;">Reviewed</label>
                                             }
                                             else
-                                            {<label class="btn-sm accordion" style="background-color: #e90000;"> Pending</label>}
+                                            {<label class="btn-sm  btn-info  accordion" style="background-color: #e90000;"> Pending</label>}
 
                                         @*<div style="display:none">>
                                             <table id="tblApproverlList" class="ChildGrid table" cellpadding="0" cellspacing="0" >
@@ -136,18 +136,18 @@
                                                         @*<label>@approver.ApproverUserName</label>*@
                                                         @if (@approver.IsApprove == 1)
                                                         {
-                                                            <label class="btn-sm" style="background-color: #7db700;">Approved By &nbsp;</label>
+                                                            <label class="btn-sm btn-info" style="background-color: #7db700;">Approved By &nbsp;</label>
                                                         }
                                                         else if (@approver.IsApprove == 2)
                                                         {
-                                                            <label class="btn-sm" style="background-color: #7db700;">Reviewed By &nbsp;</label>
+                                                            <label class="btn-sm btn-info " style="background-color: #7db700;">Reviewed By &nbsp;</label>
                                                         }
                                                         else
                                                         {
-                                                            <label class="btn-sm" style="background-color: #e90000;">Pending By&nbsp;&nbsp;</label>
+                                                            <label class="btn-sm btn-info " style="background-color: #e90000;">Pending By&nbsp;&nbsp;</label>
                                                             if (@item.UploadedUserId.ToString() == @Session["UserId"].ToString())
                                                             {
-                                                                <button class="btn btn-sm" style="background-color: #e90000; margin-left:5px;" onclick="SendMailForapproval(@approver.ApprovalId,@approver.ApproverUserId);">Send Mail&nbsp;</button>
+                                                                <input type="button" value="Send Mail" class="btn btn-info btn-sm" style="background-color: #e90000; height:29px; margin-left:5px;" onclick="SendMailForapproval(@approver.ApprovalId,@approver.ApproverUserId);"/>
                                                             }
 
                                                         }
@@ -166,7 +166,7 @@
                                         <td>
                                             @if (@item.UploadedUserId.ToString() == @Session["UserId"].ToString())
                                             {
-                                                <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:80px; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>Download</span></a>
+                                                <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:80px; margin:2px;" href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>Download</span></a>
                                             }
                                             else
                                             {
@@ -175,7 +175,7 @@
                                             @if (@item.Task == "R")
                                             {
                                                 @*<a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>Send For approval</span></a>*@
-                                                <input type="button" id="btnUploadReview" value="Upload" class="btn btn-info btn-sm" style="background-color: #e90000; " data-toggle="modal" data-target="#reviewedFilledUpFormModal" onclick="SetReviewedFormName('@item.FilledUpFormName','@item.CategoryId');"/>
+                                                <input type="button" id="btnUploadReview" value="Upload" class="btn btn-info btn-sm" style="background-color: #e90000; margin:2px; height:29px; " data-toggle="modal" data-target="#reviewedFilledUpFormModal" onclick="SetReviewedFormName('@item.FilledUpFormName','@item.CategoryId');"/>
                                             }
 
 

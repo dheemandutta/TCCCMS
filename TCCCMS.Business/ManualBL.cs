@@ -271,45 +271,80 @@ namespace TCCCMS.Business
                     string type = item.Attributes["doctype"].Value.ToString();
                     string isDownload = item.Attributes["isdownloadable"].Value.ToString();
                     // manual = manuBl.GetActionNameByFileName(filename + ".html");
-                    if (type == "DOC" && actionName != "")
+                    if (ctrlName == "NoticeBoard") // Added this condition on 10th Aug 2021
                     {
-                        sb.Append("\n");
-                        //sb.Append("<li ><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
-                        //sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
-                        //sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
-                        ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
-                        //sb.Append("<a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' >");
-                        //sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
-                        if (isDownload == "YES")
+                        string status = item.Attributes["status"].Value.ToString();
+                        if (type == "PDF")
                         {
-                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relativePath + "' >");
-                        }
-                        else
-                        {
-                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >"); //&fileName added on28th jun 2021
-                        }
-                        sb.Append(filename + "</a>");
-                        sb.Append("</br>");
-                    }
-                    else if (type == "PDF")
-                    {
-                        sb.Append("\n");
-                        sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
-                        sb.Append(filename + "</a>");
-                        sb.Append("</br>");
+                            if(status=="DEL")
+                            {
+                                sb.Append("\n");
+                                //sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
+                                //sb.Append("<a href='#' >");
+                                sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                sb.Append("</br>");
+                            }
+                            else if (status == "NEW")
+                            {
+                                sb.Append("\n");
+                                sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
+                                //sb.Append("<ins style='color:white; background-color: #e90000;'>" + filename + "</ins></a>");
+                                sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                sb.Append("</br>");
+                            }
+                            else
+                            {
+                                sb.Append("\n");
+                                sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
+                                sb.Append(filename + "</a>");
+                                sb.Append("</br>");
+                            }
+                            
 
+                        }
                     }
-                    else if (type == "XLS")
+                    else
                     {
-                        if (isDownload == "YES")
+                        //content copied inside on 10th Aug 2021
+                        if (type == "DOC" && actionName != "")
                         {
                             sb.Append("\n");
-                            sb.Append("<a href='/" + ctrlName + "/Pages?formName=" + filename + "&relformPath=" + relativePath + "' >");
+                            //sb.Append("<li ><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
+                            //sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
+                            //sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
+                            ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
+                            //sb.Append("<a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' >");
+                            //sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
+                            if (isDownload == "YES")
+                            {
+                                sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relativePath + "' >");
+                            }
+                            else
+                            {
+                                sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >"); //&fileName added on28th jun 2021
+                            }
                             sb.Append(filename + "</a>");
                             sb.Append("</br>");
                         }
-                    }
+                        else if (type == "PDF")
+                        {
+                            sb.Append("\n");
+                            sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
+                            sb.Append(filename + "</a>");
+                            sb.Append("</br>");
 
+                        }
+                        else if (type == "XLS")
+                        {
+                            if (isDownload == "YES")
+                            {
+                                sb.Append("\n");
+                                sb.Append("<a href='/" + ctrlName + "/Pages?formName=" + filename + "&relformPath=" + relativePath + "' >");
+                                sb.Append(filename + "</a>");
+                                sb.Append("</br>");
+                            }
+                        }
+                    }
 
                 }
                 else if (item.Name == "foldername")
