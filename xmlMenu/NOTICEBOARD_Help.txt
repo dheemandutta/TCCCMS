@@ -1,0 +1,6 @@
+		<!-- ===========================Note======================================================== -->
+		<!-- **** If file has newly added then status will be 'NEW'********************************* -->
+		<!-- **** If file has deleted then status will be 'DEL' ************************************ -->
+		<!-- **** version is modified term of this XML file***************************************** -->
+		<!-- **** In previous of last version the deleted filename tag will be comment out ********* -->
+		<!-- ======================================================================================= -->

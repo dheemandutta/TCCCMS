@@ -1,11 +1,6 @@
 <xml>
 	<noticeboards>
-		<!-- ===========================Note======================================================== -->
-		<!-- **** If file has newly added then status will be 'NEW'********************************* -->
-		<!-- **** If file has deleted then status will be 'DEL' ************************************ -->
-		<!-- **** version is modified term of this XML file***************************************** -->
-		<!-- **** In previous of last version the deleted filename tag will be comment out ********* -->
-		<!-- ======================================================================================= -->
+
 		<noticeboard id="0" name="Notice Board" controllername="NoticeBoard">
 			<foldername name="Advisory" actionname="Advisory" description="Advisory">
 				<foldername name="F M A" actionname="" description="Fleet Marine Advisory">
