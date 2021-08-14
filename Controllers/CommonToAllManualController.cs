@@ -337,6 +337,17 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        public ActionResult ItAndComm()
+        {
+            Session["IsSearched"] = "0";
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            //file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "VRP");
+            file.BodyHtml = GenerateC2AFolderBodyContentHtml(xPath, "ItAndComm");
+            return View(file);
+        }
+
         #region Generare Part menu copy here 7th Aug 2021
         public string GenerateC2AFolderBodyContentHtml(string aXmlPath, string folderAction)
         {

@@ -868,6 +868,7 @@
     <Content Include="xmlMenu\ALLSHIPS1.xml" />
     <Content Include="xmlMenu\COMMONTOALL.xml" />
     <Content Include="xmlMenu\NOTICEBOARD.xml" />
+    <Content Include="xmlMenu\NOTICEBOARD_Help.txt" />
     <Content Include="xmlMenu\REFERENCEMATERIALS.xml" />
     <Content Include="Help\TCC User and Admin Guide by uttran.docx" />
     <Content Include="Help\TCC User Help.docx" />
