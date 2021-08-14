@@ -406,44 +406,43 @@ function LoadFormsApprovalList() {
 
 
 
-function SendMailForapproval(fromId,userId) {
+function SendMailForapproval(fromId,uploadedFormName,userId,task) {
 
 
 
     $.ajax({
-        url: '/Forms/SendMail',
+        url: '/Forms/SendMailForapproval',
         type: "POST",
-        //datatype: "json",
-        //contentType: "application/json; charset=utf-8",
-        contentType: false, // Not to set any content header  
+        datatype: "json",
+        contentType: "application/json; charset=utf-8",
+        //contentType: false, // Not to set any content header  
         processData: false, // Not to process data  
-        data: { approvalId: fromId},
-        //data: { categoryId: y},
+        data: JSON.stringify({ approvalId: fromId, approverUserId: userId, formName: uploadedFormName, task: task}),
         success: function (result) {
-            alert("Your Ticket Number : " + result);
-            ClearFields();
-            toastr.options = {
-                "closeButton": false,
-                "debug": false,
-                "newestOnTop": false,
-                "progressBar": false,
-                "positionClass": "toast-bottom-full-width",
-                "preventDuplicates": false,
-                "onclick": null,
-                "showDuration": "300",
-                "hideDuration": "1000",
-                "timeOut": "5000",
-                "extendedTimeOut": "1000",
-                "showEasing": "swing",
-                "hideEasing": "linear",
-                "showMethod": "fadeIn",
-                "hideMethod": "fadeOut"
-            };
+            alert(result);
+            //toastr.options = {
+            //    "closeButton": false,
+            //    "debug": false,
+            //    "newestOnTop": false,
+            //    "progressBar": false,
+            //    "positionClass": "toast-bottom-full-width",
+            //    "preventDuplicates": false,
+            //    "onclick": null,
+            //    "showDuration": "300",
+            //    "hideDuration": "1000",
+            //    "timeOut": "5000",
+            //    "extendedTimeOut": "1000",
+            //    "showEasing": "swing",
+            //    "hideEasing": "linear",
+            //    "showMethod": "fadeIn",
+            //    "hideMethod": "fadeOut"
+            //};
 
-            toastr.success("Added Successfully");
+            //toastr.success(result);
         },
         error: function (err) {
-            alert(err.statusText);
+            //alert(err.statusText);
+            alert(result);
         }
     });
 

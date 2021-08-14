@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using System.Text;
+using System.Net.Mail;
 
 
 using GemBox.Document;
@@ -15,6 +17,7 @@ using GemBox.Spreadsheet;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections;
+using System.Configuration;
 
 namespace TCCCMS.Controllers
 {
@@ -191,10 +194,76 @@ namespace TCCCMS.Controllers
             return View(affaVM);
         }
 
-        public JsonResult SendMailForapproval(string approvalId,string approverUserId)
+        public JsonResult SendMailForapproval(string approvalId,string approverUserId,string formName, string task)
         {
+            bool isSendSuccessfully = false;
+            //UserMasterBL umBL       = new UserMasterBL();
 
-            return Json("", JsonRequestBehavior.AllowGet);
+            isSendSuccessfully = SendMailToApprover(approverUserId, formName,task);
+
+            if (isSendSuccessfully)
+            {
+                return Json("Mail Sent Successfully", JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json("Send Mail Failed", JsonRequestBehavior.AllowGet);
+            }
+            //try
+            //{
+            //    UserMasterPOCO um       = new UserMasterPOCO();
+            //    StringBuilder mailBody  = new StringBuilder();
+            //    string senderEmail      = string.Empty;
+            //    string receiverEmail    = string.Empty;
+            //    string lTask            = string.Empty;
+            //    string lSubject         = string.Empty;
+            //    if (task == "R")
+            //    {
+            //        lTask = "Review";
+            //        lSubject = "FormsReview";
+            //    }
+            //    else if (task == "A")
+            //    {
+            //        lTask = "Approve";
+            //        lSubject = "FormsApproval";
+            //    }
+
+            //    if (Session["UserType"].ToString() == "1")
+            //    {
+            //        senderEmail = ConfigurationManager.AppSettings["shipEmail"];
+            //    }
+            //    else
+            //    {
+            //        senderEmail = Session["Email"].ToString();
+            //    }
+
+            //    um = umBL.GetUserByUserId(Convert.ToInt32( approverUserId));
+            //    receiverEmail = um.Email.ToString();
+
+            //    MailMessage mail = new MailMessage();
+
+            //    mailBody.Append("Form Name : ");
+            //    mailBody.Append(formName.ToString());
+            //    mailBody.Append("\n");
+            //    mailBody.Append("\n");
+            //    mailBody.Append("Messege : ");
+            //    mailBody.Append("You are requested to "+ lTask + " the above Form. Please Login and " + lTask + " the Form.");
+            //    mailBody.Append("\n");
+
+            //    if (!String.IsNullOrEmpty(senderEmail) && !String.IsNullOrEmpty(receiverEmail))
+            //    {
+                    
+            //        SendEmail.SendMail(lSubject, senderEmail, receiverEmail, mail, ref isSendSuccessfully);
+            //    }
+
+            //    return Json("Mail Sent Successfully", JsonRequestBehavior.AllowGet);
+            //}
+            //catch(Exception ex)
+            //{
+            //    return Json("Send Mail Failed", JsonRequestBehavior.AllowGet);
+            //}
+
+            //return Json("", JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult GetFillupFormsListForNotification()
@@ -609,6 +678,10 @@ namespace TCCCMS.Controllers
             }
             orderedApprovers = orderedApprovers + ",";
 
+            //-----------------------------------------------
+            bool isSendSuccessfully = false;
+            //-----------------------------------------------
+
             if (Request.Files.Count == 1)
             {
                 try
@@ -673,6 +746,15 @@ namespace TCCCMS.Controllers
 
                             System.IO.File.Delete(Path.Combine(path + "Temp\\", uniqueFormName));
                         }
+
+                        string[] approverUsers = orderedApprovers.Split(',');
+                        foreach(string s in approverUsers)
+                        {
+
+                            isSendSuccessfully = SendMailToApprover(s, uniqueFormName, task);
+                        }
+
+                        
                     }
 
                     // Returns message that successfully uploaded  
@@ -1023,6 +1105,71 @@ namespace TCCCMS.Controllers
             //return s+ Path.GetExtension(fileName);
         }
         #endregion
+
+
+        public bool SendMailToApprover(string approverUserId, string formName, string task)
+        {
+            bool isSendSuccessfully = false;
+            UserMasterBL umBL = new UserMasterBL();
+
+            try
+            {
+                UserMasterPOCO um = new UserMasterPOCO();
+                StringBuilder mailBody = new StringBuilder();
+                string senderEmail = string.Empty;
+                string receiverEmail = string.Empty;
+                string lTask = string.Empty;
+                string lSubject = string.Empty;
+                if (task == "R")
+                {
+                    lTask = "Review";
+                    lSubject = "FormsReview";
+                }
+                else if (task == "A")
+                {
+                    lTask = "Approve";
+                    lSubject = "FormsApproval";
+                }
+
+                if (Session["UserType"].ToString() == "1")
+                {
+                    senderEmail = ConfigurationManager.AppSettings["shipEmail"];
+                }
+                else
+                {
+                    senderEmail = Session["Email"].ToString();
+                }
+
+                um = umBL.GetUserByUserId(Convert.ToInt32(approverUserId));
+                receiverEmail = um.Email.ToString();
+
+                MailMessage mail = new MailMessage();
+
+                mailBody.Append("Form Name : ");
+                mailBody.Append(formName.ToString());
+                mailBody.Append("\n");
+                mailBody.Append("\n");
+                mailBody.Append("Messege : ");
+                mailBody.Append("You are requested to " + lTask + " the above Form. Please Login and " + lTask + " the Form.");
+                mailBody.Append("\n");
+                mail.Body = mailBody.ToString();
+
+                if (!String.IsNullOrEmpty(senderEmail) && !String.IsNullOrEmpty(receiverEmail))
+                {
+
+                    SendEmail.SendMail(lSubject, senderEmail, receiverEmail, mail, ref isSendSuccessfully);
+                }
+
+                
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            return isSendSuccessfully;
+            
+        }
 
     }
 
