@@ -8,6 +8,8 @@ using System.Text;
 using System.IO;
 using System.Configuration;
 
+using TCCCMS.CryptoUtility;
+
 namespace TCCCMS.Controllers
 {
 	public class SendEmail
@@ -129,5 +131,56 @@ namespace TCCCMS.Controllers
 			}
 
 		}
+
+		public static void SendMail(string subject, string senderEmail, string receiverEmail, MailMessage mailBodyMsg, ref bool isSendSuccessfully)
+		{
+
+			try
+			{
+				string smtpEmail		= ConfigurationManager.AppSettings["smtpEmail"];
+				string smtpEmailPwd		= ConfigurationManager.AppSettings["smtpEmailPwd"];
+				//string smtpEmailPwd		=EncodeDecode.DecryptString( ConfigurationManager.AppSettings["smtpEmailPwd"]);
+				string smtpServer		= ConfigurationManager.AppSettings["smtpServer"];
+				int smtpPort			= Convert.ToInt32(ConfigurationManager.AppSettings["smtpPort"]);
+				string supportEmail		= ConfigurationManager.AppSettings["supportEmail"];
+				StringBuilder mailBody	= new StringBuilder();
+				MailMessage mail		= new MailMessage();
+				mail.From				= new MailAddress(smtpEmail);
+				//mail.To.Add(supportEmail);
+				mail.To.Add(receiverEmail);
+
+				mail.Subject			= subject;
+				mail					= mailBodyMsg;
+
+				//SmtpClient smtp = new SmtpClient("smtp.gmail.com");
+				//smtp.EnableSsl = true;
+				//smtp.Port = 587;
+				//smtp.UseDefaultCredentials = false;
+				////smtp.Credentials = new System.Net.NetworkCredential(senderEmail, "tcccms202112345");
+				//smtp.Credentials = new System.Net.NetworkCredential("cableman24x7@gmail.com", "cableman24x712345");
+				SmtpClient smtp				= new SmtpClient(smtpServer);
+				smtp.EnableSsl				= true;
+				smtp.Port					= smtpPort;
+				smtp.UseDefaultCredentials	= false;
+				smtp.DeliveryMethod			= SmtpDeliveryMethod.Network;
+				smtp.Credentials			= new System.Net.NetworkCredential(smtpEmail, smtpEmailPwd);
+
+				smtp.Send(mail);
+				isMailSendSuccessful		= true;
+				isSendSuccessfully			= true;
+
+			}
+			catch (Exception ex)
+			{
+				//EventLog.WriteEntry("DataExport-SendMail", ex.Message + " :" + ex.InnerException, EventLogEntryType.Error);
+				isMailSendSuccessful = false;
+				isSendSuccessfully = false;
+
+			}
+
+		}
+
+
+
 	}
 }
