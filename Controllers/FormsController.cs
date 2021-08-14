@@ -750,8 +750,8 @@ namespace TCCCMS.Controllers
                         string[] approverUsers = orderedApprovers.Split(',');
                         foreach(string s in approverUsers)
                         {
-
-                            isSendSuccessfully = SendMailToApprover(s, uniqueFormName, task);
+                            if(s !="")
+                                isSendSuccessfully = SendMailToApprover(s, uniqueFormName, task);
                         }
 
                         
