@@ -137,6 +137,9 @@ namespace TCCCMS.Controllers
 
 			try
 			{
+				MailMessage mail		= new MailMessage();
+				mail					= mailBodyMsg;
+
 				string smtpEmail		= ConfigurationManager.AppSettings["smtpEmail"];
 				string smtpEmailPwd		= ConfigurationManager.AppSettings["smtpEmailPwd"];
 				//string smtpEmailPwd		=EncodeDecode.DecryptString( ConfigurationManager.AppSettings["smtpEmailPwd"]);
@@ -144,13 +147,12 @@ namespace TCCCMS.Controllers
 				int smtpPort			= Convert.ToInt32(ConfigurationManager.AppSettings["smtpPort"]);
 				string supportEmail		= ConfigurationManager.AppSettings["supportEmail"];
 				StringBuilder mailBody	= new StringBuilder();
-				MailMessage mail		= new MailMessage();
+				
 				mail.From				= new MailAddress(smtpEmail);
 				//mail.To.Add(supportEmail);
 				mail.To.Add(receiverEmail);
 
 				mail.Subject			= subject;
-				mail					= mailBodyMsg;
 
 				//SmtpClient smtp = new SmtpClient("smtp.gmail.com");
 				//smtp.EnableSsl = true;
