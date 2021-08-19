@@ -54,6 +54,7 @@ namespace TCCCMS.Controllers
         [HttpPost]
         public JsonResult LoadData()
         {
+            _shipId = Convert.ToInt32(Session["ShipId"].ToString()); // Added on 17th Aug 2021
             int draw, start, length;
             int pageIndex = 0;
 
@@ -83,7 +84,7 @@ namespace TCCCMS.Controllers
             int totalrecords = 0;
 
             List<UserMasterPOCO> pocoList = new List<UserMasterPOCO>();
-            pocoList = bL.GetAllUserPageWise(pageIndex, ref totalrecords, length, Convert.ToInt32(Session["UserType"].ToString()));
+            pocoList = bL.GetAllUserPageWise(pageIndex, ref totalrecords, length, Convert.ToInt32(Session["UserType"].ToString()), _shipId);
             //List<UserMasterPOCO> pList = new List<UserMasterPOCO>();
             //foreach (UserMasterPOCO pC in pocoList)
             //{

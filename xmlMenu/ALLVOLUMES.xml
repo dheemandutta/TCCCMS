@@ -155,6 +155,7 @@
 		</volume>
 		
 		<volume id="4" name="Volume IV" controllername="ShipboardOperattion">
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Flow Chart</filename>
 			<foldername actionname="" description="" name="Sec 1 Health Safety and Environmental">
 				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Ch 15 Annex 1 - Guidance on Usage of LOTO Kit Items</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GSS">Chapter 1 General Shipboard Safety</filename>
@@ -268,7 +269,9 @@
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 2 Interview Record</filename>
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 3 Vessel Condition Report</filename>
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 4 Remote Internal Audit Report - ISM-MLC-EMS</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="C3A4RIAR">Chapter 3 Annex 4 Remote Internal Audit Report - ISM-MLC-EMS</filename>
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 5 Remote Internal Audit Report - ISPS</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="C3A6IRAS">Chapter 3 Annex 6 Internal Remote Audit-Schedule</filename>
 				</foldername>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SafetyMeeting">Chapter 4 Safety Meeting</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SIF">Chapter 5 Safety Induction and Familiarisation</filename>
@@ -291,6 +294,7 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IncidentManagement">Chapter 4 Incident Management</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="JHRA">Chapter 5 Job Hazard and Risk Analyses</filename>
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S5Contents">Contents</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="C6HF">Chapter 6 Human Factors - TCCS</filename>
 			</foldername>
 			<foldername actionname="" description="" name="Sec 6 Administration Management">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDC">Chapter 1 Document and Data Control</filename>

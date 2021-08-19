@@ -280,6 +280,7 @@
     <Content Include="css\owl.theme.css" />
     <Content Include="css\owl.theme.default.css" />
     <Content Include="css\Pager.css" />
+    <Content Include="css\Pager1.css" />
     <Content Include="css\responsive.css" />
     <Content Include="css\stellarnav.css" />
     <Content Include="css\style.css" />

@@ -483,8 +483,8 @@ function UploadFilledUpFormWithApprovers() {
 
     alert("All the fields are correct ..? \n Please Confirm..!");
     //$('#fileUpload').val('');
-    var url = $('#urlFilledUpForm').val();
-    //var url = "/UserMaster/UploadFilledUpForm";
+    //var url = $('#urlFilledUpForm').val();
+    var url = "/UserMaster/UploadFilledUpFormNew";// Added on 19th Aug 2021
     //********--------------------------------------------------------------------------
     //Checking whether FormData is available in browser  
     if (window.FormData !== undefined) {
@@ -544,25 +544,25 @@ function UploadFilledUpFormWithApprovers() {
                         ClearFields2();
                         $('#filledUpFormModal').modal('hide');
 
-                        toastr.options = {
-                            "closeButton": false,
-                            "debug": false,
-                            "newestOnTop": false,
-                            "progressBar": false,
-                            "positionClass": "toast-bottom-full-width",
-                            "preventDuplicates": false,
-                            "onclick": null,
-                            "showDuration": "300",
-                            "hideDuration": "1000",
-                            "timeOut": "5000",
-                            "extendedTimeOut": "1000",
-                            "showEasing": "swing",
-                            "hideEasing": "linear",
-                            "showMethod": "fadeIn",
-                            "hideMethod": "fadeOut"
-                        };
+                        //toastr.options = {
+                        //    "closeButton": false,
+                        //    "debug": false,
+                        //    "newestOnTop": false,
+                        //    "progressBar": false,
+                        //    "positionClass": "toast-bottom-full-width",
+                        //    "preventDuplicates": false,
+                        //    "onclick": null,
+                        //    "showDuration": "300",
+                        //    "hideDuration": "1000",
+                        //    "timeOut": "5000",
+                        //    "extendedTimeOut": "1000",
+                        //    "showEasing": "swing",
+                        //    "hideEasing": "linear",
+                        //    "showMethod": "fadeIn",
+                        //    "hideMethod": "fadeOut"
+                        //};
 
-                        toastr.success("Form Updated Successfully");
+                        //toastr.success("Form Updated Successfully");
                         $('#filledUpFormModal').modal('hide');
                     },
                     error: function (err) {
@@ -901,7 +901,8 @@ function UploadReviewedFilledUpForm() {
 
 function UploadReviewedFilledUpFormWithApprovers() {
     //var url = $('#urlReviewedFormForApproval').val();
-    var url = "/Forms/UploadFilledUpReviewedFormForApproval";
+    //var url = "/Forms/UploadFilledUpReviewedFormForApproval";// Commented on 19th Aug 2021
+    var url = "/Forms/UploadFilledUpReviewedFormForApprovalNew"; // Added on 19th Aug 2021
     if (tmpApproverList.length === 0) {
 
         $('#ddlApproverUser').css('border-color', 'Red');
