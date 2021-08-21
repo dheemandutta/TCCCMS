@@ -205,7 +205,7 @@ namespace TCCCMS.Controllers
             dept.RankId = pOCOList.RankId;
             dept.ShipId = pOCOList.ShipId;
 
-            //dept.UserCode = pOCOList.UserCode;
+            dept.UserType = pOCOList.UserType;
             dept.IsAdmin = pOCOList.IsAdmin;
             dept.RoleId = pOCOList.RoleId;
 

@@ -18,7 +18,8 @@
 </style>
 
 @Html.Hidden("loaddata", @Url.Action("LoadData", "Forms"))
-@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpForm", "Forms"))
+@*@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpForm", "Forms"))*@
+@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpFormNew", "Forms"))
 
 
 
@@ -71,7 +72,7 @@
         console.log($(this).find('input').val());
         var val = $(this).val();
         var s = $('#taskRadio input:radio:checked').val()
-        console.log('bin-'+ s);
+        console.log('bin-' + s);
     });
 
     $('#my-btns .btn').on('click', function (event) {

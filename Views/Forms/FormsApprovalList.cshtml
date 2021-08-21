@@ -53,19 +53,20 @@
                                                 }
                                                 else if (item.IsApproved == 0)
                                                 {
-                                        <div class="form-group">
-                                            @if (item.IsPreviousApprove == 100 || item.IsPreviousApprove == 1)
-                                            {
-                                                @*----------below a tag added on 10th Aug 2021 -----------*@
-                                                <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>View</span></a>
-                                                <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId')" />
-                                            }
-                                            else if (item.IsPreviousApprove == 0)
-                                            {
-                                                <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId')" disabled />
-                                            }
+                                                    <div class="form-group">
+                                                        @if (item.IsPreviousApprove == 100 || item.IsPreviousApprove == 1)
+                                                        {
+                                                            @*----------below a tag added on 10th Aug 2021 -----------*@
+                                                            <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>View</span></a>
+                                                            @*<input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId')" />*@
+                                                            <input type="button" id="btnApprove" value="Upload Approved Form" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#approvedFilledUpFormModal" onclick="SetApprovedFormInfo(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId');" />
+                                                        }
+                                                        else if (item.IsPreviousApprove == 0)
+                                                        {
+                                                            <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" disabled />
+                                                        }
 
-                                        </div>
+                                                    </div>
                                                 }
                                             }
                                             else if (item.Task == "R")
@@ -168,6 +169,8 @@
 
 
     @Html.Partial("_pvReviewedFilledupFormUploadModal")
+
+    @Html.Partial("_pvApprovedFilledupFormUploadModal")
 
 </div>
 

@@ -903,14 +903,15 @@ namespace TCCCMS.Controllers
                     int y = 0;
                     if(task == "A")
                     {
-                        uniqueFormName = Path.GetFileNameWithoutExtension(fname) + ".pdf";
+                        
                         y = ConvertToPDFForApproval(path, uniqueFormName, task);
+                        //uniqueFormName = Path.GetFileNameWithoutExtension(uniqueFormName) + ".pdf";
                     }
                    
                     
 
                     form.FormName = fname;
-                    form.FilledUpFormName = uniqueFormName;
+                    form.FilledUpFormName = Path.GetFileNameWithoutExtension(uniqueFormName) + ".pdf"; ;
                     //form.FilledUpFormName = uniquePdfname;
                     form.FilePath = relativePath;
                     //form.ShipId             = Convert.ToInt32(shipId);
@@ -1110,6 +1111,81 @@ namespace TCCCMS.Controllers
                         if (System.IO.File.Exists(Path.Combine(path + "\\Temp\\", fname)))
                         {
                             System.IO.File.Copy(Path.Combine(path + "\\Temp\\", fname), Path.Combine(path+"\\", fname), true);
+
+                            System.IO.File.Delete(Path.Combine(path + "\\Temp\\", fname));
+                        }
+                    }
+
+                    // Returns message that successfully uploaded  
+                    return Json("File Uploaded Successfully!");
+                }
+                catch (Exception ex)
+                {
+                    return Json("Error occurred. Error details: " + ex.Message);
+                }
+            }
+            else
+            {
+                return Json("No files selected.");
+            }
+        }
+
+        [HttpPost]
+        public JsonResult UploadApprovedFilledUpForm(string formId, string approverId, string formName, object cat)
+        {
+            string catchMessage = "";
+            List<Forms> formList = new List<Forms>();
+            DocumentBL documentBL = new DocumentBL();
+
+
+            if (Request.Files.Count == 1)
+            {
+                try
+                {
+                    string relativePath = "~/UploadFilledUpFormForApproval";
+                    string path = Server.MapPath(relativePath);
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    //  Get all files from Request object  
+                    HttpFileCollectionBase files = Request.Files;
+
+                    //---For Single form
+                    Forms form = new Forms();
+
+                    HttpPostedFileBase file = files[0];
+                    string fname;
+
+                    // Checking for Internet Explorer  
+                    if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                    {
+                        string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                        fname = testfiles[testfiles.Length - 1];
+                    }
+                    else
+                    {
+                        fname = file.FileName;
+                    }
+                    //string uniqueFormName = GetUniqueFileNameWithUserId(fname);
+                    // Get the complete folder path and store the file inside it. 
+
+                    string fnameWithPath = Path.Combine(path + "\\Temp\\", fname);
+
+                    //fname = Path.GetFileNameWithoutExtension(fname);
+                    file.SaveAs(fnameWithPath);
+
+                    //---End---For Single form
+                   // int x = documentBL.ReviewedFilledUpForm(Convert.ToInt32(Session["UserId"].ToString()), fname);
+                    int x = documentBL.ApproveFilledUpForm(Convert.ToInt32( formId), Convert.ToInt32(Session["UserId"].ToString()), formName);
+                    int y = 0;
+                    
+                    if (x > 0 )
+                    {
+                        WriteErrorToText("Reviewed form copied from Temp", "ReviewedFilledUpForm");
+                        if (System.IO.File.Exists(Path.Combine(path + "\\Temp\\", fname)))
+                        {
+                            System.IO.File.Copy(Path.Combine(path + "\\Temp\\", fname), Path.Combine(path + "\\", fname), true);
 
                             System.IO.File.Delete(Path.Combine(path + "\\Temp\\", fname));
                         }
