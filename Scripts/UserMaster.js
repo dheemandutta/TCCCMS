@@ -684,7 +684,8 @@ function GetUserByUserId(UserId) {
         dataType: "json",
         success: function (result) {
             $('#UserId').val(result.UserId);
-            if (userType === '1') {
+            editUserType = result.UserType.toString(); //Added on 20th Aug 2021
+            if (editUserType === '1') {// 'UserType' changed to 'result.UserType' on 20th Aug 2021
                 //debugger;
                
                 $('#UserName').val(result.UserName);
@@ -708,7 +709,7 @@ function GetUserByUserId(UserId) {
 
                 $('#IsAdmin').val(result.IsAdmin);
             }
-            else if (userType === '2') {
+            else if (editUserType === '2') { // 'UserType' changed to 'result.UserType' on 20th Aug 2021
                 $('#cUserName').val(result.UserName);
                 $('#cUserCode').val(result.UserCode);
                 $('#cPassword').val(result.Password);
@@ -758,6 +759,7 @@ function confirmPass() {
 ///---------------Tabs---------------------
 var selected_tab = 0;
 var userType = 2;
+var editUserType = '0';//Added on 20th Aug 2021
 function LoadTab() {
 
     $.ajax({//----added on 6th Jul 2021 @BK
@@ -767,7 +769,13 @@ function LoadTab() {
         dataType: "json",
         success: function (result) {
             //debugger;
+
             userType = result;
+            //above line alter by below if..else condition
+            //if (editUserType ==='0')
+            //    userType = result;
+            //else
+            //    userType = editUserType;
 
             //----added on 6th Jul 2021 @BK
             if (userType === '1') {
@@ -776,7 +784,16 @@ function LoadTab() {
                 $('#liTab2').prop('hidden', true);
             }
             else if (userType === '2') {
-                selected_tab = 1;
+                if (editUserType === '1') {
+                    selected_tab = 0;
+                    //$('#liTab2').prop('hidden', true);
+                   // $('#liTab2').prop('hidden', true);
+                }
+                else {
+                    selected_tab = 1;
+                    //$('#liTab2').prop('hidden', false);
+                }
+                //selected_tab = 1;
                 $('#liTab2').prop('hidden', false);
             }
 

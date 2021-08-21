@@ -111,8 +111,16 @@ namespace TCCCMS.Data
         }
 
 
-
-        public List<UserMasterPOCO> GetAllUserPageWise(int pageIndex, ref int recordCount, int length, int UserType)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="pageIndex"></param>
+        /// <param name="recordCount"></param>
+        /// <param name="length"></param>
+        /// <param name="UserType"></param>
+        /// <param name="shipId">Added on 17th Aug 2021 @BK</param>
+        /// <returns></returns>
+        public List<UserMasterPOCO> GetAllUserPageWise(int pageIndex, ref int recordCount, int length, int UserType,int shipId)
         {
             List<UserMasterPOCO> pOList = new List<UserMasterPOCO>();
             List<UserMasterPOCO> equipmentsPO = new List<UserMasterPOCO>();
@@ -127,6 +135,7 @@ namespace TCCCMS.Data
                     cmd.Parameters.Add("@RecordCount", SqlDbType.Int, 4);
                     cmd.Parameters["@RecordCount"].Direction = ParameterDirection.Output;   
                     cmd.Parameters.AddWithValue("@UserType", UserType);
+                    cmd.Parameters.AddWithValue("@VesselID", shipId);//Added on 17th Aug 2021 @BK
                     con.Open();
 
                     DataSet ds = new DataSet();

@@ -18,7 +18,8 @@
 </style>
 
 @Html.Hidden("loaddata", @Url.Action("LoadData", "Forms"))
-@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpForm", "Forms"))
+@*@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpForm", "Forms"))*@
+@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpFormNew", "Forms"))
 
 
 
@@ -36,8 +37,8 @@
 
             <div style="margin:0 auto" class="tablecontainer">
                 @*<p align="right">
-                <a href="~/RevisionHistory/Index"> Revision History </a>
-            </p>*@
+                        <a href="~/RevisionHistory/Index"> Revision History </a>
+                    </p>*@
                 <input type="hidden" id="hdnrole" />
                 <table id="DownloadableFromsTable" class="display" cellspacing="0">
                     <thead>
@@ -47,7 +48,7 @@
                             <th>Forms Upload</th>
                             <th>Version</th>
                             @*<th>Edit</th>
-                        <th>Delete</th>*@
+                                <th>Delete</th>*@
                         </tr>
                     </thead>
                 </table>
@@ -66,7 +67,7 @@
 <script>
 
     $('#ddlApproverUser').on('change', function () {
-        
+
         GetUserByApproverUserId(this.value);
         //$('#ddRank').prop('disabled', true);
     });
@@ -74,7 +75,7 @@
         console.log($(this).find('input').val());
         var val = $(this).val();
         var s = $('#taskRadio input:radio:checked').val()
-        console.log('bin-'+ s);
+        console.log('bin-' + s);
     });
 
     $('#my-btns .btn').on('click', function (event) {

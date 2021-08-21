@@ -34,6 +34,21 @@ function validate() {
 
     return isValid;
 }
+function validateA() {
+    var isValid = true;
+
+    if ($("#aFileUpload").get(0).files.length === 0) {
+        $('#aFileUpload').css('border-color', 'Red');
+        isValid = false;
+    }
+    else {
+        $('#aFileUpload').css('border-color', 'lightgrey');
+    }
+    
+
+    return isValid;
+}
+
 function validateR() {
     var isValid = true;
 
@@ -381,6 +396,7 @@ function ApproveFilledUpForm(approverUserId,filledUpFormId,uploadedFormName,catI
     
 }
 
+
 function LoadFormsApprovalList() {
 
     var geturl = $('#urlFormsApprovalList').val();
@@ -486,14 +502,14 @@ function UploadFilledUpFormWithApprovers() {
     var task = $('#taskRadio input:radio:checked').val()
     //$('#fileUpload').val('');
     var url = $('#urlFilledUpForm').val();
-    //var url = "/UserMaster/UploadFilledUpForm";
+    //var url = "/UserMaster/UploadFilledUpFormNew";// Added on 19th Aug 2021
     //********--------------------------------------------------------------------------
     //Checking whether FormData is available in browser  
     if (window.FormData !== undefined) {
-        if ((catId != '16' || catId != '17') && task === 'R') {
-            alert("This type of forms are not for Review..!")
-        }
-        else {
+        //if ((catId !== "16" || catId !== "17") && task === "R") {
+        //    alert("This type of forms are not for Review..!")
+        //}
+        //else {
             if (validate()) {
                 var fileUpload = $("#fileUpload").get(0);
                 var files = fileUpload.files;
@@ -550,25 +566,25 @@ function UploadFilledUpFormWithApprovers() {
                             ClearFields2();
                             $('#filledUpFormModal').modal('hide');
 
-                            toastr.options = {
-                                "closeButton": false,
-                                "debug": false,
-                                "newestOnTop": false,
-                                "progressBar": false,
-                                "positionClass": "toast-bottom-full-width",
-                                "preventDuplicates": false,
-                                "onclick": null,
-                                "showDuration": "300",
-                                "hideDuration": "1000",
-                                "timeOut": "5000",
-                                "extendedTimeOut": "1000",
-                                "showEasing": "swing",
-                                "hideEasing": "linear",
-                                "showMethod": "fadeIn",
-                                "hideMethod": "fadeOut"
-                            };
+                            //toastr.options = {
+                            //    "closeButton": false,
+                            //    "debug": false,
+                            //    "newestOnTop": false,
+                            //    "progressBar": false,
+                            //    "positionClass": "toast-bottom-full-width",
+                            //    "preventDuplicates": false,
+                            //    "onclick": null,
+                            //    "showDuration": "300",
+                            //    "hideDuration": "1000",
+                            //    "timeOut": "5000",
+                            //    "extendedTimeOut": "1000",
+                            //    "showEasing": "swing",
+                            //    "hideEasing": "linear",
+                            //    "showMethod": "fadeIn",
+                            //    "hideMethod": "fadeOut"
+                            //};
 
-                            toastr.success("Form Updated Successfully");
+                            //toastr.success("Form Updated Successfully");
                             $('#filledUpFormModal').modal('hide');
                         },
                         error: function (err) {
@@ -582,6 +598,79 @@ function UploadFilledUpFormWithApprovers() {
 
             }
 
+        //}
+    }
+    else {
+            alert("FormData is not supported.");
+    }
+
+ }
+
+//--Added this  fnc on 19th Aug 2021
+function UploadApprovedFilledUpForm() {
+
+    var originalForm = $('#hdnAOriginalFormName').val();
+
+    var url = $('#urlApprovedFormsUpload').val();
+    //var url = "/UserMaster/UploadFilledUpFormNew";// Added on 19th Aug 2021
+    //********--------------------------------------------------------------------------
+    //Checking whether FormData is available in browser  
+    if (window.FormData !== undefined) {
+        
+        if (validateA()) {
+            var fileUpload = $("#aFileUpload").get(0);
+            var files = fileUpload.files;
+            var uploadedFormName = '';
+            //var files = $('#fileUpload')[0];
+            // Create FormData object  
+            var fileData = new FormData();
+
+            // Looping over all files and add it to FormData object  
+            for (var i = 0; i < files.length; i++) {
+                fileData.append(files[i].name, files[i]);
+
+                uploadedFormName = files[i].name;
+                //uploadedFormName = uploadedFormName.substr((uploadedFormName.firstIndexOf('.') + 1));
+                //uploadedFormName = uploadedFormName.split('.').slice(0, -1).join('.');
+            }
+           
+            var task = $("#taskRadio input[name='inlineRadioOptions']:checked").val();
+
+            // Adding one more key to FormData object 
+            fileData.append('formId', $('#hdnAFilledUpFormID').val());
+            fileData.append('approverId', $('#hdnAApproverUserID').val());
+            fileData.append('formName', $('#hdnAOriginalFormName').val());
+            fileData.append('cat', $('#hdnAFormsCategory').val());
+            
+            if (uploadedFormName === originalForm) {
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    datatype: "json",
+                    //contentType: "application/json; charset=utf-8",
+                    contentType: false, // Not to set any content header  
+                    processData: false, // Not to process data  
+                    data: fileData,
+                    //data: { categoryId: y},
+                    success: function (result) {
+                        alert(result);
+                        $('#afileUpload').val('');
+                        //ClearFields();
+                        ClearApprovedFormInfo();
+                        $('#approvedFilledUpFormModal').modal('hide');
+
+                        LoadFormsApprovalList();
+                        window.location = '/Forms/FormsApprovalList';
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                    }
+                });
+            }
+            else {
+                alert('You are trying to upload another from..! \n Please Choose Exact form..!"')
+            }
+
         }
 
         
@@ -591,6 +680,7 @@ function UploadFilledUpFormWithApprovers() {
     }
 
 }
+
 function GetApproverUsersPositionFroDropDown() {
 
     var x = $("#urlApproverUserPosition").val();
@@ -658,7 +748,7 @@ function AddTempApproverNew(user) {
     var b = $('#hdnApproversCount').val();
     var c = approversCount;
     var totalCount = eval(a + c);
-    var totalApproverOrReviewer = 0;
+    var totalApproverOrReviewer = 6;// changed into 0 on 19th Aug 2021
     b = b.replace(/"/g, '\\"')
     //var totalCount = a + b;
     var idx = 0
@@ -680,15 +770,17 @@ function AddTempApproverNew(user) {
     //}
 
 
-    //Below three condition added on 5th Aug 2021 Due to new logic for form Review and Approved reviewed form
-    if ((catId === '16' || catId === '17') && task === 'R')
-        totalApproverOrReviewer = 2;
-    else if ((catId === '16' || catId === '17') && task === 'A')
-        totalApproverOrReviewer = 1;
-    else if ((catId === '16' || catId === '17') && tsk === 'A')/* for Reviewed from Approval*/
-        totalApproverOrReviewer = 1;
-    else 
-        totalApproverOrReviewer = 6;
+    ////Below three condition added on 5th Aug 2021 Due to new logic for form Review and Approved reviewed form
+    //if ((catId === '16' || catId === '17') && task === 'R')
+    //    totalApproverOrReviewer = 2;
+    //else if ((catId === '16' || catId === '17') && task === 'A')
+    //    totalApproverOrReviewer = 1;
+    //else if ((catId === '16' || catId === '17') && tsk === 'A')/* for Reviewed from Approval*/
+    //    totalApproverOrReviewer = 1;
+    //else 
+    //    totalApproverOrReviewer = 6;
+    ////---------above if..else condition commented on 19th Aug 2021; due to approval logic has changed again-------------
+
 
     if (totalCount < totalApproverOrReviewer) {
         //tmpApproverList.r
@@ -814,6 +906,21 @@ function SetReviewedFormName(frm,cat) {
     $('#hdnFormsCategory').val(cat);
 }
 
+function SetApprovedFormInfo(approverId,frmId, frm, cat) {
+
+    $('#hdnAApproverUserID').val(approverId);
+    $('#hdnAFilledUpFormID').val(frmId);
+    $('#hdnAOriginalFormName').val(frm);
+    $('#hdnAFormsCategory').val(cat);
+}
+function ClearApprovedFormInfo() {
+    $('#hdnAApproverUserID').val('');
+    $('#hdnAFilledUpFormID').val('');
+    $('#hdnAOriginalFormName').val('');
+    $('#hdnAFormsCategory').val('');
+    $('#aFileUpload').val('');
+}
+
 function UploadReviewedFilledUpForm() {
 
     //This function called when Approver/Reviewer Upload the reviewed form
@@ -910,7 +1017,8 @@ function UploadReviewedFilledUpForm() {
 
 function UploadReviewedFilledUpFormWithApprovers() {
     //var url = $('#urlReviewedFormForApproval').val();
-    var url = "/Forms/UploadFilledUpReviewedFormForApproval";
+    //var url = "/Forms/UploadFilledUpReviewedFormForApproval";// Commented on 19th Aug 2021
+    var url = "/Forms/UploadFilledUpReviewedFormForApprovalNew"; // Added on 19th Aug 2021
     if (tmpApproverList.length === 0) {
 
         $('#ddlApproverUser').css('border-color', 'Red');

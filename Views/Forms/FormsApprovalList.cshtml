@@ -8,11 +8,11 @@
 @Html.Hidden("urlFormsApprovalList", @Url.Action("FormsApprovalList", "Forms"))
 @Html.Hidden("urlReviewedFormsUpload", @Url.Action("UploadFilledUpReviewedForm", "Forms"))
 
-<link href="~/DataTables/datatables.min.css" rel="stylesheet" />
+@*<link href="~/DataTables/datatables.min.css" rel="stylesheet" />*@
 <script src="~/Scripts/jquery-3.5.1.min.js"></script>
 <script src="~/DataTables/datatables.min.js"></script>
 <script src="~/Scripts/notify.min.js"></script>
-<link href="~/css/Pager.css" rel="stylesheet" />
+<link href="~/css/Pager1.css" rel="stylesheet" />
 @*<h2>FormsApprovalList</h2>*@
 
 <div class="body marginTP10">
@@ -53,19 +53,20 @@
                                                 }
                                                 else if (item.IsApproved == 0)
                                                 {
-                                        <div class="form-group">
-                                            @if (item.IsPreviousApprove == 100 || item.IsPreviousApprove == 1)
-                                            {
-                                                @*----------below a tag added on 10th Aug 2021 -----------*@
-                                                <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>View</span></a>
-                                                <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId')" />
-                                            }
-                                            else if (item.IsPreviousApprove == 0)
-                                            {
-                                                <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId')" disabled />
-                                            }
+                                                    <div class="form-group">
+                                                        @if (item.IsPreviousApprove == 100 || item.IsPreviousApprove == 1)
+                                                        {
+                                                            @*----------below a tag added on 10th Aug 2021 -----------*@
+                                                            <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; " href='@Url.Action("DownloadFilledupForm", "FormsAndChecklists", new { @fileName =@item.FilledUpFormName})'><span>View</span></a>
+                                                            @*<input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="ApproveFilledUpForm(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId')" />*@
+                                                            <input type="button" id="btnApprove" value="Upload Approved Form" class="btn btn-info btn-sm" style="background-color: #e90000;" data-toggle="modal" data-target="#approvedFilledUpFormModal" onclick="SetApprovedFormInfo(@item.ApproverUserId,@item.ID,'@item.FilledUpFormName','@item.CategoryId');" />
+                                                        }
+                                                        else if (item.IsPreviousApprove == 0)
+                                                        {
+                                                            <input type="button" id="btnApprove" value="Approve" class="btn btn-info btn-sm" style="background-color: #e90000;" disabled />
+                                                        }
 
-                                        </div>
+                                                    </div>
                                                 }
                                             }
                                             else if (item.Task == "R")
@@ -103,6 +104,7 @@
     </div>
 
     <div class="container marginTP10">
+        @*<link href="~/css/Pager.css" rel="stylesheet" />*@
         <div class="container marginTP10">
             <nav aria-label="Page navigation">
 
@@ -166,7 +168,9 @@
     </div>
 
 
-    @Html.Partial("_pvReviewedFilledupFormUploadModal");
+    @Html.Partial("_pvReviewedFilledupFormUploadModal")
+
+    @Html.Partial("_pvApprovedFilledupFormUploadModal")
 
 </div>
 
