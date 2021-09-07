@@ -167,7 +167,10 @@
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FNA-2021-03 Structure Damage due to push tug</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FNA-2021-04 Close Quarter Situation with other anchored vessel</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FNA-2021-05 Role of PPU in Bridge Resource Management</filename>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FNA-2021-06 Navigation Through Suez Canal</filename>
+						<!-- <filename doctype="" actionname="" isdownloadable="" ismodify="" status=""  version="" >Below files FNA-2021-06 to 08 Added on 7th Sep 2021</filename> -->
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FNA-2021-06 Navigation Through Suez Canal</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FNA-2021-07 USA bans the use of Laser Pointers at Sea</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FNA-2021-08 Multi-Sensor and Multi-Layer Integration in ECDIS</filename>
 					</foldername>
 				</foldername>
 				<foldername name="Fleet Personnel Advisory" actionname="" description="">
@@ -201,27 +204,37 @@
 				</foldername>
 				<foldername name="Fleet Technical Advisory" actionname="" description="">
 					<foldername name="2013" actionname="" description="">
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2013-02 Blackout Incidents</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="DEL"  version="0.0.1" >FTA-2013-02 Blackout Incidents</filename>
 					</foldername>
 					<foldername name="2014" actionname="" description="">
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2014-01 Main Engine Piston Rod Foot Securing Nut Loosened and Stud Damaged</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="DEL"  version="0.0.1" >FTA-2014-01 Main Engine Piston Rod Foot Securing Nut Loosened and Stud Damaged</filename>
 					</foldername>
 					<foldername name="2017" actionname="" description="">
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2017-01 Cat Fines</filename>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2017-04- Main Generator, Alternator Maintenance _ Inspection</filename>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2017-05 Main Engine Fuel Pump Sticking</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="DEL"  version="0.0.1" >FTA-2017-01 Cat Fines</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="DEL"  version="0.0.1" >FTA-2017-04- Main Generator, Alternator Maintenance _ Inspection</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="DEL"  version="0.0.1" >FTA-2017-05 Main Engine Fuel Pump Sticking</filename>
 					</foldername>
 					<foldername name="2019" actionname="" description="">
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2019-02 Main Engine overspeed trip</filename>
 					</foldername>
 					<foldername name="2020" actionname="" description="">
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="DEL"  version="0.0.1" >FTA-2020-01 Fleet Technical Notice _ Advisory Review</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2020-02 Information sharing - Doctor system error Message</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2020-03 IMO 2020 Compliant fuel</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA  2020-04 Bunker Sampling Procedure</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA  2020-05  Aux Engine tripped and black out due to AE auto backwash filter failure</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA  2020-06 ME slow down due to HCU oil leakage</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA  2020-07 Electric Motor Bearing Greasing Basics</filename>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2020-01 Fleet Technical Notice _ Advisory Review</filename>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2020-02 Information sharing - Doctor system error Message</filename>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTA-2020-03 IMO 2020 Compliant fuel</filename>
+						
+					</foldername>
+					<!-- <filename doctype="" actionname="" isdownloadable="" ismodify="" status=""  version="" >Below folder 2021 Added on 7th Sep 2021</filename> -->
+					<foldername name="2021" actionname="" description="">
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FTA-2021-01 ME no.3-unit accumulator block O-ring renew due to minor oil leakage</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FTA-2021-02 Aux Engine incidents after major overhaul</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FTA-2021-03 Serious damage of Aux. boiler due to shortage of water</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FTA-2021-04 Fleet Technical Notice and Advisory Review</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FTA-2021-05 ME HYDRAULIC LEAKAGE SHUT DOWN ALARM ACTIVATED BEFORE ME STANDBY</filename>
+						
 					</foldername>
 				</foldername>
 			</foldername>
@@ -299,6 +312,22 @@
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FIN-2020-01 About Windows 7 support - Tanker Fleet</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FIN-2020-02 Fleet IT Policies and Cyber Security Operation Guidance - Tanker Fleet</filename>
 					</foldername>
+					<!-- <filename doctype="" actionname="" isdownloadable="" ismodify="" status=""  version="" >Below folder 2021 Added on 7th Sep 2021</filename> -->
+					<foldername name="2021" actionname="" description="">
+						<foldername name="FIN-2021-01" actionname="" description="FIN-2021-01 USCG Inspection for Cyber Risk Management">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FIN-2021-01</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >USCG CVC-WI-027</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >Cyber Security self-assessment QA</filename>
+						</foldername>
+						<foldername name="FIN-2021-02" actionname="" description="FIN-2021-02 Precautions against Cyber Attacks Onboard">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FIN-2021-02</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >Cyber Security Onboard Ships</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >APPENDIX - Cyber Security DOs and DONTs</filename>
+						</foldername>
+						
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FIN-2021-03 Revise Crew WIFI Access Time Policy</filename>
+					</foldername>
+				
 				</foldername>
 				<foldername name="F M N" actionname="" description="Fleet Marine Notice">
 					<foldername name="2020" actionname="" description="">
@@ -348,18 +377,82 @@
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FMN-2021-07 Introduction of STS Feedback Form</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FMN-2021-08 Revised Procedures for SBMTandem Mooring</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FMN-2021-09 Implementation of Bruusgaard system</filename>
+						<!-- <filename doctype="" actionname="" isdownloadable="" ismodify="" status=""  version="" >Below folder FMN-2021-10 to 18 Added on 7th Sep 2021</filename> -->
+						<foldername name="FMN-2021-10" actionname="" description="FMN-2021-10 Amendments to Mooring Maintenance and LMP (Rev01)">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMN-2021-10 - Amendments to Mooring Maintenance and LMP Rev01</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >i. Section 2 Part A - LMP Rev 02-TCCHK</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >ii. TEHO Wire Rope user manual for TCC v1.7.1</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >iii. 25-Mooring Maintenance Rev 01-TCCHK</filename>
+							
+						</foldername>
+						<foldername name="FMN-2021-11" actionname="" description="FMN-2021-11 TCC joins hands with MACN">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMN-2021-11 TCC joins hands with MACN </filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >1. PS 13.0 Anti-Corruption Policy Rev 01</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >2. PP013.0 - Anti-Corruption Policy Rev 01</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >3. PS037 - Anti-Corruption Policy Rev 01</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >4. MACN Help Desk Contact List</filename>
+						</foldername>
+						<foldername name="FMN-2021-12" actionname="" description="FMN-2021-12 Unattended Machinery Spaces">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMN-2021-12 Amendments to Procedures for Unattended Mach Spaces</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >i. Chapter 2 Engine Room Procedures Rev01 (23Jun21) - TCCHK</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >ii. 12-Unmanned machinery space Rev01 (23Jun21) - TCCHK</filename>
+							
+						</foldername>
+						<foldername name="FMN-2021-13" actionname="" description="FMN-2021-13 Introduction of Female Seafarers to the TCC Fleet">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMN-2021-13 Introduction of Female Seafarers</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >Manning Manual - Chapter 3</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >Manning Manual - Chapter 6</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >Manning Manual - Chapter 19</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >Section 21 - Family Onboard</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >Section 30 - Women Seafarers General Matters</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >SP037 - Letter of Indemnity for Supernumerary</filename>
+						</foldername>
+						<foldername name="FMN-2021-14" actionname="" description="FMN-2021-14 Pilot Ladder MURI Record">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMN-2021-14 Pilot Ladder MURI Record</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >i. Pilot Ladder Maintenance, Use, Replacement and Inspection Record Rev00-15Jul21</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >ii. Chapter 1.9 - Pilotage Rev 01 (TCCHK-20Jul21)</filename>
+						</foldername>
+						<foldername name="FMN-2021-15" actionname="" description="FMN-2021-15 Amendments to SMS Vol IV, Section 2, Chapter 1.11">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMN-2021-15 Amendment to SMS Vol IV, Sec 2, Ch 1.11</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >i. Chapter 1.11 - Weather Rev 01</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >ii. IMO MEPC.1-Circ.850 2013 Interim Guidelines for determining minimum propulsion power</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >iii. MEPC.1-Circ.850-Rev.3 - Guidelines For Determining Minimum Propulsion Power</filename>
+						</foldername>
+						<foldername name="FMN-2021-16" actionname="" description="FMN-2021-16 Introduction of Fatigue Risk Management System">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMN-2021-16 Introduction of Fatigue Risk Management System</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >i. Section 31 - Guidelines on Fatigue</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >ii. SP056 - Fatigue Event Report Form</filename>
+						</foldername>
+						<foldername name="FMN-2021-17" actionname="" description="FMN-2021-17 Introduction of Human Factors in SMS Vol IV, Section 5, Chapter 6">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMN-2021-17 Introduction of Human Factor</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >i. Chapter 6 Human Factors</filename>
+						</foldername>
+						<foldername name="FMN-2021-18" actionname="" description="FMN-2021-18 Introduction of Bondi Test Procedures in TOM">
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMN-2021-18 Introduction of Bondi Test Procedures in TOM</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >i. Chapter 5 - Other Operations Rev 01</filename>
+							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >ii. CO060 - Bondi Test Result</filename>
+						</foldername>
 					</foldername>
 				</foldername>
 				<foldername name="Fleet Technical Notice" actionname="" description="">
-					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2018-01 Aux Engine Overspeed</filename>
-					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2018-02 Main Engine Fuel Pump Seizure</filename>
-					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2018-03 Main Engine Exhaust Valve Malfunction</filename>
+					<!-- <filename doctype="" actionname="" isdownloadable="" ismodify="" status=""  version="" >Below files FTN-2018-01 to 03 deleted on 7th Sep 2021</filename> -->
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="DEL"  version="0.0.1" >FTN-2018-01 Aux Engine Overspeed</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="DEL"  version="0.0.1" >FTN-2018-02 Main Engine Fuel Pump Seizure</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="DEL"  version="0.0.1" >FTN-2018-03 Main Engine Exhaust Valve Malfunction</filename>
 					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2019-01 Steam Scalding on Left arm of Crew while painting Funnel stack </filename>
 					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2019-02 ME Tacho A  Failure</filename>
 					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2019-03 Wilden Pump malfunction during SIRE inspection</filename>
 					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2019-04 Main air compressor found scratched</filename>
 					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2020-01 Boiler black smoke and soot emission while vessel in port</filename>
 					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2020-02 Crack on Main engine Unit no 2 and 6 Fuel valves</filename>
+					<!-- <filename doctype="" actionname="" isdownloadable="" ismodify="" status=""  version="" >Below files FTN-2020-03 and 04 Added on 7th Sep 2021</filename> -->
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2020-03 Cleaning air pipe on sterntube by fresh water</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FTN-2020-04 UNUSUAL MOVEMENT OF RAM PIN AND BUSH IN FWD AND AFT MOVEMENT</filename>
+					<!-- <filename doctype="" actionname="" isdownloadable="" ismodify="" status=""  version="" >Below files FTN-2021-01 to 03 Added on 7th Sep 2021</filename> -->
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FTN-2021-01 ME Unit no.1 cylinder head stud brokern</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FTN-2021-02 Fwd and Mast Radar Horn failure</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FTN-2021-03 Design Change of FO Injection Pump</filename>
+					
 				</foldername>
 			</foldername>
 			<foldername name="Safety Campaigns" actionname="SafetyCampaigns" description="Safety Campaigns">
@@ -436,6 +529,40 @@
 					<foldername name="Stability and Compatibility and Marine Fuel (11Aug-10Nov2020)" actionname="" description="">
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Safety Campaign –  Stability and Compatibility of Marine Fuel</filename>
 					</foldername>
+				</foldername>
+			</foldername>
+			<foldername name="Safety Alerts" actionname="SafetyAlerts" description="Safety Alerts">
+				<foldername name="2020" actionname="" description="">
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2020-01 Lifeboat launching, misalignment of release mechanism during retrieval</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2020-02 Inert Gas Breather Valve Damage</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2020-03 Unauthorized modification of lifeboat compass using flinders bars</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2020-04 Improper testing of mooring winch brake</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2020-05 Failure of quick release mooring hook ashore</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2020-06 Fire Hydrant Caps without Pressure Release Orifice</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2020-07 Correct Procedure for Securing the Pilot Ladder</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2020-08 Use of Mobile Phones and Cameras In Hazardous and Non-Hazardous Areas</filename>
+				</foldername>
+				<foldername name="2021" actionname="" description="">
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-01 Gangway (Accommodation Ladder) Slewing Wire Parted</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-02 Broken Strands of Provision Crane Runner wire</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-03 Pollution from Inert Gas Scrubber Overboard Discharge</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-04 Fireman's Footwear not in compliance with statutory requirements</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-05 Failure to Comply with the SOx Emission Control Reg. in Korean Ports</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-06 Inadvertent Activation of EPIRB</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-07 Hand Sanitizers Fire Safety</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-08 IMPA Pilot Ladder Poster</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-09 Correct Type and Use of Windsock on board</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-10 Incorrect Calibration of Portable and Personal Gas Detection Equipment</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-11 Obstruction on the Cargo Bunker Manifold drip tray</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-12 Operation of Marine Breakaway Couplings</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-13 Guidance on Rigging of Pilot Ladders</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-14 Fatality in the Pump Room</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-15 Use of portable ladders DO’s and DONT’s</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-16 Catastrophic Explosive Failure of A Fire Extinguisher</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-17 Drinking Hazardous Substances by Accident</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-18 Damage to Standard Magnetic Compass</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA-2021-19 Verify Your Wire Rope Terminations</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA-2021-20 Main Auxiliary Engine and Equipment Incidents</filename>
 				</foldername>
 			</foldername>
 		</noticeboard>
