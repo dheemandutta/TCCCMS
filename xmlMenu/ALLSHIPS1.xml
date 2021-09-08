@@ -173,29 +173,29 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="BWMPKHKV">BWMP in PDF Format</filename>
 			</foldername>
 			<foldername description="VOC Management Plan" actionname="VOC" name="6. KHKV VOC">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Vision VOC</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap1">Chapter 1 Objectives</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap2">Chapter 2 General Information</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap3">Chapter 3 Cargo Tanks and Equipments</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap4">Chapter 4 Oil Transfer Procedures</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap5">Chapter 5 Pressure Calculation</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap6">Chapter 6 Pressure Drop for vapour line</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap7">Chapter 7 Overfill Alarm Time Calculation</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap8">Chapter 8 Isometric Drawing for Vapour Line</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap9">Chapter 9 Emergency Procedure</filename>
-        
-        <foldername description="" actionname="" name="Chapter 10 Training Programme">
-          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap10">Chapter 10 Training Procedure</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="10.4 Record of crew attended this training">10.4 Record of crew attended this training</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="10.4 Voc Management Training Record">10.4 Voc Management Training Record</filename>
-        </foldername>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Vision VOC</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap1">Chapter 1 Objectives</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap2">Chapter 2 General Information</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap3">Chapter 3 Cargo Tanks and Equipments</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap4">Chapter 4 Oil Transfer Procedures</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap5">Chapter 5 Pressure Calculation</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap6">Chapter 6 Pressure Drop for vapour line</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap7">Chapter 7 Overfill Alarm Time Calculation</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap8">Chapter 8 Isometric Drawing for Vapour Line</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap9">Chapter 9 Emergency Procedure</filename>
+	
+			<foldername description="" actionname="" name="Chapter 10 Training Programme">
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap10">Chapter 10 Training Procedure</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="10.4 Record of crew attended this training">10.4 Record of crew attended this training</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="10.4 Voc Management Training Record">10.4 Voc Management Training Record</filename>
+			</foldername>
 
-        <foldername description="" actionname="" name="Chapter 11 Record Keeping">
-          <filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap11">Chapter 11 Record Keeping</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="11 Gas - Vapour Release Record">11 Gas - Vapour Release Record</filename>
-        </foldername>
+			<foldername description="" actionname="" name="Chapter 11 Record Keeping">
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap11">Chapter 11 Record Keeping</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="11 Gas - Vapour Release Record">11 Gas - Vapour Release Record</filename>
+			</foldername>
         
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap12">Chapter 12 Designated Person</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCChap12">Chapter 12 Designated Person</filename>
         <foldername description="" actionname="" name="Appendix">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOChap13">Chapter 13 Appendix</filename>
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="VOCChap13GAP">Chapter 13.1 GA Plan</filename>
@@ -646,15 +646,17 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM">29. KHK Vision - California Response Manual</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="KHKVCRM2">29. KHK Vision - California Response Manual</filename> -->   
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
-      <!--<foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Vision NOI 2003 22Feb21</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK VISION_VGP</filename>
-      </foldername>-->
-      <foldername description="California Response Manual" actionname="CRM" name="29. California Response Manual">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Plan</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement Plan</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
-      </foldername>   
+			<!--<foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Vision NOI 2003 22Feb21</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK VISION_VGP</filename>
+			</foldername>-->
+			<foldername description="California Response Manual" actionname="CRM" name="29. California Response Manual">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Plan</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement Plan</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">*****Below line replaced with below next****</filename> -->
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity and Deadweight Plan</filename>
+			</foldername>   
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">will be changed KHK Vision NOI 2013 14Jun17</filename> -->
 		</ship>
 		
@@ -662,6 +664,8 @@
 			<foldername description="SOPEP" actionname="SOPEP" name="3. SOPEP">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPIntroduction">Introduction</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="" actionname="">Below Line added on 7th Sep 2021 </filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">ABS Letter-KWEX SOPEP - amended</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS1Preamble">Section 1 - Preamble</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2RR">Section 2 - Reporting requirements</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOPEPS2SCD">Section 3 - Steps to control discharge</filename>
@@ -702,6 +706,8 @@
 			</foldername>
 			<foldername description="STS Transfer Operation Plan" actionname="STS" name="4. KWEX STS">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSMBTC">STS Main Body - Table of Contents</filename> -->
+				<!-- <filename isdownloadable="" ismodify="" doctype="" actionname="">Below Line added on 7th Sep 2021 </filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">ABS Letter-KWEX STS - amended</filename>
 				<foldername description="" actionname="" name="Part A - MAIN DOCUMENT">
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSIntroduction">PART A 1-INTRODUCTION (KWEX)</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STSSP">PART A 2-SHIP PARTICULAR (KWEX)</filename>
@@ -771,17 +777,17 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK Excelsus BWMP -  Main Document ABS approved 25Jul16</filename>
 				<foldername description="Appendix 1" actionname="" name="Appendix 1">
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">1. KWEX  BWMP  General Arrangement</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2. KWEX  BWMP  Capacity Plan</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3a. KWEX  BWMP  Cargo and Ballast  Piping Diagram</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3b.KWEX  BWMP  Ballast and Sea Water Piping Diagram</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">4.KWEX  BWMP  Schematic Diagram of Sounding Pipe</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">5.KWEX  BWMP Manhole arrangements</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">6. KWEX BTWS - Arrangement</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">7. KWEX BTWS piping and Instruments</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">8. KWEX BTWS - Sampling Point Arrangement</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">9. KWEX  BTWS - Test Certificate</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">10 KWEX BTWS  NEI Instrument Documents _ Plans-3</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">11. KWEX BTWS - Operational Manual</filename>         
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2. KWEX  BWMP  Capacity Plan</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3a. KWEX  BWMP  Cargo and Ballast  Piping Diagram</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3b.KWEX  BWMP  Ballast and Sea Water Piping Diagram</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">4.KWEX  BWMP  Schematic Diagram of Sounding Pipe</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">5.KWEX  BWMP Manhole arrangements</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">6. KWEX BTWS - Arrangement</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">7. KWEX BTWS piping and Instruments</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">8. KWEX BTWS - Sampling Point Arrangement</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">9. KWEX  BTWS - Test Certificate</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">10 KWEX BTWS  NEI Instrument Documents _ Plans-3</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">11. KWEX BTWS - Operational Manual</filename>         
 				</foldername>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 2. Summary Form of Typical Ballast Water Exchange</filename>
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Appendix 3 Assessment Criteria for Sequential Method</filename>
@@ -793,28 +799,30 @@
 			</foldername>
 			<foldername description="VOC Management Plan" actionname="VOC" name="6. VOC">
 				<!--<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOCRC">Revision content on VOC cover (KWEX,CSVA,CSVL,CSEN only)</filename>-->
-        <!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_9728411</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-address update (ABS endorsed 19Dec17)</filename>-->
-        <foldername description="" actionname="" name="1. VOC - KWK Excelsus VOC Management Plan">
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_  VOC Management Plan</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_ General Arrangement Plan</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_Capacity Plan</filename>
-        </foldername>
-        <foldername description="" actionname="" name="2. Finished Plan  Cargo And Ballast Pipping Diaigram">
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Cargo And Ballast Pipping Diagram</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan Cargo And Ballast Pipping</filename>
-        </foldername>
-        <foldername description="" actionname="" name="3. Finished Plan  Vent Piping Diagram">
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus Vent Piping Diagram</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan  Vent Piping</filename>
-        </foldername>
-        <foldername description="" actionname="" name="4. Finished Plan Tank Cleaning Piping Diagram">
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus Tank Cleaning Piping Diagram</filename>
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan Tank Cleaning Piping Diagram</filename>
-        </foldername>
-        <foldername description="" actionname="" name="5. Finished Plan Vapour Control System">
-          <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan  Vapour Control System</filename>
-        </foldername>     
+				<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_9728411</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-address update (ABS endorsed 19Dec17)</filename>-->
+				<!-- <filename isdownloadable="" ismodify="" doctype="" actionname="">Below Line added on 7th Sep 2021 </filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC Cover-KWEX - amended</filename>				
+				<foldername description="" actionname="" name="1. VOC - KWK Excelsus VOC Management Plan">
+				  <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_  VOC Management Plan</filename>
+				  <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_ General Arrangement Plan</filename>
+				  <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus_Capacity Plan</filename>
+				</foldername>
+				<foldername description="" actionname="" name="2. Finished Plan  Cargo And Ballast Pipping Diaigram">
+				  <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Cargo And Ballast Pipping Diagram</filename>
+				  <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan Cargo And Ballast Pipping</filename>
+				</foldername>
+				<foldername description="" actionname="" name="3. Finished Plan  Vent Piping Diagram">
+				  <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus Vent Piping Diagram</filename>
+				  <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan  Vent Piping</filename>
+				</foldername>
+				<foldername description="" actionname="" name="4. Finished Plan Tank Cleaning Piping Diagram">
+				  <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus Tank Cleaning Piping Diagram</filename>
+				  <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan Tank Cleaning Piping Diagram</filename>
+				</foldername>
+				<foldername description="" actionname="" name="5. Finished Plan Vapour Control System">
+				  <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">VOC - KWK Excelsus-Finished Plan  Vapour Control System</filename>
+				</foldername>     
 			</foldername>
 			<foldername description="MSMP and LMP" actionname="MSMPLMP" name="13. MSMP_LMP">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="LMPContent">Content</filename> -->
@@ -1220,15 +1228,20 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KWK Excelsus NOI 2013 09Mar20</filename> -->
       
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
-      <foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK Excelsus NOI 2003 22Feb21</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS_VGP</filename>
-      </foldername>
-      <foldername description="California Response Manual" actionname="CRM" name="29. KWK EXCELSUS - California Response Manual">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS - California Response Manual</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS - General Arrangement Plan</filename>
-      </foldername>
-    </ship>
+			<foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK Excelsus NOI 2003 22Feb21</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS_VGP</filename>
+			</foldername>
+			<foldername description="California Response Manual" actionname="CRM" name="29. KWK EXCELSUS - California Response Manual">
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">*****Below line replaced with below next****</filename> -->
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS - California Response Manual</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">*****Below line replaced with below next****</filename> -->
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KWK EXCELSUS - General Arrangement Plan</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity and Deadweight Plan</filename>
+			</foldername>
+		</ship>
 		
 		<ship shipnumber="3" name="CSK Vanguard" controllername="ShipCSKVanguard">
 			<foldername description="SOPEP" actionname="SOPEP" name="3. SOPEP">
@@ -1790,15 +1803,17 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">21. CSVA ETA 24Oct16</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. CSK VANGUARD_VGP Rev01</filename> -->
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
-      <foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Vanguard NOI 2003 22Feb21</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK VANGUARD_VGP</filename>
-      </foldername>
-      <foldername description="California Response Manual" actionname="CRM" name="29. CSK VANGUARD - California Response Manual">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
-      </foldername>
+			<foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Vanguard NOI 2003 22Feb21</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK VANGUARD_VGP</filename>
+			</foldername>
+			<foldername description="California Response Manual" actionname="CRM" name="29. CSK VANGUARD - California Response Manual">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">*****Below line replaced with below next****</filename> -->
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity and Deadweight Plan</filename>
+			</foldername>
 
 
 
@@ -2363,15 +2378,17 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. CSK VALIANT_VGP</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be chnaged CSK Valiant NOI 2013 14Jun17</filename> -->
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
-      <foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant NOI 2003 22Feb21</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK VALIANT_VGP</filename>
-      </foldername>
-       <foldername description="California Response Manual" actionname="CRM" name="29. CSK VALIANT - California Response Manual">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
-      </foldername>     
+			<foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Valiant NOI 2003 22Feb21</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK VALIANT_VGP</filename>
+			</foldername>
+			<foldername description="California Response Manual" actionname="CRM" name="29. CSK VALIANT - California Response Manual">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">*****Below line replaced with below next****</filename> -->
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity and Deadweight Plan</filename>
+			</foldername>     
 		</ship>
 		
 		<ship shipnumber="5" name="CSK Endeavour" controllername="ShipCSKEndeavour">
@@ -2944,15 +2961,17 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27.  VGP WILL BE CHANGED  CSK Endeavour NOI 2013 15Aug17</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. CSK ENDEAVOUR_VGP </filename> -->
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
-      <foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Endeavour NOI 2003 22Feb21</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK ENDEAVOUR_VGP</filename>
-      </foldername>
-      <foldername description="California Response Manual" actionname="CRM" name="29. CSK ENDEAVOUR - California Response Manual">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
-      </foldername>
+			<foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK Endeavour NOI 2003 22Feb21</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CSK ENDEAVOUR_VGP</filename>
+			</foldername>
+			<foldername description="California Response Manual" actionname="CRM" name="29. CSK ENDEAVOUR - California Response Manual">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">*****Below line replaced with below next****</filename> -->
+					<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename> -->
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity and Deadweight Plan</filename>
+			</foldername>
         
         
 		</ship>
@@ -3535,15 +3554,17 @@
 		    <!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. KHK EMPRESS_VGP Rev01</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KHK Empress NOI 2013 14Jul19</filename> -->
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
-      <foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Empress NOI 2003 22Feb21</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK EMPRESS_VGP</filename>
-      </foldername>
-       <foldername description="California Response Manual" actionname="CRM" name="29. KHK EMPRESS - California Response Manual">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
-      </foldername>
+			  <foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Empress NOI 2003 22Feb21</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK EMPRESS_VGP</filename>
+			  </foldername>
+			   <foldername description="California Response Manual" actionname="CRM" name="29. KHK EMPRESS - California Response Manual">
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">*****Below line replaced with below next****</filename> -->
+					<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename> -->
+					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity and Deadweight Plan</filename>
+			  </foldername>
 		</ship>
 		
 		<ship shipnumber="7" name="KHK Majesty" controllername="ShipKHKMajesty">
@@ -4097,15 +4118,17 @@
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. KHK MAJESTY_VGP</filename> -->
 			<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">27. VGP will be changed KHK Majesty NOI 2013 12Apr19</filename> -->
 			<!--<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>-->
-      <foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Majesty NOI 2003 22Feb21</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK MAJESTY_VGP</filename>
-      </foldername>
-      <foldername description="California Response Manual" actionname="CRM" name="29. KHK MAJESTY - California Response Manual">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename>
-      </foldername>  
+			<foldername description="Vessel General Permit (VGP)" actionname="VGP" name="27. VGP">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK Majesty NOI 2003 22Feb21</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">KHK MAJESTY_VGP</filename>
+			</foldername>
+			<foldername description="California Response Manual" actionname="CRM" name="29. KHK MAJESTY - California Response Manual">
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">California Response Manual</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">General Arrangement</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">*****Below line replaced with below next****</filename> -->
+				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity Plan</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Capacity and Deadweight Plan</filename>
+			</foldername>  
 		</ship>
 	</ships>
 </xml>

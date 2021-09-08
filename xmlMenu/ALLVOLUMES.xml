@@ -14,15 +14,15 @@
 
         <volume id="1" name="Volume I" controllername="CompanyPolicyManual">
 			<!-- 4.0,5.0,8.0,13.0 added on 22nd Apr 2021 -->
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOL1FC">Flow Chart</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOL1FC">Flow Chart</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Introduction">Introduction </filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Definition">PS 1.1 Definition</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SMS">PS 1.2 Safety Management System</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SFA">PS 1.3 Scope and Field Of Application</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEPP">PS 2.0 Safety and Environmental Protection Policy</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="MRA">PS 3.0 Management Responsibilty and Authority</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DesignatedPerson">PS 4.0 Designated Person</filename>
-						<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MastersRA">PS 5.0 Masters Responsibility and Authority</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DesignatedPerson">PS 4.0 Designated Person</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MastersRA">PS 5.0 Masters Responsibility and Authority</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ResourcesAndPersonnel">PS 6.0 Resources and Personnel</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PSO">PS 7.0 Plans for Shipboard Operation</filename>
             <filename isdownloadable="" ismodify="" doctype="DOC" actionname="EmergencyPreparednes">PS 8.0 Emergency Preparedness</filename>
@@ -33,13 +33,13 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ACP">PS 13.0 Anti-Corruption Policy</filename>
             <!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. I Manual</filename> -->
 			<foldername actionname="" description="" name="TCCHK Signed Polices and Statements">
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="OP2CSP">OP002 - Company Security Policy</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS5DAP">PS005 - Drug and Aochol Policy</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS11SP">PS011 - Smoking Policy</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS17SEP">PS017 - S and E Policy</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS18HP">PS018 - Health Policy</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS34SMP">PS034 - TCC Social Media Policy</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS37ACP">PS037 - Anti-Corruption Policy -TCCHK</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="OP2CSP">OP002 - Company Security Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS5DAP">PS005 - Drug and Aochol Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS11SP">PS011 - Smoking Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS17SEP">PS017 - S and E Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS18HP">PS018 - Health Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS34SMP">PS034 - TCC Social Media Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS37ACP">PS037 - Anti-Corruption Policy -TCCHK</filename>
         <filename isdownloadable="" ismodify="" doctype="PDF" actionname="SE1SP">SE001 - Security Policy</filename>
 			</foldername>
         </volume>
@@ -58,6 +58,8 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MIT">PP10.0 - Maintenance Inspection and Testing</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDC">PP11.0 - Documents and Data Control</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ISEPA">PP12.0 - Internal Safety and Environmental Protection Audits</filename>
+			<!-- PP013.0 added on 20th Aug 2021  as Rev01-->
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ACP">PP013.0 - Anti-Corruption Policy</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DAP">PP20.0 - Drug and Alcohol Policy</filename>
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. II Manual`</filename> -->
 			<foldername actionname="" description="" name="Appendix">
@@ -70,6 +72,8 @@
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">6. PS011 - Smoking Policy</filename>
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">7. PS034 - TCC Social Media Policy</filename>
 	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">8. PS035-Vision Statement</filename>
+				 <!-- 9. PS037 added on 20th Aug 2021  as Rev01-->
+				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">9. PS037 - Anti-Corruption Policy</filename>
 
 			</foldername>
 		</volume>
@@ -109,6 +113,8 @@
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RecruitmentOfSeafarer">Section 28 - Recruitment of Seafarer</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TRM">Section 29 - Travel Risk Management</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WSGM">Section 30 - Women Seafarers General Matters</filename>
+			<!-- Section 31 added on 20th Aug 2021  as Rev01-->
+			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S31GF">Section 31 - Guidelines on Fatigue</filename>
 			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="">Senior Second Officer Job Description</filename>
 			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. III Manual</filename> -->
 		
@@ -776,6 +782,8 @@
 				<filename isdownloadable="" ismodify="">CO057 - Onboard Cargo Operation Audit Form</filename>
 				<filename isdownloadable="" ismodify="">CO058 - Cargo Sample Log</filename>
 				<filename isdownloadable="" ismodify="">CO059 - Record of Vapour Tightness Test</filename>
+				<!-- <filename isdownloadable="" ismodify="">**below new form added on 23rd Aug 2021***</filename> -->
+				<filename isdownloadable="" ismodify="">CO060 - Bondi Test  Result</filename>
 				<!-- <filename isdownloadable="" ismodify="">Section 5 - Content</filename> -->
 			</foldername>
 			<foldername description="" actionname="SafetyMmgt" name="Section6-Safety Mmgt">

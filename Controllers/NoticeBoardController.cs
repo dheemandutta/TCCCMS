@@ -55,5 +55,22 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateNoticeBoardFolderBodyContentHtml(xPath, "SafetyCampaigns");
             return View(file);
         }
+
+        public ActionResult SafetyAlerts()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateNoticeBoardFolderBodyContentHtml(xPath, "SafetyAlerts");
+            return View(file);
+        }
+        public ActionResult Circulars()
+        {
+            ManualBL manualBL = new ManualBL();
+            ShipManual file = new ShipManual();
+            string xPath = Server.MapPath(xmlPath);
+            file.BodyHtml = manualBL.GenerateNoticeBoardFolderBodyContentHtml(xPath, "Circulars");
+            return View(file);
+        }
     }
 }
