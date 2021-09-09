@@ -532,7 +532,7 @@
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MSC.1 Circ.1175</filename>
 				</foldername>
 			</foldername>
-			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
+			<foldername description="SEEMP Part I" actionname="SEEMP1" name="22. SEEMP Part I">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">KHKV Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
@@ -562,7 +562,7 @@
 				</foldername>
 				
 			</foldername>
-			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
+			<foldername description="SEEMP Part II" actionname="SEEMP2" name="23. SEEMP Part II">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">KHKV Vessel's Particulars</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
@@ -1100,7 +1100,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="GMPMR">Manual Revision</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">MPA-Used Batteries regarded as E-Waste (05Apr18)-filed in front of GMP</filename> -->
 				</foldername>
-			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
+			<foldername description="SEEMP Part I" actionname="SEEMP1" name="22. SEEMP Part I">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">KWEX Vessel's Particulars</filename>	
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
@@ -1141,7 +1141,7 @@
 				<!-- </foldername> -->
 			
 			</foldername>
-			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
+			<foldername description="SEEMP Part II" actionname="SEEMP2" name="23. SEEMP Part II">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">KWEX Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
@@ -1684,7 +1684,7 @@
 			<foldername description="Emergency Towing Arrangement" actionname="ETA" name="21. ETA - CSVA">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3. CSVA ETA 24Oct16</filename>
 			</foldername>
-			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
+			<foldername description="SEEMP Part I" actionname="SEEMP1" name="22. SEEMP Part I">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">CSVA Vessel's Particulars </filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
@@ -1721,7 +1721,7 @@
 				<!-- </foldername> -->
 			
 			</foldername>
-			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
+			<foldername description="SEEMP Part II" actionname="SEEMP2" name="23. SEEMP Part II">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">CSVA Vessel's Particulars </filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
@@ -2248,7 +2248,7 @@
 			<foldername description="Emergency Towing Arrangement" actionname="ETA" name="21. ETA - VALIANT">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">4. CSVL ETA 04Aug17</filename>
 			</foldername>
-			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
+			<foldername description="SEEMP Part I" actionname="SEEMP1" name="22. SEEMP Part I">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">CSVL Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
@@ -2293,7 +2293,7 @@
 				<!-- </foldername> -->
 			
 			</foldername>
-			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
+			<foldername description="SEEMP Part II" actionname="SEEMP2" name="23. SEEMP Part II">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">CSVL Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
@@ -2838,7 +2838,7 @@
 			<foldername description="Emergency Towing Arrangement" actionname="ETA" name="21. ETA - ENDEVOUR">
 				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">5. CSEN ETA 24Aug17</filename>
 			</foldername>
-			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
+			<foldername description="SEEMP Part I" actionname="SEEMP1" name="22. SEEMP Part I">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">CSEN Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
@@ -2875,7 +2875,7 @@
 				<!-- </foldername> -->
 			
 			</foldername>
-			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
+			<foldername description="SEEMP Part II" actionname="SEEMP2" name="23. SEEMP Part II">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">CSEN Vessel's Particulars</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
@@ -3433,7 +3433,7 @@
 					<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">13. MSC.1 Circ 1255</filename> -->
 				<!-- </foldername> -->
 			</foldername>
-			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
+			<foldername description="SEEMP Part I" actionname="SEEMP1" name="22. SEEMP Part I">
 				<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">KHEM Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
@@ -3473,7 +3473,7 @@
 				<!-- </foldername> -->
 			
 			</foldername>
-			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
+			<foldername description="SEEMP Part II" actionname="SEEMP2" name="23. SEEMP Part II">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">KHEM Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>
@@ -3994,7 +3994,7 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETACover">Cover- KHK Majesty</filename> -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ETAMR">Manual Revision (KHMA)</filename> -->
 			</foldername>
-			<foldername description="SEEM Part I" actionname="SEEMP1" name="22. SEEMP Part I">
+			<foldername description="SEEMP Part I" actionname="SEEMP1" name="22. SEEMP Part I">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPContent">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPVP">KHMA Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMPIntroduction">Section 1 - Introduction</filename>
@@ -4034,7 +4034,7 @@
 				<!-- </foldername> -->
 			
 			</foldername>
-			<foldername description="SEEM Part II" actionname="SEEMP2" name="23. SEEMP Part II">
+			<foldername description="SEEMP Part II" actionname="SEEMP2" name="23. SEEMP Part II">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Content">Content</filename> -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2VP">KHMA Vessel's Particulars</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEEMP2Introduction">Section 1 - Introduction</filename>

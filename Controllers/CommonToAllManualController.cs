@@ -275,7 +275,8 @@ namespace TCCCMS.Controllers
                             else if (type == "PDF")
                             {
                                 sb.Append("\n");
-                                sb.Append("<li ><span style='margin-right:5px;'>></span><a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
+                                //sb.Append("<li ><span style='margin-right:5px;'>></span><a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
+								sb.Append("<li ><span>></span><a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
                                 sb.Append(filename + "</a>");
                                 sb.Append("</br>");
 
