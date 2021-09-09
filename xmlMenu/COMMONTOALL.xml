@@ -28,8 +28,8 @@
 				</foldername>
 			</foldername>
 			
-			<foldername actionname="CGS" description="TCC Cyber Guidance (Shipboard)" name="8. TCC Cyber Guidance (Shipboard)">
-				 
+			<!--<foldername actionname="CGS" description="TCC Cyber Guidance (Shipboard)" name="8. TCC Cyber Guidance (Shipboard)">-->
+			 <foldername actionname="CGS" description="Group Cyber Operation Manual (for Shipboard)" name="8. TCC Cyber Guidance (Shipboard)"> 
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CGCContentS">CGS Contents</filename>  -->
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CGSDL">CGS Distribution List</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CGSMC">CGS Manual Control</filename>  -->
@@ -57,7 +57,8 @@
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CGSMR">Manual Revisions</filename>  -->
 			</foldername>
 				
-			<foldername actionname="GCGS" description="TCC Group Cyber Guidance (Shore)" name="9. TCC Group Cyber Guidance (Shore)">
+			<!--<foldername actionname="GCGS" description="TCC Group Cyber Guidance (Shore)" name="9. TCC Group Cyber Guidance (Shore)">-->
+			 <foldername actionname="GCGS" description="Group Cyber Operation Manual (for Shore Offices)" name="9. TCC Group Cyber Guidance (Shore)"> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSObjectives">Chapter 1 - Objectives</filename> <!-- GCGS Chapter 1 - Objectives  -->
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSUTCT">Chapter 2 - Understanding the Cyber Threats</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GCGSOITI">Chapter 3 - TCC Offices I.T Infrastructure</filename> 
@@ -120,7 +121,7 @@
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPMB">6. Main Body</filename> -->
 			</foldername>
 			
-			<foldername actionname="TOM" description="Tanker Operation Manual" name="11. TOM">
+			<foldername actionname="TOM" description="Tanker Operations Manual" name="11. TOM">
 				 <filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMTCPM">Chapter 1 - The cargo, pertoleum _ its nature</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TOMCDMT">Chapter 2 - Construction _ Design Of The Modern Tanker  </filename>
 				<foldername actionname="" description="" name="Chapter 3 Cargo Systems and Equipment">
@@ -198,7 +199,8 @@
 				</foldername>
 			</foldername>
 			
-			<foldername actionname="EMS" description="EMS Manual" name="15. EMS Manual">
+			<!-- <foldername actionname="EMS" description="EMS Manual" name="15. EMS Manual"> -->
+			<foldername actionname="EMS" description="Environmental Management System Manual" name="15. EMS Manual">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMContents">EMSM Contents</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMDL">EMSM Distribution List</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EMSMMC">EMSM Manual Control</filename> 
@@ -279,7 +281,7 @@
 					</foldername>
 			</foldername>
 			
-			<foldername actionname="Manning" description="Manning manual" name="16. Manning manual">
+			<foldername actionname="Manning" description="Manning Manual" name="16. Manning manual">
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMMR">4. Manual Revisions</filename> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMContents">5. Contents</filename>  --> 
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MMDRRR">Chapter 1 - Definitions Reporting relations _ responsibilities</filename> 
