@@ -133,6 +133,7 @@
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >5. Standard Club – STS in the Singapore OPL– Don’t!</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >6. SN-1-Circ-282-Information concerning anchoring in the TSS in the SOMS</filename>
 						</foldername>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMA-2021-08 New Law in CA, USA, Affecting Shipowner’s Liability For Oil Pollution</filename>
 
 					</foldername>
 				</foldername>
@@ -171,6 +172,7 @@
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FNA-2021-06 Navigation Through Suez Canal</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FNA-2021-07 USA bans the use of Laser Pointers at Sea</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FNA-2021-08 Multi-Sensor and Multi-Layer Integration in ECDIS</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FNA-2021-09 Navigation Incident Hot Spots and Hidden Risk Factors</filename>
 					</foldername>
 				</foldername>
 				<foldername name="Fleet Personnel Advisory" actionname="" description="">
@@ -201,6 +203,7 @@
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FPA 2020-02 - Monthly Provision Inventory Discrepancy</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FPA 2020-03 - Maintenance of IHM Part 1</filename>
 					</foldername>
+					
 				</foldername>
 				<foldername name="Fleet Technical Advisory" actionname="" description="">
 					<foldername name="2013" actionname="" description="">
@@ -432,6 +435,7 @@
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >i. Chapter 5 - Other Operations Rev 01</filename>
 							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >ii. CO060 - Bondi Test Result</filename>
 						</foldername>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FMN-2021-19 Operational Excellence and Safety Award Programme</filename>
 					</foldername>
 				</foldername>
 				<foldername name="Fleet Technical Notice" actionname="" description="">
@@ -563,6 +567,10 @@
 				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA 2021-18 Damage to Standard Magnetic Compass</filename>
 				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA-2021-19 Verify Your Wire Rope Terminations</filename>
 				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >SA-2021-20 Main Auxiliary Engine and Equipment Incidents</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="New"  version="0.0.1" >SA-2021-21 Injury Caused by Rupture of High Pressure Washer Hose</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="New"  version="0.0.1" >SA-2021-22 A Delayed Response to a Fire Can Be Fatal for the Fire Team</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="New"  version="0.0.1" >SA-2021-23 Eye Injury while using improper hand tool</filename>
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="New"  version="0.0.1" >SA-2021-24 Importance of Conducting Properly Formatted Abandon Ship Drill</filename>
 				</foldername>
 			</foldername>
 		</noticeboard>

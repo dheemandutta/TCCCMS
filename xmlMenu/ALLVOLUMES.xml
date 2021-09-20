@@ -34,7 +34,7 @@
             <!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. I Manual</filename> -->
 			<foldername actionname="" description="" name="TCCHK Signed Polices and Statements">
 			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="OP2CSP">OP002 - Company Security Policy</filename>
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS5DAP">PS005 - Drug and Aochol Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS5DAP">PS005 - Drug and Alcohol Policy</filename>
 			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS11SP">PS011 - Smoking Policy</filename>
 			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS17SEP">PS017 - S and E Policy</filename>
 			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS18HP">PS018 - Health Policy</filename>
@@ -274,7 +274,7 @@
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 1 Walk About Plan Template</filename>
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 2 Interview Record</filename>
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 3 Vessel Condition Report</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 4 Remote Internal Audit Report - ISM-MLC-EMS</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 4 Remote Internal Audit Report - ISM-MLC-EMS</filename> -->
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="C3A4RIAR">Chapter 3 Annex 4 Remote Internal Audit Report - ISM-MLC-EMS</filename>
 					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 5 Remote Internal Audit Report - ISPS</filename>
 					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="C3A6IRAS">Chapter 3 Annex 6 Internal Remote Audit-Schedule</filename>
@@ -300,7 +300,8 @@
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IncidentManagement">Chapter 4 Incident Management</filename>
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="JHRA">Chapter 5 Job Hazard and Risk Analyses</filename>
 				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S5Contents">Contents</filename> -->
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="C6HF">Chapter 6 Human Factors - TCCS</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C6HF">Chapter 6 Human Factors - TCCS (both are same this and below line)</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="C6HF">Chapter 6 Human Factors</filename>
 			</foldername>
 			<foldername actionname="" description="" name="Sec 6 Administration Management">
 				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDC">Chapter 1 Document and Data Control</filename>

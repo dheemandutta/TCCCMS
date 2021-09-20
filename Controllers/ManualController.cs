@@ -64,6 +64,11 @@ namespace TCCCMS.Controllers
             if (Request.QueryString["cat"] != null)
             {
                 category = Request.QueryString["cat"].ToString();
+                Session["ShipCat"] = category;//added on 14th Sep 2021 (Ship category or C2A category)
+            }
+            else if(Session["ShipCat"].ToString() != null)
+            {//added on 14th Sep 2021
+                category = Session["ShipCat"].ToString();
             }
 
 
@@ -100,7 +105,9 @@ namespace TCCCMS.Controllers
                 //fsvm.ManualList = manuals.Skip((pgn.CurrentPage - 1) * pgn.PageSize).Take(pgn.PageSize).ToList();
                 fsvm.Pagination = pgn;
 
-                fsvm.VolumeId = Convert.ToInt32(volNo);
+                fsvm.VolumeId       = Convert.ToInt32(volNo);
+                fsvm.ShipId         = shipId;//added on 14th Sep 2021
+                fsvm.ShipCategory   = category;//added on 14th Sep 2021
 
                 var pager = new Pager(manuals.Count(), currentPage);
                 fsvm.ManualList = manuals.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize).ToList();
