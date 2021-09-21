@@ -19,5 +19,8 @@ namespace TCCCMS.Models
 
 
         public Pager Pager { get; set; }
+
+        public string ShipCategory { get; set; }//added on 14th Sep 2021
+        public int ShipId { get; set; }//added on 14th Sep 2021
     }
 }

@@ -1014,8 +1014,78 @@ function UploadReviewedFilledUpForm() {
     }
 }
 
+////////Old function and commented on15th Sep 2021
+//function UploadReviewedFilledUpFormWithApprovers() {
+//    //var url = $('#urlReviewedFormForApproval').val();
+//    //var url = "/Forms/UploadFilledUpReviewedFormForApproval";// Commented on 19th Aug 2021
+//    var url = "/Forms/UploadFilledUpReviewedFormForApprovalNew"; // Added on 19th Aug 2021
+//    if (tmpApproverList.length === 0) {
+
+//        $('#ddlApproverUser').css('border-color', 'Red');
+
+//    }
+//    else {
+//        var frm = $('#txtReviewedForm').val();
+
+//        $.ajax({
+//            url: url,
+//            type: "POST",
+//            datatype: "json",
+//            contentType: "application/json; charset=utf-8",  
+//           // processData: false, // Not to process data  
+//            data: JSON.stringify({
+//                formName: frm,
+//               approvers: JSON.stringify(tmpApproverList)
+//            }),
+//            //data: { categoryId: y},
+//            success: function (result) {
+//                alert(result);
+//                //$('#txtReviewedForm').val('');
+//                //$('#lblReviewedForm').text('');
+//                //tmpApproverList = [];
+//                $('#reviewedFilledUpFormModal').modal('hide');
+
+//                ClearFields3();
+
+//                toastr.options = {
+//                    "closeButton": false,
+//                    "debug": false,
+//                    "newestOnTop": false,
+//                    "progressBar": false,
+//                    "positionClass": "toast-bottom-full-width",
+//                    "preventDuplicates": false,
+//                    "onclick": null,
+//                    "showDuration": "300",
+//                    "hideDuration": "1000",
+//                    "timeOut": "5000",
+//                    "extendedTimeOut": "1000",
+//                    "showEasing": "swing",
+//                    "hideEasing": "linear",
+//                    "showMethod": "fadeIn",
+//                    "hideMethod": "fadeOut"
+//                };
+
+//                toastr.success("Form Uploaded Successfully");
+//                $('#reviewedFilledUpFormModal').modal('hide');
+//            },
+//            error: function (err) {
+//                alert(err.statusText);
+//                $('#reviewedFilledUpFormModal').modal('hide');
+
+//                ClearFields3();
+//            }
+//        });
+//    }
+
+    
+//}
+
+/////New function Modified on 15th Sep 2021
+
 
 function UploadReviewedFilledUpFormWithApprovers() {
+    ////////--this function called when ship user upload the Reviewed form for Approval...
+
     //var url = $('#urlReviewedFormForApproval').val();
     //var url = "/Forms/UploadFilledUpReviewedFormForApproval";// Commented on 19th Aug 2021
     var url = "/Forms/UploadFilledUpReviewedFormForApprovalNew"; // Added on 19th Aug 2021
@@ -1027,57 +1097,142 @@ function UploadReviewedFilledUpFormWithApprovers() {
     else {
         var frm = $('#txtReviewedForm').val();
 
-        $.ajax({
-            url: url,
-            type: "POST",
-            datatype: "json",
-            contentType: "application/json; charset=utf-8",  
-           // processData: false, // Not to process data  
-            data: JSON.stringify({
-                formName: frm,
-               approvers: JSON.stringify(tmpApproverList)
-            }),
-            //data: { categoryId: y},
-            success: function (result) {
-                alert(result);
-                //$('#txtReviewedForm').val('');
-                //$('#lblReviewedForm').text('');
-                //tmpApproverList = [];
-                $('#reviewedFilledUpFormModal').modal('hide');
+        if (window.FormData !== undefined) {
 
-                ClearFields3();
+            var fileUpload = $("#fileUpload").get(0);
+            var files = fileUpload.files;
+            var uploadReviewedFormName = '';
+            // Create FormData object  
+            var fileData = new FormData();
+            // Looping over all files and add it to FormData object  
+            for (var i = 0; i < files.length; i++) {
+                fileData.append(files[i].name, files[i]);
 
-                toastr.options = {
-                    "closeButton": false,
-                    "debug": false,
-                    "newestOnTop": false,
-                    "progressBar": false,
-                    "positionClass": "toast-bottom-full-width",
-                    "preventDuplicates": false,
-                    "onclick": null,
-                    "showDuration": "300",
-                    "hideDuration": "1000",
-                    "timeOut": "5000",
-                    "extendedTimeOut": "1000",
-                    "showEasing": "swing",
-                    "hideEasing": "linear",
-                    "showMethod": "fadeIn",
-                    "hideMethod": "fadeOut"
-                };
-
-                toastr.success("Form Uploaded Successfully");
-                $('#reviewedFilledUpFormModal').modal('hide');
-            },
-            error: function (err) {
-                alert(err.statusText);
-                $('#reviewedFilledUpFormModal').modal('hide');
-
-                ClearFields3();
+                uploadReviewedFormName = files[i].name;
             }
-        });
+
+            fileData.append('formName', frm);
+            fileData.append('approvers', JSON.stringify(tmpApproverList));
+
+            if (files.length === 0) {
+
+                alert("Selected Form  zero");
+
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    datatype: "json",
+                    //contentType: "application/json; charset=utf-8",
+                    // processData: false, // Not to process data  
+                    //data: JSON.stringify({
+                    //    formName: frm,
+                    //    approvers: JSON.stringify(tmpApproverList)
+                    //}),
+                    contentType: false, // Not to set any content header  
+                    processData: false, // Not to process data  
+                    data: fileData,
+                    success: function (result) {
+                        alert(result);
+                        $('#reviewedFilledUpFormModal').modal('hide');
+
+                        ClearFields3();
+
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-bottom-full-width",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        };
+
+                        toastr.success("Form Uploaded Successfully");
+                        $('#reviewedFilledUpFormModal').modal('hide');
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                        $('#reviewedFilledUpFormModal').modal('hide');
+
+                        ClearFields3();
+                    }
+                });
+            }
+            else if (files.length != 0 && uploadReviewedFormName === frm) {
+                alert("Selected Form  and Reviewed form Name are same ..!");
+
+                $.ajax({
+                    url: url,
+                    type: "POST",
+                    datatype: "json",
+                    //contentType: "application/json; charset=utf-8",
+                    // processData: false, // Not to process data  
+                    //data: JSON.stringify({
+                    //    formName: frm,
+                    //    approvers: JSON.stringify(tmpApproverList)
+                    //}),
+                    contentType: false, // Not to set any content header  
+                    processData: false, // Not to process data  
+                    data: fileData,
+                    success: function (result) {
+                        alert(result);
+                        $('#reviewedFilledUpFormModal').modal('hide');
+
+                        ClearFields3();
+
+                        toastr.options = {
+                            "closeButton": false,
+                            "debug": false,
+                            "newestOnTop": false,
+                            "progressBar": false,
+                            "positionClass": "toast-bottom-full-width",
+                            "preventDuplicates": false,
+                            "onclick": null,
+                            "showDuration": "300",
+                            "hideDuration": "1000",
+                            "timeOut": "5000",
+                            "extendedTimeOut": "1000",
+                            "showEasing": "swing",
+                            "hideEasing": "linear",
+                            "showMethod": "fadeIn",
+                            "hideMethod": "fadeOut"
+                        };
+
+                        toastr.success("Form Uploaded Successfully");
+                        $('#reviewedFilledUpFormModal').modal('hide');
+                    },
+                    error: function (err) {
+                        alert(err.statusText);
+                        $('#reviewedFilledUpFormModal').modal('hide');
+
+                        ClearFields3();
+                    }
+                });
+            }
+            else {
+                alert("Selected Form Name Should be same ..!");
+            }
+             
+
+            
+        }
+        else {
+            alert("FormData is not supported.");
+        }
+
+
+        
     }
 
-    
+
 }
 
 function Test() {

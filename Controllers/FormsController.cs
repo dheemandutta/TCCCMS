@@ -905,45 +905,59 @@ namespace TCCCMS.Controllers
                     {
                         
                         y = ConvertToPDFForApproval(path, uniqueFormName, task);
-                        //uniqueFormName = Path.GetFileNameWithoutExtension(uniqueFormName) + ".pdf";
+                        uniqueFormName = Path.GetFileNameWithoutExtension(uniqueFormName) + ".pdf";
                     }
-                   
-                    
+                    else if(task == "R")//--added this else if condition on 16th sep 2021
+                    {
+                        //uniqueFormName = Path.GetFileNameWithoutExtension(uniqueFormName) + ".pdf";
+                        y = 1;
+                    }
 
-                    form.FormName = fname;
-                    form.FilledUpFormName = Path.GetFileNameWithoutExtension(uniqueFormName) + ".pdf"; ;
-                    //form.FilledUpFormName = uniquePdfname;
-                    form.FilePath = relativePath;
-                    //form.ShipId             = Convert.ToInt32(shipId);
-                    form.ShipId = Convert.ToInt32(Session["ShipId"].ToString());
-                    form.Approvers = orderedApprovers;//added on 24th Jul 2021 @BK
-                    form.Task = task;
-                    //form.CreateedBy = 1;//--- userId
-                    form.CreateedBy = Convert.ToInt32(Session["UserId"].ToString());//--- userId
-                    //---End---For Single form
-                    //int count = documentBL.SaveFilledUpForm(form, ref catchMessage);
-                    int count = documentBL.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
-                    
+
                     if (y == 1)
                     {
+                        //--wrapped in this if condition on 16th sep 2021
+                        form.FormName = fname;
+                        //form.FilledUpFormName = Path.GetFileNameWithoutExtension(uniqueFormName) + ".pdf"; ;
+                        form.FilledUpFormName = uniqueFormName;
+                        form.FilePath = relativePath;
+                        //form.ShipId             = Convert.ToInt32(shipId);
+                        form.ShipId = Convert.ToInt32(Session["ShipId"].ToString());
+                        form.Approvers = orderedApprovers;//added on 24th Jul 2021 @BK
+                        form.Task = task;
+                        //form.CreateedBy = 1;//--- userId
+                        form.CreateedBy = Convert.ToInt32(Session["UserId"].ToString());//--- userId
+                        //---End---For Single form
+                        //int count = documentBL.SaveFilledUpForm(form, ref catchMessage);
+                        int count = documentBL.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
+                        //--end---wrapped in this if condition on 16th sep 2021
+
+
                         WriteErrorToText("Sign added in form", "ApproveFilledUpForm");
-                        if (System.IO.File.Exists(Path.Combine(path , uniqueFormName)))
+                        if (System.IO.File.Exists(Path.Combine(path , uniqueFormName)) && task == "A")
                         {
                             //System.IO.File.Copy(Path.Combine(path + "Temp\\", uniqueFormName), Path.Combine(path, uniqueFormName), true);
 
                             System.IO.File.Delete(Path.Combine(path , uniqueFormName));
                         }
 
+                        ////--wrapped in this if condition on 16th sep 2021
+                        string[] approverUsers = orderedApprovers.Split(',');
+                        foreach (string s in approverUsers)
+                        {
+
+                            isSendSuccessfully = SendMailToApprover(s, uniqueFormName, task);
+                        }
+
+                        // Returns message that successfully uploaded  
+                        return Json("File Uploaded Successfully!");
+                        ////--end--wrapped in this if condition on 16th sep 2021
                     }
-                    string[] approverUsers = orderedApprovers.Split(',');
-                    foreach (string s in approverUsers)
+                    else
                     {
-
-                        isSendSuccessfully = SendMailToApprover(s, uniqueFormName, task);
+                        return Json("File Could not Uploaded ..!");
                     }
-
-                    // Returns message that successfully uploaded  
-                    return Json("File Uploaded Successfully!");
+                    
                 }
                 catch (Exception ex)
                 {
@@ -1206,9 +1220,10 @@ namespace TCCCMS.Controllers
         }
 
         /// <summary>
+        /// this method called fro Approverside mean shore user
         /// Added on 19th aug 2021
         /// Due to approvallogic has changed.
-        /// Approver add their sign in PDF form and the upload the same form
+        /// Approver add their sign/comment in doc/xls form and the upload the same form
         /// </summary>
         /// <param name="task"></param>
         /// <param name="approvers"></param>
@@ -1451,7 +1466,13 @@ namespace TCCCMS.Controllers
 
             return x;
         }
-
+        /// <summary>
+        /// this method called from user side mean ship user
+        ///  when ship user upload the Reviewed form for Approval...
+        /// </summary>
+        /// <param name="formName"></param>
+        /// <param name="approvers"></param>
+        /// <returns></returns>
         [HttpPost]
         public JsonResult UploadFilledUpReviewedFormForApproval(string formName, object approvers)
         {
@@ -1486,6 +1507,7 @@ namespace TCCCMS.Controllers
 
                 }
                 orderedApprovers = orderedApprovers + ",";
+                
 
                 form.FormName           = fname;
                 form.FilledUpFormName   = formName;
@@ -1509,8 +1531,10 @@ namespace TCCCMS.Controllers
         }
 
         /// <summary>
+        /// this method called from user side mean ship user
         /// UploadFilledUpReviewedFormForApprovalNew is New because form approval logics has changed again
         /// created on 19th  Aug 2021
+        /// modified on 15th and 17th sep 2021
         /// </summary>
         /// <param name="formName"></param>
         /// <param name="approvers"></param>
@@ -1522,16 +1546,26 @@ namespace TCCCMS.Controllers
             {
                 string catchMessage         = "";
                 string relativePath         = "~/UploadFilledUpFormForApproval/";
+                string path                 = Server.MapPath(relativePath);//added on 17th sep 2021
+
+                string originalFormName;//added on 17th sep 2021
+                string reviewedFormName;//added on 17th sep 2021
+                string uploadedFormName;//added on 17th sep 2021
                 string fname;
-                fname                       = formName.Split('_').First();
-                Forms form                  = new Forms();
-                DocumentBL documentBL       = new DocumentBL();
-                List<ApproverMaster> approverList = new List<ApproverMaster>();
-                string orderedApprovers     = "";
-                int approversCount          = 0;
-                approverList                = JsonConvert.DeserializeObject<List<ApproverMaster>>(approvers.ToString());
-                approversCount              = approverList.Count();
-                int cnt                     = 0;
+                originalFormName                    = formName.Split('_').First();
+                reviewedFormName                    = Path.GetFileNameWithoutExtension(formName);//added on 17th sep 2021
+                Forms form                          = new Forms();
+                DocumentBL documentBL               = new DocumentBL();
+                List<ApproverMaster> approverList   = new List<ApproverMaster>();
+                string orderedApprovers             = "";
+                int approversCount                  = 0;
+                //approverList                        = JsonConvert.DeserializeObject<List<ApproverMaster>>(approvers.ToString());
+
+                string[] result                     = Array.ConvertAll<object, string>((object[])approvers, x => x.ToString());
+                approverList                        = JsonConvert.DeserializeObject<List<ApproverMaster>>(result[0]);
+
+                approversCount                      = approverList.Count();
+                int cnt                             = 0;
                 foreach (ApproverMaster a in approverList.OrderBy(a => a.SL))
                 {
                     cnt = cnt + 1;
@@ -1543,21 +1577,92 @@ namespace TCCCMS.Controllers
 
                 }
                 orderedApprovers        = orderedApprovers + ",";
-                int y                   = ConvertToPDFForApproval(relativePath, formName,"A");
-                form.FormName           = fname;
-                form.FilledUpFormName   = formName;
-                form.FilePath           = relativePath;
-                //form.ShipId             = Convert.ToInt32(shipId);
-                form.ShipId             = Convert.ToInt32(Session["ShipId"].ToString());
-                form.Approvers          = orderedApprovers;//added on 24th Jul 2021 @BK
-                form.Task               = "A";
-                //form.CreateedBy           = 1;//--- userId
-                form.CreateedBy         = Convert.ToInt32(Session["UserId"].ToString());//--- userId
+                int y = 0;
+                //y                   = ConvertToPDFForApproval(path, formName,"A");
 
-                int count               = documentBL.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
+                if(Request.Files.Count == 1)
+                { // This condition added on 15th Sep 2021 Due change logic on Upload Reviewed Form for Approval 
+                    try
+                    {
+                        //  Get all files from Request object  
+                        HttpFileCollectionBase files = Request.Files;
+                        
+                        HttpPostedFileBase file = files[0];
 
-                // Returns message that successfully uploaded  
-                return Json("File Uploaded Successfully!");
+                        if (Request.Browser.Browser.ToUpper() == "IE" || Request.Browser.Browser.ToUpper() == "INTERNETEXPLORER")
+                        {
+                            string[] testfiles = file.FileName.Split(new char[] { '\\' });
+                            fname = testfiles[testfiles.Length - 1];
+                        }
+                        else
+                        {
+                            //fname = file.FileName;
+                            fname = file.FileName;
+                        }
+                        //string uniqueFormName = GetUniqueFileNameWithUserId(fname);
+                        // Get the complete folder path and store the file inside it. 
+                        var ext = Path.GetExtension(fname).ToLowerInvariant();
+                        //fname = Path.GetFileNameWithoutExtension(fname);
+                        
+                        
+                        if (ext.ToUpper() == ".DOCX" || ext.ToUpper() == ".DOC" || ext.ToUpper() == ".XLS" || ext.ToUpper() == ".XLSX")
+                        {
+                            uploadedFormName = reviewedFormName + ext;
+                            string fnameWithPath = Path.Combine(path + "Temp\\", uploadedFormName);
+                            file.SaveAs(fnameWithPath);
+                            y = ConvertToPDFForApproval(path + "Temp\\", uploadedFormName, "A");
+                        } 
+                        else if (ext.ToUpper() == ".PDF")
+                        {
+                            uploadedFormName = reviewedFormName + ".pdf";
+                            file.SaveAs(path+ uploadedFormName);
+                            y = 1;
+                        }
+                        if (System.IO.File.Exists(Path.Combine(path + "Temp\\", reviewedFormName + ".pdf")))
+                        {
+                            System.IO.File.Copy(Path.Combine(path + "Temp\\", reviewedFormName + ".pdf"), Path.Combine(path, reviewedFormName + ".pdf"), true);
+
+                            System.IO.File.Delete(Path.Combine(path + "Temp\\", reviewedFormName + ".pdf"));
+                            System.IO.File.Delete(Path.Combine(path + "Temp\\", reviewedFormName + ext));
+
+                        }
+                        WriteErrorToText("Modified Reviewed form copied from Temp", "UploadFilledUpReviewedFormForApprovalNew");
+                    }
+                    catch(Exception ex)
+                    {
+                        WriteErrorToText("Modified Reviewed form could not uploaded OR copied from Temp", "UploadFilledUpReviewedFormForApprovalNew");
+                    }
+                }
+                else if (Request.Files.Count == 0)
+                {
+                    y = ConvertToPDFForApproval(path , formName, "A");
+                }
+
+                if (y == 1)//added on 17th sep 2021
+                {
+                    //-----wrapped with IF condition on 17th sep 2021
+                    form.FormName           = originalFormName;
+                    form.FilledUpFormName   = reviewedFormName + ".pdf";
+                    form.FilePath           = relativePath;
+                    //form.ShipId             = Convert.ToInt32(shipId);
+                    form.ShipId             = Convert.ToInt32(Session["ShipId"].ToString());
+                    form.Approvers          = orderedApprovers;//added on 24th Jul 2021 @BK
+                    form.Task               = "A";
+                    //form.CreateedBy           = 1;//--- userId
+                    form.CreateedBy         = Convert.ToInt32(Session["UserId"].ToString());//--- userId
+
+                    int count               = documentBL.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
+
+                    // Returns message that successfully uploaded  
+                    return Json("File Uploaded Successfully!");
+                    //---end--wrapped with IF condition on 17th sep 2021
+                }
+                else
+                {
+                    return Json("File Could not Uploaded ...!");
+                }
+
+                    
             }
             catch (Exception ex)
             {
