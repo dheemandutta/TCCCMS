@@ -25,6 +25,7 @@ namespace TCCCMS.Controllers
         //}
         public ActionResult SearchList(int currentPage = 1, string volNo = "-1", string text = null)
         {
+            Session["ShipCat"] = string.Empty;
             Session["IsSearched"] = "1";
             ManualBL manualBL = new ManualBL();
             int totalrecords = 0;
@@ -66,7 +67,8 @@ namespace TCCCMS.Controllers
                 category = Request.QueryString["cat"].ToString();
                 Session["ShipCat"] = category;//added on 14th Sep 2021 (Ship category or C2A category)
             }
-            else if(Session["ShipCat"].ToString() != null)
+            //else if(Session["ShipCat"].ToString() != null)
+            else if (!String.IsNullOrEmpty(Session["ShipCat"].ToString()))
             {//added on 14th Sep 2021
                 category = Session["ShipCat"].ToString();
             }

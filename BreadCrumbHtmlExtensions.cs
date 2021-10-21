@@ -99,6 +99,27 @@ namespace TCCCMS
             {
                 breadcrumb2.Append(helper.ActionLink("Home", "AdminDashboard", "Dashboard").ToHtmlString());
                 breadcrumb2.Append("</span></div>");
+                //if (UserRole == "SupportUser")
+                //{
+                //    breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
+                //    breadcrumb2.Append(helper.ActionLink("Support",
+                //                              "UserDashboard",
+                //                              "Dashboard").ToHtmlString());
+                //    breadcrumb2.Append("</span></div>");
+                //}
+                //else if (UserRole == "OfficeAdmin")
+                //{
+                //    breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
+                //    breadcrumb2.Append(helper.ActionLink("Office", "AdminDashboard", "Dashboard").ToHtmlString());
+                //    breadcrumb2.Append("</span></div>");
+                //}
+                //else if (UserRole == "ShipAdmin")
+                //{
+                //    breadcrumb2.Append("<div class='steps_item'><span class='steps_content'>");
+                //    breadcrumb2.Append(helper.ActionLink("Ship", "AdminDashboard", "Dashboard").ToHtmlString());
+                //    breadcrumb2.Append("</span></div>");
+                //}
+
             }
 
             #endregion
@@ -195,7 +216,13 @@ namespace TCCCMS
                                                   "AdminDashboard",
                                                   helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
                     }
-                    
+                    else if (UserRole == "SupportUser")
+                    {
+                        breadcrumb2.Append(helper.ActionLink("Support",
+                                                  "UserDashboard",
+                                                  helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
+                    }
+
                     breadcrumb2.Append("</span></div>");
                 }
 
@@ -252,6 +279,12 @@ namespace TCCCMS
                             breadcrumb2.Append("<a href = '/Dashboard/UserDashboard'>");
 
                         breadcrumb2.Append(controller + "</a>");
+                    }
+                    else if(controller == "RevisionHistory")
+                    {
+                        breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
+                                              "RevisionDetails",
+                                              helper.ViewContext.RouteData.Values["controller"].ToString()).ToHtmlString());
                     }
                     else
                         breadcrumb2.Append(helper.ActionLink(helper.ViewContext.RouteData.Values["controller"].ToString(),
