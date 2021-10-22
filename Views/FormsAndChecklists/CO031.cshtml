@@ -11,7 +11,8 @@
 <script src="~/Scripts/DownloadableFroms.js"></script>
 <script src="~/js/UserMaster/UserUploadForm.js"></script>
 @Html.Hidden("loaddata", @Url.Action("LoadData", "Forms"))
-@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpForm", "Forms"))
+@*@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpForm", "Forms"))*@
+@Html.Hidden("urlFilledUpForm", @Url.Action("UploadFilledUpFormNew", "Forms"))
 
 <body>
     @*<h2 class="ta">Downloadable Forms</h2>*@
@@ -20,7 +21,7 @@
             <h2 class="ta">CO031 - FORMS</h2>
 
             <a type="button" class="btn btn-info btn-sm" style="background-color: #e90000; width:130px;" href='@Url.Action("FillupFormList", "Forms", new { @qr =0, currentPage = 1})'><span>Waiting Approval </span></a>
-            <a type="button" class="btn btn-info btn-sm" style="background-color: #6AA84F; width: 130px;" href='@Url.Action("FillupFormList", "Forms" ,new { @qr =1, currentPage = 1})'><span>Approved </span></a>
+            <a type="button" class="btn btn-info btn-sm" style="background-color: #6AA84F; width: 130px;" href='@Url.Action("FillupFormList", "Forms" ,new { @qr =2, currentPage = 1})'><span>Approved </span></a>
             <div>&nbsp;</div>
         </div>
 

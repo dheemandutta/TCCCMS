@@ -196,6 +196,9 @@
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FPA-2021-02 - Renewal of Certificates and Traveling documents during vacation</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >FPA-2021-03 Assessment of Manning Level</filename>
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FPA-2021-04 Performance Appraisal report</filename>
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >*********Below two Lines Added on 25th Sep 2021*************</filename> -->
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FPA-2021-05 Reporting procedure during COVID-19</filename>
+						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >FPA-2021-06 - Introducing the rank of Senior 2O and Senior 3E</filename>
 					</foldername>
 				</foldername>
 				<foldername name="Fleet Procurement Advisory" actionname="" description="">
@@ -464,7 +467,85 @@
 				</foldername>
 			</foldername>
 			<foldername name="Safety Campaigns" actionname="SafetyCampaigns" description="Safety Campaigns">
-				<foldername name="2014" actionname="" description="">
+				<!-- <filename doctype="" actionname="" isdownloadable="" ismodify="" status=""  version="" >*** Below Folder tag (2014 to 2019) copy to Safety and folder tag 2020 deleted on 30th Sep 2021</filename> -->
+				<!-- <foldername name="2014" actionname="" description=""> -->
+					<!-- <foldername name="Alarms and Trips (15Apr-15Jul 2014)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Safety Campaign – Alarms and Trips</filename> -->
+					<!-- </foldername> -->
+					<!-- <foldername name="Galley Fire Safety (01Jun-31Jul2014)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Safety Campaign – Galley Fire Safety</filename> -->
+					<!-- </foldername> -->
+				<!-- </foldername> -->
+				<!-- <foldername name="2015" actionname="" description=""> -->
+					<!-- <foldername name="Auxiliary Engine Blackout (30Mar-30Jun2015)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Safety Campaign – Auxiliary Engine Blackout</filename> -->
+					<!-- </foldername> -->
+					<!-- <foldername name="Proper PPE _ Dress Code (07May-07Jun2015)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Safety Campaign - Proper PPE _ Dress Code</filename> -->
+					<!-- </foldername> -->
+				<!-- </foldername> -->
+				<!-- <foldername name="2016" actionname="" description=""> -->
+					<!-- <foldername name="Mooring Safety (01Jul-31Aug2016)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Mooring Safety Campaign Outline Rev01</filename> -->
+					<!-- </foldername> -->
+				<!-- </foldername> -->
+				<!-- <foldername name="2017" actionname="" description=""> -->
+					<!-- <foldername name="Opr of Lifeboat Engine, Emgr Generator _ Valve (01-30Apr2017)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Opr of Lifeboat Engine, Emgr Generator _ Valve Outline</filename> -->
+					<!-- </foldername> -->
+					<!-- <foldername name="Slip, Trips and Falls (01-30Apr2017)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >CLAIMS-PI-FDD-#10127500-v1-Presentation_Slip__Falls</filename> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Slip, Trips and Falls Campaign Checklist</filename> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Slip, Trips and Falls Campaign Outline</filename> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Slips Trips  Falls 210317</filename> -->
+					<!-- </foldername> -->
+				<!-- </foldername> -->
+				<!-- <foldername name="2018" actionname="" description=""> -->
+					<!-- <foldername name="Safety of Nav _ Best Practices in Bridge Teamwork (01Feb-31Mar18)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >One-on-One Session(2O _ 3O)</filename> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >One-on-One Session(CO)</filename> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Safety of Nav _ Best Practices Outline</filename> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >~$fety of Nav _ Best Practices Outline</filename> -->
+					<!-- </foldername> -->
+					<!-- <foldername name="Spare Part Handling _ Inventory Control (03Apr-03May18)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Safety Campaign – Spare Part Handling _ Inventory Control</filename> -->
+					<!-- </foldername> -->
+				<!-- </foldername> -->
+				<!-- <foldername name="2019" actionname="" description=""> -->
+					<!-- <foldername name="Behaviour Based Safety Assessment (01Jan-31Mar19)" actionname="" description=""> -->
+						<!-- <filename doctype="XLS" actionname="" isdownloadable="" ismodify="" status=""  version="" >Behaviour Based Safety Assessment Form</filename> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Behaviour Based Safety Campaign outline</filename> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >HOPE Card</filename> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Suggestion Follow-up Summary (closed)</filename> -->
+					<!-- </foldername> -->
+					<!-- <foldername name="Machinery Breakdown - Safety Related Equipment (05Jul-05Oct19)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Machinery breakdown - Safety Related Equipments</filename> -->
+					<!-- </foldername> -->
+					<!-- <foldername name="TCC Prevent Injury Campaign 2019 (28May-27Jun19)" actionname="" description=""> -->
+						<!-- <foldername name="Feedback from Ships" actionname="" description=""> -->
+						<!-- </foldername> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Suggestion Summary- follow-up by Capt. Joshi</filename> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >TCC Prevent Injury Campaign 2019 Outline</filename> -->
+					<!-- </foldername> -->
+				<!-- </foldername> -->
+				<!-- <foldername name="2020" actionname="" description=""> -->
+				
+					<!-- <foldername name="Crane Loads" actionname="" description="Crane Loads at Offshore terminals (16Apr-15Jul20)"> -->
+						<!-- <foldername name="Attach Camp" actionname="" description="Attachments to Campaign"> -->
+							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >A Study into Crane Loads Associated with Hose Handling at Offshore Terminals</filename> -->
+							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Study into Crane Loads Associated</filename> -->
+							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >CSEN-CSEN-0014-2019</filename> -->
+							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >KHKV-KHKV-0010-2020</filename> -->
+						<!-- </foldername> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Crane Safety Campaign</filename> -->
+					<!-- </foldername> -->
+					<!-- <foldername name="Stability and Compatibility and Marine Fuel (11Aug-10Nov2020)" actionname="" description=""> -->
+						<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Safety Campaign –  Stability and Compatibility of Marine Fuel</filename> -->
+					<!-- </foldername> -->
+				<!-- </foldername> -->
+				<!-- <filename doctype="" actionname="" isdownloadable="" ismodify="" status=""  version="" >Saftey and Environmental folder tag added on 27th sep 2021</filename> -->
+				<foldername name="Safety" actionname="" description="">
+					<foldername name="2014" actionname="" description="">
 					<foldername name="Alarms and Trips (15Apr-15Jul 2014)" actionname="" description="">
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Safety Campaign – Alarms and Trips</filename>
 					</foldername>
@@ -524,19 +605,14 @@
 						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >TCC Prevent Injury Campaign 2019 Outline</filename>
 					</foldername>
 				</foldername>
-				<foldername name="2020" actionname="" description="">
-					<foldername name="Crane Loads" actionname="" description="Crane Loads at Offshore terminals (16Apr-15Jul20)">
-						<foldername name="Attach Camp" actionname="" description="Attachments to Campaign">
-							<!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >A Study into Crane Loads Associated with Hose Handling at Offshore Terminals</filename> -->
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Study into Crane Loads Associated</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >CSEN-CSEN-0014-2019</filename>
-							<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >KHKV-KHKV-0010-2020</filename>
-						</foldername>
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Crane Safety Campaign</filename>
-					</foldername>
-					<foldername name="Stability and Compatibility and Marine Fuel (11Aug-10Nov2020)" actionname="" description="">
-						<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >Safety Campaign –  Stability and Compatibility of Marine Fuel</filename>
-					</foldername>
+				
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >2020-04 -Crane Loads with Hose Handling at Offshore Terminals</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >2020-08- Stability and Compatibility of Marine Fuel</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >2021-03-  Under Keel Clearance</filename>
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >2021-07- Building Resilience</filename>
+				</foldername>
+				<foldername name="Environmental" actionname="" description="">
+					<filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="NEW"  version="0.0.1" >2020-11- Single Use Plastic</filename>
 				</foldername>
 			</foldername>
 			<foldername name="Safety Alerts" actionname="SafetyAlerts" description="Safety Alerts">
@@ -575,6 +651,8 @@
 				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="New"  version="0.0.1" >SA-2021-22 A Delayed Response to a Fire Can Be Fatal for the Fire Team</filename>
 				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="New"  version="0.0.1" >SA-2021-23 Eye Injury while using improper hand tool</filename>
 				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="New"  version="0.0.1" >SA-2021-24 Importance of Conducting Properly Formatted Abandon Ship Drill</filename>
+				  <!-- <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status=""  version="" >*********Below Line Added on 25th Sep 2021*************</filename> -->
+				  <filename doctype="PDF" actionname="" isdownloadable="" ismodify="" status="New"  version="0.0.1" >SA-2021-25 Inadequate Maintenance Procedures for onboard EEBD</filename>
 				</foldername>
 			</foldername>
 		</noticeboard>

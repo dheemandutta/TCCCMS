@@ -173,17 +173,31 @@ namespace TCCCMS.Controllers
             ApprovedFilledupFormAndApproverViewModel affaVM = new ApprovedFilledupFormAndApproverViewModel();
             DocumentBL documentBL = new DocumentBL();
             affaVM = documentBL.GetApprovedFilledUpForms(Convert.ToInt32(Session["UserId"].ToString()), currentPage); // UserId not in use from 3rd Jul 2021
-            
-            if(Convert.ToInt32(qr) != 2)// added on 03/07/2021 @BK
+
+            /////*****Commented on 27th Sep 2021 
+            //if(Convert.ToInt32(qr) == 2)// added on 03/07/2021 @BK
+            //{
+            //    var res = affaVM.ApprovedFormList.Where(af => af.IsApproved == Convert.ToInt32(qr)).ToList();
+            //    affaVM.ApprovedFormList = res;
+            //}
+            //else if (Convert.ToInt32(qr) == 1)
+            //{
+            //    var res = affaVM.ApprovedFormList.Where(af => af.IsApproved == Convert.ToInt32(qr)).ToList();
+            //}
+            /////***End**Commented on 27th Sep 2021 
+
+            if (Convert.ToInt32(qr) > 0)// added on 27/09/2021 @BK
             {
-                var res = affaVM.ApprovedFormList.Where(af => af.IsApproved == Convert.ToInt32(qr)).ToList();
+                var res = affaVM.ApprovedFormList.Where(af => af.IsApproved != Convert.ToInt32(0)).ToList();
                 affaVM.ApprovedFormList = res;
             }
-            //else if(Convert.ToInt32(qr) == 1)
-            //{
-            //    var res = affaVM.ApprovedFormList.Where(af => af.IsApproved = 1);
-            //}
-            
+            else
+            {
+                var res = affaVM.ApprovedFormList.Where(af => af.IsApproved == Convert.ToInt32(0)).ToList();
+                affaVM.ApprovedFormList = res;
+            }
+
+
             //****************Added on 9th Aug 2021 @bk**********************//
             var pager = new Pager(affaVM.ApprovedFormList.Count(), currentPage);
             affaVM.ApprovedFormList= affaVM.ApprovedFormList.Skip((pager.CurrentPage - 1) * pager.PageSize).Take(pager.PageSize).ToList();
@@ -461,13 +475,18 @@ namespace TCCCMS.Controllers
 
                 string fNameWithoutExtn = Path.GetFileNameWithoutExtension(uploadedFormName);
                 string ext = Path.GetExtension(uploadedFormName).ToLowerInvariant();
-                string destinationFile = relPath + fNameWithoutExtn +".pdf";
+                //string destinationFile = relPath+"temp\\" + fNameWithoutExtn +".pdf";
+                string destinationFile = relPath + fNameWithoutExtn + ".pdf";
 
-                
+
                 if (task == "A" && (ext == ".doc" || ext == ".docx"))
                 {
                     var source = DocumentModel.Load(relPath + uploadedFormName);
+                    var dst2Pdf = relPath + fNameWithoutExtn + ".pdf";
                     source.Save(destinationFile);
+                    //System.IO.File.Delete(relPath + uploadedFormName);
+                    //System.IO.File.Move(destinationFile, dst2Pdf);
+                    
                     x = 1;
                 }
                 else if (task == "A" && (ext == ".xls" || ext == ".xlsx"))
@@ -892,6 +911,7 @@ namespace TCCCMS.Controllers
                         fname = file.FileName;
                     }
                     string uniqueFormName = GetUniqueFileNameWithUserId(fname);
+                    string uniqueFormNameBeforeConvert = GetUniqueFileNameWithUserId(fname);
                     // Get the complete folder path and store the file inside it. 
                     var ext = Path.GetExtension(fname).ToLowerInvariant();
                     fname = Path.GetFileNameWithoutExtension(fname);
@@ -899,13 +919,15 @@ namespace TCCCMS.Controllers
                     //string fnameWithPath = Path.Combine(path, uniqueFormName);
                     string fnameWithPath = Path.Combine(path, uniqueFormName);
                     file.SaveAs(fnameWithPath);// file save into the temp  directory
-
+                    bool IsConverted = false;
                     int y = 0;
                     if(task == "A")
                     {
                         
                         y = ConvertToPDFForApproval(path, uniqueFormName, task);
                         uniqueFormName = Path.GetFileNameWithoutExtension(uniqueFormName) + ".pdf";
+                        IsConverted = true;
+
                     }
                     else if(task == "R")//--added this else if condition on 16th sep 2021
                     {
@@ -937,8 +959,16 @@ namespace TCCCMS.Controllers
                         if (System.IO.File.Exists(Path.Combine(path , uniqueFormName)) && task == "A")
                         {
                             //System.IO.File.Copy(Path.Combine(path + "Temp\\", uniqueFormName), Path.Combine(path, uniqueFormName), true);
-
-                            System.IO.File.Delete(Path.Combine(path , uniqueFormName));
+                            if (IsConverted)
+                            {
+                                System.IO.File.Delete(Path.Combine(path, uniqueFormNameBeforeConvert));
+                            }
+                            else
+                            {
+                                System.IO.File.Delete(Path.Combine(path, uniqueFormName));
+                            }
+                                
+                            
                         }
 
                         ////--wrapped in this if condition on 16th sep 2021
@@ -1653,8 +1683,14 @@ namespace TCCCMS.Controllers
 
                     int count               = documentBL.SaveFilledUpFormsForCompanyApproval(form, ref catchMessage);
 
-                    // Returns message that successfully uploaded  
-                    return Json("File Uploaded Successfully!");
+                    if(count > 0)
+                    {
+                        // Returns message that successfully uploaded  
+                        return Json("File Uploaded Successfully!");
+                    }
+                    else
+                        return Json("File Could not Uploaded OR Previously been uploaded..!");
+
                     //---end--wrapped with IF condition on 17th sep 2021
                 }
                 else

@@ -482,7 +482,7 @@ function ClearFields2() {
 
 function ClearFields3() {
     $("#ddlApproverUser").val('-1');
-
+    $('#fileUpload').val('');
     $('#ddlApproverUser').css('border-color', 'lightgrey');
     $('#hdnOriginalFormName').val("");
     $('#hdnFormsCategory').val("");
@@ -1116,7 +1116,7 @@ function UploadReviewedFilledUpFormWithApprovers() {
 
             if (files.length === 0) {
 
-                alert("Selected Form  zero");
+                alert("No Selected Form");
 
                 $.ajax({
                     url: url,
@@ -1166,8 +1166,10 @@ function UploadReviewedFilledUpFormWithApprovers() {
                     }
                 });
             }
-            else if (files.length != 0 && uploadReviewedFormName === frm) {
-                alert("Selected Form  and Reviewed form Name are same ..!");
+            //else if (files.length != 0 && uploadReviewedFormName === frm) {
+            else if (files.length != 0 ) {
+                //alert("Selected Form  and Reviewed form Name are same ..?");
+                confirm("Selected Form  and Reviewed form are same ..?")
 
                 $.ajax({
                     url: url,
