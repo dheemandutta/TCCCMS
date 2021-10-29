@@ -132,7 +132,7 @@ namespace TCCCMS.Controllers
             pC.UserType     = pOCO.UserType;
             //pC.IsAdmin      = pOCO.IsAdmin;
 
-            return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
+            return Json(bL.SaveUpdateUser(pC), JsonRequestBehavior.AllowGet);
         }
 
         public JsonResult SaveUpdateCompanyUser(UserMasterPOCO pOCO)

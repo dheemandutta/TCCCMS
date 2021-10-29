@@ -524,6 +524,7 @@ namespace TCCCMS.Controllers
 
         public JsonResult GetUserType()
         {
+           
             return Json(Session["UserType"].ToString(), JsonRequestBehavior.AllowGet);
         }
 

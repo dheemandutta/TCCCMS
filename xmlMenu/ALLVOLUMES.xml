@@ -136,7 +136,7 @@
 				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Pumpman">Promotion to Pumpman</filename>
 						  
 			</foldername>
-			<foldername actionname="" description="" name="Appendix 2 - Ship Board Job Description">
+			<foldername actionname="" description="Appendix 2 - Ship Board Job Description" name="Appendix 2 - Shipboard Job Description">
 				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="ABJD">AB Job Description</filename>
 				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="BJD">Bosun Job Description</filename>
 				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="CCJD">Chief Cook Job Description</filename>
