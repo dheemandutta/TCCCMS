@@ -84,6 +84,8 @@
 			
 			<foldername actionname="OMPCOV" description="Outbreak Management Plan-COVID19" name="10. Outbreak Mgmt Plan-COVID19">
 					<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPCP">1. Cover Page</filename>  -->
+					<!-- ****************Main Body Copied Here ** on 27th Oct 2021 for Rev 02************** -->
+					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMPMB">Main Body</filename>
 					<foldername actionname="" description="Annexes" name="7. Annexes">
 						<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex A - Record of Health Check Onboard</filename> 
 						<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Annex A - Record of Health Check Onboard</filename>  -->

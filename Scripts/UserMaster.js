@@ -266,20 +266,20 @@ function loadData() {
     var loadposturl = $('#loaddata').val();
     CreateTableHeader(1);
 
-    $.ajax({
-        url: loadposturl,
-        type: "GET",
-        contentType: "application/json;charset=utf-8",
-        dataType: "json",
-        success: function (result) {
-            SetUpGridShipUser('1');
-            //SetUpGridSupportUser();
-            //SetUpGridCompanyUser();
-        },
-        error: function (errormessage) {
-            console.log(errormessage.responseText);
-        }
-    });
+    //$.ajax({
+    //    url: loadposturl,
+    //    type: "GET",
+    //    contentType: "application/json;charset=utf-8",
+    //    dataType: "json",
+    //    success: function (result) {
+    //        //SetUpGridShipUser('1');
+    //        //SetUpGridSupportUser();
+    //        //SetUpGridCompanyUser();
+    //    },
+    //    error: function (errormessage) {
+    //        console.log(errormessage.responseText);
+    //    }
+    //});
 }
 
 function CreateTableHeader(utyp) {
@@ -288,7 +288,7 @@ function CreateTableHeader(utyp) {
     //below line commented on 6th Jul 2021 @BK for Amitabh sir Instruction
     //$('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th><th>Approved/NotApproved</th>');
     $('#UserMasterTable thead tr').append('<th>User Name</th><th>User Code</th><th>Email</th><th>Edit</th><th>Upload Form</th><th> Active/Inactive</th><th> Allow Signature </th>');
-        SetUpGridCompanyUser(2);
+        SetUpGridCompanyUser();
   /*  }*/
     //else if (utyp === 1) {
     //    $('#UserMasterTable thead tr').append('<th>User Name</th><th>Created On</th><th>Email</th><th>Gender</th><th>Vessel IMO</th><th>Rank Name</th><th>Ship Name</th><th>Edit</th><th> Delete</th>');

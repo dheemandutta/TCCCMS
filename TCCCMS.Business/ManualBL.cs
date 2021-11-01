@@ -205,11 +205,21 @@ namespace TCCCMS.Business
                                 else
                                 {
                                     string fName = item.Attributes["name"].Value.ToString();
+                                    string fDesc = item.Attributes["description"].Value.ToString();
                                     string relFilePath = "";
                                     relFilePath = relaiveFilePath + "/" + fName;
 
                                     sb.Append("\n");
-                                    sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fName + "</button>");
+                                    //sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fName + "</button>");/**---Commented on 23rd OCT 2021 replace with below if.. elase condition**/
+                                    if (fDesc != "")
+                                    {
+                                        sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fDesc + "</button>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<button class='accordion' style='margin-left:-25px;'>" + fName + "</button>");
+                                    }
+                                    
                                     sb.Append("\n");
                                     sb.Append("<div class='panel' style='margin-left:5px;'>");
                                     string sChild = GetChild(item, ref l, partName, ctrlName, ref relFilePath);
