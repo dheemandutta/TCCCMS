@@ -919,6 +919,9 @@
     <Content Include="Help\VesselHelp\Volumes.pdf" />
     <Content Include="Help\OfficeHelp\Forms Upload For Review.pdf" />
     <Content Include="Help\VesselHelp\Forms Upload For Review.pdf" />
+    <Content Include="Import\IMOcrewlistForm5 - Copy.xlsx" />
+    <Content Include="Import\IMOcrewlistForm5_old.xlsx" />
+    <Content Include="Import\IMOcrewlistForm5_old_old.xlsx" />
     <None Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.js" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.min.js" />
