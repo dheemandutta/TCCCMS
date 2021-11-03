@@ -167,6 +167,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
+    <Compile Include="Controllers\LogForUserExcelController.cs" />
     <Compile Include="Controllers\MainDocumentController.cs" />
     <Compile Include="Controllers\MaintenanceOfShipAndEquipmentController.cs" />
     <Compile Include="Controllers\MajorCasualtyAndEnvironmentalProtectionPlanController.cs" />
@@ -856,6 +857,7 @@
     <Content Include="Content\plugin\datepicker\js\jquery.pickmeup.uikit.coffee" />
     <Content Include="Scripts\ApproverSign.js" />
     <Content Include="Scripts\ChangePassword.js" />
+    <Content Include="Scripts\LogForUserExcel.js" />
     <Content Include="Scripts\Ticket.js" />
     <Content Include="SignImages\Ship 2nd Off.png" />
     <Content Include="SignImages\Ship Chief Off.png" />
@@ -2217,6 +2219,7 @@
     <Content Include="Views\CommonToAllManual\ItAndComm.cshtml" />
     <Content Include="Views\Shared\_pvApprovedFilledupFormUploadModal.cshtml" />
     <Content Include="Views\NoticeBoard\SafetyAlerts.cshtml" />
+    <Content Include="Views\LogForUserExcel\LogForUserExcel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

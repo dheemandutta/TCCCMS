@@ -48,6 +48,7 @@
     <Compile Include="DownloadableFromsBL.cs" />
     <Compile Include="HomeBL.cs" />
     <Compile Include="ImportBL.cs" />
+    <Compile Include="LogForUserExcelBL.cs" />
     <Compile Include="ManualBL.cs" />
     <Compile Include="GroupMasterBL.cs" />
     <Compile Include="PermissionRoleBL.cs" />

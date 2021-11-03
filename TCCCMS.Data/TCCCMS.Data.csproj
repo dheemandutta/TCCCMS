@@ -68,6 +68,7 @@
     <Compile Include="GroupMasterDAL.cs" />
     <Compile Include="HomeDAL.cs" />
     <Compile Include="ImportDAL.cs" />
+    <Compile Include="LogForUserExcelDAL.cs" />
     <Compile Include="ManualDAL.cs" />
     <Compile Include="PermissionRoleDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

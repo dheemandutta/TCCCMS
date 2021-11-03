@@ -71,6 +71,7 @@
     <Compile Include="FormsViewModel.cs" />
     <Compile Include="GroupMasterPOCO.cs" />
     <Compile Include="GroupUser.cs" />
+    <Compile Include="LogForUserExcelPOCO.cs" />
     <Compile Include="Manual.cs" />
     <Compile Include="ManualViewModel.cs" />
     <Compile Include="Menu.cs" />
