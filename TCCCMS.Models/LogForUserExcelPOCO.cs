@@ -10,5 +10,6 @@ namespace TCCCMS.Models
     {
         public int Id { get; set; }
         public string LogData { get; set; }
+        public string Count { get; set; }
     }
 }

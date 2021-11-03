@@ -18,6 +18,7 @@ function GetLogForUserExcel(/*Id*/) {
             //debugger;
             //$('#Id').val(result.Id);
             $('#LogData').val(result.LogData);
+            $('#Count').val(result.Count);
 
         },
         error: function (errormessage) {

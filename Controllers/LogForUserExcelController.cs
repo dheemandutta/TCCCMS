@@ -29,6 +29,7 @@ namespace TCCCMS.Controllers
 
             //dept.Id = pOCOList.Id;
             dept.LogData = pOCOList.LogData;
+            dept.Count = pOCOList.Count;
 
             var data = dept;
 

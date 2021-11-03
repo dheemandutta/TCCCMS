@@ -50,6 +50,9 @@ namespace TCCCMS.Data
                     if (item["LogData"] != System.DBNull.Value)
                         pPOCOPC.LogData = item["LogData"].ToString();
 
+                    if (item["Count"] != System.DBNull.Value)
+                        pPOCOPC.Count = item["Count"].ToString();
+
                     //pcList.Add(pPOCOPC);
                 }
             }
