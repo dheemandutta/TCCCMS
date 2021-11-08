@@ -162,10 +162,12 @@
                                             </span>*@
                                             <span style="width:48%; float:right;  display: inline-block;">
                                                 @*<a class="small-text" href="#"> Forgot  password? </a>*@
-                                                <a class="popup small-text" style="color:Highlight;" onclick="myFunction()">
+                                                @*<a class="popup small-text" style="color:Highlight;" onclick="myFunction()">
                                                     Forgot password?
                                                     <span class="popuptext" id="myPopup">Please contact your admin.</span>
-                                                </a>
+                                                </a>*@
+
+                                                <a href='@Url.Action("ForgotPassword", "Home")'>Forgot password?</a>
                                             </span>
 
                                         </div>

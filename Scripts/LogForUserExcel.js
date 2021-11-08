@@ -18,7 +18,10 @@ function GetLogForUserExcel(/*Id*/) {
             //debugger;
             //$('#Id').val(result.Id);
             $('#LogData').val(result.LogData);
-            $('#Count').val(result.Count);
+            //$('#Count').val('*Below' + result.Count + '  records were not save or update');
+            $('#lblCount').text('Below ' + result.Count + '  records were not save or update');
+            $('#lblSuccessCount').text(result.SuccessCount + ' record(s) has been Saved Or Replaced Successfully');
+            //$('#lblLogData').text(result.LogData);
 
         },
         error: function (errormessage) {

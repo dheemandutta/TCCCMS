@@ -52,6 +52,8 @@ namespace TCCCMS.Data
 
                     if (item["Count"] != System.DBNull.Value)
                         pPOCOPC.Count = item["Count"].ToString();
+                    if (item["SuccessCount"] != System.DBNull.Value)
+                        pPOCOPC.SuccessCount = item["SuccessCount"].ToString();
 
                     //pcList.Add(pPOCOPC);
                 }
