@@ -573,7 +573,7 @@ namespace TCCCMS.Controllers
 
                 if (isValid == 0)
                 {
-                    return Json(isValid, JsonRequestBehavior.AllowGet);
+                    //return Json(isValid, JsonRequestBehavior.AllowGet);
                     aUserMaster.hasChange = 2;
                     return View(aUserMaster);
                 }
