@@ -167,6 +167,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ImportController.cs" />
     <Compile Include="Controllers\InputFormController.cs" />
+    <Compile Include="Controllers\LogForUserExcelController.cs" />
     <Compile Include="Controllers\MainDocumentController.cs" />
     <Compile Include="Controllers\MaintenanceOfShipAndEquipmentController.cs" />
     <Compile Include="Controllers\MajorCasualtyAndEnvironmentalProtectionPlanController.cs" />
@@ -859,6 +860,7 @@
     <Content Include="Content\plugin\datepicker\js\jquery.pickmeup.uikit.coffee" />
     <Content Include="Scripts\ApproverSign.js" />
     <Content Include="Scripts\ChangePassword.js" />
+    <Content Include="Scripts\LogForUserExcel.js" />
     <Content Include="Scripts\Ticket.js" />
     <Content Include="SignImages\Ship 2nd Off.png" />
     <Content Include="SignImages\Ship Chief Off.png" />
@@ -922,6 +924,11 @@
     <Content Include="Help\VesselHelp\Volumes.pdf" />
     <Content Include="Help\OfficeHelp\Forms Upload For Review.pdf" />
     <Content Include="Help\VesselHelp\Forms Upload For Review.pdf" />
+    <Content Include="Import\IMOcrewlistForm5 - Copy.xlsx" />
+    <Content Include="Import\IMOcrewlistForm5_old_old.xlsx" />
+    <Content Include="Import\IMOcrewlistForm5new.xlsx" />
+    <Content Include="Import\IMOcrewlistForm5_extraaaaa clmn.xlsx" />
+    <Content Include="Import\IMOcrewlistForm5_lastnew.xlsx" />
     <None Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.js" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.min.js" />
@@ -2218,6 +2225,7 @@
     <Content Include="Views\Shared\_pvApprovedFilledupFormUploadModal.cshtml" />
     <Content Include="Views\NoticeBoard\SafetyAlerts.cshtml" />
     <Content Include="Views\Import\ImportCrew.cshtml" />
+    <Content Include="Views\LogForUserExcel\LogForUserExcel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
