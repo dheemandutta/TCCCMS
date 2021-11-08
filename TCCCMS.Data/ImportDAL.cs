@@ -91,7 +91,7 @@ namespace TCCCMS.Data
         }
 
 
-        public void ImportTemporaryCrew(object dataTable, string shipNumber)
+        public int ImportTemporaryCrew(object dataTable, string shipNumber)
         {
             DataTable dTable = (DataTable)dataTable;
             DataSet ds = new DataSet("CrewImport");
@@ -125,6 +125,8 @@ namespace TCCCMS.Data
                 command.Parameters.AddWithValue("@TempCrews", sb.ToString());
                 int i = command.ExecuteNonQuery();
                 con.Close();
+
+                return i;
             }
         }
 

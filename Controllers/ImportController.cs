@@ -39,7 +39,7 @@ namespace TCCCMS.Controllers
         {
             object dtData = new object();
             ImportBL crewImportBL = new ImportBL();
-
+            int i = 0;
             if (postedFile != null)
             {
                 //string path = Server.MapPath("~/Uploads/");
@@ -92,11 +92,16 @@ namespace TCCCMS.Controllers
                         }
                         // The result of each spreadsheet is in result.Tables
                     }
-                    crewImportBL.ImportCrew(dtData, ConfigurationManager.AppSettings["ShipNumber"]);       
+                  i=  crewImportBL.ImportCrew(dtData, ConfigurationManager.AppSettings["ShipNumber"]); 
+                    
                 }
             }
-
-            return View();
+            if (i > 0)
+            {
+                return RedirectToAction("ImportCrew","Import");
+            }
+            else
+                return View();
         }
 
 

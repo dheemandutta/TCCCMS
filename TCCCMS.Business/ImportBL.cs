@@ -13,11 +13,11 @@ namespace TCCCMS.Business
 {
     public class ImportBL
     {
-        public void ImportCrew(object dataTable, string shipNumber)
+        public int  ImportCrew(object dataTable, string shipNumber)
         {
             ImportDAL crewImportDAL = new ImportDAL();
             //crewImportDAL.ImportCrew(dataTable, shipNumber);
-            crewImportDAL.ImportTemporaryCrew(dataTable, shipNumber);
+           return crewImportDAL.ImportTemporaryCrew(dataTable, shipNumber);
         }
 
         public TemporaryCrewViewModel GetAllTemporaryCrews()
