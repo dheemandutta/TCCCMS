@@ -714,7 +714,7 @@ function GetUserByUserId(UserId) {
                 $('#cUserCode').val(result.UserCode);
                 $('#cPassword').val(result.Password);
                 $('#CreatedOn').val(result.CreatedOn);
-                $('#Email').val(result.Email);
+                $('#cEmail').val(result.Email);
                 //$('#CreatedBy').val(result.CreatedBy);
                 //$('#ModifiedBy').val(result.ModifiedBy);
                 $('#cGender').val(result.Gender);

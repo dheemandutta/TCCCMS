@@ -9,6 +9,7 @@ using System.Web.Mvc;
 using System.IO;
 using System.Xml;
 using System.Text;
+using System.Net.Mail;
 using System.Web.Routing;
 using System.Web.Caching;
 using System.Configuration;
@@ -106,6 +107,7 @@ namespace TCCCMS.Controllers
         [HttpGet]
         public ActionResult Login()
         {
+            //string forgotFor = ConfigurationManager.AppSettings["officeOrShipserver"].ToString();
             Session["UserId"] = null;
             Session["UserCode"] = null;
             Session["UserName"] = null;
@@ -535,6 +537,92 @@ namespace TCCCMS.Controllers
         //    return Json(recordaffected, JsonRequestBehavior.AllowGet);
 
         //}
+
+
+        public ActionResult ForgotPassword()
+        {
+            UserMasterPOCO userMaster = new UserMasterPOCO();
+            try
+            {
+              
+                    userMaster.hasChange = 0;
+                    return View(userMaster);
+                
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
+        }
+
+        [HttpPost]
+        public ActionResult ForgotPassword(UserMasterPOCO aUserMaster)
+        {
+            bool isSendSuccessfully = false;
+            try
+            {
+                UserMasterBL umBL = new UserMasterBL();
+                int isValid = 0;
+                string initialPwd = "";
+                string userCode = "";
+                string receiverEmail = aUserMaster.Email;
+                isValid = umBL.ForgotPassword(aUserMaster,ref initialPwd,ref userCode);
+
+                StringBuilder mailBody = new StringBuilder();
+
+                if (isValid == 0)
+                {
+                    return Json(isValid, JsonRequestBehavior.AllowGet);
+                    aUserMaster.hasChange = 2;
+                    return View(aUserMaster);
+                }
+                else if (isValid == 1)
+                {
+                    aUserMaster.hasChange = 1;
+
+                    #region send mail----
+
+                    //receiverEmail = um.Email.ToString();
+
+                    MailMessage mail = new MailMessage();
+
+                    mailBody.Append("User Code : ");
+                    mailBody.Append(userCode.ToString());
+                    mailBody.Append("\n");
+                    mailBody.Append("Initial Password : ");
+                    mailBody.Append(initialPwd.ToString());
+                    mailBody.Append("\n");
+                    mailBody.Append("\n");
+                    mailBody.Append("Messege : ");
+                    mailBody.Append("Login with above User Code and Password and Change your Password");
+                    mailBody.Append("\n");
+                    mail.Body = mailBody.ToString();
+
+
+                    SendEmail.SendMail("TCC Request for Forgot Password", "", receiverEmail, mail, ref isSendSuccessfully);
+                    
+
+
+
+                    #endregion
+
+                    return View(aUserMaster);
+                }
+                else 
+                {
+
+                    //return RedirectToAction("Login", "Home");
+                    return new RedirectToRouteResult(new RouteValueDictionary(
+                    new { action = "Login", controller = "Home" }));
+                }
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
+        }
     }
 
     public static class CacheHandler

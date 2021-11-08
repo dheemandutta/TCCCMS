@@ -118,6 +118,11 @@ namespace TCCCMS.Business
             UserMasterDAL umDAL = new UserMasterDAL();
             return umDAL.ChangePassword(aUserMaster);
         }
+        public int ForgotPassword(UserMasterPOCO pOCO, ref string initialPwd, ref string userCode)
+        {
+            UserMasterDAL umDAL = new UserMasterDAL();
+            return umDAL.ForgotPassword(pOCO, ref initialPwd, ref  userCode);
+        }
 
 
     }

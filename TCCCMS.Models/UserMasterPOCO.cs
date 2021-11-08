@@ -65,7 +65,7 @@ namespace TCCCMS.Models
         public int hasChange {get;set;  }
 
         public int IsAllowSign { get; set; }
-
+        public int IsValid { get; set; }
 
         #region --- Properties for Import Crew
         /// <summary>

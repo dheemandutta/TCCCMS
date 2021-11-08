@@ -26,7 +26,7 @@ namespace TCCCMS.Business
             return crewImportDAL.GetAllTemporaryCrews();
         }
 
-        public string ImportCrewList(DataTable dt)
+        public string ImportCrewList(DataTable dt, ref string FailureMessage, ref int FailureCount, ref int SuccessCount)
         {
             string s = "";
 
@@ -39,7 +39,7 @@ namespace TCCCMS.Business
                 string st = sr.Replace("\\", "");
             }
 
-            s = importDal.ImportCrewList(dt);
+            s = importDal.ImportCrewList(dt, ref FailureMessage, ref FailureCount, ref SuccessCount);
 
 
             return s;

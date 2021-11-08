@@ -15,23 +15,22 @@ namespace TCCCMS.Controllers
         // GET: LogForUserExcel
         public ActionResult LogForUserExcel()
         {
-            return View();
+            if (Session["Role"].ToString() == "SupportUser" || Session["Role"].ToString() == "ShipAdmin")
+            {
+                return View();
+            }
+            else
+                return RedirectToAction("Login", "Home");
         }
 
-        public JsonResult GetLogForUserExcel(/*int Id*/)
+        public JsonResult GetLogForUserExcel()
         {
             LogForUserExcelBL bL = new LogForUserExcelBL();
-            LogForUserExcelPOCO pOCOList = new LogForUserExcelPOCO();
+            LogForUserExcelPOCO log = new LogForUserExcelPOCO();
 
-            pOCOList = bL.GetLogForUserExcel(/*Id*/);
+            log = bL.GetLogForUserExcel();
 
-            LogForUserExcelPOCO dept = new LogForUserExcelPOCO();
-
-            //dept.Id = pOCOList.Id;
-            dept.LogData = pOCOList.LogData;
-            dept.Count = pOCOList.Count;
-
-            var data = dept;
+            var data = log;
 
             return Json(data, JsonRequestBehavior.AllowGet);
         }

@@ -827,5 +827,30 @@ namespace TCCCMS.Data
 
             return isValid;
         }
+
+        public int ForgotPassword(UserMasterPOCO pOCO, ref string initialPwd, ref string userCode)
+        {
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["TCCCMSDBConnectionString"].ConnectionString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand("ForgotPassword", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            
+            cmd.Parameters.AddWithValue("@EmailId", pOCO.Email);
+            cmd.Parameters.Add("@IsValid", SqlDbType.Int, 0);
+            cmd.Parameters["@IsValid"].Direction = ParameterDirection.Output;
+            cmd.Parameters.Add("@InitialPassword", SqlDbType.NVarChar, 50);
+            cmd.Parameters["@InitialPassword"].Direction = ParameterDirection.Output;
+            cmd.Parameters.Add("@UserCode", SqlDbType.NVarChar, 50);
+            cmd.Parameters["@UserCode"].Direction = ParameterDirection.Output;
+
+            int recordsAffected = cmd.ExecuteNonQuery();
+            int isValid = Convert.ToInt32(cmd.Parameters["@IsValid"].Value);
+            initialPwd = Convert.ToString(cmd.Parameters["@InitialPassword"].Value);
+            userCode = Convert.ToString(cmd.Parameters["@UserCode"].Value);
+            con.Close();
+
+            return isValid;
+        }
     }
 }

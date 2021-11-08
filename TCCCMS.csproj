@@ -2226,6 +2226,7 @@
     <Content Include="Views\NoticeBoard\SafetyAlerts.cshtml" />
     <Content Include="Views\Import\ImportCrew.cshtml" />
     <Content Include="Views\LogForUserExcel\LogForUserExcel.cshtml" />
+    <Content Include="Views\Home\ForgotPassword.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -86,6 +86,9 @@ function BindTableHeader(jsondata, tableid) {/*Function used to get all column n
 
 
 function GetTemporaryCrewFromGrid() {
+    //***************************
+    //Get all Grews from the grid and Send to ImportCrewList Action to insert into Database
+    //***************************
     var tmpCrewList = [];
     var url = $('#importCrewList').val();
     var idx = 0;
@@ -133,13 +136,13 @@ function GetTemporaryCrewFromGrid() {
 
         //----------------
         tmpCrewList.push({
-            SL: idx,
-            CrewName: crewName,
-            RankName: rankName,
-            Email: email,
-            ReplacedCrewId: replacedCrewId,
-            ReplacedCrewName: replacedCrewName,
-            ShipId: shipId
+            SL:                 idx,
+            CrewName:           crewName,
+            RankName:           rankName,
+            Email:              email,
+            ReplacedCrewId:     replacedCrewId,
+            ReplacedCrewName:   replacedCrewName,
+            ShipId:             shipId
 
         });
 
@@ -150,11 +153,11 @@ function GetTemporaryCrewFromGrid() {
     var crews = JSON.stringify(tmpCrewList);
     var crews = tmpCrewList;
    // var crews = "m";
-    var name = "Bingshu";
+    //var name = "Bingshu";
     if (window.FormData !== undefined) {
         var fileData = new FormData();
 
-        fileData.append('name', JSON.stringify(tmpCrewList));
+        fileData.append('crews', JSON.stringify(tmpCrewList));
 
         $.ajax({
             url: url,

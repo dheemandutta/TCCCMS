@@ -24,7 +24,13 @@ namespace TCCCMS.Controllers
         //[TraceFilterAttribute]
         public ActionResult Index()
         {
-            return View();
+            if(Session["Role"].ToString() == "SupportUser" || Session["Role"].ToString() == "ShipAdmin")
+            {
+                return View();
+            }
+            else
+                return RedirectToAction("Login", "Home");
+            
         }
 
         [HttpPost]
@@ -112,15 +118,26 @@ namespace TCCCMS.Controllers
 
         [HttpPost]
        
-        public JsonResult ImportCrewList(object name)
+        public ActionResult ImportCrewList(object crews)
         {
             ImportBL importBl = new ImportBL();
-            var jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(name);
+            var jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(crews);
             DataTable dt = JsonStringToDataTable(jsonString);
+            string FailureMessage ="";
+            int FailureCount = 0;
+            int SuccessCount = 0;
 
-            string s = importBl.ImportCrewList(dt);
+            string s = importBl.ImportCrewList(dt,ref FailureMessage,ref FailureCount,ref SuccessCount);
+            if(FailureMessage != "" || FailureCount != 0 || SuccessCount != 0)
+            {
+               return RedirectToAction("LogForUserExcel", "LogForUserExcel");
+            }
+            else
+            {
+                return Json("File Uploaded Successfully!");
+            }
 
-            return Json("File Uploaded Successfully!");
+            
         }
 
         public DataTable JsonStringToDataTable(string jsonString)

@@ -185,7 +185,7 @@ namespace TCCCMS.Data
         }
 
 
-        public string ImportCrewList(DataTable dt)
+        public string ImportCrewList(DataTable dt, ref string FailureMessage, ref int FailureCount , ref int SuccessCount)
         {
             DataTable dTable = dt;
             string returnMessage = "";
@@ -224,9 +224,9 @@ namespace TCCCMS.Data
 
                 command.ExecuteScalar();
 
-                int xx = Convert.ToInt32(command.Parameters["@FailureCount"].Value);
-                int y = Convert.ToInt32(command.Parameters["@SuccessCount"].Value);
-                string ss = Convert.ToString(command.Parameters["@FailureMessage"].Value);
+                FailureCount = Convert.ToInt32(command.Parameters["@FailureCount"].Value);
+                SuccessCount = Convert.ToInt32(command.Parameters["@SuccessCount"].Value);
+                FailureMessage = Convert.ToString(command.Parameters["@FailureMessage"].Value);
                 //int i = command.ExecuteNonQuery();
                 con.Close();
 
