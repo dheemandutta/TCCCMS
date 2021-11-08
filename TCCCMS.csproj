@@ -777,6 +777,9 @@
     <Content Include="images\vissel.png" />
     <Content Include="js\Approver\Approver.js" />
     <Content Include="js\bootstrap.js" />
+    <Content Include="js\Import\ImportCrew.js" />
+    <Content Include="js\Import\xls.core.min.js" />
+    <Content Include="js\Import\xlsx.core.min.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.slimscroll.js" />
     <Content Include="js\Login\Login.js" />
@@ -2214,6 +2217,7 @@
     <Content Include="Views\CommonToAllManual\ItAndComm.cshtml" />
     <Content Include="Views\Shared\_pvApprovedFilledupFormUploadModal.cshtml" />
     <Content Include="Views\NoticeBoard\SafetyAlerts.cshtml" />
+    <Content Include="Views\Import\ImportCrew.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

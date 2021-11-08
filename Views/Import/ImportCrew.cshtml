@@ -1,0 +1,82 @@
+﻿@model TCCCMS.Models.TemporaryCrewViewModel
+@{
+    ViewBag.Title = "ImportCrew";
+    Layout = "~/Views/Shared/New_Layout.cshtml";
+}
+
+@*<h2>ImportCrew</h2>*@
+@Html.Hidden("importCrewList", @Url.Action("ImportCrewList", "Import"))
+
+<div class="body marginTP10">
+    <div class="container marginTP10">
+        <div class="col-sm-12 col-xs-12 marginTP10">
+            <h2 class="ta">Import Crew List</h2>
+            <button type="button" class="btn btn-info btn-sm" style="background-color: #e90000;" onclick="GetTemporaryCrewFromGrid()">Import All Crews</button><br /><br />
+            <div class="row">
+                <div class="col-md-12 bac1">
+
+                    <div style="margin:0 auto" class="tablecontainer">
+                        <input type="hidden" id="hdnrole" />
+                        <table id="tblImportCrewList" class="display table" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th>SL</th>
+                                    <th>Crew Name</th>
+                                    <th>Rank Name</th>
+                                    <th>Email</th>
+                                    <th>Replace With</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.TemporaryCrewList)
+                                {
+
+                                    <tr>
+                                        <td>@item.UserId</td>
+                                        <td style="display:none;">@item.ShipId</td>
+                                        <td>@item.UserName</td>
+                                        @*<td style="border-left:solid 1px; border-right:solid 1px;"></td>*@
+                                        <td>
+
+                                            @item.RankName
+                                        </td>
+                                        <td>@item.Email</td>
+                                        <td>
+                                            @*@Html.DropDownList("ReplaceableUser", new SelectList(item.ReplaceableCrews, "UserId", "UserName"), new { @id = "ddlReplaceableUser", @class = "form-control" })*@
+                                            @*@Html.DropDownListFor(M => M.TemporaryCrewList, new SelectList(item.ReplaceableCrews, "UserId", "UserName") , new { @id = "ddlReplaceableUser", @class = "form-control" })*@
+                                            @Html.DropDownList(
+                                                                    "ReplaceableUser",
+                                                                    new SelectList(
+                                                                        item.ReplaceableCrews.Select(x => new { Value = x.UserId, Text = x.UserName }),
+                                                                        "Value",
+                                                                        "Text"
+                                                                    ),
+                                                                    new { @id = "ddlReplaceableUser", @class = "form-control" }
+                                                                )
+                                        </td>
+
+
+                                    </tr>
+
+
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section Scripts{
+        <script src="~/js/Import/ImportCrew.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+
+            });
+        </script>
+
+    }

@@ -751,7 +751,7 @@ function AddTempApproverNew(user) {
     var totalApproverOrReviewer = 6;// changed into 0 on 19th Aug 2021
     b = b.replace(/"/g, '\\"')
     //var totalCount = a + b;
-    var idx = 0
+    var idx = 0;
     //var rank = user.Rank;
     var exist = false;
 
