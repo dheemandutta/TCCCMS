@@ -94,10 +94,10 @@ namespace TCCCMS.Business
         /// Added on 23th jul 2021 @bk
         /// </summary>
         /// <returns></returns>
-        public List<ApproverMaster> GetApproverUserForDopDown()
+        public List<ApproverMaster> GetApproverUserForDopDown(int shipNo)
         {
             ApproverMasterDAL approverDal = new ApproverMasterDAL();
-            return approverDal.GetApproverUserForDopDown();
+            return approverDal.GetApproverUserForDopDown(shipNo);
         }
 
         #endregion

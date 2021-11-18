@@ -8,10 +8,11 @@ using System.Web;
 using System.Text;
 using System.IO;
 using System.Web.Mvc;
-
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class CompanyResponsibilityAndAuthorityManualController : Controller
     {
         //--------------------Vol3-------------------------
@@ -19,7 +20,8 @@ namespace TCCCMS.Controllers
         private string controllerName = "CompanyResponsibilityAndAuthorityManual";
         ManualBL manualBL = new ManualBL();
         // GET: CompanyResponsibilityAndAuthorityManual
-        
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             Session["IsSearched"] = "0";
@@ -38,6 +40,8 @@ namespace TCCCMS.Controllers
         //    TempData[actionName] = file.ManualBodyHtml;
         //    return View(file);
         //}
+
+        [CustomAuthorizationFilter]
         public ActionResult Pages(string actionName, string formName = "", string relformPath = "")
         {
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
@@ -103,6 +107,7 @@ namespace TCCCMS.Controllers
             //TempData[actionName] = file.ManualBodyHtml;
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult PDFViewer(string fileName, string relPDFPath)
         {
             Manual file = new Manual();
@@ -115,6 +120,7 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult FormPreview(string fileName, string relPDFPath)
         {
             Manual file = new Manual(); string filePath = "../ManualsPDF/" + relPDFPath + "/";
@@ -123,6 +129,7 @@ namespace TCCCMS.Controllers
             file.PdfPath = filePath;
             return PartialView("_pvFormPreviewModal", file);
         }
+        [CustomAuthorizationFilter]
 
         public FileResult Download(string fileName, string relformPath)
         {
@@ -151,6 +158,7 @@ namespace TCCCMS.Controllers
        
         #region Other Action Not Used
         [HttpGet]
+        [CustomAuthorizationFilter]
         public ActionResult Manual()
         {
             //---------------Vol. III Manual-----------------
@@ -161,6 +169,7 @@ namespace TCCCMS.Controllers
             return View(file);
         }
         [HttpGet]
+        [CustomAuthorizationFilter]
         public ActionResult SOOJD()
         {
             //---------------Second Officer Job Description - TO BE DELETED-----------------
@@ -171,6 +180,7 @@ namespace TCCCMS.Controllers
             return View(file);
         }
         [HttpGet]
+        [CustomAuthorizationFilter]
         public ActionResult ShoreOrganisation()
         {
             //---------------Section 1 - Shore Organisation-----------------

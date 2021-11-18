@@ -79,35 +79,44 @@
                 <div class="icon_box dropdown">
                     <div class="tooltip">
                         @*<span class="dropbtn">
-                            <img src="~/images/icons/2x/Vessel_Normal@2x.png">
-                            <img src="~/images/icons/2x/Vessel_Hover@2x.png">
-                        </span>*@
+            <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+            <img src="~/images/icons/2x/Vessel_Hover@2x.png">
+        </span>*@
 
-
-                        @if (Session["Role"].ToString() == "ShipUser")
+                        @if (Session["Role"] != null)
                         {
-                            @*<a href="#">SMS Manuals</a>*@
+                            if (Session["Role"].ToString() == "ShipUser")
+                            {
+                                @*<a href="#">SMS Manuals</a>*@
 
-                            <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
+                                <a href='@Url.Action("ShipDashboard", "Dashboard", new { @id= Session["ShipId"].ToString() })'>
 
-                                @*Ship Specific Manuals & Plans*@
+                                    @*Ship Specific Manuals & Plans*@
+                                    <span class="dropbtn">
+                                        <img src="~/images/icons/2x/Vessel_Normal@2x.png">
+                                        <img src="~/images/icons/2x/Vessel_Hover@2x.png">
+                                    </span>
+                                    <span class="tooltiptext">Ship Specific Manuals & Plans</span>
+
+                                </a>
+
+                            }
+                            else
+                            {
+                                @Html.Action("ShipMenuLayout", "Dashboard")
                                 <span class="dropbtn">
                                     <img src="~/images/icons/2x/Vessel_Normal@2x.png">
                                     <img src="~/images/icons/2x/Vessel_Hover@2x.png">
                                 </span>
-                                <span class="tooltiptext">Ship Specific Manuals & Plans</span>
-
-                            </a>
-
+                                <a href="#"><span class="tooltiptext">Ship Specific Manuals & Plans</span></a>
+                            }
                         }
                         else
                         {
-                            @Html.Action("ShipMenuLayout", "Dashboard")
-                            <span class="dropbtn">
-                                <img src="~/images/icons/2x/Vessel_Normal@2x.png">
-                                <img src="~/images/icons/2x/Vessel_Hover@2x.png">
-                            </span>
-                            <a href="#"><span class="tooltiptext">Ship Specific Manuals & Plans</span></a>
+                            <script>
+                                /* window.location.href = "/{controller}/{action}"*/
+                                window.location.href = "/Home/Login"
+                            </script>
                         }
                     </div>
 

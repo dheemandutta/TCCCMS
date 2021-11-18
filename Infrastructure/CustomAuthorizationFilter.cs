@@ -31,5 +31,34 @@ namespace TCCCMS.Infrastructure
                 });
             }
         }
+
+        //public override void OnActionExecuting(ActionExecutingContext filterContext)
+        //{
+        //    if (filterContext != null)
+        //    {
+        //        HttpSessionStateBase objHttpSessionStateBase = filterContext.HttpContext.Session;
+        //        var userSession = objHttpSessionStateBase["Role"];
+        //        if (((userSession == null) && (!objHttpSessionStateBase.IsNewSession)) || (objHttpSessionStateBase.IsNewSession))
+        //        {
+        //            objHttpSessionStateBase.RemoveAll();
+        //            objHttpSessionStateBase.Clear();
+        //            objHttpSessionStateBase.Abandon();
+        //            if (filterContext.HttpContext.Request.IsAjaxRequest())
+        //            {
+        //                filterContext.HttpContext.Response.StatusCode = 403;
+        //                filterContext.Result = new JsonResult { Data = "Session Expired" };
+        //            }
+        //            else
+        //            {
+        //                filterContext.Result = new RedirectToRouteResult(
+        //                                            new RouteValueDictionary {{ "Controller", "Home" },
+        //                                                                     { "Action", "Login" } });
+        //            }
+
+        //        }
+
+
+        //    }
+        //}
     }
 }

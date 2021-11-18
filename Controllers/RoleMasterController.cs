@@ -7,12 +7,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class RoleMasterController : Controller
     {
         // GET: RoleMaster
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             return View();
@@ -20,7 +23,7 @@ namespace TCCCMS.Controllers
 
 
 
-
+        [CustomAuthorizationFilter]
         public JsonResult LoadData()
         {
             int draw, start, length;
@@ -69,6 +72,7 @@ namespace TCCCMS.Controllers
             return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult SaveUpdateRoleMaster(RoleMasterPOCO pOCO)
         {
             RoleMasterBL bL = new RoleMasterBL();
@@ -83,6 +87,7 @@ namespace TCCCMS.Controllers
             return Json(bL.SaveUpdateRoleMaster(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult GetRoleMasterByRoleId(int RoleId)
         {
             RoleMasterBL bL = new RoleMasterBL();
@@ -102,6 +107,7 @@ namespace TCCCMS.Controllers
             return Json(data, JsonRequestBehavior.AllowGet);
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult DeleteRoleMaster(int RoleId/*, ref string recordCount*/)
         {
             RoleMasterBL bL = new RoleMasterBL();

@@ -28,6 +28,11 @@
 <body>
     <header>
         <div class="container-fluid">
+            @******Added Below Condition on 18th Nov 2021*@
+            @*@if (Request.IsAuthenticated)
+            {*@
+                @Html.Partial("~/Views/Shared/_pvAliveActiveWarning.cshtml")
+            @*}*@
             <div class="row">
                 <div class="col-lg-2 col-md-2 col-7">
                     <div class="logo">
@@ -39,11 +44,11 @@
                 </div>
                 <div class="col-lg-2 col-md-2 col-5">
                     @*@if (Session["UserName"] != null)
-                        {
-                            <div>
-                                <a id="lnkLogOut" class="btn btn-warning" href="@Url.Action("Login", "Home")"> Log Out</a>
-                            </div>
-                        }*@
+                {
+                    <div>
+                        <a id="lnkLogOut" class="btn btn-warning" href="@Url.Action("Login", "Home")"> Log Out</a>
+                    </div>
+                }*@
                     <ul class="topright">
 
                         <li>
@@ -59,7 +64,17 @@
                             <div class="dropdown admin">
                                 <button class="button log"><span><img src="~/images/user.png" style="width:19px;" /></span></button>
                                 <div class="dropdown-content">
-                                    <h3>@Session["UserCode"].ToString() <span> @Session["Role"].ToString()</span></h3>
+                                    @if (Session["Role"] != null)
+                                    {
+                                        <h3>@Session["UserCode"].ToString() <span> @Session["Role"].ToString()</span></h3>
+                                    }
+                                    else
+                                    {
+                                        <script>
+                                            /* window.location.href = "/{controller}/{action}"*/
+                                            window.location.href = "/Home/Login"
+                                        </script>
+                                    }
                                     @*<a href="@Url.Action("Login", "Home")">Log Off</a>*@
                                     <a style="color: Highlight;" href="@Url.Action("Login", "Home")" onclick="alert('You are successfully logged off');">Log Off</a>
                                 </div>
@@ -74,8 +89,8 @@
                     </ul>
 
                     @*<div>
-                            <button type="button" class="btn btn-warning">Log Off</button>
-                        </div>*@
+                    <button type="button" class="btn btn-warning">Log Off</button>
+                </div>*@
                 </div>
             </div>
         </div>
@@ -83,7 +98,17 @@
     <div class="breadcrumbs">
         <div class="steps steps_animation">
             <!-- #region Breadcrumb -->
-            @Html.Raw(Html.BuildBreadcrumbNavigation())
+            @if (Session["Role"] != null)
+            {
+                Html.Raw(Html.BuildBreadcrumbNavigation());
+            }
+            else
+            {
+                <script>
+                    /* window.location.href = "/{controller}/{action}"*/
+                    window.location.href = "/Home/Login"
+                </script>
+            }
             <!-- #endregion -->
             @*<div class="steps_item">
                 <span class="steps_content">
@@ -99,7 +124,7 @@
             @**************Added on 19th jun 2021************************@
             <div class="search">
                 @*<input id="txtAllSearctText" type="text" class="searchTerm" placeholder="Search....">
-                <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>*@
+            <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>*@
                 <select id="drpVolume" class="form-control form-control-sm mr-3 w-25" style="margin-left:5px;">
                     <option value="-1" selected>Select</option>
                     <option value="PPM;C2A">Procurement Policy Manual</option>
@@ -137,20 +162,29 @@
                     @Html.Action("MenuLayout", "Home")
 
                     @*--remove the quoted condition ' || Session["Role"].ToString() == "ShipAdmin"' on 2nd May 2021 AS-----*@
-
-                    @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
+                    @if (Session["Role"] != null)
                     {
-                        <div> &nbsp;</div>
+                        if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
+                        {
+                            <div> &nbsp;</div>
 
-                        <ul>
+                            <ul>
 
-                            <li class="mainmenu">
-                                <a href='@Url.Action("AdminDashboard", "Dashboard")'>
-                                    @*<span class="vul"> </span><span class="pgnam">Admin Dashboard</span>*@
-                                    <span class="vul"><b>Admin Dashboard</b> </span>
-                                </a>
-                            </li>
-                        </ul>
+                                <li class="mainmenu">
+                                    <a href='@Url.Action("AdminDashboard", "Dashboard")'>
+                                        @*<span class="vul"> </span><span class="pgnam">Admin Dashboard</span>*@
+                                        <span class="vul"><b>Admin Dashboard</b> </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        }
+                    }
+                    else
+                    {
+                        <script>
+                            /* window.location.href = "/{controller}/{action}"*/
+                            window.location.href = "/Home/Login"
+                        </script>
                     }
                 </div>
             </div>

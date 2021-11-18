@@ -13,13 +13,17 @@ using System.Net.Mail;
 using System.Web.Routing;
 using System.Web.Caching;
 using System.Configuration;
+using TCCCMS.Infrastructure;
+using System.Web.Security;
 
 namespace TCCCMS.Controllers
 {
+   
     public class HomeController : Controller
     {
         private Cache _cache= new Cache();
 
+        [CustomAuthorizationFilter]
         public ActionResult ChangePassword()
         {
             UserMasterPOCO userMaster = new UserMasterPOCO();
@@ -41,6 +45,7 @@ namespace TCCCMS.Controllers
         }
 
         [HttpPost]
+        [CustomAuthorizationFilter]
         public ActionResult ChangePassword(UserMasterPOCO aUserMaster)
         {
             try
@@ -73,16 +78,18 @@ namespace TCCCMS.Controllers
 
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult Test2()
         {        
             return View();
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -90,6 +97,7 @@ namespace TCCCMS.Controllers
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
@@ -105,6 +113,7 @@ namespace TCCCMS.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult Login()
         {
             //string forgotFor = ConfigurationManager.AppSettings["officeOrShipserver"].ToString();
@@ -124,6 +133,7 @@ namespace TCCCMS.Controllers
             return View();
         }
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult Login(UserMasterPOCO user)
         {
             UserMasterBL userMasterBL   = new UserMasterBL();
@@ -151,15 +161,15 @@ namespace TCCCMS.Controllers
 
                 ////----------------------------------------------------------------------------------
                 ///
-                
+
                 //_cache.Insert("VolMenuData", Server.MapPath("~/xmlMenu/" + "ALLVOLUMES.xml"));
                 //_cache.Insert("ShipMenuData", Server.MapPath("~/xmlMenu/" + "ALLSHIPS1.xml"));
 
-                
+
                 ///---------------------------------------------------------------------------------
+                ///
 
-
-
+               
 
                 Session["UserId"]           = lUser.UserId.ToString();
                 Session["UserCode"]         = lUser.UserCode.ToString();
@@ -211,10 +221,12 @@ namespace TCCCMS.Controllers
         }
 
         [HttpPost]
+        [CustomAuthorizationFilter]
         public ActionResult LogOut()
         {
             return RedirectToAction("Login", "Home");
         }
+        [CustomAuthorizationFilter]
         public ActionResult MenuLayout()
         {
             Menu menu = new Menu();
@@ -227,6 +239,8 @@ namespace TCCCMS.Controllers
         ///  Added on 26th Apr 2021
         /// </summary>
         /// <returns></returns>
+
+        [CustomAuthorizationFilter]
         public ActionResult ShipsMenuLayout()
         {
             Menu menu = new Menu();
@@ -524,6 +538,7 @@ namespace TCCCMS.Controllers
 
         #endregion
 
+        [CustomAuthorizationFilter]
         public JsonResult GetUserType()
         {
            
@@ -537,8 +552,7 @@ namespace TCCCMS.Controllers
         //    return Json(recordaffected, JsonRequestBehavior.AllowGet);
 
         //}
-
-
+        [CustomAuthorizationFilter]
         public ActionResult ForgotPassword()
         {
             UserMasterPOCO userMaster = new UserMasterPOCO();
@@ -557,6 +571,7 @@ namespace TCCCMS.Controllers
         }
 
         [HttpPost]
+        [CustomAuthorizationFilter]
         public ActionResult ForgotPassword(UserMasterPOCO aUserMaster)
         {
             bool isSendSuccessfully = false;
@@ -622,6 +637,16 @@ namespace TCCCMS.Controllers
                 return RedirectToAction("Login", "Home");
             }
 
+        }
+
+        [HttpPost]
+        public JsonResult KeepSessionActive()
+        {
+
+            return new JsonResult
+            {
+                Data = "Beat Generated"
+            };
         }
     }
 

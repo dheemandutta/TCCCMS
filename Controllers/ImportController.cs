@@ -14,14 +14,18 @@ using System.Data;
 using Newtonsoft.Json;
 using System.ComponentModel;
 using System.Web.Script.Serialization;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     //[TraceFilterAttribute]
     public class ImportController : Controller
     {
         // GET: Import
         //[TraceFilterAttribute]
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             if(Session["Role"].ToString() == "SupportUser" || Session["Role"].ToString() == "ShipAdmin")
@@ -35,6 +39,7 @@ namespace TCCCMS.Controllers
 
         [HttpPost]
         //[TraceFilterAttribute]
+        [CustomAuthorizationFilter]
         public ActionResult Index(HttpPostedFileBase postedFile)
         {
             object dtData = new object();
@@ -105,6 +110,7 @@ namespace TCCCMS.Controllers
         }
 
 
+        [CustomAuthorizationFilter]
         public ActionResult ImportCrew()
         {
             ImportBL imBl = new ImportBL();
@@ -122,7 +128,7 @@ namespace TCCCMS.Controllers
         }
 
         [HttpPost]
-       
+        [CustomAuthorizationFilter]
         public ActionResult ImportCrewList(object crews)
         {
             ImportBL importBl = new ImportBL();

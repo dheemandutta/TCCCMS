@@ -8,9 +8,11 @@ using System.Web;
 using System.Text;
 using System.IO;
 using System.Web.Mvc;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class FormsAndChecklistsController : Controller
     {
         //--------------------Vol8-------------------------
@@ -19,6 +21,8 @@ namespace TCCCMS.Controllers
         string parentPdfPath = "/FormsAndChecklists/";
         ManualBL manualBL = new ManualBL();
         // GET: FormsAndChecklists
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             Session["IsSearched"] = "0";
@@ -37,6 +41,8 @@ namespace TCCCMS.Controllers
         //    TempData[actionName] = file.ManualBodyHtml;
         //    return View(file);
         //}
+
+        [CustomAuthorizationFilter]
         public ActionResult Pages(string actionName, string formName = "", string relformPath = "")
         {
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
@@ -117,6 +123,7 @@ namespace TCCCMS.Controllers
             //TempData[actionName] = file.ManualBodyHtml;
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult PDFViewer(string fileName, string relPDFPath)
         {
             Manual file = new Manual();
@@ -141,6 +148,8 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        [CustomAuthorizationFilter]
+
         public JsonResult PreviewModal(string relPDFPath)
         {
             Manual file = new Manual();
@@ -151,6 +160,7 @@ namespace TCCCMS.Controllers
             return Json(file, JsonRequestBehavior.AllowGet);
         }
 
+        [CustomAuthorizationFilter]
         public FileResult Download(string fileName, string relformPath)
         {
             ManualBL manualBl = new ManualBL();
@@ -180,6 +190,8 @@ namespace TCCCMS.Controllers
         /// </summary>
         /// <param name="fileName"></param>
         /// <returns></returns>
+
+        [CustomAuthorizationFilter]
         public FileResult DownloadFilledupForm(string fileName)
         {
             ManualBL manualBl = new ManualBL();
@@ -198,36 +210,43 @@ namespace TCCCMS.Controllers
             return File(fileBytes, manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult AdministrationAndMmgt()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult ManagementOfShipPersonnel()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult Maintenance()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult NavigationManagement()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult CargoOperation()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult SafetyMmgt()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult FilingSystemAndRetentionMatrix()
         {
             return View();

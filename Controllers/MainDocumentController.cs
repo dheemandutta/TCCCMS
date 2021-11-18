@@ -8,9 +8,11 @@ using System.Web;
 using System.Text;
 using System.IO;
 using System.Web.Mvc;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class MainDocumentController : Controller
     {
         
@@ -19,6 +21,8 @@ namespace TCCCMS.Controllers
         private string controllerName = "MainDocument";
         ManualBL manualBL = new ManualBL();
         // GET: MainDocument
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             Session["IsSearched"] = "0";
@@ -28,6 +32,8 @@ namespace TCCCMS.Controllers
 
             return View(file);
         }
+        [CustomAuthorizationFilter]
+
         public ActionResult Pages(string actionName)
         {
             Manual file = new Manual();

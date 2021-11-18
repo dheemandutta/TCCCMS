@@ -2227,6 +2227,7 @@
     <Content Include="Views\Import\ImportCrew.cshtml" />
     <Content Include="Views\LogForUserExcel\LogForUserExcel.cshtml" />
     <Content Include="Views\Home\ForgotPassword.cshtml" />
+    <Content Include="Views\Shared\_pvAliveActiveWarning.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

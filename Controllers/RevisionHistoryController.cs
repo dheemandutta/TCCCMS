@@ -10,23 +10,28 @@ using System.Text.RegularExpressions;
 
 using System.IO;
 using Newtonsoft.Json;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class RevisionHistoryController : Controller
     {
-        
+
         // GET: RevisionHistory----
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult RevisionHistory()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult LoadData()
         {
             int draw, start, length;
@@ -77,7 +82,7 @@ namespace TCCCMS.Controllers
         }
 
 
-
+        [CustomAuthorizationFilter]
         public JsonResult GetFormIdForModifiedSection()
         {
             RevisionHistoryBL bL = new RevisionHistoryBL();
@@ -89,7 +94,7 @@ namespace TCCCMS.Controllers
         }
 
 
-
+        [CustomAuthorizationFilter]
         public JsonResult SaveRevisionHistory(RevisionHistory pOCO)
         {
             RevisionHistoryBL bL = new RevisionHistoryBL();
@@ -97,7 +102,7 @@ namespace TCCCMS.Controllers
 
             return Json(bL.SaveRevisionHistory(pOCO), JsonRequestBehavior.AllowGet);
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult RevisionDetails()
         {
             RevisionHistoryBL rhBl = new RevisionHistoryBL();
@@ -106,7 +111,7 @@ namespace TCCCMS.Controllers
 
             return View(rhhVM);
         }
-
+        [CustomAuthorizationFilter]
         public JsonResult GetRevisionHeaderForDrp()
         {
             List<RevisionHeader> rHeaderList = new List<RevisionHeader>();
@@ -115,12 +120,14 @@ namespace TCCCMS.Controllers
             var data = rHeaderList;
             return Json(data, JsonRequestBehavior.AllowGet);
         }
+        [CustomAuthorizationFilter]
         public JsonResult SaveRevisionHeader(RevisionHeader rHeader)
         {
             RevisionHistoryBL rhBl = new RevisionHistoryBL();
             int x = rhBl.SaveRevisionHeader(rHeader);
             return Json(x, JsonRequestBehavior.AllowGet);
         }
+        [CustomAuthorizationFilter]
 
         public JsonResult SaveRevisionViewer(string revisionId)
         {
@@ -138,7 +145,7 @@ namespace TCCCMS.Controllers
                
             return Json(x, JsonRequestBehavior.AllowGet);
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult GetViewerByRevision(int id)
         {
            List<RevisionViewer> viewers = new List<RevisionViewer>();

@@ -225,7 +225,7 @@ namespace TCCCMS.Data
         /// added on 23th jul 2021 @BK
         /// </summary>
         /// <returns></returns>
-        public List<ApproverMaster> GetApproverUserForDopDown()
+        public List<ApproverMaster> GetApproverUserForDopDown(int shipNo)
         {
             List<ApproverMaster> approverUserList = new List<ApproverMaster>();
 
@@ -235,6 +235,7 @@ namespace TCCCMS.Data
                 {
                     con.Open();
                     cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@ShipNo", shipNo);
                     DataSet ds = new DataSet();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(ds);

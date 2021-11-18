@@ -8,10 +8,11 @@ using System.Web;
 using System.Text;
 using System.IO;
 using System.Web.Mvc;
-
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class CompanyPolicyManualController : Controller
     {
         //--------------------Vol1-------------------------
@@ -19,6 +20,8 @@ namespace TCCCMS.Controllers
         private string controllerName = "CompanyPolicyManual";
         ManualBL manualBL = new ManualBL();
         // GET: CompanyPolicyManual
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             Session["IsSearched"] = "0";
@@ -33,10 +36,12 @@ namespace TCCCMS.Controllers
         //    System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
         //    Manual file = new Manual();
         //    file = manualBL.GetManual(controllerName, actionName);
-            
+
         //    //TempData[actionName] = file.ManualBodyHtml;
         //    return View(file);
         //}
+
+        [CustomAuthorizationFilter]
         public ActionResult Pages(string actionName, string formName = "", string relformPath= "")
         {
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
@@ -102,6 +107,8 @@ namespace TCCCMS.Controllers
             //TempData[actionName] = file.ManualBodyHtml;
             return View(file);
         }
+
+        [CustomAuthorizationFilter]
         public ActionResult PDFViewer(string fileName,string relPDFPath)
         {
             Manual file = new Manual();
@@ -114,6 +121,7 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        [CustomAuthorizationFilter]
 
         public ActionResult RevisiedPages(string actionName, string rv = "")
         {

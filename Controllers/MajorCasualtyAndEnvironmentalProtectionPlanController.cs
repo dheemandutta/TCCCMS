@@ -8,11 +8,11 @@ using System.Web;
 using System.Text;
 using System.IO;
 using System.Web.Mvc;
-
-
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class MajorCasualtyAndEnvironmentalProtectionPlanController : Controller
     {
         //--------------------Vol6-------------------------
@@ -21,6 +21,7 @@ namespace TCCCMS.Controllers
         ManualBL manualBL = new ManualBL();
 
         // GET: MajorCasualtyAndEnvironmentalProtectionPlan
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             Session["IsSearched"] = "0";
@@ -38,6 +39,7 @@ namespace TCCCMS.Controllers
         //    TempData[actionName] = file.ManualBodyHtml;
         //    return View(file);
         //}
+        [CustomAuthorizationFilter]
         public ActionResult Pages(string actionName, string formName = "", string relformPath = "")
         {
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
@@ -117,6 +119,7 @@ namespace TCCCMS.Controllers
             //TempData[actionName] = file.ManualBodyHtml;
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult PDFViewer(string fileName, string relPDFPath)
         {
             Manual file = new Manual();
@@ -129,6 +132,7 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        [CustomAuthorizationFilter]
         public FileResult Download(string fileName, string relformPath)
         {
             ManualBL manualBl = new ManualBL();

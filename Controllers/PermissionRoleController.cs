@@ -7,12 +7,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class PermissionRoleController : Controller
     {
         // GET: PermissionRole
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             PermissionRolePOCO poco = new PermissionRolePOCO();
@@ -23,6 +26,7 @@ namespace TCCCMS.Controllers
             return View(poco);
         }
 
+        [CustomAuthorizationFilter]
 
         public JsonResult LoadData(int selectedPermissionId)
         {
@@ -100,7 +104,7 @@ namespace TCCCMS.Controllers
         }
 
 
-
+        [CustomAuthorizationFilter]
         public JsonResult SavePermissionRole(int permissionId, string[] selectedRoles)
         {
             var data = string.Empty;

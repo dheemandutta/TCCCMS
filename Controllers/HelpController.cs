@@ -14,28 +14,35 @@ using System.Web.Mvc.Html;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class HelpController : Controller
     {
         // GET: Help
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             return View();
         }
+        [CustomAuthorizationFilter]
         public ActionResult HelpOfficeAdmin()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult HelpOfficeUser()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult HelpVesselAdmin()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult HelpVesselUser()
         {
             return View();

@@ -12,23 +12,28 @@ using System.Text;
 using System.Net.Mail;
 using System.Web.Routing;
 using System.Configuration;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class TicketController : Controller
     {
         // GET: Ticket
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult ViewSupportTicket()
         {
             return View();
         }
 
         [HttpPost]
+        [CustomAuthorizationFilter]
         public ActionResult SendTicket( string error, string description, List<HttpPostedFileBase> fileData)
         {
             TicketBL ticketBl = new TicketBL();
@@ -134,7 +139,7 @@ namespace TCCCMS.Controllers
             }
         }
 
-
+        [CustomAuthorizationFilter]
         public JsonResult LoadData()
         {
             int draw, start, length;

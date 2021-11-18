@@ -115,19 +115,19 @@
                         <div class="tooltip">
                             <span class="dropbtn">
                                 @*<img src="~/images/icons/2x/Vessel_Normal@2x.png">
-                                  <img src="~/images/icons/2x/Vessel_Hover@2x.png">*@
+                        <img src="~/images/icons/2x/Vessel_Hover@2x.png">*@
                                 <img src="~/images/icons/2x/ShipParticular_Normal@2x.png">
                                 <img src="~/images/icons/2x/ShipParticular_Hover@2x.png">
                             </span>
                             <span class="tooltiptext"> Vessel Details</span>
                         </div>
-                            @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
-                @Html.Action("ShipMenuLayout", "Dashboard")
-            </div>*@
-                            @Html.Action("ShipMenuLayout", "Dashboard")
-                           
-                        </div>
+                        @*<div class="dropdown-content" style="min-width: 300px;  top: -300px;">
+                    @Html.Action("ShipMenuLayout", "Dashboard")
+                </div>*@
+                        @Html.Action("ShipMenuLayout", "Dashboard")
+
                     </div>
+                </div>
 
                 <div class="col-lg-2 col-md-2 col-6">
                     <div class="icon_box dropdown">
@@ -139,41 +139,49 @@
                             <span class="tooltiptext"> User Management</span>
                         </div>
                         @*<div class="dropdown-content" style="min-width: 300px;  top: -130px;">
-                            <ul>
-                                @if (Session["Role"].ToString() == "SupportUser")
-                                {
-                                    <li><a href="@Url.Action("RoleGroup", "RoleGroup")">Associate Role Group</a></li>
-                                    <li><a href="@Url.Action("GroupUser", "RoleGroup")">Associate Group User</a></li>
-                                }
-                                @if (Session["Role"].ToString() == "SupportUser" || Session["Role"].ToString() == "OfficeAdmin")
-                                {
-                                    <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
-                                }
-                            </ul>
-                        </div>*@
-
+                    <ul>
                         @if (Session["Role"].ToString() == "SupportUser")
                         {
-                            <div class="dropdown-content" style="min-width: 200px;  top: -130px;">
-                                <ul>
-                                    <li><a href="@Url.Action("RoleGroup", "RoleGroup")">Associate Role Group</a></li>
-                                    <li><a href="@Url.Action("GroupUser", "RoleGroup")">Associate Group User</a></li>
-                                    <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
-                                </ul>
-                            </div>
+                            <li><a href="@Url.Action("RoleGroup", "RoleGroup")">Associate Role Group</a></li>
+                            <li><a href="@Url.Action("GroupUser", "RoleGroup")">Associate Group User</a></li>
                         }
-
-                        @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "ShipAdmin")// ShipAdmin role condition added on 6th jul 2021 @BK for Amitabh Sir Instruction
+                        @if (Session["Role"].ToString() == "SupportUser" || Session["Role"].ToString() == "OfficeAdmin")
                         {
-                            <div class="dropdown-content" style="min-width: 200px;  top: -40px;">
-                                <ul>
-                                    <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
-                                </ul>
-                            </div>
+                            <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
+                        }
+                    </ul>
+                </div>*@
+                        @if (Session["Role"] != null)
+                        {
+                            if (Session["Role"].ToString() == "SupportUser")
+                            {
+                                <div class="dropdown-content" style="min-width: 200px;  top: -130px;">
+                                    <ul>
+                                        <li><a href="@Url.Action("RoleGroup", "RoleGroup")">Associate Role Group</a></li>
+                                        <li><a href="@Url.Action("GroupUser", "RoleGroup")">Associate Group User</a></li>
+                                        <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
+                                    </ul>
+                                </div>
+                            }
+
+                            if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "ShipAdmin")// ShipAdmin role condition added on 6th jul 2021 @BK for Amitabh Sir Instruction
+                            {
+                                <div class="dropdown-content" style="min-width: 200px;  top: -40px;">
+                                    <ul>
+                                        <li><a href="@Url.Action("Index", "UserMaster")">Create User</a></li>
+                                    </ul>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <script>
+                                /* window.location.href = "/{controller}/{action}"*/
+                                window.location.href = "/Home/Login"
+                            </script>
                         }
 
 
-                        
 
                     </div>
                 </div>
@@ -188,13 +196,13 @@
                                 </span>
                                 <span class="tooltiptext">Ticket</span>
                             </div>
-                            </div>
-</a>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="col-lg-2 col-md-2 col-6">
                     <a href="">
-                       
+
                         <div class="icon_box dropdown">
                             <div class="tooltip">
                                 <span class="dropbtn">
@@ -210,26 +218,27 @@
                         </div>
                     </a>
                 </div>
-
-                @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
+                @if (Session["Role"] != null)
                 {
-                    <div class="col-lg-2 col-md-2 col-6">
-                        <a href="">
-                            <div class="icon_box dropdown">
-                                <div class="tooltip">
-                                    <span class="dropbtn">
-                                        <img src="~/images/icons/2x/Rivision_Normal@2x.png">
-                                        <img src="~/images/icons/2x/Rivision_Hover@2x.png">
-                                    </span>
-                                    <span class="tooltiptext">Update Manual</span>
-                                </div>
-                                   
-                                </div>
-</a>
-                    </div>
-                }
+                    if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
+                    {
+                        <div class="col-lg-2 col-md-2 col-6">
+                            <a href="">
+                                <div class="icon_box dropdown">
+                                    <div class="tooltip">
+                                        <span class="dropbtn">
+                                            <img src="~/images/icons/2x/Rivision_Normal@2x.png">
+                                            <img src="~/images/icons/2x/Rivision_Hover@2x.png">
+                                        </span>
+                                        <span class="tooltiptext">Update Manual</span>
+                                    </div>
 
-                    @if (Session["Role"].ToString() == "ShipAdmin" || Session["Role"].ToString() == "SupportUser")
+                                </div>
+                            </a>
+                        </div>
+                    }
+
+                    if (Session["Role"].ToString() == "ShipAdmin" || Session["Role"].ToString() == "SupportUser")
                     {
                         <div class="col-lg-2 col-md-2 col-6">
                             <a href="">
@@ -241,44 +250,51 @@
                                         </span>
                                         <span class="tooltiptext">Template</span>
                                     </div>
-                                        <div class="dropdown-content">
-                                        </div>
+                                    <div class="dropdown-content">
+                                    </div>
                                 </div>
-</a>
+                            </a>
                         </div>
                     }
+                }
+                else
+                {
+                    <script>
+                        /* window.location.href = "/{controller}/{action}"*/
+                        window.location.href = "/Home/Login"
+                    </script>
+                }
 
-
-                    <div class="col-lg-1 col-md-1 col-6">
+                <div class="col-lg-1 col-md-1 col-6">
+                </div>
+                @*<div class="col-md-6">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Crew<span> 41</span></h6>
                     </div>
-                    @*<div class="col-md-6">
-                <div class="card">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h6>Crew<span> 41</span></h6>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="~/images/adminf.png">
+                    <div class="col-md-6">
+                        <img src="~/images/adminf.png">
 
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h6>Vessel</h6>
-                        </div>
-                        <div class="col-md-6">
-                            <img src="~/images/vissel.png">
-                        </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Vessel</h6>
+                    </div>
+                    <div class="col-md-6">
+                        <img src="~/images/vissel.png">
                     </div>
                 </div>
-            </div>*@
+            </div>
+        </div>*@
 
-                
-                </div>
+
+            </div>
             </div>
        
 
