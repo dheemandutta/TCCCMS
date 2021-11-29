@@ -932,6 +932,10 @@
     <Content Include="Help\OfficeHelp\Forgot  Password_old.pdf" />
     <Content Include="Help\VesselHelp\Add Users_old.pdf" />
     <Content Include="Help\OfficeHelp\Add Users_old.pdf" />
+    <Content Include="Help\OfficeHelp\New folder\Add Users.docx" />
+    <Content Include="Help\OfficeHelp\New folder\Forms Review and Approve.docx" />
+    <Content Include="Help\OfficeHelp\Add Users_old_old.pdf" />
+    <Content Include="Help\OfficeHelp\Forms Review and Approve.pdf" />
     <None Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1-vsdoc.js" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.js" />
     <Content Include="packages\jQuery.3.5.1\Content\Scripts\jquery-3.5.1.min.js" />
