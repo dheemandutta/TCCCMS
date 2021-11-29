@@ -7,12 +7,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class UserGroupController : Controller
     {
         // GET: UserGroup
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             UserGroupPOCO poco = new UserGroupPOCO();
@@ -22,7 +25,7 @@ namespace TCCCMS.Controllers
             //GetAllGroupsForDrp();
             return View(poco);
         }
-
+        [CustomAuthorizationFilter]
         public JsonResult LoadData(int selectedUserId)
         {
             UserGroupBL bL = new UserGroupBL();
@@ -99,7 +102,7 @@ namespace TCCCMS.Controllers
         }
 
 
-
+        [CustomAuthorizationFilter]
         public JsonResult SaveUserGroupMapping(int userId, string[] selectedGroups)
         {
             var data = string.Empty;

@@ -9,14 +9,18 @@ using System.Text;
 using System.IO;
 using System.Xml;
 using System.Web.Mvc;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class ReferenceMaterialsController : Controller
     {
         private string controllerName = "ReferenceMaterials";
         ManualBL manualBL = new ManualBL();
         // GET: ReferenceMaterials
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             Session["IsSearched"] = "0";
@@ -25,6 +29,8 @@ namespace TCCCMS.Controllers
             file.ManualBodyHtml = manualBL.GenerateBodyContentHtml(xPath, 0);
             return View(file);
         }
+
+        [CustomAuthorizationFilter]
         public ActionResult Pages(string actionName)
         {
             ShipManual file = new ShipManual();
@@ -32,6 +38,8 @@ namespace TCCCMS.Controllers
             TempData[actionName] = file.BodyHtml;
             return View(file);
         }
+
+        [CustomAuthorizationFilter]
         public ActionResult PDFViewer(string fileName, string relPDFPath)
         {
             //-------------
@@ -45,7 +53,7 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
-
+        [CustomAuthorizationFilter]
         public FileResult Download(string fileName, string relformPath)
         {
             ManualBL manualBl = new ManualBL();

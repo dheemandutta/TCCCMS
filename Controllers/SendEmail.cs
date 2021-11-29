@@ -9,9 +9,11 @@ using System.IO;
 using System.Configuration;
 
 using TCCCMS.CryptoUtility;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+	[CustomAuthorizationFilter]
 	public class SendEmail
 	{
 		public static bool isMailSendSuccessful = false;

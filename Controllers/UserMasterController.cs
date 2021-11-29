@@ -10,14 +10,17 @@ using System.Text.RegularExpressions;
 
 using System.IO;
 using Newtonsoft.Json;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class UserMasterController : Controller
     {
         private int _shipId = 0;
         // GET: UserMaster
 
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             try
@@ -37,7 +40,7 @@ namespace TCCCMS.Controllers
             
 
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult CompanyUser()
         {
             GetAllRanksForDrp();
@@ -45,6 +48,7 @@ namespace TCCCMS.Controllers
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult SupportUser()
         {
             GetAllRanksForDrp();
@@ -52,6 +56,7 @@ namespace TCCCMS.Controllers
             return View();
         }
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult LoadData()
         {
             _shipId = Convert.ToInt32(Session["ShipId"].ToString()); // Added on 17th Aug 2021
@@ -79,7 +84,7 @@ namespace TCCCMS.Controllers
             {
                 pageIndex = (start / length) + 1;
             }
-
+            
             UserMasterBL bL = new UserMasterBL(); ///////////////////////////////////////////////////////////////////////////
             int totalrecords = 0;
 
@@ -110,7 +115,7 @@ namespace TCCCMS.Controllers
 
 
 
-
+        [CustomAuthorizationFilter]
         public JsonResult SaveUpdateUser(UserMasterPOCO pOCO)
         {
             UserMasterBL bL = new UserMasterBL();
@@ -134,7 +139,7 @@ namespace TCCCMS.Controllers
 
             return Json(bL.SaveUpdateUser(pC), JsonRequestBehavior.AllowGet);
         }
-
+        [CustomAuthorizationFilter]
         public JsonResult SaveUpdateCompanyUser(UserMasterPOCO pOCO)
         {
             UserMasterBL bL = new UserMasterBL();
@@ -158,7 +163,7 @@ namespace TCCCMS.Controllers
 
             return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }
-
+        [CustomAuthorizationFilter]
         public JsonResult SaveUpdateSupportUser(UserMasterPOCO pOCO)
         {
             UserMasterBL bL = new UserMasterBL();
@@ -182,7 +187,7 @@ namespace TCCCMS.Controllers
 
             return Json(bL.SaveUpdateUser(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }
-
+        [CustomAuthorizationFilter]
         public JsonResult GetUserByUserId(int UserId)
         {
             UserMasterBL bL = new UserMasterBL();
@@ -213,7 +218,7 @@ namespace TCCCMS.Controllers
 
             return Json(data, JsonRequestBehavior.AllowGet);
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult DeleteUserMaster(int UserId/*, ref string recordCount*/)
         {
             UserMasterBL bL = new UserMasterBL();
@@ -221,7 +226,7 @@ namespace TCCCMS.Controllers
             return Json(recordaffected, JsonRequestBehavior.AllowGet);
 
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult ApprovedRoNotInUserMaster(int UserId/*, ref string recordCount*/)
         {
             UserMasterBL bL = new UserMasterBL();
@@ -229,7 +234,7 @@ namespace TCCCMS.Controllers
             return Json(recordaffected, JsonRequestBehavior.AllowGet);
 
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult UploadPermissionUserMaster(int UserId/*, ref string recordCount*/)
         {
             UserMasterBL bL = new UserMasterBL();
@@ -237,7 +242,7 @@ namespace TCCCMS.Controllers
             return Json(recordaffected, JsonRequestBehavior.AllowGet);
 
         }
-
+        [CustomAuthorizationFilter]
         public JsonResult GetIMONumberByShip(string shipId)
         {
             ApproverMaster approver = new ApproverMaster();
@@ -250,7 +255,7 @@ namespace TCCCMS.Controllers
 
             return Json(approver, JsonRequestBehavior.AllowGet);
         }
-
+        [CustomAuthorizationFilter]
         public JsonResult GenerateUserCode(string userType, string shipId, string rankId, string userName)
         {
             string code = "";
@@ -260,7 +265,7 @@ namespace TCCCMS.Controllers
 
             return Json(code, JsonRequestBehavior.AllowGet);
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult AllowSignatureUpload(int UserId)
         {
             UserMasterBL bL = new UserMasterBL();
@@ -273,6 +278,7 @@ namespace TCCCMS.Controllers
         #region Upload Form
 
         [HttpGet]
+        [CustomAuthorizationFilter]
         public ActionResult UploadForm()
         {
             _shipId = 6;
@@ -408,7 +414,7 @@ namespace TCCCMS.Controllers
         }
         #endregion
 
-
+        [CustomAuthorizationFilter]
         public ActionResult GetRoleByUserId(int UserId/*, ref string recordCount*/)
         {
             UserMasterBL bL = new UserMasterBL();

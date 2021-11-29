@@ -5,13 +5,16 @@ using System.Web;
 using System.Text;
 using System.Web.Mvc;
 using System.Web.Mvc.Html;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS
 {
     public static class BreadCrumbHtmlExtensions
     {
+        [CustomAuthorizationFilter]
         public static string BuildBreadcrumbNavigation(this HtmlHelper helper)
         {
+            
             string userType = HttpContext.Current.Session["UserType"].ToString();
             string UserRole = HttpContext.Current.Session["Role"].ToString();
             string ShipId = null;

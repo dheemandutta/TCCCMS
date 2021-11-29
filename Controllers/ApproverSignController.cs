@@ -9,12 +9,16 @@ using System.Web.Mvc;
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Configuration;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class ApproverSignController : Controller
     {
         // GET: ApproverSign
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             if (Session["Role"].ToString() == "OfficeUser" && Session["IsApprover"].ToString() == "1" && Session["IsAllowSign"].ToString() == "0")
@@ -28,6 +32,7 @@ namespace TCCCMS.Controllers
         }
 
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult SaveApproverSign(ApproverMaster ApproverSign)
         {
             ApproverSignBL bL = new ApproverSignBL();
@@ -45,6 +50,7 @@ namespace TCCCMS.Controllers
         }
 
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult SaveSign(string crewId, string crewPosition)
         {
             var key = "b14ca5898a4e4133bbce2ea2315a1916";
@@ -108,7 +114,7 @@ namespace TCCCMS.Controllers
             return Json(returnMsg, JsonRequestBehavior.AllowGet);
         }
 
-
+        [CustomAuthorizationFilter]
         public JsonResult LoadData()
         {
             int draw, start, length;
@@ -182,6 +188,7 @@ namespace TCCCMS.Controllers
         //}
 
         //for User drp
+        [CustomAuthorizationFilter]
         public void GetAllUserForDrpApproverSign()
         {
             ApproverSignBL bL = new ApproverSignBL();

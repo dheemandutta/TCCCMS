@@ -7,12 +7,15 @@ using System.Web;
 using System.Web.Mvc;
 using System.IO;
 using System.Text.RegularExpressions;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class RoleGroupController : Controller
     {
         // GET: RoleGroup
+        [CustomAuthorizationFilter]
         public ActionResult RoleGroup()
         {
             GetAllRoles();
@@ -20,6 +23,7 @@ namespace TCCCMS.Controllers
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult GroupUser()
         {
             GetAllGroupMaster();
@@ -82,7 +86,7 @@ namespace TCCCMS.Controllers
         }
 
 
-
+        [CustomAuthorizationFilter]
         public JsonResult SaveRoleGroup(RoleGroup pOCO)
         {
             RoleMasterBL bL = new RoleMasterBL();
@@ -123,7 +127,7 @@ namespace TCCCMS.Controllers
 
         }
 
-
+        [CustomAuthorizationFilter]
         public JsonResult GetRoleByGroupId(int GroupId)
         {
             RoleMasterBL bL = new RoleMasterBL();
@@ -169,7 +173,7 @@ namespace TCCCMS.Controllers
 
         }
 
-
+        [CustomAuthorizationFilter]
         public JsonResult SaveUserGroupMapping(int userId, string userGroupMapping)
         {
             UserGroupBL bL = new UserGroupBL();         

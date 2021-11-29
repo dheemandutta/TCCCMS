@@ -6,12 +6,15 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class ShipController : Controller
     {
         // GET: Ship
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             ShipBL shipBl = new ShipBL();
@@ -25,6 +28,8 @@ namespace TCCCMS.Controllers
                                                             }).ToList();
             return View();
         }
+
+        [CustomAuthorizationFilter]
         public JsonResult LoadData()
         {
             int draw, start, length;
@@ -73,6 +78,7 @@ namespace TCCCMS.Controllers
             return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult SaveShip(Ship ship)
         {
             ShipBL shipBL = new ShipBL();
@@ -114,6 +120,7 @@ namespace TCCCMS.Controllers
         }
 
         [HttpGet]
+        [CustomAuthorizationFilter]
         public JsonResult GetShipById(string id)
         {
             ShipBL shipBL = new ShipBL();
@@ -126,7 +133,7 @@ namespace TCCCMS.Controllers
         }
 
         #region DropDown
-
+        [CustomAuthorizationFilter]
         public JsonResult GetVesselSubTypeByVesselTypeForDopDown(string vesselTypeID)
         {
             int vesselTypeId = Convert.ToInt32(vesselTypeID);
@@ -143,6 +150,7 @@ namespace TCCCMS.Controllers
 
 
         //for GetVesselSubSubTypeByVesselSubTypeIDForDrp drp
+        [CustomAuthorizationFilter]
         public JsonResult GetVesselSubSubTypeByVesselSubTypeForDropdown(string vesselSubTypeID)
         {
             int vesselSubTypeId = Convert.ToInt32(vesselSubTypeID);

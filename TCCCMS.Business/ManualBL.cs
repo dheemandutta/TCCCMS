@@ -136,6 +136,8 @@ namespace TCCCMS.Business
                                 string actionName = item.Attributes["actionname"].Value.ToString();
                                 string type = item.Attributes["doctype"].Value.ToString();
                                 string isDownload = item.Attributes["isdownloadable"].Value.ToString();
+                                string status = item.Attributes["status"].Value.ToString();//added on 11th Nov 2021
+                                string version = item.Attributes["version"].Value.ToString();//added on 11th Nov 2021
                                 // manual = manuBl.GetActionNameByFileName(filename + ".html");
                                 if (type == "DOC" && actionName != "")
                                 {
@@ -145,16 +147,87 @@ namespace TCCCMS.Business
                                     //sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>" + partName + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + "</span></a></li>");
                                     ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
                                     //sb.Append("<a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' >");
-                                    if(isDownload =="YES")
+
+                                    #region -- Old Logic Commented on 15th Nov 2021
+                                    //if (isDownload =="YES")
+                                    //{
+                                    //    sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath="+ relaiveFilePath+ "' >");
+                                    //}
+                                    //else
+                                    //{
+                                    //    sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >");//&fileName added on28th jun 2021
+                                    //}
+
+                                    ////sb.Append(filename + "</a>");
+                                    ///*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                    //if (version == "")
+                                    //{
+                                    //    sb.Append(filename + "</a>");
+                                    //}
+                                    //else
+                                    //{
+                                    //    sb.Append(filename + " Rev " + version + "</a>");
+                                    //}
+                                    #endregion
+
+                                    #region --- New Logic Added on 15th Nov 2021
+                                    /* below if .. else if .. else condition with status added on 15th Nov 2021*/
+                                    if (status == "DEL")
                                     {
-                                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath="+ relaiveFilePath+ "' >");
+                                        sb.Append("<a href='#' >");
+                                        if (version == "")
+                                        {
+                                            sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                        }
+                                        else
+                                        {
+                                            sb.Append("<del style='color:black'>" + filename + " Rev " + version + "</del></a>");
+                                        }
+                                    }
+                                    else if (status == "NEW")
+                                    {
+                                        if (isDownload == "YES")
+                                        {
+                                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relaiveFilePath + "' >");
+                                        }
+                                        else
+                                        {
+                                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >");//&fileName added on28th jun 2021
+                                        }
+                                        if (version == "")
+                                        {
+                                            sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                        }
+                                        else
+                                        {
+                                            sb.Append("<ins style='color:#e90000; '>" + filename + " Rev " + version + "</ins></a>");
+                                        }
                                     }
                                     else
                                     {
-                                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >");//&fileName added on28th jun 2021
+                                        if (isDownload == "YES")
+                                        {
+                                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relaiveFilePath + "' >");
+                                        }
+                                        else
+                                        {
+                                            sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >");//&fileName added on28th jun 2021
+                                        }
+
+                                        //sb.Append(filename + "</a>");
+                                        /*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                        if (version == "")
+                                        {
+                                            sb.Append(filename + "</a>");
+                                        }
+                                        else
+                                        {
+                                            sb.Append(filename + " Rev " + version + "</a>");
+                                        }
                                     }
-                                    
-                                    sb.Append(filename + "</a>");
+
+                                    #endregion
+
                                     sb.Append("</br>");
 
 
@@ -162,8 +235,62 @@ namespace TCCCMS.Business
                                 else if (type == "PDF")
                                 {
                                     sb.Append("\n");
-                                    sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
-                                    sb.Append(filename + "</a>");
+
+                                    #region -- Old Logic Added on 15th Nov 2021
+                                    //sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
+                                    ////sb.Append(filename + "</a>");
+                                    ///*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                    //if (version == "")
+                                    //{
+                                    //    sb.Append(filename + "</a>");
+                                    //}
+                                    //else
+                                    //{
+                                    //    sb.Append(filename + " Rev " + version + "</a>");
+                                    //}
+                                    #endregion
+
+                                    #region --- New Logic Added on 15th Nov 2021
+                                    /* below if .. else if .. else condition with status added on 15th Nov 2021*/
+                                    if (status == "DEL")
+                                    {
+                                        sb.Append("<a href='#' >");
+                                        if (version == "")
+                                        {
+                                            sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                        }
+                                        else
+                                        {
+                                            sb.Append("<del style='color:black'>" + filename + " Rev " + version + "</del></a>");
+                                        }
+                                    }
+                                    else if (status == "NEW")
+                                    {
+                                        sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
+                                        if (version == "")
+                                        {
+                                            sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                        }
+                                        else
+                                        {
+                                            sb.Append("<ins style='color:#e90000; '>" + filename + " Rev " + version + "</ins></a>");
+                                        }
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
+                                        if (version == "")
+                                        {
+                                            sb.Append(filename + "</a>");
+                                        }
+                                        else
+                                        {
+                                            sb.Append(filename + " Rev " + version + "</a>");
+                                        }
+                                    }
+                                    #endregion
+
+
                                     sb.Append("</br>");
 
                                 }
@@ -280,33 +407,67 @@ namespace TCCCMS.Business
                     string actionName = item.Attributes["actionname"].Value.ToString();
                     string type = item.Attributes["doctype"].Value.ToString();
                     string isDownload = item.Attributes["isdownloadable"].Value.ToString();
+                    string status = item.Attributes["status"].Value.ToString();
+                    string version = item.Attributes["version"].Value.ToString();//added on 11th Nov 2021
                     // manual = manuBl.GetActionNameByFileName(filename + ".html");
                     if (ctrlName == "NoticeBoard") // Added this condition on 10th Aug 2021
                     {
-                        string status = item.Attributes["status"].Value.ToString();
+                       
                         if (type == "PDF")
                         {
                             if(status=="DEL")
                             {
                                 sb.Append("\n");
                                 //sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
-                                //sb.Append("<a href='#' >");
-                                sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                sb.Append("<a href='#' >");
+
+                                //sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                /*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                if (version == "")
+                                {
+                                    sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                }
+                                else
+                                {
+                                    sb.Append("<del style='color:black'>" + filename + " Rev " + version + "</del></a>");
+                                }
                                 sb.Append("</br>");
+                                
+
                             }
                             else if (status == "NEW")
                             {
                                 sb.Append("\n");
                                 sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
                                 //sb.Append("<ins style='color:white; background-color: #e90000;'>" + filename + "</ins></a>");
-                                sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                
+                                //sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                /*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                if (version == "")
+                                {
+                                    sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                }
+                                else
+                                {
+                                    sb.Append("<ins style='color:#e90000; '>" + filename + " Rev " + version + "</ins></a>");
+                                }
                                 sb.Append("</br>");
                             }
                             else
                             {
                                 sb.Append("\n");
                                 sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
-                                sb.Append(filename + "</a>");
+                                
+                                //sb.Append(filename + "</a>");
+                                /*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                if (version == "")
+                                {
+                                    sb.Append(filename + "</a>");
+                                }
+                                else
+                                {
+                                    sb.Append(filename + " Rev " + version + "</a>");
+                                }
                                 sb.Append("</br>");
                             }
                             
@@ -319,28 +480,156 @@ namespace TCCCMS.Business
                         if (type == "DOC" && actionName != "")
                         {
                             sb.Append("\n");
+
                             //sb.Append("<li ><a href='@Url.Action('" + manual.ActionName + "', '" + manual.ControllerName + "'><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background - color:salmon; '>" + filename + " </span></a></li>");
                             //sb.Append("<li ><a href='/" + manual.ControllerName + "/" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
                             //sb.Append("<li ><a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' ><span class='vul'>Volume <b>" + part + "</b> </span><span class='pgnam' style='background-color:salmon; '>" + filename + " </span></a></li>");
                             ///--------below 2 lines chenged with next uper line on 20th Feb 2021-------
                             //sb.Append("<a href='/" + manual.ControllerName + "/Pages?actionName=" + manual.ActionName + "' >");
                             //sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
-                            if (isDownload == "YES")
+                            #region -- Old Logic Commented on 15th Nov 2021  
+                            /* -------Commented on 15th Nov 2021-----*/
+                            //if (isDownload == "YES")
+                            //{
+                            //    sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relativePath + "' >");
+                            //}
+                            //else
+                            //{
+                            //    sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >"); //&fileName added on28th jun 2021
+                            //}
+                            ////sb.Append(filename + "</a>");
+                            ///*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                            //if (version == "")
+                            //{
+                            //    sb.Append(filename + "</a>");
+                            //}
+                            //else
+                            //{
+                            //    sb.Append(filename + " Rev " + version + "</a>");
+                            //}
+                            /* ---End----Commented on 15th Nov 2021-----*/
+
+                            #endregion
+
+                            #region --- New Logic Added on 15th Nov 2021
+                            /* below if .. else if .. else condition with status added on 15th Nov 2021*/
+                            if (status == "DEL")
                             {
-                                sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relativePath + "' >");
+                                sb.Append("<a href='#' >");
+                                if (version == "")
+                                {
+                                    sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                }
+                                else
+                                {
+                                    sb.Append("<del style='color:black'>" + filename + " Rev " + version + "</del></a>");
+                                }
+                            }
+                            else if (status == "NEW")
+                            {
+                                if (isDownload == "YES")
+                                {
+                                    sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relativePath + "' >");
+                                }
+                                else
+                                {
+                                    sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >"); //&fileName added on28th jun 2021
+                                }
+                                if (version == "")
+                                {
+                                    sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                }
+                                else
+                                {
+                                    sb.Append("<ins style='color:#e90000; '>" + filename + " Rev " + version + "</ins></a>");
+                                }
                             }
                             else
                             {
-                                sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >"); //&fileName added on28th jun 2021
+                                if (isDownload == "YES")
+                                {
+                                    sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relativePath + "' >");
+                                }
+                                else
+                                {
+                                    sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >"); //&fileName added on28th jun 2021
+                                }
+                                //sb.Append(filename + "</a>");
+                                /*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                if (version == "")
+                                {
+                                    sb.Append(filename + "</a>");
+                                }
+                                else
+                                {
+                                    sb.Append(filename + " Rev " + version + "</a>");
+                                }
                             }
-                            sb.Append(filename + "</a>");
+                            
+                            #endregion
+                            
                             sb.Append("</br>");
                         }
                         else if (type == "PDF")
                         {
                             sb.Append("\n");
-                            sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
-                            sb.Append(filename + "</a>");
+
+                            #region -- Old Logic Commented on15th Nov 2021
+                            //sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
+                            ////sb.Append(filename + "</a>");
+                            ///*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                            //if (version == "")
+                            //{
+                            //    sb.Append(filename + "</a>");
+                            //}
+                            //else
+                            //{
+                            //    sb.Append(filename + " Rev " + version + "</a>");
+                            //}
+                            #endregion
+
+                            #region --- New Logic Added on 15th Nov 2021
+                            /* below if .. else if .. else condition with status added on 15th Nov 2021*/
+                            if (status == "DEL")
+                            {
+                                sb.Append("<a href='#' >");
+                                if (version == "")
+                                {
+                                    sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                }
+                                else
+                                {
+                                    sb.Append("<del style='color:black'>" + filename + " Rev " + version + "</del></a>");
+                                }
+                            }
+                            else if (status == "NEW")
+                            {
+                                sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
+                                if (version == "")
+                                {
+                                    sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                }
+                                else
+                                {
+                                    sb.Append("<ins style='color:#e90000; '>" + filename + " Rev " + version + "</ins></a>");
+                                }
+                            }
+                            else
+                            {
+                                sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relativePath + "' >");
+                                //sb.Append(filename + "</a>");
+                                /*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                if (version == "")
+                                {
+                                    sb.Append(filename + "</a>");
+                                }
+                                else
+                                {
+                                    sb.Append(filename + " Rev " + version + "</a>");
+                                }
+                            }
+                            #endregion
+                            
                             sb.Append("</br>");
 
                         }
@@ -349,8 +638,58 @@ namespace TCCCMS.Business
                             if (isDownload == "YES")
                             {
                                 sb.Append("\n");
-                                sb.Append("<a href='/" + ctrlName + "/Pages?formName=" + filename + "&relformPath=" + relativePath + "' >");
-                                sb.Append(filename + "</a>");
+                                #region --- Old logic Commented on 15th Nov 2021
+                                //sb.Append("<a href='/" + ctrlName + "/Pages?formName=" + filename + "&relformPath=" + relativePath + "' >");
+                                ////sb.Append(filename + "</a>");
+                                ///*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                //if (version == "")
+                                //{
+                                //    sb.Append(filename + "</a>");
+                                //}
+                                //else
+                                //{
+                                //    sb.Append(filename + " Rev " + version + "</a>");
+                                //}
+                                #endregion
+                                #region --New Logic add on 15th Nov 2021
+                                /* below if .. else if .. else condition with status added on 15th Nov 2021*/
+                                if (status == "DEL")
+                                {
+                                    sb.Append("<a href='#' >");
+                                    if (version == "")
+                                    {
+                                        sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<del style='color:black'>" + filename + " Rev " + version + "</del></a>");
+                                    }
+                                }
+                                else if (status == "NEW")
+                                {
+                                    sb.Append("<a href='/" + ctrlName + "/Pages?formName=" + filename + "&relformPath=" + relativePath + "' >");
+                                    if (version == "")
+                                    {
+                                        sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<ins style='color:#e90000; '>" + filename + " Rev " + version + "</ins></a>");
+                                    }
+                                }
+                                else
+                                {
+                                    sb.Append("<a href='/" + ctrlName + "/Pages?formName=" + filename + "&relformPath=" + relativePath + "' >");
+                                    if (version == "")
+                                    {
+                                        sb.Append(filename + "</a>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append(filename + " Rev " + version + "</a>");
+                                    }
+                                }
+                                #endregion
                                 sb.Append("</br>");
                             }
                         }

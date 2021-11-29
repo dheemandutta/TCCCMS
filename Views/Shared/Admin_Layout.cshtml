@@ -24,6 +24,11 @@
 <body>
     <header>
         <div class="container-fluid">
+            @******Added Below Condition on 18th Nov 2021*@
+            @*@if (Request.IsAuthenticated)
+            {*@
+                @Html.Partial("~/Views/Shared/_pvAliveActiveWarning.cshtml")
+            @*}*@
             <div class="row">
                 <div class="col-lg-2 col-md-3 col-7">
                     <div class="logo">
@@ -33,34 +38,43 @@
                 <div class="col-lg-8 col-md-5 col-12">
                     <div class="search">
                         @*<input type="text" class="searchTerm" placeholder="Search....">
-                            <button type="submit" class="searchButton">
-                                <i class="fa fa-search"></i>
-                            </button>*@
+                    <button type="submit" class="searchButton">
+                        <i class="fa fa-search"></i>
+                    </button>*@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-4 col-5">
 
                     @*@if (Session["UserName"] != null)
-                        {
-                            <div>
-                                <a id="lnkLogOut" class="btn btn-warning" href="@Url.Action("Login", "Home")"> Log Out</a>
-                            </div>
-                        }*@
+                {
+                    <div>
+                        <a id="lnkLogOut" class="btn btn-warning" href="@Url.Action("Login", "Home")"> Log Out</a>
+                    </div>
+                }*@
                     <ul class="topright adminlay">
-                         <li>
+                        <li>
                             <div class="dropdown admin">
                                 <button class="button log"><span><img src="~/images/questionmark.png" style="width:19px;" /></span></button>
                                 <div class="dropdown-content">
-                                    @if (Session["Role"].ToString() == "OfficeAdmin")
+                                    @if (Session["Role"] != null)
                                     {
-                                        <a href='@Url.Action("HelpOfficeAdmin", "Help")'>Office Admin Help</a>
+                                        if (Session["Role"].ToString() == "OfficeAdmin")
+                                        {
+                                            <a href='@Url.Action("HelpOfficeAdmin", "Help")'>Office Admin Help</a>
+                                        }
+                                        if (Session["Role"].ToString() == "ShipAdmin")
+                                        {
+                                            <a href='@Url.Action("HelpVesselAdmin", "Help")'>Vessel Admin Help</a>
+                                        }
                                     }
-                                    @if (Session["Role"].ToString() == "ShipAdmin")
+                                    else
                                     {
-                                        <a href='@Url.Action("HelpVesselAdmin", "Help")'>Vessel Admin Help</a>
+                                        <script>
+                                            /* window.location.href = "/{controller}/{action}"*/
+                                            window.location.href = "/Home/Login"
+                                        </script>
                                     }
 
-                                    
                                 </div>
                             </div>
                         </li>
@@ -74,14 +88,14 @@
                                 <sup id="notifyNumber" class="hidis"></sup>
                                 <div id="notifyContent" class="dropdown-content hidis">
                                     @*<h3>@Session["UserCode"].ToString() <span> @Session["Role"].ToString()</span></h3>
-                                    <a href="@Url.Action("Login", "Home")">Log Off</a>*@
+                                <a href="@Url.Action("Login", "Home")">Log Off</a>*@
                                     @*<div class="scroll">
-                                        <ul>
-                                            <li>searchButton searchButton</li>
-                                            <li>searchButton searchButton</li>
-                                            <li>searchButton searchButton</li>
-                                        </ul>
-                                    </div>*@
+                                    <ul>
+                                        <li>searchButton searchButton</li>
+                                        <li>searchButton searchButton</li>
+                                        <li>searchButton searchButton</li>
+                                    </ul>
+                                </div>*@
                                 </div>
                             </div>
                         </li>
@@ -91,8 +105,20 @@
                             <div class="dropdown admin">
                                 <button class="button log"><span><img src="~/images/user.png" style="width:19px;" /></span></button>
                                 <div class="dropdown-content">
-                                    <h3>@Session["UserCode"].ToString() 
-                                    @*<span> @Session["Role"].ToString()</span>*@
+                                    <h3>
+                                        @if (Session["Role"] != null)
+                                        {
+                                            Session["UserCode"].ToString();
+                                            @*<span> @Session["Role"].ToString()</span>*@
+
+                                        }
+                                        else
+                                        {
+                                            <script>
+                                                /* window.location.href = "/{controller}/{action}"*/
+                                                window.location.href = "/Home/Login"
+                                            </script>
+                                        }
                                     </h3>
 
                                     <a style=" color: Highlight;" href="@Url.Action("ChangePassword", "Home")">Change Password</a>
@@ -102,12 +128,21 @@
 
                         </li>
                         <li>
-
-                            @if (Session["Role"].ToString() == "SupportUser")
+                            @if (Session["Role"] != null)
                             {
-                                <div class="menu_icon" class="openbtn" onclick="openNav()">
-                                    <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
-                                </div>
+                                if (Session["Role"].ToString() == "SupportUser")
+                                {
+                                    <div class="menu_icon" class="openbtn" onclick="openNav()">
+                                        <a href="#"><i class="fa fa-bars" aria-hidden="true"></i></a>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <script>
+                                    /* window.location.href = "/{controller}/{action}"*/
+                                    window.location.href = "/Home/Login"
+                                </script>
                             }
                         </li>
                     </ul>
@@ -118,18 +153,28 @@
     <div class="breadcrumbs">
         <div class="steps steps_animation">
             <!-- #region Breadcrumb -->
-            @Html.Raw(Html.BuildBreadcrumbNavigation())
+            @if (Session["Role"] != null)
+            {
+                Html.Raw(Html.BuildBreadcrumbNavigation());
+            }
+            else
+            {
+                <script>
+                    /* window.location.href = "/{controller}/{action}"*/
+                    window.location.href = "/Home/Login"
+                </script>
+            }
             <!-- #endregion -->
             @*<div class="steps_item">
-                    <span class="steps_content">
-                        <a href="#"> Home</a>
-                    </span>
-                </div>
-                <div class="steps_item">
-                    <span class="steps_content">
-                        Inner Page1
-                    </span>
-                </div>*@
+            <span class="steps_content">
+                <a href="#"> Home</a>
+            </span>
+        </div>
+        <div class="steps_item">
+            <span class="steps_content">
+                Inner Page1
+            </span>
+        </div>*@
         </div>
     </div>
 
@@ -164,24 +209,34 @@
                             </a>
                             <ul class="submenu">
                                 @*<li>
-                                        <a href='@Url.Action("Index", "UserGroup")'>
-                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Group</span>
-                                        </a>
-                                    </li>*@
-
-
-                                @if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
+            <a href='@Url.Action("Index", "UserGroup")'>
+                <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> User Group</span>
+            </a>
+        </li>*@
+                                @if (Session["Role"] != null)
                                 {
-                                    <li>
-                                        <a href='@Url.Action("RoleGroup", "RoleGroup")'>
-                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Associate Role Group</span>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href='@Url.Action("GroupUser", "RoleGroup")'>
-                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Associate Group User</span>
-                                        </a>
-                                    </li>
+
+                                    if (Session["Role"].ToString() == "OfficeAdmin" || Session["Role"].ToString() == "SupportUser")
+                                    {
+                                        <li>
+                                            <a href='@Url.Action("RoleGroup", "RoleGroup")'>
+                                                <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Associate Role Group</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href='@Url.Action("GroupUser", "RoleGroup")'>
+                                                <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;">Associate Group User</span>
+                                            </a>
+                                        </li>
+                                    }
+
+                                }
+                                else
+                                {
+                                    <script>
+                                        /* window.location.href = "/{controller}/{action}"*/
+                                        window.location.href = "/Home/Login"
+                                    </script>
                                 }
 
 
@@ -193,15 +248,15 @@
                                     </a>
                                 </li>
                                 @*<li>
-                                        <a href='@Url.Action("CompanyUser", "UserMaster")'>
-                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Company User</span>
-                                        </a>
-                                    </li>*@
+            <a href='@Url.Action("CompanyUser", "UserMaster")'>
+                <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Company User</span>
+            </a>
+        </li>*@
                                 @*<li>
-                                        <a href='@Url.Action("SupportUser", "UserMaster")'>
-                                            <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Support User</span>
-                                        </a>
-                                    </li>*@
+            <a href='@Url.Action("SupportUser", "UserMaster")'>
+                <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Support User</span>
+            </a>
+        </li>*@
                                 <li>
                                     <a href='@Url.Action("UploadForm", "UserMaster")'>
                                         <span class="vul">2 </span><span class="pgnam" style="background-color:salmon;"> Upload Form</span>

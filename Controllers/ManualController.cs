@@ -7,13 +7,16 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class ManualController : Controller
     {
 
         // GET: Manual
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             return View();
@@ -23,6 +26,7 @@ namespace TCCCMS.Controllers
         //{---
         //    return View();
         //}
+        [CustomAuthorizationFilter]
         public ActionResult SearchList(int currentPage = 1, string volNo = "-1", string text = null)
         {
             Session["ShipCat"] = string.Empty;
@@ -124,6 +128,7 @@ namespace TCCCMS.Controllers
 
         }
         [HttpGet]
+        [CustomAuthorizationFilter]
         public JsonResult GetSearchText()
         {
             string text = "";
@@ -146,6 +151,7 @@ namespace TCCCMS.Controllers
             else
                 return Json(text, JsonRequestBehavior.AllowGet);
         }
+        [CustomAuthorizationFilter]
         public JsonResult GetText()
         {
 

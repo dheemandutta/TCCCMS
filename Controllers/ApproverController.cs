@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.IO;
 using Newtonsoft.Json;
+using System.Configuration;
 
 namespace TCCCMS.Controllers
 {
@@ -204,10 +205,14 @@ namespace TCCCMS.Controllers
         [HttpGet]
         public JsonResult GetAllApproverUserPositionForDropDown()
         {
-           
+            //int ShipNo = Convert.ToInt32(Session["ShipId"].ToString());
+
+            int ShipNo = Convert.ToInt32(ConfigurationManager.AppSettings["ShipNumber"]);
+
+
             ApproverMasterBL approverBl = new ApproverMasterBL();
             List<ApproverMaster> userList = new List<ApproverMaster>();
-            userList = approverBl.GetApproverUserForDopDown();
+            userList = approverBl.GetApproverUserForDopDown(ShipNo);
             ViewBag.User = userList.OrderBy(u => u.UserId).Select(r =>
                                               new SelectListItem()
                                               {
@@ -224,7 +229,7 @@ namespace TCCCMS.Controllers
         {
             ApproverMasterBL approverBl = new ApproverMasterBL();
             List<ApproverMaster> userList = new List<ApproverMaster>();
-            userList = approverBl.GetApproverUserForDopDown();
+            userList = approverBl.GetApproverUserForDopDown(0);
             ViewBag.User = userList.OrderBy(u => u.UserId).Select(r =>
                                               new SelectListItem()
                                               {

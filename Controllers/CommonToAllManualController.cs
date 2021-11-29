@@ -9,15 +9,19 @@ using System.Text;
 using System.IO;
 using System.Xml;
 using System.Web.Mvc;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class CommonToAllManualController : Controller
     {
         private string controllerName = "CommonToAllManual";
         private string xmlPath = "~/xmlMenu/" + "COMMONTOALL.xml";
         ManualBL manualBL = new ManualBL();
         // GET: CommonToAllManual
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             Session["IsSearched"] = "0";
@@ -35,6 +39,8 @@ namespace TCCCMS.Controllers
         //    TempData[actionName] = file.BodyHtml;
         //    return View(file);
         //}
+
+        [CustomAuthorizationFilter]
         public ActionResult Pages(string actionName, string formName = "", string relformPath = "")
         {
             
@@ -118,6 +124,8 @@ namespace TCCCMS.Controllers
             //TempData[actionName] = file.ManualBodyHtml;
             return View(file);
         }
+        
+         [CustomAuthorizationFilter]
         public ActionResult PDFViewer(string fileName, string relPDFPath)
         {
             //-------------
@@ -131,6 +139,7 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        [CustomAuthorizationFilter]
         public FileResult Download(string fileName, string relformPath)
         {
             ManualBL manualBl = new ManualBL();
@@ -157,7 +166,9 @@ namespace TCCCMS.Controllers
             byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
             return File(fileBytes,manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
         }
-        
+
+
+        [CustomAuthorizationFilter]
         public ActionResult PPM()
         {
             Session["IsSearched"] = "0";
@@ -167,6 +178,8 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "PPM");
             return View(file);
         }
+
+        [CustomAuthorizationFilter]
         public ActionResult CGS()
         {
             Session["IsSearched"] = "0";
@@ -176,6 +189,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "CGS");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult GCGS()
         {
             Session["IsSearched"] = "0";
@@ -185,6 +199,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "GCGS");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult OMPCOV()
         {
             Session["IsSearched"] = "0";
@@ -194,6 +209,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "OMPCOV");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult TOM()
         {
             Session["IsSearched"] = "0";
@@ -203,6 +219,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "TOM");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult PCMP()
         {
             Session["IsSearched"] = "0";
@@ -212,6 +229,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "PCMP");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult EMS()
         {
             Session["IsSearched"] = "0";
@@ -221,6 +239,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "EMS");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult Manning()
         {
             Session["IsSearched"] = "0";
@@ -230,6 +249,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateC2AFolderBodyContentHtml(xPath, "Manning");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult CEM()
         {
             Session["IsSearched"] = "0";
@@ -242,7 +262,8 @@ namespace TCCCMS.Controllers
 
         public string GenerateC2AMenu()
         {
-            string xPath = Server.MapPath("~/xmlMenu/" + "COMMONTOALL.xml");
+            //string xPath = Server.MapPath("~/xmlMenu/" + "COMMONTOALL.xml");//Commented on 11th Nov 2021
+            string xPath = Server.MapPath(xmlPath);
             XmlDocument xDoc = new XmlDocument();
             xDoc.Load(xPath);
             StringBuilder sb = new StringBuilder();
@@ -265,19 +286,154 @@ namespace TCCCMS.Controllers
                             string actionName = item.Attributes["actionname"].Value.ToString();
                             string type = item.Attributes["doctype"].Value.ToString();
                             string isDownload = item.Attributes["isdownloadable"].Value.ToString();
+                            string status = item.Attributes["status"].Value.ToString();//added on 11th Nov 2021
+                            string version = item.Attributes["version"].Value.ToString();//added on 11th Nov 2021
                             // manual = manuBl.GetActionNameByFileName(filename + ".html");
                             if (type == "DOC" && actionName != "")
                             {
                                 sb.Append("\n");
 
-                                sb.Append("<li ><span>></span><a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >" + filename + "</a>");
+                                sb.Append("<li ><span>></span>");
+
+                                #region -- Old Logic Commented on 15th Nov 2021
+                                //sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "' >");
+                                ////sb.Append(filename + "</a>");
+                                ///*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                //if (version == "")
+                                //{
+                                //    sb.Append(filename + "</a>");
+                                //}
+                                //else
+                                //{
+                                //    sb.Append(filename + " Rev " + version + "</a>");
+                                //}
+
+                                #endregion
+
+                                #region --- New Logic Added on 15th Nov 2021
+                                /* below if .. else if .. else condition with status added on 15th Nov 2021*/
+                                if (status == "DEL")
+                                {
+                                    sb.Append("<a href='#' >");
+                                    if (version == "")
+                                    {
+                                        sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<del style='color:black'>" + filename + " Rev " + version + "</del></a>");
+                                    }
+                                }
+                                else if (status == "NEW")
+                                {
+                                    if (isDownload == "YES")
+                                    {
+                                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relaiveFilePath + "' >");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >");//&fileName added on28th jun 2021
+                                    }
+                                    if (version == "")
+                                    {
+                                        sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<ins style='color:#e90000; '>" + filename + " Rev " + version + "</ins></a>");
+                                    }
+                                }
+                                else
+                                {
+                                    if (isDownload == "YES")
+                                    {
+                                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&formName=" + filename + "&relformPath=" + relaiveFilePath + "' >");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<a href='/" + ctrlName + "/Pages?actionName=" + actionName + "&fileName=" + filename + "' >");//&fileName added on28th jun 2021
+                                    }
+
+                                    //sb.Append(filename + "</a>");
+                                    /*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                    if (version == "")
+                                    {
+                                        sb.Append(filename + "</a>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append(filename + " Rev " + version + "</a>");
+                                    }
+                                }
+
+                                #endregion
+
+
+                                sb.Append("</br>");
                             }
                             else if (type == "PDF")
                             {
                                 sb.Append("\n");
                                 //sb.Append("<li ><span style='margin-right:5px;'>></span><a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
-								sb.Append("<li ><span>></span><a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
-                                sb.Append(filename + "</a>");
+								sb.Append("<li ><span>></span>");
+
+                                #region -- old Logic Commented on 15th Nov 2021
+                                //sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
+                                ////sb.Append(filename + "</a>");
+                                ///*  Below condition added on 11th Nov 2021 by commenting the above line*/
+                                //if (version == "")
+                                //{
+                                //    sb.Append(filename + "</a>");
+                                //}
+                                //else
+                                //{
+                                //    sb.Append(filename + " Rev " + version + "</a>");
+                                //}
+
+                                #endregion 
+
+                                #region --- New Logic Added on 15th Nov 2021
+                                /* below if .. else if .. else condition with status added on 15th Nov 2021*/
+                                if (status == "DEL")
+                                {
+                                    sb.Append("<a href='#' >");
+                                    if (version == "")
+                                    {
+                                        sb.Append("<del style='color:black'>" + filename + "</del></a>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<del style='color:black'>" + filename + " Rev " + version + "</del></a>");
+                                    }
+                                }
+                                else if (status == "NEW")
+                                {
+                                    sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
+                                    if (version == "")
+                                    {
+                                        sb.Append("<ins style='color:#e90000; '>" + filename + "</ins></a>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append("<ins style='color:#e90000; '>" + filename + " Rev " + version + "</ins></a>");
+                                    }
+                                }
+                                else
+                                {
+                                    sb.Append("<a href='/" + ctrlName + "/PDFViewer?fileName=" + filename + "&relPDFPath=" + relaiveFilePath + "' >");
+                                    if (version == "")
+                                    {
+                                        sb.Append(filename + "</a>");
+                                    }
+                                    else
+                                    {
+                                        sb.Append(filename + " Rev " + version + "</a>");
+                                    }
+                                }
+                                #endregion
+
+
+
                                 sb.Append("</br>");
 
                             }
@@ -326,7 +482,7 @@ namespace TCCCMS.Controllers
 
 
 
-
+        [CustomAuthorizationFilter]
         public ActionResult VRP()
         {
             //Session["IsSearched"] = "0";
@@ -338,6 +494,7 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult ItAndComm()
         {
             Session["IsSearched"] = "0";

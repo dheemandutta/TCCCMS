@@ -17,26 +17,28 @@ namespace TCCCMS.Controllers
     [CustomAuthorizationFilter]
     public class DashboardController : Controller
     {
+        [CustomAuthorizationFilter]
         public ActionResult UserDashboard()
         {
             //-------
             return View();
             //return RedirectToAction("UserDashboard", "Dashboard");
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult CommonToAllManualDashboard()
         {
             //-------
             return View();
             //return RedirectToAction("UserDashboard", "Dashboard");
         }
-        
 
+        [CustomAuthorizationFilter]
         // GET: Dashboard
         public ActionResult AdminDashboard()
         {
             return View();
         }
+        [CustomAuthorizationFilter]
         public ActionResult ShipDashboard(string id)
         {
             string x = Session["DashboardShipId"].ToString();
@@ -59,7 +61,7 @@ namespace TCCCMS.Controllers
            
             return View();
         }
-       
+        [CustomAuthorizationFilter]
         public ActionResult ShipMenuLayout()
         {
             Menu menu = new Menu();

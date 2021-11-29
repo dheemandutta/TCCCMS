@@ -7,19 +7,23 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Text.RegularExpressions;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class GroupMasterController : Controller
     {
         // GET: GroupMaster
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             return View();
         }
 
 
-
+        [CustomAuthorizationFilter]
         public JsonResult LoadData()
         {
             int draw, start, length;
@@ -68,6 +72,7 @@ namespace TCCCMS.Controllers
             return Json(new { draw = draw, recordsFiltered = totalrecords, recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult SaveUpdateGroupMaster(GroupMasterPOCO pOCO)
         {
             GroupMasterBL bL = new GroupMasterBL();
@@ -82,6 +87,7 @@ namespace TCCCMS.Controllers
             return Json(bL.SaveUpdateGroupMaster(pC  /*, int.Parse(Session["VesselID"].ToString())*/  ), JsonRequestBehavior.AllowGet);
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult GetGroupMasterByGroupId(int GroupId)
         {
             GroupMasterBL bL = new GroupMasterBL();
@@ -100,7 +106,7 @@ namespace TCCCMS.Controllers
 
             return Json(data, JsonRequestBehavior.AllowGet);
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult DeleteGroupMaster(int GroupId/*, ref string recordCount*/)
         {
             GroupMasterBL bL = new GroupMasterBL();

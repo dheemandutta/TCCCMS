@@ -18,27 +18,33 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Configuration;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class FormsController : Controller
     {
         // GET: Forms
+        [CustomAuthorizationFilter]
         public ActionResult ListOfAdministrationMmanagementForms()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult ListOfMaintenanceFroms()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult ListOfMmanagementOfShipPersonalForms()
         {
             return View();
         }
 
+        [CustomAuthorizationFilter]
         public ActionResult NavigationMmanagementForms()
         {
             return View();
@@ -48,6 +54,7 @@ namespace TCCCMS.Controllers
             return View();
         }
 
+        [CustomAuthorizationFilter]
 
         public JsonResult LoadData(int CategoryId)
         {
@@ -104,6 +111,8 @@ namespace TCCCMS.Controllers
         /// </summary>
         /// <param name="currentPage"> Added on 9th Aug 2021 @BK</param>
         /// <returns></returns>
+        /// 
+        [CustomAuthorizationFilter]
         public ActionResult FormsApprovalList(int currentPage = 1)
         {
             ApprovedFilledupFormAndApproverViewModel affaVM = new ApprovedFilledupFormAndApproverViewModel();
@@ -122,6 +131,7 @@ namespace TCCCMS.Controllers
             return View(affaVM);
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult ApproveFilledUpForm(Forms form)
         {
             string path             = Server.MapPath("~/UploadFilledUpFormForApproval");
@@ -168,6 +178,9 @@ namespace TCCCMS.Controllers
         /// <param name="qr"></param>
         /// <param name="currentPage">Added on 9th Aug 2021 @bk</param>
         /// <returns></returns>
+        /// 
+
+        [CustomAuthorizationFilter]
         public ActionResult FillupFormList(int currentPage = 1, string qr = "2")
         {
             ApprovedFilledupFormAndApproverViewModel affaVM = new ApprovedFilledupFormAndApproverViewModel();
@@ -208,6 +221,7 @@ namespace TCCCMS.Controllers
             return View(affaVM);
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult SendMailForapproval(string approvalId,string approverUserId,string formName, string task)
         {
             bool isSendSuccessfully = false;
@@ -280,6 +294,7 @@ namespace TCCCMS.Controllers
             //return Json("", JsonRequestBehavior.AllowGet);
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult GetFillupFormsListForNotification()
         {
             DocumentBL bL = new DocumentBL(); 
@@ -299,6 +314,7 @@ namespace TCCCMS.Controllers
             var data = frmList;
             return Json(new {recordsTotal = totalrecords, data = data }, JsonRequestBehavior.AllowGet);
         }
+
 
         public static int AddSignatureInForm(string relPath,string uploadedFormName,int approverUserId)
         {
@@ -719,6 +735,7 @@ namespace TCCCMS.Controllers
         /// <param name="approvers"></param>
         /// <returns></returns>
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult UploadFilledUpForm(string task, object approvers)
         {
             string catchMessage = "";
@@ -847,6 +864,7 @@ namespace TCCCMS.Controllers
         /// <param name="approvers"></param>
         /// <returns></returns>
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult UploadFilledUpFormNew(string task, object approvers)
         {
             string catchMessage = "";
@@ -1007,6 +1025,7 @@ namespace TCCCMS.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult UploadApprovedForm()
         {
             string catchMessage = "";
@@ -1098,6 +1117,7 @@ namespace TCCCMS.Controllers
 
 
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult UploadFilledUpReviewedForm(string task, object approvers)
         {
             string catchMessage = "";
@@ -1175,6 +1195,7 @@ namespace TCCCMS.Controllers
         }
 
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult UploadApprovedFilledUpForm(string formId, string approverId, string formName, object cat)
         {
             string catchMessage = "";
@@ -1259,6 +1280,7 @@ namespace TCCCMS.Controllers
         /// <param name="approvers"></param>
         /// <returns></returns>
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult UploadFilledUpReviewedFormNew(string task, object approvers)
         {
             string catchMessage = "";
@@ -1504,6 +1526,7 @@ namespace TCCCMS.Controllers
         /// <param name="approvers"></param>
         /// <returns></returns>
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult UploadFilledUpReviewedFormForApproval(string formName, object approvers)
         {
             try
@@ -1570,6 +1593,7 @@ namespace TCCCMS.Controllers
         /// <param name="approvers"></param>
         /// <returns></returns>
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult UploadFilledUpReviewedFormForApprovalNew(string formName, object approvers)
         {
             try
@@ -1707,6 +1731,7 @@ namespace TCCCMS.Controllers
         }
 
 
+        [CustomAuthorizationFilter]
         public JsonResult UploadFilledUpReviewedFormFor(string formName)
         {
             return Json("File Uploaded Successfully!");

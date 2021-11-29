@@ -6,16 +6,22 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.IO;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class DocumentController : Controller
     {
         // GET: Document
+
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             return View();
         }
+
+        [CustomAuthorizationFilter]
         public ActionResult List()
         {
             DocumentBL uploadBl = new DocumentBL();
@@ -32,6 +38,7 @@ namespace TCCCMS.Controllers
         }
 
         [HttpGet]
+        [CustomAuthorizationFilter]
         public ActionResult Upload()
         {
             DocumentBL uploadBl = new DocumentBL();
@@ -55,6 +62,7 @@ namespace TCCCMS.Controllers
 
             return View();
         }
+        [CustomAuthorizationFilter]
         public ActionResult UpdateForm()
         {
             DocumentBL uploadBl = new DocumentBL();
@@ -71,11 +79,13 @@ namespace TCCCMS.Controllers
 
         #region Save/Load/Delete Methods
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult SaveFiles()
         {
             return Json("Success", JsonRequestBehavior.AllowGet);
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult LoadData(string catId)
         {
             int categoryId = Convert.ToInt32(catId);
@@ -124,6 +134,7 @@ namespace TCCCMS.Controllers
             return Json(new { draw = draw,data = data }, JsonRequestBehavior.AllowGet);
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult Delete(string formName,string catName)
         {
             DocumentBL documentBl = new DocumentBL();
@@ -155,6 +166,7 @@ namespace TCCCMS.Controllers
 
         #region Download/Upload
         [HttpPost]
+        [CustomAuthorizationFilter]
         public ActionResult UploadFiles(FormsCategory category, string categoryId, string categoryName, List<HttpPostedFileBase> fileData)
         {
             List<Forms> formList = new List<Forms>();
@@ -223,6 +235,7 @@ namespace TCCCMS.Controllers
             }
         }
         [HttpPost]
+        [CustomAuthorizationFilter]
         public ActionResult UploadDropFile(List<HttpPostedFileBase> fileData)
         {
             string path = Server.MapPath("~/Uploads/");
@@ -239,6 +252,7 @@ namespace TCCCMS.Controllers
         }
 
         [HttpGet]
+        [CustomAuthorizationFilter]
         public  FileResult Download(string catName, string formName)
         {
             string path = Server.MapPath("~/Uploads/");
@@ -254,6 +268,7 @@ namespace TCCCMS.Controllers
             return File(memory, GetMimeTypes()[ext], Path.GetFileName(filePath));
         }
 
+        [CustomAuthorizationFilter]
         public JsonResult UploadAndUpdateForm(string categoryId, string categoryName,string formName, string formVersion, string modifiedSection)
         {
             List<Forms> formList = new List<Forms>();
@@ -364,6 +379,7 @@ namespace TCCCMS.Controllers
 
         #region Dropdown
         [HttpPost]
+        [CustomAuthorizationFilter]
         public JsonResult GetFormsByCategoryForDropdown(string categoryId)
         {
             int catId = Convert.ToInt32(categoryId);

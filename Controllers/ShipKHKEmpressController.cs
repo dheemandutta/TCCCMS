@@ -8,9 +8,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class ShipKHKEmpressController : Controller
     {
         //--------------------Ship6-------------------------
@@ -20,6 +22,7 @@ namespace TCCCMS.Controllers
         private string xmlPath = "~/xmlMenu/" + "ALLSHIPS1.xml";
         ShipBL shipBL = new ShipBL();
         // GET: ShipKHKEmpress
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             Session["IsSearched"] = "0";
@@ -38,6 +41,7 @@ namespace TCCCMS.Controllers
         //    return View(file);
         //}
 
+        [CustomAuthorizationFilter]
         public ActionResult Pages(string actionName, string formName = "", string relformPath = "")
         {
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
@@ -103,7 +107,7 @@ namespace TCCCMS.Controllers
             //TempData[actionName] = file.ManualBodyHtml;
             return View(file);
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult PDFViewer(string fileName, string relPDFPath)
         {
             ShipManual file = new ShipManual();
@@ -116,6 +120,7 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        [CustomAuthorizationFilter]
         public FileResult Download(string fileName, string relformPath)
         {
             ManualBL manualBl = new ManualBL();
@@ -140,7 +145,7 @@ namespace TCCCMS.Controllers
             byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
             return File(fileBytes, manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult SOPEP()
         {
             Session["IsSearched"] = "0";
@@ -150,6 +155,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "SOPEP");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult STS()
         {
             Session["IsSearched"] = "0";
@@ -159,6 +165,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "STS");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult BWMP()
         {
             Session["IsSearched"] = "0";
@@ -168,6 +175,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "BWMP");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult VOC()
         {
             Session["IsSearched"] = "0";
@@ -177,6 +185,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "VOC");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult MSMPLMP()
         {
             Session["IsSearched"] = "0";
@@ -186,6 +195,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "MSMPLMP");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult PRPW()
         {
             Session["IsSearched"] = "0";
@@ -195,6 +205,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "PRPW");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult BMP()
         {
             Session["IsSearched"] = "0";
@@ -204,6 +215,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "BMP");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult CWBMP()
         {
             Session["IsSearched"] = "0";
@@ -213,6 +225,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "CWBMP");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult GMP()
         {
             Session["IsSearched"] = "0";
@@ -222,6 +235,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "GMP");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult ETA()
         {
             Session["IsSearched"] = "0";
@@ -231,6 +245,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "ETA");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult SEEMP1()
         {
             Session["IsSearched"] = "0";
@@ -240,6 +255,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "SEEMP1");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult SEEMP2()
         {
             Session["IsSearched"] = "0";
@@ -249,6 +265,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "SEEMP2");
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult CRM()
         {
             ManualBL manualBL = new ManualBL();
@@ -257,7 +274,7 @@ namespace TCCCMS.Controllers
             file.BodyHtml = manualBL.GenerateShipWiseFolderBodyContentHtml(xPath, shipId, "CRM");
             return View(file);
         }
-
+        [CustomAuthorizationFilter]
         public ActionResult VGP()
         {
             ManualBL manualBL = new ManualBL();

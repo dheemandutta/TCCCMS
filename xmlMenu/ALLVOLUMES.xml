@@ -1,527 +1,531 @@
 <xml>
     <volumes>
 		<volume id="0" name="Volume O" controllername="MainDocument">
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCSMD">TCCS SMS - Main Document (FINAL)</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCGP">TCC GROUP POLICIES</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAAOTVA">APPENDIX A - TCCS SMS Oil Tankers, Volumes At A Glance</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCADFC">APPENDIX D - FLOW CHART OF SMS MANUALS - OIL TANKERS</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAEFC">APPENDIX E - FLOW CHART OF SMS MANUALS - BULK CARRIERS</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAFOC">APPENDIX F - ORGANIZATION CHART OF TCC GROUP</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAGOCSG">APPENDIX G - ORGANIZATION CHART OF TCC SINGAPORE - HEAD OFFICE</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAHOCHK">APPENDIX H - ORGANIZATION CHART OF TCC HONG KONG - BRANCH OFFICE</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TCCAIOCSH">APPENDIX I - ORGANIZATION CHART OF TCC SHANGHAI - BRANCH OFFICE</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TCCSMD">TCCS SMS - Main Document (FINAL)</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TCCGP">TCC GROUP POLICIES</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TCCAAOTVA">APPENDIX A - TCCS SMS Oil Tankers, Volumes At A Glance</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TCCADFC">APPENDIX D - FLOW CHART OF SMS MANUALS - OIL TANKERS</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TCCAEFC">APPENDIX E - FLOW CHART OF SMS MANUALS - BULK CARRIERS</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TCCAFOC">APPENDIX F - ORGANIZATION CHART OF TCC GROUP</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TCCAGOCSG">APPENDIX G - ORGANIZATION CHART OF TCC SINGAPORE - HEAD OFFICE</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TCCAHOCHK">APPENDIX H - ORGANIZATION CHART OF TCC HONG KONG - BRANCH OFFICE</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TCCAIOCSH">APPENDIX I - ORGANIZATION CHART OF TCC SHANGHAI - BRANCH OFFICE</filename>
 		</volume>
 
         <volume id="1" name="Volume I" controllername="CompanyPolicyManual">
 			<!-- 4.0,5.0,8.0,13.0 added on 22nd Apr 2021 -->
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VOL1FC">Flow Chart</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Introduction">Introduction </filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Definition">PS 1.1 Definition</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SMS">PS 1.2 Safety Management System</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SFA">PS 1.3 Scope and Field Of Application</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEPP">PS 2.0 Safety and Environmental Protection Policy</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="MRA">PS 3.0 Management Responsibilty and Authority</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DesignatedPerson">PS 4.0 Designated Person</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MastersRA">PS 5.0 Masters Responsibility and Authority</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ResourcesAndPersonnel">PS 6.0 Resources and Personnel</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="PSO">PS 7.0 Plans for Shipboard Operation</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="EmergencyPreparednes">PS 8.0 Emergency Preparedness</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="CNCCA">PS 9.0 Control of Non-Conformance and Corrective Action</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="MSE">PS 10.0 Maintenance of the Ship and Equipment</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDC">PS 11.0 document and Data Control</filename>
-            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="ISEPA">PS 12.0 Internal Safety and Environmental Protection Audits</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ACP">PS 13.0 Anti-Corruption Policy</filename>
-            <!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. I Manual</filename> -->
-			<foldername actionname="" description="" name="TCCHK Signed Polices and Statements">
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="OP2CSP">OP002 - Company Security Policy</filename>
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS5DAP">PS005 - Drug and Alcohol Policy</filename>
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS11SP">PS011 - Smoking Policy</filename>
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS17SEP">PS017 - S and E Policy</filename>
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS18HP">PS018 - Health Policy</filename>
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS34SMP">PS034 - TCC Social Media Policy</filename>
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="PS37ACP">PS037 - Anti-Corruption Policy -TCCHK</filename>
-        <filename isdownloadable="" ismodify="" doctype="PDF" actionname="SE1SP">SE001 - Security Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="VOL1FC">Flow Chart</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Introduction">Introduction </filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Definition">PS 1.1 Definition</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="001" actionname="SMS">PS 1.2 Safety Management System</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SFA">PS 1.3 Scope and Field Of Application</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SEPP">PS 2.0 Safety and Environmental Protection Policy</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MRA">PS 3.0 Management Responsibilty and Authority</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DesignatedPerson">PS 4.0 Designated Person</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MastersRA">PS 5.0 Masters Responsibility and Authority</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ResourcesAndPersonnel">PS 6.0 Resources and Personnel</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PSO">PS 7.0 Plans for Shipboard Operation</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="EmergencyPreparednes">PS 8.0 Emergency Preparedness</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CNCCA">PS 9.0 Control of Non-Conformance and Corrective Action</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MSE">PS 10.0 Maintenance of the Ship and Equipment</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DDC">PS 11.0 document and Data Control</filename>
+            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ISEPA">PS 12.0 Internal Safety and Environmental Protection Audits</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ACP">PS 13.0 Anti-Corruption Policy</filename>
+            <!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Manual">Vol. I Manual</filename> -->
+			<foldername  status=""  version="" actionname="" description="" name="TCCHK Signed Polices and Statements">
+			<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="OP2CSP">OP002 - Company Security Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="PS5DAP">PS005 - Drug and Alcohol Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="PS11SP">PS011 - Smoking Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="PS17SEP">PS017 - S and E Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="PS18HP">PS018 - Health Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="PS34SMP">PS034 - TCC Social Media Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="PS37ACP">PS037 - Anti-Corruption Policy -TCCHK</filename>
+        <filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="SE1SP">SE001 - Security Policy</filename>
 			</foldername>
         </volume>
 		
 		<volume id="2" name="Volume II" controllername="CompanyProceduresManual">
 		    
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ProceduresExplained">PP01.2 - Procedures Explained</filename>
-        	<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEP">PP02.0 - Safety Environmental Policy</filename>
-	        <filename isdownloadable="" ismodify="" doctype="DOC" actionname="MRA">PP03.0 - Management Responsibility and Authority</filename>
-	        <filename isdownloadable="" ismodify="" doctype="DOC" actionname="DesignatedPerson">PP04.0 - Designated Person</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MastersRA">PP05.0 - Master's Responsibility and Authority</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HRT">PP06.0 - Human Resource and Training</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PSO">PP07.0 - Plans for Shipboard Operation</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CCP">PP08.0 - Company Contingency Plan</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="NCCA">PP09.0-Non Conformity and Corrective Action</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MIT">PP10.0 - Maintenance Inspection and Testing</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDC">PP11.0 - Documents and Data Control</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ISEPA">PP12.0 - Internal Safety and Environmental Protection Audits</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ProceduresExplained">PP01.2 - Procedures Explained</filename>
+        	<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SEP">PP02.0 - Safety Environmental Policy</filename>
+	        <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MRA">PP03.0 - Management Responsibility and Authority</filename>
+	        <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DesignatedPerson">PP04.0 - Designated Person</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MastersRA">PP05.0 - Master's Responsibility and Authority</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HRT">PP06.0 - Human Resource and Training</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PSO">PP07.0 - Plans for Shipboard Operation</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CCP">PP08.0 - Company Contingency Plan</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="NCCA">PP09.0-Non Conformity and Corrective Action</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MIT">PP10.0 - Maintenance Inspection and Testing</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DDC">PP11.0 - Documents and Data Control</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ISEPA">PP12.0 - Internal Safety and Environmental Protection Audits</filename>
 			<!-- PP013.0 added on 20th Aug 2021  as Rev01-->
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ACP">PP013.0 - Anti-Corruption Policy</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DAP">PP20.0 - Drug and Alcohol Policy</filename>
-			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. II Manual`</filename> -->
-			<foldername actionname="" description="" name="Appendix">
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">1. PS019 - Mission Statement</filename>
-	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">2. PS005 - D and A Policy</filename>
-	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">3. PS017 - S and E Policy</filename> 
-	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">4. PS018 - Health Policy</filename>
-	            <filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDMS">5. Appendix - Delegation of Duties Matrix Specimen</filename> 
-	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">5. Appendix - Delegation of Duties Matrix Specimen</filename>
-	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">6. PS011 - Smoking Policy</filename>
-	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">7. PS034 - TCC Social Media Policy</filename>
-	            <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">8. PS035-Vision Statement</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ACP">PP013.0 - Anti-Corruption Policy</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DAP">PP20.0 - Drug and Alcohol Policy</filename>
+			<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Manual">Vol. II Manual`</filename> -->
+			<foldername  status=""  version="" actionname="" description="" name="Appendix">
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">1. PS019 - Mission Statement</filename>
+	            <filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">2. PS005 - D and A Policy</filename>
+	            <filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">3. PS017 - S and E Policy</filename> 
+	            <filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">4. PS018 - Health Policy</filename>
+	            <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DDMS">5. Appendix - Delegation of Duties Matrix Specimen</filename> 
+	            <filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">5. Appendix - Delegation of Duties Matrix Specimen</filename>
+	            <filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">6. PS011 - Smoking Policy</filename>
+	            <filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">7. PS034 - TCC Social Media Policy</filename>
+	            <filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">8. PS035-Vision Statement</filename>
 				 <!-- 9. PS037 added on 20th Aug 2021  as Rev01-->
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">9. PS037 - Anti-Corruption Policy</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">9. PS037 - Anti-Corruption Policy</filename>
 
 			</foldername>
 		</volume>
 		
 		<volume id="3" name="Volume III" controllername="CompanyResponsibilityAndAuthorityManual">
 			
-			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOOJD">Second Officer Job Description - TO BE DELETED</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Flow Chart</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ShoreOrganisation">Section 1 - Shore Organisation</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOC">Section 1 Annex 1 - Shore Organisation Chart</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SPR">Section 2 - Shore Personnel Recruitment</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DesignatedPerson">Section 3 - Designated Person</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ShipboardOrganisation">Section 4 - Shipboard Organisation</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Appraisal">Section 5 - Appraisal</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Promotion">Section 6 - Promotion</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SOOC">Section 7 - Signing On and Off crew</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HandOver">Section 8 - Hand Over</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SMC">Section 9 - Safe Manning and Certification</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WRH">Section 10 - Work and Rest hour</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WSR">Section 11 - Working Schedule and Roster</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ODG">Section 12 - Onboard Discipline and Grievance</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CDMP">Section 13 - Crew Desertion and Missing Person</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DrugAndAlcohol">Section 14 - Drug and Alcohol</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ShipboardMedical">Section 15 - Shipboard Medical</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DeathOnboard">Section 16 - Death Onboard</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PBS">Section 17 - Provision and Bond Store</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DressCode">Section 18  - Dress Code</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CrewWelfare">Section 19 - Crew Welfare</filename>
-			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S20AS">Section 20 - Accommodation and Sanitary</filename> -->
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FamilyOnboard">Section 21 - Family Onboard</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CGM">Section 22 - Crew General Matters</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VesselAccount">Section 23 - Vessel Account</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="POM">Section 24 - Pornography and Obscene Material</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MLC">Section 25 - MLC</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MLCCT">Section 26 - MLC Compliance and Training</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MedicalExamination">Section 27 - Medical Examination</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RecruitmentOfSeafarer">Section 28 - Recruitment of Seafarer</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TRM">Section 29 - Travel Risk Management</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WSGM">Section 30 - Women Seafarers General Matters</filename>
+			<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SOOJD">Second Officer Job Description - TO BE DELETED</filename> -->
+			<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Flow Chart</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ShoreOrganisation">Section 1 - Shore Organisation</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SOC">Section 1 Annex 1 - Shore Organisation Chart</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SPR">Section 2 - Shore Personnel Recruitment</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DesignatedPerson">Section 3 - Designated Person</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ShipboardOrganisation">Section 4 - Shipboard Organisation</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Appraisal">Section 5 - Appraisal</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Promotion">Section 6 - Promotion</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SOOC">Section 7 - Signing On and Off crew</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HandOver">Section 8 - Hand Over</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SMC">Section 9 - Safe Manning and Certification</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="WRH">Section 10 - Work and Rest hour</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="WSR">Section 11 - Working Schedule and Roster</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ODG">Section 12 - Onboard Discipline and Grievance</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CDMP">Section 13 - Crew Desertion and Missing Person</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DrugAndAlcohol">Section 14 - Drug and Alcohol</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ShipboardMedical">Section 15 - Shipboard Medical</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DeathOnboard">Section 16 - Death Onboard</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PBS">Section 17 - Provision and Bond Store</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DressCode">Section 18  - Dress Code</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CrewWelfare">Section 19 - Crew Welfare</filename>
+			<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S20AS">Section 20 - Accommodation and Sanitary</filename> -->
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="FamilyOnboard">Section 21 - Family Onboard</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CGM">Section 22 - Crew General Matters</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="VesselAccount">Section 23 - Vessel Account</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="POM">Section 24 - Pornography and Obscene Material</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MLC">Section 25 - MLC</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MLCCT">Section 26 - MLC Compliance and Training</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MedicalExamination">Section 27 - Medical Examination</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="RecruitmentOfSeafarer">Section 28 - Recruitment of Seafarer</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TRM">Section 29 - Travel Risk Management</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="WSGM">Section 30 - Women Seafarers General Matters</filename>
 			<!-- Section 31 added on 20th Aug 2021  as Rev01-->
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S31GF">Section 31 - Guidelines on Fatigue</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="">Senior Second Officer Job Description</filename>
-			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. III Manual</filename> -->
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S31GF">Section 31 - Guidelines on Fatigue</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="">Senior Second Officer Job Description</filename>
+			<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Manual">Vol. III Manual</filename> -->
 		
-			<foldername actionname="" description="" name="Appendix 1 - Promotion Guidelines">
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ETO">Promotion to  Electro-Technical Officer</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2SecondEngineer">Promotion to 2nd Engineer</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2SecondOfficer">Promotion to 2nd Officer</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ThirdEngineer">Promotion to 3rd Engineer</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ThirdOfficer">Promotion to 3rd Officer</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2FourthEngineer">Promotion to 4th Engineer</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2AB">Promotion to AB</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Bosun">Promotion to Bosun</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ChiefCook">Promotion to Chief Cook</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ChiefEngineer">Promotion to Chief Engineer</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2ChiefOfficer">Promotion to Chief Officer</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Fitter">Promotion to Fitter</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Master">Promotion to Master</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Oiler">Promotion to Oiler</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="P2Pumpman">Promotion to Pumpman</filename>
+			<foldername  status=""  version="" actionname="" description="" name="Appendix 1 - Promotion Guidelines">
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2ETO">Promotion to  Electro-Technical Officer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2SecondEngineer">Promotion to 2nd Engineer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2SecondOfficer">Promotion to 2nd Officer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2ThirdEngineer">Promotion to 3rd Engineer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2ThirdOfficer">Promotion to 3rd Officer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2FourthEngineer">Promotion to 4th Engineer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2AB">Promotion to AB</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2Bosun">Promotion to Bosun</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2ChiefCook">Promotion to Chief Cook</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2ChiefEngineer">Promotion to Chief Engineer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2ChiefOfficer">Promotion to Chief Officer</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2Fitter">Promotion to Fitter</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2Master">Promotion to Master</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2Oiler">Promotion to Oiler</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="P2Pumpman">Promotion to Pumpman</filename>
 						  
 			</foldername>
-			<foldername actionname="" description="Appendix 2 - Ship Board Job Description" name="Appendix 2 - Shipboard Job Description">
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="ABJD">AB Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="BJD">Bosun Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="CCJD">Chief Cook Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="CEJD">Chief Engineer Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="COJD">Chief Officer Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="ETOJD">Electro-Technical Officer Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="FJD">Fitter Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="FEJD">Fourth Engineer Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MJD">Master Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MessmanJD">Messman Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="OJD">Oiler Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="OSJD">OS Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="PJD">Pump man Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SEJD">Second Engineer Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SOJD">Second Officer Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SSOJD">Senior Second Officer Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="TEJD">Third Engineer Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="TOJD">Third Officer Job Description</filename>
-				<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="WJD">Wiper Job Description</filename>
+			<foldername  status=""  version="" actionname="" description="Appendix 2 - Ship Board Job Description" name="Appendix 2 - Shipboard Job Description">
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="ABJD">AB Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="BJD">Bosun Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="CCJD">Chief Cook Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="CEJD">Chief Engineer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="COJD">Chief Officer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="ETOJD">Electro-Technical Officer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="FJD">Fitter Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="FEJD">Fourth Engineer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="MJD">Master Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="MessmanJD">Messman Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="OJD">Oiler Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="OSJD">OS Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="PJD">Pump man Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="SEJD">Second Engineer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="SOJD">Second Officer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="SSOJD">Senior Second Officer Job Description</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype=""  status=""  version="" actionname="">*******Below menu added on 10 Nov 2021********</filename> -->
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="STEJD">Senior Third Engineer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="TEJD">Third Engineer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="TOJD">Third Officer Job Description</filename>
+				<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="WJD">Wiper Job Description</filename>
 			
 			</foldername>	
 		</volume>
 		
 		<volume id="4" name="Volume IV" controllername="ShipboardOperattion">
-			<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Flow Chart</filename>
-			<foldername actionname="" description="" name="Sec 1 Health Safety and Environmental">
-				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Ch 15 Annex 1 - Guidance on Usage of LOTO Kit Items</filename> -->
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GSS">Chapter 1 General Shipboard Safety</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FSTS">Chapter 2 Annex 1 - First Schedule of Toxic Substances</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HealthAndHygiene">Chapter 2 Health and Hygiene</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Fatigue">Chapter 3 Fatigue</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECR1">Chapter 4 Environmental Control - Annex 1</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECR2">Chapter 4 Environmental Control - Annex 2</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EnvironmentalControl">Chapter 4 Environmental Control</filename>
-				<foldername actionname="" description="" name="Chapter 5 Work Permit System">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WPS">Chapter 5.1 Work Permit System</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HWPP">Chapter 5.2 Hot Work permit procedure</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWPP">Chapter 5.3 Cold Work Permit Procedure</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ESEWPP">Chapter 5.4 Enclosed space entry work permit procedure</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WAOWPP">Chapter 5.5 Working Aloft Overside Work Permit Procedure</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HVWPP">Chapter 5.6 High Voltage Work Permit Procedure</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="UWPP">Chapter 5.7 Underwater work permit procedure</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WDDHWPP">Chapter 5.8 Working on Deck during Heavy Weather Permit Procedure</filename>
+			<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Flow Chart</filename>
+			<foldername  status=""  version="" actionname="" description="" name="Sec 1 Health Safety and Environmental">
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">Ch 15 Annex 1 - Guidance on Usage of LOTO Kit Items</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="GSS">Chapter 1 General Shipboard Safety</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="FSTS">Chapter 2 Annex 1 - First Schedule of Toxic Substances</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HealthAndHygiene">Chapter 2 Health and Hygiene</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Fatigue">Chapter 3 Fatigue</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ECR1">Chapter 4 Environmental Control - Annex 1</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ECR2">Chapter 4 Environmental Control - Annex 2</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="EnvironmentalControl">Chapter 4 Environmental Control</filename>
+				<foldername  status=""  version="" actionname="" description="" name="Chapter 5 Work Permit System">
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="WPS">Chapter 5.1 Work Permit System</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HWPP">Chapter 5.2 Hot Work permit procedure</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CWPP">Chapter 5.3 Cold Work Permit Procedure</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ESEWPP">Chapter 5.4 Enclosed space entry work permit procedure</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="WAOWPP">Chapter 5.5 Working Aloft Overside Work Permit Procedure</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HVWPP">Chapter 5.6 High Voltage Work Permit Procedure</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="UWPP">Chapter 5.7 Underwater work permit procedure</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="WDDHWPP">Chapter 5.8 Working on Deck during Heavy Weather Permit Procedure</filename>
 				</foldername>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CTRR">Chapter 6 Casualty Treatment  Resuscitation and Rescue</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CWP">Chapter 7 Cold Weather Precaution</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TWM">Chapter 8 Tools and Workshop Machinery</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EEE">Chapter 9 Electric and Electrical Equipment</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SGP">Chapter 10 Safety in the Galley and Pantry</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ERESO">Chapter 12 Engine Room - Emergency and Safe Operation</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PSP">Chapter 13 Painting - Safety Precaution </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ShipyardSafety">Chapter 14 Shipyard safety</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LOTO">Chapter 15 Lock Out and Tag Out (LOTO) </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LSE">Chapter 16 Life Saving Equipment</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HullMarking">Chapter 17 Hull Marking</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Fishing">Chapter 18 Fishing</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCE1">Chapter 19 Protective Clothing and Equipment - Annex No.1</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PCE">Chapter 19 Protective Clothing and Equipment</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 20 Annex 1-IMO 1045(27)- Pilot Transfer Arrangement</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MeansAccess">Chapter 20 Means of Access</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PRE">Chapter 21 Pump room entry</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 22 MSDS - Annex IMO Res 286(86)</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MSDS">Chapter 22 MSDS</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CII">Chapter 23 Control and Isolation of Infectious</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SWO">Chapter 24 Stop Work Order</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TDCP">Chapter 25 Temporary Deviation from Company Procedure</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HandlingBenzene">Chapter 26 Handling of Benzene</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HCCM">Chapter 27 Handling cargo containing Mercury</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 27 HIGH MERCURY CARGOES OCIMF guidelines</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PTSLG">Chapter 28 Personnel Transfer by Ship's Lifting Gear</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="AWSP">Chapter 29 Arc Welding - Safety Precaution</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HHS">Chapter 30 Handling of Hydrogen Sulphide</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IHM">Chapter 31 Inventory of Hazardous Materials</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LHM">Ch. 31 Annex 1 - List of Hazardous Materials</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FMD">Ch. 31 Annex 2 - Form of Material Declaration</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FSDC">Ch. 31 Annex 3 - Form of Suppliers Declaration of Conformity</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HCCMMercaptan">Chapter 32 Handling cargo containing Mercaptan</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SHUC">Chapter 33 Safe handling and Use of Chemicals</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S1Contents">Contents </filename> -->
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CTRR">Chapter 6 Casualty Treatment  Resuscitation and Rescue</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CWP">Chapter 7 Cold Weather Precaution</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TWM">Chapter 8 Tools and Workshop Machinery</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="EEE">Chapter 9 Electric and Electrical Equipment</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SGP">Chapter 10 Safety in the Galley and Pantry</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ERESO">Chapter 12 Engine Room - Emergency and Safe Operation</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PSP">Chapter 13 Painting - Safety Precaution </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ShipyardSafety">Chapter 14 Shipyard safety</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="LOTO">Chapter 15 Lock Out and Tag Out (LOTO) </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="LSE">Chapter 16 Life Saving Equipment</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HullMarking">Chapter 17 Hull Marking</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Fishing">Chapter 18 Fishing</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PCE1">Chapter 19 Protective Clothing and Equipment - Annex No.1</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PCE">Chapter 19 Protective Clothing and Equipment</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 20 Annex 1-IMO 1045(27)- Pilot Transfer Arrangement</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MeansAccess">Chapter 20 Means of Access</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PRE">Chapter 21 Pump room entry</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 22 MSDS - Annex IMO Res 286(86)</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MSDS">Chapter 22 MSDS</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CII">Chapter 23 Control and Isolation of Infectious</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SWO">Chapter 24 Stop Work Order</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TDCP">Chapter 25 Temporary Deviation from Company Procedure</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HandlingBenzene">Chapter 26 Handling of Benzene</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HCCM">Chapter 27 Handling cargo containing Mercury</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 27 HIGH MERCURY CARGOES OCIMF guidelines</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PTSLG">Chapter 28 Personnel Transfer by Ship's Lifting Gear</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="AWSP">Chapter 29 Arc Welding - Safety Precaution</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HHS">Chapter 30 Handling of Hydrogen Sulphide</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="IHM">Chapter 31 Inventory of Hazardous Materials</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="LHM">Ch. 31 Annex 1 - List of Hazardous Materials</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="FMD">Ch. 31 Annex 2 - Form of Material Declaration</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="FSDC">Ch. 31 Annex 3 - Form of Suppliers Declaration of Conformity</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HCCMMercaptan">Chapter 32 Handling cargo containing Mercaptan</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SHUC">Chapter 33 Safe handling and Use of Chemicals</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S1Contents">Contents </filename> -->
 			</foldername>
 			
-			<foldername actionname="" description="" name="Sec 2 Safety of the Vessel">
-				<foldername actionname="" description="" name="Chapter 1 Navigational and Bridge Procedures">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="NBPC">Chapter 1 Navigational and Bridge Procedures Contents</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Responsibility">Chapter 1.1 Responsibility</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GuidelineMasterA1">Chapter 1.2 - Guideline to Master - Annex 1</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GuidelineMaster">Chapter 1.2 - Guideline to Master</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="NavigationProcedure">Chapter 1.3 - Navigation Procedure</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WatchKeeping">Chapter 1.4 - Watch Keeping</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ChartPublication">Chapter 1.5 - Chart and Publication</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BRD">Chapter 1.6 - Bridge Records and Display</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BNE">Chapter 1.7 - Bridge Navigation Equipment</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECDISR1">Chapter 1.7.30 - ECDIS </filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECDISA1">Chapter 1.7.30.23 - ECDIS Annex 1</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECDISA2">Chapter 1.7.30.23 - ECDIS Annex 2</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CoastalON">Chapter 1.8 - Coastal and Ocean Navigation</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PilotageR1">Chapter 1.9 - Pilotage </filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Anchoring">Chapter 1.10 - Anchoring</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Weather">Chapter 1.11 - Weather</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Contingency">Chapter 1.12 - Contingency</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DistressSea">Chapter 1.13 - Distress at sea</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IceNavigation">Chapter 1.14 Ice Navigation</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="NavigationAudit">Chapter 1.15 - Navigation Audit</filename>
+			<foldername  status=""  version="" actionname="" description="" name="Sec 2 Safety of the Vessel">
+				<foldername  status=""  version="" actionname="" description="" name="Chapter 1 Navigational and Bridge Procedures">
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="NBPC">Chapter 1 Navigational and Bridge Procedures Contents</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Responsibility">Chapter 1.1 Responsibility</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="GuidelineMasterA1">Chapter 1.2 - Guideline to Master - Annex 1</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="GuidelineMaster">Chapter 1.2 - Guideline to Master</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="NavigationProcedure">Chapter 1.3 - Navigation Procedure</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="WatchKeeping">Chapter 1.4 - Watch Keeping</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ChartPublication">Chapter 1.5 - Chart and Publication</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="BRD">Chapter 1.6 - Bridge Records and Display</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="BNE">Chapter 1.7 - Bridge Navigation Equipment</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ECDISR1">Chapter 1.7.30 - ECDIS </filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ECDISA1">Chapter 1.7.30.23 - ECDIS Annex 1</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ECDISA2">Chapter 1.7.30.23 - ECDIS Annex 2</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CoastalON">Chapter 1.8 - Coastal and Ocean Navigation</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PilotageR1">Chapter 1.9 - Pilotage </filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Anchoring">Chapter 1.10 - Anchoring</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Weather">Chapter 1.11 - Weather</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Contingency">Chapter 1.12 - Contingency</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DistressSea">Chapter 1.13 - Distress at sea</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="IceNavigation">Chapter 1.14 Ice Navigation</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="NavigationAudit">Chapter 1.15 - Navigation Audit</filename>
 				</foldername> 
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ERP">Chapter 2 Engine Room Procedures</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SSOP">Chapter 3 Special Shipboard Operation Procedures</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HelicopterOperations">Chapter 4 Helicopter Operations</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FPFF">Chapter 5 Fire Precautions and Fire Fighting</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MooringTowing">Chapter 6 Mooring and Towing</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LaunchingLifeboat">Chapter 7 Launching of lifeboat</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SFD">Chapter 8 Stability and Flooding Dangers</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PAP">Chapter 9 Preparation for arrival in port</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PreparingSea">Chapter 10 Preparing for Sea</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ManoeuvringData">Chapter 11 Manoeuvring Data</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S2Contents">Contents</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ERP">Chapter 2 Engine Room Procedures</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SSOP">Chapter 3 Special Shipboard Operation Procedures</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HelicopterOperations">Chapter 4 Helicopter Operations</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="FPFF">Chapter 5 Fire Precautions and Fire Fighting</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MooringTowing">Chapter 6 Mooring and Towing</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="LaunchingLifeboat">Chapter 7 Launching of lifeboat</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SFD">Chapter 8 Stability and Flooding Dangers</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PAP">Chapter 9 Preparation for arrival in port</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PreparingSea">Chapter 10 Preparing for Sea</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ManoeuvringData">Chapter 11 Manoeuvring Data</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S2Contents">Contents</filename> -->
 			</foldername>
-			<foldername actionname="" description="" name="Sec 3 Port Cargo Operations">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="WKP">Chapter 1 Watch Keeping in Port</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SafetyPort">Chapter 2 Safety in Port</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CargoCare">Chapter 3 Cargo Care</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Bunker">Chapter 4 Bunker</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CPHS">Chapter 5 Cargo planning Handling  Stowage</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CargoLoading">Chapter 6 Cargo Loading</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CargoDischarging">Chapter 7 Cargo Discharging</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BallastOperations">Chapter 8 Ballast Operations</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TankCleaning">Chapter 9 Tank Cleaning</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IPGFO">Chapter 10 Inerting Purging and Gas-Freeing Operations</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S3Contents">Contents</filename> -->
+			<foldername  status=""  version="" actionname="" description="" name="Sec 3 Port Cargo Operations">
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="WKP">Chapter 1 Watch Keeping in Port</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SafetyPort">Chapter 2 Safety in Port</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CargoCare">Chapter 3 Cargo Care</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Bunker">Chapter 4 Bunker</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CPHS">Chapter 5 Cargo planning Handling  Stowage</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CargoLoading">Chapter 6 Cargo Loading</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CargoDischarging">Chapter 7 Cargo Discharging</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="BallastOperations">Chapter 8 Ballast Operations</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TankCleaning">Chapter 9 Tank Cleaning</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="IPGFO">Chapter 10 Inerting Purging and Gas-Freeing Operations</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S3Contents">Contents</filename> -->
 			</foldername>
-			<foldername actionname="" description="" name="Sec 4 Safety Inspection and Audits">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LSAI">Chapter 1 Life Saving Appliances Inspection</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FFAI">Chapter 2 Fire Fighting Appliances Inspection</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ISMIA">Chapter 3 ISM Internal Audit</filename>
-				<foldername actionname="" description="" name="Chapter 3 Annex">
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 1 Walk About Plan Template</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 2 Interview Record</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 3 Vessel Condition Report</filename>
-					<!-- <filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 4 Remote Internal Audit Report - ISM-MLC-EMS</filename> -->
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="C3A4RIAR">Chapter 3 Annex 4 Remote Internal Audit Report - ISM-MLC-EMS</filename>
-					<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 3 Annex 5 Remote Internal Audit Report - ISPS</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="C3A6IRAS">Chapter 3 Annex 6 Internal Remote Audit-Schedule</filename>
+			<foldername  status=""  version="" actionname="" description="" name="Sec 4 Safety Inspection and Audits">
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="LSAI">Chapter 1 Life Saving Appliances Inspection</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="FFAI">Chapter 2 Fire Fighting Appliances Inspection</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ISMIA">Chapter 3 ISM Internal Audit</filename>
+				<foldername  status=""  version="" actionname="" description="" name="Chapter 3 Annex">
+					<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 3 Annex 1 Walk About Plan Template</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 3 Annex 2 Interview Record</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 3 Annex 3 Vessel Condition Report</filename>
+					<!-- <filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 3 Annex 4 Remote Internal Audit Report - ISM-MLC-EMS</filename> -->
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="C3A4RIAR">Chapter 3 Annex 4 Remote Internal Audit Report - ISM-MLC-EMS</filename>
+					<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 3 Annex 5 Remote Internal Audit Report - ISPS</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="C3A6IRAS">Chapter 3 Annex 6 Internal Remote Audit-Schedule</filename>
 				</foldername>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SafetyMeeting">Chapter 4 Safety Meeting</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SIF">Chapter 5 Safety Induction and Familiarisation</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SITOA">Chapter 6 Ship Inspection  Tanker Opers Audit</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PSCIA1">Chapter 7 Port State Control Inspection - Annex A</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="PSCI">Chapter 7 Port State Control Inspection</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="OMV">Chapter 8 Oil Major Vetting</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ImprovementProcess">Chapter 9 Improvement Process</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S4Content">Content</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SafetyMeeting">Chapter 4 Safety Meeting</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SIF">Chapter 5 Safety Induction and Familiarisation</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SITOA">Chapter 6 Ship Inspection  Tanker Opers Audit</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PSCIA1">Chapter 7 Port State Control Inspection - Annex A</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="PSCI">Chapter 7 Port State Control Inspection</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="OMV">Chapter 8 Oil Major Vetting</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ImprovementProcess">Chapter 9 Improvement Process</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S4Content">Content</filename> -->
 			</foldername>
-			<foldername actionname="" description="" name="Sec 5 Reporting Accidents and NC">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TINC">Chapter 1 Types of Incidents and NC</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Chapter 1-Annex 1-Incident Matrix</filename> -->
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 1-Annex 1-Incident Matrix</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 2 Annex-SAFIR Report Sample (Incident)</filename> 
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Chapter 2 Annex-SAFIR Report Sample (Near Miss)</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RUAC">Chapter 2 Reporting of Unsafe Acts, Conditions</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IncidentInvestigationA1">Chapter 3 Incident Investigation - Annex 1</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IncidentInvestigation">Chapter 3 Incident Investigation</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IncidentManagement">Chapter 4 Incident Management</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="JHRA">Chapter 5 Job Hazard and Risk Analyses</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S5Contents">Contents</filename> -->
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="C6HF">Chapter 6 Human Factors - TCCS (both are same this and below line)</filename> -->
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="C6HF">Chapter 6 Human Factors</filename>
+			<foldername  status=""  version="" actionname="" description="" name="Sec 5 Reporting Accidents and NC">
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TINC">Chapter 1 Types of Incidents and NC</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">Chapter 1-Annex 1-Incident Matrix</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 1-Annex 1-Incident Matrix</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 2 Annex-SAFIR Report Sample (Incident)</filename> 
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Chapter 2 Annex-SAFIR Report Sample (Near Miss)</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="RUAC">Chapter 2 Reporting of Unsafe Acts, Conditions</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="IncidentInvestigationA1">Chapter 3 Incident Investigation - Annex 1</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="IncidentInvestigation">Chapter 3 Incident Investigation</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="IncidentManagement">Chapter 4 Incident Management</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="JHRA">Chapter 5 Job Hazard and Risk Analyses</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S5Contents">Contents</filename> -->
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="C6HF">Chapter 6 Human Factors - TCCS (both are same this and below line)</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="C6HF">Chapter 6 Human Factors</filename>
 			</foldername>
-			<foldername actionname="" description="" name="Sec 6 Administration Management">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDC">Chapter 1 Document and Data Control</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SSF">Chapter 2 Shipboard Standard Filing</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ManagementChange">Chapter 3 Management of Change</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MPC">Chapter 4 Managing procedure changes</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MSMSR">Chapter 5 Master's SMS Review</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ManagementReview">Chapter 6 Management Review</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ShipComputer">Chapter 7 Ship Computer</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FleetCommunications">Chapter 8 Fleet Communications</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RKEDLR1">Chapter 9 Record Keeping - Entry of Data in Logbook </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ListOfPublications">Chapter 10 List of Publications</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ListOfPosters">Chapter 11 List of Posters</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DelegationOfDuty">Chapter 12 Delegation of Duty</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S6Contents">Sec 6 Contents</filename> -->
+			<foldername  status=""  version="" actionname="" description="" name="Sec 6 Administration Management">
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DDC">Chapter 1 Document and Data Control</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SSF">Chapter 2 Shipboard Standard Filing</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ManagementChange">Chapter 3 Management of Change</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MPC">Chapter 4 Managing procedure changes</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MSMSR">Chapter 5 Master's SMS Review</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ManagementReview">Chapter 6 Management Review</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ShipComputer">Chapter 7 Ship Computer</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="FleetCommunications">Chapter 8 Fleet Communications</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="RKEDLR1">Chapter 9 Record Keeping - Entry of Data in Logbook </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ListOfPublications">Chapter 10 List of Publications</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ListOfPosters">Chapter 11 List of Posters</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DelegationOfDuty">Chapter 12 Delegation of Duty</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype=""  status=""  version="" actionname="">***************Below Added new on 10th Nov 2021*****************</filename> -->
+				<!--<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="C13CSRM">Chapter 13 Cyber Security Risk Management</filename>-->
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S6Contents">Sec 6 Contents</filename> -->
 			</foldername>
-			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. IV Manual</filename> -->
-			<foldername actionname="" description="" name="Appendix">
-				<foldername actionname="" description="" name="JHA Templates">
-					<foldername actionname="" description="" name="Deck">
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="STSOperation">D1- STS Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D1-STS Operation</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SBMOperation">D2 - SBM Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D2-SBM Operation</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="RURWAP">D3 - Rigging Unrigging of Razor Wire for anti-piracy</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D3-Rigging Unrigging of Razor Wire for anti-piracy</filename>
-						<!-- <filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="RRWMSCI">D4 - Mast Riser Wire Mesh Strainer cleaning and inspection</filename> -->
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D4-Mast Riser Wire Mesh Strainer cleaning _ inspection</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="PTUSC">D5 - Personnel Transfer Using Ships Crane</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D5-Personnel Transfer Using Ships Crane</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="RSIC">D6 - Radar Scanner inspection and cleaning</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D6-Radar Scanner inspection and cleaning</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="IGSI">D7 - IG Scrubber inspection</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D7-IG Scrubber inspection</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="COPSSI">D8 - COP Strainer, Seperator inspection</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D8-COP Strainer, Seperator inspection(1)</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D8-COP Strainer, Seperator inspection</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="COTWW">D9 - Cargo Oil Tank water washing</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D9-Cargo Oil Tank water washing</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="TMLD">D10- Three monthly lifeboat drill</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D10-Three monthly lifeboat drill</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="HHH2SC">D11- Handling of High H2S Cargo</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D11-Handling of High H2S Cargo</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MooringOperation">D12 - Mooring Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D12-Mooring Operation</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="TugOperation">D13 - Tug Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D13-Tug Operation</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="AnchoringOperation">D14 - Anchoring Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D14-Anchoring Operation</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="EBTADSR">D15 - Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D15-Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)(1)</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D15-Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="EntryBTADSR">D16 - Entry BT after de-ballasting for sediment removal (NEI)</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D16-Entry BT after de-ballasting for sediment removal (NEI)(1)</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D16-Entry BT after de-ballasting for sediment removal (NEI)</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SOICOB">D17 - Simultaneous Operations including Cargo Operations and bunkering</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">D17-Simultaneous Operations including Cargo Operations and bunkering</filename>
+			<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Manual">Vol. IV Manual</filename> -->
+			<foldername  status=""  version="" actionname="" description="" name="Appendix">
+				<foldername  status=""  version="" actionname="" description="" name="JHA Templates">
+					<foldername  status=""  version="" actionname="" description="" name="Deck">
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="STSOperation">D1- STS Operation</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D1-STS Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="SBMOperation">D2 - SBM Operation</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D2-SBM Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="RURWAP">D3 - Rigging Unrigging of Razor Wire for anti-piracy</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D3-Rigging Unrigging of Razor Wire for anti-piracy</filename>
+						<!-- <filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="RRWMSCI">D4 - Mast Riser Wire Mesh Strainer cleaning and inspection</filename> -->
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D4-Mast Riser Wire Mesh Strainer cleaning _ inspection</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="PTUSC">D5 - Personnel Transfer Using Ships Crane</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D5-Personnel Transfer Using Ships Crane</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="RSIC">D6 - Radar Scanner inspection and cleaning</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D6-Radar Scanner inspection and cleaning</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="IGSI">D7 - IG Scrubber inspection</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D7-IG Scrubber inspection</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="COPSSI">D8 - COP Strainer, Seperator inspection</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D8-COP Strainer, Seperator inspection(1)</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D8-COP Strainer, Seperator inspection</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="COTWW">D9 - Cargo Oil Tank water washing</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D9-Cargo Oil Tank water washing</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="TMLD">D10- Three monthly lifeboat drill</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D10-Three monthly lifeboat drill</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="HHH2SC">D11- Handling of High H2S Cargo</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D11-Handling of High H2S Cargo</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="MooringOperation">D12 - Mooring Operation</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D12-Mooring Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="TugOperation">D13 - Tug Operation</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D13-Tug Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="AnchoringOperation">D14 - Anchoring Operation</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D14-Anchoring Operation</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="EBTADSR">D15 - Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D15-Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)(1)</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D15-Entry BT after de-ballasting for sediment removal (Hyundai Hi-Ballast)</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="EntryBTADSR">D16 - Entry BT after de-ballasting for sediment removal (NEI)</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D16-Entry BT after de-ballasting for sediment removal (NEI)(1)</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D16-Entry BT after de-ballasting for sediment removal (NEI)</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="SOICOB">D17 - Simultaneous Operations including Cargo Operations and bunkering</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">D17-Simultaneous Operations including Cargo Operations and bunkering</filename>
 					</foldername>
-					<foldername actionname="" description="" name="Engine">
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E1- AE Maintenance </filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="AEM">E1- AE Maintenance</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E2 - Change over procedure from HSFO to LSMGO</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="COFFHFO2LSMGO">E2- Change Over of Fuel from HFO to LSMGO</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E3 - Inspection or Cleaning of AC Generator</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="ICACG">E3- Inspection or Cleaning of AC Generator</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E4 - Maintenance of Burner and Swirler of Aux Boiler</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MBSAB">E4- Maintenance of Burner and Swirler of Aux Boiler</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E5 - Maintenance of Electric Equipment at Aloft Position</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MEEAP">E5- Maintenance of Elect. Equipment at Aloft Position</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E6 - Maintenance of OWS</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MOWS">E6- Maintenance of OWS</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E7 - ME Scavenge space Cleaning and Inspection</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="MESSCI">E7- ME Scavenge space Cleaning and Inspection</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E8 -  Overhauling of Electric Motor</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="OEM">E8- Overhauling of Electric Motor</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E9 - Renewal of Pump Mechanical Seal</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="RPMS">E9- Renewal of Pump Mechanical Seal</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="RMEFVHPP">E10- Replacement of ME Fuel Valve and HP Pipes</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E10- Replacement of ME Fuel Valve and HP Pipes</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E11 - Sea Chest Strainer Cleaning</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="SCSC">E11- Sea Chest Strainer Cleaning</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E12 - UREA Bunkering Operation at Sunken Deck Manifold (Port or Stbd)(1)</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="UREABO">E12 - UREA Bunkering Operation at Sunken Deck Manifold (Port or Stbd)</filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="UREABO">E12 -UREA Bunkering Operation</filename>
-						<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">E13 - BWTS Plant Operation for Ballasting and Deballasting Operation </filename>
-						<filename isdownloadable="YES" ismodify="" doctype="DOC" actionname="BWTSPO">E13 - BWTS Plant Operation</filename>
+					<foldername  status=""  version="" actionname="" description="" name="Engine">
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E1- AE Maintenance </filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="AEM">E1- AE Maintenance</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E2 - Change over procedure from HSFO to LSMGO</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="COFFHFO2LSMGO">E2- Change Over of Fuel from HFO to LSMGO</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E3 - Inspection or Cleaning of AC Generator</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="ICACG">E3- Inspection or Cleaning of AC Generator</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E4 - Maintenance of Burner and Swirler of Aux Boiler</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="MBSAB">E4- Maintenance of Burner and Swirler of Aux Boiler</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E5 - Maintenance of Electric Equipment at Aloft Position</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="MEEAP">E5- Maintenance of Elect. Equipment at Aloft Position</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E6 - Maintenance of OWS</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="MOWS">E6- Maintenance of OWS</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E7 - ME Scavenge space Cleaning and Inspection</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="MESSCI">E7- ME Scavenge space Cleaning and Inspection</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E8 -  Overhauling of Electric Motor</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="OEM">E8- Overhauling of Electric Motor</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E9 - Renewal of Pump Mechanical Seal</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="RPMS">E9- Renewal of Pump Mechanical Seal</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="RMEFVHPP">E10- Replacement of ME Fuel Valve and HP Pipes</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E10- Replacement of ME Fuel Valve and HP Pipes</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E11 - Sea Chest Strainer Cleaning</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="SCSC">E11- Sea Chest Strainer Cleaning</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E12 - UREA Bunkering Operation at Sunken Deck Manifold (Port or Stbd)(1)</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="UREABO">E12 - UREA Bunkering Operation at Sunken Deck Manifold (Port or Stbd)</filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="UREABO">E12 -UREA Bunkering Operation</filename>
+						<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">E13 - BWTS Plant Operation for Ballasting and Deballasting Operation </filename>
+						<filename isdownloadable="YES" ismodify="" doctype="DOC"  status=""  version="" actionname="BWTSPO">E13 - BWTS Plant Operation</filename>
 					</foldername>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="A1LSRATD">Appendix 1 - List of Sample Risk Assessment Template - Deck</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="A1LSRATE">Appendix 1 - List of Sample Risk Assessment Template - Engine</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="A1LSRATD">Appendix 1 - List of Sample Risk Assessment Template - Deck</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="A1LSRATE">Appendix 1 - List of Sample Risk Assessment Template - Engine</filename>
 				</foldername>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SFCE">Standard Filing for Chief Engineer</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SFCO">Standard Filing for Chief Officer </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SFM">Standard Filing for Master</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SFSO">Standard Filing for Second Officer</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Volume IV Appendix Contents</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SFCE">Standard Filing for Chief Engineer</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SFCO">Standard Filing for Chief Officer </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SFM">Standard Filing for Master</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SFSO">Standard Filing for Second Officer</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">Volume IV Appendix Contents</filename> -->
 
 			</foldername>
 		</volume>
 		
 		<volume id="5" name="Volume V" controllername="MaintenanceOfShipAndEquipment">
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Boiler">1-Boiler</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SteeringGear">2-Steering Gear</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MainEngines">3-Main Engines</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Generator">4-Generator</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STLG">5-Stern Tube Leaking Guideline</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FuelOil">6-Fuel Oil</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Lubrication">7-Lubrication</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EEE">8-Electrical and Electronic Equipment</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Refrigeration">9-Refrigeration</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MOTER">10-Machinery outside the engine room</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Surveys">11-Surveys</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="UMS">12-Unmanned machinery space</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="AuxiliaryMachiney">13-Auxiliary Machiney</filename>
-			<foldername actionname="" description="" name="14-Dry Docking">
-				<foldername actionname="" description="" name="Annex 1-Dry dock Spec">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DSTC">Annex 1A - Dry Dock Spec Terms and Condition</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GeneralServices">Annex 1B - General Services</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HullParts">Annex 1C - Hull Parts</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HPP">Annex 1D - Hull Preparation and Paintings</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Boiler">1-Boiler</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SteeringGear">2-Steering Gear</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MainEngines">3-Main Engines</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Generator">4-Generator</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="STLG">5-Stern Tube Leaking Guideline</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="FuelOil">6-Fuel Oil</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Lubrication">7-Lubrication</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="EEE">8-Electrical and Electronic Equipment</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Refrigeration">9-Refrigeration</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MOTER">10-Machinery outside the engine room</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Surveys">11-Surveys</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="UMS">12-Unmanned machinery space</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="AuxiliaryMachiney">13-Auxiliary Machiney</filename>
+			<foldername  status=""  version="" actionname="" description="" name="14-Dry Docking">
+				<foldername  status=""  version="" actionname="" description="" name="Annex 1-Dry dock Spec">
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DSTC">Annex 1A - Dry Dock Spec Terms and Condition</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="GeneralServices">Annex 1B - General Services</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HullParts">Annex 1C - Hull Parts</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HPP">Annex 1D - Hull Preparation and Paintings</filename>
 				</foldername>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DryDocking">14 - Dry Docking</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDPFC">Annex 2 - Dry Docking Process Flow Chart</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DDPBM">Annex 3 - Dry Docking Project Bassnet Module</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DryDocking">14 - Dry Docking</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DDPFC">Annex 2 - Dry Docking Process Flow Chart</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DDPBM">Annex 3 - Dry Docking Project Bassnet Module</filename>
 			</foldername>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LandingAdvice">15-Landing Advice</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="NewBuilding">16 - New Building</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="FreshWater">17-Fresh Water</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MonitoringAndAlarm">18- Monitoring and Alarm</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ECWT">19-Engine Cooling Water Treatment</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SPS">20-Standard Paint Scheme</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ORB">21-Oil Record Book</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VesselImmobilisation">22-Vessel Immobilisation</filename>
-			<foldername actionname="" description="" name="23-Maintenance Procedure">
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MaintenanceProcedure">23-Maintenance Procedure </filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SPMSWPFC">23-Shipboard PMS Work process flow chart (Annex A)</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SBPMSWPFC">23-Shore Based PMS Work process flow chart (Annex B)</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="DRFC">23-Defect Reporting Flow Chart (Annex D)</filename>
-					<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MaintenanceMatrix">23-Maintenance Matrix (Annex C)</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="LandingAdvice">15-Landing Advice</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="NewBuilding">16 - New Building</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="FreshWater">17-Fresh Water</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MonitoringAndAlarm">18- Monitoring and Alarm</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ECWT">19-Engine Cooling Water Treatment</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SPS">20-Standard Paint Scheme</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ORB">21-Oil Record Book</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="VesselImmobilisation">22-Vessel Immobilisation</filename>
+			<foldername  status=""  version="" actionname="" description="" name="23-Maintenance Procedure">
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MaintenanceProcedure">23-Maintenance Procedure </filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SPMSWPFC">23-Shipboard PMS Work process flow chart (Annex A)</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SBPMSWPFC">23-Shore Based PMS Work process flow chart (Annex B)</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="DRFC">23-Defect Reporting Flow Chart (Annex D)</filename>
+					<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MaintenanceMatrix">23-Maintenance Matrix (Annex C)</filename>
 			</foldername>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MaintenancePMS">24-Maintenance PMS (Bassnet)</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SRMRTIR1">25- Annex A -Soft Rope and Mooring Rope Tail Inspection </filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MooringMaintenanceR1">25-Mooring Maintenance </filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LiftingAppliances">26-Lifting Appliances</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EUCR">28- Annex I - EU Commision Recommendation</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EUDFAQ">28- Annex II - EU Directive FAQ</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="MFSRBS">28- Annex III Marine Fuel Sulphur Record Book Sample</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CRFS">28- Annex IV CARB Recordkeeping Form Samples</filename>
-			<filename isdownloadable="" ismodify="" doctype="XLS" actionname="">28- Annex V - FOBAS Change Over Calculator V6</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BNSECA">28- Annex VI (A) - Baltic and North Sea ECA</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TurkeyECA">28- Annex VI (B) - Turkey ECA</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="NACECA">28- Annex VI (C) - North Amercian and Caribbean ECA</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="HKECA">28- Annex VI (D) - HK ECA</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ChinaECAR1">28- Annex VI (E) - China ECA </filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EUSD">28- Annex VI (F) - EU Sulphur Directive</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GKECAR">28- Annex VI (G) - Guidance for Korea Emission Control Areas Regulation</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SampleOfFONAR">28- Annex VII - Sample of FONAR</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LSMGO">28-Low sulphur MGO</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CES">29 - Critical Equipment and Spare</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="LCE">29.3 - Annex A - List of Critical Equipment</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GTI">30-Guidelines for Tanker Inspection</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RecyclingOfVessel">31-Recycling of Vessel</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="EGCS">32-Exhaust Gas Cleaning System</filename> 
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SCRS">33-Selective Catalytic Reduction System</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SPM">34-Shipboard Procurement Management</filename>
-			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. V Manual</filename> -->
-			<foldername actionname="" description="" name="Appendix">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="GILOG">General Information on Lub Oil Guideline</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="StandardPS">Standard Paint Scheme</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MaintenancePMS">24-Maintenance PMS (Bassnet)</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SRMRTIR1">25- Annex A -Soft Rope and Mooring Rope Tail Inspection </filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MooringMaintenanceR1">25-Mooring Maintenance </filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="LiftingAppliances">26-Lifting Appliances</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="EUCR">28- Annex I - EU Commision Recommendation</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="EUDFAQ">28- Annex II - EU Directive FAQ</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="MFSRBS">28- Annex III Marine Fuel Sulphur Record Book Sample</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CRFS">28- Annex IV CARB Recordkeeping Form Samples</filename>
+			<filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">28- Annex V - FOBAS Change Over Calculator V6</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="BNSECA">28- Annex VI (A) - Baltic and North Sea ECA</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TurkeyECA">28- Annex VI (B) - Turkey ECA</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="NACECA">28- Annex VI (C) - North Amercian and Caribbean ECA</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="HKECA">28- Annex VI (D) - HK ECA</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ChinaECAR1">28- Annex VI (E) - China ECA </filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="EUSD">28- Annex VI (F) - EU Sulphur Directive</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="GKECAR">28- Annex VI (G) - Guidance for Korea Emission Control Areas Regulation</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SampleOfFONAR">28- Annex VII - Sample of FONAR</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="LSMGO">28-Low sulphur MGO</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CES">29 - Critical Equipment and Spare</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="LCE">29.3 - Annex A - List of Critical Equipment</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="GTI">30-Guidelines for Tanker Inspection</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="RecyclingOfVessel">31-Recycling of Vessel</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="EGCS">32-Exhaust Gas Cleaning System</filename> 
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SCRS">33-Selective Catalytic Reduction System</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SPM">34-Shipboard Procurement Management</filename>
+			<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Manual">Vol. V Manual</filename> -->
+			<foldername  status=""  version="" actionname="" description="" name="Appendix">
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="GILOG">General Information on Lub Oil Guideline</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="StandardPS">Standard Paint Scheme</filename>
 			</foldername>
 		</volume>
 			
 		<volume id="6" name="Volume VI" controllername="MajorCasualtyAndEnvironmentalProtectionPlan">
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEPGG">Section 1 - Shipboard Emergency Plan – General Guidance</filename>
-			<foldername actionname="" description="" name="Section 2 - Shipboard Emergency Plan - Action Checklist">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CVA">Annex A - Checklist for Vessel Action</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CSD">Annex B - Checklist for Submission of Document</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="IMORF">Annex C - IMO Reporting Format</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ESDC">Annex D - Emergency Squad Duty Card</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="BSDC">Annex E - Back-up Squad Duty Card</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="MPACRF">Annex F - MPA Casualty Reporting Form</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="AMSA18">Annex G - AMSA18</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="AMSA19">Annex G - AMSA19</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Section2">Volume VI - Section 2</filename> -->
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SEPGG">Section 1 - Shipboard Emergency Plan – General Guidance</filename>
+			<foldername  status=""  version="" actionname="" description="" name="Section 2 - Shipboard Emergency Plan - Action Checklist">
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CVA">Annex A - Checklist for Vessel Action</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CSD">Annex B - Checklist for Submission of Document</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="IMORF">Annex C - IMO Reporting Format</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ESDC">Annex D - Emergency Squad Duty Card</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="BSDC">Annex E - Back-up Squad Duty Card</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="MPACRF">Annex F - MPA Casualty Reporting Form</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="AMSA18">Annex G - AMSA18</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="AMSA19">Annex G - AMSA19</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Section2">Volume VI - Section 2</filename> -->
 			</foldername>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEPACS">Section 3 - Shipboard Emergency Plan – Action Checklist for Security</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SEPM">Section 4 - Shipboard Emergency Plan - Medical</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CCPTHRA">Section 5 - Company Contingency Plan for Transiting HRA</filename>
-			<foldername actionname="" description="" name="Section 6 - Company Contingency Plan">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ERCO">Annex A - Emergency Reponse checklist office</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="RecordOfEvent">Annex B - Record of Event</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CEL">Annex C - Casualty Event Log</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CMT">Annex D - Crisis Management Team</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="ERCN">Annex E - Emergency Response Contact Numbers</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">Annex F - Ship Communication List</filename> -->
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex F - Ship Communication List</filename>
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">Annex G - LOF </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="VCPR">Annex H - Vessel Casualty Prompt Report</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="Section6">Volume VI - Section 6</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SEPACS">Section 3 - Shipboard Emergency Plan – Action Checklist for Security</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SEPM">Section 4 - Shipboard Emergency Plan - Medical</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CCPTHRA">Section 5 - Company Contingency Plan for Transiting HRA</filename>
+			<foldername  status=""  version="" actionname="" description="" name="Section 6 - Company Contingency Plan">
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ERCO">Annex A - Emergency Reponse checklist office</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="RecordOfEvent">Annex B - Record of Event</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CEL">Annex C - Casualty Event Log</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CMT">Annex D - Crisis Management Team</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="ERCN">Annex E - Emergency Response Contact Numbers</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">Annex F - Ship Communication List</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Annex F - Ship Communication List</filename>
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">Annex G - LOF </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="VCPR">Annex H - Vessel Casualty Prompt Report</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Section6">Volume VI - Section 6</filename>
 			</foldername>
-			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. VI Manual</filename> -->
+			<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Manual">Vol. VI Manual</filename> -->
 		</volume>     
                       
 		<volume id="7"	name="Volume VII" controllername="TrainingManual">
 			
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="StatutoryTraining">Section 1 - Statutory Training</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CDT">Section 2 - Career Development Training</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CadetTraining">Section 3 - Cadet Training</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="CBT">Section 4 - Computer Based Training</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="TPSP">Section 5 - Training Plan for Shore Personnel</filename>
-			<filename isdownloadable="" ismodify="" doctype="DOC" actionname="SDT">Section 6 - Shipboard Drill and Training</filename>
-			<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="Manual">Vol. VII Manual</filename> -->
-			<foldername actionname="" description="" name="Appendix">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="STAFCTCCV">CBT - STA Flow Chart TCC Vessels</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="XLS" actionname="">CBT - Starting modules</filename> -->
-				<filename isdownloadable="" ismodify="" doctype="PDF" actionname="">CBT - Starting modules</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="StatutoryTraining">Section 1 - Statutory Training</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CDT">Section 2 - Career Development Training</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CadetTraining">Section 3 - Cadet Training</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="CBT">Section 4 - Computer Based Training</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="TPSP">Section 5 - Training Plan for Shore Personnel</filename>
+			<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="SDT">Section 6 - Shipboard Drill and Training</filename>
+			<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="Manual">Vol. VII Manual</filename> -->
+			<foldername  status=""  version="" actionname="" description="" name="Appendix">
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="STAFCTCCV">CBT - STA Flow Chart TCC Vessels</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="XLS"  status=""  version="" actionname="">CBT - Starting modules</filename> -->
+				<filename isdownloadable="" ismodify="" doctype="PDF"  status=""  version="" actionname="">CBT - Starting modules</filename>
 			</foldername>
 		</volume>  		
 
 		<volume id="8"	name="Volume VIII" controllername="FormsAndChecklists">
-			<foldername description="" actionname="AdministrationAndMmgt" name="Section 1 - Administration and Mmgt">
+			<foldername description=""  status=""  version="" actionname="AdministrationAndMmgt" name="Section 1 - Administration and Mmgt">
 				<filename isdownloadable="" ismodify="">ADM001 - Manual control</filename>
 				<filename isdownloadable="" ismodify="">ADM002 - Manual revision record</filename>
 				<filename isdownloadable="" ismodify="">ADM003 - Document Change Request Register</filename>
@@ -548,7 +552,7 @@
 				<filename isdownloadable="" ismodify="">ADM022 - Port Agency Feedback Form - Master</filename>
 				<filename isdownloadable="" ismodify="">Section 1 - Content</filename>
 			</foldername>
-			<foldername description="" actionname="ManagementOfShipPersonnel" name="Section 2 - Management of ship personnel">
+			<foldername description=""  status=""  version="" actionname="ManagementOfShipPersonnel" name="Section 2 - Management of ship personnel">
 				<filename isdownloadable="" ismodify="">Section 2 - Content</filename>
 				<filename isdownloadable="" ismodify="">Section 2 - Management of Ship Personnel </filename>
 				<filename isdownloadable="" ismodify="">SP001A - Welcome onboard</filename>
@@ -606,7 +610,7 @@
 				<filename isdownloadable="" ismodify="">SP054 - Training Evaluation Form</filename>
 				<filename isdownloadable="" ismodify="">SP055-Crew Familiarization for Mooring Systems</filename>
 			</foldername>
-			<foldername description="" actionname="Maintenance" name="Section 3 Maintenance">
+			<foldername description=""  status=""  version="" actionname="Maintenance" name="Section 3 Maintenance">
 				<filename isdownloadable="" ismodify="">MA003 - Main Engine Bearing Clearance</filename>
 				<filename isdownloadable="" ismodify="">MA004 - Main Engine - Cylinder overhaul report</filename>
 				<filename isdownloadable="" ismodify="">MA005 - Main Engine - Inspection through Scavenge Ports</filename>
@@ -694,7 +698,7 @@
 				<!-- <filename isdownloadable="" ismodify="">Section 3 - Content </filename> -->
 				<filename isdownloadable="" ismodify="">Section 3 - Maintenance </filename>
 			</foldername>
-			<foldername description="" actionname="NavigationManagement" name="Section 4-Navigation Management">
+			<foldername description=""  status=""  version="" actionname="NavigationManagement" name="Section 4-Navigation Management">
 				<filename isdownloadable="" ismodify="">NM001 - Passage Plan </filename>
 				<filename isdownloadable="" ismodify="">NM002 - Daily Bridge Equipment Tests</filename>
 				<filename isdownloadable="" ismodify="">NM003 - Bridge Arrival Checklist</filename>
@@ -731,8 +735,8 @@
 				<!-- <filename isdownloadable="" ismodify="">Section 4 - Content</filename> -->
 				<filename isdownloadable="" ismodify="">Section 4 - Navigation Management </filename>
 			</foldername>
-			<foldername description="" actionname="CargoOperation" name="Section 5-Cargo Operation">
-				<foldername actionname="" description="" name="C0031">
+			<foldername description=""  status=""  version="" actionname="CargoOperation" name="Section 5-Cargo Operation">
+				<foldername  status=""  version="" actionname="" description="" name="C0031">
 					<filename isdownloadable="" ismodify="">CO031-1 - STS Cargo Operation Checklist</filename>
 					<filename isdownloadable="" ismodify="">CO031-2- STS Cargo Operation Checklist</filename>
 					<filename isdownloadable="" ismodify="">CO031-3 - STS Cargo Operation Checklist</filename>
@@ -787,7 +791,7 @@
 				<filename isdownloadable="" ismodify="">CO060 - Bondi Test  Result</filename>
 				<!-- <filename isdownloadable="" ismodify="">Section 5 - Content</filename> -->
 			</foldername>
-			<foldername description="" actionname="SafetyMmgt" name="Section6-Safety Mmgt">
+			<foldername description=""  status=""  version="" actionname="SafetyMmgt" name="Section6-Safety Mmgt">
 				<filename isdownloadable="" ismodify="">Section 6 - Content</filename>
 				<filename isdownloadable="" ismodify="">SM001 - Hot work permit form</filename>
 				<filename isdownloadable="" ismodify="">SM002 - Hot work in Engine Room workshop</filename>
@@ -876,17 +880,17 @@
 				<filename isdownloadable="" ismodify="">SM080 - Crane Operator Training Record</filename>
 				<filename isdownloadable="" ismodify="">SM081- Marine Occurrence Investigation Report</filename>
 			</foldername>
-			<foldername description="" actionname="" name="Section 7-Filling System and Retention Matrix">
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="NSMSFOR">Non SMS form and other records </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S1AM">Section 1 - Administration and Management</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S2MSPR">Section 2 - Management of Ship Personnel </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S3MR">Section 3 - Maintenance </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S4NMR">Section 4 - Navigation Management </filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S5CO">Section 5 - Cargo Operation</filename>
-				<filename isdownloadable="" ismodify="" doctype="DOC" actionname="S6SM">Section 6 - Safety Management</filename>
-				<!-- <filename isdownloadable="" ismodify="" doctype="DOC" actionname="S7Content">Section 7 - Content</filename> -->
+			<foldername description=""  status=""  version="" actionname="" name="Section 7-Filling System and Retention Matrix">
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="NSMSFOR">Non SMS form and other records </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S1AM">Section 1 - Administration and Management</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S2MSPR">Section 2 - Management of Ship Personnel </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S3MR">Section 3 - Maintenance </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S4NMR">Section 4 - Navigation Management </filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S5CO">Section 5 - Cargo Operation</filename>
+				<filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S6SM">Section 6 - Safety Management</filename>
+				<!-- <filename isdownloadable="" ismodify="" doctype="DOC"  status=""  version="" actionname="S7Content">Section 7 - Content</filename> -->
 			</foldername>
-			<!-- <filename isdownloadable="" ismodify="" doctype="" actionname="Manual">Vol. VIII Manual</filename> -->
+			<!-- <filename isdownloadable="" ismodify="" doctype=""  status=""  version="" actionname="Manual">Vol. VIII Manual</filename> -->
 			
 		</volume>
 

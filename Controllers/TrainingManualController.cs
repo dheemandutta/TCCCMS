@@ -8,10 +8,11 @@ using System.Web;
 using System.Text;
 using System.IO;
 using System.Web.Mvc;
-
+using TCCCMS.Infrastructure;
 
 namespace TCCCMS.Controllers
 {
+    [CustomAuthorizationFilter]
     public class TrainingManualController : Controller
     {
         //--------------------Vol7-------------------------
@@ -20,6 +21,7 @@ namespace TCCCMS.Controllers
         ManualBL manualBL = new ManualBL();
 
         // GET: TrainingManual
+        [CustomAuthorizationFilter]
         public ActionResult Index()
         {
             Session["IsSearched"] = "0";
@@ -37,6 +39,7 @@ namespace TCCCMS.Controllers
         //    TempData[actionName] = file.ManualBodyHtml;
         //    return View(file);
         //}
+        [CustomAuthorizationFilter]
         public ActionResult Pages(string actionName, string formName = "", string relformPath = "")
         {
             System.Web.HttpContext.Current.Session["ManualFileActionName"] = actionName;// this session used in Breadcrumb Navigation
@@ -117,6 +120,7 @@ namespace TCCCMS.Controllers
             //TempData[actionName] = file.ManualBodyHtml;
             return View(file);
         }
+        [CustomAuthorizationFilter]
         public ActionResult PDFViewer(string fileName, string relPDFPath)
         {
             Manual file = new Manual();
@@ -129,6 +133,7 @@ namespace TCCCMS.Controllers
             return View(file);
         }
 
+        [CustomAuthorizationFilter]
         public FileResult Download(string fileName, string relformPath)
         {
             ManualBL manualBl = new ManualBL();
@@ -154,6 +159,7 @@ namespace TCCCMS.Controllers
             byte[] fileBytes = System.IO.File.ReadAllBytes(filePath);
             return File(fileBytes,manualBl.GetMimeTypes()[ext], Path.GetFileName(filePath));
         }
+        [CustomAuthorizationFilter]
         private Dictionary<string, string> GetMimeTypes()
         {
             return new Dictionary<string, string>
