@@ -66,11 +66,16 @@ namespace TCCCMS.Business
 
             return documentDal.DeleteForm(formName);
         }
-
-        public List<Forms> GetFilledupFormRequiredApprovalList(int approverUserId)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="approverUserId"></param>
+        /// <param name="shipNo">Added on 30th Nov 2021</param>
+        /// <returns></returns>
+        public List<Forms> GetFilledupFormRequiredApprovalList(int approverUserId, int shipNo)
         {
             DocumentDAL documentDal = new DocumentDAL();
-            return documentDal.GetFilledupFormRequiredApprovalList(approverUserId);
+            return documentDal.GetFilledupFormRequiredApprovalList(approverUserId, shipNo);
         }
 
         public int ApproveFilledUpForm(int filledUpFormId,int approverUserId, string uploadedFormName)

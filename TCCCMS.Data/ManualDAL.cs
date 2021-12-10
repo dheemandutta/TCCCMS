@@ -36,6 +36,7 @@ namespace TCCCMS.Data
             using(SqlConnection con = new SqlConnection(connectionString))
             {
                 using (SqlCommand cmd = new SqlCommand("SearchManuals", con))
+                //using (SqlCommand cmd = new SqlCommand("SearchManuals_ForTest", con))
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
                     //cmd.Parameters.AddWithValue("@PageIndex", pageIndex);
