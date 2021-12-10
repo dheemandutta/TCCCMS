@@ -115,10 +115,11 @@ namespace TCCCMS.Controllers
         [CustomAuthorizationFilter]
         public ActionResult FormsApprovalList(int currentPage = 1)
         {
+            int shipNo = Convert.ToInt32(ConfigurationManager.AppSettings["ShipNumber"]);//Added on 30th Nov 2021
             ApprovedFilledupFormAndApproverViewModel affaVM = new ApprovedFilledupFormAndApproverViewModel();
             List<Forms> formList = new List<Forms>();
             DocumentBL documentBL = new DocumentBL();
-            formList = documentBL.GetFilledupFormRequiredApprovalList(Convert.ToInt32(Session["UserId"].ToString()));
+            formList = documentBL.GetFilledupFormRequiredApprovalList(Convert.ToInt32(Session["UserId"].ToString()), shipNo);
 
             //*******************************Added on 9th Aug 2021 @BK****************************************//
             var pager = new Pager(formList.Count(), currentPage);

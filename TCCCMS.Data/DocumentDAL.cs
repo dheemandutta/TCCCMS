@@ -311,8 +311,13 @@ namespace TCCCMS.Data
             return filledupFormList;
 
         }
-
-        public List<Forms> GetFilledupFormRequiredApprovalList(int approverUserId)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="approverUserId"></param>
+        /// <param name="shipNo">Added on 30th Nov 2021</param>
+        /// <returns></returns>
+        public List<Forms> GetFilledupFormRequiredApprovalList(int approverUserId, int shipNo)
         {
             List<Forms> filledupFormList = new List<Forms>();
             using (SqlConnection con = new SqlConnection(connectionString))
@@ -322,6 +327,7 @@ namespace TCCCMS.Data
                     con.Open();
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@ApproverUserId", approverUserId);
+                    //cmd.Parameters.AddWithValue("@ShipNo", approverUserId); //Added on 30th Nov 2021
                     DataSet ds = new DataSet();
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     da.Fill(ds);

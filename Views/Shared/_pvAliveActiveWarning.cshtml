@@ -1,27 +1,244 @@
 ﻿<!--Start Show Session Expire Warning Popup here -->
+@*<script src="~/js/CircularProgressBar/circle-progress.min.js"></script>*@
+<style>
+    /*.progressbar {
+        display: inline-block;
+        width: 100px;
+        margin: 25px;
+        width: 50px;
+        margin: 5px;
+    }
+
+    .circle {
+        width: 180px;
+        height: 180px;
+        width: 50px;
+        height: 50px;
+        margin: 0 auto;
+        margin-top: 10px;
+        display: inline-block;
+        position: relative;
+        text-align: center;
+    }
+
+        .circle:after {
+            width: 120px;
+            height: 120px;
+            width: 40px;
+            height: 40px;
+            content: "";
+            border: 1px solid #fb4f14;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .circle canvas {
+            vertical-align: middle;
+            border: 2px solid #fb4f14;
+            border-radius: 50%;
+        }
+
+        .circle div {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -20px 0 0 -86px;
+            margin : 0 0 0 -10px;
+            width: 100%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 31px;
+        }
+
+        .circle strong i {
+            font-style: normal;
+            font-size: 0.6em;
+            font-weight: normal;
+        }
+
+        .circle span {
+            display: block;
+            color: white;
+            margin-top: 12px;
+        }
+*/
+        /*----------------------------*/
+
+  /*      
+html,body{
+  height: 100%;
+  width: 100%;
+}*/
+/*html,
+button,
+input,
+select,
+textarea {
+	color: #5e5e5e;
+	-webkit-font-smoothing: antialiased;
+}
+body {
+	background-color: #f0f1f1;
+	font: 1rem/1.2 Montserrat, Helvetica, Helvetica Neue, Arial;
+}*/
+    .binPage {
+        display: flex;
+        align-items: center;
+        align-content: center;
+        width: 113px;
+        margin: -10px auto;
+    }
+
+    .progress-bar {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        margin: 7px;
+        padding: 0;
+        background-color:#FFF;
+    }
+
+        .progress-bar .progress-active {
+            position: relative;
+            /*top: -279px;*/
+            top: 0px;
+        }
+
+        .progress-bar p {
+            position: relative;
+            margin: 0;
+            padding: 0;
+            /*width: 275px;
+                top: -460px;
+                font-size: 54px;
+                font-weight: 900;*/
+            width: 113px;
+            top: -75px;
+            left:-8px;
+            color:#000000;
+            font-size: 26px;
+            font-weight: 100;
+            text-align: center;
+        }
+
+/*#progressControllerContainer{
+  position: absolute;
+  top: 320px;
+  padding: 10px 80px;
+}*/
+
+/*---------------------------*/
+
+    /** {
+        margin: 0;
+        padding: 0;
+        font-family: 'Lato', sans-serif;
+    }
+
+    .progress {
+        position: absolute;
+        height: 160px;
+        width: 160px;
+        cursor: pointer;
+        top: 50%;
+        left: 50%;
+        margin: -80px 0 0 -80px;
+    }
+
+    .progress-circle {
+        transform: rotate(-90deg);
+        margin-top: -40px;
+    }
+
+    .progress-circle-back {
+        fill: none;
+        stroke: #D2D2D2;
+        stroke-width: 10px;
+    }
+
+    .progress-circle-prog {
+        fill: none;
+        stroke: #7E3451;
+        stroke-width: 10px;
+        stroke-dasharray: 0 999;
+        stroke-dashoffset: 0px;
+        transition: stroke-dasharray 0.7s linear 0s;
+    }
+
+    .progress-text {
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        text-align: center;
+        font-size: 2em;
+    }*/
+
+</style>
 <div class="modal fade" id="session-expire-warning-modal" aria-hidden="true" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title">Session Expire Warning</h4>
             </div>
-            <div class="modal-body"> Your session will expire in <span id="seconds-timer"></span> seconds. Do you want to extend the session? </div>
+            @*<div class="modal-body"> Your session will expire in <span id="seconds-timer"></span> seconds. Do you want to extend the session? </div>*@
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        Dear User, <br /><br />
+                        Your session will logout soon. @*<span id="seconds-timer"></span>*@ Click continue to resume session
+</div>
+                    <div class="col-md-4">
+                        @*<div class="progressbar" data-animate="false">
+            <div class="circle" data-percent="90">
+                <div></div>
+            </div>
+        </div>*@
+
+                        <div id="page" class="binPage">
+                            <div class="progress-bar">
+                                <canvas id="inactiveProgress" class="progress-inactive" height="275px" width="275px" style="height:100px;width:100px;"></canvas>
+                                <canvas id="activeProgress" class="progress-active" height="275px" width="275px" style="width:100px;height:100px;top:0px;left:-104px;"></canvas>
+                                <p>0%</p>
+                            </div>
+                            @*<div id="progressControllerContainer">
+                                <input type="range" id="progressController" min="0" max="60" value="60" />
+                            </div>*@
+                        </div>
+
+                        @*<div class="progress">
+                            <svg class="progress-circle" width="200px" height="200px" xmlns="http://www.w3.org/2000/svg">
+                                <circle class="progress-circle-back"
+                                        cx="80" cy="80" r="74"></circle>
+                                <circle class="progress-circle-prog"
+                                        cx="80" cy="80" r="74"></circle>
+                            </svg>
+                            <div class="progress-text" data-progress="0">0%</div>
+                        </div>*@
+                    </div>
+                </div>
+            </div>
             <div class="modal-footer">
-                <button id="btnOk" type="button" class="btn btn-default" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; border: 1px solid transparent; border-radius: 4px;  background-color: #428bca; color: #FFF;">Ok</button>
+                <button id="btnOk" type="button" class="btn btn-default" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; border: 1px solid transparent; border-radius: 4px;  background-color: #428bca; color: #FFF;">Continue</button>
                 @*<button id="btnLogoutNow" type="button" class="btn btn-default" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; border: 1px solid transparent; border-radius: 4px;  background-color: #428bca; color: #FFF;">Logout now</button>*@
             </div>
         </div>
     </div>
 </div>
 <script>
-    $(function () {
+    $(document).ready(function () {
       //  alert(@(Session.Timeout - 1) * 60000);
         //     var timeout = 30000; // timer if no activity 3 seconds (3000 milliseconds):
-        var timeout = @(Session.Timeout - 1) * 60 * 1000; // 5 minutes
+        //var timeout = @(Session.Timeout - 5) * 60 * 1000; // 5 minutes
+        var timeout = @(Session.Timeout - 1) * 60 * 1000; // 1 minutes
         var beattime = 1 * 60 * 1000; //timer to check activity ping 1 minutes
         var renew = 0;
         var hold = 0;
+        //var counter = 300; // Count down timer for Popup modal in seconds
         var counter = 60; // Count down timer for Popup modal in seconds
+        var countDown = 0;
         var sessoff = "/Home/Login"; //logout action url
         var sessurl = "/Home/KeepSessionActive";
         var hbeat;
@@ -35,6 +252,7 @@
         CheckAlive();
         ActiveBeat();
         HeartBeat();
+        //animateElements();
         $("#btnOk").click(function() {
             $("#session-expire-warning-modal").modal('hide');
             PingServer('hbeat');
@@ -50,6 +268,9 @@
                     renew = 0;
                     hold = 1;
                     countdownDisplay();
+                    //progressBar(counter, counter);
+                    //animateElements(countDown);
+                    drawInactive(iProgressCTX);
                     $("#session-expire-warning-modal").modal('show');
                     beep();
                     setTimeout(function () {
@@ -110,12 +331,148 @@
             var dialogDisplaySeconds = counter;
             popTimer = setInterval(function() {
                 $('#seconds-timer').html(dialogDisplaySeconds);
+               // drawProgress(aProgress, (dialogDisplaySeconds / 300), $pCaption);
+                drawProgress(aProgress, (dialogDisplaySeconds / 60), $pCaption);
+                //progressBar(dialogDisplaySeconds, counter);
+                //animateElements(dialogDisplaySeconds);
+
                 dialogDisplaySeconds -= 1;
+                countDown = dialogDisplaySeconds;
+                //animateElements(dialogDisplaySeconds);
+
             }, 1000);
         };
         function beep() {
             var snd = new Audio("data:audio/wav;base64,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qJrx4KOQjahZxWbcZgztj2c49nKmkId44S71j0c8eV9yDK6uPRzx5X18eDvjvQ6yKo9ZSS6l//8elePK/Lf//IInrOF/FvDoADYAGBMGb7FtErm5MXMlmPAJQVgWta7Zx2go+8xJ0UiCb8LHHdftWyLJE0QIAIsI+UbXu67dZMjmgDGCGl1H+vpF4NSDckSIkk7Vd+sxEhBQMRU8j/12UIRhzSaUdQ+rQU5kGeFxm+hb1oh6pWWmv3uvmReDl0UnvtapVaIzo1jZbf/pD6ElLqSX+rUmOQNpJFa/r+sa4e/pBlAABoAAAAA3CUgShLdGIxsY7AUABPRrgCABdDuQ5GC7DqPQCgbbJUAoRSUj+NIEig0YfyWUho1VBBBA//uQZB4ABZx5zfMakeAAAAmwAAAAF5F3P0w9GtAAACfAAAAAwLhMDmAYWMgVEG1U0FIGCBgXBXAtfMH10000EEEEEECUBYln03TTTdNBDZopopYvrTTdNa325mImNg3TTPV9q3pmY0xoO6bv3r00y+IDGid/9aaaZTGMuj9mpu9Mpio1dXrr5HERTZSmqU36A3CumzN/9Robv/Xx4v9ijkSRSNLQhAWumap82WRSBUqXStV/YcS+XVLnSS+WLDroqArFkMEsAS+eWmrUzrO0oEmE40RlMZ5+ODIkAyKAGUwZ3mVKmcamcJnMW26MRPgUw6j+LkhyHGVGYjSUUKNpuJUQoOIAyDvEyG8S5yfK6dhZc0Tx1KI/gviKL6qvvFs1+bWtaz58uUNnryq6kt5RzOCkPWlVqVX2a/EEBUdU1KrXLf40GoiiFXK///qpoiDXrOgqDR38JB0bw7SoL+ZB9o1RCkQjQ2CBYZKd/+VJxZRRZlqSkKiws0WFxUyCwsKiMy7hUVFhIaCrNQsKkTIsLivwKKigsj8XYlwt/WKi2N4d//uQRCSAAjURNIHpMZBGYiaQPSYyAAABLAAAAAAAACWAAAAApUF/Mg+0aohSIRobBAsMlO//Kk4soosy1JSFRYWaLC4qZBYWFRGZdwqKiwkNBVmoWFSJkWFxX4FFRQWR+LsS4W/rFRb/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU=");
             snd.play();
         }
+
+
+        ///ProgressBar -------------
+
+        function animateElements(x) {
+            $('.progressbar').each(function () {
+                var elementPos = $(this).offset().top;
+                var topOfWindow = $(window).scrollTop();
+                //var percent = $(this).find('.circle').attr('data-percent');
+                var percent = x;
+                var percentage = parseInt(percent, 10) / parseInt(100, 10);
+                var animate = $(this).data('animate');
+                if (elementPos < topOfWindow + $(window).height() - 30 && !animate) {
+                    $(this).data('animate', true);
+                    $(this).find('.circle').circleProgress({
+                        startAngle: -Math.PI / 2,
+                        /*value: percent / 100,*/
+                        value: percent / 60,
+                        //size: 180,
+                        //thickness: 30,
+                        size: 100,
+                        thickness: 5,
+                        emptyFill: "rgba(0,0,0, .2)",
+                        fill: {
+                            color: '#fb4f14'
+                        }
+                    }).on('circle-animation-progress', function (event, progress, stepValue) {
+                        //$(this).find('div').text((stepValue * 100).toFixed(1) + "%");
+                        $(this).find('div').text(x);
+                    }).stop();
+                }
+            });
+        }
+
+        //------------------------------------------------------
+
+
+        var $pc = $('#progressController');
+        var $pCaption = $('.progress-bar p');
+        var iProgress = document.getElementById('inactiveProgress');
+        var aProgress = document.getElementById('activeProgress');
+        var iProgressCTX = iProgress.getContext('2d');
+
+
+        drawInactive(iProgressCTX);
+
+        //$pc.on('change', function () {
+        //    var percentage = $(this).val() / 60;
+        //    //var percentage = 63 / 100;
+        //    drawProgress(aProgress, percentage, $pCaption);
+        //});
+
+        function drawInactive(iProgressCTX) {
+            iProgressCTX.lineCap = 'square';
+
+            //outer ring
+            //iProgressCTX.beginPath();
+            //iProgressCTX.lineWidth = 15;
+            //iProgressCTX.strokeStyle = '#e1e1e1';
+            //iProgressCTX.arc(137.5, 137.5, 129, 0, 2 * Math.PI);
+            //iProgressCTX.stroke();
+
+            //progress bar
+            iProgressCTX.beginPath();
+            iProgressCTX.lineWidth = 0;
+            iProgressCTX.fillStyle = '#e6e6e6';
+            //iProgressCTX.fillStyle = '#ff0000';
+            //iProgressCTX.arc(137.5, 137.5, 105, 0, 2 * Math.PI);
+            iProgressCTX.arc(137.5, 137.5, 105, 0, 2 * Math.PI);
+            iProgressCTX.fill();
+
+            //progressbar caption
+            iProgressCTX.beginPath();
+            iProgressCTX.lineWidth = 0;
+            iProgressCTX.fillStyle = '#fff';
+            //iProgressCTX.fillStyle = '#f30b0b';
+            //iProgressCTX.arc(137.5, 137.5, 100, 0, 2 * Math.PI);
+            iProgressCTX.arc(137.5, 137.5, 100, 0, 2 * Math.PI);
+            iProgressCTX.fill();
+
+        }
+        function drawProgress(bar, percentage, $pCaption) {
+            var barCTX = bar.getContext("2d");
+            var quarterTurn = Math.PI / 2;
+            var endingAngle = ((2 * percentage) * Math.PI) - quarterTurn;
+            var startingAngle = 0 - quarterTurn;
+
+            bar.width = bar.width;
+            barCTX.lineCap = 'square';
+
+            barCTX.beginPath();
+            barCTX.lineWidth = 5;
+            /*barCTX.strokeStyle = '#ff6200';*/
+            barCTX.strokeStyle = '#308907';
+            barCTX.arc(137.5, 137.5, 100, startingAngle, endingAngle);
+            //barCTX.arc(137.5, 137.5, 100, 0, 2 * Math.PI);
+            barCTX.stroke();
+
+            //$pCaption.text((parseInt(percentage * 300, 10)));
+            $pCaption.text((parseInt(percentage * 60, 10)));
+        }
+
+        //var percentage = 300 / 300;
+        var percentage = 60 / 60;
+        drawProgress(aProgress, percentage, $pCaption);
+
+
     })
+
+    //--------------------------------------
+
+    //function progressBar(progressVal, totalPercentageVal = 100) {
+    //    var strokeVal = (4.64 * 100) / totalPercentageVal;
+    //    var x = document.querySelector('.progress-circle-prog');
+    //    x.style.strokeDasharray = progressVal * (strokeVal) + ' 999';
+    //    var el = document.querySelector('.progress-text');
+    //    var from = $('.progress-text').data('progress');
+    //    $('.progress-text').data('progress', progressVal);
+    //    var start = new Date().getTime();
+
+    //    setTimeout(function () {
+    //        var now = (new Date().getTime()) - start;
+    //        var progress = now / 700;
+    //        /*el.innerHTML = progressVal / totalPercentageVal * 100 + '%';*/
+    //        el.innerHTML = progressVal;
+    //        if (progress < 1) setTimeout(arguments.callee, 10);
+    //    }, 10);
+
+    //}
 </script>

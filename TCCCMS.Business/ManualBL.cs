@@ -21,27 +21,51 @@ namespace TCCCMS.Business
 
             //string modifiedSearchTest = searchText.Replace(" ", " OR ");
 
-            string modifiedSearchTest = "";
+            string modifiedSearchString = "";
+            string searchString2 = "";
 
             string[] words = searchText.Split(' ');
-
+            int wordsCount = 1;
+            wordsCount = words.Count();
             int cnt = 0;
             foreach(string word in words)
             {
                 cnt = cnt + 1;
                 if(cnt == 1)
                 {
-                    modifiedSearchTest = word;
+                    modifiedSearchString = word;
                 }
                 else if(cnt > 1)
                 {
-                    modifiedSearchTest = modifiedSearchTest + " OR " + word;
+                    modifiedSearchString = modifiedSearchString + " OR " + word;
                 }
 
             }
+            if(wordsCount ==1)
+            {
+                searchString2 = words[0].ToString();
+            }
+            else if (wordsCount > 1)
+            {
+                cnt = 0;
+                searchString2 = "NEAR(";
+                foreach (string word in words)
+                {
+                    cnt = cnt + 1;
+                    if (cnt == 1)
+                    {
+                        searchString2 = searchString2 + word;
+                    }
+                    else if (cnt > 1)
+                    {
+                        searchString2 = searchString2 + "," + word;
+                    }
+                }
+                searchString2 = searchString2 + ")";
+            }
 
-            
-            manualsList = manualDAL.SearchManuals(pageIndex, ref totalCount, pageSize, volumeId, modifiedSearchTest, shipId, category);
+            modifiedSearchString = modifiedSearchString + ";" + searchString2;
+            manualsList = manualDAL.SearchManuals(pageIndex, ref totalCount, pageSize, volumeId, modifiedSearchString, shipId, category);
 
             return manualsList;
         }

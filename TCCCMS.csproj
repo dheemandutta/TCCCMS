@@ -778,6 +778,7 @@
     <Content Include="images\vissel.png" />
     <Content Include="js\Approver\Approver.js" />
     <Content Include="js\bootstrap.js" />
+    <Content Include="js\CircularProgressBar\circle-progress.min.js" />
     <Content Include="js\Import\ImportCrew.js" />
     <Content Include="js\Import\xls.core.min.js" />
     <Content Include="js\Import\xlsx.core.min.js" />

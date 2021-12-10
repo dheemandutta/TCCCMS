@@ -144,28 +144,28 @@
     <div class="breadcrumbs">
         <div class="steps steps_animation">
             <!-- #region Breadcrumb -->
+            @*@Html.Raw(Html.BuildBreadcrumbNavigation());*@
             @if (Session["Role"] != null)
             {
-                Html.Raw(Html.BuildBreadcrumbNavigation());
+                @Html.Raw(Html.BuildBreadcrumbNavigation());
             }
             else
             {
                 <script>
-                    /* window.location.href = "/{controller}/{action}"*/
                     window.location.href = "/Home/Login"
                 </script>
             }
             <!-- #endregion -->
             @*<div class="steps_item">
-                        <span class="steps_content">
-                            <a href="#"> Home</a>
-                        </span>
-                    </div>
-                <div class="steps_item">
-                    <span class="steps_content">
-                        Inner Page1
-                    </span>
-                </div>*@
+                <span class="steps_content">
+                    <a href="#"> Home</a>
+                </span>
+            </div>
+        <div class="steps_item">
+            <span class="steps_content">
+                Inner Page1
+            </span>
+        </div>*@
 
             <div class="search">
                 <select id="drpVolume" class="form-control form-control-sm mr-3 w-25" style="margin-left:5px;">
@@ -184,8 +184,8 @@
                 <a id="lnkAllSearch" class="btn btn-primary" href="#"> <i class="fa fa-search"></i></a>
 
                 @*<button type="submit" class="searchButton">
-                        <i class="fa fa-search"></i>
-                    </button>*@
+                <i class="fa fa-search"></i>
+            </button>*@
             </div>
         </div>
     </div>
@@ -248,9 +248,11 @@
             <ul>
                 @*<li disabled><strong>Uncontrolled when printed</strong></li>*@
                 @*<li>Revision 0.0</li>
-                    <li>Date:01-May -21</li>*@
-                <li>Revision 001</li>
-                <li>Date:15-July -21</li>
+        <li>Date:01-May -21</li>*@
+                @*<li>Revision 001</li>
+        <li>Date:15-July -21</li>*@
+                <li>Revision 002</li>
+                <li>Date:15-Oct-2021</li>
                 <li><a href="@Url.Action("RevisionDetails", "RevisionHistory")">View Revision Histroy</a></li>
             </ul>
             <div>&nbsp; &nbsp; &nbsp;</div>
