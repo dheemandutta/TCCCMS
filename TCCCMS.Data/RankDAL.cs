@@ -11,6 +11,7 @@ using TCCCMS.Models;
 
 namespace TCCCMS.Data
 {
+
     public class RankDAL
     {
         public int SaveUpdateRank(RankPOCO pOCO)
