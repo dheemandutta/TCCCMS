@@ -31,8 +31,11 @@
 
     #login, .logo {
         width: 100% !important;
+        text-align: center;
     }
-
+    .topright {
+        text-align: center;
+    }
     #login {
         /* border-right: 1px solid #fff; */
         border-left: 0px solid #eee4e4 !important;
@@ -75,6 +78,11 @@
     .steps_content {
         padding: 0 1rem 0 1rem;
         font-size: 11px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100px;
+        display:inline-block;
     }
 
     .menu_icon {
@@ -125,7 +133,10 @@
     .volume .mainmenu .tooltip .tooltiptext {
         display: none;
     }
-}
+    .logo img {
+        width: 65%;
+    }
+    }
 
 @media only screen and (min-width:200px) and (max-width:319px) {
 }

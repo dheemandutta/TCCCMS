@@ -3149,3 +3149,19 @@ header {
 .displayNone{
     display:none;
 }
+.icon_box.dropdown .dropdown-content {
+    top: auto !important;
+    bottom: 153px;
+    z-index: 9999;
+}
+/* .icon_box.dropdown .dropdown-content ul {
+        height: 220px;
+        overflow-y: scroll;
+    }
+        /*.us-manag .dropdown-content ul {
+    height: auto !important;
+    overflow-y: hidden !important;
+}*/
+        .bnr_bottom_sec .tooltip .dropdown-content ul li a:hover, .icon_box.dropdown .dropdown-content ul li a:hover {
+            margin: 0;
+        }
